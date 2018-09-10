@@ -17,7 +17,9 @@ Fall Semester, Academic Year 2018/2019.
 
 
 ### Teacher
-Nguyen Viet Bach [<nvbach91@oulook.com>](mailto:nvbach91@outlook.com) 
+Nguyen Viet Bach 
+
+Email: [nguv03@vse.cz](mailto:nguv03@vse.cz) 
 
 
 
