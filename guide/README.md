@@ -27,7 +27,7 @@ Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](
 
 
 ### Standardní proces schválení změn v kódu pomocí v příkazovém řádku
-1. Uděláš nějaké změny v kódu.
+1. Uděláš nějaké změny v kódu a chceš to uložit na GIT, tak spustíš CMD ve složce tvého projektu.
 2. Podíváš se na vyznačené změny, tj. spustíš příkaz **`git diff`**. Z toho odejdeš klávesou **`Q`**.
 3. Přidáš tyto změny na STAGE, tj. spustíš příkaz **`git add -A`**.
 4. Potvrdíš tyto změny, tj. spustíš příkaz **`git commit -m "MESSAGE"`**. Tady místo **`MESSAGE`** napíšeš krátký popis těch změn nebo jejich účel.
