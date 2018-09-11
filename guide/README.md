@@ -21,7 +21,7 @@ Tento návod Ti pomůže s použitím GITu během předmětu 4IZ268. Hodně št�
     - tj. spustíš příkaz **`git checkout -b student-{xname}`** (nahraď **`{xname}`** svým **xname**).
 7. Publikuješ tuto **branch** a přitom ji nastavíš jako **upstream** u sebe, 
     - tj. spustíš příkaz **`git push --set-upstream student-{xname}`** (nahraď **`{xname}`** svým **xname**).
-8. Vytvoříš si svou složku, kterou nazveš svým **xname**, 
+8. Vytvoříš si svou složku ve složce ***`www`***, kterou nazveš svým **xname**, 
     - např. **`C:\Users\User\Projects\4IZ268-2018-2019-ZS\nguv03\`**.
 9. Sem vložíš své **HTML** soubory a jsi připraven.
 
@@ -35,7 +35,7 @@ Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](
 ### Standardní proces schválení změn v kódu pomocí příkazů
 1. Uděláš nějaké změny v kódu a chceš to uložit na GIT, tak spustíš CMD ve složce tvého projektu.
 2. Podíváš se na vyznačené změny, 
-    - tj. spustíš příkaz **`git diff`**. Z toho odejdeš klávesou **`Q`**.
+    - tj. spustíš příkaz **`git diff`**. Z toho odejdeš pomocí klávesy **`Q`**.
 3. Přidáš tyto změny do **fáze** (stage), 
     - tj. spustíš příkaz **`git add -A`**.
 4. Potvrdíš tyto změny, 
