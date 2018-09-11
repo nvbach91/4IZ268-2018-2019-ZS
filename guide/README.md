@@ -49,4 +49,5 @@ Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](
     - tj. já udělám **review** a **merge** tvého **branch**e na **master branch** a do minuty se to projeví na webu.
 9. Zkontroluješ si svůj nový web a budeš šťastný. (Odkaz na tvůj web ti sdělím na cvičení)
 
-
+### Poznámky
+- Nemanipuluj se složkami svých spolužáků, jinak ti Pull Request neprojde :)
