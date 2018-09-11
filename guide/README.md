@@ -21,7 +21,7 @@ Tento návod Ti pomůže s použitím GITu během předmětu 4IZ268. Hodně št�
     - tj. spustíš příkaz **`git checkout -b student-{xname}`** (nahraď **`{xname}`** svým **xname**).
 7. Zveřejníš tuto **branch** a přitom ji nastavíš jako **upstream** u sebe, 
     - tj. spustíš příkaz **`git push --set-upstream student-{xname}`** (nahraď **`{xname}`** svým **xname**).
-8. Vytvoříš si svou složku ve složce **`www`**, kterou nazveš svým **xname**, 
+8. Ve složce **`www`** si vytvoříš svou složku, kterou nazveš svým **xname**, 
     - např. **`C:\Users\User\Projects\4IZ268-2018-2019-ZS\www\nguv03\`**.
 9. Sem vložíš své **HTML** soubory a jsi připraven.
 
