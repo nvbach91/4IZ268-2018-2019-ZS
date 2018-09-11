@@ -14,7 +14,7 @@ Tento návod Ti pomůže s použitím GITu během předmětu 4IZ268. Hodně št�
     - tedy celkem např. **`git clone https://nvbach91@github.com/nvbach91/4IZ268-2018-2019-ZS.git`**,
     - tím dostaneš adresář s názvem **`4IZ268-2018-2019-ZS`**.
 5. **Přesuň se** do tohoto adresáře, tj. spustíš příkaz **`cd 4IZ268-2018-2019-ZS`**.
-6. Vytvořiš si **vlastní branch**, tj. spustíš příkaz **`git checkout -b student-xname`**. (nahraď **`xname`** svým **xname**).
+6. Vytvořiš si **vlastní branch**, tj. spustíš příkaz **`git checkout -b student-{xname}`**. (nahraď **`{xname}`** svým **xname**).
 7. Vytvoříš si svou vlastní složku, kterou nazveš svým **xname**, **`např. C:\Users\User\Projects\4IZ268-2018-2019-ZS\nguv03`**.
 8. Sem vložíš své **HTML** soubory a jsi připraven.
 
