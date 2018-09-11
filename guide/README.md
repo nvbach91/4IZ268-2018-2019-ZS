@@ -19,7 +19,7 @@ Tento návod Ti pomůže s použitím GITu během předmětu 4IZ268. Hodně št�
     - tj. spustíš příkaz **`cd 4IZ268-2018-2019-ZS`**.
 6. Vytvořiš si **vlastní branch**, 
     - tj. spustíš příkaz **`git checkout -b student-{xname}`** (nahraď **`{xname}`** svým **xname**).
-7. Publikuješ tuto **branch** a přitom ji nastavíš jako **upstream** u sebe, 
+7. Zveřejníš tuto **branch** a přitom ji nastavíš jako **upstream** u sebe, 
     - tj. spustíš příkaz **`git push --set-upstream student-{xname}`** (nahraď **`{xname}`** svým **xname**).
 8. Vytvoříš si svou složku ve složce **`www`**, kterou nazveš svým **xname**, 
     - např. **`C:\Users\User\Projects\4IZ268-2018-2019-ZS\www\nguv03\`**.
@@ -40,13 +40,13 @@ Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](
     - tj. spustíš příkaz **`git add -A`**.
 4. Potvrdíš tyto změny, 
     - tj. spustíš příkaz **`git commit -m "MESSAGE"`**. Tady místo **`MESSAGE`** napíšeš krátký popis těch změn nebo jejich účel.
-5. Publikuješ tyto změny, 
+5. Pošleš tyto změny na repozitář, 
     - tj. spustíš příkaz **`git push`**. Zadáš heslo a tvůj kód je v cloudu na tvém **branch**i.
-6. Pokud chceš publikovat změny na produkci (Pull Request), pokračuj dál, jinak můžeš tady skončit.
+6. **Pokud chceš zveřejnit svoje změny na produkci (Pull Request), pokračuj dál, jinak můžeš tady skončit.**
 7. Teď mě požádáš o schválení tvých změn na produkci, 
     - tj. jdeš na GitHub repozitář pro tento projekt, najdeš si svůj **branch** a uděláš **Pull Request**.
-8. Já se na to podívám a schválím, 
+8. Já se na to pak podívám a schválím, 
     - tj. já udělám **review** a **merge** tvého **branch**e na **master branch** a do minuty se to projeví na webu.
-9. Zkontroluješ si svůj nový web a budeš šťastný. (Odkaz na svůj web ti sdělím na cvičení)
+9. Zkontroluješ si svůj nový web a budeš šťastný. (Odkaz na tvůj web ti sdělím na cvičení)
 
 
