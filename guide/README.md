@@ -15,9 +15,8 @@ Tento návod Ti pomůže s použitím GITu během předmětu 4IZ268. Hodně št�
     - tím dostaneš adresář s názvem **`4IZ268-2018-2019-ZS`**.
 5. **Přesuň se** do tohoto adresáře, tj. spustíš příkaz **`cd 4IZ268-2018-2019-ZS`**.
 6. Vytvořiš si **vlastní branch**, tj. spustíš příkaz **`git checkout -b student-xname`**. (nahraď **`xname`** svým **xname**).
-7. Nastavíš tento **branch** jako **defaultní** u tebe, tj. spustíš příkaz **`git branch --set-upstream`**.
-8. Vytvoříš si svou složku, kterou nazveš svým **xname**, **`např. C:\Users\User\Projects\4IZ268-2018-2019-ZS\nguv03`**.
-9. Sem vložíš své **HTML** soubory a jsi připraven.
+7. Vytvoříš si svou vlastní složku, kterou nazveš svým **xname**, **`např. C:\Users\User\Projects\4IZ268-2018-2019-ZS\nguv03`**.
+8. Sem vložíš své **HTML** soubory a jsi připraven.
 
 
 
@@ -32,6 +31,7 @@ Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](
 3. Přidáš tyto změny na STAGE, tj. spustíš příkaz **`git add -A`**.
 4. Potvrdíš tyto změny, tj. spustíš příkaz **`git commit -m "MESSAGE"`**. Tady místo **`MESSAGE`** napíšeš krátký popis těch změn nebo jejich účel.
 5. Publikuješ tyto změny, tj. spustíš příkaz **`git push`**. Zadáš heslo a tvůj kód je v cloudu na tvém **branch**i.
+    - Při prvním pokusu o **`git push`** na svém **branch**i je potřeba nastavit defaultní upstream takto: **`git push --set-upstream origin student-nguv03`**. Příště už stačí pouze **`git push`**.
 6. Pokud chceš publikovat změny na produkci, pokračuj dál, jinak můžeš tady skončit.
 7. Teď mě požádáš o schválení tvých změn na produkci, tj. jdeš na GitHub, najdeš si svůj **branch** a uděláš **Pull Request**.
 7. Já se na to podívám a schválím, tj. udělám **review** a **merge** tvého **branch**e na **master branch** a do minuty se to projeví na webu.
