@@ -42,12 +42,12 @@ Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](
 4. Potvrdíš tyto změny, 
     - tj. spustíš příkaz **`git commit -m "MESSAGE"`**. Tady místo **`MESSAGE`** napíšeš krátký popis těch změn nebo jejich účel.
 5. Pošleš tyto změny na repozitář, 
-    - tj. spustíš příkaz **`git push`**. Zadáš heslo a tvůj kód je v cloudu na tvém **branch**i.
+    - tj. spustíš příkaz **`git push`**. Zadáš heslo a tvůj kód je v cloudu na tvé **branch**i.
 6. **Pokud chceš zveřejnit svoje změny na produkci (Pull Request), pokračuj dál, jinak můžeš tady skončit.**
 7. Teď mě požádáš o schválení tvých změn na produkci, 
-    - tj. jdeš na GitHub repozitář pro tento projekt, najdeš si svůj **branch** a uděláš **Pull Request**.
+    - tj. jdeš na GitHub repozitář pro tento projekt, najdeš si svou **branch** a uděláš **Pull Request**.
 8. Já se na to pak podívám a schválím, 
-    - tj. já udělám **review** a **merge** tvého **branch**e na **master branch** a do minuty se to projeví na webu.
+    - tj. já udělám **review** a **merge** tvé **branch**e na **master branch** a do minuty se to projeví na webu.
 9. Zkontroluješ si svůj nový web a budeš šťastný. (Odkaz na tvůj web ti sdělím na cvičení)
 
 
@@ -57,9 +57,9 @@ Většinou budeš chtít synchronizovat svůj projekt, aby byl aktuální s tím
 - Aktualizace celého projektu nanečisto - **``git fetch``**. Tím se dozvíš, jak daleko jsou na tom tví spolužáci.
 - Zjištění názvu **branch**e, na které právě jsi - **`git branch`**
 - Aktualizace **branch**e, na které právě jsi - **`git pull`**
-- Přechod na jiný existující **branch** - **`git checkout {BRANCH-NAME}`**, místo **{BRANCH-NAME}** dáš název **branch**e
-- Aktualizace jiného **branch**e - **`git checkout {BRANCH-NAME}`**, a pak **`git pull`**
-- Vytváření nového **branch**e a přechod na ni - **`git checkout -b {BRANCH-NAME}`** // tohle už jsi jednou dělal při prvním nastavení
+- Přechod na jinou existující **branch** - **`git checkout {BRANCH-NAME}`**, místo **{BRANCH-NAME}** dáš název **branch**e
+- Aktualizace jiné **branch**e - **`git checkout {BRANCH-NAME}`**, a pak **`git pull`**
+- Vytváření nové **branch**e a přechod na ni - **`git checkout -b {BRANCH-NAME}`** // tohle už jsi jednou dělal při prvním nastavení
 
 
 
