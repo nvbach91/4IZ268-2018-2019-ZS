@@ -50,5 +50,16 @@ Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](
     - tj. já udělám **review** a **merge** tvého **branch**e na **master branch** a do minuty se to projeví na webu.
 9. Zkontroluješ si svůj nový web a budeš šťastný. (Odkaz na tvůj web ti sdělím na cvičení)
 
+
+
+### Další postupy v gitu
+Většinou budeš chtít synchronizovat svůj projekt, aby byl aktuální s tím, co je na GitHubu. V našem případě to není třeba, jelikož pracuješ pouze v rámci své složky/**branch**e, a to vždy sám. Ale pokud bylo potřeba, tak jsou na to následující příkazy.
+- Aktualizace celého projektu nanečisto - **``git fetch``**. Tím se dozvíš, jak daleko jsou na tom tví spolužáci.
+- Zjištění názvu **branch**e, na které právě jsi - **`git branch`**
+- Aktualizace **branch**e, na které právě jsi - **`git pull`**
+- Aktualizace jiného **branch**e - **`git checkout {BRANCH-NAME}`**, a pak **`git pull`**
+
+
+
 ### Poznámky
 - Nemanipuluj se složkami svých spolužáků, jinak ti Pull Request neprojde :)
