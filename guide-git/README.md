@@ -1,14 +1,14 @@
-## Použití verzovacího nástroje GIT pro předmět 4IZ268
-Tento návod Ti pomůže s použitím GITu během předmětu 4IZ268. Hodně štěstí!
+## Použití verzovacího nástroje Git pro předmět 4IZ268
+Tento návod Ti pomůže s použitím Gitu během předmětu 4IZ268. Hodně štěstí!
 
 
 
 ### Setup, Ready, Go!
-1. Nainstaluj si GIT v počítači, pokud ho ještě nemáš -- [https://git-scm.com/downloads](https://git-scm.com/downloads), všude dávej Next.
+1. Nainstaluj si Git v počítači, pokud ho ještě nemáš -- [https://git-scm.com/downloads](https://git-scm.com/downloads), všude dávej Next.
     - Potom si přidej cestu k git.exe do PATH
-2. Registruj se na GitHub -- [https://github.com/join](https://github.com/join).
+2. Registruj se na GitHub, pokud ještě nemáš účet -- [https://github.com/join](https://github.com/join). Zvol si nějaké jednoduché a dobře zapamatovatelné uživatelské jméno.
 3. Otevři příkazové okno CMD nebo PowerShell v domovském adresáři, např. v **`C:\Users\User\Projects\`**, 
-    - tj. otevřeš tuto složku, podržíš SHIFT, klikneš někam pravou myší a vybereš CMD nebo PowerShell.
+    - tj. otevřeš tuto složku, podržíš SHIFT, klikneš někam do prázdna pravou myškou a vybereš **Příkazové okno** nebo **PowerShell**. Tahle finta je hodně užitečná.
 4. **Naklonuj** si tento repozitář, 
     - tj. spustíš příkaz **`git clone https://{XXXX}@github.com/nvbach91/4IZ268-{YYYY}-{YYYY}-{SS}.git`**, přitom: 
         - nahradíš **`{XXXX}`** svým **username** na github, např. **`nvbach91`**,
@@ -28,8 +28,8 @@ Tento návod Ti pomůže s použitím GITu během předmětu 4IZ268. Hodně št�
 
 
 
-### Vývojové prostředí a GIT
-Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](https://code.visualstudio.com/download), udělal jsi dobře! **IDE** ti totiž bude ukazovat změny v kódu a také se postará o příkazy na dva kliky.
+### Vývojové prostředí a Git
+Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](https://code.visualstudio.com/download), udělal jsi dobře! **IDE** ti totiž bude ukazovat změny v kódu a také se postará o Git příkazy na dva kliky. Viz [https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep](https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep).
 
 
 
