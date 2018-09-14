@@ -1,4 +1,4 @@
-## Použití verzovacího nástroje GIT
+## Použití verzovacího nástroje GIT pro předmět 4IZ268
 Tento návod Ti pomůže s použitím GITu během předmětu 4IZ268. Hodně štěstí!
 
 

@@ -17,4 +17,4 @@ Tento návod Ti pomůže s nastavením vývojového prostředí VS Code + Git v 
     "git.path": "D:\\Programy\\GIT\\bin\\git.exe"
 }
 ```
-7. A tím máš připravené vývojové prostředí tak, jak to mají profíci, tak pojďme psát kódy.
+7. A tím máš připravené vývojové prostředí tak, jak to mají profíci. Tak pojďme psát kódy!
