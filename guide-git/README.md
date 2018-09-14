@@ -57,7 +57,9 @@ Většinou budeš chtít synchronizovat svůj projekt, aby byl aktuální s tím
 - Aktualizace celého projektu nanečisto - **``git fetch``**. Tím se dozvíš, jak daleko jsou na tom tví spolužáci.
 - Zjištění názvu **branch**e, na které právě jsi - **`git branch`**
 - Aktualizace **branch**e, na které právě jsi - **`git pull`**
+- Přechod na jiný existující **branch** - **`git checkout {BRANCH-NAME}`**, místo **{BRANCH-NAME}** dáš název **branch**e
 - Aktualizace jiného **branch**e - **`git checkout {BRANCH-NAME}`**, a pak **`git pull`**
+- Vytváření nového **branch**e a přechod na ni - **`git checkout -b {BRANCH-NAME}`** // tohle už jsi jednou dělal při prvním nastavení
 
 
 
