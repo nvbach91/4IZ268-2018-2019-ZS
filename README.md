@@ -24,5 +24,6 @@ TBA
 
 
 
-### Czech Guide
-[https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide](https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide)
+### Czech Guides
+[https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep](https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep)
+[https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-git](https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-git)

@@ -4,7 +4,8 @@ Tento návod Ti pomůže s použitím GITu během předmětu 4IZ268. Hodně št�
 
 
 ### Setup, Ready, Go!
-1. Nainstaluj si GIT v počítači -- [https://git-scm.com/downloads](https://git-scm.com/downloads), všude dávej Next.
+1. Nainstaluj si GIT v počítači, pokud ho ještě nemáš -- [https://git-scm.com/downloads](https://git-scm.com/downloads), všude dávej Next.
+    - Potom si přidej cestu k git.exe do PATH
 2. Registruj se na GitHub -- [https://github.com/join](https://github.com/join).
 3. Otevři příkazové okno CMD nebo PowerShell v domovském adresáři, např. v **`C:\Users\User\Projects\`**, 
     - tj. otevřeš tuto složku, podržíš SHIFT, klikneš někam pravou myší a vybereš CMD nebo PowerShell.
