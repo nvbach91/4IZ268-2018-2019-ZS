@@ -22,9 +22,10 @@ Tento návod Ti pomůže s nastavením vývojového prostředí VS Code + Git v 
 
 
 ### Live server
-Nebaví tě furt mačkat refresh? Mám pro tebe dobrou zprávu!
-1. Ve VS Code otevři záložku Extensions (Ctrl + Shift + X)
-2. Vyhledej Live Server a nainstaluj ho
-3. Klikni pravou myší v souboru index.html a vyber Open with Live Server
+Nebaví tě furt mačkat refresh v prohlížeči? Mám pro tebe dobrou zprávu! Ve VS Code se dá nastavit projekt tak, aby to šlo automaticky.
+
+1. Ve VS Code otevři levou záložku Extensions (Ctrl + Shift + X).
+2. Vyhledej "Live Server" a nainstaluj ho.
+3. Klikni pravou myší v souboru index.html a vyber **Open with Live Server**.
 
 Teď se ti v prohlížeči bude automaticky načítat novou verzi stránky, jakmile uložíš soubor.
