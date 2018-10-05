@@ -14,13 +14,20 @@ Fall Semester, Academic Year 2018/2019.
 
 
 
-### Teacher
+### Master Joda
 Nguyen Viet Bach, email: [nguv03@vse.cz](mailto:nguv03@vse.cz) 
 
 
 
-### Students
-TBA
+### Padawans
+[Hodbod](https://github.com/Hodbod) / [JiriPol](https://github.com/JiriPol) / [SebastianDix](https://github.com/SebastianDix) / [AdamReznicek](https://github.com/AdamReznicek) / [voraczech](https://github.com/voraczech) / [pavelbarton](https://github.com/pavelbarton) / [PavelHanzl](https://github.com/PavelHanzl) / [havlikmar](https://github.com/havlikmar) / [dusv03](https://github.com/dusv03) / [rinamoon](https://github.com/rinamoon) / [p31r](https://github.com/p31r) / [kseniakon](https://github.com/kseniakon) / [JanKlac](https://github.com/JanKlac) / [PavelDvoriak](https://github.com/PavelDvoriak) / [jcurik](https://github.com/jcurik) / [zemk05](https://github.com/zemk05) / [kleniive](https://github.com/kleniive) / [stos02](https://github.com/stos02) / [lukazko](https://github.com/lukazko) / [kukd01](https://github.com/kukd01) / [potatocz](https://github.com/potatocz) / [neho02](https://github.com/neho02) / [novj35](https://github.com/novj35) / [ujhelluk](https://github.com/ujhelluk) / [kudp02](https://github.com/kudp02) / [Asya96](https://github.com/Asya96) / [pina01](https://github.com/pina01) / [jakubkastner](https://github.com/jakubkastner) / [petra08](https://github.com/petra08) / [Logan766](https://github.com/Logan766) / [dsejna](https://github.com/dsejna) / [janf04](https://github.com/janf04) / [Arkatos1](https://github.com/Arkatos1) / [nikaye](https://github.com/nikaye) / [kazkarr](https://github.com/kazkarr) / [ridvlu](https://github.com/ridvlu) / [sarrka](https://github.com/sarrka) / [braj08](https://github.com/braj08) / [matyasfrank](https://github.com/matyasfrank) / [xhaj06](https://github.com/xhaj06) / [kaspartomas](https://github.com/kaspartomas) / [ondv03](https://github.com/ondv03) / [chosebenes](https://github.com/chosebenes) / [alex6krasnov](https://github.com/alex6krasnov) / [dust02](https://github.com/dust02) / [adamhospodka](https://github.com/adamhospodka) / 
+
+### Ranking
+- **Tier 1 - Innovators**: lukazko, voraczech, kukd01, SebastianDix, dsejna, JiriPol, PavelHanzl, havlikmar, alex6krasnov, janf04, pavelbarton
+- **Tier 2 - Major Pops**: ujhelluk, Hodbod, petra08, Logan766, PavelDvoriak, kazkarr, zemk05, kleniive, stos02, potatocz, kseniakon, Asya96, kaspartomas, jcurik, JanKlac, jakubkastner, dust02, Arkatos1, braj08, chosebenes, dusv03, neho02, nikaye, ridvlu, rinamoon, sarrka, xhaj06 (xkahj06)
+- **Tier 3 - L'Laggards**: novj35, ondv03, pina01, p31r, matyasfrank, adamhospodka, AdamReznicek, kudp02, 
+- **Tier 4 - Frozen in Time**: hoan01, bust01, bala00, hajd05, kopp05, vase03
+
 
 
 
