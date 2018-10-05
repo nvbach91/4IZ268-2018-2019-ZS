@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="img">
+            <img src="https://picsum.photos/1000/300" alt="">
+        </div>
+        <div class="text">
+            Nějakej textík
+        </div>
+    </div>
+
+    <style>
+        .container {
+            display: flex;
+            background-color: #000;
+            color: #fff;
+            font-family: sans-serif;
+            flex-direction: column
+        }
+
+        @media only screen and (min-width: 600px) {
+            .container {
+                flex-direction: row
+            }
+        }
+    </style>
+</body>
+
+</html>
