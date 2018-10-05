@@ -12,7 +12,7 @@ A repository for laboratories of subject 4IZ268, Fall Semester 2018/2019.
 
 
 
-### Master Joda
+### Master Yoda
 Nguyen Viet Bach, email: [nguv03@vse.cz](mailto:nguv03@vse.cz)
 
 
