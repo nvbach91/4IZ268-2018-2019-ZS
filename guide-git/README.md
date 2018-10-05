@@ -51,7 +51,10 @@ Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](
 8. Já se na to pak podívám a schválím, 
     - tj. já udělám **review** a **merge** tvé **branch**e na **master branch** a do minuty se to projeví na webu.
 9. Zkontroluješ si svůj nový web a budeš šťastný. (Odkaz na tvůj web ti sdělím na cvičení)
-    - odkaz na tv;j web by měl být **`https://fcp.vse.cz/4IZ268/2018-2019-ZS/www/{XNAME}/`**, místo **`{XNAME}`** dáš svůj xname.
+    - odkaz na tvůj web by měl být **`https://fcp.vse.cz/4IZ268/{YYYY}-{YYYY}-{SS}/www/{XNAME}/`**
+        - místo **`{XNAME}`** dáš svůj **`xname`**,
+        - místo **`{YYYY}-{YYYY}`** dáš aktuální akademický rok, např. **`2018-2018`**,
+        - místo **`{SS}`** dáš **`ZS`** nebo **`LS`**.
 
 
 

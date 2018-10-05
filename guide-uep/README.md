@@ -10,7 +10,7 @@ Tento návod Ti pomůže s nastavením vývojového prostředí VS Code + Git v 
 3. Vytvoř si odkaz na soubor **`D:\Users\{XNAME}\Programs\vscode\Code.exe`** a dej ho na plochu.
 4. Otevři VS Code, klikni na **File > Preferences > Settings**.
 5. Klikni na ... vpravo nahoře a vyber **Open settings.json**.
-6. V pravé části vlož následující konfigurační kód a ulož to. Tohle je kvůli propojení Gitu s VS Code.
+6. V pravé části vlož následující konfigurační kód a ulož to. Tohle je kvůli propojení Gitu s VS Code. **POZOR: používej dvojitá zpětná lomítka**.
 ```js
 {
     "terminal.integrated.shell.windows": "D:\\Programy\\GIT\\bin\\bash.exe",
@@ -24,7 +24,7 @@ Tento návod Ti pomůže s nastavením vývojového prostředí VS Code + Git v 
 
 #### Poznámky: 
 1. Pokud používáš vlastní PC, stáhni si normální instalačku VSCode z [https://code.visualstudio.com/download](https://code.visualstudio.com/download).
-2. Pokud používáš vlastní PC, stáhni si instalačku Git z [https://git-scm.com/downloads](https://git-scm.com/downloads) a nainstaluješ Git někam na disk C:, a pak je potřeba v tom nastavení nahradit odpovídajícími cestami k těmto souborům takto.
+2. Pokud používáš vlastní PC, stáhni si instalačku Git z [https://git-scm.com/downloads](https://git-scm.com/downloads) a nainstaluješ Git někam na disk C:, a pak je potřeba v tom nastavení nahradit odpovídajícími cestami k těmto souborům takto. **POZOR: používej dvojitá zpětná lomítka**.
 ```js
 {
     "terminal.integrated.shell.windows": "C:\\cesta\\ke\\slozce\\bin\\bash.exe",
