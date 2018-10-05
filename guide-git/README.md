@@ -11,7 +11,7 @@ Tento návod Ti pomůže s použitím Gitu během předmětu 4IZ268. Hodně št�
     - tj. otevřeš tuto složku, podržíš SHIFT, klikneš někam do prázdna pravou myškou a vybereš **Příkazové okno** nebo **PowerShell**. Tahle finta je hodně užitečná.
 4. **Naklonuj** si tento repozitář, 
     - tj. spustíš příkaz **`git clone https://{XXXX}@github.com/nvbach91/4IZ268-{YYYY}-{YYYY}-{SS}.git`**, přitom: 
-        - nahradíš **`{XXXX}`** svým **username** na github, např. **`nvbach91`**,
+        - nahradíš **`{XXXX}`** svým **username** na github, např. **`nvbach91`**. (POZOR: ty složené závorky jdou taky pryč!)
         - nahradíš **`{YYYY}-{YYYY}`** aktuálními roky, např. **`2018-2019`**,
         - nahradíš **`{SS}`** buď **`ZS`** nebo **`LS`**,
         - tedy celkem např. **`git clone https://nvbach91@github.com/nvbach91/4IZ268-2018-2019-ZS.git`**,
@@ -49,6 +49,7 @@ Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](
 8. Já se na to pak podívám a schválím, 
     - tj. já udělám **review** a **merge** tvé **branch**e na **master branch** a do minuty se to projeví na webu.
 9. Zkontroluješ si svůj nový web a budeš šťastný. (Odkaz na tvůj web ti sdělím na cvičení)
+    - odkaz na tv;j web by měl být **`https://fcp.vse.cz/4IZ268/2018-2019-ZS/www/{XNAME}/`**, místo **`{XNAME}`** dáš svůj xname.
 
 
 
