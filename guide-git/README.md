@@ -6,6 +6,7 @@ Tento návod Ti pomůže s použitím Gitu během předmětu 4IZ268. Hodně št�
 ### Setup, Ready, Go!
 1. Nainstaluj si Git v počítači, pokud ho ještě nemáš -- [https://git-scm.com/downloads](https://git-scm.com/downloads), všude dávej Next.
     - Potom si možná budeš muset přidat cestu k git.exe do PATH pro použití v **`příkazovém okně`**.
+    - **Pokud používáš školní PC**, postupuj s instalací Gitu podle [https://github.com/nvbach91/4IZ268-2018-2019-ZS/tree/master/guide-uep](https://github.com/nvbach91/4IZ268-2018-2019-ZS/tree/master/guide-git)
 2. Registruj se na GitHub, pokud ještě nemáš účet -- [https://github.com/join](https://github.com/join). Zvol si nějaké jednoduché a dobře zapamatovatelné uživatelské jméno.
 3. Otevři příkazové okno CMD nebo PowerShell v domovském adresáři, např. v **`C:\Users\User\Projects\`**, 
     - tj. otevřeš tuto složku, podržíš SHIFT, klikneš někam do prázdna pravou myškou a vybereš **Příkazové okno** nebo **PowerShell**. Tahle finta je hodně užitečná.
@@ -16,8 +17,9 @@ Tento návod Ti pomůže s použitím Gitu během předmětu 4IZ268. Hodně št�
         - nahradíš **`{SS}`** buď **`ZS`** nebo **`LS`**,
         - tedy celkem např. **`git clone https://nvbach91@github.com/nvbach91/4IZ268-2018-2019-ZS.git`**,
         - takhle dostaneš adresář s názvem **`4IZ268-2018-2019-ZS`**.
-5. **Přesuň se** do tohoto adresáře, 
-    - tj. spustíš příkaz **`cd 4IZ268-2018-2019-ZS`**.
+5. **Otevři tento adresář ve VS Code**, 
+    - tj. vybereš **File > Open Folder** a najdeš si složku **`C:\Users\User\Projects\4IZ268-2018-2019-ZS`**.
+    - otevři si ve VS COde příkazový řádek pomocá kláves **Ctrl + `** (to tlačítko je pod Esc a vedle jedničky).
 6. Vytvořiš si **vlastní branch**, 
     - tj. spustíš příkaz **`git checkout -b student-{xname}`** (nahraď **`{xname}`** svým **xname**).
 7. Zveřejníš tuto **branch** a přitom ji nastavíš jako **upstream** u sebe, 
