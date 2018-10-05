@@ -53,8 +53,15 @@ Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](
 9. Zkontroluješ si svůj nový web a budeš šťastný. (Odkaz na tvůj web ti sdělím na cvičení)
     - odkaz na tvůj web by měl být **`https://fcp.vse.cz/4IZ268/{YYYY}-{YYYY}-{SS}/www/{XNAME}/`**
         - místo **`{XNAME}`** dáš svůj **`xname`**,
-        - místo **`{YYYY}-{YYYY}`** dáš aktuální akademický rok, např. **`2018-2018`**,
+        - místo **`{YYYY}-{YYYY}`** dáš aktuální akademický rok, např. **`2018-2019`**,
         - místo **`{SS}`** dáš **`ZS`** nebo **`LS`**.
+
+
+
+### Zjednodušené gitování ve VS Code
+1. **Změny** uvidíš přímo v IDE když klikneš na levou záložku **Source Control**.
+2. Jestli chceš commitnout tak tady můžeš napsat **commit message** do horního políčka a klikneš na ✔.
+3. A posledním krokem je **Push**. To vybereš v menu. Zadáš **heslo** a je to.
 
 
 
@@ -62,12 +69,13 @@ Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](
 Většinou budeš chtít synchronizovat svůj projekt, aby byl aktuální s tím, co je na GitHubu. V našem případě to není třeba, jelikož pracuješ pouze v rámci své složky/**branch**e, a to vždy sám. Ale pokud bylo potřeba, tak jsou na to následující příkazy.
 - Aktualizace celého projektu nanečisto - **``git fetch``**. Tím se dozvíš, jak daleko jsou na tom tví spolužáci.
 - Zjištění názvu **branch**e, na které právě jsi - **`git branch`**
-- Aktualizace **branch**e, na které právě jsi - **`git pull`**
-- Přechod na jinou existující **branch** - **`git checkout {BRANCH-NAME}`**, místo **{BRANCH-NAME}** dáš název **branch**e
-- Aktualizace jiné **branch**e - **`git checkout {BRANCH-NAME}`**, a pak **`git pull`**
-- Vytváření nové **branch**e a přechod na ni - **`git checkout -b {BRANCH-NAME}`** // tohle už jsi jednou dělal při prvním nastavení
+- Odstranění **branch**e - **`git branch -d {BRANCH-NAME}`**, místo **{BRANCH-NAME}** dáš název **branch**e.
+- Aktualizace **branch**e, na které právě jsi - **`git pull`**.
+- Přechod na jinou existující **branch** - **`git checkout {BRANCH-NAME}`**, místo **{BRANCH-NAME}** dáš název **branch**e.
+- Aktualizace jiné **branch**e - **`git checkout {BRANCH-NAME}`**, a pak **`git pull`**.
+- Vytváření nové **branch**e a přechod na ni - **`git checkout -b {BRANCH-NAME}`** // tohle už jsi jednou dělal při prvním nastavení.
 
 
 
 ### Poznámky
-- Nemanipuluj se složkami svých spolužáků, jinak ti Pull Request neprojde :)
+- Nemanipuluj se složkami tvých spolužáků, jinak ti Pull Request neprojde :)
