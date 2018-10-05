@@ -26,7 +26,7 @@ Nguyen Viet Bach, email: [nguv03@vse.cz](mailto:nguv03@vse.cz)
 - **Tier 1 - Innovators**: lukazko, voraczech, kukd01, SebastianDix, dsejna, JiriPol, PavelHanzl, havlikmar, alex6krasnov, janf04, pavelbarton
 - **Tier 2 - Major Pops**: ujhelluk, Hodbod, petra08, Logan766, PavelDvoriak, kazkarr, zemk05, kleniive, stos02, potatocz, kseniakon, Asya96, kaspartomas, jcurik, JanKlac, jakubkastner, dust02, Arkatos1, braj08, chosebenes, dusv03, neho02, nikaye, ridvlu, rinamoon, sarrka, xhaj06
 - **Tier 3 - L'Laggards**: novj35, ondv03, pina01, p31r, matyasfrank, adamhospodka, AdamReznicek, kudp02, netj00,
-- **Tier 4 - In Oblivion**: hoan01, bust01, bala00, hajd05, kopp05, vase03
+- **Tier 4 - In Oblivion**: hoan01, bust01, bala00, hajd05, kopp05, vase03, benr02
 
 
 
