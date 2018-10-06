@@ -23,16 +23,15 @@ Nguyen Viet Bach, email: [nguv03@vse.cz](mailto:nguv03@vse.cz)
 
 
 ### Ranking
-- **Tier 1 - Innovators**: lukazko, voraczech, kukd01, SebastianDix, dsejna, JiriPol, PavelHanzl, havlikmar, alex6krasnov, janf04, pavelbarton
-- **Tier 2 - Major Pops**: ujhelluk, Hodbod, petra08, Logan766, PavelDvoriak, kazkarr, zemk05, kleniive, stos02, potatocz, kseniakon, Asya96, kaspartomas, jcurik, JanKlac, jakubkastner, dust02, Arkatos1, braj08, chosebenes, dusv03, neho02, nikaye, ridvlu, rinamoon, sarrka, xhaj06
-- **Tier 3 - L'Laggards**: novj35, ondv03, pina01, p31r, matyasfrank, adamhospodka, AdamReznicek, kudp02, netj00,
-- **Tier 4 - In Oblivion**: hoan01, bust01, bala00, hajd05, kopp05, vase03, benr02
+- **Tier 1 - Innovators**: lukazko, kleniive, voraczech, kukd01, SebastianDix, dsejna, JiriPol, PavelHanzl, havlikmar, alex6krasnov, janf04, pavelbarton
+- **Tier 2 - Major Pops**: Arkatos1, ujhelluk, petra08, Logan766, Hodbod, PavelDvoriak, kazkarr, zemk05, stos02, potatocz, kseniakon, Asya96, kaspartomas, jcurik, JanKlac, jakubkastner, dust02, braj08, chosebenes, dusv03, neho02, nikaye, ridvlu, rinamoon, sarrka, xhaj06, AdamReznicek, netj00
+- **Tier 3 - L'Laggards**: novj35, ondv03, pina01, p31r, matyasfrank, adamhospodka, kudp02, alina-bal
+- **Tier 4 - In Oblivion**: hoan01, bust01, hajd05, kopp05, vase03, benr02
 
 
 
-### Czech Guides
-[Nastavení vývojového prostředí v počítačových učebnách VŠE](https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep)
-
-[Použití verzovacího systému Git pro předmět 4IZ268](https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-git)
+### Guides... in Czech
+- [Nastavení vývojového prostředí v počítačových učebnách VŠE](https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep)
+- [Použití verzovacího systému Git pro předmět 4IZ268](https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-git)
 
 
