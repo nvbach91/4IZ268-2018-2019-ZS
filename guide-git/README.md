@@ -40,29 +40,34 @@ Tento návod Ti pomůže s použitím Gitu během předmětu 4IZ268. Hodně št�
     - tj. spustíš příkaz **`git add -A`**.
 5. Potvrdíš tyto změny,
     - tj. spustíš příkaz **`git commit -m "{MESSAGE}"`**. Tady místo **`{MESSAGE}`** napíšeš krátký popis těch změn nebo jejich účel.
+    - POZOR: do zprávičky piš vždy něco smysluplného
 6. Pošleš tyto změny na repozitář,
     - tj. spustíš příkaz **`git push`**. Zadáš heslo a tvůj kód je v cloudu na tvé **branch**i.
-7. **Pokud chceš zveřejnit svoje změny na produkci (Pull Request), pokračuj dál, jinak můžeš tady skončit.**
-8. Teď mě požádáš o schválení tvých změn na produkci,
-    - tj. jdeš na GitHub repozitář pro tento projekt, najdeš si svou **branch** a uděláš **Pull Request**.
-9. Já se na to pak podívám a schválím,
-    - tj. já udělám **review**,
-        - v případě **approve** udělám **merge** tvé **branch**e na **master branch** a do minuty se to projeví na webu,
-        - v případě **changes requested** budeš muset doladit svůj Pull Request tím, že uděláš opravy, a pak zase commit a push.
-10. Zkontroluješ si svůj nový web a budeš šťastný. (Odkaz na tvůj web ti sdělím na cvičení)
-    - odkaz na tvůj web by měl být **`https://fcp.vse.cz/4IZ268/{YYYY}-{YYYY}-{SS}/www/{xname}/`**
-        - místo **`{xname}`** dáš svůj **xname**,
-        - místo **`{YYYY}-{YYYY}`** dáš aktuální akademický rok, např. **`2018-2019`**,
-        - místo **`{SS}`** dáš **`ZS`** nebo **`LS`**.
 
 
 
 ### Zjednodušené gitování ve VS Code
 Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](https://code.visualstudio.com/download), udělal jsi dobře! **IDE** ti totiž bude ukazovat změny v kódu a také se postará o Git příkazy na dva kliky. Viz [https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep](https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep).
 1. **Změny** uvidíš přímo v IDE když klikneš na levou záložku **Source Control** nebo **Ctrl + Shift + G**.
-2. Jestli chceš commitnout tak tady můžeš napsat **commit message** do horního políčka a klikneš na ✔.
+2. Jestli chceš udělat **commit**, tak tady můžeš napsat **commit message** do horního políčka a klikneš na ✔.
+    - POZOR: do zprávičky piš vždy něco smysluplného
 3. A posledním krokem je **Push**. To vybereš vedle ✔ v menu. Zadáš **heslo** a je to.
-4. Teď můžeš pokračovat krokem 7 v předchozí sekci (tj. udělat Pull Request).
+
+
+
+### Pull Requesty
+Pokud jsi spokojený po několika **commit**ech se svými změnami a chceš je zveřejnit na produkci (tj. na **master branch**), musíš udělat tzv. **Pull Request**, tj. mě požádáš o schválení tvých změn na produkci.
+1. Jdeš na GitHub repozitář, najdeš si svou **branch** a uděláš **Pull Request**.
+    - tlačítko na **Pull Request** je vedle tvé **branch**e tady **`https://github.com/nvbach91/4IZ268-2018-2019-ZS/branches/all`**
+2. Já dostanu notifikaci, pak se na to podívám a schválím,
+    - tj. já udělám **review**,
+        - v případě **approve** udělám **merge** tvé **branch**e na **master branch** a do minuty se to projeví na webu,
+        - v případě **changes requested** budeš muset doladit svůj **Pull Request** tím, že uděláš opravy, a pak zase **commit** a **push**.
+3. Zkontroluješ si svůj nový web a budeš šťastný. (Odkaz na tvůj web ti sdělím na cvičení)
+    - odkaz na tvůj web by měl být **`https://fcp.vse.cz/4IZ268/{YYYY}-{YYYY}-{SS}/www/{xname}/`**
+        - místo **`{xname}`** dáš svůj **xname**,
+        - místo **`{YYYY}-{YYYY}`** dáš aktuální akademický rok, např. **`2018-2019`**,
+        - místo **`{SS}`** dáš **`ZS`** nebo **`LS`**.
 
 
 
@@ -83,16 +88,17 @@ Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](
 
 
 ### Synchronizace s master branch
-Možná budeš chtít synchronizovat svou **branch** tak, aby obsahovala to, co obsahuje master branch na GitHubu. V našem případě to není třeba, jelikož pracuješ pouze v rámci své složky/**branch**e, a to vždy samostatně. Ale pokud bylo potřeba, tak jsou na to následující příkazy.
-- **`git checkout {BRANCH-NAME}`**, místo **`{BRANCH-NAME}`** dáš název tvé branche
-- **`git pull origin master`**
-- **`git push`**
+Možná budeš chtít synchronizovat svou **branch** tak, aby obsahovala to, co obsahuje master branch na GitHubu. V našem případě to není třeba, jelikož pracuješ pouze v rámci své složky/**branch**e, a to vždy samostatně. Ale pokud bylo potřeba, tak je na to následující sekvence příkazů. **POZOR: tohle nejde vrátit zpět!**
+1. **`git checkout {BRANCH-NAME}`**, místo **`{BRANCH-NAME}`** dáš název tvé branche
+2. **`git pull origin master`**
+3. **`git push`**
 
 
 
 ### Poznámky
 - Budeš mít pouze jednu **branch** s názvem **`student-{xname}`**. Nevytvářej nové.
 - Nemanipuluj se **složkami**/**branch**i tvých spolužáků, jinak ti **Pull Request neprojde** :)
+- Veškeré kódy musíš naformátovat před **commit**em
 
 
 
