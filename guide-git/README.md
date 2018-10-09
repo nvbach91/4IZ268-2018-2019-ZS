@@ -77,6 +77,7 @@ Většinou budeš chtít synchronizovat svůj projekt, aby byl aktuální s tím
 
 ### Poznámky
 - Nemanipuluj se složkami tvých spolužáků, jinak ti Pull Request neprojde :)
+- Budeš mít pouze jednu branch s názvem **`student-{xname}`**. Nevytvářej nové.
 
 
 
