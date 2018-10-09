@@ -18,7 +18,7 @@ Tento návod Ti pomůže s použitím Gitu během předmětu 4IZ268. Hodně št�
         - tedy celkem např. **`git clone https://nvbach91@github.com/nvbach91/4IZ268-2018-2019-ZS.git`**,
         - takhle dostaneš adresář s názvem **`4IZ268-2018-2019-ZS`**.
 5. **Otevři tento adresář ve vývojovém prostředí**, 
-    - tj. vybereš **File > Open Folder** a najdeš si složku **`C:\Users\User\Projects\4IZ268-2018-2019-ZS`**.
+    - tj. vybereš **File > Open Folder** a najdeš si složku **`C:\Users\User\Projects\4IZ268-{YYYY}-{YYYY}-{SS}`**.
     - otevři si integrovaný příkazový řádek pro zadávání příkazů. (Pro VS Code je to pomocí kláves **Ctrl + `** - zpětný apostrof aka. gravis - to tlačítko je pod Esc a vedle jedničky).
 6. Vytvořiš si **vlastní branch**, 
     - tj. spustíš příkaz **`git checkout -b student-{xname}`** (nahraď **`{xname}`** svým **xname**).
@@ -57,9 +57,8 @@ Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](
 
 ### Pull Requesty
 Pokud jsi spokojený po několika **commit**ech se svými změnami a chceš je zveřejnit na produkci (tj. na **master branch**), musíš udělat tzv. **Pull Request**, tj. mě požádáš o schválení tvých změn na produkci.
-1. Jdeš na GitHub repozitář, najdeš si svou **branch** a uděláš **Pull Request**.
-    - tlačítko na **Pull Request** je vedle tvé **branch**e tady **`https://github.com/nvbach91/4IZ268-2018-2019-ZS/branches/all`**
-2. Já dostanu notifikaci, pak se na to podívám a schválím,
+1. Jdeš na GitHub repozitář, najdeš si svou **branch** a uděláš **Pull Request** na pár kliků.
+2. Já dostanu notifikaci, pak se na to podívám a případně schválím,
     - tj. já udělám **review**,
         - v případě **approve** udělám **merge** tvé **branch**e na **master branch** a do minuty se to projeví na webu,
         - v případě **changes requested** budeš muset doladit svůj **Pull Request** tím, že uděláš opravy, a pak zase **commit** a **push**.
