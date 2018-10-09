@@ -46,10 +46,12 @@ Tento návod Ti pomůže s použitím Gitu během předmětu 4IZ268. Hodně št�
 8. Teď mě požádáš o schválení tvých změn na produkci,
     - tj. jdeš na GitHub repozitář pro tento projekt, najdeš si svou **branch** a uděláš **Pull Request**.
 9. Já se na to pak podívám a schválím,
-    - tj. já udělám **review** a **merge** tvé **branch**e na **master branch** a do minuty se to projeví na webu.
+    - tj. já udělám **review**,
+        - v případě **approve** udělám **merge** tvé **branch**e na **master branch** a do minuty se to projeví na webu,
+        - v případě **changes requested** budeš muset doladit svůj Pull Request tím, že uděláš opravy, a pak zase commit a push.
 10. Zkontroluješ si svůj nový web a budeš šťastný. (Odkaz na tvůj web ti sdělím na cvičení)
-    - odkaz na tvůj web by měl být **`https://fcp.vse.cz/4IZ268/{YYYY}-{YYYY}-{SS}/www/{XNAME}/`**
-        - místo **`{XNAME}`** dáš svůj **xname**,
+    - odkaz na tvůj web by měl být **`https://fcp.vse.cz/4IZ268/{YYYY}-{YYYY}-{SS}/www/{xname}/`**
+        - místo **`{xname}`** dáš svůj **xname**,
         - místo **`{YYYY}-{YYYY}`** dáš aktuální akademický rok, např. **`2018-2019`**,
         - místo **`{SS}`** dáš **`ZS`** nebo **`LS`**.
 
@@ -60,24 +62,37 @@ Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](
 1. **Změny** uvidíš přímo v IDE když klikneš na levou záložku **Source Control** nebo **Ctrl + Shift + G**.
 2. Jestli chceš commitnout tak tady můžeš napsat **commit message** do horního políčka a klikneš na ✔.
 3. A posledním krokem je **Push**. To vybereš vedle ✔ v menu. Zadáš **heslo** a je to.
+4. Teď můžeš pokračovat krokem 7 v předchozí sekci (tj. udělat Pull Request).
 
 
 
 ### Další postupy v gitu
-Většinou budeš chtít synchronizovat svůj projekt, aby byl aktuální s tím, co je na GitHubu. V našem případě to není třeba, jelikož pracuješ pouze v rámci své složky/**branch**e, a to vždy samostatně. Ale pokud bylo potřeba, tak jsou na to následující příkazy.
-- Aktualizace celého projektu nanečisto - **``git fetch``**. Tím se dozvíš, jak daleko jsou na tom tví spolužáci.
-- Zjištění názvu **branch**e, na které právě jsi - **`git branch`**.
-- Odstranění **branch**e - **`git branch -d {BRANCH-NAME}`**, místo **`{BRANCH-NAME}`** dáš název **branch**e.
-- Aktualizace **branch**e, na které právě jsi - **`git pull`**.
-- Přechod na jinou existující **branch** - **`git checkout {BRANCH-NAME}`**, místo **`{BRANCH-NAME}`** dáš název **branch**e.
-- Aktualizace jiné **branch**e - **`git checkout {BRANCH-NAME}`**, a pak **`git pull`**.
-- Vytváření nové **branch**e a přechod na ni - **`git checkout -b {BRANCH-NAME}`** // tohle už jsi jednou dělal při prvním nastavení.
+- Zjištění názvu **branch**e, na které právě jsi 
+    - **`git branch`**.
+- Přechod na jinou existující **branch** 
+    - **`git checkout {BRANCH-NAME}`**, místo **`{BRANCH-NAME}`** dáš název **branch**e.
+- Odstranění **branch**e lokálně
+    - **`git branch -d {BRANCH-NAME}`**, místo **`{BRANCH-NAME}`** dáš název **branch**e.
+- Aktualizace **branch**e, na které právě jsi 
+    - **`git pull`**.
+- Aktualizace celého projektu nanečisto 
+    - **``git fetch``**.
+- Vytváření nové **branch**e a přechod na ni 
+    - **`git checkout -b {BRANCH-NAME}`** // tohle už jsi jednou dělal při prvnotním nastavení.
+
+
+
+### Synchronizace s master branch
+Možná budeš chtít synchronizovat svou **branch** tak, aby obsahovala to, co obsahuje master branch na GitHubu. V našem případě to není třeba, jelikož pracuješ pouze v rámci své složky/**branch**e, a to vždy samostatně. Ale pokud bylo potřeba, tak jsou na to následující příkazy.
+- **`git checkout {BRANCH-NAME}`**, místo **`{BRANCH-NAME}`** dáš název tvé branche
+- **`git pull origin master`**
+- **`git push`**
 
 
 
 ### Poznámky
-- Nemanipuluj se složkami tvých spolužáků, jinak ti Pull Request neprojde :)
-- Budeš mít pouze jednu branch s názvem **`student-{xname}`**. Nevytvářej nové.
+- Budeš mít pouze jednu **branch** s názvem **`student-{xname}`**. Nevytvářej nové.
+- Nemanipuluj se **složkami**/**branch**i tvých spolužáků, jinak ti **Pull Request neprojde** :)
 
 
 
