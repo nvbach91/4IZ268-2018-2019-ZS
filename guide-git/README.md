@@ -47,7 +47,7 @@ Tento návod Ti pomůže s použitím Gitu během předmětu 4IZ268. Hodně št�
 
 
 ### Zjednodušené gitování ve VS Code
-Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](https://code.visualstudio.com/download), udělal jsi dobře! **IDE** ti totiž bude ukazovat změny v kódu a také se postará o Git příkazy na dva kliky. Viz [https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep](https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep).
+Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](https://code.visualstudio.com/download), udělal jsi dobře! **IDE** ti totiž bude ukazovat změny v kódu a také se postará o Git příkazy na dva kliky. Tj. nemusíš dělat ty příkazy nahoře. Nastavení VS Code viz [https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep].(https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep).
 1. **Změny** uvidíš přímo v IDE když klikneš na levou záložku **Source Control** nebo **Ctrl + Shift + G**.
 2. Jestli chceš udělat **commit**, tak tady můžeš napsat **commit message** do horního políčka a klikneš na ✔.
     - POZOR: do zprávičky piš vždy něco smysluplného
@@ -56,7 +56,7 @@ Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](
 
 
 ### Pull Requesty
-Pokud jsi spokojený po několika **commit**ech se svými změnami a chceš je zveřejnit na produkci (tj. na **master branch**), musíš udělat tzv. **Pull Request**, tj. mě požádáš o schválení tvých změn na produkci.
+Pokud jsi spokojený se svými změnami (po několika **commit**ech + push) a chceš je zveřejnit na produkci (tj. na **master branch**), musíš udělat tzv. **Pull Request**, tj. mě požádáš o schválení tvých změn na produkci.
 1. Jdeš na GitHub repozitář, najdeš si svou **branch** a uděláš **Pull Request** na pár kliků.
 2. Já dostanu notifikaci, pak se na to podívám a případně schválím,
     - tj. já udělám **review**,
