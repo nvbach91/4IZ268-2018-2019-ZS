@@ -1,0 +1,23 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    border: solid red;
+    border-radius: 20px;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+
+h1:hover {
+    color: tomato;
+    text-align: center;
+    border: solid;
+    border-radius: 20px;
+    background-color: navy;
+    }
