@@ -1,3 +1,8 @@
 * {
-    border-spacing: 0ch;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+body, ul {
+    margin: 0;
+    padding: 0;
 }
