@@ -1,0 +1,26 @@
+.button{
+    background-color: brown;
+    color: white;
+    margin: 50px;
+    text-align: center;
+    text-shadow: 10cm;
+
+}
+.box{
+    height: 300px;
+    width: 500px;
+    background-color: aqua;
+    margin: 50px;
+    float: right;
+}
+.box1{
+    height: 300px;
+    width: 500px;
+    background-color: aqua;
+    margin: 50px;
+    float: right;
+}
+.nadpisy{
+    color: rebeccapurple;
+    font-size: 25px
+}
