@@ -1,0 +1,127 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+.div02 {
+    color: rgb(255, 0, 0);
+}
+
+.div03 {
+    color: rgb(0, 255, 0);
+}
+
+.div04 {
+    color: rgb(0, 0, 255);
+}
+
+.div05 {
+    font-size: 18px;
+}
+
+.div06 {
+    font-size: 24px;
+    font-style: italic;
+}
+
+.div07 {
+    background-color: brown;
+    color: rgb(255, 255, 255);
+}
+
+.paragraph01 {
+    line-height: 32px;
+    text-align: center
+}
+
+.paragraph02 {
+    text-transform: uppercase;
+    text-align: justify;
+}
+
+.div08 {
+    width: 400px;
+    height: 300px;
+    border: 1px solid purple;
+    padding: 30px;
+}
+
+.div09 {
+    width: 500px;
+    height: 200px;
+    background-color: red;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.div10 {
+    display: none;
+}
+
+.div11 {
+    width: 100%;
+    height: 150px;
+    background-color: blue;
+    padding: 50px;
+    border: 10px solid yellow;
+}
+
+.div12 {
+    color: white;
+    column-gap: 100px;
+}
+
+.div13 {
+    width: 200px;
+    height: 500px;
+    background-color: green;
+    opacity: 0,5;
+}
+
+.div14 {
+    width: 400px;
+    height: 300px;
+    background-color: lightblue;
+    position: relative;
+}
+
+.div15 {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    background-color: pink;
+    top: 50px;
+    right: 10px;
+    font-size: 5px;
+}
+
+.btn01 {
+    width: 300px;
+    height: 100px;
+}
+
+.btn01:active {
+    background-color: skyblue;
+    font-size: 30px;
+}
+
+.btn02 {
+    width: 200px;
+    height: 50px;
+}
+
+.btn02:hover {
+    background-color: brown;
+}
+
+.div16 {
+    width: 200px;
+    height: 500px;
+    background-color: darkcyan;
+    margin-top:  200px;
+}
+
+.div16:hover {
+    cursor: -webkit-grab;
+}
