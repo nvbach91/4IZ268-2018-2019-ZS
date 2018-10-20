@@ -1,0 +1,126 @@
+*
+   
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+
+    }
+.red{
+    color: red;
+} 
+
+.green{
+    color: rgb(0, 255, 0)
+} 
+
+.blue_bold{
+    color: #000ba7;
+    font-weight: bold
+} 
+
+.big{
+    font-size: 18px;
+} 
+.big_italian{
+    font-size: 24px;
+    font-style: italic
+}       
+
+.brown-ish{
+    color: white;
+    background-color: brown
+} 
+
+.center{
+    text-align: center;
+    line-height: 32px;
+}
+
+.upper{
+    text-transform: uppercase
+}
+
+.box{
+    width: 400px;
+    height: 300px;
+    padding: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: purple;
+}
+
+.box2{
+    width: 500px;
+    height: 200px;
+    background-color: rgb(136, 0, 0);
+    margin: 100px;    
+}
+
+.gone {
+    visibility: hidden    
+}
+
+.gone2 {
+    visibility: hidden;
+    gap: 1;   
+}
+
+.box3{
+    color: white;
+    width: 500px;
+    height: 200px;
+    background-color: rgb(133, 133, 133);
+}
+
+.box4{
+    width: 400px;
+    height: 400px;
+    background-color: lightblue
+}
+
+.box5{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 107, 235);
+    font-size: 12px;
+    margin-left: 315px;
+    margin-top: 50px;
+}
+
+.button1{
+    width: 300px;
+    height: 100px;    
+    background-color: rgb(218, 218, 218);
+    border:1px solid #566963;
+    color:black;
+    padding: 15px 32px;
+}
+
+.button1:active {
+	position:relative;
+    color: blue;
+}
+
+.button2{
+    width: 200px;
+    height: 50px;    
+    background-color: rgb(218, 218, 218);
+    border:1px solid #566963;
+    color:black;
+    padding: 15px 32px;
+}
+
+.button2:hover{
+    background-color: brown
+}
+
+.last{
+    width: 200px;
+    height: 500px;
+    background-color: #00627a;
+    margin-top: 200px;
+}
+
+.last:hover{
+    cursor: pointer;
+}
