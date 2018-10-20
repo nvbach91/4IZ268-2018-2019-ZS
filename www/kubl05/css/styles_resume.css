@@ -1,0 +1,74 @@
+body {
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+main {
+    max-width: 500px;
+    margin: auto;
+}
+
+h1 {
+    border: solid;
+    border-color: black;
+    padding: 10px;
+    width: 200px;   
+    margin: auto;
+}
+
+h1:hover {
+    color: white;
+    background-color: black;
+}
+
+p {
+    width: 500px;
+    text-align: justify;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+#about {
+    margin-bottom: 60px;
+}
+
+#career {
+    margin-bottom: 30px;
+}
+
+#photo {
+    margin-top: 30px;
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 30px;
+}
+
+#book {
+    margin-top: 10px;
+}
+
+#book:hover {
+    -webkit-filter: blur(2px);
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+hr {
+    width: 70%;
+    color: black;
+    border-style: solid;
+}
+
+#amazon-link {
+    text-align: center;
+}
