@@ -1,5 +1,6 @@
 * {
     font-family: arial;
+    box-sizing: border-box;
 }
 
 #box-02 {
@@ -43,7 +44,7 @@
     width: 400px;
     height: 300px;
     padding: 30px;
-    border: purple solid;
+    border: purple solid 1px;
 }
 
 #box-09 {
@@ -117,6 +118,6 @@
     background-color: brown;
 }
 
-#btn-01:focus {
+#btn-01:active {
     color: blue;
 }
