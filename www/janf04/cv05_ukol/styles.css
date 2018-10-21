@@ -1,5 +1,6 @@
 * {
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 .redText {
@@ -12,6 +13,7 @@
 
 .blueText {
     color: #0000FF;
+    font-weight: bold;
 }
 
 .size01 {
@@ -72,24 +74,27 @@
 }
 
 .twoBoxes {
-    height: 400px;
-    width: 300px;
+    height: 300px;
+    width: 400px;
     background-color: lightblue;
+    position: relative;
 }
 
 .twoBoxes .box05 {
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
     background-color: pink;
     position: absolute;
+    top: 50px;
+    right: 10px;
 }
 
 #button1 {
     height: 100px;
     width: 300px;
 }
-#button1:focus {
-    background-color: blue;
+#button1:active {
+    color: blue;
 }
 
 #button2 {
@@ -101,11 +106,9 @@
 }
 
 .box06 {
-    height: 200px;
-    width: 500px;
-    background-color: blue;
-}
-.box06:hover {
+    height: 500px;
+    width: 200px;
+    background-color: #00aaff;
     margin-top: 200px;
     cursor: pointer;
 }
