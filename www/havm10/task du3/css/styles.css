@@ -109,11 +109,11 @@ body {
     height: 100px;
 }
 
-#button01:hover {
+#button01:active{
     color: blue;
 }
 
-#button01 {
+#button02 {
     width: 200px;
     height: 50px;
 }
