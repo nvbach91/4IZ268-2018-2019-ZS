@@ -3,15 +3,15 @@
     box-sizing: border-box;
 }
 .div02 {
-    color: rgb(255, 0, 0);
+    color: red;
 }
 
 .div03 {
-    color: rgb(0, 255, 0);
+    color: #00FF00;
 }
 
 .div04 {
-    color: rgb(0, 0, 255);
+    color: blue;
 }
 
 .div05 {
@@ -25,7 +25,7 @@
 
 .div07 {
     background-color: brown;
-    color: rgb(255, 255, 255);
+    color: white;
 }
 
 .paragraph01 {
@@ -68,15 +68,14 @@
 }
 
 .div12 {
-    color: white;
-    column-gap: 100px;
+    visibility: hidden;
 }
 
 .div13 {
     width: 200px;
     height: 500px;
     background-color: green;
-    opacity: 0,5;
+    opacity: 0.5;
 }
 
 .div14 {
@@ -120,8 +119,5 @@
     height: 500px;
     background-color: darkcyan;
     margin-top:  200px;
-}
-
-.div16:hover {
-    cursor: -webkit-grab;
+    cursor: pointer;
 }
