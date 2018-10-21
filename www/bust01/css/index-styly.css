@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 30px;
+    font-family: monospace;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Arial;
+    background-color: grey;
+    background-color: rgb(red, green, blue);
+    text-align: left;
+    text-indent: 20px;
+}
+
+input[placeholder="TEL"] {
+    height: 50px
+}
+
+p.intro, div.intro {
+    width: 2000px;
+    text-align: center;
+}
+
+
+.container > .intro {
+    width: 100px;
+    text-align: right;
+}
+
+body {
+    background-image: url("https://www.priroda.cz/nahledy/p/priroda_chorvatsko_1-foto-740x479.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
+
+.box, .box-2, .box-3 {
+    text-align:justify;
+    height: 300px;
+    width: 300px;
+    background-color: red;
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom:100px;
+
+    margin:80px;
+
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom:100px;
+
+    border: 10px solid black;
+
+    box-sizing: border-box;
+
+    display: block;
+    /*visibility: hidden;*/
+}
+
+.rozcestnik {
+    text-align:justify; 
+    background-color: red;
+}
+
+.box-2 {
+    opacity:1;
+    position: fixed;
+    top: 200px;
+    right: 500px;
+    position: absolute;
+
+
+}
+
+.box-3 {
+    position: relative;
+    height: 900px;
+    width: 900px;
+    background-color: blue;
+}
+
+.box-4 {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background-color: green;
+    top: 200px;
+    right: 20px;
+}
+
+button:hover{
+    color: red;
+    background-color: green;
+}
+
+button:active {
+    color: blue;
+    background-color: orange;
+}

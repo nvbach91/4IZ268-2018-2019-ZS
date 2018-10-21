@@ -1,0 +1,104 @@
+* {
+    font-family: Calibri;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+
+ul {
+    list-style-position: outside;
+    list-style-image: url("https://i.nahraj.to/f/28E0.png");
+}
+
+li {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+li:hover {
+    cursor: pointer;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    background-color: white;
+    text-align:center;
+}
+
+nav {
+    height: 150px;
+    width: 250px;
+}
+
+
+table {
+    width: 1000px;
+    border-color: grey;
+    border-style: solid; 
+    border-width: 5px; 
+}
+
+.table-1
+{
+    width: 600px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+td {
+    width: 20%;
+    height: 50px;
+    text-align: left;
+    border-top-color:black;
+    border-top-style: solid;
+    border-top-width: 1px;
+}
+
+table.table-1 td {
+    width: 20%;
+    height: 50px;
+    font-size: 15px;
+    font-style: italic;
+    text-align: center;
+    border-top-width: 0px;  
+}
+
+th {
+    width: 10%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+    font-style: italic;
+    border-top-color:black;
+    border-top-style: double;
+    border-top-width: 1px;
+}
+
+main > div {
+    background-image: url("http://duffy.fedorapeople.org/art/f18/mashup/spericalcow11-1280x1024.png");
+    padding-left:30px;
+}
+
+body > div {
+    background-image: url("https://i.nahraj.to/f/28E1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.stars {
+    color: gold;
+    font-size: 40px;
+}
+
+span {
+    font-style: italic;
+}
+
+
+
+
+
