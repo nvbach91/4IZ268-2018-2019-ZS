@@ -212,3 +212,35 @@ footer {
 .social-facebook { background-image: url('https://image.flaticon.com/icons/svg/54/54997.svg'); }
 .social-twitter { background-image: url('https://www.iconsdb.com/icons/preview/black/twitter-4-xxl.png'); }
 .social-instagram { background-image: url('https://iconsplace.com/wp-content/uploads/_icons/000000/256/png/instagram-icon-256.png'); }
+
+@media screen and (max-width: 1024px) {
+    .product {
+        width: 33.33333%;
+    }
+    .product p {
+        min-height: 220px;
+    }
+}
+@media screen and (max-width: 840px) {
+    .product {
+        width: 50%;
+    }
+    .product p {
+        min-height: 220px;
+    }
+}
+@media screen and (max-width: 640px) {
+    .product {
+        float: none;
+        width: 100%;
+    }
+    .product p {
+        min-height: initial;
+    }
+    nav {
+        display: none;
+    }
+    .search {
+        margin-left: auto;
+    }
+}
