@@ -1,42 +1,62 @@
 * {
     box-sizing: border-box;
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Rajdhani',sans-serif;
 }
 body {
     padding: 10px;
     letter-spacing: 1px;
-    background-image: url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg");
-    background-image: url("https://media.gettyimages.com/photos/august-2018-germany-berlin-track-and-field-european-championships-in-picture-id1013737064");
+    background-image: url('background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Rajdhani:500',sans-serif;
+    font-family: 'Rajdhani',sans-serif;
     color:black;
-    text-shadow: 4px 4px 4px #aaa;
-    font-family: 'Rancho';
 }
 h1{
-    font-family: 'Rancho';
     font-size: 72px;
     text-align: center; 
-    text-shadow: 0.04em 0.04em 0 #fff, 0.08em 0.08em 0 #aaa;
 }
-
 div{
-
 background-color: rgba(255, 255, 255, 0.9);
-max-width: 600px;
+max-width: 550px;
 min-width: 350px;
-padding: 10px;
+padding: 20px;
 margin: auto;
+margin-right: 15px;
 margin-bottom: 15px;
 border-radius: 10px;
 position: relative;
 }
+
+.box_in{
+ background-color: transparent;
+ padding: 0px;
+
+}
+.box_in p{
+    margin-top:7px;
+    margin-bottom: 7px;
+}
 td{
     padding: 3px;
-    min
+}
+.bigsocialicons{
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0px;
+    background-color: transparent;
+    width: 350px;
+    position: fixed;
+}
+@media (max-width: 970px) {
+    .bigsocialicons{
+      position: relative;
+      text-align: center; 
+    }
+    h1{
+        font-size: 2em;
+    }
 }
