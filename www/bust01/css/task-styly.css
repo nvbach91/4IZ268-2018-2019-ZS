@@ -1,3 +1,8 @@
+* {
+    font-family: 'Times New Roman';
+    box-sizing: border-box;
+}
+
 .text-1 {
     color:red;
 }
@@ -115,8 +120,5 @@
     width: 500px;
     background-color: blue;
     margin-top: 200px;
-}
-
-.box-9:hover {
     cursor: pointer;
 }
