@@ -1,0 +1,72 @@
+.par-02 {
+    color: red;
+}
+
+.par-03 {
+    color: rgb(123, 255, 47);
+}
+
+.par-04 {
+    color: rgb(124, 110, 252);
+}
+
+.par-05 {
+    font-size: 18px;
+}
+
+.par-06 {
+    font-size: 24px;
+    font: italic;
+}
+
+.par-07 {
+    color: white;
+    background-color: brown;
+}
+
+.par-08 {
+    text-align: center;
+    line-height: 32px;
+}
+
+.par-09 {
+    text-align: justify;
+    text-transform: uppercase;
+}
+
+.box-01 {
+    width: 400px;
+    height: 300px;
+    border: 1px solid purple;
+    padding: 30px;
+}
+
+.box-02 {
+    width: 500px;
+    height: 200px;
+    background-color: red;
+    margin: 100px;
+}
+
+.par-10, .par-11 {
+    visibility: hidden;
+}
+
+.box-03 {
+    width: 100%;
+    height: 150px;
+}
+
+.box-04 {
+    width: 500px;
+    height: 200px;
+    background-color: green;
+    opacity: 0.5;
+}
+
+
+#button :focus{
+    width: 200px;
+    height: 50px;
+    background-color: red;
+}
