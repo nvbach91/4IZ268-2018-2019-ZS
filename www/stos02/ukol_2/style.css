@@ -1,0 +1,114 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.fonts div:nth-child(2){
+color:red;
+}
+.fonts div:nth-child(3){
+    color: rgb(87, 211, 87);
+    }
+.fonts div:nth-child(4){
+    font-weight: bold;
+    color: #0000ff;
+    
+ }
+ .fonts  div:nth-child(5){
+    font-size: 18px;
+    }
+
+.fonts  div:nth-child(6){
+   font-size: 24px;
+   font-style: italic;
+}
+
+.fonts  div:nth-child(7){
+    color: white;
+    background-color: brown;
+ }
+
+ .paragraph-centered{
+text-align: center;
+line-height: 32px;
+ }
+
+ .paragraph-uppercase{
+     text-transform: uppercase;
+     text-align:justify;
+ }
+
+
+ .box-purple{
+    width: 340px;
+    height: 240px;
+    padding: 30px;
+    border:solid 1px purple;
+ }
+
+ .box-red{
+    height: 200px;
+    width: 500px;
+    background-color:rgb(158, 25, 25);
+    margin:100px;
+}
+
+.box-unseen{
+    display: none;
+}
+
+.box-yellow-border{
+    max-width:100%;
+    height:30px;
+    background-color: blue;
+    padding: 50px;
+    border:solid 10px yellow;
+}
+
+.box-unseen-gap{
+    visibility:hidden;
+}
+
+.box-green{
+    height:200px;
+    width: 500px;
+    background-color: green;
+    opacity:0.5;
+}
+
+.parent{
+    height:300px; 
+    width:400px;
+    position: relative;
+    background-color:lightblue;
+}
+.son{
+    height:50px;
+    width: 50px;
+    position:absolute;
+    top:50px;
+    right:10px;
+    background-color: pink;
+}
+button.blue{
+    width:300px;
+    height: 100px;
+}
+button.blue:active{
+    background:blue;
+}
+
+button.brown{
+    height:50px;
+    width:200x;
+}
+button.brown:hover{
+    background-color:brown;
+}
+.box-blue{
+    height: 500px;
+    width:200px;
+    background-color:blue;
+    margin-top:200px;
+}
+.box-blue:hover{
+        cursor: pointer;
+}
