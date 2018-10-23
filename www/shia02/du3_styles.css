@@ -1,5 +1,10 @@
+* {
+    font-family: Arial;
+}
+
 .par-02 {
     color: red;
+    
 }
 
 .par-03 {
@@ -7,7 +12,8 @@
 }
 
 .par-04 {
-    color: rgb(124, 110, 252);
+    color: #6d76f3;
+    font-weight: bold;
 }
 
 .par-05 {
@@ -17,7 +23,6 @@
 .par-06 {
     font-size: 24px;
     font-style: italic;
-    font-weight: bold;
 }
 
 .par-07 {
@@ -54,18 +59,19 @@
 }
 
 .box-03 {
-    margin-bottom: 10px;
+    width: 100%;
+    height: 150px;
+    background-color: rgb(100, 100, 247);
+    padding: 50px;
+    border: 10px solid yellow;
 }
 
 .box-04 {
     width: 500px;
     height: 200px;
     color: white;
-    background-color: rgb(51, 53, 51);
+    background-color: rgb(32, 190, 32);
     opacity: 0.5;
-    box-shadow: 495px 0px 0px 0px rgb(51, 53, 51),
-                955px 0px 0px 0px rgb(51, 53, 51),
-                1400px 0px 0px 0px rgb(51, 53, 51);           
 }
 
 .div1 {
@@ -84,26 +90,26 @@ div.box-06 {
     right: 10px;
 }
 
-#but-01 button {
+#but-01  {
     width: 300px;
     height: 100px;
 }
 
-#but-01 :active {
-    background-color: blue;
+#but-01:active {
+    color: blue;
 }
 
-#but-02 button {
+#but-02 {
     width: 200px;
     height: 50px;
 }
 
-#but-02 :hover{
+#but-02:hover {
     background-color: brown;
 }
 
 .box-07 {
-    margin-top: 30px;
+    margin-top: 200px;
     width: 200px;
     height: 500px;
     background-color: rgb(63, 144, 168);
