@@ -118,8 +118,5 @@
     height: 500px;
     background-color: #79b0e0;
     margin-top: 200px;
-}
-
-#box7:hover {
     cursor: pointer;
 }
