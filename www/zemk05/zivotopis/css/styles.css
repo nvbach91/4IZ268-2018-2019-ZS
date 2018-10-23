@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+body {
+    background-image: url('https://imgnooz.com/sites/default/files/wallpaper/abstract/55356/brown-background-wallpapers-55356-4029363.jpg');
+    background-size: cover;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+    font-family:initial;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(158, 105, 62, 0.377);
+    border-style: solid;
+    border-color: black;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight:bold;
+}
+.intro {
+    padding:6px 10px 4px 20px;
+    text-align:center;
+    float:both;
+}
+.image{
+        width: 150px;
+        float:none;
+        padding: 2px 8px 6px 8px;
+}
+.careers{
+    clear:both;
+    width: 100%;
+    height: 100px;
+    background-image: url('https://wallpaperbits.com/wp-content/uploads/2018/01/hd-wallpaper-background-beautiful-flower-field-wallpaper-desktop-background-images.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+}
+.careers h2 {
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgba(158, 105, 62, 0.377);
+}
+.achievs {
+    width: 100%;
+    height: 50px;
+    background-image: url('https://wallpaperbits.com/wp-content/uploads/2018/01/hd-wallpaper-background-beautiful-flower-field-wallpaper-desktop-background-images.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+}
+.achievs h2 {
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgba(158, 105, 62, 0.377);
+}
+.disco-intro {
+    width: 100%;
+    height: 50px;
+    background-image: url('https://wallpaperbits.com/wp-content/uploads/2018/01/hd-wallpaper-background-beautiful-flower-field-wallpaper-desktop-background-images.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+}
+.disco-intro h2 {
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgba(158, 105, 62, 0.377); 
+}
+
+.footer {
+    width: 100%;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+}
+footer h2 {
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgba(158, 105, 62, 0.377); 
+}
