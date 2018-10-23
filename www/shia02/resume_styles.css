@@ -1,0 +1,46 @@
+body {
+    font-size: 20px;
+}
+
+h1 {
+    background-color: aqua;
+}
+
+p {
+    width: 1250px;
+    margin-top: 20px;
+}
+
+p em {
+    color: rgb(59, 59, 197);
+}
+
+h2 {
+    text-align: center;
+    font-size: 25px;
+    background-color: aqua;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+ }
+
+ li :hover{
+    font-size: 25px;
+    background-color: aqua;
+ }
+
+ #list {
+    list-style-type: none;
+ }
+
+
+
+
+
