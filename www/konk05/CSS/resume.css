@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Segoe UI;
+    background-color:whitesmoke;
+    font-size: 18px;
+    margin: 0;
+}
+
+nav li {
+    float: right;
+    padding: 15px;
+    font-size: 18px;
+    position: relative;
+    bottom: 140px;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    color: #df8377;
+}
+
+.pic {
+    background-image: url(https://images-na.ssl-images-amazon.com/images/I/A15dQM39ELL._CR0,0,3840,2880_._SL1000_.jpg);
+    width: 100%;
+    height: 750px;
+    background-size: cover;
+}
+
+.pic h1 {
+    font-size: 85px; 
+    color: #df8377;
+    text-align: left;
+    margin: 20px 0 0 50px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #df8377;
+    margin-bottom: 5px;
+}
+
+h3 {
+    margin: 0px 0 0 160px;
+    text-align: left;
+    font-size: 18px;
+    color:black;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 25px;
+    text-align: center;
+    color:black;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+hr {
+    width: 25%;
+    border-top: solid #df8377 5px;
+}
+
+li {
+    list-style: none;
+}
+
+.quote {
+    color: black;
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 50px; 
+}
+
+.album {
+    float: left;
+    width: 33%;
+    padding: 0 12px 0 12px;
+}
+
+ .text {
+    text-align: center;
+ }
+
+ .clear {
+    clear: both;
+}
+
+ .awards {
+    margin-top: 0;
+    margin-bottom: 50px;
+    padding-left: 25px;
+    padding-right: 20px;
+}
+
+ .award {
+    float: left;
+    width: 25%;
+    padding: 20px 40px 20px 40px;
+}
+
+ .number {
+    font-size: 20px;
+     font-weight: 600;
+     color: #df8377;
+ }
+
+ footer {
+     background-color: #df8377;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+ }
+
+footer p {
+    margin: 5px;
+}
+
+ footer a {
+     text-decoration: none;
+     color: black;
+     font-size: 18px;
+ }
+
+ footer a:hover {
+     color:  white;
+ }
