@@ -26,10 +26,11 @@
 
 .background_text {
     background: brown;
+    color: white;
 }
 
 .small_p{
-    font-size: 32px;
+    line-height: 32px;
     text-align: center;
 }
 
@@ -57,7 +58,7 @@
 }
 
 .invisible_text{
-    color: white;
+    visibility: hidden;
 }
 
 .blue_box {
@@ -91,11 +92,11 @@
 }
 
 #light_box #pink_box {
-    width: 50%;
-    height: 50%;
+    width: 50px;
+    height: 50px;
     background: pink;
     position: absolute;
-    top: 50px; left: 0; right: 10px; bottom: 0;
+    top: 50px; right: 10px;
 }
 
 .button_1 {
