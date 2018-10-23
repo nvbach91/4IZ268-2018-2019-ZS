@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body, ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+nav {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    padding: 15px;
+    font-size: 14px;
+}
+
+nav li:hover{
+    background-color: #dadada;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.banner {
+    width: 100%;
+    min-height: 600px;
+    background-image: url("img/bannersag.jpg");
+    background-size: cover;
+    text-align: right;
+    padding: 100px 200px 400px 600px;
+    margin-bottom: 30px;
+}
+
+.banner h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    letter-spacing: 8px;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.52);
+}
+
+.banner h3 {
+    text-transform: uppercase;
+    padding-right: 7px;
+    letter-spacing: 5px;
+}
+
+main {
+    padding: 20px 0;
+}
+
+main > * {
+    margin: 0 auto;
+    max-width: 1048px;
+    line-height: 35px;
+}
+
+#personal_info, #beginning, #junior_cat, #prof_cat, #awards,
+#references {
+    width: 100%;
+    height: 50px;
+    background-color: #dadada;
+    text-align: center;
+    padding: 10px;
+    margin: 30px auto;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.52);
+}
+
+#profile {
+    display: block;
+    float: left;
+    margin: 80px 0 80px 320px;
+    border-radius: 50%;
+}
+  
+thead th {
+    background: #f7f7f7;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+  
+tr {
+    background: #f7f7f7;
+    border-bottom: 1px solid #FFF;
+    margin-bottom: 5px;
+}
+  
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+#sagwin {
+    display: block;
+    float: middle;
+    margin: 30px auto;
+    padding: 5px;
+    border: 5px solid #dadada;
+}
+
+.ol1 {
+    text-align: center;
+    list-style-position: inside;
+}
+
+footer p {
+    text-align: center;
+    background-color: #dadada;
+    padding: 20px;
+}
+
+
