@@ -1,0 +1,36 @@
+.info {
+    /* margin and padding is not necessary, but I want something to be here (and use BEM) */
+    margin: 0;
+    padding: 0;
+}
+
+.info__desc {
+    font-family: sans-serif;
+}
+
+.info__alert {
+    color: red;
+}
+
+.info__success {
+    color: #0f0;
+}
+
+.info__notification {
+    color: #00f;
+    font-weight: bold;
+}
+
+.info__big {
+    font-size: 18px;
+}
+
+.info__yuge {
+    font-size: 24px;
+    font-style: italic;
+}
+
+.info__highlight {
+    color: #fff;
+    background-color: brown;
+}
