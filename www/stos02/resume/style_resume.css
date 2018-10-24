@@ -1,0 +1,68 @@
+#navigation a {
+    text-decoration: none;
+    color:white;
+    font: bold 16px Tohman;
+    word-spacing:0.5em;    
+}
+
+#navigation{
+    background-color:rgba(91, 136, 145, 0.925);
+    height: 30px;
+    word-spacing: 4em;
+    margin-top:10px;
+    padding-top: 11px;
+    text-align: center;
+}
+.background{
+    background-image: url(background.jpg);
+    background-size: 100%;
+}
+
+.CV{
+ font: normal 20px Tohman;
+ text-align: center;
+ margin-top:110px;
+ color:rgba(38, 66, 71, 0.925); 
+ 
+}
+
+.my{
+    width:160px;
+    height:80px;
+    margin-top:-150px;
+    margin-left:30px;
+    padding:50px;
+    border: dotted 1px black;
+
+}
+
+.parent{
+    position: relative;
+    top:50px;
+    padding-left:100px;
+    padding-bottom:50px;
+}
+.son-experience{
+    position: absolute;
+    left:650px; 
+    top:-15px;
+    
+}
+
+.son-praxe{
+    position: absolute;
+    right:200px;
+    top:-15px;
+ 
+}
+.parent-skills{
+ padding-left:100px;
+ position:relative;
+
+}
+
+.son-PC{
+    position:absolute;
+    left:550px;
+    bottom:2px;  
+}
