@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+.p-red{
+    color: red;
+}
+
+.p-green{
+    color: rgb(0,255,0);
+}
+
+.p-blue-bold {
+    color: blue;
+    font-weight: bold;
+}
+
+.p-size {
+    font-size: 18px;
+}
+
+.p-italic {
+    font-size: 24px;
+    font-style: italic;
+}
+
+.p-white {
+    background-color: brown;
+    color: white;
+}
+
+.p-centered {
+    text-align: center;
+    line-height: 32px;
+}
+
+.p-justified {
+    text-align: justify;
+    text-transform: uppercase;
+}
+
+.boxOne {
+    width: 400px;
+    height: 300px;
+    border: 1px brown solid;
+    padding: 30px;
+}
+
+.boxTwo {
+    width: 500px;
+    height: 200px;
+    margin: 100px;
+    background-color: red;
+}
+
+.hidden {
+    color: transparent;
+}
+
+.boxThree {
+    width: 100%;
+    max-height: 150px;
+    background-color: blue;
+    margin: 50px;
+    border: yellow 10px;
+    padding: 50px;
+}
+
+.text-gap {
+    visibility: hidden;
+}
+
+.boxFour {
+    width: 500px;
+    height: 200px;
+    background-color: green;
+    opacity: 0.5;
+    color: white;
+}
+
+.boxFive {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background-color: lightblue;
+}
+
+.boxSix {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: pink;
+}
+
+.buttonOne {
+    width: 300px;
+    height: 100px;
+    color: black;
+}
+
+.buttonOne:active {
+    width: 300px;
+    height: 100px;
+    color: blue;
+}
+
+.buttonTwo {
+    width: 200px;
+    height: 50px;
+}
+.buttonTwo:hover {
+    width: 200px;
+    height: 50px;
+    background-color: brown;
+}
+
+.boxSeven {
+    width: 200px;
+    height: 500px;
+    background-color: dodgerblue;
+    margin-top: 200px;
+}
+.boxSeven:hover{
+    cursor: pointer;
+}
