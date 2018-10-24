@@ -43,25 +43,25 @@ body{
     text-transform: uppercase;
 }
 
-.boxOne {
+.box-one {
     width: 400px;
     height: 300px;
     border: 1px brown solid;
     padding: 30px;
 }
 
-.boxTwo {
+.box-two {
     width: 500px;
     height: 200px;
     margin: 100px;
     background-color: red;
 }
 
-.hidden {
+.p-hidden {
     color: transparent;
 }
 
-.boxThree {
+.box-three {
     width: 100%;
     max-height: 150px;
     background-color: blue;
@@ -70,11 +70,11 @@ body{
     padding: 50px;
 }
 
-.text-gap {
+.p-gap {
     visibility: hidden;
 }
 
-.boxFour {
+.box-four {
     width: 500px;
     height: 200px;
     background-color: green;
@@ -82,14 +82,14 @@ body{
     color: white;
 }
 
-.boxFive {
+.box-five {
     width: 400px;
     height: 300px;
     position: relative;
     background-color: lightblue;
 }
 
-.boxSix {
+.box-six {
     width: 50px;
     height: 50px;
     position: absolute;
@@ -98,34 +98,32 @@ body{
     background-color: pink;
 }
 
-.buttonOne {
+.button-one {
     width: 300px;
     height: 100px;
     color: black;
 }
 
-.buttonOne:active {
+.button-one:active {
     width: 300px;
     height: 100px;
     color: blue;
 }
 
-.buttonTwo {
+.button-two {
     width: 200px;
     height: 50px;
 }
-.buttonTwo:hover {
-    width: 200px;
-    height: 50px;
+.button-two:hover {
     background-color: brown;
 }
 
-.boxSeven {
+.box-seven {
     width: 200px;
     height: 500px;
     background-color: dodgerblue;
     margin-top: 200px;
 }
-.boxSeven:hover{
+.box-seven:hover{
     cursor: pointer;
 }
