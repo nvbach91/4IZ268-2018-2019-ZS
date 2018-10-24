@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+body {
+    padding: 10px;
+    letter-spacing: 1px;
+}
+body, body a {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    color: rgb(24, 26, 34);
+}
+p {
+    line-height: 24px;
+}
+ul {
+    list-style: none;
+}
+header {
+    border-top: 5px solid cadetblue;
+    display: flex;
+}
+header > * {
+    height: 60px;
+    line-height: 60px;
+}
+.logo {
+    width: 140px;
+    font-size: 18px;
+    font-weight: bold;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/cf/Bitcoin.com_logo.png');
+    background-position: 5px center;
+    background-size: contain;
+    text-indent: 80px;
+}
+nav {
+    margin-left: auto;
+    text-transform: uppercase;
+}
+
+nav li {
+    display: block;
+    float: left;
+    margin-right: 15px;
+    padding: 0 5px;
+}
+
+nav li:hover{
+    background-color: cadetblue;
+}
+
+nav li:hover a {
+    color:white;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.search {
+    background-image: url("https://cdn3.iconfinder.com/data/icons/eightyshades/512/11_Search-512.png");
+    background-size: 20px;
+    background-position: center;
+    width: 100px;
+    cursor: pointer;
+}
+
+.search:hover {
+    background-color: cadetblue;
+}
+
+.search:active {
+    background-color: darkcyan;
+}
+
+.poster {
+    color:white;
+    min-height: 300px;
+    line-height: 2.6em;
+    padding: 60px 30px;
+    text-align: center;
+    background-image: url('https://linkedinbackground.com/download/Business-HQ.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;    
+}
+
+.poster h1 {
+    font-size: 50px;
+    line-height: 60px;
+}
+
+.poster h1, .poster h3 {
+    background-color: rgba(0,0,0,0.7);
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+main {
+    padding: 0 20px;
+}
+
+main > * {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.intro {
+    padding: 20px 0;    
+}
+
+.slideshow {
+    width: 100%;
+    height: 200px;
+    background-image: url('https://www.raconteur.net/wp-content/uploads/2016/11/increase-productivity.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 90px 0;
+}
+
+.slideshow h2 {
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.products {
+    padding: 50px 0;
+}
+
+.product {
+    float:left;
+    width: 25%;
+    padding: 5px;
+}
+
+.product button {
+    border:none;
+    padding: 10px 0;
+    width: 180px;
+    margin: 0 auto;
+    background-color: #ca4b4d;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: #9b3839;
+}
+
+.product button:active {
+    background-color: #9e5859;;
+}
+
+.product h2 {
+    padding: 10px;
+}
+
+.product:nth-child(1) h2 { border-bottom: 5px solid aliceblue; }
+.product:nth-child(2) h2 { border-bottom: 5px solid bisque; }
+.product:nth-child(3) h2 { border-bottom: 5px solid cornflowerblue; }
+.product:nth-child(4) h2 { border-bottom: 5px solid darkgoldenrod; }
+.product:nth-child(5) h2 { border-bottom: 5px solid lightcoral; }
+.product:nth-child(6) h2 { border-bottom: 5px solid lightpink; }
+.product:nth-child(7) h2 { border-bottom: 5px solid mediumaquamarine; }
+.product:nth-child(8) h2 { border-bottom: 5px solid palegreen; }
+
+.product p {
+    min-height: 240px;
+}
+
+.clear {
+    clear: both;
+}
+
+footer {
+    text-align: center;
+    border-top: 5px solid;
+    border-image: linear-gradient(to right, #bcbcbc 25%,#ffcd02 25%, #ffcd02 50%, #e84f47 50%, #e84f47 75%, #65c1ac 75%) 5;
+}
+
+.credits {
+    color:white;
+    background-color: rgb(24,26,34);
+    padding: 30px; 
+    text-align: center;
+}
+
+.social {
+    background-color: #eee;
+    padding: 20px 0;
+}
+
+.social > div {
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    height: 30px;
+    width: 80px;
+    cursor: pointer;
+
+}
+
+.social-facebook { background-image: url('https://image.flaticon.com/icons/svg/54/54997.svg'); }
+.social-twitter { background-image: url('https://www.iconsdb.com/icons/preview/black/twitter-4-xxl.png'); }
+.social-instagram { background-image: url('https://iconsplace.com/wp-content/uploads/_icons/000000/256/png/instagram-icon-256.png'); }
+
+@media screen and (max-width: 1024px) {
+    .product {
+        width: 33.33333%;
+    }
+    .product p {
+        min-height: 220px;
+    }
+}
+@media screen and (max-width: 840px) {
+    .product {
+        width: 50%;
+    }
+    .product p {
+        min-height: 220px;
+    }
+}
+@media screen and (max-width: 640px) {
+    .product {
+        float: none;
+        width: 100%;
+    }
+    .product p {
+        min-height: initial;
+    }
+    nav {
+        display: none;
+    }
+    .search {
+        margin-left: auto;
+    }
+}

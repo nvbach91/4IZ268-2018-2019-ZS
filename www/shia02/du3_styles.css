@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+}
+
+.par-02 {
+    color: red;
+}
+
+.par-03 {
+    color: rgb(123, 255, 47);
+}
+
+.par-04 {
+    color: #6d76f3;
+    font-weight: bold;
+}
+
+.par-05 {
+    font-size: 18px;
+}
+
+.par-06 {
+    font-size: 24px;
+    font-style: italic;
+}
+
+.par-07 {
+    color: white;
+    background-color: brown;
+}
+
+.par-08 {
+    text-align: center;
+    line-height: 32px;
+}
+
+.par-09 {
+    text-align: justify;
+    text-transform: uppercase;
+}
+
+.box-01 {
+    width: 400px;
+    height: 300px;
+    border: 1px solid purple;
+    padding: 30px;
+}
+
+.box-02 {
+    width: 500px;
+    height: 200px;
+    background-color: rgb(182, 32, 32);
+    margin: 100px;
+}
+
+.par-10, .par-11, span.comment {
+    display: none;
+}
+
+.box-03 {
+    width: 100%;
+    height: 150px;
+    background-color: rgb(100, 100, 247);
+    padding: 50px;
+    border: 10px solid yellow;
+}
+
+.box-04 {
+    width: 500px;
+    height: 200px;
+    color: white;
+    background-color: rgb(32, 190, 32);
+    opacity: 0.5;
+}
+
+.div1 {
+    background-color: lightblue;
+    width: 400px;
+    height: 300px;
+    position: relative;
+}
+
+div.box-06 {
+    width: 80px;
+    height: 80px;
+    background-color: pink;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+}
+
+#but-01  {
+    width: 300px;
+    height: 100px;
+}
+
+#but-01:active {
+    color: blue;
+}
+
+#but-02 {
+    width: 200px;
+    height: 50px;
+}
+
+#but-02:hover {
+    background-color: brown;
+}
+
+.box-07 {
+    margin-top: 200px;
+    width: 200px;
+    height: 500px;
+    background-color: rgb(63, 144, 168);
+    cursor: pointer;
+}
+
