@@ -1,10 +1,13 @@
 * {
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial;
 }
 
 .par-02 {
     color: red;
-    
 }
 
 .par-03 {
