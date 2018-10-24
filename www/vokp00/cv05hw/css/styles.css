@@ -30,7 +30,7 @@ body {
 }
 
 .p1 {
-    text-align: center;
+    text-align: justify;
     line-height: 32px;
 }
 
@@ -49,13 +49,13 @@ body {
     width: 500px;
     height: 100px;
     background-color: red;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin: 100px;
 }
 
 .box3 {
-    width: 100%-100px;
+    width: 100%;
     height: 80px;
+    box-sizing: border-box;
     background-color: blue;
     padding: 50px;
     border: 10px;
@@ -92,11 +92,9 @@ body {
     height: 500px;
     background-color: blue;
     margin-top: 100px;
-}
-
-.box7:hover {
     cursor: pointer;
 }
+
 
 .invisible1 {
     display: none;
@@ -112,7 +110,7 @@ body {
 }
 
 .button1:active {
-    background-color: blue;
+    color: blue;
 }
 
 .button2 {
