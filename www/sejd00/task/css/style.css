@@ -1,4 +1,4 @@
-.not-serif{
+body{
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -36,7 +36,7 @@
 
 .par-2-justify{
 text-align: justify;
-text-transform: capitalize;
+text-transform: uppercase;
 }
 
 .box-01{
@@ -65,8 +65,11 @@ text-transform: capitalize;
     border-width: 10px;
     border-style: solid;
     border-color: yellow;
+    }
+    
+ * {
     box-sizing: border-box;
-}
+ }
 
 .box-05{
     visibility: hidden;
@@ -99,7 +102,7 @@ text-transform: capitalize;
     height: 100px;
 }
 
-.button-01:focus{
+.button-01:active{
     color: blue;
 }
 
@@ -117,12 +120,8 @@ text-transform: capitalize;
     height: 500px;
     background-color: blue;
     margin-top: 200px;
+    cursor: pointer;
 }
-
-.box-07:hover{
-cursor: pointer;
-}
-
 
 
 
