@@ -1,76 +1,76 @@
 * {
     box-sizing: border-box;    
 }
-.task1 {
+body {
     font-family: Arial;
 }
-.task2 {
+.task-2 {
     color: indianred;
 }
-.task3 {
+.task-3 {
     color: rgb(12,205,10)
 }
-.task4 {
+.task-4 {
     color: #0084ff;
     font-weight: bold;
 }
-.task5 {
+.task-5 {
     font-size: 18px;
 }
-.task6 {
+.task-6 {
     font-size: 24px;
     font-style: italic;
 }
-.task7 {
+.task-7 {
     color: white;
     background-color: rgb(104, 60, 2);
 }
-.task8 {
+.task-8 {
     text-align: center;
     line-height: 32px;
 }
-.task9 {
+.task-9 {
     text-align: justify;
     text-transform: uppercase;
 }
-.task10 {
+.task-10 {
     width: 400px;
     height: 300px;
     border: solid 1px purple;
     padding: 30px;
 }
-.task11 {
+.task-11 {
     width: 500px;
     height: 200px;
     background-color: red;
     margin: 100px;
 }
-.task12 {
+.task-12 {
     display: none;
 }
-.task13 {
+.task-13 {
     width: 100%;
     height: 150px;
     background-color: blue;
     padding: 50px;
     border: solid 10px yellow;
 }
-.task14 {
+.task-14 {
     visibility: hidden;
 }
-.task15 {
+.task-15 {
     width: 200px;
     height: 500px;
     background-color: green;
     opacity: 0.5;
 }
-.task16 {
+.task-16 {
     width: 400px;
     height: 300px;
     position: relative;
     background-color: lightblue;
 }
-.task16 div {
+.task-16 div {
     width: 50px;
     height: 50px;
     position: absolute;
@@ -78,26 +78,24 @@
     right: 10px;
     background-color: rgb(214, 75, 133);
 }
-.task17 {
+.task-17 {
     width: 300px;
     height: 100px;
 }
-.task17:active {
+.task-17:active {
     color: blue;
 }
-.task18 {
+.task-18 {
     width: 200px;
     height: 50px;
 }
-.task18:hover {
+.task-18:hover {
     background-color: brown;
 }
-.task19 {
+.task-19 {
     width: 200px;
     height: 500px;
     background-color: #0084ff;
     margin-top: 200px;
-}
-.task19:hover {
     cursor: pointer;
 }
