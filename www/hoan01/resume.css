@@ -1,0 +1,53 @@
+body {
+  font-family: Sans-Serif;
+  background-color: lightgreen;
+}
+
+#image-0 {
+  text-align: center;
+  border: 5px solid green;
+  position:fixed;
+  right:0px;
+  bottom:50%;
+}
+
+#titleName {
+  text-align: center;
+  font-size: 60px;
+}
+
+#menu {
+  font-size: 33px;
+  padding: 22px 22px 22px 22px;
+  margin: 0 44px 0 44px;
+}
+
+.menuAll {
+  text-align: center;
+  
+}
+
+#about {
+  background-color: yellow;
+  text-align: center;
+}
+
+#overall {
+  background-color: lightpink;
+  margin: 0 50% 0 0;
+}
+
+#earlyLife {
+  background-color: lightblue;
+  margin: 0 33% 0 33%;
+}
+
+#movies {
+  background-color: orange;
+  margin: 0 50% 0 0;
+}
+
+#awards {
+  background-color: purple;
+  margin: 0 0 0 50%;
+}

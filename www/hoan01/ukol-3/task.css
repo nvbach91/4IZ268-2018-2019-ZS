@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
   font-family: Sans-Serif;
 }
@@ -35,8 +39,7 @@ body {
 }
 
 #par-1 {
-	display: flex;
-    justify-content: flex-start;
+	text-align: justify;
     text-transform: uppercase;
 }
 
@@ -94,21 +97,21 @@ body {
 	background-color: pink;
 }
 
-#but-0 {
+#btn-0 {
 	width: 300px;
 	height: 100px;
 }
 
-#but-0:active {
+#btn-0:active {
 	color: blue;
 }
 
-#but-1 {
+#btn-1 {
 	width: 200px;
 	height: 50px;
 }
 
-#but-1:hover {
+#btn-1:hover {
 	background-color: brown;
 }
 
@@ -117,8 +120,5 @@ body {
 	height: 500px;
 	background-color: blue;
 	margin: 200px 0px 0px 0px;
-}
-
-#box-6:hover {
 	cursor: pointer;
 }
