@@ -1,0 +1,124 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+  font-family: Sans-Serif;
+}
+
+#colorName {
+	color:red;
+}
+
+#colorRGB {
+	color:rgb(0,255,0);
+}
+
+#colorHex {
+	color:#0000ff;
+	font-weight: bold;
+}
+
+#text-18 {
+	font-size: 18px;
+}
+
+#text-24 {
+	font-size: 24px;
+	font-style: italic;
+}
+
+#textWhite {
+	color:white;
+	background-color: brown;
+}
+
+#par-0 {
+	text-align: center;
+	line-height: 32px;
+}
+
+#par-1 {
+	text-align: justify;
+    text-transform: uppercase;
+}
+
+#box-0 {
+	width: 400px;
+	height: 300px;
+	border: 1px solid purple;
+	padding: 30px 30px 30px 30px;
+}
+
+#box-1 {
+	width: 500px;
+	height: 200px;
+	background-color: red;
+	border: 1px solid purple;
+	margin: 100px 100px 100px 100px;
+}
+
+#textHide {
+	color:transparent;
+}
+
+#box-2 {
+	width: 100%;
+	height: 150px;
+	background-color: blue;
+	border: 10px solid yellow;
+	padding: 50px 50px 50px 50px;
+}
+
+#textHide {
+	color:transparent;
+}
+
+#box-3 {
+	width: 200px;
+	height: 500px;
+	background-color: green;
+	opacity: 0.5;
+}
+
+#box-4 {
+	width: 400px;
+	height: 300px;
+	position: relative;
+	background-color: lightblue;
+}
+
+#box-5 {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top:50px;
+	right:10px;
+	background-color: pink;
+}
+
+#btn-0 {
+	width: 300px;
+	height: 100px;
+}
+
+#btn-0:active {
+	color: blue;
+}
+
+#btn-1 {
+	width: 200px;
+	height: 50px;
+}
+
+#btn-1:hover {
+	background-color: brown;
+}
+
+#box-6 {
+	width: 200px;
+	height: 500px;
+	background-color: blue;
+	margin: 200px 0px 0px 0px;
+	cursor: pointer;
+}
