@@ -56,7 +56,7 @@ line-height: 32px;
 }
 
 .box-yellow-border{
-    max-width:100%;
+    box-sizing: border-box;
     height:30px;
     background-color: blue;
     padding: 50px;
@@ -93,7 +93,7 @@ button.blue{
     height: 100px;
 }
 button.blue:active{
-    background:blue;
+    color:blue;
 }
 
 button.brown{
@@ -109,6 +109,6 @@ button.brown:hover{
     background-color:blue;
     margin-top:200px;
 }
-.box-blue:hover{
+.box-blue{
         cursor: pointer;
 }
