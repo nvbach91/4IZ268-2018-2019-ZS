@@ -1,0 +1,15 @@
+h1{color:red;}
+body{background-color:violet}
+
+/*
+TL;DR: By default I use margin everywhere, except when I have a border or background and want to increase the space inside that visible box.
+
+To me the biggest difference between padding and margin is that vertical margins auto-collapse, and padding doesn't. Consider two elements one above the other each with padding of 1em. This padding is considered to be part of the element, and is always preserved. So you will end up with the content of the first element, followed by the padding of the first element, followed by the padding of the second, followed by the content of the second element. Thus content of the two elements will end up being 2em apart.
+
+Now replace that padding with 1em margin. Margins are considered to be outside of the element, and margins of adjacent items will overlap. So in this example you will end up with the content of the first element followed by 1em of combined margin followed by the content of the second element. So the content of the two elements is only 1em apart.
+
+This can be really useful when you know that you want say 1em of spacing around an element, regardless of what element it is next to.
+
+The other two big differences is that padding is included in the click region and background color/image, but not the margin.
+
+*/

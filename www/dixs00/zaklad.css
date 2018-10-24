@@ -1,0 +1,48 @@
+
+
+
+@media screen and (min-width:1px) and (max-width:200pxpx){
+   body{background-color:red}
+}
+
+@media screen and (min-width:200px) and (max-width:400px){
+   body{background-color:orange}
+}
+
+@media screen and (min-width:400px) and (max-width:600px){
+   body{background-color:yellow}
+}
+
+@media screen and (min-width:600px) and (max-width:800px){
+   body{background-color:green}
+}
+
+h1{
+   animation-name:abrakadaba;
+   animation-duration:100s;
+   animation-iteration-count: infinite;
+   animation-direction:alternate;
+   padding:0;
+   border:0;
+   margin:0;
+color:white;
+font-size:100px;
+transform:skew(180deg);
+transition: color 10s linear, font-size 5s linear,
+background-color 10s linear, transform 0.5s linear;}
+
+
+@keyframes abrakadabra{
+from {
+   font-size:4px
+}
+20%{transform:rotate(0deg)}
+80%{transform:rotate(720deg)}
+
+to {
+font-size:400px;
+transform:rotate(1080deg)
+
+}
+}
+
