@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.text-1{
+    color:red;
+}
+.text-2{
+    color: rgb(0, 100,0);
+}
+.text-3{
+    color:#0000FF;
+    font-weight: bold;
+}
+.text-4{
+    font-size: 18px;
+}
+.text-5{
+    font-size: 24px;
+    font-style: italic;
+}
+.text-6{
+    color: white;
+    background-color: brown;
+}
+.paragraph-1{
+    line-height: 32px;
+    text-align: center;
+}
+.paragraph-2{
+    text-transform: uppercase;
+    text-align: justify;
+}
+.box-1{
+    width: 400px;
+    height: 300px;
+    border: solid 1px purple;
+    padding: 30px;
+}
+.box-2{
+    width: 500px;
+    height: 200px;
+    background-color:red;
+    margin: 100px;
+}
+.box-3{
+    display: none;
+}
+.box-4{
+    width: 100%;
+    height: 150px;
+    background-color: blue;
+    padding: 50px;
+    border: solid 10px yellow;  
+}
+.box-5{
+    color: white;
+}
+.box-6{
+    width: 500px;
+    height: 200px;
+    background-color: green;
+    opacity: 0.4;
+}
+.box-7{
+    width: 400px;
+    height: 500px;
+    position:relative;
+}
+.paragraph-3{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background-color: lightblue;
+}
+.box-8{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    background-color: pink;
+}
+.button-1{
+    font-size:30px;
+    color:white;
+    width: 300px;
+    height: 100px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 20px;
+    background-color:grey;
+}
+.button-1:active{
+    color: blue;
+    background-color: white;
+}
+.button-2{
+    width: 200px;
+    height: 50px;
+}
+.button-2:hover{
+    background-color: brown;
+}
+.box-9{
+    width: 200px;
+    height: 500px;
+    background-color: blue;
+    margin-top: 200px;
+    cursor: pointer;
+}
