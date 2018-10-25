@@ -1,0 +1,105 @@
+*{
+    font-family: 'Courier New', Courier, monospace
+}
+.text_01{
+    color: red;
+}
+.text_02{
+    color: rgb(0, 255, 0);
+}
+.text_03{
+    color: #0000ff;
+    font-weight: bold;
+}
+.text_04{
+    font-size: 18px;
+}
+.text_05{
+    font-size: 24px;
+    font-style: italic;
+}
+.text_06{
+    color: white;
+    background-color: brown;
+}
+.para_01{
+    text-align: center;
+    height: 32px;
+}
+.para_02{
+    text-align: justify;
+    text-transform: capitalize;
+}
+.box_01{
+    height: 300px;
+    width: 400px;
+    border: 1px solid purple;
+    padding: 30px;
+}
+.box_02{
+    height: 200px;
+    width: 500px;
+    background-color: red;
+    margin: 100px;
+}
+.box_03{
+    visibility: hidden;
+}
+.box_04{
+    height: 150px;
+    width: 100%;
+    background-color: blue;
+    margin: 100px;
+    padding: 50px;
+    border: yellow 10px;
+    box-sizing: border-box;
+    /* -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box; */
+}
+.box_05{
+    opacity: 0;
+}
+.box_06{
+    height: 200px;
+    width: 500px;
+    background-color: green;
+    opacity: 0.5;
+}
+.box_07{
+    height: 300px;
+    width: 400px;
+    position: relative;
+    background-color: lightblue;
+}
+.box_07 > .box_08{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 340px;
+    background-color: pink;
+    font-size: 25%;
+}
+.button_01{
+    width: 300px;
+    height: 100px;
+}
+.button_01:active{
+    background-color: #0000ff;
+}
+.button_02{
+    width: 200px;
+    height: 50px;
+
+}
+.button_02:hover{
+    background-color: brown;
+}
+.box_09{
+    margin-top: 200px;
+    height: 500px;
+    width: 200px;
+    background-color: blue;
+    cursor: pointer;
+    
+}
