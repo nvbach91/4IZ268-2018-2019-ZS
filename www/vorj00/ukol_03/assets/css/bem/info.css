@@ -4,10 +4,6 @@
     padding: 0;
 }
 
-.info__desc {
-    font-family: sans-serif;
-}
-
 .info__alert {
     color: red;
 }
@@ -25,7 +21,7 @@
     font-size: 18px;
 }
 
-.info__yuge {
+.info__huge {
     font-size: 24px;
     font-style: italic;
 }
