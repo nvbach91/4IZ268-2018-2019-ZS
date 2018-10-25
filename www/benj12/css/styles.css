@@ -1,36 +1,36 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
 }
-.nametext{
+.name-text{
 	color: red;
 }
-.rgbtext{
+.rgb-text{
 	color:rgb(0,100,0);
 }
-.hexboldtext{
+.hex-bold-text{
 	color:#00BFFF;
 	font-weight: bold;
 }
-.text18{
+.text-18{
 	font-size: 18px;
 }
-.text24{
+.text-24{
 	font-size: 24px;
 	font-style: italic;
 }
-.whitebrowntext{
+.white-brown-text{
 	color:white;
 	background-color: brown;
 }
-.centerline{
+.center-line{
 	text-align: center;
 	line-height: 32px;
 }
 .justified{
 	text-align: justify;
-	text-transform: capitalize;
+	text-transform: uppercase;
 }
-.box1{
+.box-1{
 	width: 400px;
 	height: 300px;
 	border-style: solid;
@@ -38,7 +38,7 @@ body {
 	border-color: purple;
 	padding: 30px;
 }
-.box2{
+.box-2{
 	width: 500px;
 	height: 200px;
 	background-color: red;
@@ -47,8 +47,8 @@ body {
 .hidden{
 	display: none;
 }
-.box3{
-	width: fit-content;
+.box-3{
+	box-sizing: border-box;
 	height: 150px;
 	background-color: #00BFFF;
 	padding: 50px;
@@ -56,22 +56,22 @@ body {
 	border-width: 10px;
 	border-color: yellow;
 }
-.hiddengap{
+.hidden-gap{
 	visibility: hidden;
 }
-.box4{
+.box-4{
 	width: 200px;
 	height: 500px;
 	background-color: green;
 	opacity: 0.5;
 }
-.box5{
+.box-5{
 	width: 400px;
 	height: 300px;
 	position: relative;
 	background-color: lightblue;
 }
-.box6{
+.box-6{
 	width: 50px;
 	height: 50px;
 	position: absolute;
@@ -79,26 +79,24 @@ body {
 	top: 50px;
 	right: 10px;
 }
-.button1{
+.button-1{
 	width: 300px;
 	height: 100px;
 }
-.button1:active{
+.button-1:active{
 	color: blue;
 }
-.button2{
+.button-2{
 	width: 200px;
 	height: 50px;
 }
-.button2:hover{
+.button-2:hover{
 	background-color: brown;
 }
-.box7{
+.box-7{
 	margin-top: 200px;
 	width: 200px;
 	height: 500px;
-	background-color: blue
-}
-.box7:hover{
+	background-color: blue;
 	cursor: pointer;
 }
