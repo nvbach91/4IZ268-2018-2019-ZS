@@ -1,9 +1,10 @@
 body{
-    background-image: url("https://i.pinimg.com/originals/ab/15/42/ab1542920389fd20810e038a84cf4af7.jpg");
+    background-image: url("snake.jpg");
     font-family: sans-serif;
     background-position-x: -350px  ;
     
-    background-position: contain;
+    background-attachment: fixed ;
+    background-size: cover;
     
 }
 
@@ -14,7 +15,7 @@ body{
 .box01{
     text-align: center;
     color: white;
-    height: 20%;
+    height: 25%;
     width: 10%;
     border-color:rgb(35, 122, 115);
     border-style: solid;
@@ -69,8 +70,7 @@ nav ul li:hover{
 h1{
     font-size: 40px;
     font-weight: 600;
-    border: bottom
-    border-bottom-color: black;
+    border-bottom: 2px solid black
 }
 
 h2{
