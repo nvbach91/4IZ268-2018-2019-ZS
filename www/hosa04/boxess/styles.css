@@ -2,16 +2,20 @@
     box-sizing: border-box;
     background-repeat: no-repeat;
 }
+
 .tiles {
     width: 500px;
     height: 600px;
     display: flex;
+    
 }
 .tile-column {
     width: 50%;
     display: flex;
     flex-direction: column;
+    
 }
+
 .tile {
     border: 5px solid white;
     background-color: grey;
@@ -20,6 +24,7 @@
     background-size: cover;
     background-position: center;
 }
+
 .tile-earth    { height: 10%; background-color: lightcoral; }
 .tile-jupiter  { height: 27%; background-color: aquamarine; }
 .tile-mars     { height: 45%; background-color: brown; }
