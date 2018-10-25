@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather');
-
 body {
-    font-family: 'Merriweather', serif;
-    color: #FAFAFA;
+    font-family: "Merriweather", serif;
+    color: #fafafa;
     font-size: 16px;
 }
 
@@ -11,7 +9,7 @@ body {
     width: calc(100% - 3rem);
 }
 
-.main>*>h3 {
+.main h3 {
     position: sticky;
     top: calc(3rem + 50px);
     padding: 1rem 0;
@@ -19,7 +17,7 @@ body {
 }
 
 a {
-    color: #FAFAFA
+    color: #fafafa;
 }
 
 table {
@@ -51,7 +49,7 @@ table {
 
 .header h1 {
     font-size: 1.5rem;
-    margin: 0
+    margin: 0;
 }
 
 .birth {
@@ -59,7 +57,7 @@ table {
 }
 
 .birth h2 {
-    font-size: 1rem
+    font-size: 1rem;
 }
 
 .about,
@@ -69,7 +67,7 @@ table {
 
 .quotes,
 .quotes__title {
-    background-color: #FF9800;
+    background-color: #ff9800;
 }
 
 .quotes__ul {
@@ -88,7 +86,7 @@ table {
 }
 
 .footer {
-    background-color: #607D8B;
+    background-color: #607d8b;
 }
 
 @media only screen and (min-width: 60em) {
@@ -119,7 +117,7 @@ table {
         width: 70%;
     }
 
-    .main>*>h3 {
+    .main h3 {
         top: 0;
     }
 }
