@@ -104,9 +104,6 @@ body {
     height: 500px;
     background-color: #2200FF;
     margin-top: 200px;
-}
-
-.box-6:hover {
     cursor: pointer;
 }
 
