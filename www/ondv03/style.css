@@ -1,75 +1,73 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
 body{
     font-family: 'Open Sans'
 }
-.text01{
+.text-01{
     color: red
 }
-.text02{
+.text-02{
     color: rgb(0, 128, 0)
 }
-.text03{
+.text-03{
     color: #009990;
     font-weight: bold;    
 }
-.text04{
+.text-04{
     font-size: 18px
 }
-.text05{
+.text-05{
     font-size: 24px;
     font-style: italic
 }
-.text06{
+.text-06{
     color: white;
     background-color: rgb(128, 87, 0)
 }
-.p01{
+.p-01{
     text-align: center;
     line-height: 32px
 }
-.p02{
+.p-02{
     text-align: justify;
     text-transform: uppercase;
 }
-.box01{
+.box-01{
     width: 400px;
     height: 300px;
     border: 1px solid purple;
     padding: 30px;
 }
-.box02{
+.box-02{
     width: 500px;
     height: 200px;
     background-color: rgb(128, 0, 17);
     margin: 100px;    
 }
-.text07{
+.text-07{
     visibility: hidden;
 }
-.box03{
+.box-03{
     width: auto;
     height: 150px;
     background-color: rgb(0, 81, 128);
     padding: 50px;
     border: 10px rgb(191, 224, 4) solid;
 }
-.text08{
+.text-08{
     visibility: hidden;
 }
-.box04{
+.box-04{
     width: 200px;
     height: 500px;
     background-color: rgb(58, 133, 58);
     opacity: 0.5;
 }
-.box05{
+.box-05{
     width: 400px;
     height: 300px;
     position: relative;
     background-color: lightblue;
 }
-.box06{
+.box-06{
     width: 50px;
     height: 50px;
     position: absolute;
@@ -77,14 +75,14 @@ body{
     margin-left: 340px;
     background-color: pink;
 }
-.button01{
+.button-01{
     width: 300px;
     height: 100px;
 }
-.button#first:active{
+.button-01:active{
     color: blue;
 }
-.button02{
+.button-02{
     width: 200px;
     height: 50px;
     cursor: pointer;
