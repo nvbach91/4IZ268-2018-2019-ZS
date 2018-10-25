@@ -1,0 +1,143 @@
+body {
+    font-family: fantasy;
+}
+
+#text-color-red {
+    color: red;
+}
+
+#text-color-green {
+    color: rgb(102, 255, 102);
+}
+
+#text-color-blue {
+    color: #4262f4;
+    font-weight: bold;
+}
+
+#text-size-18 {
+    font-size: 18px;
+}
+
+#text-size-24-italic {
+    font-size: 24px;
+    font-style: italic;
+}
+
+#text-color-white {
+    color: white;
+    background-color: saddlebrown;
+}
+
+#text-color-transparent {
+    display: none;
+}
+#text-color-transparent-gap {
+    visibility: hidden;
+}
+
+p#text-align-center {
+    text-align: center;
+}
+
+p#text-align-justify {
+    text-align: justify;
+    text-transform: capitalize;
+}
+
+#box-size-padding {
+    width: 400px;
+    height: 300px;
+    border: 1px solid purple;
+    padding: 30px;
+}
+
+
+#box-size-margin {
+    width: 500px;
+    height: 200px;
+    background-color: red;
+    margin: 100px;
+}
+
+#box-size-page {
+    max-width: 100%;
+    height: 150px;
+    background-color: deepskyblue;
+    padding: 50px;
+    border: 10px solid yellow;
+}
+
+#box-size-opacity {
+    width: 200px;
+    height: 500px;
+    background-color: lawngreen;
+    opacity: 0.5;
+}
+
+#box-content {
+    position: relative;
+    width: 400px;
+    height: 300px;
+}
+
+#box-content-p {
+    width: 400px;
+    height: 300px;
+    background-color: lightblue;
+    position: relative;
+}
+
+#box-content > #box-content-div {
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+}
+
+.box-size-cursor {
+    width: 200px;
+    height: 500px;
+    background-color: dodgerblue;
+    margin-top: 200px;
+    cursor: pointer;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: saddlebrown}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+}
+
+.button-01{
+    width: 300px;
+    height: 100px;
+}
+
+.button-01:active {
+    color: blue;
+}
+
+.button-02 {
+    width: 200px;
+    height: 50px;
+    background-color: blue;
+}
