@@ -1,0 +1,74 @@
+body {
+    background-color: white;
+}
+
+main {
+    width: 1000px;
+    position: relative;
+    border: 2px solid grey;
+    margin: 0 auto;
+}
+
+.Name {
+    position: relative;
+    text-align: center
+}
+
+.h2 {
+    position: absolute
+}
+
+.osobni-01 {
+    position: relative;
+    left: 30px;
+}
+
+.osobni-02 {
+    position: relative;
+    left: 150px;
+}
+
+.vzdelani-01 {
+    position: relative;
+    left: 30px;
+}
+
+.vzdelani-02 {
+    position: relative;
+    left: 150px;
+}
+
+.znalosti-01 {
+    position: relative;
+    left: 30px;
+}
+
+.jazyky-01 {
+    position: relative;
+    left: 150px;
+}
+
+.jazyky-02 {
+    position: relative;
+    left: 200px;
+}
+
+.znalosti-02 {
+    position: relative;
+    left: 150px;
+}
+
+.znalosti-03 {
+    position: relative;
+    left: 200px;
+}
+
+.ridprukaz-01 {
+    position: relative;
+    left: 30px;
+}
+
+.ridprukaz-02 {
+    position: relative;
+    left: 150px;
+}
