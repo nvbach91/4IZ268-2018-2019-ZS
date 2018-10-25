@@ -1,0 +1,37 @@
+#div-1{
+    font-size: large;
+    font: -webkit-control;
+    
+    
+}
+#nadpis-1{
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    font-style: italic;
+    font-family: cursive;
+
+    
+}
+.nadpis-2{
+    font-style: italic;
+    font-weight: inherit;
+    margin-bottom: 10px;
+    font-size: x-large;
+}
+.seznam-1{
+    font-family: cursive;
+}
+.seznam-vse{
+    border-top: 1px solid;  
+    font-family: cursive;
+}
+#fotka{
+    height: 200px;
+    float: right;
+    border-radius: 8px;
+}
+#conteiner{
+    width:100%;
+    max-width: 1024px;
+}
