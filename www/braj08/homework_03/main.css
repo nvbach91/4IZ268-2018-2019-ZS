@@ -124,9 +124,7 @@ body {
     height: 500px;   
     background-color: darkcyan;
     margin-top: 200px;
-}
-
-.box-08:hover {
     cursor: pointer;
 }
+
 
