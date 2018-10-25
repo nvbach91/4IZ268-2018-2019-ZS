@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -27,7 +30,7 @@ p.center{
     line-height: 32px;
 }
 p.capitals{
-    text-transform: capitalize;
+    text-transform: uppercase;
     text-align: justify;
 }
 .hidden{
@@ -58,7 +61,8 @@ p.capitals{
 .box4{
     height: 200px;
     width: 500px;
-    background-color: rgba(0,255,0,0.5);
+    background-color: rgb(0,255,0);
+    opacity: 0.5;
 }
 .box5{
     position: relative;
