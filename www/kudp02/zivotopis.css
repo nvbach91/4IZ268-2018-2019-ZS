@@ -1,0 +1,41 @@
+#main {
+    position: relative;
+    margin:0 auto;
+    width:500px;
+}
+
+p, h1, h2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#subtitle {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+#line {
+    border-style: solid; 
+    margin-top:-1%;
+    width:30%;
+    color:black;
+    border-width: 1px;
+    opacity: 0.5;
+}
+
+.u-line {
+    text-align:left;
+    margin-top:-2%;
+    margin-left:0 ;
+    border-style: solid; 
+    width:20%;
+    color:black;
+    border-width: 2 px;
+}
+
+img {
+    display: block;
+    margin:0 auto;
+}
