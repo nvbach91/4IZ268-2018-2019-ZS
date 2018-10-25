@@ -1,0 +1,89 @@
+body {
+    background-color: aliceblue;
+}
+main{
+    margin: 0 auto;
+    width:800px;
+    position: relative;
+    background-color: white;
+    border: 3px black solid;
+}
+.photo{
+    border: 5px solid black;
+    height: 200px;
+    width: 220px;
+    position: absolute;
+    top: 50px;
+    right:20px;
+    padding: 5px;
+}
+.photo:hover{
+    background-color: black;
+    border: 5px solid white;
+}
+.p1{
+    line-height: 8px;
+}
+h1{
+    text-align: center;
+}
+h2{
+    visibility: hidden;
+}
+.photo img{ 
+    height: 200px; 
+    width: 220px;
+}
+
+.osobni-h3{
+    position: absolute;
+    left:30px;
+    top:150px;
+    
+}
+.osobni{
+    position: relative;
+    left: 280px;
+    padding-bottom: 10px;
+}
+.vzdelani-h3{
+    position: absolute;
+    left:30px;
+    top:275px;
+    
+}
+.vzdelani{
+    position: relative;
+    left: 230px;
+}
+.jazyky-h3{
+    position: absolute;
+    left: 30px;
+    top:350px;
+}
+.jazyky{
+    position: relative;
+    left: 230px;
+    padding-top: 20px;
+}
+.znalosti-h3{
+    position: absolute;
+    left: 30px;
+    top:450px;
+}
+.znalosti{
+    position: relative;
+    left: 230px;
+}
+.zajmy-h3{
+    position: absolute;
+    left: 30px;
+    top:560px;
+}
+.zajmy{
+    position: relative;
+    left: 230px;
+    padding-top: 2px;
+    padding-bottom: 30px;
+}
+
