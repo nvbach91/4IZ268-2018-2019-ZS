@@ -1,0 +1,126 @@
+p, div {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#text-2 {
+color:red;
+}
+
+#text-3 {
+    color: (0,255,0);
+}
+
+#text-4 {
+    color:#0000ff;
+    font-weight:bold;
+}
+
+#text-5 {
+    font-size:18px;
+}
+
+#text-6 {
+    font-size:24px;
+    font-style: italic;
+}
+
+#text-7 {
+    color:white;
+    background-color: brown;
+}
+
+#text-8 {
+    text-align: center;
+    line-height: 32px;
+}
+
+#text-9 {
+    text-align: justify;
+    text-transform: uppercase;
+}
+
+#box-1 {
+    width: 400px;
+    height: 300px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: purple;
+    padding: 30px;
+}
+
+#box-2 {
+    width: 500px;
+    height: 200px;
+    background-color: red;
+    margin: 100px;
+}
+
+#box-3 { 
+    visibility: hidden;
+}
+
+#box-4 {
+    display: block;
+    width: 100%;
+    height: 150px;
+    background-color: blue;
+    padding: 50px;
+    border: 10px solid yellow;
+}
+
+#box-5 {
+    opacity: 0;
+}
+
+#box-6 {
+    width: 200px;
+    height: 500px;
+    background-color: green;
+    opacity: 0.5;
+}
+
+#relative {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    background-color: lightblue;
+}
+
+#absolute {
+    position: absolute;
+    border: 2px yellow solid;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    height: 100px;
+}
+
+#btn-1 {
+    width: 300px;
+    height: 100px;
+}
+
+#btn-1:Active {
+    color:blue;
+}
+
+#btn-2 {
+    width: 200px;
+    height: 50px;
+    transition: 0.3s;
+}
+
+#btn-2:hover {
+    background-color: brown;
+}
+
+#box-8 {
+    width: 200px;
+    height: 500px;
+    background-color: blue;
+    margin-top: 200px;
+}
+
+#box-8:hover {
+    cursor: pointer;
+}
