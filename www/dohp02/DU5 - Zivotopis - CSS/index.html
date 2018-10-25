@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Cheat Sheet Pavel Dohnal</title>
+		<meta charset="UTF-8">
+    </head>
+    <body>
+        <!-- Odkaz / Link -->
+        <a href="contact.html">Kontakt</a>
+		<a href="resume.html">Životopis Elona Muska</a>
+
+        <!-- Vodorovna cara / Horizontal rule -->
+        <hr>
+
+        <!-- Nadpisy / Headings -->
+        <h1>Nadpis urovne 1</h1>
+        <h2>Nadpis urovne 2</h2>
+        <h3>Nadpis urovne 3</h3>
+        <h4>Nadpis urovne 4</h4>
+        <h5>Nadpis urovne 6</h5>
+        <h6>Nadpis urovne 6</h6>
+
+        <!-- Odstavce / Paragraph -->
+        <!-- Lorem + Tab = lorem ipsum -->
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor <strong>incididunt ut labore</strong> et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud <em>exercitation ullamco</em> laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, <a href="http://www.google.com" target="_blank">Google</a>
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <!-- Neusporadany seznam / Unordered List -->
+        <ul>
+            <li>Položka 1</li>
+            <li>Položka 2</li>
+            <li>Položka 3</li>
+            <li>Položka 4</li>
+        </ul>
+
+        <!-- Usporadany seznam / Ordered List -->
+        <ol>
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+            <li>List Item 4</li>
+        </ol>
+
+        <!-- Tabulka / Table -->
+        <table>
+            <!-- Neusporadany seznam / Unordered List -->
+            <thead>
+                <!-- Radek tabulky / Table row -->
+                <tr>
+                    <!-- Bunka radku v hlavicce / table head cell -->
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <!-- Bunka radku v tele / table body cell -->
+                    <td>Elon Musk</td>
+                    <td>elon@must.com</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td>John Doe</td>
+                    <td>jdoe@something.com</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td>Angelina Jolie</td>
+                    <td>angelina@jolie.com</td>
+                    <td>35</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- Formulare / Forms -->
+        <form>
+            <div>
+                <label>First Name</label>
+                <!-- Textove pole -->
+                <input type="text" name="firstName" placeholder="Enter first name">
+            </div>
+            <br>
+            <div>
+                <label>Last Name</label>
+                <input type="text" name="lastName">
+            </div>
+            <br>
+            <div>
+                <label>Email</label>
+                <!-- Textove pole emailu -->
+                <input type="email" name="email">
+            </div>
+            <br>
+            <div>
+                <label>Message</label>
+                <!-- Viceradkove textove pole -->
+                <textarea name="message"></textarea>
+            </div>
+            <br>
+            <div>
+                <label>Gender</label>
+                <!-- Vyber -->
+                <select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label>Age:</label>
+                <input type="number" name="age" value="30">
+            </div>
+            <br>
+            <div>
+                <label>Birthday:</label>
+                <input type="date" name="birthday">
+            </div>
+            <br>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+
+        <!-- Button -->
+        <button>Click Me</button>
+
+        <br>
+
+        <!-- Image -->
+        <a href="img/sample.jpg">
+            <img src="img/sample.jpg" alt="My Sample Image" width="200">
+        </a>
+    </body>
+</html>
