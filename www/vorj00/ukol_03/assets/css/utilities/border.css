@@ -1,0 +1,11 @@
+.border-1 {
+    border: 1px solid #000;
+}
+
+.border-10 {
+    border: 10px solid #000;
+}
+
+.border-color-purple {
+    border-color: purple;
+}

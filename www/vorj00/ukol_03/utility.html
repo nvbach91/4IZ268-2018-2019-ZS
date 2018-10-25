@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Atomic CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/utilities/utility.css">
+
+    <link rel="stylesheet" href="assets/css/utilities/bc.css">
+    <link rel="stylesheet" href="assets/css/utilities/border.css">
+    <link rel="stylesheet" href="assets/css/utilities/c.css">
+    <link rel="stylesheet" href="assets/css/utilities/fs.css">
+    <link rel="stylesheet" href="assets/css/utilities/height.css">
+    <link rel="stylesheet" href="assets/css/utilities/line-height.css">
+    <link rel="stylesheet" href="assets/css/utilities/m.css">
+    <link rel="stylesheet" href="assets/css/utilities/p.css">
+    <link rel="stylesheet" href="assets/css/utilities/position.css">
+    <link rel="stylesheet" href="assets/css/utilities/right.css">
+    <link rel="stylesheet" href="assets/css/utilities/text.css">
+    <link rel="stylesheet" href="assets/css/utilities/top.css">
+    <link rel="stylesheet" href="assets/css/utilities/w.css">
+</head>
+
+<body>
+    <div class="sans-serif">The font of this web page is not serif</div>
+    <div class="c-red">This text is red-ish using a named color</div>
+    <div class="c-green">This text is green-ish using a rgb color</div>
+    <div class="c-blue bold">This text is blue-ish using a hex color and the text is bold</div>
+    <div class="fs-18">The size of this text is 18px</div>
+    <div class="fs-24 italic">The size of this text is 24px and the text is italic</div>
+    <div class="c-white bc-brown">This text is white and the background color is brown-ish</div>
+    <p class="text-center line-height-32">This paragraph's content is centered and the line height is 32px. Lorem
+        ipsum dolor sit
+        amet consectetur
+        adipisicing elit.
+        Earum excepturi optio consectetur molestias deleniti, iure voluptas reiciendis, dolor iste voluptatem iusto
+        aliquid unde, quam commodi a doloribus impedit numquam assumenda.</p>
+    <p class="text-justify uppercase">This paragraph's content is justified and the text is capitalized everywhere (use
+        text-transform). Lorem ipsum
+        dolor, sit amet consectetur adipisicing elit. Expedita ipsa perferendis quod quia obcaecati illum enim saepe,
+        maxime, ratione iure iusto. Quae delectus voluptatibus, repellendus veniam facere molestias dolor possimus!</p>
+    <div class="w-400 h-300 border-1 border-color-purple p-30">This box is 400px in width and 300px
+        in height total. It
+        has a solid 1px purple border and
+        the padding is 30px</div>
+    <div class="w-500 h-200 bc-red m-100">This box is 500px in width and 200px in height total. It has a red-ish
+        background-color and
+        the margin on every side is 100px</div>
+    <div class="display-none">You should not be able to see this text at all</div>
+    <div class="w-100p h-150 bc-blue p-50 border-10">This box is 100% in width and 150px in height total. It has a
+        blue-ish background-color, padding: 50px and
+        a yellow-ish 10px wide border. Pay attention to the width of this box, it should not be wider than the page
+        itself!</div>
+    <div class="hidden">You should not be able to see this text as well but there is a gap</div>
+    <div class="w-200 h-500 bc-green opacity-half">This box is 200x500, its background color is green-ish and its
+        opacity is 0.5</div>
+    <div class="w-400 h-300 position-relative bc-lightblue">
+        <p>This box is 400x300 and its position is relative, its
+            background color is light blue</p>
+        <div class="w-50 h-50 position-absolute top-50 right-10 bc-pink">This box is 50x50 and its position is absolute
+            inside its
+            parent: 50px from the top
+            and 10px from the right. Its background color is pink</div>
+    </div>
+    <p>This button is 300px wide and 100px high and whenever I click on it, its text's
+        color turns blue</p>
+    <button class="w-300 h-100 c-blue-active">Button 01</button>
+    <p>This button is 200px wide and 50px high and whenever hover my mouse on it, its
+        background color turns brown</p>
+    <button class="w-200 h-50 c-brown-hover">Button 02</button>
+    <div class="w-200 h-500 bc-blue pointer-hover m-top-200">This box is 200x500, its background color is blue-ish and
+        whenever I hover my mouse over
+        it, the cursor turns in to a hand. There is a 200px space above this box.</div>
+</body>
+
+</html>
