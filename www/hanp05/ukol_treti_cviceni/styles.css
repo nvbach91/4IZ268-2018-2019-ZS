@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.line-02 {
+    color: red;
+}
+
+.line-03 {
+    color: rgb(0, 255, 0);
+}
+
+.line-04 {
+    color: #0099EE;
+    font-weight: 900;
+}
+
+.line-05 {
+    font-size: 18px;
+}
+
+.line-06 {
+    font-size: 24px;
+    font-style: italic;
+}
+
+.line-07 {
+    color: white;
+    background-color: brown;
+}
+
+.paragraph-01 {
+    line-height: 32px;
+    text-align: center;
+}
+
+.paragraph-02 {
+    text-align: justify;
+    text-transform: uppercase;
+}
+
+.box-01 {
+    width: 400px;
+    height: 300px;
+    border: 1px solid purple;
+    padding: 30px;
+}
+
+.box-02 {
+    width: 500px;
+    height: 200px;
+    background-color: red;
+    margin: 100px;
+}
+
+.invisible-01 {
+    display: none;
+}
+
+.box-03 {
+    width: 100%;
+    height: 150px;
+    background-color: #0099EE;
+    padding: 50px;
+    border: 10px solid yellow;
+}
+
+.invisible-02 {
+    visibility: hidden;
+}
+
+.box-04 {
+    height: 500px;
+    width: 200px;
+    background-color: rgba(0, 255, 0, .5);
+}
+
+.box-05-parent {
+    height: 300px;
+    width: 400px;
+    position: relative;
+    background-color: lightskyblue;
+}
+
+.box-06 {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    background-color: pink;
+    top: 50px;
+    right: 10px;
+}
+
+.button-01 {
+    width: 300px;
+    height: 100px;
+}
+
+.button-01:active {
+    color: blue;
+}
+
+.button-02 {
+    width: 200px;
+    height: 50px;
+}
+
+.button-02:hover {
+    background-color: brown;
+}
+
+.box-07 {
+    height: 500px;
+    width: 200px;
+    background-color: rgb(21, 117, 226);
+    margin-top: 200px;
+    cursor: pointer;
+}
