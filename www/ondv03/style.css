@@ -1,73 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Open Sans'
 }
-.text#first{
+.text01{
     color: red
 }
-.text#second{
+.text02{
     color: rgb(0, 128, 0)
 }
-.text#third{
+.text03{
     color: #009990;
     font-weight: bold;    
 }
-.text#fourth{
+.text04{
     font-size: 18px
 }
-.text#fifth{
+.text05{
     font-size: 24px;
     font-style: italic
 }
-.text#sixth{
+.text06{
     color: white;
     background-color: rgb(128, 87, 0)
 }
-p#first{
+.p01{
     text-align: center;
     line-height: 32px
 }
-p#second{
-    text-justify: auto;
+.p02{
+    text-align: justify;
     text-transform: uppercase;
 }
-.box#first{
+.box01{
     width: 400px;
     height: 300px;
     border: 1px solid purple;
     padding: 30px;
 }
-.box#second{
+.box02{
     width: 500px;
     height: 200px;
     background-color: rgb(128, 0, 17);
     margin: 100px;    
 }
-.text#seventh{
+.text07{
     visibility: hidden;
 }
-.box#third{
+.box03{
     width: auto;
     height: 150px;
     background-color: rgb(0, 81, 128);
     padding: 50px;
-    border: 10px rgb(191, 224, 4);
+    border: 10px rgb(191, 224, 4) solid;
 }
-.text#eighth{
+.text08{
     visibility: hidden;
 }
-.box#fourth{
+.box04{
     width: 200px;
     height: 500px;
     background-color: rgb(58, 133, 58);
     opacity: 0.5;
 }
-.box#fifth{
+.box05{
     width: 400px;
     height: 300px;
     position: relative;
     background-color: lightblue;
 }
-.box#sixth{
+.box06{
     width: 50px;
     height: 50px;
     position: absolute;
@@ -75,17 +77,15 @@ p#second{
     margin-left: 340px;
     background-color: pink;
 }
-.button#first{
+.button01{
     width: 300px;
     height: 100px;
 }
 .button#first:active{
     color: blue;
 }
-.button#second{
+.button02{
     width: 200px;
     height: 50px;
-}
-.button#second:hover{
-    cursor: -webkit-grab;
+    cursor: pointer;
 }
