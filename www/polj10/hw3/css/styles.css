@@ -112,7 +112,7 @@ body {
     height: 100px;
 }
 
-.button-1:focus {
+.button-1:active {
     color: #2200FF;
 }
 
