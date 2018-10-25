@@ -11,13 +11,14 @@ body {
     color:rgb(0, 110, 10);
 }
 .text_3 {
-    color: 	#0000FF
+    color: 	#0000FF;
+    font-weight: bold;
 }
 .text_4 {
     font-size: 18px;
 }
 .text_5 {
-    font-family: 'italic';
+    font-family: italic;
     font-size:24px;
 }
 .text_6 {
