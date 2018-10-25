@@ -1,0 +1,139 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.white-text-color {
+    color: white;
+}
+
+.red-text-color {
+    color: red;
+}
+
+.greenish-text-color {
+    color: rgb(22, 255, 22);
+}
+
+.blueish-text-color {
+    color: #2200FF;
+}
+
+.brownish-background-color {
+    background-color: brown;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.italic-text {
+    font-style: italic;    
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.justified-text {
+    text-align: justify;
+}
+
+.uppercase-text {
+    text-transform: uppercase
+}
+
+.line-height-32 {
+    line-height: 32px;
+}
+
+.text-size-18 {
+    font-size: 18px;
+}
+
+.text-size-24 {
+    font-size: 24px;
+}
+
+.box-1 {
+    width: 400px;
+    height: 300px;
+    border: 1px solid purple;
+    padding: 30px;
+}
+
+.box-2 {
+    background-color: red;
+    width: 500px;
+    height: 200px;
+    margin: 100px;
+}
+
+.box-3 {
+    width: calc(100% - 120px);
+    height: 150px;
+    background-color: #2200FF;
+    padding: 50px;
+    border: 10px solid yellow;
+}
+
+.box-4 {
+    width: 200px;
+    height: 500px;
+    background-color: green;
+    opacity: 0.5;
+}
+
+.box-5 {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background-color: lightblue;
+}
+
+.box-5-1 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: pink;
+}
+
+.box-6 {
+    width: 200px;
+    height: 500px;
+    background-color: #2200FF;
+    margin-top: 200px;
+    cursor: pointer;
+}
+
+.button-1 {
+    width: 300px;
+    height: 100px;
+}
+
+.button-1:active {
+    color: #2200FF;
+}
+
+.button-2 {
+    width: 200px;
+    height: 50px;
+}
+
+.button-2:hover {
+    background-color: brown;
+}
+
+.collapse {
+    visibility: collapse;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
+
+
+
