@@ -149,12 +149,30 @@ nav ul li {
     }
 }
 
-   /* Pro mobily */ 
+   /* Pro mobily 
 h1 {
     font-size: 12px;
 }
 @media screen and (max-width: 320px) {
     .poster h1 {
         font-size: 14px;
+    }
+} */
+ /* Je potreba upravit stranku */
+/* @media print {
+    .poster {
+        background-image: none;
+        padding: 0;
+    }
+
+    .poster h1, .poster h3 {
+        background-image: none;
+        color: black;
+    }
+} */
+
+@media print {
+    * {
+        background-image: none !important;
     }
 }
