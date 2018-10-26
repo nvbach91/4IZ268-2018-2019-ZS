@@ -78,10 +78,16 @@ nav ul li {
       color: white;
       padding: 5px 15px;
       border-radius: 3px;
+        /* barva se zmeni za 0.2 sek*/
+      transition: background-color 0.2 linear;
+  }
+
+  .products button:hove {
+      background-color: firebrick;
   }
 
   footer {
-      background-color: black;
+      background-color: darkslategray;
       color: white;
       text-align: center;
   }
@@ -114,27 +120,27 @@ nav ul li {
 
    /* kdyd obrayovka je mensi nez 640px pouziva se nasledujici kod, kdyz je vetsi pouz to, co je nahore */ 
 
-   @media screen and (max-width 1400px) {
+   @media screen and (max-width: 1400px) {
     .poster h1 {
         font-size: 30px;
     }
 }
-   @media screen and (max-width 1366px) {
+   @media screen and (max-width: 1366px) {
     .poster h1 {
         font-size: 30px;
     }
 }
-@media screen and (max-width 1280px) {
+@media screen and (max-width: 1280px) {
     .poster h1 {
         font-size: 20px;
     }
 }
-@media screen and (max-width 1024px) {
+@media screen and (max-width: 1024px) {
     .poster h1 {
         font-size: 20px;
     }
 }
-@media screen and (max-width 960px) {
+@media screen and (max-width: 960px) {
     .poster {
         padding: 5px;
     }
@@ -147,7 +153,7 @@ nav ul li {
 h1 {
     font-size: 12px;
 }
-@media screen and (max-width 320px) {
+@media screen and (max-width: 320px) {
     .poster h1 {
         font-size: 14px;
     }
