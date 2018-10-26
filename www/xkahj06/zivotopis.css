@@ -1,0 +1,26 @@
+body, body a {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    color: rgb(24, 0, 34);
+}
+.hlavni{
+    font-size: 45px;
+    color: blueviolet;
+    text-decoration: underline;
+    }
+
+.roky{
+    color: #3a160c;
+    font-size: 20px;
+    font-family: BlackChancery, RM Albion, fantasy, sans-serif;
+    }
+
+.udaj{
+    color: rgba(11, 7, 70, 0.774);
+    font-size: 18px;
+    }
+h2{
+    color: rgba(81, 17, 50);
+    font-size: 38px;
+    font-family: cursive;
+    text-decoration: underline;
+    }
