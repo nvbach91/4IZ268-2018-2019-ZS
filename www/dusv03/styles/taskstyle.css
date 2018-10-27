@@ -1,9 +1,6 @@
 *{
     box-sizing: border-box;
-}
-
-.part1 {
-  font-family: sans-serif;
+    font-family: sans-serif;
 }
 
 .part2 {
@@ -24,7 +21,7 @@
 
 .part6 {
     font-size: 24px;
-    font: italic;
+    font-style: italic;
 }
 
 .part7 {
@@ -121,8 +118,5 @@
     width: 200px; 
     background-color: #4444eb;
     margin-top: 200px;
-}
-
-.part22:hover{
     cursor:pointer;
 }
