@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .firstName{
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 400;
     line-height: .8;
 }
@@ -111,5 +111,100 @@ li a:hover {
     margin-top: 100px;
     border: 0;
 }
+@media screen and (max-width: 900px) {
+    nav{
+        position: relative;
+        top: 0;
+    }
 
+    li {
+        float: none;
+        display: list-item;
+        text-transform: uppercase;
+    }
+    .cover{
+        right: 0px;
+        position: fixed;
+        left: auto;
+        top: auto;
+        bottom: 0;
+        width: 50%;
+        height: auto;
+        max-height: 100%;
+        z-index: 1; 
+    }
+    .mainContent{
+        position: relative;
+        padding: 0;
+        margin-right: 50%;
+        margin-left: 25px;
+        margin-top: 100px;
+        border: 0;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    body{
+        font-size: 13px;
+    }
+
+    nav{
+        position: relative;
+        top: 0;
+    }
+
+    li {
+        float: none;
+        display: list-item;
+        text-transform: uppercase;
+    }
+
+    .name{
+        font-size: 30px;
+        font-weight: 800;
+        line-height: .8;
+        letter-spacing: 0.1em;
+    }
+    
+    .firstName{
+        font-size: 20px;
+        font-weight: 400;
+        line-height: .8;
+    }
+
+    .cover{
+        right: 0px;
+        position: fixed;
+        left: auto;
+        top: 80%;
+        height: auto;
+        max-height: 100%;
+        z-index: 1; 
+    }
+
+    .cover:hover{
+        right: 0px;
+        position: fixed;
+        left: auto;
+        top: auto;
+        bottom: 0;
+        height: auto;
+        max-height: 100%;
+        z-index: 1; 
+    }
+
+    li a {
+        padding: 4px;
+    }
+    
+    .mainContent{
+        position: relative;
+        padding: 0;
+        margin-right: 25px;
+        margin-left: 25px;
+        margin-top: 25px;
+        margin-bottom: 25%;
+        border: 0;
+    }
+}
 
