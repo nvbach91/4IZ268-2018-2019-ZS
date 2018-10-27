@@ -1,0 +1,56 @@
+.tableEducation{
+    border: 1px black solid;
+    width: available;
+}
+.tableEducation th{
+    border: 1px black solid;
+    text-align: left;
+}
+.tableEducation .grey{
+    border: 1px black solid;
+    text-align: left;
+    background-color: #adadad;
+}
+
+.tableWork th{
+    border: 1px black solid;
+    text-align: left;
+}
+
+.tableWork .grey{
+    border: 1px black solid;
+    text-align: left;
+    width: 100px;
+    background-color: #adadad;
+}
+.tableWork .tableFitContent{
+    width: 100%;
+
+}
+.tableFitContent tr > :first-child{
+    width: 100px;
+}
+.blankBox{
+    margin: 150px;
+}
+.list{
+    font-style:italic;
+}
+
+.tableJazyk{
+    border: 1px black solid;
+}
+
+.tableJazyk .grey{
+    border: 1px black solid;
+    text-align: left;
+    background-color: #adadad;
+}
+
+.tableJazyk .smaller th{
+    border: 1px black solid;
+    text-align: left;
+    font-size: medium;
+
+}
+
