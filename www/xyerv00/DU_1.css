@@ -14,16 +14,36 @@ body {
 }
 
 #top {
-    position: absolute;
-    left: 50px;
-    top: 100px;
-    color: dimgray;
     text-align: right;
     font-family: Georgia;
     font-size: 40px;
     font-weight: bold;
     border-bottom: 3px solid white;
+   }
 
+.runtext {
+    color: rgba(105, 105, 105, 1);
+    position: absolute;
+    height: 195px;
+    width: 250px;
+    top: 100px;
+    left: 100px;
+    animation-name: runtext;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes runtext {
+    0%   {left: 0px; color: rgba(105, 105, 105, 0);}
+    100% {left: 100px;color: rgba(105, 105, 105, 1);}
+}
+
+.under-runtext {
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    top: 258px;
+    border-bottom: 3px solid white;
 }
 
 h2 {
@@ -71,6 +91,15 @@ table{
     background-size: cover;
     height: 600px;
     position: relative;
+    opacity: 1.0;
+    animation-name: headpicture;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes headpicture {
+    0%   {opacity: 0.2;}
+    100% {opacity: 1.0;}
 }
 
 .nadpis4 {
