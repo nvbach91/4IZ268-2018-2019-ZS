@@ -1,4 +1,4 @@
-.fontNotSerif{
+*{
     font-family: Arial, Helvetica, sans-serif;
 }
 .redFont{
@@ -43,7 +43,7 @@
     margin:100px;
 }
 .hidden{
-    visibility: hidden;
+    display: none;
 }
 .box3{
     width: 100%;
@@ -51,20 +51,21 @@
     background-color: blue;
     padding: 50px;
     border: 10px solid yellow;
+    box-sizing: border-box;
 }
 .gap{
-    color: white;
-    background-color: white;
+    visibility: hidden;
 }
 .box4{
     width: 200px;
     height: 150px;
-    color: rgba(51, 255, 14, 0.5);
+    color: rgb(51, 255, 14);
+    opacity: 0.5;
 }
 .parent{
     position: relative;
 }
-.box5{
+.parentac{
     width: 400px;
     height: 300px;
     background-color: lightblue;
@@ -82,7 +83,7 @@
     width: 300px;
     height: 100px;
 }
-.button1:focus{
+.button1:active{
     width: 300px;
     height: 100px;
     background-color: saddlebrown;
@@ -94,7 +95,15 @@
     margin-top: 200px;
 }
 
-.button2:hover{
+.button2{
+    cursor: grab;
+}
+
+.box7{
+    width: 200px;
+    height: 500px;
+    background-color: #2e39ff;
+    margin-top: 200px;
     cursor: grab;
 }
 
