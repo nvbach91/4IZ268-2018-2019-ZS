@@ -11,15 +11,9 @@ html, body {
     background-color: #edeeef;
 }
 
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-    }
-}
-
 .wrapper {
     position: relative;
-    padding-bottom: 140px;
+    padding-bottom: 160px;
     min-height: 100vh;
     overflow: hidden;
     display: block;
@@ -27,32 +21,34 @@ html, body {
 
 main {
     background-color: #edeeef;
-    padding-bottom: 50px;
+    padding-bottom: 70px;
+    padding-top: 75px;
 }
 
 header {
     float: left;
     color: white;
-    padding-top: 15px;
-    padding-left: 20px;   
+    padding-left: 20px;
+    padding-top: 16px;   
 }
 
 .container-top {
     width: 100%;
     background-color: #26262a;
-    height: 100px;
+    height: 80px;
+    position: fixed;
 }
 
 nav {
     float: right;  
     font-size: 20px;
-    padding-top: 35px;
+    padding-top: 27px;
     padding-right: 15px;  
 }
 
 .nav-item-current {
-    border-bottom: white 2px solid;
-    border-top: white 2px solid;     
+    border-bottom: white 1.8px solid;
+    border-top: white 1.8px solid;     
 }
 
 a {
@@ -68,8 +64,8 @@ nav a {
 nav a:hover {
     color: rgb(18, 103, 182);
     /*text-decoration: underline;*/
-    border-bottom: rgb(18, 103, 182) 2px solid;
-    border-top: rgb(18, 103, 182) 2px solid;
+    border-bottom: rgb(18, 103, 182) 1.8px solid;
+    border-top: rgb(18, 103, 182) 1.8px solid;
 }
 
 footer {
@@ -86,8 +82,10 @@ footer {
 .column {
     float: left;
     width: 50%;
-    padding: 30px;
-    text-align: justify;
+    padding: 40px;
+    padding-top: 0px;
+    padding-right: 0px;
+    text-align: center;
 }
 
 main:after {
@@ -95,31 +93,86 @@ main:after {
     display: table;
     clear: both;
 }
-/************/
 
-.title {
-    font-size: 50px;
-    /*padding-left: 15px;*/
+.column img {
+    width: 400px;
+    height: 400px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
-.title:hover {
-    color: rgb(18, 103, 182);
+.column p {
+    text-align: justify;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/************/
+.career {
+    text-align: center;
+}
+
+.career h1, h1 {
+    font-size: 60px;
+    text-align: center;
+}
+
+.welcome h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.career h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.date {
+    font-style: italic;
+}
+
+.column p.career-text-last {
+    margin-bottom: 40px;
+}
+
+.h1-underline {
+    height: 12px; 
+    border: 0; 
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+    font-size: 35px;
+    /*margin-top: 50px;*/
+    padding-left: 10px;
+}
+
+main a {
+    color: rgb(18, 103, 182);    
+}
+
+main a:hover {
+    text-decoration: underline;    
 }
 
 .copyright {
-    padding-top: 30px;
+    padding-top: 0px;
     padding-bottom: 20px;
+    margin-top: 10px;
 }
 
 .welcome {
     text-align: center;
     width: 70%;
     margin:0 auto;
+    margin-top: 30px;
 }
 
 .social {
     width: 70%;
     margin:0 auto;
+    margin-top: 30px;
     text-align: center;
 }
 
@@ -155,9 +208,9 @@ main:after {
     /*text-align: justify;*/
 }
 
-.social-img:hover, .social-img-square:hover{
+.social-img:hover, .social-img-square:hover {
     /*-webkit-filter: blur(5px);*/
-    filter: blur(5px);
+    filter: blur(3px);
 }
 
 .empty {
@@ -165,4 +218,223 @@ main:after {
     height: 50px;
     width: 100%;
     bottom: 0;
+}
+
+.career-list {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.career h3 {
+    text-align: left;
+}
+
+.welcome img {
+    width: 150px;
+    height: 150px;
+}
+
+.hello-img {
+    margin-top: 10px;
+}
+
+.hello-img:hover {
+    transform: scale(1.05);
+}
+
+.about {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about p {
+    width: 70%;
+    display: inline-block; 
+    text-align: justify;  
+    margin-top: 0;
+    margin-bottom: 10px; 
+}
+
+.about h2 {
+    width: 70%;
+    display: inline-block; 
+    text-align: left; 
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.about ul {
+    width: 70%;
+    display: inline-block; 
+    text-align: left; 
+    margin-bottom: 10px;
+}
+
+.inspiration {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.inspiration p {
+    width: 70%;
+    display: inline-block; 
+    text-align: justify;  
+    margin-top: 0;
+    margin-bottom: 10px; 
+}
+
+.inspiration h2 {
+    width: 70%;
+    display: inline-block; 
+    text-align: left; 
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.inspiration ul {
+    width: 70%;
+    display: inline-block; 
+    text-align: left; 
+    margin-bottom: 10px;
+}
+
+.inspiration-photos img {
+    margin: 10px;
+    width: 100px;
+    margin-top: 20px;
+}
+
+.inspiration-photos img:hover {
+    filter: blur(3px);
+}
+
+.logo {
+    height: 50px;
+    margin-top: 0px;
+    float: left;
+}
+
+@media screen and (max-width: 950px) {
+    .title {
+        display: none;
+    }
+
+    .column {
+        width: 100%;
+        padding-right: 40px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .social-item {
+        width: 33%;
+    }
+
+    .social, .welcome {
+        width: 100%;
+        padding: 40px;
+    }
+
+    .about p, .about h2, .inspiration p, .inspiration h2 {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .about ul, .inspiration ul {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 50px;   
+    }
+}
+
+iframe {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.welcome-left {
+    text-align: justify;
+}
+
+.footer-logo {
+    height: 30px;
+    margin-top: 35px;
+}
+
+@media screen and (max-width: 680px) {
+    .title {
+        display: none;
+    }
+
+    .container-top {
+        position: static;
+        text-align: center;
+        height: 150px;
+    }
+
+    main {
+        padding-top: 0px;   
+    }
+
+    .logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        clear: both;
+    }
+
+    header {
+        float: none;
+        clear: both;
+    }
+
+    nav {
+        float: none;
+        clear: both;
+    }
+
+    .column {
+        width: 100%;
+        padding-right: 40px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .social-item {
+        width: 50%;
+    }
+
+    .social, .welcome {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .about p, .about h2, .inspiration p, .inspiration h2 {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .about ul, .inspiration ul {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 40px;   
+    }
+
+    iframe {
+        width: 420px;
+        height: 236.25px;
+    }
+}
+
+@media print {
+    .container-top {
+        display: none;
+    }
+
+    footer, footer p, footer img {
+        display: none;
+    }
 }
