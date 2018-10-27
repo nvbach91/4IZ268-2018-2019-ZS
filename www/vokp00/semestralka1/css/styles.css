@@ -8,16 +8,15 @@
     z-index: -100;
     height: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     max-height: 500px;
     max-width: 100%;
-    box-sizing: border-box;
-    
   }
   
   .videodiv-video {
     width: 100%;
-    box-sizing: border-box;
   }
 
 body {
@@ -39,7 +38,6 @@ body, body a, p {
     background-repeat: no-repeat;
     background-size: contain;  
     padding: 90px 0px;
-    
 }
 
 .bigpic p {
@@ -76,7 +74,6 @@ nav li {
 }
 
 nav a {
-    display: inline-block;
     text-decoration: none;
 }
 nav li:hover {
@@ -88,13 +85,23 @@ nav li:hover a {
     color: white;
 }
 
+.intro {
+    position: absolute;
+    top: 400px;
+    width: 99%;
+    border-radius: 10px;
+    background-color: rgba(242,242,235, 0.4);
+    font-weight: 500;
+    text-align: center;
+}
+
 .offer {
+    margin-top: 0px;
     max-width: 100%;
-    min-height: 400px;
     background-size: content;
-    margin: 0px;
-    padding: 20px 0;
     z-index: -100;
+    text-align: justify;
+    line-height: 1.5em;
 }
 
 .point {
@@ -104,10 +111,11 @@ nav li:hover a {
     border-radius: 10px;
     background-color: rgba(242,242,235, 0.9);
     float: left;
+    display: block;
 }
 
 .point p {
-    min-height: 250px;
+    min-height: max-content;
 }
 
 
@@ -116,13 +124,50 @@ nav li:hover a {
 }
 
 .image1 {
-content: url("images/engineer.png");
+    content: url("images/engineer.png");
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .image2{
     content: url("images/course.png");
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .image3 {
-    content: url();
+    content: url("images/startup.png");
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.networks {
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 30px;
+    width: 80px;
+    cursor: pointer;
+    background-color: rgba(242,242,235, 0.9);
+    z-index: 100;
+}
+
+.social-facebook { background-image: url('https://image.flaticon.com/icons/svg/54/54997.svg'); }
+.social-twitter { background-image: url('https://www.iconsdb.com/icons/preview/black/twitter-4-xxl.png'); }
+.social-instagram { background-image: url('https://iconsplace.com/wp-content/uploads/_icons/000000/256/png/instagram-icon-256.png'); }
+
+.copyright {
+    background-color: rgba(242,242,235, 0.9);
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: -3em;
 }
