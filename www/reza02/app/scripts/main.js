@@ -8,6 +8,9 @@
 // import components
 // import './components/menu.js';
 
+var headerHeight = $('#header').height();
+console.log(headerHeight);
+
 // init
 // $('.lazy').Lazy({
 //   // your configuration goes here
@@ -35,7 +38,7 @@ function scrollTo(e) {
   var $target = $(href);
   if ($target.length) {
     $('html,body').animate({
-      scrollTop: $target.offset().top + (typeof offset !== 'undefined' ? parseInt(offset) : 10)
+      scrollTop: $target.offset().top - headerHeight + (typeof offset !== 'undefined' ? parseInt(offset) : 10)
     }, {
       duration: 500,
       easing: 'swing'

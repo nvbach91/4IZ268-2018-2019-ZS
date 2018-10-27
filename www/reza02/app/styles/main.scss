@@ -19,6 +19,12 @@
 @import "layout/_section";
 
 // Components
+@import "components/_nav";
 @import "components/_teaser";
+@import "components/_cards";
 
 // Pages / Slides
+@import "pages/_page-homepage";
+@import "pages/_page-places";
+@import "pages/_page-detail";
+@import "pages/_page-about";

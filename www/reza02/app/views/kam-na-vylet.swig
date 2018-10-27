@@ -1,0 +1,63 @@
+{% extends "layouts/_layout.swig" %}
+{% block bodyClass %}page-places{% endblock %}
+{% block pageTitle %}{% endblock %}
+{% block description %}Description{% endblock %}
+
+{% block main %}
+
+  <div class="teaser" style="background-image: url(images/teaser-places.jpg);">
+    <span class="teaser__title text--thin">Kam na výlet?</span>
+  </div>
+
+  <main class="main container">
+    <article id="content" class="main__content">
+
+      <section class="section">
+        <h1 class="h1">Kam na výlet?</h1>
+
+        <p class="text--large">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo pariatur commodi itaque velit, perspiciatis doloremque eveniet, rerum ab voluptate alias nulla quis. Porro, quisquam harum. Maiores explicabo reiciendis quaerat corporis in maxime necessitatibus animi voluptates amet minus excepturi culpa aliquam ipsam ut esse, odio autem. Nobis non eveniet et laboriosam.</p>
+
+        <div class="cards">
+          <a href="/vitkov.html" class="card" title="Vítkov" style="background-image: url(images/places/vitkov/card.jpg);">
+            <div class="card__bottom">
+              <span class="card__label text--large text--uppercase">Vítkov</span>
+            </div>
+          </a>
+
+          <a href="/vitkov.html" class="card" title="Vítkov" style="background-image: url(images/places/vitkov/card.jpg);">
+            <div class="card__bottom">
+              <span class="card__label text--large text--uppercase">Vítkov</span>
+            </div>
+          </a>
+
+          <a href="/vitkov.html" class="card" title="Vítkov" style="background-image: url(images/places/vitkov/card.jpg);">
+            <div class="card__bottom">
+              <span class="card__label text--large text--uppercase">Vítkov</span>
+            </div>
+          </a>
+
+          <a href="/vitkov.html" class="card" title="Vítkov" style="background-image: url(images/places/vitkov/card.jpg);">
+            <div class="card__bottom">
+              <span class="card__label text--large text--uppercase">Vítkov</span>
+            </div>
+          </a>
+
+          <a href="/vitkov.html" class="card" title="Vítkov" style="background-image: url(images/places/vitkov/card.jpg);">
+            <div class="card__bottom">
+              <span class="card__label text--large text--uppercase">Vítkov</span>
+            </div>
+          </a>
+
+          <a href="/vitkov.html" class="card" title="Vítkov" style="background-image: url(images/places/vitkov/card.jpg);">
+            <div class="card__bottom">
+              <span class="card__label text--large text--uppercase">Vítkov</span>
+            </div>
+          </a>
+        </div>
+
+      </section>
+
+    </article>
+  </main>
+
+{% endblock %}

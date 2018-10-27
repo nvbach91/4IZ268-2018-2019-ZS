@@ -1,3 +1,11 @@
+a {
+  transition: $transition;
+  color: $text-color;
+  &, &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+
 .link {
   position: relative;
   transition: $transition;

@@ -1,0 +1,24 @@
+.nav {
+
+}
+
+.nav__list {
+
+}
+
+.nav__item {
+  margin: 1rem;
+  padding: 0.25em;
+
+  a {
+    display: inline-block;
+    &:hover {
+      // text-shadow: 0 0 .05em $text-color;
+      transform: translateY(-.25em);
+    }
+    
+    &.active {
+      text-shadow: 0 0 .05em $text-color;
+    }
+  }
+}

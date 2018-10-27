@@ -43,9 +43,7 @@
 
     {% include '_header.swig' %}
 
-    <main class="main">
-      {% block main %}{% endblock %}
-    </main>
+    {% block main %}{% endblock %}
 
     {% include '_footer.swig' %}
 

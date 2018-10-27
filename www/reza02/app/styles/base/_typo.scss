@@ -28,8 +28,9 @@ h6, .h6 {
   font-size: $h6-font-size;
 }
 
-.text {
+p, .text {
   font-size: $font-size-base * 1px;
+  margin-bottom: 2rem;
 }
 
 .text--uppercase {

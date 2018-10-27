@@ -1,7 +1,15 @@
 .main {
+  display: flex;
+  box-shadow: 0 0 10rem 0 transparentize(#000000, .95);
+  min-height: 100vh;
+  padding: 0;
 }
 
 .main__content {
-  box-shadow: 0 0 10rem 0 transparentize(#000000, .95);
-  min-height: 100vh;
+  flex: 2;
+}
+
+.main__side {
+  flex: 1;
+  background: $bg-light;
 }
