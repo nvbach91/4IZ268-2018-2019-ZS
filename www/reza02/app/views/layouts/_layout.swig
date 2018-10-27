@@ -43,7 +43,7 @@
 
     {% include '_header.swig' %}
 
-    <main class="content">
+    <main class="main">
       {% block main %}{% endblock %}
     </main>
 

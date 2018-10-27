@@ -47,5 +47,10 @@
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0",
     "wiredep": "^2.2.2"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery-lazy": "^1.7.7",
+    "waypoints": "^4.0.1"
   }
 }

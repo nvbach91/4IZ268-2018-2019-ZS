@@ -12,10 +12,13 @@
 
 // Layout
 @import "layout/_default";
+@import "layout/_container";
 @import "layout/_header";
 @import "layout/_footer";
+@import "layout/_main";
 @import "layout/_section";
 
 // Components
+@import "components/_teaser";
 
 // Pages / Slides

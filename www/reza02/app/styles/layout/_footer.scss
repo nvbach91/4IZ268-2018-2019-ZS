@@ -1,2 +1,8 @@
 .footer {
+  background: $bg-dark;
+  padding: 3rem 0 3rem;
+
+  * {
+    color: $text-color-inverse;
+  }
 }

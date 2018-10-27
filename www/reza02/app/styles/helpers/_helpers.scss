@@ -35,10 +35,6 @@
   pointer-events: none !important;
 }
 
-.hidden {
-  display: none;
-}
-
 .hide {
   opacity: 0 !important;
   pointer-events: none;
@@ -70,6 +66,10 @@
   }
 }
 
+.hidden {
+  display: none;
+}
+
 .hidden-md {
   @media (max-width: 991px) {
     display: none !important;
@@ -86,6 +86,22 @@
   @media (max-width: 567px) {
     display: none !important;
   }
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-inline {
+  display: inline;
 }
 
 .space-m-all-0 { margin: 0 !important; }

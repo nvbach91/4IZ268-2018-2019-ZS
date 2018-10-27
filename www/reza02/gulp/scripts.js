@@ -54,21 +54,7 @@ gulp.task('vendor', function(){
     return gulp.src([
       vendorPath + 'jquery/dist/jquery.js',
       vendorPath + 'jquery-lazy/jquery.lazy.js',
-      vendorPath + 'fullpage.js/dist/jquery.fullpage.js',
-      // vendorPath + 'js-cookie/src/js.cookie.js',
-      // vendorPath + 'slick-carousel/slick/slick.js',
-      // vendorPath + 'magnific-popup/dist/jquery.magnific-popup.js',
-      // vendorPath + 'waypoints/lib/jquery.waypoints.js',
-      // vendorPath + 'wow.js/dist/wow.js',
-      // vendorPath + 'paroller.js/dist/jquery.paroller.js',
-
-      // Bootstrap Components
-      // vendorPath + 'bootstrap/js/dist/util.js',
-      // vendorPath + 'bootstrap/js/dist/collapse.js',
-      // vendorPath + 'bootstrap/js/dist/scrollspy.js',
-      // vendorPath + 'bootstrap/js/dist/tab.js',
-      // vendorPath + 'bootstrap/js/dist/tooltip.js',
-      // vendorPath + 'bootstrap/js/dist/modal.js',
+      vendorPath + 'waypoints/lib/jquery.waypoints.js',
     ])
   .pipe($.concat('vendor.js'))
   .pipe(gulp.dest(jsDevDir + '/'))

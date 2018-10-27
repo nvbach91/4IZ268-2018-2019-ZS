@@ -11,7 +11,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 
 // template consts
-const projectName = "Streetwork × Na ulici se pracuje!";
+const projectName = "Průvodce prahou";
 const year = new Date().getFullYear();
 const timestamp = new Date().getTime();
 
