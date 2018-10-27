@@ -1,24 +1,23 @@
 * {
     box-sizing: border-box;
     color: black;
-    display: inline-block;
 }
 
 .videodiv {
     overflow: scroll;
     z-index: -100;
-    display: block;
     height: 100%;
     position: absolute;
     width: 100%;
     max-height: 500px;
     max-width: 100%;
     box-sizing: border-box;
+    
   }
   
   .videodiv-video {
     width: 100%;
-    float: left;
+    box-sizing: border-box;
   }
 
 body {
@@ -52,8 +51,12 @@ body, body a, p {
 
 ul {
     list-style: none;
+
 }
 
+header {
+    position: absolute;
+}
 nav {
     text-transform: uppercase;
     text-align: center;
@@ -64,13 +67,12 @@ nav ul {
 }
 
 nav li {
-    margin: 10px;
+    margin-left: 10px;
     padding: 20px 50px;
     background-color: #F2F2EB;
     opacity: 0.5;
     text-decoration: none;
     float: left;
-    position: relative;
 }
 
 nav a {
@@ -80,19 +82,15 @@ nav a {
 nav li:hover {
     background-color: #A62E38;
     opacity: 1;
+    cursor: pointer;
 }
 nav li:hover a {
     color: white;
 }
 
-h3:hover {
-    #A62E38
-}
-
 .offer {
     max-width: 100%;
     min-height: 400px;
-    /*background-color: rgba(33,33,33, 0.9);*/
     background-size: content;
     margin: 0px;
     padding: 20px 0;
@@ -112,10 +110,19 @@ h3:hover {
     min-height: 250px;
 }
 
-.point:nth-child(1) li {
-    background-image: url("https://icon2.kisspng.com/20180329/rjw/kisspng-marwadi-university-mechanical-engineering-computer-engineer-5abd83941eb483.0096477815223694281258.jpg" alt="Marwadi University Mechanical Engineering Computer Icons Civil Engineering - engineer @kisspng");
-}
 
 .point:hover {
     background-color: #A62E38;
+}
+
+.image1 {
+content: url("images/engineer.png");
+}
+
+.image2{
+    content: url("images/course.png");
+}
+
+.image3 {
+    content: url();
 }
