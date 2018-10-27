@@ -1,0 +1,21 @@
+
+// Change root for rem
+$font-size-base: 16 !default;
+
+// Functions
+// ==================================================
+@function vw($x, $screen: 1920px) {
+  @return ($x / ($screen * 0.01 )) * 1vw;
+}
+
+@function vh($x, $screen: 950px) {
+  @return ($x / ($screen * 0.01 )) * 1vh;
+}
+
+@function em($size-in-px, $font-size: $font-size-base) {
+  @return ($size-in-px / $font-size) * 1em;
+}
+
+@function rem($size-in-px, $font-size: $font-size-base) {
+  @return ($size-in-px / $font-size) * 1rem;
+}

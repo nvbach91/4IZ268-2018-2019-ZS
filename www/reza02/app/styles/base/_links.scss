@@ -1,0 +1,15 @@
+.link {
+  position: relative;
+  transition: $transition;
+  color: $link-color;
+
+  // telephone
+  &[href^="tel:"] {
+    color: $text-color;
+  }
+
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+    color: $link-color-hover;
+  }
+}

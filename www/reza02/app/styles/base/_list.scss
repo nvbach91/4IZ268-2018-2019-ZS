@@ -1,0 +1,29 @@
+.list {
+}
+
+.list--no-style {
+  list-style: none;
+  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+}
+
+.list--inline {
+  li, .list__item {
+    display: inline-block;
+  }
+}
+
+.list--block-inline {
+  li, .list__item {
+    display: block;
+    float: left;
+  }
+}
+
+.list--flex-inline {
+  display: flex;
+  // > * {
+  //   flex: 1;
+  // }
+}

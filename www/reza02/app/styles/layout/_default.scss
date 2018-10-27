@@ -1,0 +1,29 @@
+
+html, body {
+  min-height: 100vh;
+}
+
+// rem responsive
+html {
+  font-size: $font-size-base * 1px;
+
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: 1rem;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $bg-body;
+}
+
+// transition little move issue
+// https://stackoverflow.com/questions/12980153/image-moves-on-hover-chrome-opacity-issue
+*, *:before, *:after {
+  &:not(img) {
+    backface-visibility: hidden;
+  }
+}
