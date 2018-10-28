@@ -4,7 +4,8 @@
     font-size: 15px;
 }
 
-.videodiv {
+.videodiv, .topimage {
+    background-image: url("images/brain.png");
     overflow: scroll;
     z-index: -100;
     height: 100%;
@@ -161,6 +162,8 @@ footer {
     background-position: center;
     text-align: center;
 }
+
+
 
 /*
 .facebook { 
