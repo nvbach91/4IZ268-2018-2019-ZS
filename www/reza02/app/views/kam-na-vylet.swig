@@ -18,11 +18,6 @@
         <p class="text--large">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo pariatur commodi itaque velit, perspiciatis doloremque eveniet, rerum ab voluptate alias nulla quis. Porro, quisquam harum. Maiores explicabo reiciendis quaerat corporis in maxime necessitatibus animi voluptates amet minus excepturi culpa aliquam ipsam ut esse, odio autem. Nobis non eveniet et laboriosam.</p>
 
         <div class="cards">
-          <a href="/vitkov.html" class="card" title="Vítkov" style="background-image: url(images/places/vitkov/card.jpg);">
-            <div class="card__bottom">
-              <span class="card__label text--large text--uppercase">Vítkov</span>
-            </div>
-          </a>
 
           <a href="/vitkov.html" class="card" title="Vítkov" style="background-image: url(images/places/vitkov/card.jpg);">
             <div class="card__bottom">
@@ -30,29 +25,18 @@
             </div>
           </a>
 
-          <a href="/vitkov.html" class="card" title="Vítkov" style="background-image: url(images/places/vitkov/card.jpg);">
+          <a href="/metronom.html" class="card" title="Pražský metronom" style="background-image: url(images/places/metronom/card.jpg);">
             <div class="card__bottom">
-              <span class="card__label text--large text--uppercase">Vítkov</span>
+              <span class="card__label text--large text--uppercase">Pražský metronom</span>
             </div>
           </a>
 
-          <a href="/vitkov.html" class="card" title="Vítkov" style="background-image: url(images/places/vitkov/card.jpg);">
+          <a href="/rasinovo-nabrezi.html" class="card" title="Rašínovo nábřeží" style="background-image: url(images/places/rasinovo-nabrezi/card.jpg);">
             <div class="card__bottom">
-              <span class="card__label text--large text--uppercase">Vítkov</span>
+              <span class="card__label text--large text--uppercase">Rašínovo nábřeží</span>
             </div>
           </a>
 
-          <a href="/vitkov.html" class="card" title="Vítkov" style="background-image: url(images/places/vitkov/card.jpg);">
-            <div class="card__bottom">
-              <span class="card__label text--large text--uppercase">Vítkov</span>
-            </div>
-          </a>
-
-          <a href="/vitkov.html" class="card" title="Vítkov" style="background-image: url(images/places/vitkov/card.jpg);">
-            <div class="card__bottom">
-              <span class="card__label text--large text--uppercase">Vítkov</span>
-            </div>
-          </a>
         </div>
 
       </section>

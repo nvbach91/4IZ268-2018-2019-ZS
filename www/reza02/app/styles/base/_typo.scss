@@ -37,6 +37,30 @@ p, .text {
   text-transform: uppercase;
 }
 
+.text--italic {
+  font-style: italic;
+}
+
+.text--perex {
+  position: relative;
+  text-align: center;
+  padding-bottom: 2rem;
+
+  // line bottom
+  &:before {
+    content: '';
+    width: rem(100);
+    height: rem(5);
+
+    background: $bg-dark;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .text--thin {
   font-weight: 100;
 }

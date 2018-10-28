@@ -1,2 +1,25 @@
 img {
 }
+
+figure {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  
+  img {
+    max-width: rem(720);
+    opacity: .75;
+    transition: $transition;
+  }
+
+  &:hover {
+    img {
+      opacity: 1;
+    }
+  }
+}
+
+figcaption {
+  @extend .text--small;
+  @extend .text--italic;
+}

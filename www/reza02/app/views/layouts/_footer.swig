@@ -1,5 +1,21 @@
 <footer id="footer" class="footer">
   <div class="container">
-    <h2>Footer</h2>
+
+    <nav id="navFooter" class="footer__nav nav">
+      <ul class="nav__list list list--no-style list--inline">
+        <li class="nav__item">
+          <a class="text--large text--light" href="/">Naše Praha</a>
+        </li>
+        <li class="nav__item">
+          <a class="text--large text--light" href="/kam-na-vylet.html">Kam na výlet?</a>
+        </li>
+        <li class="nav__item">
+          <a class="text--large text--light" href="/o-projektu.html">O Projektu</a>
+        </li>
+      </ul>
+    </nav>
+
+    <p class="footer__copyright text--small">© 2018, Vytvořil v rámci 4IZ268 Adam Řezníček</p>
+
   </div>
 </footer>
