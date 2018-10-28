@@ -1,21 +1,37 @@
+    * {
+        box-sizing: border-box;
+    }
+    
     body {
         background-color: #5371b5;
     }
     
-    header {
-        display: flex;  
+    .logo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+
+    header { 
+        display: flex; 
         background-color: #5371b5;
         border-bottom-style: solid;
         border-bottom-width: 2px;
     }
     
+    nav ul {
+        display: flex; 
+        flex-wrap: wrap;
+    }
+
     nav li {
         display: block;
         float: left;
         margin: 20px;
         font-family: Arial, Helvetica, sans-serif;
         text-transform: uppercase;
-        font-size: 15px;
+        font-size: 22px;
         border-radius: 5px;
     }
     
@@ -46,9 +62,13 @@
         background-color: #5371b6; 
         color: white;
         text-align: center;
-        margin: 20px;
+        margin: 35px;
         font-size: 40px;
         font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .left ul {
+        padding-left: 0px;
     }
     
     .content {
@@ -75,7 +95,7 @@
         text-align: center;
         color: white;
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 25px;
+        font-size: 30px;
     }
     
     p {
@@ -91,23 +111,20 @@
     
     footer {
         display: flex;  
+        flex-wrap: wrap;
         background-color: #5371b5;
         border-top-style: solid;
         border-top-width: 2px;
-        position: relative;
     }
     
     .social {
-        position: absolute;
-        width: 230px;
-        left: 45%;
+        min-width: 230px;
         border-style: ridge;
         border-width: 2px;
         border-radius: 5px;
         border-color: #5371b5;
-        margin-top: 60px;
-        margin-bottom: 20px;
         background-color: white;
+        margin: auto;
     }
     
     .social a{
@@ -123,18 +140,15 @@
     h3 {
         text-align: center;
         color: #5371b5;
-        font-size: 15px;
+        font-size: 20px;
     }
     
     .copyright {
-        position: absolute;
-        left: 45%;
-        width: 230px;
-        max-height: 20px;
-        margin-bottom:20px;
-        margin-top: 20px;
+        min-width: 100%;
+    }
+    
+    .copyright h3{
         color: white;
-        font-size: 20px;
         text-align: center;
     }
     
@@ -142,177 +156,6 @@
         border-top-style: dotted;
         border-top-width: 2px;
     }
-
-
-@media screen and (max-width: 780px) and (min-width: 650px) {
-    .left {
-        min-width: 40%;
-    }
-
-    .copyright {
-        position: absolute;
-        left: 35%;
-        font-size: 12px;
-        margin-top: 10px;
-    }
-
-    .social {
-        left: 42%;
-        margin-top: 50px;
-        width: 130px;
-        margin-top: 30px;
-    }
-
-    .logoSocial {
-        margin: 5px;
-        width: 30px;
-        height: 30px;
-    }
-
-    body {
-        font-size: 8px;
-    }
-
-    h1 {
-        font-size: 23px;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
-
-    h3 {
-        font-size: 11px;
-    }
-
-    .left a {
-        font-size: 11px;
-    }
-
-    nav li {
-        font-size: 9px;
-        margin: 8px;
-        line-height: 33px;
-    }
-
-    .logo {
-        width: 200px;
-        height: 66px;
-    }
-}
-
-@media screen and (max-width: 650px) {
-    nav li {
-        font-size: 6px;
-        margin: 4px;
-        line-height: 22px;
-    }
-
-    body {
-        font-size: 7px;
-    }
-
-    .logo {
-        width: 150px;
-        height: 55px;
-    }
-
-    .left {
-        min-width: 40%;
-    }
-
-    h1 {
-        font-size: 18px;
-    }
-
-    h2 {
-        font-size: 12px;
-    }
-
-    h3 {
-        font-size: 7px;
-    }
-
-    .left a {
-        font-size: 8px;
-    }
-
-    .copyright {
-        position: absolute;
-        left: 30%;
-        font-size: 8px;
-        margin-top: 10px;
-    }
-
-    .social {
-        left: 38%;
-        margin-top: 50px;
-        width: 130px;
-        margin-top: 20px;
-    }
-
-    .logoSocial {
-        margin: 5px;
-        width: 30px;
-        height: 30px;
-    }
-}
-
-@media screen and (max-width: 1200px) and (min-width: 780px) {
-    nav li {
-        font-size: 11px;
-        margin: 7px;
-        line-height: 44px;
-    }
-
-    .logo {
-        width: 250px;
-        height: 88px;
-    }
-
-    body {
-        font-size: 11px;
-    }
-
-    .left {
-        min-width: 35%;
-    }
-
-    .copyright {
-        position: absolute;
-        left: 36%;
-        font-size: 11px;
-        margin-top: 10px;
-    }
-
-    .social {
-        left: 40%;
-        width: 160px;
-        margin-top: 30px;
-    }
-
-    .logoSocial {
-        margin: 5px;
-        width: 40px;
-        height: 40px;
-    }
-
-    h1 {
-        font-size: 30px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    h3 {
-        font-size: 13px;
-    }
-
-    .left a {
-        font-size: 13px;
-    }
-}
 
 @media print {
     * {
@@ -342,5 +185,34 @@
         left: 40%;
         margin-top: 50px;
         margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    nav li {
+        font-size: 20px;
+        float: none;
+    }
+
+    .content {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+
+    .left {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        min-width: 100%;
+        border-right-style: none;
+        border-top-style: solid;
+        border-top-width: 2px;
+        padding-right: 10px;
+    }
+
+    .center {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        min-width: 100%;
+        padding-left: 10px;
     }
 }
