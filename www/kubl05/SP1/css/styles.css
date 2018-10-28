@@ -84,15 +84,15 @@ footer {
     width: 50%;
     padding: 40px;
     padding-top: 0px;
-    padding-right: 0px;
+    /*padding-right: 0px;*/
     text-align: center;
 }
 
-main:after {
-    /*content: "";*/
+/*main:after {
+    /*content: "";
     display: table;
     clear: both;
-}
+}*/
 
 .column img {
     width: 400px;
@@ -174,14 +174,6 @@ main a:hover {
     margin:0 auto;
     margin-top: 30px;
     text-align: center;
-}
-
-.welcome h1 {
-    font-size: 70px;
-}
-
-.social h1 {
-    font-size: 70px;
 }
 
 .social-img {
@@ -363,8 +355,13 @@ iframe {
 }
 
 @media screen and (max-width: 680px) {
-    .title {
-        display: none;
+
+    h1 {
+        font-size: 55px;
+    }
+
+    .career h1, h1 {
+        font-size: 55px;
     }
 
     .container-top {
@@ -397,7 +394,8 @@ iframe {
 
     .column {
         width: 100%;
-        padding-right: 40px;
+        padding-right: 30px;
+        padding-left: 30px;
         text-align: center;
         margin: 0 auto;
     }
@@ -426,6 +424,93 @@ iframe {
     iframe {
         width: 420px;
         height: 236.25px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+
+    .container-top {
+        position: static;
+        text-align: center;
+        height: 160px;
+    }
+
+    .hello-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .career img {
+        width: 300px;
+        height: 300px;
+    }
+
+    nav {
+        padding-top: 20px;
+        border: none;
+    }
+
+    nav a {
+        padding: 15px;
+        border: none;
+    }
+    
+    nav a:hover {
+        color: rgb(18, 103, 182);
+        border: none;
+    }
+
+    .nav-item-current {
+        text-decoration: underline; 
+        border: none;  
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+
+    .column {
+        width: 100%;
+        padding-right: 20px;
+        padding-left: 20px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .social-item {
+        width: 100%;
+    }
+
+    .social, .welcome {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .welcome {
+        text-align: justify;
+        margin-top: 0;
+    }
+
+    .about p, .about h2, .inspiration p, .inspiration h2 {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .about ul, .inspiration ul {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;   
+    }
+
+    iframe {
+        width: 315px;
+        height: 177px;
+    }
+
+    .career h1, h1 {
+        font-size: 50px;
     }
 }
 
