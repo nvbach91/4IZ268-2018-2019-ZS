@@ -1,138 +1,218 @@
-body {
-    background-color: #5371b5;
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: #5371b5;
+    }
+    
+    .logo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+
+    header { 
+        display: flex; 
+        background-color: #5371b5;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+    }
+    
+    nav ul {
+        display: flex; 
+        flex-wrap: wrap;
+    }
+
+    nav li {
+        display: block;
+        float: left;
+        margin: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        font-size: 22px;
+        border-radius: 5px;
+    }
+    
+    .left a{
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 5px;
+        color: white;
+        font-style: normal;
+        font-size: 20px;
+    }
+    
+    .left a:hover{
+        color: #5371b5;
+        background-color: white;
+    }
+    
+    nav a:hover {
+        background-color: white;
+        color: #5371b6;
+    }
+    
+    nav a {
+        color: white;
+    }
+    
+    h1 {
+        background-color: #5371b6; 
+        color: white;
+        text-align: center;
+        margin: 35px;
+        font-size: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .left ul {
+        padding-left: 0px;
+    }
+    
+    .content {
+        display: flex;
+        border-top-style: solid;
+        border-top-width: 2px;
+    }
+    
+    .left {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 10px;
+        min-width: 33%;
+        padding-right: 30px;
+        border-right-style: solid;
+        border-right-width: 2px;
+    }
+    
+    .left li{
+        display: block; 
+    }
+    
+    h2 {
+        text-align: center;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+    }
+    
+    p {
+        text-align: justify;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .center {
+        margin-top: 20px;
+        padding: 10px;
+        padding-left: 30px;
+    }
+    
+    footer {
+        display: flex;  
+        flex-wrap: wrap;
+        background-color: #5371b5;
+        border-top-style: solid;
+        border-top-width: 2px;
+    }
+    
+    .social {
+        min-width: 230px;
+        border-style: ridge;
+        border-width: 2px;
+        border-radius: 5px;
+        border-color: #5371b5;
+        background-color: white;
+        margin: auto;
+    }
+    
+    .social a{
+        text-decoration: none;
+    }
+    
+    .logoSocial {
+        margin: 5px;
+        width: 64px;
+        height: 64px;
+    }
+    
+    h3 {
+        text-align: center;
+        color: #5371b5;
+        font-size: 20px;
+    }
+    
+    .copyright {
+        min-width: 100%;
+    }
+    
+    .copyright h3{
+        color: white;
+        text-align: center;
+    }
+    
+    li article {
+        border-top-style: dotted;
+        border-top-width: 2px;
+    }
+
+@media print {
+    * {
+        background-color: white;
+        color: black;
+    }
+
+    .logo {
+        width: 150px;
+        height: 66px;
+    }
+
+    nav li {
+        font-size: 10px;
+        margin: 5px;
+        line-height: 33px;
+    }
+
+    .copyright {
+        position: absolute;
+        left: 36%;
+        font-size: 11px;
+        margin-top: 10px;
+    }
+
+    .social {
+        left: 40%;
+        margin-top: 50px;
+        margin-top: 30px;
+    }
 }
 
-header {
-    display: flex;  
-    background-color: #5371b5;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
-}
+@media screen and (max-width: 650px) {
+    nav li {
+        font-size: 20px;
+        float: none;
+    }
 
-nav li {
-    display: block;
-    float: left;
-    margin: 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-transform: uppercase;
-    font-size: 20px;
-    border-radius: 5px;
-}
+    .content {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
 
-.left a{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-transform: uppercase;
-    border-radius: 5px;
-    color: white;
-    font-style: normal;
-    font-size: 20px;
-}
+    .left {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        min-width: 100%;
+        border-right-style: none;
+        border-top-style: solid;
+        border-top-width: 2px;
+        padding-right: 10px;
+    }
 
-.left a:hover{
-    color: #5371b5;
-    background-color: white;
+    .center {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        min-width: 100%;
+        padding-left: 10px;
+    }
 }
-
-nav li:hover{
-    background-color: white;
-}
-
-nav a:hover {
-    color: #5371b6;
-}
-
-nav a {
-    color: white;
-}
-
-h1 {
-    background-color: #5371b6; 
-    color: white;
-    text-align: center;
-    margin: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.content {
-    display: flex;
-    border-top-style: solid;
-    border-top-width: 2px;
-}
-
-.left {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 10px;
-    min-width: 25%;
-    padding-right: 30px;
-    border-right-style: solid;
-    border-right-width: 2px;
-}
-
-.left li{
-    display: block; 
-}
-
-h2 {
-    text-align: center;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-p {
-    text-align: justify;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.center {
-    margin-top: 20px;
-    padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-footer {
-    display: flex;  
-    background-color: #5371b5;
-    border-top-style: solid;
-    border-top-width: 2px;
-    position: relative;
-}
-
-.social {
-    position: absolute;
-    top: 45%;
-    left: 45%;
-    border-style: ridge;
-    border-width: 2px;
-    border-radius: 5px;
-    border-color: #5371b5;
-    margin: 20px;
-    background-color: white;
-}
-
-.social a{
-    text-decoration: none;
-}
-
-.logoSocial {
-    margin: 5px;
-    width: 64px;
-    height: 64px;
-    display: block;
-    float: left;
-}
-
-h3 {
-    text-align: center;
-    color: #5371b5;
-}
-
-.copyright {
-    position: absolute;
-    margin: 10px;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-}
-
