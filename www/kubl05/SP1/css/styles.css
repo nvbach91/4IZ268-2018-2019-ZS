@@ -519,7 +519,47 @@ iframe {
         display: none;
     }
 
-    footer, footer p, footer img {
+    main {
+        background-color: white;
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+
+    .wrapper {
+        padding-bottom: 0px;
+    }
+
+    .welcome, .social {
+        width: 100%;
+    }
+
+    .about p, .inspiration p {
+        width: 100%;
+    }
+    
+    .about h2, .inspiration h2 {
+        width: 100%;
+    }
+    
+    .about ul, .inspiration ul {
+        width: 100%;
+    }
+
+    .no-print {
         display: none;
+    }
+
+    .column {
+        width: 100%;
+        padding: 0px;
+    }
+
+    footer {
+        display: none;
+    }
+
+    iframe {
+        display: none;
+        height: 0;
     }
 }
