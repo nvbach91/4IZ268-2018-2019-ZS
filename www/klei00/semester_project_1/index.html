@@ -7,12 +7,14 @@
     <title>Bitcon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css">
-    <link rel="icon" href="../images/favicon.png" type="image/png">
+    <link rel="icon" href="images/favicon.png" type="image/png">
 </head>
 
 <body>
     <header>
-        <span>Bitcon</span>
+        <div class="logo">
+            <img src="images/logo.png" alt="Bitcon" width="180px">
+        </div>
         <nav>
             <ul>
                 <li><a href="news.html">Aktuality</a></li>
@@ -26,44 +28,60 @@
         <div class="intro">
             <h1>Váš dodavatel technologií a spotřebních materiálů</h1>
         </div>
-        <div class="main_offer">
-            <ul>
-                <li class="product_group">
-                    <h2>Tiskové stroje</h2>
-                    <p>V oblasti velkoformátových tiskáren nabízíme technologie prémiové značky Roland. Tato firma jako
-                        první na světě uvedla na trh jedinečnou patentovou technologii kombinovaného plotru.</p>
-                    <button type="button">Ceník</button>
-                </li>
-                <li class="product_group">
-                    <h2>Řezací plotry</h2>
-                    <p>Jsme distributorem řezacích plotrů značky Graphtec a Roland. Tyto japonské značky patří k
-                        absolutní
-                        špičce mezi výrobci řezacích plotrů.</p>
-                    <button type="button">Ceník</button>
-                </li>
-                <li class="product_group">
-                    <h2>Gravírovací stroje</h2>
-                    <p>V oblasti gravírovacích zařízení nabízíme produkty prémiové japonské značky Roland DG.</p>
-                    <button type="button">Ceník</button>
-                </li>
-                <li class="product_group">
-                    <h2>Laminátory</h2>
-                    <p>Aplikaci laminačních fólií, sloužící k prodloužení životnosti tisků, vám usnadní námi nabízené
-                        laminátory značky Olepo pro studenou laminaci.</p>
-                    <button type="button">Ceník</button>
-                </li>
-                <li class="product_group">
-                    <h2>Materiály</h2>
-                    <p>Naše firma nabízí široké spektrum materiálů pro signmaking, od kvalitních tiskových médií a
-                        nažehlovacích fólií až po řezací samolepící fólie nebo textil.</p>
-                    <button type="button">Ceník</button>
-                </li>
-                <li class="product_group">
-                    <h2>Inkousty</h2>
-                    <p>Ke všem našim tiskárnám dodáváme také originální ekosolventní, solventní a UV inkousty.</p>
-                    <button type="button">Ceník</button>
-                </li>
-            </ul>
+        <div class="content">
+            <div class="main_offer">
+                <ul>
+                    <li class="product_group">
+                        <h2>Tiskové stroje</h2>
+                        <p>V oblasti velkoformátových tiskáren nabízíme technologie prémiové značky Roland. Tato firma
+                            jako
+                            první na světě uvedla na trh jedinečnou patentovou technologii kombinovaného plotru.</p>
+                        <form action="price_list.html#printers">
+                            <button type="submit">Ceník</button>
+                        </form>
+                    </li>
+                    <li class="product_group">
+                        <h2>Řezací plotry</h2>
+                        <p>Jsme distributorem řezacích plotrů značky Graphtec a Roland. Tyto japonské značky patří k
+                            absolutní
+                            špičce mezi výrobci řezacích plotrů.</p>
+                        <form action="price_list.html#cutting_plotters">
+                            <button type="submit">Ceník</button>
+                        </form>
+                    </li>
+                    <li class="product_group">
+                        <h2>Gravírovací stroje</h2>
+                        <p>V oblasti gravírovacích zařízení nabízíme produkty prémiové japonské značky Roland DG.</p>
+                        <form action="price_list.html#engraving_machines">
+                            <button type="submit">Ceník</button>
+                        </form>
+                    </li>
+                    <li class="product_group">
+                        <h2>Laminátory</h2>
+                        <p>Aplikaci laminačních fólií, sloužící k prodloužení životnosti tisků, vám usnadní námi
+                            nabízené
+                            laminátory značky Olepo pro studenou laminaci.</p>
+                        <form action="price_list.html#laminating_machines">
+                            <button type="submit">Ceník</button>
+                        </form>
+                    </li>
+                    <li class="product_group">
+                        <h2>Materiály</h2>
+                        <p>Naše firma nabízí široké spektrum materiálů pro signmaking, od kvalitních tiskových médií a
+                            nažehlovacích fólií až po řezací samolepící fólie nebo textil.</p>
+                        <form action="price_list.html#materials">
+                            <button type="submit">Ceník</button>
+                        </form>
+                    </li>
+                    <li class="product_group" id="clear">
+                        <h2>Inkousty</h2>
+                        <p>Ke všem našim tiskárnám dodáváme také originální ekosolventní, solventní a UV inkousty.</p>
+                        <form action="price_list.html#inks">
+                            <button type="submit">Ceník</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
         </div>
     </main>
     <footer>

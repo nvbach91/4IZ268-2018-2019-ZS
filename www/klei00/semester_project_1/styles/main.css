@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial;
+}
+body {
+    background-color: #393185;
+}
+.content {
+    background-color: white;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 30px;
+}
+h1 {
+    font-size: 26px;
+    color: #393185;
+    padding: 0 5px;
+    border-left: solid 5px #EF7F1A;
+    margin: 30px 0;
+}
+h2 {
+    font-size: 22px;
+}
+/* ------------------- Header ------------------ */
+.logo {
+    padding: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+nav {
+    padding: 0;
+    border-bottom: solid 3px white;
+    font-size: 16px;
+    width: 100%;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+nav li {
+    display: inline-block;
+}
+nav a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+nav a:hover {
+    background-color: #ffffff;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color: black;
+}
+#current_page {
+    padding: 10px 20px;
+    color: black;
+    background-color: #ffffff;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.breadcrumb_nav ul{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+}
+.breadcrumb_nav li {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+}
+.breadcrumb_nav li::after {
+    content: " >> ";
+}
+.breadcrumb_nav li:last-of-type::after {
+    content: none;
+}
+
+/* ----------------- Homepage ------------------ */
+.intro {
+    margin: 0 auto;
+    max-width: 800px;
+    min-height: 260px;
+    padding: 30px;
+    background-image: url("../images/intro.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.intro h1 {
+    border: 0;
+    padding: 30px;
+    font-weight: 900;
+    border-radius: 8px;
+    background-color: rgba(256,256,256,0.9);
+}
+.main_offer ul {
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+}
+.product_group {
+    float: left;
+    width: 33%;
+    height: 280px;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+}
+.product_group h2 {
+    border-top: solid 5px #EF7F1A;
+    padding: 5px 0;
+    margin: 0;
+}
+.product_group button {
+   position: absolute;
+   bottom: 30px;
+   width: 90px;
+   cursor: pointer;
+}
+/*#clear {
+    clear: both;
+}*/
+
+/* -------------------- News ---------------------- */
+
+/* -------------------- About us ---------------------- */
+
+/* -------------------- Price list ---------------------- */
+
+/* -------------------- Contacts ---------------------- */
+
+/* -------------------- Footer ---------------------- */
+footer {
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+    font-size: 14px;
+    text-align: right;
+}
