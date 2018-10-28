@@ -1,0 +1,19 @@
+.loading {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 15px solid lightgray;
+    border-top: 15px solid cadetblue;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
