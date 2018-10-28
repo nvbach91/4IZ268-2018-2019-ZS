@@ -24,11 +24,11 @@
 }
 .para_01{
     text-align: center;
-    height: 32px;
+    line-height: 32px;
 }
 .para_02{
     text-align: justify;
-    text-transform: capitalize;
+    text-transform: uppercase;
 }
 .box_01{
     height: 300px;
@@ -49,12 +49,10 @@
     height: 150px;
     width: 100%;
     background-color: blue;
-    margin: 100px;
+    border: 10px yellow solid;
+    /* border-style: solid; */
     padding: 50px;
-    border: yellow 10px;
     box-sizing: border-box;
-    /* -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box; */
 }
 .box_05{
     opacity: 0;
@@ -75,8 +73,8 @@
     height: 50px;
     width: 50px;
     position: absolute;
-    margin-top: 50px;
-    margin-left: 340px;
+    margin-top: 30px;
+    margin-right: 10px;
     background-color: pink;
     font-size: 25%;
 }
@@ -85,7 +83,7 @@
     height: 100px;
 }
 .button_01:active{
-    background-color: #0000ff;
+    color: #0000ff;
 }
 .button_02{
     width: 200px;
