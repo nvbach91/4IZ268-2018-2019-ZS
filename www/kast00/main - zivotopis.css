@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  font-family: Arial, Helvetica;
+  text-align: center;
+}
+.wrapper {
+	width: 75%;
+	box-sizing: border-box;
+    margin: 0px 15%;
+    text-align: left;
+	}
+h2 {
+	border-bottom: 1px solid black;
+	}
+.profile {
+	height: 200px;
+	float: left;
+	border: 1px solid black;
+	margin-right: 20px;}
+.clear {
+    clear: left;
+}
+table {
+	    width: 100%;}
+.left {
+	width: 30%}
+.right {
+	padding: 20px 0px;
+	}
+	
+	
