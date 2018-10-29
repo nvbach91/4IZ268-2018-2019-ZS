@@ -11,10 +11,13 @@ header{
     height: 10px;
     width: 100%;
 }
+.pageHeader{
+    height: 150px;
+}
 
 body {
     background: #2e3842;
-    background-image: url('IMG/background_red.jpg');
+    background-image: linear-gradient(to bottom right, black, rgb(161, 15, 15));
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -111,6 +114,40 @@ li a:hover {
     margin-top: 100px;
     border: 0;
 }
+.pageContent{
+    position: relative;
+    width: 100%;
+    top: 0;
+}
+
+.rightSection{
+    position: absolute;
+    width: 50%;
+    right: 0;
+    top: 220px;
+    padding: 10px;
+    margin:10px;
+}
+.leftSection{
+    position: relative;
+    width: 50%;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    margin:10px;
+}
+
+.blackBox{
+background-color: rgba(0, 0, 0, 0.2);
+max-width: 550px;
+min-width: 350px;
+padding: 20px;
+margin: auto;
+margin-right: 15px;
+margin-bottom: 15px;
+border-radius: 10px;
+position: relative;
+}
 @media screen and (max-width: 900px) {
     nav{
         position: relative;
@@ -146,6 +183,10 @@ li a:hover {
 @media screen and (max-width: 670px) {
     body{
         font-size: 13px;
+    }
+
+    .pageHeader{
+        height: 50px;
     }
 
     nav{
@@ -196,7 +237,7 @@ li a:hover {
     li a {
         padding: 4px;
     }
-    
+
     .mainContent{
         position: relative;
         padding: 0;

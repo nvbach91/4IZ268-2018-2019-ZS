@@ -43,19 +43,19 @@
   }
   .container-01 .float-box {
     width: 100%;
-    padding: 100px;
+    padding: 100px 0;
   }
   .container-02 .float-box {
     width: 50%;
-    padding: 100px;
+    padding: 100px 0;
   }
   .container-03 .float-box {
     width: 33.33%;
-    padding: 100px;
+    padding: 100px 0;
   }
   .container-04 .float-box {
     width: 25%;
-    padding: 50px;
+    padding: 50px 0;
   }
   .float-box:nth-child(1) {
     background-color: rgb(255, 125, 78);

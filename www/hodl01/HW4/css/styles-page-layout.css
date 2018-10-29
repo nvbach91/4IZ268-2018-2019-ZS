@@ -21,6 +21,9 @@
     padding: 20px;
     margin-bottom: 50px;
   }
+  .wrapper{
+    max-width: 1280px;
+  }
   .colors > input {
     width: 50%;
     padding: 5px;
