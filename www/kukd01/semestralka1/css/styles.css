@@ -1,0 +1,93 @@
+body{
+    box-sizing: border-box;
+    font-family: helvetica;
+   min-height: 100%;
+  
+            padding: 0;
+            margin: 0;
+            position: relative;
+   
+  
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(69, 86, 182);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: rgb(135, 155, 221);
+}
+
+.box-01 {
+    padding: 5px;
+    float:left;
+    width: 25%;
+    height: 320px;
+    margin: 0 auto;
+    border-style: solid;
+    border-color: #111;
+   
+
+}
+
+
+.box-02 {
+    padding: 5px;
+    float:right;
+    width: 25%;
+    height: 320px;
+    border-style: solid;
+    border-color: #111;
+    margin: 0 auto;
+}
+.clear{
+    float:none;
+    clear:both;
+}
+
+
+
+
+
+
+footer p {
+    margin:8px;
+}
+
+body::after {
+    content: '';
+    display: block;
+    height: 50px;
+    /* Set same as footer's height */
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
+    
+    text-align: center;
+    background-color: rgb(69, 86, 182);
+}
