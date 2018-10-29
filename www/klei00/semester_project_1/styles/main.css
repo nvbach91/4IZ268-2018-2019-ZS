@@ -4,12 +4,13 @@
 }
 body {
     background-color: #393185;
+    line-height: 26px;
 }
 .content {
     background-color: white;
     margin: 0 auto;
     max-width: 800px;
-    padding: 30px;
+    padding: 40px 60px;
 }
 h1 {
     font-size: 26px;
@@ -20,6 +21,9 @@ h1 {
 }
 h2 {
     font-size: 22px;
+}
+p {
+    margin: 20px 0;
 }
 /* ------------------- Header ------------------ */
 .logo {
@@ -110,7 +114,7 @@ nav a:hover {
 .product_group {
     float: left;
     width: 33%;
-    height: 280px;
+    height: 330px;
     padding: 10px;
     list-style: none;
     position: relative;
@@ -131,13 +135,33 @@ nav a:hover {
 }*/
 
 /* -------------------- News ---------------------- */
-
+article {
+    margin: 50px 0;
+}
 /* -------------------- About us ---------------------- */
 
 /* -------------------- Price list ---------------------- */
-
+.group_of_products {
+    margin: 50px 0;
+}
+.price_list table {
+    border-collapse: collapse;
+}
+.price_list table, td, th {
+    border: 1px solid black;
+    padding: 10px;
+}
+.price_list table, thead, th {
+    border: 2px solid black;
+}
+.price_list thead {
+    background-color: #393185;
+    color: white;
+}
 /* -------------------- Contacts ---------------------- */
-
+.contacts h2 {
+    margin: 50px 0 0 0;
+}
 /* -------------------- Footer ---------------------- */
 footer {
     max-width: 800px;
