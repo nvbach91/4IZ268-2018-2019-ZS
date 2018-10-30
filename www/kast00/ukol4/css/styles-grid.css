@@ -78,7 +78,7 @@ background-color: rgb( 38, 189, 189);
 	width: 50%;
 }
 .container-03 .float-box {
-	width: 33%;
+	width: calc(100% / 3);;
 }
 .container-04 .float-box {
 	width: 25%;
