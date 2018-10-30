@@ -1,0 +1,14 @@
+/* ITCSS, více: https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/ */
+
+@import "settings.colors";
+@import "settings.global";
+@import "settings.variables";
+
+@import "tools.mixins";
+
+@import "generic.normalize";
+
+@import "elements.headings";
+
+@import "components.default";
+@import "components.index";
