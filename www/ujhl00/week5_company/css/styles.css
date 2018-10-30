@@ -129,6 +129,25 @@ main > * {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
+/*
+.products {
+    padding: 0
+}
+
+.product {
+    float:left;
+    width: 25%;
+    height: 320px;
+}
+
+.product h2 {
+    border-bottom: 5px solid red;
+}
+
+
+
+*/
+
 .products {
     padding: 50px 0;
 }
@@ -230,6 +249,9 @@ footer {
     }
 }
 @media screen and (max-width: 640px) {
+    .poster h1 {
+        font-size: 20px;
+    }
     .product {
         float: none;
         width: 100%;
@@ -242,5 +264,17 @@ footer {
     }
     .search {
         margin-left: auto;
+    }
+}
+
+@media print {
+    .poster {
+        background-image: none;
+        padding: 0;
+    }
+
+    .poster h1, .poster h3 {
+        background-color: transparent;
+        color:black;
     }
 }
