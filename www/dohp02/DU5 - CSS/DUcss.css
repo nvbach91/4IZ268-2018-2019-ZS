@@ -36,8 +36,7 @@ body
 }
 #paragraph-09
 {
-    display: flex;
-    justify-content: center;
+    text-align: justify;
     text-transform: uppercase;
 }
 #paragraph-10
@@ -46,7 +45,7 @@ body
 }
 #paragraph-11
 {
-    color: transparent;
+    visibility: hidden
 }
 #box-01
 {
@@ -105,9 +104,6 @@ body
     height: 500px;
     background-color: navy;
     margin-top: 200px;
-}
-#box-07:hover
-{
     cursor: pointer;
 }
 #button-01
