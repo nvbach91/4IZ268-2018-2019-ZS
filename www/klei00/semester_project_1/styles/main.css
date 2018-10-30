@@ -9,7 +9,7 @@ body {
 .content {
     background-color: white;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 900px;
     padding: 40px 60px;
 }
 h1 {
@@ -29,7 +29,7 @@ p {
 .logo {
     padding: 10px;
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 nav {
@@ -87,7 +87,7 @@ nav a:hover {
 /* ----------------- Homepage ------------------ */
 .intro {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 900px;
     min-height: 260px;
     padding: 30px;
     background-image: url("../images/intro.jpeg");
@@ -113,30 +113,42 @@ nav a:hover {
 }
 .product_group {
     float: left;
-    width: 33%;
-    height: 330px;
+    width: calc(100%/3);
+    height: 300px;
     padding: 10px;
+    margin: 30px 0;
     list-style: none;
     position: relative;
 }
 .product_group h2 {
-    border-top: solid 5px #EF7F1A;
+    border-bottom: solid 5px #EF7F1A;
     padding: 5px 0;
     margin: 0;
 }
 .product_group button {
    position: absolute;
-   bottom: 30px;
-   width: 90px;
+   bottom: 0;
+   left: 10%;
+   width: 80%;
+   border: none;
+   padding: 6px;
    cursor: pointer;
+   background-color: #393185;
+   color: white;
+   border-radius: 6px;
 }
-/*#clear {
-    clear: both;
-}*/
+.product_group button:hover {
+    background-color: #2e2769;
+}
 
 /* -------------------- News ---------------------- */
-article {
+.articles article {
     margin: 50px 0;
+}
+.articles article p:nth-child(2) {
+    font-style: italic;
+    color: rgb(48, 48, 48);
+    font-size: 14px;
 }
 /* -------------------- About us ---------------------- */
 
