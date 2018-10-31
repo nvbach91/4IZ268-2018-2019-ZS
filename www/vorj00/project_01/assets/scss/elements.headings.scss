@@ -1,5 +1,7 @@
 @import "settings.variables";
 
+@import "tools.mixins";
+
 h1,
 h3,
 h4,
@@ -9,7 +11,19 @@ h6 {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 1.5rem;
+
+    @include mq("tablet") {
+        font-size: 2rem;
+    }
+
+    @include mq("tablet-wide") {
+        font-size: 2.5rem;
+    }
+
+    @include mq("desktop") {
+        font-size: 2rem;
+    }
 }
 
 h2 {
