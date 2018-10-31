@@ -26,10 +26,22 @@ $subsidyMargin: 1em;
 
 .subsidy {
     margin: $subsidyMargin;
-    width: calc(25% - 2 * #{$subsidyMargin});
     filter: grayscale(100%);
     position: relative;
     transition: 0.4s;
+    width: calc(100% - 2*#{$subsidyMargin});
+
+    @include mq("tablet-small") {
+        width: calc(50% - 2 * #{$subsidyMargin});
+    }
+
+    @include mq("tablet-wide") {
+        width: calc(100% / 3 - 2 * #{$subsidyMargin});
+    }
+
+    @include mq("desktop") {
+        width: calc(25% - 2 * #{$subsidyMargin});
+    }
 }
 
 .subsidy:hover {
