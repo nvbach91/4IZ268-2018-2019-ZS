@@ -11,3 +11,112 @@
 
 @import "components.default";
 @import "components.index";
+
+/* COMPONENTS */
+/* default */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    height: $headerHeight;
+    color: $brandColor;
+    padding: 0 $defaultPadding;
+}
+
+.nav>*:not(:last-child) {
+    margin-right: 0.5em;
+}
+
+.main {
+    padding: $defaultPadding;
+}
+
+.footer {
+    padding: $defaultPadding/2 $defaultPadding;
+    border-top: 1px solid $gray;
+}
+
+.button {
+    size: 1.1rem;
+    padding: 1em;
+    background-color: $contraColor;
+    color: $gray;
+    cursor: pointer;
+
+    @include box-shadow;
+}
+
+/* index */
+.hero {
+    background: url(../img/background.jpg);
+    background: linear-gradient(rgba(#000, 0.25), rgba(#000, 0.25)),
+        url(../img/background.jpg);
+    height: calc(100vh - #{$headerHeight});
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.hero h1,
+.hero h2,
+.hero h3 {
+    margin: 0;
+}
+
+.hero h1 {
+    font-size: 6rem;
+}
+
+.hero h3 {
+    font-size: 5rem;
+}
+
+.hero__cont {
+    width: 64em;
+}
+
+.hero__desc {
+    font-size: 2rem;
+    width: 50%;
+}
+
+.letter {
+    display: flex;
+    background-color: $gray;
+    margin: $defaultPadding 0;
+    padding: 2rem;
+}
+
+.letter--invert {
+    flex-direction: row-reverse;
+}
+
+.letter__img {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.letter__img img {
+    border-radius: 50%;
+    height: 200px;
+}
+
+.letter__text {
+    width: 80%;
+}
+
+.letter__part {
+    margin: 0;
+    text-align: justify;
+    font-style: italic;
+}
+
+.letter__more {
+    text-align: right;
+}
