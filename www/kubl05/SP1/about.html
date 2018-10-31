@@ -4,14 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="description" content="Osobní webové stránky sloužící jako oslava života a díla Lukáše Kubíka aka lukazka">
-    <meta name="keywords" content="Lukáš Kubík, osobní stránky, školní projekt, lukazko">
-    <meta name="web_author" content="Lukáš Kubík, @lukazko">
+    <meta name="keywords" content="Lukáš Kubík, osobní stránky, školní projekt, lukazko, 4IZ268, Písek">
+    <meta name="author" content="Lukáš Kubík, @lukazko">
     <meta name="icons_author" content="Freepik, http://www.freepik.com">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Lukáš Kubík | O mně</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="img/favicons/favicon.png" type="image/png">
+    <!--[if IE]><link rel="shortcut icon" href="img/favicons/favicon.ico"><![endif]-->
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
@@ -20,8 +22,9 @@
     <div class="wrapper">
         <div class="container-top">
             <header>
-                <a href="index.html"><img class="logo" src="img/logo.png" onmouseover="this.src='img/logo-hover.png';"
-                        onmouseout="this.src='img/logo.png';" alt="Zde má být logo"></a>
+                <a href="index.html">
+                    <div class="logo"></div>
+                </a>
                 <span class="title">Lukáš Kubík</span>
             </header>
             <nav>
@@ -36,12 +39,12 @@
         <main>
             <h1>Myslím, tedy jsem.</h1>
             <hr class="h1-underline">
-            <div class="about">
+            <div class="container-articles">
                 <h2>A kdo že to jsem?</h2>
                 <p>Ahoj, já jsem Lukáš, ale na internetu vystupuji pod nickem Lukazko. Jsem student/fanoušek moderních
                     technologií a online světa. Zároveň mě hodně ovlivňuje idea
                     udržitelného rozvoje a mám tak slabost vlastně pro jakékoliv smysluplné projekty. Nerad bych
-                    byl zařazován do nějaké škatulky. Snažím se, být renesančním člověkem a mít povědomí o všech
+                    byl zařazován do nějaké škatulky. Snažím se být renesančním člověkem a mít povědomí o všech
                     oblastech lidského bádání.
                 </p>
                 <p>
@@ -68,7 +71,7 @@
                     pouze rekreačnímu běhání a nejsem si jistý, že to lze označovat slovem sport.
                     Mám rád i filmy a seriály (asi jako každý), i když už na jejich sledování dnes nemám tolik času
                     jako
-                    kdysi. Jaké mám nejradši se dozvíš na <a href="https://www.csfd.cz/uzivatel/342800-lukazko/" target="blank">ČSFD</a>
+                    kdysi. Jaké mám nejradši se dozvíš na <a href="https://www.csfd.cz/uzivatel/342800-lukazko/" target="_blank">ČSFD</a>
                     nebo v sekci <a href="inspiration.html">INSPIRACE</a>.</p>
                 <p>Zajímám se o historii, protože se tam nachází spousta odpovědí a o naší Planetu, protože s tou jsme
                     (zatím)
@@ -78,7 +81,7 @@
                     mého humoru se točí kolem politiky a současné morálně skomírající demokracie.</p>
 
                 <h2>Aktivity</h2>
-                <p>Už téměř rok jsem zapsaným dobrovolníkem u iniciativy <a href="https://zachranjidlo.cz/" target="blank">Zachraň
+                <p>Už téměř rok jsem zapsaným dobrovolníkem u iniciativy <a href="https://zachranjidlo.cz/" target="_blank">Zachraň
                         jídlo</a>, ale dosud jsem si nenašel čas doopravdy přiložit ruku k dílu. Sem tam dám kousek
                     mého přebytečného oblečení do Červeného kříže.
                 </p>
@@ -115,8 +118,9 @@
         </main>
 
         <footer>
-            <a href="#" title="Zpět nahoru"><img class="footer-logo" src="img/logo.png" onmouseover="this.src='img/logo-hover.png';"
-                    onmouseout="this.src='img/logo.png';" alt="Zde má být malé logo"></a>
+            <a href="#" title="Zpět nahoru">
+                <div class="footer-logo"></div>
+            </a>
             <p class="copyright">Design & code & reverse engineering by Lukáš Kubík<br> &copy;2018</p>
         </footer>
     </div>

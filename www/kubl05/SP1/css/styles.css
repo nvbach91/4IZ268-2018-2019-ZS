@@ -55,6 +55,7 @@ a {
     color: white;
     text-decoration: none;
 }
+
 nav a {
     padding: 10px;
     padding-bottom: 5px;
@@ -84,14 +85,8 @@ footer {
     width: 50%;
     padding: 40px;
     padding-top: 0px;
-    padding-right: 0px;
+    /*padding-right: 0px;*/
     text-align: center;
-}
-
-main:after {
-    /*content: "";*/
-    display: table;
-    clear: both;
 }
 
 .column img {
@@ -117,7 +112,7 @@ main:after {
     text-align: center;
 }
 
-.welcome h2 {
+.container-welcome h2 {
     font-size: 30px;
     margin-bottom: 10px;
 }
@@ -162,26 +157,18 @@ main a:hover {
     margin-top: 10px;
 }
 
-.welcome {
+.container-welcome {
     text-align: center;
-    width: 70%;
+    width: 55%;
     margin:0 auto;
     margin-top: 30px;
 }
 
-.social {
+.container-social {
     width: 70%;
     margin:0 auto;
     margin-top: 30px;
     text-align: center;
-}
-
-.welcome h1 {
-    font-size: 70px;
-}
-
-.social h1 {
-    font-size: 70px;
 }
 
 .social-img {
@@ -229,7 +216,7 @@ main a:hover {
     text-align: left;
 }
 
-.welcome img {
+.container-welcome img {
     width: 150px;
     height: 150px;
 }
@@ -242,57 +229,29 @@ main a:hover {
     transform: scale(1.05);
 }
 
-.about {
+.container-articles {
     margin: 0 auto;
     text-align: center;
 }
 
-.about p {
-    width: 70%;
+.container-articles p {
+    width: 55%;
     display: inline-block; 
     text-align: justify;  
     margin-top: 0;
     margin-bottom: 10px; 
 }
 
-.about h2 {
-    width: 70%;
+.container-articles h2 {
+    width: 55%;
     display: inline-block; 
     text-align: left; 
     font-size: 30px;
     margin-bottom: 10px;
 }
 
-.about ul {
-    width: 70%;
-    display: inline-block; 
-    text-align: left; 
-    margin-bottom: 10px;
-}
-
-.inspiration {
-    margin: 0 auto;
-    text-align: center;
-}
-
-.inspiration p {
-    width: 70%;
-    display: inline-block; 
-    text-align: justify;  
-    margin-top: 0;
-    margin-bottom: 10px; 
-}
-
-.inspiration h2 {
-    width: 70%;
-    display: inline-block; 
-    text-align: left; 
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
-.inspiration ul {
-    width: 70%;
+.container-articles ul {
+    width: 55%;
     display: inline-block; 
     text-align: left; 
     margin-bottom: 10px;
@@ -310,8 +269,14 @@ main a:hover {
 
 .logo {
     height: 50px;
+    width: 94px;
     margin-top: 0px;
     float: left;
+    background-image: url("../img/logo.png");
+}
+
+.logo:hover {
+    background-image: url("../img/logo-hover.png");
 }
 
 @media screen and (max-width: 950px) {
@@ -330,18 +295,18 @@ main a:hover {
         width: 33%;
     }
 
-    .social, .welcome {
+    .container-social, .container-welcome {
         width: 100%;
         padding: 40px;
     }
 
-    .about p, .about h2, .inspiration p, .inspiration h2 {
+    .container-articles p, .container-articles h2 {
         width: 100%;
         padding-left: 40px;
         padding-right: 40px;
     }
 
-    .about ul, .inspiration ul {
+    .container-articles ul {
         width: 100%;
         padding-left: 50px;
         padding-right: 50px;   
@@ -359,12 +324,26 @@ iframe {
 
 .footer-logo {
     height: 30px;
+    width: 56px;
+    background-image: url("../img/logo-footer.png");
     margin-top: 35px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-logo:hover {
+    background-image: url("../img/logo-footer-hover.png");
 }
 
 @media screen and (max-width: 680px) {
-    .title {
-        display: none;
+
+    h1 {
+        font-size: 55px;
+    }
+
+    .career h1, h1 {
+        font-size: 55px;
     }
 
     .container-top {
@@ -397,7 +376,8 @@ iframe {
 
     .column {
         width: 100%;
-        padding-right: 40px;
+        padding-right: 30px;
+        padding-left: 30px;
         text-align: center;
         margin: 0 auto;
     }
@@ -406,18 +386,18 @@ iframe {
         width: 50%;
     }
 
-    .social, .welcome {
+    .container-social, .container-welcome {
         width: 100%;
         padding: 30px;
     }
 
-    .about p, .about h2, .inspiration p, .inspiration h2 {
+    .container-articles p, .container-articles h2 {
         width: 100%;
         padding-left: 30px;
         padding-right: 30px;
     }
 
-    .about ul, .inspiration ul {
+    .container-articles ul {
         width: 100%;
         padding-left: 40px;
         padding-right: 40px;   
@@ -426,6 +406,94 @@ iframe {
     iframe {
         width: 420px;
         height: 236.25px;
+        border: 0;
+    }
+}
+
+@media screen and (max-width: 540px) {
+
+    .container-top {
+        position: static;
+        text-align: center;
+        height: 160px;
+    }
+
+    .hello-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .career img {
+        width: 300px;
+        height: 300px;
+    }
+
+    nav {
+        padding-top: 20px;
+        border: none;
+    }
+
+    nav a {
+        padding: 15px;
+        border: none;
+    }
+    
+    nav a:hover {
+        color: rgb(18, 103, 182);
+        border: none;
+    }
+
+    .nav-item-current {
+        text-decoration: underline; 
+        border: none;  
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+
+    .column {
+        width: 100%;
+        padding-right: 20px;
+        padding-left: 20px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .social-item {
+        width: 100%;
+    }
+
+    .container-social, .container-welcome {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .container-welcome {
+        text-align: justify;
+        margin-top: 0;
+    }
+
+    .container-articles p, .container-articles h2 {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .container-articles ul {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;   
+    }
+
+    iframe {
+        width: 315px;
+        height: 177px;
+    }
+
+    .career h1, h1 {
+        font-size: 50px;
     }
 }
 
@@ -434,7 +502,39 @@ iframe {
         display: none;
     }
 
-    footer, footer p, footer img {
+    main {
+        background-color: white;
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+
+    .wrapper {
+        padding-bottom: 0px;
+    }
+
+    .container-welcome, .container-social {
+        width: 100%;
+    }
+
+    .container-articles p, .container-articles h2, .container-articles ul {
+        width: 100%;
+    }
+
+    .no-print {
         display: none;
+    }
+
+    .column {
+        width: 100%;
+        padding: 0px;
+    }
+
+    footer {
+        display: none;
+    }
+
+    iframe {
+        display: none;
+        height: 0;
     }
 }
