@@ -10,7 +10,7 @@ body{
   
 }
 
-ul {
+.menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -18,11 +18,11 @@ ul {
     background-color: rgb(69, 86, 182);
 }
 
-li {
+.menu li {
     float: left;
 }
 
-li a {
+.menu li a {
     display: block;
     color: white;
     text-align: center;
