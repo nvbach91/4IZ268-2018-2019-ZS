@@ -75,7 +75,7 @@ nav a {
 .search:active {
     background-color: rgb(19, 141, 70);
 }
-
+/*STRÁNKA MAIN*/
 .intro {
     color: white;
     min-height: 300px;
@@ -138,14 +138,46 @@ main > * {
 .product:nth-child(4) { background-color:red; margin: 20px 20px 20px 10px; }
 .product:nth-child(5) { background-color:violet; margin: 20px 20px 20px 10px; }
 .product:nth-child(6) { background-color:gold; margin: 20px 20px 20px 10px; }
+/*STRÁNKA ABOUT US*/
 
+.about {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    padding: 90px 0;
+}
+.about h1 {
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(29, 212, 105);
+    border: 2px solid black;
+}
+/*STRÁNKA PRODUKTY*/
+.products {
+    padding: 50px 0;
+    text-align:center;
+}
+/*STRÁNKA CHARITA*/
+.charity {
+    padding: 50px 0;
+    text-align:center;
+}
+.charitie {
+    float: left;
+    width: 30%;
+    padding: 5px;
+}
+/*STRÁNKA KONTAKTY*/
+/*
+STYLY
+*/
 footer {
     clear:both;
     text-align: center;
-    background-color: rgb(19, 141, 70);
 }
 .social {
-    background-color: #eee;
+    background-color:white;
     padding: 20px 0;
 }
 .social > div {
@@ -156,9 +188,9 @@ footer {
     width: 80px;
     cursor: pointer;
 }
-.social-facebook { background-image: url('https://image.flaticon.com/icons/svg/54/54997.svg'); }
-.social-twitter { background-image: url('https://www.iconsdb.com/icons/preview/black/twitter-4-xxl.png'); }
-.social-instagram { background-image: url('https://iconsplace.com/wp-content/uploads/_icons/000000/256/png/instagram-icon-256.png'); }
+.social-facebook { background-image: url('../images/fb.png'); }
+.social-twitter { background-image: url('../images/twitter.png'); }
+.social-instagram { background-image: url('../images/insta.png'); }
 .credits {
     color: white;
     padding: 40px 0;
