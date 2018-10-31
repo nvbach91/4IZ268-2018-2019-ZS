@@ -20,6 +20,14 @@
     }
 }
 
+.nav a {
+    transition: 0.4s
+}
+
+.nav:hover a:not(:hover) {
+    opacity: 0.5;
+}
+
 .nav>*:not(:last-child) {
     margin-right: 0.5em;
 }
@@ -45,5 +53,4 @@
 
 .button:hover {
     background-color: $contraColorDark;
-    text-decoration: none;
 }
