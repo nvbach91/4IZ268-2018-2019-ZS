@@ -1,4 +1,13 @@
+@import "settings.global";
 @import "settings.variables";
+
+@import "tools.mixins";
+
+@import "generic.normalize";
+
+@import "elements.headings";
+
+@import "components.default";
 
 .hero {
     background: url(../img/background.jpg);
@@ -18,20 +27,48 @@
 }
 
 .hero h1 {
-    font-size: 6rem;
+    font-size: 3rem;
+
+    @include mq("tablet-wide") {
+        font-size: 4.5rem;
+    }
+
+    @include mq("desktop") {
+        font-size: 6rem;
+    }
 }
 
 .hero h3 {
-    font-size: 5rem;
+    font-size: 2rem;
+
+    @include mq("tablet-wide") {
+        font-size: 3.5rem;
+    }
+
+    @include mq("desktop") {
+        font-size: 5rem;
+    }
 }
 
 .hero__cont {
-    width: 64em;
+    width: 100%;
+    padding: 5em;
+
+    @include mq("tablet-wide") {
+        width: 48rem;
+    }
+
+    @include mq("desktop") {
+        width: 64em;
+    }
 }
 
 .hero__desc {
     font-size: 2rem;
-    width: 50%;
+
+    @include mq("tablet-wide") {
+        width: 50%;
+    }
 }
 
 .letter {
@@ -39,14 +76,30 @@
     background-color: $gray;
     margin: $defaultPadding 0;
     padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+
+    @include mq("tablet-wide") {
+        flex-direction: row;
+    }
+}
+
+.letter h2 {
+    text-align: center;
+
+    @include mq("tablet-wide") {
+        text-align: left;
+    }
 }
 
 .letter--invert {
-    flex-direction: row-reverse;
+    @include mq("tablet-wide") {
+        flex-direction: row-reverse;
+    }
 }
 
 .letter__imgCont {
-    width: 20%;
+    width: 25%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,11 +107,13 @@
 
 .letter__imgCont img {
     border-radius: 50%;
-    height: 200px;
+    width: 75%;
 }
 
 .letter__text {
-    width: 80%;
+    @include mq("tablet-wide") {
+        width: 75%;
+    }
 }
 
 .letter__part {
@@ -68,5 +123,10 @@
 }
 
 .letter__more {
-    text-align: right;
+    text-align: center;
+    margin-top: 2em;
+
+    @include mq("tablet-wide") {
+        text-align: right;
+    }
 }
