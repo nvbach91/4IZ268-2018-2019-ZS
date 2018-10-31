@@ -9,3 +9,7 @@ a {
     color: $brandColor;
     text-decoration: none;
 }
+
+a:hover {
+    text-decoration: underline;
+}
