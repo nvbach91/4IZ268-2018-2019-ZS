@@ -1,67 +1,70 @@
 body {
 	font-family: Helvetica, Arial, Sans-Serif;
 }
-.box1{
+div[class*='box-'] {
+	box-sizing: border-box;
+}
+.box-1{
 	color: red;
 }
-.box2{
+.box-2{
 	color: #00FF00;
 }
-.box3{
+.box-3{
 	font-weight: bold;
 	color: rgb(0,0,255);
 }
-.box4{
+.box-4{
 	font-size: 18px;
 }
-.box5{
+.box-5{
 	font-size: 24px;
 	font-style: italic;
 }
-.box6{
+.box-6{
 	color: white;
 	background-color: brown;
 }
-.box7{
+.box-7{
 	width: 400px;
 	height: 300px;
 	border: 1px solid purple;
 	padding: 30px;
 }
-.box8{
+.box-8{
 	width: 500px;
 	height: 200px;
 	background-color: red;
 	margin: 100px;
 }
-.box9{
+.box-9{
 	display: none;
 }
-.box10{
+.box-10{
 	width: 100%;
 	height: 150px;
 	background-color: blue;
 	padding: 50px;
 	border: 10px solid yellow;
-	box-sizing: border-box;
+	
 }
-.box11{
+.box-11{
 	visibility: hidden;
 }
-.box12{
+.box-12{
 	width: 200px;
 	height: 500px;
 	background-color: green;
 	opacity: 0.5;
 }
-.box13{
+.box-13{
 	width: 400px;
 	height: 300px;
 	position: relative;
 	background-color: lightblue;
 
 }
-.box14{
+.box-14{
 	width: 50px;
 	height: 50px;
 	position: absolute;
@@ -70,37 +73,36 @@ body {
 	background-color: pink;
 }
 
-.box15{
+.box-15{
 	width: 200px;
 	height: 500px;
 	background-color: blue;
 	margin-top: 200px;
-}
-.box15:hover{
 	cursor: pointer;
 }
 
-.paragraph1{
+
+.paragraph-1{
 	line-height: 32px;
 	text-align: center;
 }
-.paragraph2{
+.paragraph-2{
 	text-align: justify;
-	text-transform: capitalize;
+	text-transform: uppercase;
 }
 
-.button1{
+.button-1{
 	width: 300px;
 	height: 100px;
 
 }
-.button1:active{
+.button-1:active{
 	color:blue;
 }
-.button2{
+.button-2{
 	width: 200px;
 	height: 50px;
 }
-.button2:hover{
+.button-2:hover{
 	background:brown;
 }
