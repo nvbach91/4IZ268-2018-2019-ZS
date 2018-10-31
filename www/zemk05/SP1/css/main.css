@@ -3,7 +3,7 @@
     background-repeat: no-repeat;
 
 }
-body, ul {
+body,ul {
     margin: 0;
     padding: 0;
 }
@@ -12,7 +12,6 @@ body {
     letter-spacing: 1px;
     background-color:rgba(68, 32, 46, 0.822);
     font-family: Roboto, Arial, Helvetica, sans-serif;
-    color:white;
 }
 
 p {
@@ -28,7 +27,6 @@ header {
     background-color:rgb(19, 141, 70);
     border-top: 2px solid black;
     display: flex;
-    color:black;
     margin-top:0;
 }
 
@@ -54,12 +52,13 @@ nav li {
     margin-right: 20px;
     padding: 0 5px;
 }
+nav li a {
+    color: white;
+}
 nav li:hover {
     background-color: rgb(27, 80, 49);
 }
-nav li:hover a {
-    color: white;
-}
+
 nav a {
     text-decoration: none;
 }
@@ -126,9 +125,19 @@ main > * {
 }
 .product {
     float: left;
-    width: 15%;
-    padding: 5px;
+    width: 33%;
+    padding:5px;
+    font-size:12px;
+   /* background-size: auto;
+    background-position: center;
+    */
 }
+.product:nth-child(1) {background-color:blue; margin: 20px 20px 20px 10px; }
+.product:nth-child(2) { background-color:pink; margin: 20px 20px 20px 10px; }
+.product:nth-child(3) { background-color:green; margin: 20px 20px 20px 10px; }
+.product:nth-child(4) { background-color:red; margin: 20px 20px 20px 10px; }
+.product:nth-child(5) { background-color:violet; margin: 20px 20px 20px 10px; }
+.product:nth-child(6) { background-color:gold; margin: 20px 20px 20px 10px; }
 
 footer {
     clear:both;
