@@ -1,4 +1,13 @@
+@import "settings.global";
+@import "settings.variables";
+
 @import "tools.mixins";
+
+@import "generic.normalize";
+
+@import "elements.headings";
+
+@import "components.default";
 
 .subsidies {
     display: flex;
