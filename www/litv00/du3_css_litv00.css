@@ -1,0 +1,108 @@
+body {
+	font-family: Helvetica, Arial, Sans-Serif;
+}
+div[class*='box-'] {
+	box-sizing: border-box;
+}
+.box-1{
+	color: red;
+}
+.box-2{
+	color: #00FF00;
+}
+.box-3{
+	font-weight: bold;
+	color: rgb(0,0,255);
+}
+.box-4{
+	font-size: 18px;
+}
+.box-5{
+	font-size: 24px;
+	font-style: italic;
+}
+.box-6{
+	color: white;
+	background-color: brown;
+}
+.box-7{
+	width: 400px;
+	height: 300px;
+	border: 1px solid purple;
+	padding: 30px;
+}
+.box-8{
+	width: 500px;
+	height: 200px;
+	background-color: red;
+	margin: 100px;
+}
+.box-9{
+	display: none;
+}
+.box-10{
+	width: 100%;
+	height: 150px;
+	background-color: blue;
+	padding: 50px;
+	border: 10px solid yellow;
+	
+}
+.box-11{
+	visibility: hidden;
+}
+.box-12{
+	width: 200px;
+	height: 500px;
+	background-color: green;
+	opacity: 0.5;
+}
+.box-13{
+	width: 400px;
+	height: 300px;
+	position: relative;
+	background-color: lightblue;
+
+}
+.box-14{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 50px;
+	right: 10px;
+	background-color: pink;
+}
+
+.box-15{
+	width: 200px;
+	height: 500px;
+	background-color: blue;
+	margin-top: 200px;
+	cursor: pointer;
+}
+
+
+.paragraph-1{
+	line-height: 32px;
+	text-align: center;
+}
+.paragraph-2{
+	text-align: justify;
+	text-transform: uppercase;
+}
+
+.button-1{
+	width: 300px;
+	height: 100px;
+
+}
+.button-1:active{
+	color:blue;
+}
+.button-2{
+	width: 200px;
+	height: 50px;
+}
+.button-2:hover{
+	background:brown;
+}
