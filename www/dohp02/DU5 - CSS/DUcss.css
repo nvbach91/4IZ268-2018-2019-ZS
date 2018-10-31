@@ -1,0 +1,126 @@
+body
+{
+    font-family: 'Arial';
+}
+#paragraph-02
+{
+    color: red;
+}
+#paragraph-03
+{
+    color: rgb(26, 161, 56);
+}
+#paragraph-04
+{
+    color:	#0000FF;
+    font-weight: bold;
+}
+#paragraph-05
+{
+    font-size: 18px;
+}
+#paragraph-06
+{
+    font-size: 24px;
+    font-style: italic;
+}
+#paragraph-07
+{
+    color: white;
+    background-color: brown;
+}
+#paragraph-08
+{
+    line-height: 32px;
+    text-align: center;
+}
+#paragraph-09
+{
+    text-align: justify;
+    text-transform: uppercase;
+}
+#paragraph-10
+{
+    visibility: hidden;
+}
+#paragraph-11
+{
+    visibility: hidden
+}
+#box-01
+{
+    width: 400px;
+    height: 300px;
+    padding: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: purple;
+}
+#box-02
+{
+    width: 500px;
+    height: 200px;
+    margin: 100px;
+    background-color: lightcoral;
+}
+#box-03
+{
+    width: 100%;
+    height: 150px;
+    padding: 50px;
+    background-color: lightblue;
+    border-style: solid;
+    box-sizing: border-box;
+    border-width: 10px;
+    border-color: yellow;
+}
+#box-04
+{
+    width: 200px;
+    height: 500px;
+    opacity: 0.5;
+    background-color: lightgreen;   
+}
+#box-05
+{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background-color: lightblue;
+}
+#box-06
+{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: pink;
+    top: 50px;
+    right: 10px;
+    font-size: 11px;
+}
+#box-07
+{
+    width: 200px;
+    height: 500px;
+    background-color: navy;
+    margin-top: 200px;
+    cursor: pointer;
+}
+#button-01
+{
+    width: 300px;
+    height: 100px;
+}
+#button-01:focus
+{
+    color:blue;
+}
+#button-02
+{
+    width: 200px;
+    height: 50px;
+}
+#button-02:hover
+{
+    background-color: rgb(59, 26, 26);
+}
