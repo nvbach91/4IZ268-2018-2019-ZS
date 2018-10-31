@@ -26,7 +26,6 @@
     max-height: 500px;
     max-width: 100%;
   }
-
   
   .videodiv-video {
     width: 100%;
@@ -98,14 +97,9 @@ nav li:active {
 }
 
 
-.intro, .team {
+.intro {
     margin: auto auto;
 }
-
-.member {
-    float: left;
-}
-
 
 .member1 {
     content: url("images/jan.jpg");
@@ -155,7 +149,7 @@ nav li:active {
 
   }
 
-  .grid-item, .intro {
+  .grid-item, .intro, .anotation {
     background-color:rgba(242,242,235, 0.5);
     border-radius: 10px;
     padding: 20px;
@@ -194,10 +188,6 @@ footer { grid-area: footer; }
     content: url("images/startup.png");
 }
 
-.team {
-    position: absolute;
-    top: 500px;
-}
 
 .slideshow {
     overflow: hidden;
@@ -209,13 +199,15 @@ footer { grid-area: footer; }
   
   .slide-wrapper {
     width: 2912px;
-    -webkit-animation: slide 18s ease infinite;
+    -webkit-animation: slide 10s ease infinite;
+    animation: slide 10s ease infinite;
   }
   
   .slide {
     float: left;
     height: 400px;
     width: 728px;
+    background-size: cover;
   }
   
 
@@ -235,22 +227,11 @@ footer { grid-area: footer; }
     background-image: url("images/coursera.jpg");
   }
   
-  .slide-about {
-    color: black; 
-    padding: 10px 20px;
-    background-color: rgba(29, 115, 165, 0.5);
-  }
-
   .slide p {
     color: black; 
-    text-align: justify;
-    font-size: 15x;
-    width: 300px;
-    height: max-content;
-    padding: 10px;
-    margin: 10px;
-    background-color: rgba(242, 242,235, 0.5);
-    border-radius: 10px;
+    padding: 15px 25px;
+    background-color: rgba(29, 115, 165, 0.7);
+    text-align: center;
   }
   
   @-webkit-keyframes slide {
@@ -261,6 +242,22 @@ footer { grid-area: footer; }
     70% {margin-left: -1456px;}
     80% {margin-left: -2184px;}
     90% {margin-left: -2184px;}
+  }
+
+  @keyframes slide {
+    20% {margin-left: 0px;}
+    30% {margin-left: -728px;}
+    50% {margin-left: -728px;}
+    60% {margin-left: -1456px;}
+    70% {margin-left: -1456px;}
+    80% {margin-left: -2184px;}
+    90% {margin-left: -2184px;}
+  }
+
+  .anotation {
+    text-align: center;
+    margin: 5px 30%;
+    padding: 5px;
   }
 
 footer {
