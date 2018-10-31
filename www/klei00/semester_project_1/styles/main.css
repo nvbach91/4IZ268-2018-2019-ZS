@@ -107,7 +107,6 @@ nav a:hover {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     text-align: center;
-    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -292,7 +291,50 @@ footer {
         font-weight: normal;
     }
 }
-/* -------------------- Print --------------------- */
+/* -------------------------- Print ------------------------------- */
 @media print {
-
+    body {
+        background-color: white;
+    }
+    .content {
+        padding: 10px;
+        max-width: 1000px;
+    }
+    p {
+        margin: 10px 0;
+    }
+    .logo {
+        max-width: 1000px;
+        background: url(../images/logo_print.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left;
+    }
+    nav {
+        border-bottom: solid 3px #cccccc;
+    }
+    nav a {
+        color: black;
+    }
+    #current_page {
+        color: black;
+        background-color: #cccccc;
+    }
+    .intro {
+        max-width: 1000px;
+        min-height: 80px;
+        padding: 0;
+        background: none;
+    }
+    .intro h1 {
+        padding: 10px;
+    }
+    .price_list thead {
+        background-color: white;
+        color: black;
+    }
+    footer {
+        color: black;
+        border-top: solid 2px #cccccc;
+    }
 }
