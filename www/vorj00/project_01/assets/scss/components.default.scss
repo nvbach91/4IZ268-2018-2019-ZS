@@ -4,6 +4,37 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
     height: $headerHeight;
     color: $brandColor;
+    padding: 0 $defaultPadding;
+}
+
+.nav>*:not(:last-child) {
+    margin-right: 0.5em;
+}
+
+.main {
+    padding: $defaultPadding;
+}
+
+.footer {
+    padding: $defaultPadding/2 $defaultPadding;
+    border-top: 1px solid $gray;
+}
+
+.button {
+    size: 1.1rem;
+    padding: 1em;
+    background-color: $contraColor;
+    color: $gray;
+    cursor: pointer;
+
+    @include box-shadow;
+}
+
+.button:hover {
+    background-color: $contraColorDark;
 }
