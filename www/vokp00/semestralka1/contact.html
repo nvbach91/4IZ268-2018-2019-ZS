@@ -30,10 +30,30 @@
     </header>
 
     <main>
+        <div class="contact-us">
+            <h1>
+                Nebojte se, my nekoušeme :)
+            </h1>
+            <p>
+                Máte na nás nějaký dotaz? Chcete od nás zkrotit neuronovou síť? Nebo se třeba přidat přímo do našich
+                řad? Neváhejte nás kontaktovat.
+            </p>
+        </div>
 
-        <div class="topimage"></div>
+        <form action="mailto:info@alphai.cz" method="post" enctype="text/plain">
+            Jméno:&nbsp;
+            <input type="text" name="firstname">&nbsp;
+            Příjmení:&nbsp;
+            <input type="text" name="lastname"><br>
+            &nbsp;E-mail:&nbsp;
+            <input type="text" name="mail" required><br>
+            Zpráva:&nbsp;
+            <input id="textfield" type="text" name="comment" required><br><br>
+            Vyberte soubor: <input type="file" name="myFile">
+            <input type="submit" value="Poslat">
+        </form>
 
-        <div class="intro"></div>
+
 
     </main>
 

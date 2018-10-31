@@ -32,7 +32,6 @@
   }
 
 body {
-    /*background-color: rgba(33,33,33, 0.9);*/
     background-image: url("images/background.jpg");
     background-repeat: repeat;
     height: 100%;
@@ -149,17 +148,58 @@ nav li:active {
 
   }
 
-  .grid-item, .intro, .anotation {
+  .grid-container-career {
+    display: grid;
+    grid-template-areas:
+    'header header header'
+    'main main main'
+    'footer footer footer';
+    grid-template-columns: auto auto auto;
+
+  }
+
+  .grid-item2 {
+    padding: 50px;
+    background-color: rgba(242,242,235, 0.5);
+    transition: transform .2s;
+    width: 100%;
+    height: 200px;
+  }
+
+  .grid-item, .intro, .anotation, form {
     background-color:rgba(242,242,235, 0.5);
     border-radius: 10px;
     padding: 20px;
-    font-size: 30px;
-    text-align: justify;
+    text-align: center;
+  }
+
+  #textfield {
+      width: 500px;
+      height: 250px;
+  }
+
+  input {
+      margin: 10px;
+  }
+
+  .contact-us {
+      float: right;
+      margin-right: 10em;
+      margin-top: 10em;
+      max-width: 400px;
+      text-align: justify;
   }
 
   .grid-item:hover {
     background-color: #A62E38;
   }
+
+  .grid-item2:hover {
+    transform: scale(1.5);
+    overflow: hidden;
+    background-color: rgb(242,242,235);
+  }
+
 
 header, nav { 
     grid-area: header;
@@ -267,6 +307,10 @@ footer {
     bottom: 3px;
 }
 
+form {
+    background-color: rgba(242,242,235, 0.5);
+
+}
 
 .networks {
     display: inline-block;
@@ -284,7 +328,7 @@ footer {
     padding: 15px 30px;
    }
 
-   .grid-container {
+   .grid-container, .grid-container-career {
     grid-template-areas:
     'header header'
     'main main'
@@ -295,7 +339,7 @@ footer {
 }
 
 @media screen and (max-width: 640px) {
-    .grid-container {
+    .grid-container, .grid-container-career {
         grid-template-areas:
         'header'
         'main'
@@ -304,7 +348,7 @@ footer {
         grid-row-gap: 10px;
     
       }
-    .grid-item, .intro {
+    .grid-item, .intro, .grid-item2 {
         width: 100%;
         height: 100%;
         object-fit: cover;
