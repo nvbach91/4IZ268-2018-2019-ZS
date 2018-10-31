@@ -122,12 +122,12 @@ nav a:hover {
 .main_offer ul {
     padding: 0;
     margin: 0;
-    overflow: auto;
+    overflow: hidden;
 }
 .product_group {
     float: left;
     width: calc(100%/3);
-    height: 300px;
+    height: 320px;
     padding: 10px;
     margin: 30px 0;
     list-style: none;
@@ -195,7 +195,104 @@ footer {
     font-size: 14px;
     text-align: right;
 }
-/* -------------------- Tablet ---------------------- */
-@media screen and (min-width: 720px) {
+/* -------------------- Responsive web ---------------------- */
+@media screen and (max-width: 784px) {
+    .product_group {
+        width: 50%;
+        height: 265px;
+    }
+    .content {
+        padding: 20px 40px;
+    }
+    .intro {
+        min-height: 240px;
+    }
+    .intro h1 {
+        padding: 20px;
+    }
+    h1 {
+        margin: 20px 0;
+    }
+}
+@media screen and (max-width: 639px) {
+    .product_group {
+        width: 50%;
+        height: 320px;
+        margin: 20px 0;
+    }
+}
+@media screen and (max-width: 532px) {
+    .logo {
+        height: 35px;
+    }
+    .content {
+        padding: 10px 20px;
+    }
+    .product_group {
+        width: 100%;
+        height: 190px;
+        margin: 10px;
+    }
+    .intro {
+        min-height: 200px;
+    }
+    .intro h1 {
+        padding: 15px;
+        line-height: 25px;
+    }
+    .product_group button {
+        left: 20%;
+        width: 60%;
+    }
+    body {
+        line-height: 22px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .articles article {
+        margin: 30px 0;
+    }
+    p {
+        margin: 10px 0;
+    }
+    div.group_of_products {
+        margin: 30px 0;
+    }
+    .price_list table, td, th {
+        padding: 6px;
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 432px) {
+    .product_group {
+        height: 210px;
+    }
+}
+@media screen and (max-width: 412px) {
+    .product_group {
+        height: 215px;
+    }
+    body {
+        line-height: 20px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    #current_page {
+        border-radius: 0;
+    }
+    nav a:hover {
+        border-radius: 0;
+    }
+}
+@media screen and (max-width: 325px) {
+    .price_list th {
+        font-size: 14px;
+        font-weight: normal;
+    }
+}
+/* -------------------- Print --------------------- */
+@media print {
 
 }
