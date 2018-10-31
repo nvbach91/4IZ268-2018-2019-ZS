@@ -17,7 +17,7 @@ const timestamp = new Date().getTime();
 
 gulp.task('minify', function() {
   return gulp.src(tempDir + '/*.html')
-    .pipe($.htmlmin({collapseWhitespace: true}))
+    // .pipe($.htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest(distDir));
 });
 
@@ -41,7 +41,7 @@ gulp.task('templates', function() {
     ])
     .pipe($.plumber())
     .pipe($.swig(options))
-    .pipe($.htmlmin({collapseWhitespace: true}))
+    // .pipe($.htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest(tempDir))
     .pipe($.livereload());
 });

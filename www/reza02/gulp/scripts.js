@@ -58,13 +58,13 @@ gulp.task('vendor', function(){
     ])
   .pipe($.concat('vendor.js'))
   .pipe(gulp.dest(jsDevDir + '/'))
-  .pipe($.uglify())
+  // .pipe($.uglify())
   .pipe(gulp.dest(jsDistDir))
 });
 
 gulp.task('buildScripts', ['vendor'], function() {
     return gulp.src([jsDevDir + '/main.js'])
-    .pipe($.uglify())
+    // .pipe($.uglify())
     .pipe(gulp.dest(jsDistDir));
 });
 

@@ -36,7 +36,7 @@ gulp.task('styles', function () {
     ]))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest(cssTempDir))
-    .pipe($.csso({restructure: false}))
+    // .pipe($.csso({restructure: false}))
     .pipe($.base64({
       extensions: ['svg', 'png', /\.jpg#datauri$/i],
       maxImageSize: 16*1024, // bytes
