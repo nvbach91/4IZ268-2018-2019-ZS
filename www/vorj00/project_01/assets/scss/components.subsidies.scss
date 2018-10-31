@@ -1,0 +1,60 @@
+@import "tools.mixins";
+
+.subsidies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* "thanks" to IE support, I cannot fully use `display: grid`
+    (and making two versions with `@supports` aren't necessary for this project */
+$subsidyMargin: 1em;
+
+.subsidy {
+    margin: $subsidyMargin;
+    filter: grayscale(100%);
+    position: relative;
+    transition: 0.4s;
+    width: calc(100% - 2*#{$subsidyMargin});
+
+    @include mq("tablet-small") {
+        width: calc(50% - 2 * #{$subsidyMargin});
+    }
+
+    @include mq("tablet-wide") {
+        width: calc(100% / 3 - 2 * #{$subsidyMargin});
+    }
+
+    @include mq("desktop") {
+        width: calc(25% - 2 * #{$subsidyMargin});
+    }
+}
+
+.subsidy:hover {
+    filter: none;
+    transition: 0.4s;
+
+    .subsidy__name {
+        background-color: rgba(#000, .6);
+    }
+}
+
+.subsidy__img {
+    width: 100%;
+    display: block;
+}
+
+.subsidy__name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 200%;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(#000, .3);
+    transition: 0.4s;
+}
