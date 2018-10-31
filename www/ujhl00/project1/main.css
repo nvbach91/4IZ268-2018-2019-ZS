@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/img/wallropes-min.jpg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.navigation {
+    max-width: 1200px;
+    margin: auto;
+}
+.main-nav {
+    float: right;
+    list-style-type: none;
+    margin-top: 30px; 
+}
+
+.main-nav li {
+    display: inline-block;
+}
+
+.main-nav li a {
+    color:white;
+    text-decoration: none;
+    padding: 5px 20px;
+    text-transform: uppercase;
+}
+
+.main-nav li a:hover {
+    border: 1px solid white;
+}
+
+.hero-banner {
+    background-color: rgba(0,0,0,.3);
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 275px;
+    padding: 20px 50px 20px;
+    line-height: 3em;
+}
+
+.hero-banner h1 {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 18px;
+    font-size: 60px;
+    margin: 5px 0;
+}
+
+.hero-banner h3 {
+    color: #405947;
+    text-transform: uppercase;
+    letter-spacing: 9px;
+    margin: 0px;
+}
+
+.hero-banner h4 {
+    color: white;
+    margin: 0px;
+    letter-spacing: 3px;
+}
+
