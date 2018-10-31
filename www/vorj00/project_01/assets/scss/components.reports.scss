@@ -13,9 +13,9 @@
 
 .report {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     border-bottom: 1px solid $grayDark;
-    height: 40px;
     padding: 1em;
 
     &:hover {
@@ -29,7 +29,7 @@
 
 .report picture,
 .report picture * {
-    height: 100%;
+    height: 40px;
 }
 
 .report__path {
