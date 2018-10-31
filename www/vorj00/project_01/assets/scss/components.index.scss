@@ -1,4 +1,6 @@
+@import "settings.variables";
+
 .hero {
     background: url(../img/background.jpg);
-
+    height: calc(100% - $headerHeight);
 }
