@@ -139,6 +139,7 @@ footer {
 
 .title {
     font-size: 35px;
+    width: 204.917px;
     /*margin-top: 50px;*/
     padding-left: 10px;
 }
@@ -512,12 +513,34 @@ iframe {
         padding-bottom: 0px;
     }
 
-    .container-welcome, .container-social {
-        width: 100%;
+    h1, .career h1 {
+        font-size: 50px;
     }
 
-    .container-articles p, .container-articles h2, .container-articles ul {
+    .container-welcome, .container-social {
         width: 100%;
+        font-size: 12px;
+    }
+
+    .container-welcome img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .container-welcome h2 {
+        font-size: 25px;
+    }
+
+    .container-articles p, .container-articles ul {
+        width: 100%;
+        font-size: 12px;
+        margin-bottom: auto;
+    }
+
+    .container-articles h2 {
+        font-size: 25px;
+        width: 100%;
+        margin-bottom: auto;
     }
 
     .no-print {
@@ -526,7 +549,23 @@ iframe {
 
     .column {
         width: 100%;
+        font-size: 12px;
         padding: 0px;
+    }
+
+    .career-text, .career-text-last {
+        margin: auto;
+    }
+
+    .career h2 {
+        font-size: 25px;
+    }
+
+    .column img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 10px;
+        margin-top: 5px;
     }
 
     footer {
@@ -536,5 +575,21 @@ iframe {
     iframe {
         display: none;
         height: 0;
+    }
+
+    .social-img {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .social-img-square {
+        width: 75px;
+        height: 75px;
+        border-radius: 10px;
+    }
+
+    .social-item {
+        margin-top: 0px;
+        height: 220px;
     }
 }
