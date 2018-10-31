@@ -132,12 +132,12 @@ main > * {
     background-position: center;
     */
 }
-.product:nth-child(1) {background-color:blue; margin: 20px 20px 20px 10px; }
-.product:nth-child(2) { background-color:pink; margin: 20px 20px 20px 10px; }
-.product:nth-child(3) { background-color:green; margin: 20px 20px 20px 10px; }
-.product:nth-child(4) { background-color:red; margin: 20px 20px 20px 10px; }
-.product:nth-child(5) { background-color:violet; margin: 20px 20px 20px 10px; }
-.product:nth-child(6) { background-color:gold; margin: 20px 20px 20px 10px; }
+.product:nth-child(1) {background-color:blue; margin: 20px 20px 20px 10px; height:200px; }
+.product:nth-child(2) { background-color:pink; margin: 20px 20px 20px 10px; height:200px;}
+.product:nth-child(3) { background-color:green; margin: 20px 20px 20px 10px; height:200px;}
+.product:nth-child(4) { background-color:red; margin: 20px 20px 20px 10px; height:200px;}
+.product:nth-child(5) { background-color:violet; margin: 20px 20px 20px 10px;height:200px; }
+.product:nth-child(6) { background-color:gold; margin: 20px 20px 20px 10px; height:200px;}
 /*STRÁNKA ABOUT US*/
 
 .about {
