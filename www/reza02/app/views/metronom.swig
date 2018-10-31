@@ -1,7 +1,7 @@
 {% extends "layouts/_layout.swig" %}
 {% block bodyClass %}page-detail{% endblock %}
-{% block pageTitle %}{% endblock %}
-{% block description %}Description{% endblock %}
+{% block pageTitle %}| Pražský metronom{% endblock %}
+{% block description %}Pražský metronom je kinetický sochařský objekt Vratislava Nováka, instalovaný roku 1991 v místě bývalého Stalinova pomníku v Praze na Letné nad Čechovým mostem.{% endblock %}
 
 {% block main %}
 
@@ -21,13 +21,13 @@
       <section class="section">
         <h1 class="h1">Pražský metronom</h1>
 
-        <p class="text--perex text--large text--italic">Pražský metronom je kinetický sochařský objekt Vratislava Nováka, instalovaný roku 1991 v místě bývalého Stalinova pomníku v Praze na Letné nad Čechovým mostem.</p>
+        <p class="text--perex text--large text--italic">Pražský metronom je&nbsp;kinetický sochařský objekt Vratislava Nováka, instalovaný roku 1991 v&nbsp;místě bývalého Stalinova pomníku v&nbsp;Praze na&nbsp;Letné nad&nbsp;Čechovým mostem.</p>
 
         <!-- Table -->
         <table class="table">
           <thead>
             <tr>
-              <th colspan="2">Údaje o pomníku</th>
+              <th colspan="2">Údaje o&nbsp;pomníku</th>
             </tr>
           </thead>
           <tbody>
@@ -47,28 +47,32 @@
         </table>
 
         <h2 class="h2">Historie</h2>
-        <p>Autorem je sochař a profesor Vysoké školy uměleckoprůmyslové Vratislav Karel Novák (1942–2014), který se kinetickým uměním zabýval od roku 1968. Během pobytu na Miami University v Ohio v letech 2001 až 2002 vytvořil spolu s americkou umělkyní Suzan Rae Ewingovou 27 m vysoký kinetický objekt Krystalová věž, představující symbol svobody, který zvítězil v mezinárodní soutěži v Cincinnati.</p>
+        <p>Autorem je&nbsp;sochař a&nbsp;profesor Vysoké školy uměleckoprůmyslové Vratislav Karel Novák (1942–2014), který&nbsp;se&nbsp;kinetickým uměním zabýval od&nbsp;roku 1968. Během pobytu na&nbsp;Miami University v&nbsp;Ohio v&nbsp;letech 2001 až 2002 vytvořil spolu s&nbsp;americkou umělkyní Suzan Rae Ewingovou 27&nbsp;m vysoký kinetický objekt Krystalová věž, představující symbol svobody, který&nbsp;zvítězil v&nbsp;mezinárodní soutěži v&nbsp;Cincinnati.</p>
 
-        <p>V roce 2003 byl využit k propagaci referenda o přistoupení České republiky k Evropské unii, kdy se jeho kyvadlo pohybovalo mezi slovy ANO a NE. Roku 2009 zase symbolicky odměřoval čas předsednictví České republiky Evropské unii.</p>
+        <p>V roce 2003 byl&nbsp;využit k&nbsp;propagaci referenda o&nbsp;přistoupení České republiky k&nbsp;Evropské unii, kdy&nbsp;se&nbsp;jeho kyvadlo pohybovalo mezi slovy ANO a&nbsp;NE. Roku 2009 zase symbolicky odměřoval čas předsednictví České republiky Evropské unii.</p>
 
-        <p>Pražský metronom bohužel čím dál častěji postihují poruchy, takže bývá někdy i dlouhé týdny mimo provoz. Poslední velká rekonstrukce proběhla v roce 2015.</p>
+        <p>Pražský metronom bohužel čím dál častěji postihují poruchy, takže bývá někdy i&nbsp;dlouhé týdny mimo provoz. Poslední velká rekonstrukce proběhla v&nbsp;roce 2015.</p>
 
         <figure>
-          <img src="./images/places/metronom/img-1.jpg" alt="">
+          <img class="lazy" data-src="./images/places/metronom/metronom-cervena-rucicka.jpg" alt="Metronom: Červená ručička metronomu">
           <figcaption>Červená „ručička" metronomu</figcaption>
         </figure>
 
-        <p>K 1. dubnu 2016 se metronom vrátil na své místo, avšak společnost PSN jej v rámci rekonstrukce opatřila novým zeleným nátěrem, což bylo kritizováno veřejností a umělci jako pozměňování díla k reklamním účelům. Nedlouho nato, došlo koncem dubna 2016 k protestu a natření skupinou BOLT 958 zpět na červenou barvu.</p>
+        <p>K 1. dubnu 2016 se&nbsp;metronom vrátil na&nbsp;své místo, avšak společnost PSN jej v&nbsp;rámci rekonstrukce opatřila novým zeleným nátěrem, což&nbsp;bylo kritizováno veřejností a&nbsp;umělci jako pozměňování díla k&nbsp;reklamním účelům. Nedlouho nato, došlo koncem&nbsp;dubna 2016 k&nbsp;protestu a&nbsp;natření skupinou BOLT 958 zpět na&nbsp;červenou barvu.</p>
 
-        <p>Od metronomu se pravidelně odpaluje pražský novoroční ohňostroj, naposledy byl odsud odpalován 1. ledna 2018.</p>
+        <p>Od&nbsp;metronomu se&nbsp;pravidelně odpaluje pražský novoroční ohňostroj, naposledy byl&nbsp;odsud odpalován 1.&nbsp;ledna 2018.</p>
 
         <h2 class="h2">Popis</h2>
-        <p>Pražský objekt, který autor nazval Stroj času měl svým umístěním na podstavci bývalého Stalinova pomníku rovněž symbolizovat neúprosné plynutí času a varovnou připomínku minulosti. Stroj svým vzhledem připomíná Mälzelův metronom a ačkoliv jeho mechanická konstrukce je jiná, vžil se spíše název Metronom. Spolu s kyvadlem je vysoký 25 m a váží 7 tun. Stroj pohánějící pohyblivé součásti je uložen v tříbokém jehlanu. Kyvadlo s výkyvem 60 stupňů je vyváženo vahadlem se dvoutunovým závažím. Byl vyroben společností ČKD Racionalizace na objednávku Společnosti pro Československou všeobecnou výstavu. Pro obavy z narušené statiky podstavce po odstřelení Stalinova pomníku nemohl být metronom instalován za pomocí jeřábu. Byl sem dopraven a usazen pomocí velkého vrtulníku 15. května 1991 u příležitosti Všeobecné československé výstavy v Praze. Původně vznikl jako dočasná stavba.</p>
+        <p>Pražský objekt, který&nbsp;autor nazval Stroj času měl svým umístěním na&nbsp;podstavci bývalého Stalinova pomníku rovněž symbolizovat neúprosné plynutí času a&nbsp;varovnou připomínku minulosti. Stroj svým vzhledem připomíná Mälzelův metronom a&nbsp;ačkoliv jeho mechanická konstrukce je&nbsp;jiná, vžil se&nbsp;spíše název Metronom. Spolu s&nbsp;kyvadlem je&nbsp;vysoký 25&nbsp;m a&nbsp;váží 7 tun. Stroj pohánějící pohyblivé součásti je&nbsp;uložen v&nbsp;tříbokém jehlanu. Kyvadlo s&nbsp;výkyvem 60 stupňů je&nbsp;vyváženo vahadlem se&nbsp;dvoutunovým závažím. Byl&nbsp;vyroben společností ČKD Racionalizace na&nbsp;objednávku Společnosti pro&nbsp;Československou všeobecnou výstavu. Pro&nbsp;obavy z&nbsp;narušené statiky podstavce po&nbsp;odstřelení Stalinova pomníku nemohl být metronom instalován za&nbsp;pomocí jeřábu. Byl&nbsp;sem dopraven a&nbsp;usazen pomocí velkého vrtulníku 15.&nbsp;května 1991 u&nbsp;příležitosti Všeobecné československé výstavy v&nbsp;Praze. Původně vznikl jako dočasná stavba.</p>
 
         <figure>
-          <img src="./images/places/metronom/img-2.jpg" alt="">
+          <img class="lazy" data-src="./images/places/metronom/metronom-boty.jpg" alt="Metronom: Typicky zavěšené boty">
           <figcaption>Typicky zavěšené boty</figcaption>
         </figure>
+
+        <div class="text-center">
+          <a href="./kam-na-vylet.html" class="link" title="Zpět">Co&nbsp;takhle něco jiného?</a>
+        </div>
 
       </section>
 

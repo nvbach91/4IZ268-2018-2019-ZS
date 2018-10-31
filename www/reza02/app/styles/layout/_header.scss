@@ -30,4 +30,7 @@
 }
 
 .header__title {
+  @media (max-width: 567px) {
+    display: none;
+  }
 }

@@ -10,6 +10,7 @@ a {
   position: relative;
   transition: $transition;
   color: $link-color;
+  font-weight: 400;
 
   // telephone
   &[href^="tel:"] {

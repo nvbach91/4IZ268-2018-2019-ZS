@@ -5,11 +5,13 @@
 
 // Colors
 $bg-body: #fafafa;
-$bg-light: #d7d7d7;
+$bg-light: #f3f3f3;
 $bg-dark: #414141;
+$primary-color: #6990E8;
+$secondary-color: #5777CC;
 
-$link-color: red;
-$link-color-hover: blue;
+$link-color: $primary-color;
+$link-color-hover: $secondary-color;
 
 
 $facebook-color: #3b5998;

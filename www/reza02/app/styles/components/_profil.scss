@@ -1,0 +1,15 @@
+.profil {
+  width: rem(250);
+  margin: auto;
+}
+
+.profil__medailon {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.profil__list {
+  @media (max-width: 767px) {
+    text-align: center;
+  }
+}

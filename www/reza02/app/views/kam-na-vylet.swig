@@ -1,7 +1,7 @@
 {% extends "layouts/_layout.swig" %}
 {% block bodyClass %}page-places{% endblock %}
-{% block pageTitle %}{% endblock %}
-{% block description %}Description{% endblock %}
+{% block pageTitle %}| Kam na výlet?{% endblock %}
+{% block description %}Nevíš kam vyrazit na výlet? Chceš poznat něco nového v naší krásné Praze? Vyber si mezi tipy to pravé pro tebe!{% endblock %}
 
 {% block main %}
 
@@ -15,7 +15,7 @@
       <section class="section">
         <h1 class="h1">Kam na výlet?</h1>
 
-        <p class="text--large">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo pariatur commodi itaque velit, perspiciatis doloremque eveniet, rerum ab voluptate alias nulla quis. Porro, quisquam harum. Maiores explicabo reiciendis quaerat corporis in maxime necessitatibus animi voluptates amet minus excepturi culpa aliquam ipsam ut esse, odio autem. Nobis non eveniet et laboriosam.</p>
+        <p class="text--perex text--large text--italic">Nevíš kam vyrazit na výlet? Chceš poznat něco nového v&nbsp;naší krásné Praze?<br>Vyber si mezi tipy to pravé pro tebe!</p>
 
         <div class="cards">
 

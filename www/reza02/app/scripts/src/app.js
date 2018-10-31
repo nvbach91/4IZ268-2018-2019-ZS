@@ -10,17 +10,17 @@ var headerHeight = $('#header').height();
 console.log(headerHeight);
 
 // init
-// $('.lazy').Lazy({
-//   // your configuration goes here
-//   scrollDirection: 'vertical',
-//   effect: 'fadeIn',
-//   visibleOnly: true,
-//   threshold: 2000,
-//   // placeholder: 'path/to/image'
-//   onError: function(element) {
-//       console.log('error loading ' + element.data('src'));
-//   }
-// });
+$('.lazy').Lazy({
+  // your configuration goes here
+  scrollDirection: 'vertical',
+  effect: 'fadeIn',
+  visibleOnly: true,
+  threshold: 2000,
+  // placeholder: 'path/to/image'
+  onError: function(element) {
+      console.log('error loading ' + element.data('src'));
+  }
+});
 
 // ----------------------------------------
 //  scroll to

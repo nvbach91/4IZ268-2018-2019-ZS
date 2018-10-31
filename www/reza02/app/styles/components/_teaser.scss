@@ -20,7 +20,7 @@
   &:before {
     content: '';
     @extend .fill;
-    background: linear-gradient(to bottom, rgba(0,0,0,.15) 0%,rgba(0,0,0,.85) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,.35) 0%,rgba(0,0,0,.95) 100%);
   }
 }
 
@@ -34,16 +34,33 @@
 
 .teaser__title {
   font-size: rem(150);
+
+  @media (max-width: 1199px) {
+    font-size: rem(64, 14);
+  }
+
+  @media (max-width: 567px) {
+    font-size: rem(32, 12);
+  }
 }
 
 .teaser__subtitle {
   font-size: rem(120);
+
+  @media (max-width: 1199px) {
+    font-size: rem(48, 14);
+  }
+
+  @media (max-width: 567px) {
+    font-size: rem(24, 12);
+  }
 }
 
 .teaser__chevron {
-  position: relative;
+  position: absolute;
+  bottom: rem(150);
+  left: 50%;
   display: block;
-  margin-top: 2rem;
   background: transparent;
   animation-name: bounce;
   animation-duration: 2s;
@@ -53,7 +70,7 @@
   img {
     transform-origin: center;
     transform: rotate(90deg);
-    width: 2rem;
+    height: 2.5rem;
   }
 
   // touch area
@@ -70,9 +87,24 @@
 
 .teaser--screen {
   height: 100vh;
-  padding: 10rem 2rem 3rem;
-  .teaser__chevron {
-    margin-top: 8rem;
+  padding: 3rem 2rem 6rem;
+
+  @media (max-width: 1440px) {
+    .teaser__chevron {
+      bottom: rem(100);
+    }
+  }
+
+  @media (max-width: 991px) {
+    .teaser__chevron {
+      bottom: rem(50, 14);
+    }
+  }
+
+  @media (max-width: 576px) {
+    .teaser__chevron {
+      bottom: rem(100, 12);
+    }
   }
 }
 

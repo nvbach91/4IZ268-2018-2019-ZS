@@ -8,16 +8,15 @@
 <head>
 
   <meta charset="UTF-8">
-  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>{{ projectName }}</title>
+  <title>{{ projectName }} {% block pageTitle %}{% endblock %}</title>
 
   <meta name="description" content="{% block description %}{% endblock %}">
   <!-- <meta name="keywords" content="Project keywords" /> -->
 
-  <meta name="author" content="" />
-  <meta name="copyright" content="" />
+  <meta name="author" content="Adam Řezníček" />
+  <meta name="copyright" content="Adam Řezníček" />
 
   <!-- Favicons -->
   {% include './includes/_favicon.swig' %}

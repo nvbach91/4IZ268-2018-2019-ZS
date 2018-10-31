@@ -16,9 +16,35 @@
       // text-shadow: 0 0 .05em $text-color;
       transform: translateY(-.25em);
     }
-    
-    &.active {
-      text-shadow: 0 0 .05em $text-color;
+  }
+
+  // active state
+  .page-homepage &:nth-of-type(1) {
+    a {
+      // text-shadow: 0 0 .05em $text-color;
+      font-weight: 400;
+    }
+  }
+
+  .page-places &:nth-of-type(2),
+  .page-detail &:nth-of-type(2) {
+    a {
+      // text-shadow: 0 0 .05em $text-color;
+      font-weight: 400;
+    }
+  }
+
+  .page-about &:nth-of-type(3) {
+    a {
+      // text-shadow: 0 0 .05em $text-color;
+      font-weight: 400;
+    }
+  }
+
+  @media (max-width: 567px) {
+    margin: .25rem .5rem;
+    a {
+      font-size: rem(12, 12);
     }
   }
 }
