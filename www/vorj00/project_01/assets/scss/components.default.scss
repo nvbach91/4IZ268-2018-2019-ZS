@@ -3,6 +3,7 @@
 
 .header {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     position: sticky;
@@ -10,8 +11,13 @@
     background-color: #fff;
     height: $headerHeight;
     color: $brandColor;
-    padding: 0 $defaultPadding;
+    padding: $defaultPadding;
     z-index: 2;
+
+    @include mq("tablet-small") {
+        flex-direction: row;
+        padding: 0 $defaultPadding;
+    }
 }
 
 .nav>*:not(:last-child) {
