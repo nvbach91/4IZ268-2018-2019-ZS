@@ -8,7 +8,6 @@
   }
   .clear {
     clear: both;
-    padding: 0 !important;
   }
   h1 {
     text-align: center;
@@ -31,10 +30,11 @@
     margin: 0 auto;
     margin-bottom: 50px;
   }
+  .wrapper {
+    max-width: 1280px;
+  }
   .float-box {
     float: left;
-  }
-  .wrapper > div > div{
     padding: 30px;
     text-align: center;
     color: white;
@@ -56,30 +56,30 @@
   .wrapper > div {
     background-color: grey;
   }
-  .wrapper > div > div:nth-child(1){
+  .float-box:nth-child(1){
     background-color: rgb(255, 125,  78);
   }
-  .wrapper > div > div:nth-child(2){
+  .float-box:nth-child(2){
     background-color: rgb(168,  89,  60);
   }
-  .wrapper > div > div:nth-child(3){
+  .float-box:nth-child(3){
     background-color: rgb( 33, 165, 121);
   }
-  .wrapper > div > div:nth-child(4){
+  .float-box:nth-child(4){
     background-color: rgb( 47,  83, 160);
   }
-  .wrapper > div > div:nth-child(5){
+  .float-box:nth-child(5){
     background-color: rgb(197,  56,  56);
   }
-  .wrapper > div > div:nth-child(6){
+  .float-box:nth-child(6){
     background-color: rgb(112, 158,  94);
   }
-  .wrapper > div > div:nth-child(7){
+  .float-box:nth-child(7){
     background-color: rgb(182, 109, 197);
   }
-  .wrapper > div > div:nth-child(8){
+  .float-box:nth-child(8){
     background-color: rgb(167,  35,  79);
   }
-  .wrapper > div > div:nth-child(9){
+  .float-box:nth-child(9){
     background-color: rgb( 38, 189, 189);
   }
