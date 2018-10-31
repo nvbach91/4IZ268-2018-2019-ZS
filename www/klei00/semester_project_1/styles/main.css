@@ -30,7 +30,20 @@ p {
     padding: 10px;
     width: 100%;
     max-width: 900px;
-    margin: 0 auto;
+    height: 50px;
+    margin: 12px auto;
+    background: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+}
+.logo span {
+    text-align: center;
+    padding: 20px 50px;
+    color: transparent;
+}
+.logo a {
+    text-decoration: none;
 }
 nav {
     padding: 0;
@@ -181,4 +194,8 @@ footer {
     color: white;
     font-size: 14px;
     text-align: right;
+}
+/* -------------------- Tablet ---------------------- */
+@media screen and (min-width: 720px) {
+
 }
