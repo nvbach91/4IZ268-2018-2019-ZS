@@ -75,13 +75,15 @@
         display: flex;
         border-top-style: solid;
         border-top-width: 2px;
+        padding: 15px;
+        max-width: 100%;
     }
     
     .left {
         margin-top: 20px;
         margin-bottom: 20px;
         padding: 10px;
-        min-width: 33%;
+        min-width: 45%;
         padding-right: 30px;
         border-right-style: solid;
         border-right-width: 2px;
@@ -101,12 +103,15 @@
     p {
         text-align: justify;
         color: rgba(255, 255, 255, 0.8);
+        font-size: 18px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
     
     .center {
         margin-top: 20px;
         padding: 10px;
         padding-left: 30px;
+        min-width: 55%;
     }
     
     footer {
@@ -161,30 +166,6 @@
     * {
         background-color: white;
         color: black;
-    }
-
-    .logo {
-        width: 150px;
-        height: 66px;
-    }
-
-    nav li {
-        font-size: 10px;
-        margin: 5px;
-        line-height: 33px;
-    }
-
-    .copyright {
-        position: absolute;
-        left: 36%;
-        font-size: 11px;
-        margin-top: 10px;
-    }
-
-    .social {
-        left: 40%;
-        margin-top: 50px;
-        margin-top: 30px;
     }
 }
 
