@@ -70,15 +70,6 @@ nav{
 
 
 
-iframe{
-    
-    
-    allowfullscreen;
-}
-
-
-
-
  .opening{
      display: flex;
      flex-direction: column;
@@ -237,7 +228,7 @@ footer{
     }
     
     menu li a:hover, .dropdown:hover .dropbtn {
-        background-color:lightblue);
+        background-color:lightblue;
     }
     
     menu li.dropdown {
