@@ -44,14 +44,12 @@ header {
   background-color: rgb(223, 114,  75);
   padding: 110px 0;
   width: 100%;
-  float: left;
 }
 
 nav {
   background-color: rgb( 47, 108, 136);
   padding: 20px 0;
   width: 100%;
-  float: left;
 }
 
 main {
@@ -71,7 +69,6 @@ aside {
 footer {
   background-color: rgb( 39,  39,  39);
   padding: 40px 0;
-  float: left;
   width: 100%;
 
 }
@@ -94,13 +91,5 @@ footer {
 @media screen and (max-width: 720px) {
   .colors > input {
     width: 50%;
-  }
-
-  main {
-    width: 100%;
-  }
-
-  aside {
-    width: 100%;
   }
 }
