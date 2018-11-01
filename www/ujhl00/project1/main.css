@@ -17,18 +17,18 @@ h1 {
 }
 
 h2 {
-    font-weight: bold;
+    font-weight: normal;
     font-size: 30px;
 }
 
 h3 {
-    font-weight: bold;
+    font-weight: normal;
     font-size: 20px;
 }
 
 h4 {
-    font-weight: bold;
-    font-size: 15px;
+    font-weight: normal;
+    font-size: 18px;
 
 }
 
@@ -41,7 +41,7 @@ header {
 
 .wrapper {
     max-width: 1280px;
-    margin: 0 auto;
+    margin: 0px auto;
 }
 
 .hero-banner {
@@ -60,15 +60,20 @@ header {
     color: white;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 18px;
+    letter-spacing: 6px;
     font-size: 50px;
     margin: 5px 0;
 }
 
+.hero-banner h1 .f {
+    color: #405947;
+}
+
 .hero-banner h3 {
     color: #405947;
+    color: white;
     text-transform: uppercase;
-    letter-spacing: 9px;
+    letter-spacing: 15px;
     margin: 0px;
 }
 
@@ -114,15 +119,28 @@ header {
     clear:both;
 }
 
-.welcome h2 {
+.welcome h2, .features h2 {
     text-align: center;
+    color: black;
+    text-transform: uppercase;
     letter-spacing: 10px;
-    margin: 20px 0;
+    margin: 30px 0 20px;
 }
 
 .float-box {
     text-align: left;
     float: left;
+}
+
+.float-box h4 {
+    text-align: center; 
+}
+
+.float-box img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
 }
 
 .welcome .float-box {
@@ -131,10 +149,30 @@ header {
 }
 
 .sep {
-    width: 1280px;
-    height: 3px;
+    width: 75%;
+    height: 2px;
     background-color: #162c1e;
     margin: 30px auto;
-    border-radius: 10px;
-  
+    border-radius: 10px; 
+}
+
+.features .float-box {
+    height: 300px;
+    width: 33.33%;
+    padding: 10px 10px;
+}
+
+
+.features button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    padding: 10px 0;
+    width: 180px;
+    background-color: #405947;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
