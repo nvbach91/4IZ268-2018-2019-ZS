@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 80%;
+    max-width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.section1 {
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    min-height: 600px;
+    position: relative; 
+    overflow: hidden;
+}
+
+
+
+.book_img_preview {
+    box-shadow: 15px 15px 50px grey;
+    max-width: 40%;
+    min-width: 250px;
+    margin: 50px 0px 50px 0px;
+    float: left;
+}
+
+.book_img_preview:hover {
+    transition: 0.70s;
+    transform: rotate(-3deg) scale(1.1);
+}
+
+.perex {
+    float: left;
+    width: 60%;
+    padding: 60px;
+    background-color: crimson;
+}
+.book_and_author {
+    float: left;
+    width: 60%;
+}
+
+.section1 .book_name, .section1 .author_name {
+    color: red;
+    background-color: blue;
+}
+
+
+
+/* Header */
+
+.container_header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    max-width: 1600px;
+    margin: 0 auto;
+    background-color: aqua;
+    height: 100%;
+}
+
+header {
+    display: grid;
+    align-items: center;
+    width: 100%;
+    background-color: #333;
+    overflow: hidden;
+    min-height: 80px;
+}
+
+.main_logo{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.book_name {
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.author_name {
+    color: rgb(153, 153, 153);
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 20px;
+    white-space: nowrap;
+ 
+}
+
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-auto-flow: row dense;
+
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+    background-color: aquamarine;
+    min-width: 130px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu a:hover {
+    opacity: 0.6;
+    background-color: #333;
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        color:yellow;
+        background-color: red;
+    }
+
+    .container_header {   
+        grid-template-columns: 1fr;
+
+    }
+}
