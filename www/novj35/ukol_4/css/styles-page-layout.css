@@ -36,6 +36,18 @@ h1 {
   
 }
 
+@media screen and (min-width: 720px) {
+  .colors>input {
+      padding: 20px;
+      width: calc(100% / 3);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .colors>input {
+      width: 20%;
+  }
+}
+
 .wrapper {
   color: white;
   font-size: 35px;
@@ -43,62 +55,49 @@ h1 {
   max-width: 1280px;
   margin: 0 auto;
   padding: 20px;
-  margin-bottom: 50px;
+  margin: 0 auto;
 }
 
 header{
   width: 100%;
   background-color: rgb(223, 114,  75);
   height: 200px;
-  padding: 75px;
+  padding: 120px;
 }
 
 nav{
   width: 100%;
   background-color: rgb( 47, 108, 136);
   height: 80px;
-  padding: 20px;
+  padding: 16px;
 }
 
 main {
   width: 75%;
   background-color: rgb(192, 70, 94);
   height: 700px; 
-  padding: 300px;
   float: left;
+  padding-top: 320px;
 }
 
 aside {
   width: 25%;
   background-color: rgb( 53, 184, 155);
   height: 700px; 
-  padding-top: 300px;
   float: right;
+  padding-top: 320px;
 }
 
 footer {
  width: 100%;
  background-color: rgb( 39,  39,  39);
  height: 100px;
- padding: 30px;
+ padding: 80px;
 }
 
-@media screen and (max-width: 1024px) {
-  .colors > input {
-    padding: 20px;
-    width: calc(100% / 3);
-  }
-
-main {
-  width: 100%;
-}
-aside {
-  width: 100%;
-}
-
-}
- @media screen and (max-width: 720px) {
-  .colors > input {
-    width: 50%;
+@media only screen and (max-width: 540px) {
+  main, aside {
+      width: 100%;
+      float: none;
   }
 } 
