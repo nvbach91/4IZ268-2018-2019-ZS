@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -20,11 +19,9 @@
     width: 100%;
     background-color: rgb(230, 230, 230);
     min-height: 600px;
-    position: relative; 
+    position: relative;
     overflow: hidden;
 }
-
-
 
 .book_img_preview {
     box-shadow: 15px 15px 50px grey;
@@ -45,6 +42,7 @@
     padding: 60px;
     background-color: crimson;
 }
+
 .book_and_author {
     float: left;
     width: 60%;
@@ -55,8 +53,6 @@
     background-color: blue;
 }
 
-
-
 /* Header */
 
 .container_header {
@@ -65,7 +61,6 @@
     width: 80%;
     max-width: 1600px;
     margin: 0 auto;
-    background-color: aqua;
     height: 100%;
 }
 
@@ -78,7 +73,7 @@ header {
     min-height: 80px;
 }
 
-.main_logo{
+.main_logo {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -90,6 +85,7 @@ header {
     font-weight: 700;
     font-size: 20px;
     white-space: nowrap;
+    margin-right: 10px;
 }
 
 .author_name {
@@ -98,42 +94,51 @@ header {
     font-weight: 100;
     font-size: 20px;
     white-space: nowrap;
- 
 }
 
-.menu{
+.menu {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 10px;
     grid-auto-flow: row dense;
-
 }
 
 .menu a {
     text-decoration: none;
     color: white;
     white-space: nowrap;
-    background-color: aquamarine;
     min-width: 130px;
-    
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .menu a:hover {
-    opacity: 0.6;
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.active_menu_item {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 1000px) {
+    .container_header {
+        grid-template-columns: 1fr;
+    }
+    .main_logo {
+        justify-content: center;
+        margin: 20px 0px;
+    }
+    .menu a {
+        min-width: auto;
+        height: 50px;
+    }
 }
 
 @media only screen and (max-width: 500px) {
-    body {
-        color:yellow;
-        background-color: red;
-    }
-
-    .container_header {   
+    .menu {
         grid-template-columns: 1fr;
-
+        grid-gap: 10px;
+        margin: 20px 0px;
     }
 }
