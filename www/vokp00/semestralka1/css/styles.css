@@ -252,10 +252,6 @@ footer { grid-area: footer; }
     float: left;
 }
 
-.career2 {
-
-}
-
 .career3 {
     content: url("images/flash.png");
     height: 150px;
@@ -268,10 +264,6 @@ footer { grid-area: footer; }
     height: 110px;
     width: 120px;
     float: left;
-}
-
-.career5 {
-
 }
 
 .career6 {
