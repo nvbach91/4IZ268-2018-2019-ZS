@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.clear {
+  clear: both;
+}
+h1 {
+  text-align: center;
+  padding: 50px 10px;
+  color: white;
+  background-color: rgb(192, 50, 50);
+}
+.instructions {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+.colors > input {
+  width: 50%;
+  padding: 5px;
+  border: none;
+  font-size: 18px;
+  margin: 0;
+  float: left;
+  color: white;
+}
+
+@media screen and (min-width: 720px) {
+  .colors > input {
+    padding: 20px;
+    width: calc(100% / 3);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .colors > input {
+    width: 20%;
+  }
+}
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+  color:white;
+  font-size: 20px;
+}
+
+header {
+  background: rgb(223, 114,  75);
+  height: 200px;
+}
+nav {
+  background: rgb( 47, 108, 136);
+  height: 50px;
+}
+
+main {
+  background: rgb(192,  70,  94);
+  float:left;
+  width: 75%;
+  height: 500px;
+}
+
+aside {
+  background: rgb( 53, 184, 155);
+  float:right;
+  width: 25%;
+  height: 500px;
+}
+footer {
+  background: rgb( 39,  39,  39);
+  height: 100px;
+}
+
+@media screen and (max-width: 720px) {
+  aside, main {
+    width: 100%
+  }
+}
