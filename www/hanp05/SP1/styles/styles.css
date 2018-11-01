@@ -10,56 +10,29 @@
 .container {
     position: relative;
     width: 80%;
-    max-width: 1600px;
+    max-width: 1300px;
     height: 100%;
     margin: 0 auto;
 }
 
-.section1 {
-    width: 100%;
-    background-color: rgb(230, 230, 230);
-    min-height: 600px;
-    position: relative;
-    overflow: hidden;
-}
 
-.book_img_preview {
-    box-shadow: 15px 15px 50px grey;
-    max-width: 40%;
-    min-width: 250px;
-    margin: 50px 0px 50px 0px;
-    float: left;
-}
 
-.book_img_preview:hover {
-    transition: 0.70s;
-    transform: rotate(-3deg) scale(1.1);
-}
 
-.perex {
-    float: left;
-    width: 60%;
-    padding: 60px;
-    background-color: crimson;
-}
 
-.book_and_author {
-    float: left;
-    width: 60%;
-}
 
-.section1 .book_name, .section1 .author_name {
-    color: red;
-    background-color: blue;
-}
 
-/* Header */
+
+
+
+
+
+/* ****** Header ****** */
 
 .container_header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 80%;
-    max-width: 1600px;
+    max-width: 1300px;
     margin: 0 auto;
     height: 100%;
 }
@@ -121,6 +94,65 @@ header {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+/* ###### Konec Header ###### */
+
+
+.button {
+    
+	background-color:#ff1208;
+	border-radius:7px;
+	border:1px solid #c20024;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	padding:15px 76px;
+    text-decoration:none;
+    text-align: center;
+}
+.button:hover {
+    background-color:#ff3029;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 1000px) {
     .container_header {
         grid-template-columns: 1fr;
@@ -133,12 +165,14 @@ header {
         min-width: auto;
         height: 50px;
     }
+
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
     .menu {
         grid-template-columns: 1fr;
         grid-gap: 10px;
         margin: 20px 0px;
     }
+
 }
