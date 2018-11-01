@@ -27,7 +27,7 @@
     max-width: 100%;
   }
   
-  .videodiv-video {
+.videodiv-video {
     width: 100%;
   }
 
@@ -146,9 +146,9 @@ nav li:active {
     'footer footer footer';
     grid-template-columns: auto auto auto;
 
-  }
+}
 
-  .grid-container-career {
+.grid-container-career {
     display: grid;
     grid-template-areas:
     'header header header'
@@ -156,49 +156,66 @@ nav li:active {
     'footer footer footer';
     grid-template-columns: auto auto auto;
 
-  }
+}
 
-  .grid-item2 {
+.middletext {
+    text-align: center;
+}
+
+.grid-item2 {
     padding: 50px;
     background-color: rgba(242,242,235, 0.5);
     transition: transform .2s;
     width: 100%;
     height: 200px;
-  }
+}
 
-  .grid-item, .intro, .anotation, form {
+.grid-item3 {
+    padding: 50px;
+    background-color: rgba(242,242,235, 0.5);
+    transition: transform .2s;
+    width: 100%;
+    height: 200px;
+}
+
+.grid-item2 p {
+      text-transform: uppercase;
+      font-weight: 800;
+}
+
+.grid-item, .intro, .anotation, form {
     background-color:rgba(242,242,235, 0.5);
     border-radius: 10px;
     padding: 20px;
-    text-align: center;
-  }
+    text-align: justify;
+}
 
-  #textfield {
+#textfield {
       width: 500px;
       height: 250px;
-  }
+}
 
-  input {
+input {
       margin: 10px;
-  }
+}
 
-  .contact-us {
+.contact-us {
       float: right;
       margin-right: 10em;
       margin-top: 10em;
       max-width: 400px;
       text-align: justify;
-  }
+}
 
-  .grid-item:hover {
+.grid-item:hover {
     background-color: #A62E38;
-  }
+}
 
-  .grid-item2:hover {
+.grid-item3:hover {
     transform: scale(1.5);
     overflow: hidden;
-    background-color: rgb(242,242,235);
-  }
+    background-color: #A62E38;
+}
 
 
 header, nav { 
@@ -228,6 +245,42 @@ footer { grid-area: footer; }
     content: url("images/startup.png");
 }
 
+.career1 {
+    content: url("images/laser.png");
+    height: 150px;
+    width: 100px;
+    float: left;
+}
+
+.career2 {
+
+}
+
+.career3 {
+    content: url("images/flash.png");
+    height: 150px;
+    width: 120px;
+    float: right;
+}
+
+.career4 {
+    content: url("images/crown.png");
+    height: 110px;
+    width: 120px;
+    float: left;
+}
+
+.career5 {
+
+}
+
+.career6 {
+    content: url("images/einstein.png");
+    height: 150px;
+    width: 100px;
+    float: right;
+}
+
 
 .slideshow {
     overflow: hidden;
@@ -235,46 +288,46 @@ footer { grid-area: footer; }
     width: 728px;
     margin: 0 auto;
     margin-bottom: 15px;
-  }
+}
   
-  .slide-wrapper {
+.slide-wrapper {
     width: 2912px;
     -webkit-animation: slide 10s ease infinite;
     animation: slide 10s ease infinite;
-  }
+}
   
-  .slide {
+.slide {
     float: left;
     height: 400px;
     width: 728px;
     background-size: cover;
-  }
+}
   
 
-  .slide:nth-child(1) {
+.slide:nth-child(1) {
     background-image: url("images/jobsdev.jpg");
-  }
+}
   
-  .slide:nth-child(2) {
+.slide:nth-child(2) {
     background-image: url("images/startupakademie.jpg");
-  }
+}
   
-  .slide:nth-child(3) {
+.slide:nth-child(3) {
     background-image: url("images/StartupWorldCupSummit.jpg");
-  }
+}
   
-  .slide:nth-child(4) {
+.slide:nth-child(4) {
     background-image: url("images/coursera.jpg");
-  }
+}
   
-  .slide p {
+.slide p {
     color: black; 
     padding: 15px 25px;
     background-color: rgba(29, 115, 165, 0.7);
     text-align: center;
-  }
+}
   
-  @-webkit-keyframes slide {
+@-webkit-keyframes slide {
     20% {margin-left: 0px;}
     30% {margin-left: -728px;}
     50% {margin-left: -728px;}
@@ -282,9 +335,9 @@ footer { grid-area: footer; }
     70% {margin-left: -1456px;}
     80% {margin-left: -2184px;}
     90% {margin-left: -2184px;}
-  }
+}
 
-  @keyframes slide {
+@keyframes slide {
     20% {margin-left: 0px;}
     30% {margin-left: -728px;}
     50% {margin-left: -728px;}
@@ -292,13 +345,13 @@ footer { grid-area: footer; }
     70% {margin-left: -1456px;}
     80% {margin-left: -2184px;}
     90% {margin-left: -2184px;}
-  }
+}
 
-  .anotation {
+.anotation {
     text-align: center;
     margin: 5px 30%;
     padding: 5px;
-  }
+}
 
 footer {
     text-align: center;
@@ -348,6 +401,7 @@ form {
         grid-row-gap: 10px;
     
       }
+
     .grid-item, .intro, .grid-item2 {
         width: 100%;
         height: 100%;
