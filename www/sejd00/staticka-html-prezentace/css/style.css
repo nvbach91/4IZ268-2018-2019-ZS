@@ -1,0 +1,156 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+}
+
+article.flex-item{
+    font-size: 20px;
+
+}
+
+.main-headline{
+text-align: center;
+}
+
+a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+}
+
+nav {
+    border: solid black 1px;
+}
+
+a:active{
+    color: red;
+}
+
+a:hover {
+    color: gray;
+}
+
+.site-description{
+    color: white;
+}
+
+
+.wrap{
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 10%;
+    margin-right: 50%;
+}
+
+.bg-main{
+    background-image: url("/4IZ268-2018-2019-ZS/www/sejd00/staticka-html-prezentace/img/cover.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-about{
+    background-image: url("/4IZ268-2018-2019-ZS/www/sejd00/staticka-html-prezentace/img/cover2.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+li {
+    display:inline-block;
+    margin-right: 20px;
+}
+
+li a {
+    display: block;
+    min-width:169px;
+    border: 1px solid black;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background: rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+li:hover a {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+li:focus a {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+.menu{
+
+}
+
+.social-media{
+    margin-left: 50px;
+}
+
+
+
+
+@import "compass/css3";
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+  padding: 5px;
+  width: 500px;
+  height: 150px;
+  margin-top: 40px;
+  
+  line-height: 20px;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+@media screen and (max-width : 760px){
+
+
+    li {
+        margin-bottom: 1px;
+    }
+
+    ul li, li a {
+        width: 71%;
+    }
+
+    body, html {
+        font-size: 20px;
+    }
+}
