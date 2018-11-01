@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.clear {
+  clear: both;
+}
+h1 {
+  text-align: center;
+  padding: 50px 10px;
+  color: white;
+  background-color: rgb(78, 146, 179);
+}
+.colors > input {
+  padding: 20px;
+  border: none;
+  font-size: 18px;
+  margin: 0;
+  float: left;
+  width: 25%;
+  color: white;
+}
+.instructions {
+  max-width: 1280px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.wrapper h2 {
+  max-width: 1280px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.container {
+  text-align: center;
+  max-width: 1280px;
+  padding: 20px;
+  margin: 0 auto;
+  font-size: 222px;
+  color:white;
+}
+
+.container-01 {
+  display:grid;
+  grid-template-columns: 100%;
+}
+
+.container-01 > div:nth-child(1) { background: rgb(255, 125,  78); }
+.container-01 > div:nth-child(2) { background: rgb(168,  89,  60); }
+.container-01 > div:nth-child(3) { background: rgb( 33, 165, 121); }
+
+
+
+.container-02 {
+  display:grid;
+  grid-template-columns: 50% 50%;
+}
+
+.container-02 > div:nth-child(1) { background: rgb(255, 125,  78); }
+.container-02 > div:nth-child(2) { background: rgb(168,  89,  60); }
+.container-02 > div:nth-child(3) { background: rgb( 33, 165, 121); }
+.container-02 > div:nth-child(4) { background: rgb( 47,  83, 160); }
+.container-02 > div:nth-child(5) { background: rgb(197,  56,  56); }
+.container-02 > div:nth-child(6) { background: rgb(112, 158,  94); }
+
+.container-03 {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container-03 > div:nth-child(1) { background: rgb(255, 125,  78); }
+.container-03 > div:nth-child(2) { background: rgb(168,  89,  60); }
+.container-03 > div:nth-child(3) { background: rgb( 33, 165, 121); }
+.container-03 > div:nth-child(4) { background: rgb( 47,  83, 160); }
+.container-03 > div:nth-child(5) { background: rgb(197,  56,  56); }
+.container-03 > div:nth-child(6) { background: rgb(112, 158,  94); }
+.container-03 > div:nth-child(7) { background: rgb(182, 109, 197); }
+.container-03 > div:nth-child(8) { background: rgb(167,  35,  79); }
+.container-03 > div:nth-child(9) { background: grey; }
+
+.container-04 {
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.container-04 > div:nth-child(1) { background: rgb(255, 125,  78); }
+.container-04 > div:nth-child(2) { background: rgb(168,  89,  60); }
+.container-04 > div:nth-child(3) { background: rgb( 33, 165, 121); }
+.container-04 > div:nth-child(4) { background: rgb( 47,  83, 160); }
+.container-04 > div:nth-child(5) { background: rgb(197,  56,  56); }
+.container-04 > div:nth-child(6) { grid-column:2/5; background: grey; }
