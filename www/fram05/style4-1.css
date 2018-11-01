@@ -47,12 +47,12 @@
     background-color: grey;
   }
   .float-box{
-    height: 20px;
-    padding: 100px;
+    height: 300px;
     font-size: 20px;
     color: white;
     font-weight: bold;
     text-align: center;
+    padding-top: 150px;
   }
   .container-01 .float-box{
     width: 100%;
