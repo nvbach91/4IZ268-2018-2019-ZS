@@ -5,6 +5,18 @@ body{
     font-family: sans-serif;
 
 }
+
+li {
+    list-style:none;
+}
+
+.clear{
+    float:none;
+    clear:both;
+}
+
+
+
 header{
     max-width: 70em;
     margin-left: auto;
@@ -41,7 +53,7 @@ nav{
      display: block;
      text-decoration: none;
      padding: 0.8em 1em;
-     color: grey;
+     color:black;
  }
 
  .active {
@@ -58,7 +70,11 @@ nav{
 
 
 
-
+iframe{
+    
+    
+    allowfullscreen;
+}
 
 
 
@@ -124,7 +140,7 @@ footer{
     padding: 0.02em;
     text-align: center;
     color: rgb(248, 248, 248);
-    background-color: rgb(125, 224, 80);
+    background-color: rgb(49, 70, 138);
     position: relative;
     bottom: 0px;
 }
@@ -146,10 +162,33 @@ footer{
     position:absolute;
 }
 
+.list li {
+    list-style: disc;
+
+}
+
+.nastrojarna h2 {
+    border-bottom: solid;
+}
 
  @media screen and (min-width: 720px){
     
+    .nastrojarna h2 {
+        border-bottom: solid;
+    }
     
+ 
+    .nastrojarna {
+        padding: 1em;
+        float:left;
+        width: 45%;
+        height: 25em;
+        
+    }
+
+    
+ 
+
     .menu{
         display: flex;
         flex-direction: row;
@@ -198,7 +237,7 @@ footer{
     }
     
     menu li a:hover, .dropdown:hover .dropbtn {
-        background-color:rgba(0, 0, 255, 0.603);
+        background-color:lightblue);
     }
     
     menu li.dropdown {
