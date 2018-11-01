@@ -32,16 +32,30 @@ h4 {
 
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    font-size: 16px;
+}
+
 header {
-    background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/img/wallropes-min.jpg);
     height: 100vh;
     background-position: center;
     background-size: cover;
 }
 
+.index-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/img/wallropes-min.jpg);}
+.about-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/img/wallme.jpg);}
+.train-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/img/walltrx.jpg);}
+.rege-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/img/rege.jpg);} 
+.food-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/img/food.jpg);}
+
 .wrapper {
     max-width: 1280px;
-    margin: 0px auto;
+    margin: 10px auto;
 }
 
 .hero-banner {
@@ -119,7 +133,7 @@ header {
     clear:both;
 }
 
-.welcome h2, .features h2 {
+.welcome h2, .features h2, .omne h2 {
     text-align: center;
     color: black;
     text-transform: uppercase;
@@ -136,23 +150,23 @@ header {
     text-align: center; 
 }
 
-.float-box img {
+.features .float-box img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
 }
 
-.welcome .float-box {
+.welcome .float-box, .omne .float-box {
     width: 50%;
     padding: 5px 5px;
 }
 
 .sep {
-    width: 75%;
+    width: 85%;
     height: 2px;
     background-color: #162c1e;
-    margin: 30px auto;
+    margin: 50px auto;
     border-radius: 10px; 
 }
 
@@ -161,7 +175,6 @@ header {
     width: 33.33%;
     padding: 10px 10px;
 }
-
 
 .features button {
     display: block;
@@ -176,3 +189,25 @@ header {
     font-weight: bold;
     cursor: pointer;
 }
+
+.omne .float-box img {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    margin-top: 60px;
+    text-align: center;
+    width: 100%;
+}
+
+.credits {
+    color:white;
+    background-color: #405947;
+    padding: 20px; 
+    text-align: center;
+}
+
+
