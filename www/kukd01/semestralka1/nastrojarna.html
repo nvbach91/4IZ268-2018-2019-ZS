@@ -13,18 +13,34 @@
 
 <body>
 
+    <script>
+        function toggle() {
+            document.getElementById("hamburger").classList.toggle("opening");
+        }
+    </script>
+
     <header>
         <span class="logo">
             <a href="index.html">
-                <img src="img/logo.png" alt="Tamadex logo">
+                <img src="img/logo.png" alt="Tamadex logo" width="300px">
             </a>
         </span>
         <nav>
-            <ul class="menu">
+            <div class="menu-toggle" onclick="toggle()">
+                <span>Menu</span>
+            </div>
+            <ul class="menu" id="hamburger">
                 <li><a href="index.html">Úvod</a></li>
                 <li><a href="products.html">Produkty</a></li>
-                <li><a class="active" href="nastrojarna.html">Nástrojárna</a></li>
-                <li><a href="info.html">Informace</a></li>
+                <li><a class="active" href="nastrojarna.html">Nástrojárna</a>
+                </li>
+                <li class="dropdown"><a href="#" class="dropbtn">Informace</a>
+                    <div class="dropdown-content">
+                        <a href="ofirme.html">O firmě</a>
+                        <a href="info.html">Kontakty</a>
+
+                    </div>
+                </li>
                 <li class="clear"></li>
             </ul>
         </nav>

@@ -13,24 +13,64 @@
 
 <body>
 
+    <script>
+        function toggle() {
+            document.getElementById("hamburger").classList.toggle("opening");
+        }
+    </script>
+
     <header>
         <span class="logo">
             <a href="index.html">
-                <img src="img/logo.png" alt="Tamadex logo">
+                <img src="img/logo.png" alt="Tamadex logo" width="300px">
             </a>
         </span>
         <nav>
-            <ul class="menu">
+            <div class="menu-toggle" onclick="toggle()">
+                <span>Menu</span>
+            </div>
+            <ul class="menu" id="hamburger">
                 <li><a href="index.html">Úvod</a></li>
                 <li><a href="products.html">Produkty</a></li>
-                <li><a href="nastrojarna.html">Nástrojárna</a></li>
-                <li><a class="active" href="info.html">Informace</a></li>
+                <li><a href="nastrojarna.html">Nástrojárna</a>
+                </li>
+                <li class="dropdown"><a href="#" class="dropbtn">Informace</a>
+                    <div class="dropdown-content">
+                        <a href="ofirme.html">O firmě</a>
+                        <a class="active" href="info.html">Kontakty</a>
+
+                    </div>
+                </li>
                 <li class="clear"></li>
             </ul>
         </nav>
     </header>
 
+
     <main>
+        <p>
+            <h3>Fakturační adresa:</h3>
+
+            TAMADEX spol. s r.o.
+            Zbečník 19
+            549 31 Hronov
+            Česká republika
+
+            IČ: 26001853
+            DIČ: CZ 26001853
+
+            <h3>Provozovna:</h3>
+
+            TAMADEX spol. s r.o.
+            Žabokrky 50
+            549 31 Hronov
+
+            Česká republika
+
+            E-mail: <a href="mailto:tamadex@tamadex.cz"> tamadex@tamadex.cz</a>
+        </p>
+
+
         <div class="map-responsive">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2538.1906067691802!2d16.186020115318243!3d50.49341017948131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470e6699d91cc861%3A0xda80c03cca6f2aa8!2sTamadex+spol.+s+r.o!5e0!3m2!1scs!2scz!4v1541001406619"
                 width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>

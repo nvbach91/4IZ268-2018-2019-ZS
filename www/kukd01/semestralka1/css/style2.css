@@ -2,6 +2,7 @@ body{
 
     min-height: 100vh;
     margin: 0;
+    font-family: sans-serif;
 
 }
 header{
@@ -12,6 +13,9 @@ header{
     background-color: black;
 }
 
+h1{
+    margin: 0;
+}
 
 
 .logo img {
@@ -40,6 +44,20 @@ nav{
      color: grey;
  }
 
+ .active {
+    background-color: rgb(135, 155, 221);
+}
+
+.menu-toggle  {
+    font-weight: bold;
+    height: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1em;
+}
+
+
+
  .opening{
      display: flex;
      flex-direction: column;
@@ -62,7 +80,6 @@ nav{
  .box_prezentace{
     grid-area: box_prezentace;
     
-
  }
  .box_produkty{
     grid-area: box_produkty;
@@ -76,6 +93,22 @@ nav{
     margin-right: auto;
     max-width:500px;
 
+}
+
+
+
+.main-firma {
+    display: grid;
+ 
+    grid-gap: 1em 1em;
+    margin-bottom: 3em;
+}
+
+.panak{
+    width: 70%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .slideshow img {
@@ -110,11 +143,37 @@ footer{
 
 
  @media screen and (min-width: 720px){
+    .map-responsive iframe{
+        max-height:50%;
+        max-width:50%;
+    }
+    
     .menu{
         display: flex;
         flex-direction: row;
         margin: 0;
     }
+
+    .box_historie{
+        grid-area: box_historie;
+        
+     }
+     .box_vyroba{
+        grid-area: box_vyroba;
+    }
+    .panak{
+        grid-area: panak;
+        align-self: center;
+    }
+
+    .main-firma {
+        grid-template:
+        "h1 h1"
+        "box_historie panak"
+        "box_vyroba box_vyroba"  ;
+    }
+
+    
 
     .menu-toggle{
         display: none;
