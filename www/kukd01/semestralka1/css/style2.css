@@ -58,6 +58,11 @@ nav{
 
 
 
+
+
+
+
+
  .opening{
      display: flex;
      flex-direction: column;
@@ -143,10 +148,7 @@ footer{
 
 
  @media screen and (min-width: 720px){
-    .map-responsive iframe{
-        max-height:50%;
-        max-width:50%;
-    }
+    
     
     .menu{
         display: flex;
@@ -187,7 +189,7 @@ footer{
 
    
 
-    li a, .dropbtn {
+    menu li a, .dropbtn {
         display: inline-block;
         color: white;
         text-align: center;
@@ -195,11 +197,11 @@ footer{
         text-decoration: none;
     }
     
-    li a:hover, .dropdown:hover .dropbtn {
+    menu li a:hover, .dropdown:hover .dropbtn {
         background-color:rgba(0, 0, 255, 0.603);
     }
     
-    li.dropdown {
+    menu li.dropdown {
         display: inline-block;
     }
     
