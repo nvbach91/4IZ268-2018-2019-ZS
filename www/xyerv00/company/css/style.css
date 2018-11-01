@@ -41,4 +41,35 @@ li{
 .product {
     float: left;
     width: 25%;
+    height: 300%;
 }
+
+.clear {
+    clear: both;
+}
+
+.product p {
+    height: 200px;
+}
+
+.product button {
+    border: none;
+    background-color: tomato;
+    padding: 20px 10px 20px 10px;
+    color: white;
+    width: 80%;
+    border-radius: 2px;
+}
+
+.product h2 {
+    border-bottom: 5px solid red;
+}
+
+.product:nth-child(1) h2 { border-color: red;}
+.product:nth-child(2) h2 { border-color: blue;}
+.product:nth-child(3) h2 { border-color: yellow;}
+.product:nth-child(4) h2 { border-color: gray;}
+.product:nth-child(5) h2 { border-color: green;}
+.product:nth-child(6) h2 { border-color: greenyellow;}
+.product:nth-child(7) h2 { border-color: purple;}
+.product:nth-child(8) h2 { border-color: deeppink;}
