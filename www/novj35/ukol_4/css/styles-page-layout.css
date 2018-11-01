@@ -83,14 +83,22 @@ footer {
  padding: 30px;
 }
 
-@media screen and (min-width: 720px) {
-  .colors>input {
+@media screen and (max-width: 1024px) {
+  .colors > input {
     padding: 20px;
     width: calc(100% / 3);
   }
+
+main {
+  width: 100%;
 }
- @media screen and (min-width: 1024px) {
-  .colors>input {
-    width: 20%;
+aside {
+  width: 100%;
+}
+
+}
+ @media screen and (max-width: 720px) {
+  .colors > input {
+    width: 50%;
   }
-}
+} 
