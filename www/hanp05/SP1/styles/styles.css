@@ -6,7 +6,7 @@
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
-p{
+p {
     margin: 15px;
 }
 
@@ -36,7 +36,7 @@ a {
     color: red;
 }
 
-a:hover{
+a:hover {
     color: rgb(255, 106, 106);
 }
 
@@ -185,14 +185,12 @@ footer .book_name, footer .author_name {
     background-color: #ff3029;
 }
 
-.page_default_img{
+.page_default_img {
     float: left;
     padding: 30px;
     max-width: 45%;
     min-width: 360px;
 }
-
-
 
 @media only screen and (max-width: 1000px) {
     .container_header {
@@ -214,16 +212,14 @@ footer .book_name, footer .author_name {
         grid-gap: 10px;
         margin: 20px 0px;
     }
-    .page_default_img{
-        width:100%;
+    .page_default_img {
+        width: 100%;
         max-width: none;
     }
 }
 
-
 @media only print {
     header, footer, .button, .page_default_img {
-    display: none;    
+        display: none;
     }
-
 }
