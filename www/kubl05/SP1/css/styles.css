@@ -29,7 +29,8 @@ header {
     float: left;
     color: white;
     padding-left: 20px;
-    padding-top: 16px;   
+    padding-top: 16px;
+    width: 318.917px;  
 }
 
 .container-top {
@@ -139,7 +140,6 @@ footer {
 
 .title {
     font-size: 35px;
-    width: 204.917px;
     /*margin-top: 50px;*/
     padding-left: 10px;
 }
@@ -285,6 +285,10 @@ main a:hover {
         display: none;
     }
 
+    header {
+        width: 94px;
+    }
+
     .column {
         width: 100%;
         padding-right: 40px;
@@ -358,9 +362,6 @@ iframe {
     }
 
     .logo {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
         float: none;
         clear: both;
     }
@@ -368,6 +369,10 @@ iframe {
     header {
         float: none;
         clear: both;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0px;
     }
 
     nav {
