@@ -1,0 +1,73 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+}
+
+nav {
+    background: #38003c;
+}
+
+nav span {
+    display: inline-block;
+    color: white;
+    padding: 14px 16px;
+}
+
+ul {
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #fff;
+    color: #111;
+}
+
+
+/* HEADER */
+
+header {
+    height: 250px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    background-image: url('https://mediacdn.mancity.com/-/media/wallpapers/champions18/champions%20banner%20201718');
+    background-size: cover;
+    background-position: center;
+    
+}
+
+header h1{
+    width: 100%;
+    clear: both;
+}
+
+header div {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+ body {
+     background: lightgrey;
+ }
