@@ -6,6 +6,12 @@
     padding: 0;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
+h1{
+    font-size: inherit;
+}
+
+a { text-decoration: none;
+    color:red;}
 
 .container {
     position: relative;
@@ -14,17 +20,6 @@
     height: 100%;
     margin: 0 auto;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* ****** Header ****** */
 
@@ -37,12 +32,11 @@
     height: 100%;
 }
 
-header {
+header, footer {
     display: grid;
     align-items: center;
     width: 100%;
-    background-color: #333;
-    overflow: hidden;
+    background-color: #333; 
     min-height: 80px;
 }
 
@@ -73,7 +67,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 10px;
-    grid-auto-flow: row dense;
+
 }
 
 .menu a {
@@ -97,6 +91,51 @@ header {
 /* ###### Konec Header ###### */
 
 
+/* ****** Footer ****** */
+.footer_image {
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    padding: 70px 0;
+    background:     linear-gradient(
+        rgba(0, 0, 0, 0.55), 
+        rgba(0, 0, 0, 0.55)
+      ),
+    url('https://bitcoinist.com/wp-content/uploads/2018/05/shutterstock_101076850-large-pile-of-money.jpg');
+    background-size: cover;}
+footer{
+    align-content: center;
+    min-height: 200px;
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: end;
+}
+
+footer .main_logo{
+    grid-column: 4;
+}
+
+footer p{
+    grid-column: 4;
+    font-size: 12px;
+    color:#666;
+    margin-top:5px;
+}
+footer .main_logo a{
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    font-size: 12px;
+}
+
+footer .book_name, footer .author_name{
+    display: block;
+}
+/* ###### Konec Footer ###### */
+
+
 .button {
     
 	background-color:#ff1208;
@@ -113,40 +152,6 @@ header {
     background-color:#ff3029;
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

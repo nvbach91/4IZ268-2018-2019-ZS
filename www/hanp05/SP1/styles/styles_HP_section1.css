@@ -17,8 +17,7 @@
     max-width: 80%;
     max-height: 600px;
     grid-area: obr1;
-    align-self: center;
-}
+    align-self: center;}
 
 .book_img_preview:hover {
     transition: 0.70s;
@@ -28,6 +27,7 @@
 .grid_1 p{
     grid-area: perex1;
     align-self: center;
+    color: #333;
 }
 
 .book_and_author {
@@ -37,6 +37,7 @@
 
 .section1 .book_name, .section1 .author_name {
     color: #333;
+    font-size: 20px;
 }
 
 .section1 .button{
