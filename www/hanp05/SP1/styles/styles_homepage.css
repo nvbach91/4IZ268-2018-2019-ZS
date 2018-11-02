@@ -1,3 +1,4 @@
+/* ****** Section 1 ****** */
 .section1 {
     width: 100%;
     background-color: rgb(230, 230, 230);
@@ -37,7 +38,6 @@
 
 .section1 .book_name, .section1 .author_name {
     color: #333;
-    font-size: 20px;
 }
 
 .section1 .button{
@@ -46,7 +46,34 @@
     max-width: 300px;
     align-self: start;
 }
+/* ###### Konec Section1 ###### */
 
+/* ****** Main ****** */
+.section2 {
+    width: 100%;
+    background-color: #fff;
+    padding: 60px 0;
+    }
+
+.references{
+    display: grid;
+    grid-template-columns: repeat(4,25%) ;
+    justify-items: center;
+    grid-gap: 10px;
+}
+
+.ref{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.ref_img{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+/* ###### Konec Main ######*/
 
 @media only screen and (max-width: 1000px) {
     
@@ -61,6 +88,9 @@
 
     .grid_1 p{
         padding: 20px 0;
+    }
+    .references{
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -83,5 +113,9 @@
     .book_and_author {
         margin-left: 0px ;
         margin-top: 60px;
+    }
+
+    .references{
+        grid-template-columns: 1fr;
     }
 }

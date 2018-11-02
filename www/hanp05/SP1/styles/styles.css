@@ -10,6 +10,22 @@ h1{
     font-size: inherit;
 }
 
+h2{
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+h3{
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
 a { text-decoration: none;
     color:red;}
 
@@ -147,6 +163,7 @@ footer .book_name, footer .author_name{
 	padding:15px 76px;
     text-decoration:none;
     text-align: center;
+    margin: 20px 0;
 }
 .button:hover {
     background-color:#ff3029;
