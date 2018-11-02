@@ -162,21 +162,65 @@ footer{
     border-bottom: solid;
 }
 
+
+
  @media screen and (min-width: 720px){
     
     .nastrojarna h2 {
         border-bottom: solid;
+
     }
     
- 
-    .nastrojarna {
+ .uvod-nastrojarna{
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center ;
+    justify-content: center ;
+    background-color: rgba(255, 255, 255, 0.733);
+        padding: 2em;
+        width: 86.9%;
+        margin-left: auto;
+        margin-right: auto;
+ }
+
+ .nastrojarna {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    margin-bottom: 0;
+    width: 40%;
+    height: 25em;
+    background-color: rgba(255, 255, 255, 0.733);
+    align-items: center ;
+    justify-content: center ;
+}
+
+
+ .main-nastrojarna{
+     background-color: rgba(64, 132, 177, 0.747);
+     margin-bottom: 2em;
+     flex-direction: column;
+     }
+
+     .main-products{
+      
+            background-color: rgba(64, 132, 177, 0.747);
+            margin-bottom: 2em;
+            flex-direction: column;
+            }
+     
+    .products {
+        display: flex;
+        flex-wrap: wrap;
         padding: 1em;
-        float:left;
-        width: 45%;
-        height: 25em;
-        
+        margin-bottom: 0;
+       margin-top:2em;  
+       
+        background-color: rgba(255, 255, 255, 0.733);
+      
     }
 
+ 
     
  
 
