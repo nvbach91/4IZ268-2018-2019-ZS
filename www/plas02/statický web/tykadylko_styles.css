@@ -1,0 +1,794 @@
+* {
+    box-sizing: border-box;
+}
+
+.active, .nav:hover {
+    text-decoration: underline;
+  }
+
+.application{
+    font-size: 20px;
+    text-transform: uppercase;
+	max-width: 600px;
+	margin: 10px auto;
+	padding: 16px;
+	background: rgba(253, 253, 253, 0.671); ;
+}
+
+.application input[type="text"],
+.application input[type="email"],
+.application input[type="number"],
+.application textarea,
+
+.application select {
+    font-size: 20px;
+    text-transform: uppercase;
+	width: 100%;
+	background: #fff;
+	margin-bottom: 4%;
+	border: 1px solid #ccc;
+	padding: 3%;
+	color: #555;
+}
+
+.application input[type="text"]:focus,
+.application input[type="email"]:focus,
+.application input[type="number"]:focus,
+.application textarea:focus,
+.application select:focus
+{
+	box-shadow: 0 0 5px #43D1AF;
+	padding: 3%;
+	border: 1px solid #43D1AF;
+}
+
+.application input[type="submit"],
+.application input[type="button"]{
+
+	width: 100%;
+	padding: 3%;
+	background: #43D1AF;
+	border-bottom: 2px solid #30C29E;
+	color: #fff;
+}
+.application input[type="submit"]:hover,
+.application input[type="button"]:hover{
+	background: #2EBC99;
+}
+
+#as {
+    background-color:rgba(253, 253, 253, 0.671);  
+    width:70%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    padding:0px 20px 15px 20px;
+    border: 5px solid rgb(22, 212, 165);
+    color:black;
+    font-size: 24px;
+}
+
+.block {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+body {
+    background-image: url(background.jpg);
+    
+    background-size: cover;
+}
+
+button {
+    border: none;
+    padding: 10px 0;
+    width: 180px;
+    margin: 0 auto;
+    background-color: #4bcabf;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#comp {
+    background-color:rgba(253, 253, 253, 0.671);  
+    width:70%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    padding:0px 20px 15px 20px;
+    border: 5px solid rgb(22, 212, 165);
+    color:black;
+    font-size: 24px;
+}
+
+#email {
+    width: 30px;
+    height: 30px;
+}
+
+.emails {
+    padding: 20px;
+    margin: 50px;
+    margin-left: 25px;
+    width: 40%;
+}
+
+.emails a {
+
+    color: rgb(11, 133, 102);
+}
+
+.events {
+    display: inline-flex;
+}
+
+.facebook {
+
+    width: 500px;
+    height: 500px;
+    border: none;
+    overflow:hidden;
+
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    padding: 20px 20px;
+    background-color: rgba(253, 253, 253, 0.767);
+    font-size: 16px;
+    text-align: center;
+}
+
+#hs {
+    background-color:rgba(253, 253, 253, 0.671);  
+    width:70%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    padding:0px 20px 15px 20px;
+    border: 5px solid rgb(22, 212, 165);
+    color:black;
+    font-size: 24px;
+}
+
+img {
+    height: 450px;
+    width: 85%; 
+}
+
+.imgpr {
+    height: 400px;
+    width: 100%; 
+    margin: 5px 0px;
+
+}
+
+#ind {
+    background-color:rgba(253, 253, 253, 0.671);  
+    width:70%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    padding:0px 20px 15px 20px;
+    border: 5px solid rgb(22, 212, 165);
+    color:black;
+    font-size: 24px;
+}
+
+.intext {
+    color: white;
+    margin-top: 70px;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.intext p {
+    font-size: 22px;
+}
+
+#list {
+    text-align: left;
+    color: black;
+}
+
+.logo {
+    width: 45px;
+    height: 50px;
+    padding: 10px;
+    margin-top: 8px;
+    margin-left: 16px;
+    background-image: url(logo.jpg);
+    background-position: center;
+    background-size: cover;
+    float: left;
+}
+
+.main_body {
+    background-color:rgba(253, 253, 253, 0.671);  
+    width:70%;
+    height: auto;
+    margin: 0 auto;
+    padding:15px 20px 15px 20px;
+    border: 5px solid rgb(22, 212, 165);
+    color:black;
+    font-size: 24px;
+    text-align: center;
+}
+
+.main_body h2 {
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.main_body h3 {
+    font-size: 30px;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.main_body li {
+    margin-bottom: 5px; 
+}
+
+.map {
+    width: 800px;
+    height: 450;
+    border:0px; 
+}
+
+#mec {
+    background-color:rgba(253, 253, 253, 0.671);  
+    width:70%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    padding:0px 20px 15px 20px;
+    border: 5px solid rgb(22, 212, 165);
+    color:black;
+    font-size: 24px;
+}
+
+.mini_nav {
+    display: flex;
+    margin: 0 5px 10px 5px;
+}
+
+nav {
+    overflow: hidden;
+    text-align: center; 
+    text-transform: uppercase;
+    font-size: 25px;
+    background-color: rgba(253, 253, 253, 0.767);  
+    
+}
+
+nav li{
+    display: block;
+    float: right;
+    padding: 0 30px 15px 30px;
+    color: black;
+}
+
+nav li:hover a {
+    color: rgb(22, 212, 165);
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+#phone {
+    width: 30px;
+    height: 30px;
+}
+
+.phones {
+    padding: 20px;
+    margin: 50px;
+    margin-right: 25px;
+    width: 40%;
+}
+
+.poster {
+    color: black;
+    margin: 50px 150px;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    background-color: rgba(146, 146, 146, 0.288);
+    font-family: serif;
+    font-size: 32px;
+    border: 5px solid black; 
+}
+
+.products {
+    padding: 50px 0;
+    list-style: none;
+}
+.product1 {
+    float: left;
+    width: 20%;
+    height: 250px;
+    padding: 15px;
+    margin: 10px;
+    margin-left: 250px;
+    text-align: center;
+    background-color: rgba(253, 253, 253, 0.671);  
+}
+.product2 {
+    float: left;
+    width: 20%;
+    height: 250px;
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    background-color: rgba(253, 253, 253, 0.671);  
+}
+
+.product3 {
+    float: left;
+    width: 20%;
+    height: 250px;
+    padding: 10px;
+    margin: 15px;
+    margin-right: 200px;
+    text-align: center;
+    background-color: rgba(253, 253, 253, 0.671);  
+}
+
+.product4 {
+    float: left;
+    width: 20%;
+    height:250px;
+    padding: 15px;
+    margin: 15px;
+    margin-left: 400px;
+    text-align: center;
+    background-color: rgba(253, 253, 253, 0.671);  
+}
+
+.product5 {
+    float: left;
+    width: 20%;
+    height: 250px;
+    padding: 15px;
+    margin: 15px;
+    margin-right: 350px;
+    text-align: center;
+    background-color: rgba(253, 253, 253, 0.671);  
+}
+
+.products button:hover {
+    background-color: #246466;
+}
+.products button:active {
+    background-color: #58719e;
+}
+.product h2 {
+    padding: 10px;
+}
+
+.resume {
+    float: right;
+    width: 70%;
+    height: auto;
+    padding: 5px;
+    border: 5px solid black;
+    background-color: rgba(253, 253, 253, 0.671);  
+    text-align: left;
+    font-size: 20px;
+}
+
+.sleepover {
+    background-image: url(christmas.jpg);
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    border: 5px dotted black;
+    box-shadow: 0 0 10px #000;
+    background-position: center;
+    background-size: cover;
+    margin: 0 100px 50px 50px;
+    
+}
+
+.weekend {
+    background-image: url(week.jpg);
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    border: 5px dotted black;
+    box-shadow: 0 0 10px #000;
+    background-position: center;
+    background-size: cover;
+    margin: 0 50px 50px 150px;
+    
+}
+
+.worker {
+    width:80%;
+    height:500px;
+    margin: 20px auto 20px auto;
+    padding:15px 20px 15px 20px;
+}
+
+.workers_pictures {
+    width: 200px;
+    height: 250px;
+    float: left;
+    margin-left: 5%;
+    margin-top: 70px;
+    border: 3px solid black;
+}
+
+.who {
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: left;
+    margin-left: 2%;
+    margin-bottom: 5px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 5px;
+}
+
+@media print {
+    
+    #as {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+    }
+    
+    button {
+        visibility: hidden;
+    }
+
+    #comp {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+    }
+
+    #hs {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+    }
+  
+
+    iframe {
+        width: 55%;
+        height: auto;
+    }
+    
+    img {
+        width: 45%;
+        height: 45%;
+    }
+
+    #ind {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+    }
+
+    .main_body {
+        width: auto;
+        padding: unset;
+        margin: auto;
+        height: auto;
+    }
+
+    #mec {
+        padding: unset;
+        margin: auto;
+        height: auto;
+        width: auto;
+    }
+
+    nav {
+        font-size: 14px;
+        margin: auto;
+    }
+
+    .poster {
+        margin: 5px;
+        padding: unset;
+    }
+
+    .products {
+        display: inline-block;
+
+    }
+
+    .products p {
+        font-size: 16px;
+    }
+
+    .product1 {
+        width: 17%;
+        margin: 5px 5px 5px 10px;
+    }
+
+    .product2 {
+        width: 17%;
+        margin: 5px;
+    }
+
+    .product3 {
+        width: 17%;
+        margin: 5px;
+    }
+
+    .product4 {
+        width: 17%;
+        margin: 5px;
+    }
+
+    .product5 {
+        width: 17%;
+        margin: 5px;
+    }  
+
+    .sleepover {
+        background-color: white;
+        margin: 0;
+    }
+
+    .weekend {
+        background-color: white;
+        margin: 0;
+    } 
+}
+
+@media screen and (max-width: 1450px)
+{
+    .events {
+        display: block;
+    }
+
+    .photo {
+        width: 100%;
+        margin: 0 20% 10px 30%;
+        padding: 20px;
+        display: block;
+    }
+
+    .products {
+        display: block;
+    }
+
+    .product1 {
+
+        width:40%;
+        height:200px;
+        margin:50px;
+        margin: 0px 30% 10px 30%;
+       
+    }
+    .product2 {
+
+        width:40%;
+        height:200px;
+        margin:50px;
+        margin: 0px 30% 10px 30%;
+    }
+    .product3 {
+
+        width:40%;
+        height:200px;
+        margin:50px;
+        margin: 0px 30% 10px 30%;
+    }
+    .product4 {
+        
+        width:40%;
+        height:200px;
+        margin:50px;
+        margin: 0px 30% 10px 30%;
+    }
+    .product5 {
+        
+        width:40%;
+        height:200px;
+        margin:50px;
+        margin: 0px 30% 10px 30%;
+    }
+
+    .resume {
+        width: 100%;
+        height: auto;
+        float: none;
+    } 
+
+    .sleepover {
+        margin: 0 25%;
+    }
+
+    .weekend {
+        margin: 0 25% 50px 25%;
+    }
+
+    .who {
+        border-top: none;
+        border-bottom: none;
+        text-align: center;
+        margin-left: unset;
+        margin-bottom: unset;
+    }
+
+    .worker {
+        width: 85%;
+        height: auto;
+    }
+   
+    .workers_pictures {
+        float: none;
+        margin-left: unset;
+        margin-top: unset;
+    }
+}
+
+@media screen and (max-width: 960px)
+{
+    #as {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+    }
+
+    .block {
+        display: block;
+        flex-direction: unset;
+        align-items: unset;
+        
+    }
+
+    #comp {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+    }
+
+    .emails{
+        width: auto;
+        padding: unset;
+        margin: auto;
+        text-align: center;
+    }
+
+    #hs {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+    }
+
+    iframe {
+        width: 55%;
+        height: auto;
+    }
+
+    img {
+        width: 45%;
+        height: 45%;
+    }
+
+    .imgpr {
+        width: 100%;
+        height: 80%;
+    }
+
+    #ind {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+    }
+
+    .intext {
+        color: white;
+        margin-top: 70px;
+        text-align: center;
+    
+    }
+
+    .intext h2{
+        font-size: 16px;
+    }
+    
+    .intext p {
+        font-size: 12px;
+    }
+
+    .main_body {
+        padding: unset;
+        margin: auto;
+        height: auto;
+        width: auto;
+    }
+
+    #mec {
+        padding: unset;
+        margin: auto;
+        height: auto;
+        width: auto;
+    }
+
+    nav li {
+        float: none;
+    }
+
+    nav a {
+        float: none;
+        width: 100%;
+    }
+
+    .phones{
+        width: 70%;
+        padding: unset;
+        margin: unset;
+        text-align: center;
+    }
+
+    .poster {
+        margin: auto;
+       
+    }
+
+    .products {
+        margin: 0;
+        padding: unset;
+        width: 100%;
+    }
+
+    .product1 {
+        width: 80%;
+        margin: 5px 10%;
+        
+    }
+
+    .product2 {
+        width: 80%;
+        margin: 5px 10%;
+    }
+
+    .product3 {
+        width: 80%;
+        margin: 5px 10%;
+    }
+
+    .product4 {
+        width: 80%;
+        margin: 5px 10%;
+    }
+
+    .product5 {
+        width: 80%;
+        margin: 5px 10%;
+    }
+
+    .sleepover {
+        width: 350px;
+        height: 450px;
+        font-size: 12px;
+        margin: auto;
+    }
+
+    .weekend {
+        width: 350px;
+        height: 450px;
+        font-size: 12px;
+        margin: 10px auto;
+    }    
+}
