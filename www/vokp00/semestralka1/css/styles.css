@@ -1,39 +1,16 @@
+/* PARTS */
+
 * {
     box-sizing: border-box;
     color: black;
     font-size: 15px;
 }
 
-.logo {
-    content: url("images/logo_white.png");
-    width: 300px;
-    float: right;
-    margin-top: 20px;
-}
-
-.videodiv, .topimage {
-    src: url("https://video-previews.elements.envatousercontent.com/h264-video-previews/ba5da4fb-ff40-4504-8d66-1dbbdbe90fed/19176702.mp4");
-    background-image: url("images/ai1.jpg");
-    background-size: cover;
-    opacity: 0.6;
-    overflow: scroll;
-    z-index: -100;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    max-height: 500px;
-    max-width: 100%;
-  }
-  
-.videodiv-video {
-    width: 100%;
-  }
-
 body {
-    background-image: url("images/background.jpg");
-    background-repeat: repeat;
+    background-image: url("images/background2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: lighten;
     height: 100%;
 }
 
@@ -42,27 +19,19 @@ body, body a, p {
     color: black;
 }
 
-.biglogo {
-    height: 410px;
-    background-image: url("images/logo_white.png");
-    background-position: top;
-    background-position-y: 100px;
-    background-repeat: no-repeat;
-    background-size: contain;  
-    padding: 90px 10px;
-}
-
-.biglogo p {
-    color: white;
-    text-align: center;
-    font-weight: 600;
-    margin: 15% 20%;
-}
-
 ul {
     list-style: none;
 
 }
+
+header, nav { 
+    grid-area: header;
+    text-transform: uppercase; }
+
+main { grid-area: main; }
+footer { grid-area: footer; }
+
+/* NAVIGATION */
 
 nav ul {
     display: inline-block;
@@ -95,10 +64,63 @@ nav li:active {
     opacity: 0.5;
 }
 
+/* LOGOS & TOPS */
+
+.logo {
+    content: url("images/logo_white.png");
+    width: 300px;
+    float: right;
+    margin-top: 20px;
+}
+
+.videodiv, .topimage {
+    background-image: url("images/ai1.jpg");
+    background-size: cover;
+    opacity: 0.6;
+    position: absolute;
+     top: 0px;
+     left: 0px;
+     min-width: 100%;
+     max-height: 500px;
+     width: auto;
+     height: auto;
+     z-index: -1000;
+     overflow: hidden;
+  }
+
+.videodiv-video {
+    width: 100%;
+  }
+
+.biglogo {
+    height: 410px;
+    background-image: url("images/logo_white.png");
+    background-position: top;
+    background-position-y: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;  
+    padding: 90px 10px;
+}
+
+.biglogo p {
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    margin: 15% 20%;
+}
 
 .intro {
     margin: auto auto;
 }
+
+.main-text {
+    background-color: rgba(242,242,235, 0.5);
+    padding: 20px;
+    margin: 10px auto;
+    text-align: justify;
+}
+
+/* ABOUT */
 
 .member1 {
     content: url("images/jan.jpg");
@@ -136,6 +158,8 @@ nav li:active {
     width: 290px;
 }
 
+/* GRID */
+
 .grid-container {
     display: grid;
     grid-column-gap: 10px;
@@ -148,39 +172,12 @@ nav li:active {
 
 }
 
-.grid-container-career {
-    display: grid;
-    grid-template-areas:
-    'header header header'
-    'main main main'
-    'footer footer footer';
-    grid-template-columns: auto auto auto;
-
-}
-
-.middletext {
-    text-align: center;
-}
-
 .grid-item2 {
     padding: 50px;
     background-color: rgba(242,242,235, 0.5);
     transition: transform .2s;
     width: 100%;
     height: 200px;
-}
-
-.grid-item3 {
-    padding: 50px;
-    background-color: rgba(242,242,235, 0.5);
-    transition: transform .2s;
-    width: 100%;
-    height: 200px;
-}
-
-.grid-item2 p {
-      text-transform: uppercase;
-      font-weight: 800;
 }
 
 .grid-item, .intro, .anotation, form {
@@ -190,9 +187,20 @@ nav li:active {
     text-align: justify;
 }
 
+.grid-item:hover {
+    background-color: #A62E38;
+}
+
 #textfield {
-      width: 500px;
+      width: 50%;
       height: 250px;
+}
+
+/* FORM */
+
+form {
+    background-color: rgba(242,242,235, 0.5);
+
 }
 
 input {
@@ -207,24 +215,7 @@ input {
       text-align: justify;
 }
 
-.grid-item:hover {
-    background-color: #A62E38;
-}
-
-.grid-item3:hover {
-    transform: scale(1.5);
-    overflow: hidden;
-    background-color: #A62E38;
-}
-
-
-header, nav { 
-    grid-area: header;
-    text-transform: uppercase; }
-
-main { grid-area: main; }
-footer { grid-area: footer; }
-
+/* INDEX */
 .image1, .image2, .image3 {
     display: block;
     margin-left: auto;
@@ -245,34 +236,32 @@ footer { grid-area: footer; }
     content: url("images/startup.png");
 }
 
-.career1 {
-    content: url("images/laser.png");
-    height: 150px;
-    width: 100px;
-    float: left;
+/* KARIÉRA */
+
+.career-text:hover a {
+    color: #A62E38;
 }
 
-.career3 {
+.career1:hover, .career2:hover {
+    transition-property: all;
+    transform: scale(1.5);
+}
+
+.career1 {
     content: url("images/flash.png");
     height: 150px;
     width: 120px;
-    float: right;
-}
-
-.career4 {
-    content: url("images/crown.png");
-    height: 110px;
-    width: 120px;
     float: left;
 }
 
-.career6 {
+.career2 {
     content: url("images/einstein.png");
     height: 150px;
     width: 100px;
     float: right;
 }
 
+/* PROJEKTY - SLIDESHOW */
 
 .slideshow {
     overflow: hidden;
@@ -294,7 +283,10 @@ footer { grid-area: footer; }
     width: 728px;
     background-size: cover;
 }
-  
+
+.mobile-projects {
+    display: none;
+}
 
 .slide:nth-child(1) {
     background-image: url("images/jobsdev.jpg");
@@ -345,6 +337,7 @@ footer { grid-area: footer; }
     padding: 5px;
 }
 
+/* BOTTOM */
 footer {
     text-align: center;
     border-top: 5px solid #A62E38;
@@ -352,10 +345,6 @@ footer {
     bottom: 3px;
 }
 
-form {
-    background-color: rgba(242,242,235, 0.5);
-
-}
 
 .networks {
     display: inline-block;
@@ -363,23 +352,19 @@ form {
     text-align: center;
 }
 
-@media screen and (max-width: 1024px) {
-   
-}
-
 @media screen and (max-width: 840px) {
-   nav li {
-    margin: 5px;
-    padding: 15px 30px;
+    nav li {
+        margin: 5px;
+        padding: 15px 30px;
    }
 
    .grid-container, .grid-container-career {
-    grid-template-areas:
-    'header header'
-    'main main'
-    'footer footer';
-    grid-template-columns: auto auto;
-    grid-row-gap: 10px;
+        grid-template-areas:
+        'header header'
+        'main main'
+        'footer footer';
+        grid-template-columns: auto auto;
+        grid-row-gap: 10px;
     }
 }
 
@@ -400,4 +385,25 @@ form {
         object-fit: cover;
         margin: 10px 10px 10px 10px;;
     }
+
+    .slideshow {
+        display: none;
+    }
+
+    nav li {
+        margin: 5px;
+        padding: 10px 20px;
+    }
+
+   .slide {
+        margin-left: 15%;
+        height: 200px;
+        width: 400px;
+        background-size: contain;
+        margin-bottom: 10px;
+    }
+
+   .mobile-projects {
+       display: initial;
+   }
 }
