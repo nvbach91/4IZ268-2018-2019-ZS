@@ -137,19 +137,21 @@ nav a:hover {
     padding: 5px 0;
     margin: 0;
 }
-.product_group button {
+.button {
    position: absolute;
    bottom: 0;
    left: 10%;
    width: 80%;
    border: none;
-   padding: 6px;
-   cursor: pointer;
+   padding: 1px 6px;
    background-color: #393185;
    color: white;
    border-radius: 6px;
+   text-align: center;
+   text-decoration: none;
+   font-size: 13px;
 }
-.product_group button:hover {
+.button:hover {
     background-color: #2e2769;
 }
 
@@ -239,7 +241,7 @@ footer {
         padding: 15px;
         line-height: 25px;
     }
-    .product_group button {
+    .button {
         left: 20%;
         width: 60%;
     }
@@ -289,6 +291,22 @@ footer {
     .price_list th {
         font-size: 14px;
         font-weight: normal;
+    }
+    .product_group {
+        height: 265px;
+    }
+}
+@media screen and (max-width: 283px) {
+    .product_group {
+        height: 300px;
+    }
+    .intro {
+        min-height: 120px;
+        padding: 12px;
+    }
+    .intro h1 {
+        padding: 6px;
+        font-size: 20px;
     }
 }
 /* -------------------------- Print ------------------------------- */
