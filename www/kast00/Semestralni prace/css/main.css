@@ -1,24 +1,38 @@
 * {
     font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
+    color: black;
+}
+body {
+    margin: 0;
 }
 header {
-    padding: 0px 0px 20px 0px;
+    padding: 20px 0px 20px 0px;
 }
 header img {
     float: left;
     height: 60px;
 }
 header nav {
-float:  right;
+    float: right;
+    line-height: 60px;
+    color: black;
+}
+header nav a {
+    color: black;
+    text-decoration: none;
+}
+header .logoText h1 {
+    color: black;
+    height: 60px;
+    line-height: 60px;
 }
 .logoText {
     float: left;
     font-family: 'Oswald';
-
 }
 .logoText h1 {
-    color: black;
+    color: white;
     font-size: 40px;
     font-weight: normal;
     text-decoration: none;
@@ -29,21 +43,64 @@ float:  right;
 }
 .logoText p {
     padding: 0px;
-    color: black;
+    color: white;
     margin: 0;
 }
 
 footer {
     color: white;
     background-color: black;
+    text-align: center;
+    padding: 20px 0px;
 }
 .clear {
     clear: both;
 }
+.left  {
+    float: left;
+    width: 60%;
+}
+.right {
+    float: left;
+    width: 40%;
+}
+.right img {
+    max-width: 100%;
+    border-radius: 10px;
+}
 #wrapper {
-    padding: 0px 20px 20px 20px;
-	color: white;
-	text-align:center;
-	max-width: 1280px;
-	margin: 0 auto;
+    color: white;
+    text-align: center;
+}
+.container {
+padding: 20px 0px;
+max-width: 1024px;
+margin-right: auto;
+margin-left: auto;
+
+}
+.imgDesc {
+    font-size: 12px;
+    font-style: italic;
+}
+#hero {
+    background-image: url(../img/hero.jpg);
+    height: 400px;
+    margin: 0;
+    max-width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.heroTitle {
+    background-color: black;
+    color: white;
+    padding: 40px 0px;
+    height: 140px;
+    width: 280px;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    max-width: 1024px;
 }
