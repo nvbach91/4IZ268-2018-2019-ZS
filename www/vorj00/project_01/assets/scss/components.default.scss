@@ -18,10 +18,20 @@
         flex-direction: row;
         padding: 0 $defaultPadding;
     }
+
+    @media print {
+        position: static;
+    }
+}
+
+.nav {
+    @media print {
+        display: none;
+    }
 }
 
 .nav__item {
-    transition: 0.2s
+    transition: opacity 0.2s;
 }
 
 .nav__item--active {
@@ -38,6 +48,10 @@
 
 .main {
     padding: 0 $defaultPadding;
+
+    @media print {
+        padding: 0;
+    }
 }
 
 .footer {
@@ -53,6 +67,10 @@
     cursor: pointer;
 
     @include box-shadow;
+
+    @media print {
+        display: none;
+    }
 }
 
 .button:hover {

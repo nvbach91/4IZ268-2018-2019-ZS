@@ -18,6 +18,13 @@
     align-items: center;
     justify-content: center;
     color: #fff;
+
+    @media print {
+        height: auto;
+        background: none;
+        display: block;
+        color: #000;
+    }
 }
 
 .hero h1,
@@ -66,6 +73,10 @@
     @include mq("desktop") {
         width: 64em;
     }
+
+    @media print {
+        padding: 0;
+    }
 }
 
 .hero__desc {
@@ -86,6 +97,10 @@
 
     @include mq("tablet-wide") {
         flex-direction: row;
+    }
+
+    @media print {
+        padding: 0;
     }
 }
 
@@ -108,6 +123,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media print {
+        display: none
+    }
 }
 
 .letter__imgCont img {
