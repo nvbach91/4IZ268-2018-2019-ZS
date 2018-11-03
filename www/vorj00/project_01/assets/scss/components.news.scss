@@ -1,0 +1,43 @@
+/* ITCSS, více: https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/ */
+
+@import "settings.global";
+@import "settings.variables";
+
+@import "tools.mixins";
+
+@import "generic.normalize";
+
+@import "elements.headings";
+
+@import "components.default";
+
+.news {
+    padding: 0;
+    list-style: none;
+}
+
+.news__item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.6em 0;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: $gray;
+    }
+
+    @include mq("tablet-small") {
+        flex-direction: row;
+        padding: 0.6em;
+    }
+}
+
+.news__date {
+    width: 10rem;
+    color: $grayDarkest;
+}
+
+.news__title {
+    flex: 1;
+    color: $almostBlack;
+}
