@@ -99,25 +99,36 @@ div h1, div h2 {
     clear: both;
 }
 
-.wines, .regions, .criterions {
+.wines, .regions, .criterions, .classifications {
     padding: 20px 0;
     max-width: 1024px;
     margin: 0 auto;
 }
 
-.wine, .region, .criterion {
+.wine, .criterion, .classification, .region {
     float: left;
-    width: 33.333%;
     padding-left: 20px;
     text-align: center;
 }
 
-.wine h3, .region h3, .criterion h3 {
+.wine, .criterion {
+    width: 33.333%;
+}
+
+.classification {
+    width: 20%;
+}
+
+.region, .four {
+    width: 25%;
+}
+
+.wine h3, .region h3, .criterion h3, .classification h3 {
     padding: 10px;
     background-color: rgb(233, 127, 127);
 }
 
-.wine p, .region p, .criterion p {
+.wine p, .region p, .criterion p, .classification p {
     min-height: 150px;
 }
 
@@ -155,9 +166,7 @@ div h4 {
 }
 
 /* REGIONY */ /* DELENI */ /* KLASIFIKACE */
-.region, .four {
-    width: 25%;
-}
+
 
 .cent {
     padding: 5px 600px;
@@ -176,38 +185,48 @@ div h4 {
     background-position: center;
 }
 
-.five {
-    width: 20%;
-}
-
-
-
 @media screen and (max-width: 1024px) {
-    .wine, .regio, .criterion {
-        width: cal(100%/3);
-    }
-    .wine p, .region p, .criterion p {
-        min-height: 220px;
-    }
-}
-@media screen and (max-width: 800px) {
-    .wine, .region, .criterion {
+    .region, .four {
         width: 50%;
     }
-    .wine p, .region p, .criterion p {
+
+    .classification {
+        width: 25%;
+    }
+    .wine p, .region p, .criterion p, .classification p {
+        min-height: 220px;
+    }
+    .none {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .wine, .classification, .criterion {
+        width: 50%;
+    }
+    .wine p, .region p, .criterion p, .classification p {
         min-height: 200px;
     }
 
+    .three p {
+        min-height: 100px;
+    }
+
+    .glass {
+        display: none;
+    }
 }
+
 @media screen and (max-width: 560px) {
-    .wine, .region, .criterion {
+    .wine, .region, .criterion, .classification {
         float: none;
         width: 100%;
     }
-    .wine p, .region p, .criterion p {
+    .wine p, .region p, .criterion p, .classification p {
         min-height: initial;
     }
-    nav {
+    nav, .intro {
         display: none;
     }
 }
