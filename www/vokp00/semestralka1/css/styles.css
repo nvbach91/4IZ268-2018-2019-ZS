@@ -407,3 +407,28 @@ footer {
        display: initial;
    }
 }
+
+@media print {
+    h1 {
+        page-break-after: avoid;
+    }
+
+    * {
+        background-image: none;
+        color: black;
+        width: 100%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .mobile-projects {
+        display: initial;
+        background-image: initial;
+    }
+}
