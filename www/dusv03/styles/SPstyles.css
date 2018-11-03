@@ -1,4 +1,54 @@
 .header1{
-    font-size: 32px;
+    font-size: 40px;
     font-weight:bold;
+    color: white;
+}
+
+body{
+    background-color:rgb(39, 39, 39);
+    color:white;
+}
+
+footer{
+    background-color:rgb(39, 39, 39);
+    border-top:2px solid white;
+    height: 100px;
+    color:white;
+}
+    
+.bot_space{
+    height:100px;
+    background-color: gray;
+}
+
+.list_nav{
+list-style: none;
+display: flex;
+}
+
+.paige_nav{
+    padding: 2px 12px;
+    background-color: lightslategray;
+}
+
+.welcome{
+ padding:10px;
+ 
+}
+
+.band_img{
+    width:100%
+}
+
+.band_logo_about{
+ margin-top: 30px;
+ margin-bottom:30px;
+}
+
+.band_logo_img{
+    padding: 10px;
+    width:80%
+}
+.concert{
+    border-top: 2px solid white;
 }
