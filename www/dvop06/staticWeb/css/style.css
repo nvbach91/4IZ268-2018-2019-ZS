@@ -178,7 +178,7 @@ footer p {
     padding: 14px 16px;
 }
 
-/* Second page */
+/* Rozpis*/
 
 
 
@@ -194,15 +194,44 @@ footer p {
     margin: 40px auto;
 }
 
-.round {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    text-align: center;
-    background-color: silver;
-    margin: 10px;
+section {
+    width: 50%;
 }
 
+section .round {
+    margin: 5px 5px;
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    font-size: 1.10rem;
+}
+
+.upcoming {
+    display: block;
+    text-align: center;
+    padding 20px 16px;
+}
+
+.round-content {
+    margin: 0;
+    border: solid black .5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.round h3 {
+    padding: 0px 20px;
+}
+
+.upcoming:nth-child(even) {
+    background-color: #DDD;
+}
+
+.upcoming:hover {
+    background-color: #e90052;
+    color: white;
+}
 
 /* Tabulka */
 .table {
@@ -221,7 +250,7 @@ table {
 table .team {
     text-align: left;
     padding: 5px 10px;
-    padding-right: 40px;
+    padding-right: 40px;d
 }
 
 table th, tr {
