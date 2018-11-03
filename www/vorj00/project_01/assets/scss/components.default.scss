@@ -57,6 +57,38 @@
 .footer {
     padding: $defaultPadding/2 $defaultPadding;
     border-top: 1px solid $gray;
+    background-color: $gray;
+}
+
+.footer__more {
+    display: flex;
+    flex-direction: column;
+
+    @include mq("tablet-wide") {
+        flex-direction: row;
+    }
+
+    @media print {
+        display: none
+    }
+
+    &>* {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+}
+
+.footer__link {
+    color: $grayDarkest;
+
+    &:hover {
+        color: $almostBlack;
+    }
+}
+
+.footer__link {
+    margin-bottom: 0.5em;
 }
 
 .button {
