@@ -40,19 +40,19 @@ var getAge = function (birthYear) {
     var currentYear = new Date().getFullYear();
     var age = currentYear - birthYear;
 
-    return console.log("Pepeho věk je: " + age);
+    return age;
 };
 
 var getFahrenheiht = function (celsius) {
     var fahrenheihtTransferred = ((celsius * 9) / 5) + 32;
 
-    return console.log(celsius + "°C = " + fahrenheihtTransferred + "°F");
+    return fahrenheihtTransferred;
 };
 
 var getCelsius = function (fahrenheiht) {
     var celsiusTransferred = ((fahrenheiht - 32) * 5) / 9;
 
-    return console.log(fahrenheiht + "°F = " + celsiusTransferred + "°C");
+    return celsiusTransferred;
 };
 
 /**
@@ -63,17 +63,18 @@ var getCelsius = function (fahrenheiht) {
 // SPOILER ALERT!
 
 var getPercent = function (firstNumber, secondNumber) {
+    var output = "nulou se nedělí :/";
 
-    if (secondNumber != 0) {
+    if (secondNumber !== 0) {
         var percent = ((firstNumber / secondNumber) * 100).toFixed(0);
-
-        return console.log(firstNumber + " je " + percent + "%" + " z " + secondNumber);
+        output = firstNumber + " je " + percent + "%" + " z " + secondNumber;
     }
 
-    else {
-        return console.log("nulou se nedělí :/");
-    };
+    return output; //Takhle?
 };
+
+console.log(getPercent(10, 20));
+console.log(getPercent(10, 0));
 
 /**
  * Kdo s koho. Vytvořte funkci, která vezme 2 číselné argumenty a vrátí ten větší z nich. Pokud se čísla 
@@ -107,9 +108,9 @@ z = whoIsBigger(5 / 5, 10 / 2);
 // SPOILER ALERT!
 
 var getMultiplesOfThirteen = function () {
-    var multiples;
+    var multiples = "";
 
-    for (i = 13; i <= 730; i += 13) {
+    for (var i = 13; i <= 730; i += 13) {
         multiples += i + " ";
     }
 
@@ -121,10 +122,10 @@ var getMultiplesOfThirteen = function () {
  */
 // SPOILER ALERT!
 
-var getCircleContent = function (radius) {
-    content = Math.PI * Math.pow(radius, 2);
+var getCircleArea = function (radius) {
+    var area = Math.PI * Math.pow(radius, 2);
 
-    return content.toFixed(2);
+    return area.toFixed(2);
 };
 
 /**
@@ -133,7 +134,7 @@ var getCircleContent = function (radius) {
 // SPOILER ALERT!
 
 var getConeVolume = function (height, radius) {
-    volume = (1 / 3) * Math.PI * Math.pow(radius, 2) * height;
+    var volume = (1 / 3) * Math.PI * Math.pow(radius, 2) * height;
 
     return volume.toFixed(2);
 };
@@ -150,7 +151,7 @@ var isTriangle = function (sideA, sideB, sideC) {
     }
     else {
         return false;
-    };
+    }
 };
 
 /**
@@ -168,7 +169,6 @@ var getTriangleContent = function (sideA, sideB, sideC) {
 
         return content.toFixed(2);
     }
-    else {
-        return "nejde o trojúhelník"
-    }
+
+    return "nejde o trojúhelník";
 };
