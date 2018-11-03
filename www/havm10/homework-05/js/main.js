@@ -21,7 +21,7 @@ WTF (wow, that's fun). Vypište teplotu v Fahrenheiht, pokud znáte teplotu v Ce
 var celsium = 0;
 var fahrenheiht = 100;
 
-var celsiumToFahrenheiht = (celsium - 32) * 5 / 9;
+var celsiumToFahrenheiht = (celsium * 9 / 5) + 32;
 var fahrenheihtToCelsium = (fahrenheiht - 32) * 5 / 9;
 
 console.log(celsium + ' stupnů celsia je: ' + celsiumToFahrenheiht + ' stupnů fahrenheita');
@@ -39,7 +39,7 @@ var ageOfPepa = function (yearOfBirth) {
         return age;
     }
     else {
-        return ('pepe se nemuze narodit v budoucnosti')
+        return 'pepe se nemuze narodit v budoucnosti';
     }
 }
 
@@ -47,12 +47,10 @@ var convertor = function (targetScale, tempeture) {
     switch (targetScale) {
         case 'C':
             return (tempeture * 9 / 5) + 32;
-            break;
         case 'F':
             return (tempeture - 32) * 5 / 9;
-            break;
         default:
-            return ('neznámá stupnice');
+            return 'neznámá stupnice';
     }
 };
 
@@ -64,7 +62,7 @@ var convertor = function (targetScale, tempeture) {
 
 var percentageDivision = function (number1, number2) {
     if (number2 === 0) {
-        return ('dělení nulou');
+        return 'dělení nulou';
     }
     else {
         var percentage = number1 / number2 * 100;
@@ -86,11 +84,11 @@ var biggerNumber = function (number1, number2) {
         return number2;
     }
 
-    return ('Čísla se rovnají');
+    return 'Čísla se rovnají';
 }
 
 var a = biggerNumber(1 / 2, 1 / 3);
-var b = biggerNumber(0, 7, 0, 9);
+var b = biggerNumber(0.7, 0.9);
 var c = biggerNumber(5, 5);
 
 /*
@@ -99,7 +97,7 @@ I can cleary see the pattern. Vytvořte funkci, která vypíše popořadě všec
 */
 
 var multiplicationTable = function () {
-    for (i = 0; i <= 730; i += 13) {
+    for (var i = 0; i <= 730; i += 13) {
         console.log(i);
     }
 }
@@ -128,8 +126,8 @@ Not sure if triangle, or just some random values. Vytvořte funkci, která rozho
 */
 
 var isItTriangle = function (side1, side2, side3) {
-    var isTrue = (side1 + side2 >= side3) && (side3 + side1 >= side2) && (side2 + side3 >= side1);
-    return (isTrue);
+    var isTrue = (side1 + side2 > side3) && (side3 + side1 > side2) && (side2 + side3 > side1);
+    return isTrue;
 }
 
 /*
