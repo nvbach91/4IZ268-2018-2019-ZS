@@ -128,7 +128,7 @@ header, footer {
     width: 100%;
     background-color: rgb(230, 230, 230);
     padding: 70px 0;
-    background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('/img/money.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../img/money.jpg);
     background-size: cover;
 }
 
