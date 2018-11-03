@@ -63,14 +63,14 @@ var getCelsius = function (fahrenheiht) {
 // SPOILER ALERT!
 
 var getPercent = function (firstNumber, secondNumber) {
-    var output = "nulou se nedělí :/";
+    var percent = "nulou se nedělí :/";
 
     if (secondNumber !== 0) {
         var percent = ((firstNumber / secondNumber) * 100).toFixed(0);
-        output = firstNumber + " je " + percent + "%" + " z " + secondNumber;
+        return firstNumber + " je " + percent + "%" + " z " + secondNumber;
     }
 
-    return output; //Takhle?
+    return percent; //Takhle?
 };
 
 console.log(getPercent(10, 20));
