@@ -1,0 +1,177 @@
+body {
+  /* The image used */
+   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqGaw7w2Ujk8i-HVYvT5ww5T_1Cgj4znO5WxC_ncuvnc0-q1M9);
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+/*Header*/
+.topnav {
+   background-color: #333;
+   overflow: hidden;
+}
+/* Style the links inside the navigation bar */
+.topnav a {
+   float: left;
+   color: #f2f2f2;
+   text-align: center;
+   padding: 15px 89px;
+   text-decoration: none;
+   font-size: 30px;
+}
+/* Change the color of links on hover */
+.topnav a:hover {
+   background-color: rgb(134, 82, 218);
+   color: black;
+}
+/* Add a color to the active/current link */
+.topnav a.active {
+   background-color: #4CAF50;
+   color: white;
+}
+/*Home page*/
+.H1Home {
+   padding: 10px;
+   text-align: center;
+   font-size: 80px;
+   font-weight: normal;
+   cursor: pointer;
+   overflow: hidden;
+   text-shadow: 0 0 rgb(6, 48, 71), 0 0 rgb(46, 3, 201), 0 0 rgb(85, 12, 219);
+   color: transparent;
+   transition: all 2s;
+}
+.H1Home:hover {
+   text-shadow: -450px 0 rgb(71, 99, 255), 450px 0 rgb(56, 43, 172), 0 0 rgb(0, 0, 0);
+}
+/*H1 at all pages*/
+h1 {
+   text-align: center;
+   font-size: 50px;
+   font-weight: inherit;
+   cursor: pointer;
+   text-shadow: -1px -1px rgb(255, 255, 255), 0 1px 0 rgb(98, 0, 255);
+   color: rgba(4, 238, 141, 0.801);
+   transition: all 1s;
+}
+h1:hover {
+   color: rgb(255, 255, 255);
+}
+/*CV page*/
+.CV H2 {
+   text-align: center;
+   color: #19074b;
+}
+.CV H2:hover {
+   color: rgb(10, 212, 70);
+}
+.CVmain {
+   font-size: 22px;
+   text-align: center;
+   color: #ddd;
+}
+.CVtable{
+   font-family: arial, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+}
+/*Timetable page*/
+.table_dark {
+   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+   font-size: 20px;
+   width: 1310px;
+   text-align: center;
+   border-collapse: collapse;
+   background: #252F48;
+   margin: 10px;
+}
+.table_dark th {
+   color: #EDB749;
+   border-bottom: 1px solid #37B5A5;
+   padding: 12px 17px;
+}
+.table_dark td {
+   color: #CAD4D6;
+   border-bottom: 1px solid #37B5A5;
+   border-right:1px solid #37B5A5;
+   padding: 7px 17px;
+}
+.table_dark tr:last-child td {
+   border-bottom: none;
+}
+.table_dark td:last-child {
+   border-right: none;
+}
+.table_dark tr:hover td {
+   text-decoration: underline;
+}
+/*Photos page*/
+#gallery {
+   width: 720px;
+   overflow: hidden;
+   position: center;
+   z-index: 1;
+   margin: 80px auto;
+   border: 10px solid #003C72;
+}
+#navigation {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   float: left;
+}
+#navigation li {
+   padding: 0;
+   margin: 0;
+   float: left;
+   clear: both;
+}
+#navigation li a img {
+   display: block;
+   border: none;
+}
+#navigation li a {
+   display: block;
+}
+#full-picture {
+   width: 600px;
+   height: 451px;
+   overflow: hidden;
+   float: lefts;
+}
+/*Footer*/
+footer {
+   opacity: 0.7;
+   text-align: center;
+   border-top: 5px solid;
+   border-image: linear-gradient(to right, #039e25 25%,#ffcd02 25%, #ffcd02 50%, #e84f47 50%, #e84f47 75%, #65c1ac 75%) 5;
+}
+.social {
+   background-color: rgb(114, 16, 206);
+   padding: 20px 0;
+}
+.social a{
+   display: inline-block;
+   background-size: contain;
+   background-position: center;
+   background-repeat: no-repeat;
+   height: 35px;
+   width: 80px;
+   cursor: pointer;
+}
+.social-facebook {
+   background-image: url('https://image.flaticon.com/icons/svg/54/54997.svg');
+}
+.social-vk {
+   background-image: url('http://icons.iconarchive.com/icons/icons8/windows-8/512/Social-Networks-Vk.Com-icon.png');
+}
+.social-linkedin {
+   background-image: url('https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-512.png');
+}
+.Site {
+   display: flex;
+   min-height: 97vh;
+   flex-direction: column;
+}
+.Site-content {
+   flex: 1;
+}
