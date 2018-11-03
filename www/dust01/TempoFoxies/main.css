@@ -1,23 +1,274 @@
-#ul{
+/* OBECNE */
+ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;   
-}
-.li{
-    float: left;
-}
-.a{
-    display: block;
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
+    background-color: #1A421C;
     text-align: center;
 }
-.a:hover:not(active){
-    background-color: #111;
+li{
+     /*float: left;*/
+     display: inline;
 }
-.active{
-    background-color: #4caf50;
+nav a {
+    display: inline-block;
 }
+nav{
+    
+    margin-top: 10px;
+}
+li a {
+    color: white;
+    font-size: 25px;
+   /* border-right: 2px solid antiquewhite;*/
+    padding: 6px;
+    margin: 10px 0;
+    text-shadow: 2px 1px black;
+}
+li a:hover{
+    background-color: #F1C40F;
+    color: white;
+    transition: 0.5s;
+}
+#li-end{
+    border: 0;
+}
+
+body{
+    margin: 0;
+    background-color: #FEF9E7;
+}
+html{
+    font-family: Arial, Helvetica, sans-serif
+}
+
+footer{
+    background-color: #1A421C;
+    padding: 3px;
+    text-align: center;
+   /* position: fixed;*/
+    width: 100%;
+    bottom: 0;
+    color: white;
+}
+
+a{
+  
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none; 
+}
+h1{
+    text-align: center;
+     color: #F1C40F;
+     text-shadow: 2px 2px black;
+     font-size: 2.5em;
+}
+h2{
+    text-align: center;
+    color: black;
+    text-shadow: 2px 2px #F1C40F;
+}
+
+
+/* KONEC OBECNE */
+
+/*INDEX*/
+.container {
+    padding: 0 100px;
+
+}
+
+#uvod-sekce {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+#uvod-sekce img {
+    width:500px;
+}
+
+#uvod-sekce div:first-child {
+    flex: 1;
+    
+}
+#uvod-sekce p{
+    text-align: justify;
+}
+
+#uvod-sekce div:last-child {
+    padding-left: 30px;
+    flex: 2;
+}
+
+#uvod-obrazek img {
+    width: 100%;
+    height: 300px;
+}
+
+header>p {
+    text-align: center;
+    font-size: 2em;
+}
+
+#novinky img {
+    width: 350px;
+    height: 233.3px;
+}
+
+.novinky-obsah div {
+    width: 350px;
+    text-align: justify;
+}
+
+.novinky-obsah {
+    margin-right: 30px;
+    
+}
+
+#novinky {
+    display: flex;
+    justify-content: space-around;
+}
+nav img{
+    width: 125px;
+    float: left;
+    margin-left: 30px;
+}
+header > p{
+    margin-bottom: 15px;
+}
+
+#uvod-obrazek {
+    background-image: url("img/1.jpg");
+
+}
+
+.uvod-img {
+    background-image: url("img/1.jpg");
+    background-color: #cccccc;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
+
+.uvod-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*   color: #FFED40;*/
+    color:  #F1C40F;
+    text-shadow: 3px 2px black;
+    font: status-bar;
+}
+#novinky h3{
+    color:  #1A421C;
+
+}
+/*KONEC INDEX*/
+
+/*SOUTEZ*/
+table.competition-table,
+th,
+td {
+    border: 1px solid black;
+
+}
+
+table.competition-table {
+    border-collapse: collapse;
+    width: 350px;
+}
+
+.moduleTable {
+    display: table-row-group;
+}
+
+td {
+    padding: 9px;
+}
+.tableWM{
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+
+.tableTitle {
+    color: #1A421C;
+    text-shadow: 2px 2px #F1C40F;
+}
+
+#container3 {
+    padding: 0 100px;
+}
+
+#competition-tables {
+    display: flex;
+    margin-bottom: 20px;
+
+}
+
+#tableOneTwo, #tableThreeFour {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*KONEC SOUTEZ*/
+
+/* KONTAKTY */
+
+#contact-section div{
+    padding: 0 100px;
+}
+
+#kontakty {
+    background-color: #FEF9E7;
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.likontakty {
+    display: block;
+}
+
+table#contact-table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 30px 0;
+    margin-left: 350px;
+}
+
+#contact-table th td{
+    padding: 5px;
+    text-align: left;
+}
+
+#contact-table th{
+    background-color: #1A421C;
+    color: white;
+
+}
+/* KONEC KONTAKTY */
+
+/* HISTORIE */
+
+.container2 {
+   text-align: center;
+    padding: 0 100px;
+}
+
+img#history-img {
+    height: 300px;
+}
+/* KONEC HISTORIE */
