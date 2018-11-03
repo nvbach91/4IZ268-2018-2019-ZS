@@ -14,10 +14,6 @@ li{
 nav a {
     display: inline-block;
 }
-nav{
-    
-    margin-top: 10px;
-}
 li a {
     color: white;
     font-size: 25px;
@@ -45,7 +41,7 @@ html{
 
 footer{
     background-color: #1A421C;
-    padding: 3px;
+    padding: 3px 0;
     text-align: center;
    /* position: fixed;*/
     width: 100%;
@@ -67,8 +63,9 @@ h1{
 }
 h2{
     text-align: center;
-    color: black;
-    text-shadow: 2px 2px #F1C40F;
+    color: #F1C40F;
+    text-shadow: 2px 2px black;
+    font-size: 2em;
 }
 
 
@@ -84,6 +81,7 @@ h2{
     display: flex;
     flex-direction: row;
     margin-top: 20px;
+    margin-bottom: 40px;
 }
 #uvod-sekce img {
     width:500px;
@@ -115,6 +113,7 @@ header>p {
 #novinky img {
     width: 350px;
     height: 233.3px;
+    border: 1px solid black;
 }
 
 .novinky-obsah div {
@@ -169,6 +168,8 @@ header > p{
 }
 #novinky h3{
     color:  #1A421C;
+    text-shadow: 1px 2px #F1C40F;
+
 
 }
 /*KONEC INDEX*/
@@ -194,7 +195,7 @@ td {
     padding: 9px;
 }
 .tableWM{
-    margin-left: 50px;
+
     margin-bottom: 20px;
 }
 
@@ -220,12 +221,22 @@ td {
     flex-direction: column;
     align-items: center;
 }
+#tableOneTwo{
+    align-items: flex-end;
+    margin-right: 35px;
+}
+#tableThreeFour{
+    align-items: flex-start;
+    margin-left: 35px;
+}
+
+
 /*KONEC SOUTEZ*/
 
 /* KONTAKTY */
 
 #contact-section div{
-    padding: 0 100px;
+    padding: 0 50px;
 }
 
 #kontakty {
@@ -259,16 +270,85 @@ table#contact-table, th, td{
     color: white;
 
 }
+#contacts h3 {
+    color: #1A421C;
+    text-shadow: 1px 1px #F1C40F;
+    text-align: center;
+}
+#contacts{
+    display: flex;
+     justify-content: space-around;
+}
+#contacts div{
+    width: 600px;
+ text-align: justify;
+}
 /* KONEC KONTAKTY */
 
 /* HISTORIE */
 
 .container2 {
-   text-align: center;
+    text-align: center;
     padding: 0 100px;
 }
 
 img#history-img {
     height: 300px;
 }
+.h2-history{
+    color: black;
+    text-shadow: 2px 2px #F1C40F;
+}
 /* KONEC HISTORIE */
+
+/*TYMY*/
+.boxTrains{
+    background-color: #FEF9E7;
+    width: 225px;
+    border: 5px solid #1A421C;
+    padding: 25px;
+    margin: 25px;
+    }
+    #containerT{
+        padding: 0 100px;
+    }
+    
+   #containerT h3{
+            color: black;
+            text-shadow: 2px 2px #F1C40F;
+        }
+    
+    #Info{
+        display: flex;
+     justify-content: space-around;
+    }
+    #Info h3{
+        text-align:center;
+    }
+    .TeamsInfo {
+      margin-right: 30px;
+    }
+    .li-Teams {
+    display: block;
+}
+    .img-teams{
+    height: 400px;
+    float: right;
+    border: 1px solid black;
+}
+/* SOUPISKA */
+div.teams-soupiska {
+            display: flex;
+        }
+
+        div.teams-soupiska div:first-child {
+            flex: 1;
+        }
+
+        div.teams-soupiska h3 {
+            margin: 19px 0;
+        }
+
+        div.teams-soupiska img {
+            margin-top: 19px;
+        }
