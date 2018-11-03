@@ -134,6 +134,10 @@
     width: 75%;
 }
 
+.letter__imgCont--square img {
+    border-radius: 0;
+}
+
 .letter__text {
     @include mq("tablet-wide") {
         width: 75%;
@@ -152,5 +156,11 @@
 
     @include mq("tablet-wide") {
         text-align: right;
+    }
+}
+
+.letter__more--left {
+    @include mq("tablet-wide") {
+        text-align: left;
     }
 }
