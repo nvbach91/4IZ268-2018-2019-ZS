@@ -56,6 +56,8 @@ header {
     background-image: url('https://mediacdn.mancity.com/-/media/wallpapers/champions18/champions%20banner%20201718');
     background-size: cover;
     background-position: center;
+    padding-left: 20px;
+    padding-right: 20px;
     
 }
 
@@ -65,9 +67,109 @@ header h1{
 }
 
 header div {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
+    padding: 10px;
 }
- body {
-     background: lightgrey;
- }
+body {
+    background: white;
+}
+
+
+/* OBSAH */
+.ultimate-container {
+    width: 90%;
+    height: 800px;
+    display: flex;
+    flex-direction: row;
+    margin: 20px auto;
+}
+    /* LEVA CAST OBSAHU */
+    .leftpart {
+        flex: 1;
+        margin: 10px;
+    }
+
+    .leftpart > div {
+        margin-bottom: 10px;
+    }
+
+    .leftpart h2 {
+        background-color: #e90052;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        margin: 0px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow: hidden;
+        font-weight: normal;
+    }
+
+    .matches div:nth-child(even) {
+        background-color: #DDD;
+    }
+
+    .matches {
+        border: #DDD solid 5px;
+        border-top: 0;
+    }
+
+    .match {
+        text-align: center;
+        padding: 5px 5px;
+    }
+
+    /* PRAVA CAST OBSAHU */
+    .rightpart {
+        flex:2;
+        margin: 10px;
+    }
+
+    .rightpart article {
+        margin-top: 10px;
+        border-bottom: #DDD solid 2px;
+    }
+
+    .rightpart h2 {
+        padding: 14px 16px;
+        margin: 0;
+    }
+
+    .rightpart h3 {
+        /* border-top-left-radius: 10px;
+        border-top-right-radius: 10px; */
+        font-weight: normal;
+        margin: 0;
+        display: block;
+        padding: 10px;
+        background-color: #38003c;
+        color: white;
+    }
+
+    .rightpart article p {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    article p a, article p a:visited, article p a:hover {
+        text-decoration: none;
+        color: #38003c;
+        font-weight: bold;
+    }
+
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: #38003c;
+    color: white;
+    text-align: right;
+    margin: 0;
+
+}
+
+footer p {
+    margin: 0;
+    padding: 14px 16px;
+}
