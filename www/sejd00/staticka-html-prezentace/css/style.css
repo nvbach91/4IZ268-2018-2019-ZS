@@ -1,3 +1,5 @@
+
+
 body, html {
     height: 100%;
     margin: 0;
@@ -21,42 +23,64 @@ a {
     
 }
 
-nav {
-    border: solid black 1px;
-}
-
-a:active{
-    color: red;
-}
-
 a:hover {
     color: gray;
+    transform: scale(1.05);
+}
+
+.social-media-logo:hover{
+    transform: scale(1.05);
 }
 
 .site-description{
     color: white;
 }
 
-
 .wrap{
     background-color: rgba(0, 0, 0, 0.3);
-    margin-top: 100px;
     padding-top: 50px;
     padding-bottom: 50px;
-    padding-left: 10%;
-    margin-right: 50%;
+    padding-left: 10%; 
 }
 
 .bg-main{
-    background-image: url("/4IZ268-2018-2019-ZS/www/sejd00/staticka-html-prezentace/img/cover.jpg");
+    background-image: url("../img/cover1.jpg");
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    border: solid black 1px;
 }
 
 .bg-about{
-    background-image: url("/4IZ268-2018-2019-ZS/www/sejd00/staticka-html-prezentace/img/cover2.jpg");
+    background-image: url("../img/cover2.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.bg-contacts{
+    background-image: url("../img/cover3.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.bg-gallery{
+    background-image: url("../img/cover4.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.bg-socialmedia{
+    background-image: url("../img/cover5.jpg");
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
@@ -75,7 +99,12 @@ li {
     margin-right: 20px;
 }
 
-li a {
+h2{
+    text-align: center;
+}
+
+
+ li a {
     display: block;
     min-width:169px;
     border: 1px solid black;
@@ -87,27 +116,34 @@ li a {
     margin-bottom: 20px;
 }
 
+a.soc-med-logo {
+    border: none;
+    background: rgba(0, 0, 0, 0);
+}
+
+li:hover a.soc-med-logo {
+    background: rgba(0, 0, 0, 0);
+}
+
 li:hover a {
     background: rgba(0, 0, 0, 0.5);
 }
-
-li:focus a {
-    background: rgba(0, 0, 0, 0.5);
+.li-active {
+    background: black;
 }
 
+.main-info{
+    margin-bottom: 150px;
+}
 
-.menu{
-
+.gallery{
+    margin-left: 20%; 
 }
 
 .social-media{
     margin-left: 50px;
+    margin-bottom: 50px;
 }
-
-
-
-
-@import "compass/css3";
 
 .flex-container {
   padding: 0;
@@ -127,30 +163,98 @@ li:focus a {
 .flex-item {
   padding: 5px;
   width: 500px;
-  height: 150px;
-  margin-top: 40px;
+  height: 400px;
   
   line-height: 20px;
   color: black;
   font-size: 20px;
-  text-align: center;
+  text-align: justify;
   font-family: 'Courier New', Courier, monospace;
 }
 
 
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.column {
+    -ms-flex: 25%;
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
 
 @media screen and (max-width : 760px){
-
-
     li {
         margin-bottom: 1px;
     }
 
     ul li, li a {
         width: 71%;
+        margin-left: 10%;
     }
 
     body, html {
         font-size: 20px;
+    }
+
+    img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .column {
+        -ms-flex: 70%;
+        flex: 70%;
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width : 420px){
+    .menu{
+        width: 200px;
+
+    }
+
+    ul li, li a {
+        width: 71%;
+        margin-left: 10%;
+    }
+
+    body, html {
+        font-size: 20px;
+    }
+
+    .site-description{
+        padding-left: 5%;        
+    }
+
+    li.flex-item {
+        height: 360px;
+        margin-left: 5%;
+        line-height: 30px;
+        color: black;
+        font-size: 20px;
+        text-align: justify;
+        font-family: 'Courier New', Courier, monospace;
+      }
+
+      .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    .main-info{
+        margin-left: 0%; 
     }
 }
