@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    background-color: #641C34;
+    display: flex;
+}
+
+nav li {
+    text-transform: uppercase;
+    float: left;
+    margin-right: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    display: block;
+}
+
+nav li:hover {
+    background-color: rgb(233, 127, 127);
+}
+
+nav li:active {
+    background-color: rgb(214, 116, 116);
+}
+
+.search {
+    background-image: url('https://cdn3.iconfinder.com/data/icons/eightyshades/512/11_Search-512.png');
+    background-position: center;
+    background-size: cover;
+    margin-top: 15px;
+    min-width: 50px;
+    height: 50px;
+    cursor: pointer;
+    float: right;
+}
+
+.search:hover {
+    background-color: rgb(233, 127, 127);
+}
+
+.search:active {
+    background-color: rgb(214, 116, 116);
+}
+
+.header {
+    text-transform: uppercase;
+}
+
+.intro {
+    color: white;
+    min-height: 700px;
+    line-height: 2.6em;
+    padding: 60px;
+    text-align: left;
+    background-image: url('zdroje/vino.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Garamond, Times, serif;
+    font-style: italic;
+}
+
+.introlat {
+    font-size: 60px;
+    margin-left: 55px;
+    margin-bottom: 80px;
+}
+
+.introcs {
+    font-size: 50px;
+    margin-left: 10px;
+    margin-bottom: 80px;
+}
+
+.plinius {
+    font-size: 40px;
+}
+
+div h1, div h2 {
+    margin-top: 0px;
+    margin-bottom: 1px;
+    text-align: center;
+    padding: 25px;
+    background-color: #641C34;
+    color: white;
+    clear: both;
+}
+
+.wines, .regions, .criterions {
+    padding: 20px 0;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.wine, .region, .criterion {
+    float: left;
+    width: 33.333%;
+    padding-left: 20px;
+    text-align: center;
+}
+
+.wine h3, .region h3, .criterion h3 {
+    padding: 10px;
+    background-color: rgb(233, 127, 127);
+}
+
+.wine p, .region p, .criterion p {
+    min-height: 150px;
+}
+
+p, ol li {
+    line-height: 30px;
+}
+
+
+/* HISTORIE */
+
+.central, .line {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+div h4 {
+    font-style: italic;
+    color: #641C34;
+    margin-top: 20px;
+}
+
+.img {
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.img-right {
+    float: right;
+    margin: 5px;
+}
+
+.clear {
+    clear: left;
+}
+
+/* REGIONY */ /* DELENI */ /* KLASIFIKACE */
+.region, .four {
+    width: 25%;
+}
+
+.cent {
+    padding: 5px 600px;
+}
+
+.line {
+    border-top: 3px solid rgb(233, 127, 127);
+    margin-top: 10px;
+    padding-bottom: 15px;
+}
+
+.etiketa {
+    padding: 250px;
+    background-image: url('zdroje/etiketa.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.five {
+    width: 20%;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .wine, .regio, .criterion {
+        width: cal(100%/3);
+    }
+    .wine p, .region p, .criterion p {
+        min-height: 220px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .wine, .region, .criterion {
+        width: 50%;
+    }
+    .wine p, .region p, .criterion p {
+        min-height: 200px;
+    }
+
+}
+@media screen and (max-width: 560px) {
+    .wine, .region, .criterion {
+        float: none;
+        width: 100%;
+    }
+    .wine p, .region p, .criterion p {
+        min-height: initial;
+    }
+    nav {
+        display: none;
+    }
+}
