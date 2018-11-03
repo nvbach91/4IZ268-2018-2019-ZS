@@ -17,7 +17,8 @@
     max-height: 600px;
     align-self: center;
 }
-.book_img_link{
+
+.book_img_link {
     grid-area: obr1;
 }
 
