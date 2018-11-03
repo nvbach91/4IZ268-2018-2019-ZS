@@ -3,7 +3,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-b {
+strong {
     font-weight: 700;
 }
 
@@ -234,11 +234,11 @@ main {
     padding-top: 50px;
 }
 
-.contet b {
+.contet strong {
     font-size: 32px;
 }
 
-.contet b:nth-child(1) {
+.contet strong:nth-child(1) {
     margin-left: 50px;
 }
 
@@ -321,7 +321,7 @@ footer p {
     font-size: 12px;
 }
 
-footer b, span {
+footer strong, span {
     font-size: 30px;
 }
 
