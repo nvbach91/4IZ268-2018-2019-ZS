@@ -105,3 +105,10 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media only print {
+    .book_img_preview {
+        box-shadow: none;
+        border: #333 solid 1px;
+    }
+}
