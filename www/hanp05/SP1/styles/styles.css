@@ -10,6 +10,30 @@ p {
     margin: 15px;
 }
 
+.half_paragraph_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+    border-bottom: rgb(230, 230, 230) 2px solid;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.half_paragraph_grid_noborder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+}
+
+.third_paragraph_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 40px;
+    border-bottom: rgb(230, 230, 230) 2px solid;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
 h1 {
     font-size: 20px;
     text-transform: uppercase;
@@ -52,6 +76,7 @@ section {
     width: 100%;
     background-color: #fff;
     padding: 60px 0;
+    overflow: hidden;
 }
 
 /* ****** Header ****** */
@@ -204,6 +229,9 @@ footer .book_name, footer .author_name {
         min-width: auto;
         height: 50px;
     }
+    .half_paragraph_grid, .third_paragraph_grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -222,4 +250,13 @@ footer .book_name, footer .author_name {
     header, footer, .button, .page_default_img {
         display: none;
     }
+    p {
+        font-size: 12px
+    }
+
+    .half_paragraph_grid_noborder {
+        display: block;
+        margin-bottom: 250px;
+    }
+
 }
