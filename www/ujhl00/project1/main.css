@@ -6,14 +6,13 @@
 }
 
 body {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 h1 {
     font-weight: bold;
     font-size: 50px;
-
 }
 
 h2 {
@@ -38,7 +37,13 @@ a {
 }
 
 p {
-    font-size: 16px;
+    font-size: 17px;
+    line-height: 1.8em;
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0px auto;
 }
 
 header {
@@ -47,16 +52,11 @@ header {
     background-size: cover;
 }
 
-.index-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/img/wallropes-min.jpg);}
-.about-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/img/wallme.jpg);}
-.train-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/img/walltrx.jpg);}
-.rege-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/img/rege.jpg);} 
-.food-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/img/food.jpg);}
-
-.wrapper {
-    max-width: 1280px;
-    margin: 10px auto;
-}
+.index-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/www/ujhl00/project1/img/wallropes-min.jpg);}
+.about-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/www/ujhl00/project1/img/wallme.jpg);}
+.train-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/www/ujhl00/project1/img/walltrx.jpg);}
+.rege-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/www/ujhl00/project1/img/rege.jpg);}
+.food-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/www/ujhl00/project1/img/food.jpg);}
 
 .hero-banner {
     background-color: rgba(0,0,0,.3);
@@ -75,7 +75,7 @@ header {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 6px;
-    font-size: 50px;
+    font-size: 60px;
     margin: 5px 0;
 }
 
@@ -83,7 +83,7 @@ header {
     color: #405947;
 }
 
-.hero-banner h3 {
+.hero-banner h2 {
     color: #405947;
     color: white;
     text-transform: uppercase;
@@ -91,89 +91,73 @@ header {
     margin: 0px;
 }
 
-.hero-banner h4 {
+.hero-banner h3 {
     color: white;
     margin: 0px;
     letter-spacing: 3px;
 }
 
-.navigation {
-    height: 70px;
-    background-color: #101415;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.68);
+.navigation{
     position: sticky;
     top: 0;
     z-index: 1;
 }
 
 .main-nav {
-    margin: 0;
+    background-color: #101415;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.68);
     padding: 0;
+    margin: 0;
+    display:flex;
+    border: 1px solid black;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.main-nav a {
     text-align: center;
-    padding: 24px 40px;
-}
-.main-nav li {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-.main-nav li a {
-    height: 100%;
+    display: block;
+    padding: 20px;
     text-transform: uppercase;
-    text-decoration: none;
-    color: white;
-    padding: 24px;
+    color:white;
 }
 
-.main-nav li a:hover {
-   background-color: #162c1e;
+.main-nav li {
+    flex-basis: 150px;
 }
 
-.clear {
-    clear:both;
+.main-nav a:hover {
+    background-color: #162c1e;
 }
 
-.welcome h2, .features h2, .omne h2 {
+.wrapper > h2 {
     text-align: center;
     color: black;
     text-transform: uppercase;
-    letter-spacing: 10px;
-    margin: 30px 0 20px;
+    letter-spacing: 10px;   
 }
 
-.float-box {
-    text-align: left;
-    float: left;
+.welcome, .features, .about {
+    display: flex;
 }
 
-.float-box h4 {
-    text-align: center; 
-}
-
-.features .float-box img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-}
-
-.welcome .float-box, .omne .float-box {
-    width: 50%;
-    padding: 5px 5px;
+.flex-box1, .flex-box2 {
+    flex: 1;
+    padding: 10px;
 }
 
 .sep {
-    width: 85%;
-    height: 2px;
+    width: 90%;
+    height: 1px;
     background-color: #162c1e;
-    margin: 50px auto;
+    margin: 20px auto;
     border-radius: 10px; 
 }
 
-.features .float-box {
-    height: 300px;
-    width: 33.33%;
-    padding: 10px 10px;
+.flex-box3, .flex-box4, .flex-box5 {
+    text-align: center;
+    flex: 1;
+    padding: 10px;
 }
 
 .features button {
@@ -190,24 +174,43 @@ header {
     cursor: pointer;
 }
 
-.omne .float-box img {
+.flex-box6, .flex-box7 {
+    flex: 1;
+    padding: 10px;
+}
+
+.flex-box6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-box6 img {
     border-radius: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 footer {
-    margin-top: 60px;
-    text-align: center;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-basis: 100%;
+    border: 1px solid black;
+    background-color: #405947;
 }
 
 .credits {
     color:white;
-    background-color: #405947;
-    padding: 20px; 
+    padding: 10px;
     text-align: center;
 }
+
+.credits p {
+    font-size: 15px;
+    margin: 0;
+}
+
+
+
+
+
 
 
