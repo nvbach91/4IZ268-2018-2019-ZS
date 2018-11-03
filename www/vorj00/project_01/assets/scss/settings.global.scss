@@ -1,0 +1,11 @@
+@import "settings.variables";
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+}
+
+a {
+    color: $brandColor;
+    text-decoration: none;
+}
