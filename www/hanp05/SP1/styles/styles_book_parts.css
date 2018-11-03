@@ -52,12 +52,11 @@
     .book_parts {
         display: block;
     }
-    .book_part{
+    .book_part {
         margin-top: -20px;
         font-size: 12px;
         padding: 0px;
     }
-
     .part_number {
         font-size: 20px;
         font-weight: 900;

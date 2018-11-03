@@ -253,10 +253,8 @@ footer .book_name, footer .author_name {
     p {
         font-size: 12px
     }
-
     .half_paragraph_grid_noborder {
         display: block;
         margin-bottom: 250px;
     }
-
 }
