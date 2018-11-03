@@ -20,15 +20,19 @@
     }
 }
 
-.nav a {
+.nav__item {
     transition: 0.4s
 }
 
-.nav:hover a:not(:hover) {
+.nav__item--active {
+    text-decoration: underline;
+}
+
+.nav:hover .nav__item:not(:hover) {
     opacity: 0.5;
 }
 
-.nav>*:not(:last-child) {
+.nav__item:not(:last-child) {
     margin-right: 0.5em;
 }
 
