@@ -268,17 +268,19 @@ a:hover .image-box-description {
 }
 
 @media screen and (max-width: 1010px) {
-    menu ul li {
+    .header ul li {
       float:none;
     }
-    menu .header {
+    .header {
       width: 100%;
       position: fixed;
     }
     .menuList, .menuList ul {
       width: 100%;
     }
-    .menuList a {display: none;}
+    .menuList ul li a {
+      display: none;
+    }
     .menuList a.icon {
       float: right;
       display: block;
@@ -371,7 +373,7 @@ a:hover .image-box-description {
 }
 
 @media print {
-  menu, footer {
+  .header, footer {
     display:none;
   }
   .layout{
