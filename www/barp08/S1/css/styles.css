@@ -33,13 +33,13 @@ main {
     list-style: none;
     padding-right: 10px;
     padding-left: 10px;
+    text-align: center;
 }
 
 nav li {
     display: block;
     float: right;
-    margin-right: 30px;
-    padding: 20px 5px;
+    padding: 20px 20px;
     text-transform: uppercase;
     margin-left: auto;
 }
@@ -86,7 +86,7 @@ h2 {
     float: left;
     width: 50%;
     padding: 20px;
-    text-align: justify;
+    text-align: left;
     padding-right: 25px;
 }
 
@@ -220,12 +220,15 @@ footer>p {
         width: 120%;
     }
     .social .s-img {
-        width: 70%;
-        height: 70%;
+        width: 30%;
+        height: 30%;
     }
 }
 
 @media screen and (max-width: 840px) {
+    .navbar li {
+        padding-left: 40px;
+    }
     .social .s-img {
         width: 70%;
         height: 70%;
@@ -239,9 +242,28 @@ footer>p {
 }
 
 @media screen and (max-width: 640px) {
+    .navbar li {
+        display: inline-block;
+        padding: 32px;
+    }
+    .navigation {
+        position: static;
+        display: block;
+        height: 130px;
+    }
+    .logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        clear: both;
+    }
     .welcome-logo {
         width: 33.33%;
         height: 33.33%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     .social .s-img {
         width: 33.33%;
@@ -259,9 +281,55 @@ footer>p {
     }
     h1 {
         width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
     }
     h2 {
         width: 100%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .navigation {
+        position: static;
+        text-align: center;
+        padding: 10px 10px;
+        height: 120px;
+    }
+    h1 {
+        width: 100%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        clear: both;
+    }
+    h2 {
+        width: 100%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        clear: both;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .navbar li {
+        display: block;
+        float: none;
+        padding: 15px;
+    }
+    .navigation {
+        position: static;
+        display: block;
+        height: 330px;
+    }
+    li a {
+        text-align: center;
     }
 }
 
