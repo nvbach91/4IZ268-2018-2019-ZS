@@ -3,11 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Web about Apple products">
+    <meta name="keywords" content="HTML,CSS,XML,Apple">
+    <meta name="author" content="Simona Štokingerová">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="ikony/ikona-LSA.png" type="image/x-icon">
     <title>LSA MacBook</title>
-    <link rel="stylesheet" type="text/css" href="style_MacBook.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
@@ -16,27 +19,29 @@
         <img src="images/Lsa-logo.png" alt="LETEM SVĚTEM APPLEM">
 
         <nav id="signpost">
-            <a href="Apple_Home.html">Domů</a>
-            <a href="iPhone.html">iPhone</a>
-            <a href="MacBook.html">MacBook</a>
-            <a href="AppleWatch.html">Apple Watch</a>
-            <a href="kontakty.html">Kontakt</a>
+            <ul>
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="iPhone.html">iPhone</a></li>
+                <li class="active"><a href="MacBook.html">MacBook</a></li>
+                <li><a href="AppleWatch.html">Apple Watch</a></li>
+                <li><a href="kontakty.html">Kontakt</a></li>
+            </ul>
         </nav>
     </div>
 
-    <div class="article_MacBook">
+    <div class="article_apple">
         <div class="heading">
             <h1>MacBook</h1>
         </div>
-        <div class="article__section">
+        <div class="article_section">
             <div class="article_img">
                 <a href="letter.html"><img src="images/letter.jpg" alt="letter"></a>
             </div>
-            <div class="article__text">
-                <div class="article__title">
+            <div class="article_text">
+                <div class="article_title">
                     <a href="letter.html">Dopis pro Apple: kde jsou všechny ty úžasné produkty?</a>
                 </div>
-                <div class="article_description">Ahoj Apple,
+                <div class="article_description_apple">Ahoj Apple,
 
                     snad se neurazíš, že ti po všech těch letech co to spolu táhneme budu tykat. Je tomu šest let
                     co jsme
@@ -53,12 +58,12 @@
             </div>
         </div>
 
-        <div class="article__section">
+        <div class="article_section">
             <div class="article_img">
                 <a href="product.html"><img src="images/product.png" alt="product"></a>
             </div>
-            <div class="article__text">
-                <div class="article__title">
+            <div class="article_text">
+                <div class="article_title">
                     <a href="product.html">Jakých produktů od Applu se dočkáme do konce letoška či na
                         začátku roku příštího? </a>
                 </div>
@@ -105,14 +110,13 @@
 
             <div class="social">
                 <div class="son_twitter">
-                    <a href="https://twitter.com/lsaeu" target="twitter_blank"><img src="images/Twitter.png" alt="twitter"></a></div>
+                    <a href="https://twitter.com/lsaeu" target="_blank"><img src="images/Twitter.png" alt="twitter"></a></div>
                 <div class="son_facebook">
-                    <a href="https://www.facebook.com/letemsvetemapplem/" target="facebook_blank"><img src="images/Facebook.png"
+                    <a href="https://www.facebook.com/letemsvetemapplem/" target="_blank"><img src="images/Facebook.png"
                             alt="facebook"></a></div>
                 <div>
                     <div class="son_instagram">
-                        <a href="https://www.instagram.com/lsaeu/" target="instagram_blank"><img src="images/Instagram.png"
-                                alt="instagram"></a></div>
+                        <a href="https://www.instagram.com/lsaeu/" target="_blank"><img src="images/Instagram.png" alt="instagram"></a></div>
                 </div>
             </div>
         </div>
