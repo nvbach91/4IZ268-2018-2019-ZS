@@ -123,37 +123,44 @@ nav li:hover a {
 /* ABOUT */
 
 .member1 {
-    content: url("../images/jan.jpg");
+    background-image: url('../images/jan.jpg');
+    background-size: cover;
+    /*content: url("../images/jan.jpg");*/
     height: 290px;
     width: 290px;
 }
 
 .member2 {
-    content: url("../images/vaclav.jpg");
+    background-image: url("../images/vaclav.jpg");
+    background-size: cover;
     height: 290px;
     width: 290px;
 }
 
 .member3 {
-    content: url("../images/dimo.jpg");
+    background-image: url("../images/dimo.jpg");
+    background-size: cover;
     height: 290px;
     width: 290px;
 }
 
 .member4 {
-    content: url("../images/kaja.jpg");
+    background-image: url("../images/kaja.jpg");
+    background-size: cover;
     height: 290px;
     width: 290px;
 }
 
 .member5 {
-    content: url("../images/eva.jpg");
+    background-image: url("../images/eva.jpg");
+    background-size: cover;
     height: 290px;
     width: 290px;
 }
 
 .member6 {
-    content: url("../images/petra.jpg");
+    background-image: url("../images/petra.jpg");
+    background-size: cover;
     height: 290px;
     width: 290px;
 }
