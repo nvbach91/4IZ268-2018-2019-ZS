@@ -8,15 +8,16 @@ body,ul {
     padding: 0;
 }
 body {
-    padding: 20px;
+    padding: 10px;
     letter-spacing: 1px;
-    background-color:rgba(128, 67, 90, 0.822);
+    background-color:rgba(184, 98, 131, 0.822);
     font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 ul h2 {
     text-align:center;
     border: 1px solid black;
 }
+
 p {
     line-height: 24px;
 }
@@ -69,7 +70,11 @@ nav a {
     color: white;
     background-color: black;
 }
-
+h2 {
+    background-color: rgb(19, 141, 70);
+    border:1px solid black;
+    text-align:center; 
+}
 /*STRÁNKA MAIN*/
 .intro {
     color: white;
@@ -110,9 +115,6 @@ main > * {
 }
 .slideshow h2 {
     margin: 0 auto;
-    text-align: center;
-    background-color: rgb(19, 141, 70);
-    border: 2px solid black;
 }
 .products {
     padding: 10px 0;
@@ -126,11 +128,11 @@ main > * {
     position:relative;
 }
 .product:nth-child(1) {background-color:rgb(27, 173, 88);height:230px;margin-bottom: 60px; margin-right:5px;}
-.product:nth-child(2) { background-color:rgb(114, 121, 117);height:230px;margin-bottom: 60px;margin-right:5px;}
+.product:nth-child(2) { background-color:rgb(160, 165, 162);height:230px;margin-bottom: 60px;margin-right:5px;}
 .product:nth-child(3) { background-color:rgb(27, 173, 88); height:230px;margin-bottom: 60px;}
-.product:nth-child(4) { background-color:rgb(114, 121, 117); height:230px;margin-bottom: 60px;margin-right:5px;}
+.product:nth-child(4) {  background-color:rgb(160, 165, 162); height:230px;margin-bottom: 60px;margin-right:5px;}
 .product:nth-child(5) { background-color:rgb(27, 173, 88); height:230px;margin-bottom: 60px;margin-right:5px; }
-.product:nth-child(6) { background-color:rgb(114, 121, 117); height:230px;margin-bottom: 60px; }
+.product:nth-child(6) {  background-color:rgb(160, 165, 162); height:230px;margin-bottom: 60px; }
 
  .button {
     padding: 10px 0;
@@ -158,10 +160,9 @@ main > * {
 
 .about {
     width: 100%;
-    height: 200px;
     background-size: cover;
     background-position: center;
-    padding: 90px 0;
+    padding:5px;
 }
 .about h1 {
     text-align: center;
@@ -170,17 +171,13 @@ main > * {
 }
 /*STRÁNKA PRODUKTY*/
 .products {
-    padding: 50px 0;
+    padding: 0;
     text-align:center;
 }
 .products h1 {
     text-align: center;
     background-color: rgb(29, 212, 105);
     border: 2px solid black;
-}
-.product_price h2 {
-    background-color: rgb(19, 141, 70);
-    border:2px solid black;
 }
 .product_price table {
     border-collapse: collapse;
@@ -204,11 +201,6 @@ main > * {
     background-color: rgb(29, 212, 105);
     border: 2px solid black;
 }
-.charity h2 {
-    text-align:center;
-    border: 1px solid black;
-    background-color: rgb(19, 141, 70);
-}
 .charity article {
     background-color:grey;
     padding: 10px 10px 10px 10px;
@@ -217,9 +209,8 @@ main > * {
 /*STRÁNKA KONTAKTY*/
 .Contact h1 {
     text-align:center;
-    background-color: rgb(19, 141, 70);
+    background-color: rgb(29, 212, 105);
     border: 2px solid black;
-
 }
 .Contact a:link {
     color:white;
@@ -228,14 +219,12 @@ main > * {
     color:white;
 }
 
-.allstores h2 {
-    text-align:center;
-    background-color: rgb(19, 141, 70);
-    border: 2px solid black;
-}
 .store{
     float: left;
     width: 50%;
+}
+.store h4 {
+    text-decoration:underline;
 }
 
 /*ZÁPATÍ*/
@@ -369,4 +358,233 @@ footer {
 }
 }
 /*RESPONZIVITA*/
+@media screen and (max-width: 1000px) {
+    .product {
+        width:32%;
+    }
+.product:nth-child(1) {height:270px;margin-bottom: 30px;margin-right:10px;}
+.product:nth-child(2) {height:270px;margin-bottom: 30px;margin-right:10px;}
+.product:nth-child(3) {height:270px;margin-bottom: 30px;margin-right:10px;}
+.product:nth-child(4) {margin-bottom: 30px;}
+.product:nth-child(6) {margin-bottom: 30px; }
+}
+@media screen and (max-width: 784px) {
+    .intro {
+        line-height: 1.6em;
+        max-width: 800px;
+        min-height: 40px;
+        padding: 0;
+        background-size:800px auto;
+    }
+    .intro h1 {
+        font-size: 19px;
+    }
+    .intro h3 {
+        font-size:15px;
+    }
+    .product {
+        width: 31%;
+    }
+    .product:nth-child(1) {height:300px;}
+    .product:nth-child(2) {height:300px;}
+    .product:nth-child(3) {height:300px;}
+    .product:nth-child(4) {height:250px;}
+    .product:nth-child(5) {height:250px;}
+    .product:nth-child(6) {height:250px;}
 
+    .slideshow {
+        padding: 50px 0;
+    }
+}
+@media screen and (max-width: 652px) {
+    nav li {
+        margin-right: 10px;
+    }
+    .product:nth-child(1) {height:350px;}
+    .product:nth-child(2) {height:350px;}
+    .product:nth-child(3) {height:350px;}
+    .product:nth-child(4) {height:280px;}
+    .product:nth-child(5) {height:280px;}
+    .product:nth-child(6) {height:280px;}
+}
+@media screen and (max-width: 628px) {
+    .product {
+        width: 48%;
+    }
+    .product:nth-child(1) {height:270px;}
+    .product:nth-child(2) {height:270px;}
+    .product:nth-child(3) {height:270px;}
+    .product:nth-child(4) {height:260px;}
+    .product:nth-child(5) {height:260px;}
+    .product:nth-child(6) {height:260px;}
+    nav li {
+        margin-right: 5px;
+    }
+}
+@media screen and (max-width: 579px) {
+    .logo {
+        width: 80px;
+    }
+    .slideshow {
+        height: 100px;
+        padding: 20px;
+    }
+    .slideshow h2 {
+        margin: 0 auto;
+        font-size:25px;
+    }
+    .intro {
+        line-height: 1.5em;
+        background-size:680px auto;
+    }
+    #current_page {
+        padding: 0 5px;
+    }
+    nav li {
+        margin-right: 2px;
+    }
+    .product {
+        width: 47%;
+    }
+    .products {
+        padding:0;
+    }
+    .product:nth-child(1) {height:270px;}
+    .product:nth-child(2) {height:270px;}
+    .product:nth-child(3) {height:260px;}
+    .product:nth-child(4) {height:260px;}
+    .product:nth-child(5) {height:240px;}
+    .product:nth-child(6) {height:240px;}
+}
+@media screen and (max-width: 532px) {
+    header {
+    height:110px;
+    }
+    .logo {
+    margin-right:5px;
+    width: 90px;
+    background-image: url('../images/logo2.png');
+    background-position: 0 center;
+    }
+    nav li {
+    margin-right:20px;
+    }
+    .intro h1 {
+        font-size:18px;
+    }
+    .intro h3 {
+        font-size:10 px;
+    }
+    .product:nth-child(1) {height:290px;}
+    .product:nth-child(2) {height:290px;}
+    .product:nth-child(3) {height:260px;}
+    .product:nth-child(4) {height:260px;}
+    .product:nth-child(5) {height:230px;}
+    .product:nth-child(6) {height:230px;}
+
+    p {
+        line-height: 20px;
+    }
+    .slideshow h2 {
+        font-size:17px;
+    }
+
+    .button {
+        width: 70%;
+        left: 15%; 
+    }
+    .about h1 {
+        margin:auto;
+    }
+    h1 {
+        font-size:25px;
+    }
+    .charity article {
+        margin: 20px 0;
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 492px) {
+    .intro {
+        background-size:400px 470px;
+    }
+    .product_price table, td, th {
+        padding: 5px;
+        font-size: 13px;
+    }
+    .products h2 {
+        font-size:18px;
+    }
+    .product {
+        width:100%;
+        }
+    .product:nth-child(1) {height:220px;}
+    .product:nth-child(2) {height:220px;}
+    .product:nth-child(3) {height:220px;}
+    .product:nth-child(4) {height:190px;}
+    .product:nth-child(5) {height:190px;}
+    .product:nth-child(6) {height:190px;}
+    
+    .intro {
+        box-sizing:content-box;
+        max-width: 800px;
+        max-height: 300px;
+    }
+    .intro h1, .intro h3 {
+        width: 60%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    .intro h1 {
+        font-size:17px;
+        line-height: 30px;
+    }
+    .intro h3 {
+        font-size:12px;
+    }
+}
+@media screen and (max-width: 458px) {
+    
+    .intro h1 {
+    font-size:14px;
+    }
+    .intro h3 {
+    font-size:9px;
+    }
+    .slideshow h2 {
+    font-size:20px;
+    }
+    .intro h1, .intro h3 {
+    width: 80%;
+    padding: 5px;
+    }
+    p {
+        line-height: 16px;
+    }
+    .product:nth-child(1) {height:200px;margin-bottom: 15px;}
+    .product:nth-child(2) {height:200px;margin-bottom: 15px;}
+    .product:nth-child(3) {height:200px;margin-bottom: 15px;}
+    .product:nth-child(4) {height:190px;margin-bottom: 15px;}
+    .product:nth-child(5) {height:170px;margin-bottom: 15px;}
+    .product:nth-child(6) {height:170px;margin-bottom: 15px;}
+
+    .credits {
+        padding:20px 0;
+    }
+    .social {
+        padding:15px;
+    }
+}
+@media screen and (max-width: 376px) {
+    .about,.years p,.charity article p {
+    font-size: 13px;
+    }
+}
+@media screen and (max-width: 356px) {
+    nav li {
+        margin-right:5px;
+    }
+    .store {
+        width:100%;
+    }
+}
