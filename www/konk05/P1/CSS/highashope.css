@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #FEFAEE;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #817452;
+    font-family: "Montserrat";
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+.main {  
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.title {
+    width: 100%;
+    margin: 25px 0 0 0;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    margin: 10px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover {
+    width: 50%;
+    background-image: url(../image/highashope.jpg);
+    min-height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 25px;
+}
+
+.songs-left, .songs-right {
+    width: 25%;
+    color: #817452;
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-weight: 250;
+}
+
+.songs-left {
+    text-align: right;
+}
+
+.songs-right {
+    text-align: left;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 25px 50px;
+}
+
+.buttons a {
+    background-color: #817452;
+    border: none;
+    padding: 10px 40px;
+    margin: 0 10px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Montserrat";
+    font-weight: 350;
+    color: #FEFAEE;
+    font-size: 16px;
+}
+
+.buttons a:hover {
+    opacity: 0.6;
+    transition-duration: 0.6s;
+}
+
+@media screen and (max-width: 1024px) {
+    .songs-left, .songs-right {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .songs-left, .songs-right {
+        font-size: 17px;
+    }
+    .cover {
+        min-height: 400px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .songs-left, .songs-right {
+        font-size: 16px;
+    }
+    .cover {
+        min-height: 350px;
+    }
+    .buttons {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    h1 {
+        font-size: 40px;
+    }
+    .songs-left, .songs-right {
+        text-align: center;
+        width: 80%;
+    } 
+    .container {
+        flex-direction: column;
+    }
+    .cover {
+        width: 80%;
+        min-height: 400px;
+        margin: 5px;
+    }
+    .buttons {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    h1 {
+        font-size: 25px;
+    }
+    .buttons a {
+        padding: 5px 20px;
+        font-size: 14px;
+    }
+    .container {
+        margin: 10px 20px;
+    }
+    .cover {
+        width: 90%;
+        min-height: 250px;
+    }
+    .songs-left, .songs-right {
+        font-size: 14px;
+    }
+}
