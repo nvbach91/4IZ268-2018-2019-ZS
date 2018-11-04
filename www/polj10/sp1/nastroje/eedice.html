@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Úvod - Výzkumná infrastruktura pro diachronní bohemistiku</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/icons/favicon-16x16.png">
+    <link rel="manifest" href="../img/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../img/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="../js/scripts.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header id="header">
+            <button id="mobile-nav-button">
+                <svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+                    <g>
+                        <path id="top-menu-bar" d="M256,56c0,-4.415 -3.585,-8 -8,-8l-240,0c-4.415,0 -8,3.585 -8,8l0,16c0,4.415 3.585,8 8,8l240,0c4.415,0 8,-3.585 8,-8l0,-16Z"
+                            style="fill:#fff;" />
+                        <path id="bottom-menu-bar" d="M256,184c0,-4.415 -3.585,-8 -8,-8l-240,0c-4.415,0 -8,3.585 -8,8l0,16c0,4.415 3.585,8 8,8l240,0c4.415,0 8,-3.585 8,-8l0,-16Z"
+                            style="fill:#fff;" />
+                        <path id="mid-menu-bar1" d="M256,120c0,-4.415 -3.585,-8 -8,-8l-240,0c-4.415,0 -8,3.585 -8,8l0,16c0,4.415 3.585,8 8,8l240,0c4.415,0 8,-3.585 8,-8l0,-16Z"
+                            style="fill:#fff;" />
+                        <path id="mid-menu-bar2" d="M256,120c0,-4.415 -3.585,-8 -8,-8l-240,0c-4.415,0 -8,3.585 -8,8l0,16c0,4.415 3.585,8 8,8l240,0c4.415,0 8,-3.585 8,-8l0,-16Z"
+                            style="fill:#fff;" />
+                    </g>
+                </svg>
+            </button>
+            <a href="../index.html" class="logo-link">
+                <img class="logo" src="../img/Ridics_Full_Pack.svg" alt="RIDICS">
+            </a>
+            <div id="navigation">
+                <div class="navigation-ridics-logo">
+                    <img src="../img/Ridics_Full_Pack_Dark.svg" alt="RIDICS logo">
+                </div>
+                <nav id="main-nav" aria-label="Hlavní navigace">
+                    <ul>
+                        <li>
+                            <a href="..//index.html">Úvod</a>
+                        </li>
+                        <li><a href="..//nastroje.html">Nástroje</a></li>
+                        <!-- <li><a href="..//citace.html">Jak citovat</a></li> -->
+                        <li><a href="..//kontakt.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+        <main>
+            <div class="poster">
+                <ul class="breadcrumbs">
+                    <li><a href="../nastroje.html">Nástroje</a></li>
+                    <li>&gt; <a href="#" onclick="location.reload();">eEdice (Nápověda)</a></li>
+                </ul>
+                <div class="clear"></div>
+                <h1>eEdice</h1>
+            </div>
+
+            <h2>
+                O nástroji
+            </h2>
+            <p>
+                Nástroj eEdice je software, který slouží k označování relevantních částí textů psaných historickou
+                češtinou a k vytváření sémantické anotace pro potřeby automatického zpracování dalšími nástroji,
+                zejména při převodu do formátu XML podle standardu TEI P5 a do formátu vertikály pro korpusový manažer.
+            </p>
+            <p>
+                Tento nástroj se skládá z doplňku textového editoru Microsoft Office Word 2010 a šablony (eEdice.dotx).
+                Doplněk a šablona jsou distribuovány jako instalační balíček (eEdice.msi). Aktuální verze instalačního
+                balíčku je k dispozici ke stažení na webu. Instalační balíček ke svému spuštění nevyžaduje
+                administrátorská práva, což zjednodušuje distribuci na pracovištích s centralizovanou správou IT.
+            </p>
+            <h2>Instalace</h2>
+            <p>
+                Po spuštění instalačního balíčku se otevře průvodce instalací. Pokud uživatel stáhl instalační balíček
+                z internetu, pak se ještě před instalací pravděpodobně objeví upozornění <i>SmartScreen</i> systému
+                Windows.
+            </p>
+            <figure class="floating-img">
+                <img src="/nastroje/img/smart-screen1.png" alt="Obrázek č.1 - Upozornění filtru SmartScreen">
+                <figcaption>
+                    Obrázek č.1 - Upozornění filtru SmartScreen
+                </figcaption>
+            </figure>
+            <figure class="floating-img">
+                <img src="/nastroje/img/smart-screen1.png" alt="Obrázek č.2 - Upozornění filtru SmartScreen (další informace)">
+                <figcaption>
+                    Obrázek č.2 - Upozornění filtru SmartScreen (další informace)
+                </figcaption>
+            </figure>
+            <div class="clear"></div>
+            <p>
+                Na obrázku Obrázek č. 1 je upozornění o nerozpoznané aplikaci. Po stisknutí tlačítka <i>Další informace</i>
+                se objeví tlačítko <i>Přesto spustit</i> (Obrázek č. 2), které spustí průvodce instalací.
+            </p>
+            <p>
+                V prvním kroku je nutné souhlasit s licenčním ujednáním zaškrtnutím políčka <i>S podmínkami licenční
+                    smlouvy souhlasím</i> a dále pokračovat stisknutím tlačítka <i>Nainstalovat</i>.
+            </p>
+            <figure>
+                <img class="half-img" src="/nastroje/img/instalace-licence.png" alt="Obrázek č. 3 - Instalace eEdice (Potvrzení licenčního ujednání)">
+                <figcaption>
+                    Obrázek č. 3 - Instalace eEdice (Potvrzení licenčního ujednání)
+                </figcaption>
+            </figure>
+            <p>
+                Pokud je během instalace spuštěna aplikace Word, je nutné všechna tato okna zavřít a stisknout tlačítko
+                <i>Opakovat</i>.
+            </p>
+            <figure>
+                <img class="half-img" src="img/upozorneni-instalace.png" alt="Obrázek č. 4 - Upozornění o spuštěné aplikaci Word">
+                <figcaption>
+                    Obrázek č. 4 - Upozornění o spuštěné aplikaci Word
+                </figcaption>
+            </figure>
+            <p>
+                Nástroj eEdice se nainstaluje a informuje uživatele, že instalace byla úspěšně dokončena. Uživatel
+                stisknutím tlačítka Dokončit dokončí instalačního průvodce.
+            </p>
+            <figure>
+                <img class="half-img" src="img/instalace-dokonceni.png" alt="Obrázek č. 5 - Instalace eEdice (dokončení instalace)">
+                <figcaption>
+                    Obrázek č. 5 - Instalace eEdice (dokončení instalace)
+                </figcaption>
+            </figure>
+            <p>
+                Pokud je v počítači již nainstalovaná aktuální, nebo novější verze eEdice, objeví se nabídka s
+                možnostmi <i>Opravit</i> a <i>Odebrat</i> nástroj eEdice.
+            </p>
+
+            <figure>
+                <img class="half-img" src="img/instalace-opravai.png" alt="Obrázek č. 6 - Instalace eEdice (Změna, oprava nebo odebrání instalace)">
+                <figcaption>
+                    Obrázek č. 6 - Instalace eEdice (Změna, oprava nebo odebrání instalace)
+                </figcaption>
+            </figure>
+            <p>
+                Po prvním spuštění aplikace Word se objeví dialogové okno, které informuje o registraci nástroje eEdice
+                v aplikaci Word. Okno se po registraci samo uzavře.
+            </p>
+
+            <figure>
+                <img class="half-img" src="img/eedice-registrace.png" alt="Obrázek č. 7 - Registrace eEdice po prvním spuštění Word">
+                <figcaption>
+                    Obrázek č. 7 - Registrace eEdice po prvním spuštění Word
+                </figcaption>
+            </figure>
+            <h2>Práce s dokumenty staré eEdice a šablony Manuscriptorium</h2>
+            <p>
+                Dokumenty vytvořené pomocí starší verze nástroje eEdice (nižší než 2.0.0.0) mají vazbu na nainstalované
+                soubory nástroje. Tato vazba je vlivem architektury aplikace Word absolutní a proto se dříve objevovaly
+                chybové hlášky při otevření dokumentu na jiném PC. Pro otevření na jiném PC pak bylo nutné otevřít
+                soubor pomocí tlačítka Otevřít s šablonou.
+            </p>
+            <p>
+                V nové verzi nástroje je tento nedostatek odstraněn, avšak již existující dokumenty tuto vazbu stále
+                obsahují. Při otevření takového dokumentu se stále objeví chybové hlášky (níže).
+            </p>
+
+            <figure>
+                <img class="half-img" src="img/manu-chyba1.png" alt="Obrázek č. 8 - První chybové hlášení po otevření dokumentu vytvořeného ve staré verzi eEdice">
+                <figcaption>
+                    Obrázek č. 8 - První chybové hlášení po otevření dokumentu vytvořeného ve staré verzi eEdice
+                </figcaption>
+            </figure>
+            <p>
+                Po zavření první chybové hlášky se objeví ještě druhá chybová hláška s upozorněním na neplatnou cestu
+                souboru nástroje eEdice.
+            </p>
+            <figure>
+                <img class="half-img" src="img/manu-chyba2.png" alt="Obrázek č. 9 - Druhé chybové hlášení po otevření dokumentu vytvořeného ve staré verzi eEdice">
+                <figcaption>
+                    Obrázek č. 9 - Druhé chybové hlášení po otevření dokumentu vytvořeného ve staré verzi eEdice
+                </figcaption>
+            </figure>
+            <p>
+                Po zavření druhé chybové hlášky se objeví dialogové okno, které umožní konvertovat dokument pro novou
+                verzi eEdice a tím odstranit vazbu na nainstalované soubory nástroje eEdice.
+            </p>
+            <p>
+                Konverzí dokumentu se však zamezí otevření dokumentu ve starší verzi nástroje eEdice. Tento fakt může
+                být nežádoucí zejména pro dokumenty, které jsou již součástí edičního modulu Vokabuláře webového a
+                uživatel chce pouze aktualizovat text, či opravit chybu v textu. Pro ostatní dokumenty se doporučuje
+                konverzi provést.
+            </p>
+
+
+            <figure>
+                <img class="half-img" src="img/konverze1.png" alt="Obrázek č. 10 - Konverze dokumentu pro novou verzi eEdice">
+                <figcaption>
+                    Obrázek č. 10 - Konverze dokumentu pro novou verzi eEdice
+                </figcaption>
+            </figure>
+            <p>
+                Pokud uživatel zvolí možnost Konvertovat dokument, objeví se dialogové okno s informací o úspěšné
+                konverzi.
+            </p>
+            <figure>
+                <img class="half-img" src="img/konverze2.png" alt="Obrázek č. 11 - Informační dialog o úspěšné konverzi dokumentu">
+                <figcaption>
+                    Obrázek č. 11 - Informační dialog o úspěšné konverzi dokumentu
+                </figcaption>
+            </figure>
+            <p>
+                Dokumenty vytvořené pomocí šablony Manuskriptorium.dot nejsou kompatibilní s nástrojem eEdice. Pro jeho
+                použití je nutné vytvořit nový dokument nástroje eEdice, vyplnit úvodní tabulku a zkopírovat text z
+                původního dokumentu.
+            </p>
+            <h2>Uživatelské rozhraní</h2>
+            <p>
+                Uživatelské rozhraní doplňku eEdice je tvořeno kartou Elektronická edice v pásu karet aplikace
+                Microsoft Office Word. Tato karta je rozdělena na sedm skupin nástrojů:
+            </p>
+            <ol>
+                <li>Značkování</li>
+                <li>Vkládání</li>
+                <li>Sémantické komentáře</li>
+                <li>Paginace</li>
+                <li>Bible</li>
+                <li>Verš</li>
+                <li>Nástroje</li>
+            </ol>
+            <figure>
+                <img class="half-img" src="img/eedice.png" alt="Obrázek č. 12 - Karta Elektronická edice">
+                <figcaption>
+                    Obrázek č. 12 - Karta Elektronická edice
+                </figcaption>
+            </figure>
+
+            <h2>Značkování</h2>
+            <p>
+                První skupina nástrojů s názvem Značkování obsahuje rozbalovací seznamy odstavcových a znakových stylů,
+                které slouží k označování relevantních částí textů. Text tlačítek seznamů zároveň indikuje právě
+                aktivní styly. Po přejetí kurzoru nad styl v seznamu se objeví nápověda k danému stylu a případně
+                (pokud je nastavena) klávesová zkratka.
+            </p>
+            <p>
+                Skupina také obsahuje devět vybraných odstavcových stylů a devět vybraných znakových stylů
+                reprezentované tlačítky s velkými tučnými písmeny pro rychlé použití. Informace o stylu pro rychlé
+                použití lze získat, pokud uživatel přejede kurzorem nad dané tlačítko.
+            </p>
+            <p>
+                Značkování rovněž obsahuje nástroje pro výběr souvislého textu se stejným znakovým stylem a volbu
+                režimu zobrazení stylů v dokumentu.
+            </p>
+            <figure>
+                <img class="half-img" src="img/znackovani.png" alt="Obrázek č. 13 - Skupina nástrojů Značkování">
+                <figcaption>
+                    Obrázek č. 13 - Skupina nástrojů Značkování
+                </figcaption>
+            </figure>
+
+            <h3>Odstavcové styly</h3>
+            <p>
+                Odstavcové styly nastavují parametry platné pro celý odstavec, jako je např. použité písmo, jeho
+                velikost, odsazení prvního řádku, mezera kolem okolních odstavců atp.
+            </p>
+
+            <h3>Znakové styly</h3>
+            <p>
+                Znakové styly se používají pro formátování dílčích úseků v rámci odstavce; obvykle se pomocí znakového
+                stylu nastavují parametry aplikovaného písma (styl, velikost, horní či dolní index ap.).
+            </p>
+            <p>
+                V rámci jednoho odstavcového stylu lze použít více různých znakových stylů. Při potřebě kombinovat
+                znakové styly je nutné použít jen předem definovanou kombinaci složenou do jednoho stylu (např. cizí
+                jazyk + horní index).
+            </p>
+            <h3>Zobrazení stylů</h3>
+            <p>
+                Znakové styly v dokumentu lze zobrazit třemi způsoby. Plné zobrazení vykreslí všechny styly v plných
+                barvách. Volba Potlačit všechny styly omezí barevné odlišení stylů na stupně šedi. Volba Skrýt všechny
+                styly skryje veškeré texty, které mají povahu metainformací k pramennému text. Seznam těchto stylů je
+                uveden v příloze C tohoto dokumentu.
+            </p>
+
+            <h3>Přímé formátování</h3>
+            <p>
+                Jiné formátování, než pomocí odstavcových a znakových stylů je zakázáno. Např. odrážení odstavců
+                tabulátorem či mezerníkem, tzv. přímé formátování nastavením jednotlivých vlastností písma (kurzívy,
+                tučného či podtrženého písma, různé velikosti a typu písma, včetně indexů), případně odstavců (např.
+                centrování textu).
+            </p>
+            <p>
+                Formátování, které nevyužívá styly dostupné v šabloně, se nezachová, nebo může způsobit komplikace při
+                exportu hotových edic do jednotlivých výstupů.
+            </p>
+            <h2>Vkládání</h2>
+            <p>
+                Druhá skupina karty s názvem Vkládání obsahuje nástroje pro snadné vkládání entit do dokumentu. Tyto
+                nástroje jsou rozdělené do třech kategorií:
+            </p>
+            <ul>
+                <li>Poznámky</li>
+                <li>Pomůcky</li>
+                <li>Speciální znaky</li>
+            </ul>
+            <h3>Poznámky</h3>
+            <p>
+                Kategorie Poznámky umožňuje do dokumentu vkládat předpřipravené texty označené znakovým stylem
+                poznámka.
+            </p>
+            <h3>Pomůcky</h3>
+            <p>
+                V rozbalovacím seznamu Pomůcky nalezne uživatel volbu vložit text pramene. Tato volba zkopíruje vybraný
+                text a označí ho znakovým stylem pramen.
+            </p>
+            <p>
+                Seznam dále obsahuje volbu vložit delimitátor hesel, která vloží svislici | označenou znakovým stylem,
+                který se rovněž jmenuje delimitátor hesel. Ten slouží pro oddělení heslových odstavců slovníkových
+                textů.
+            </p>
+            <h3>
+                Speciální znaky
+            </h3>
+            <p>
+                Rozbalovací seznam Speciální znaky obsahuje vybrané speciální znaky, které se nevyskytují na běžné
+                české (QWERTZ) klávesnici. Tyto znaky jsou rozděleny do kategorií (viz. Obrázek č. 14). Součástí
+                seznamu jsou také náhledy znaků pro lepší orientaci editora.
+            </p>
+            <p>
+                Ve speciálních případech jako jsou například české uvozovky („“) se pso jejich vložení zároveň přesune
+                kurzor mezi tyto uvozovky. Pokud si editor nastaví klávesovou zkratku pro tyto uvozovky, pak pro jejich
+                vložení stiskne pouze dvě klávesy. Dříve musel uživatel pro vložení českých uvozovek stisknout celkem
+                deset kláves (Alt+0132 a Alt+0147).
+            </p>
+
+            <figure>
+                <img class="half-img" src="img/vkladani.png" alt="Obrázek č. 14 - Skupina nástrojů Vkládání s rozbaleným seznamem speciálních znaků">
+                <figcaption>
+                    Obrázek č. 14 - Skupina nástrojů Vkládání s rozbaleným seznamem speciálních znaků
+                </figcaption>
+            </figure>
+
+            <p>
+                S použitím tohoto nástroje také nebude hrozit záměna některých homoglyfů ze znakové sady Unicode ,
+                které by mohly být problémové v dalším zpracování textu.
+            </p>
+
+            <h2>Sémantické komentáře</h2>
+            <p>
+                Třetí skupina karty se nazývá Sémantické komentáře a obsahuje nástroje pro vkládání a správu
+                sémantických komentářů. Sémantické komentáře využívají standartní komentáře programu Microsoft Office
+                Word 2010.
+            </p>
+            <figure>
+                <img class="half-img" src="img/semanticke.png" alt="Obrázek č. 15 - Skupina nástrojů Sémantické komentáře">
+                <figcaption>
+                    Obrázek č. 15 - Skupina nástrojů Sémantické komentáře
+                </figcaption>
+            </figure>
+            <p>
+                V současné době je v nástroji připraveno šest typů sémantických komentářů:
+            </p>
+            <ul>
+                <li>Ad autor</li>
+                <li>Ad styl</li>
+                <li>Ad grafika</li>
+                <li>Ad dílo</li>
+                <li>Excerpce</li>
+                <li>Volný komentář</li>
+            </ul>
+            <h3>Vkládání sémantických komentářů</h3>
+            <p>
+                Pro vložení sémantického komentáře je nejprve nutné označit komentovaný text v dokumentu a následně
+                vybrat typ komentáře v rozbalovacím seznamu Nový komentář. Komentovaný text se zkopíruje do „bubliny“
+                komentáře jako neodstranitelný text následovaný prostorem pro samotný text komentáře.
+            </p>
+            <figure>
+                <img class="half-img" src="img/bublina.png" alt="Obrázek č. 16 - „Bublina“ sémantického komentáře">
+                <figcaption>
+                    Obrázek č. 16 - „Bublina“ sémantického komentáře
+                </figcaption>
+            </figure>
+            <h3>Odstranění sémantických komentářů</h3>
+            <p>
+                Komentáře lze v textu sekvenčně procházet pomocí tlačítek Další a Předchozí. Sémantické komentáře lze
+                odstranit pouze odstraněním komentovaného textu z dokumentu, nebo kliknutím do „bubliny“ komentáře a
+                stisknutí tlačítka Odstranit.
+            </p>
+            <h3>Skrytí sémantických komentářů</h3>
+            <p>
+                Pokud uživatel aktuálně nepracuje se sémantickými komentáři, lze v zdrojovém textu všechny komentáře
+                skrýt pomocí tlačítka Skrýt v textu. Pokud však bude chtít uživatel selektivně skrýt jen některé typy
+                komentářů, může tak učinit pomocí tlačítka Nastavení komentářů, které vyvolá dialogové okno se seznamem
+                typů všech použitých komentářů v dokumentu.
+            </p>
+            <p>Tlačítko Skrýt komentáře/Zobrazit komentáře skryje/zobrazí podokno se seznamem všech komentářů v
+                dokumentu.</p>
+            <h3>Aktualizace komentovaného textu</h3>
+            <p>
+                Protože je součástí „bubliny“ sémantického komentáře i komentovaný text, který je zamknutý pro editaci,
+                a který se může v průběhu tvorby elektronické edice měnit, obsahuje nástroj tlačítko Aktualizovat
+                komentáře, které pro všechny sémantické komentáře v dokumentu aktualizuje komentovaný text.
+            </p>
+            <h3>Přehled sémantických komentářů</h3>
+            <p>Stisknutím tlačítka Vygenerovat přehled vyvolá uživatel dialogové okno pro generování samostatného
+                dokumentu s přehledem sémantických komentářů. V dialogovém okně uživatel zadá cílový adresář a název
+                vygenerovaného dokumentu. Dále zvolí, zda chce otevřít dokument po vytvoření a stiskne tlačítko
+                Generovat přehled.
+            </p>
+            <figure>
+                <img class="half-img" src="img/prehled.png" alt="Obrázek č. 17 - Dialogové okno generování přehledu komentářů">
+                <figcaption>
+                    Obrázek č. 17 - Dialogové okno generování přehledu komentářů
+                </figcaption>
+            </figure>
+            <p>Vytvořený dokument obsahuje v hlavičce název zdrojového dokumentu, autora a datum vytvoření. </p>
+            <p>
+                Sémantické komentáře jsou v přehledu seskupeny podle jejich typu. Zároveň každý komentář obsahuje v
+                závorce informaci o foliaci komentovaného textu v původním prameni (pokud je tato informace dostupná).
+            </p>
+            <figure>
+                <img class="half-img" src="img/prehled-result.png" alt="Obrázek č. 18 - Dokument s přehledem komentářů">
+                <figcaption>
+                    Obrázek č. 18 - Dokument s přehledem komentářů
+                </figcaption>
+            </figure>
+            <h3>Zobrazení sémantických komentářů</h3>
+            <p>
+                Pokud uživatel pracuje s dokumentem s velkým počtem sémantických komentářů různých typů, lze pro
+                snadnější procházení tyto typy selektivně skrývat pomocí Nastavení komentářů. V seznamu jsou uvedeny
+                pouze typy použité v daném dokumentu. Pomocí zaškrtávacích polí lze zobrazovat/skrývat komentáře v
+                textu.
+            </p>
+            <figure>
+                <img class="half-img" src="img/viditelnost-komentaru.png" alt="Obrázek č. 19 - Nastavení viditelnosti komentářů v dokumentu">
+                <figcaption>
+                    Obrázek č. 19 - Nastavení viditelnosti komentářů v dokumentu
+                </figcaption>
+            </figure>
+            <h3>Vlastní typy sémantických komentářů</h3>
+            <p>
+                Uživatel má možnost definovat vlastní typy sémantických komentářů, které jsou specifické pro daný
+                dokument. Dialog pro správu vlastních typů lze vyvolat pomocí tlačítka Vlastní komentáře ve skupině
+                nástrojů Sémantické komentáře.
+            </p>
+            <figure>
+                <img class="half-img" src="img/vlastni-typy.png" alt="Obrázek č. 20 - Dialog pro správu vlastních typů sémantických komentářů">
+                <figcaption>
+                    Obrázek č. 20 - Dialog pro správu vlastních typů sémantických komentářů
+                </figcaption>
+            </figure>
+
+            <p>
+                Nový typ komentáře uživatel definuje stisknutím tlačítka Nový a vyplněním údajů ve formuláři. Textová
+                pole označená červenou hvězdou jsou povinná.
+            </p>
+
+            <figure>
+                <img class="half-img" src="img/novy-typ.png" alt="Obrázek č. 21 - Definice vlastního typu sémantického komentáře">
+                <figcaption>
+                    Obrázek č. 21 - Definice vlastního typu sémantického komentáře
+                </figcaption>
+            </figure>
+
+            <p>
+                Podle názvu typu komentáře pak bude uživatel vybírat v seznamu sémantických komentářů. Zkratka je
+                zkrácená verze názvu, která bude uvedena v „bublině“ komentáře. Zkratka se generuje automaticky z
+                názvu, nebo ji mlže uživatel vyplnit dle libosti.
+            </p>
+
+            <p>
+                Popis se stane součástí seznamu typů komentářů (Nový komentář) a může obsahovat vysvětlení k čemu se
+                typ komentáře vztahuje.
+            </p>
+
+            <figure>
+                <img class="half-img" src="img/seznam-typu.png" alt="Obrázek č. 22 - Vlastní typ sémantického komentáře v seznamu">
+                <figcaption>
+                    Obrázek č. 22 - Vlastní typ sémantického komentáře v seznamu
+                </figcaption>
+            </figure>
+
+            <p>
+                Existující vlastní typy sémantických komentářů lze upravit, nebo odstranit. Pokud uživatel chce
+                upravit, nebo odstranit typ komentáře, který je již v dokumentu použitý, pak se objeví dialogové okno,
+                které ho o této skutečnosti informuje a nabídne možnost úpravy, nebo odstranění těchto existujících
+                komentářů.
+            </p>
+            <p>
+                Omezení: Maximální počet vlastních typů sémantických komentářů je 10.
+            </p>
+
+
+            <figure class="floating-img">
+                <img src="/nastroje/img/uprava-typu.png" alt="Obrázek č. 23 - Dialog pro úpravu typu komentáře, který je již použitý v dokumentu">
+                <figcaption>
+                    Obrázek č. 23 - Dialog pro úpravu typu komentáře, který je již použitý v dokumentu
+                </figcaption>
+            </figure>
+            <figure class="floating-img">
+                <img src="/nastroje/img/odstraneni-typu.png" alt="Obrázek č. 24 - Dialog pro odstranění typu komentáře, který je již použitý v dokumentu">
+                <figcaption>
+                    Obrázek č. 24 - Dialog pro odstranění typu komentáře, který je již použitý v dokumentu
+                </figcaption>
+            </figure>
+            <div class="clear"></div>
+
+            <h2>Paginace</h2>
+            <p>
+                Čtvrtá skupina s názvem Paginace obsahuje nástroj pro usnadnění vkládání stránkování do dokumentu.
+            </p>
+
+            <figure>
+                <img class="half-img" src="img/paginace.png" alt="Obrázek č. 25 - Skupina Paginace">
+                <figcaption>
+                    Obrázek č. 25 - Skupina Paginace
+                </figcaption>
+            </figure>
+            <p>
+                Nástroj podporuje vkládání foliace (1r, 1v), paginace (1, 2), kvartu (A1r-A4v), osmerky (A1r-A8v),
+                dvanácterky (A1r-A12v) a šestnácterky (A1r-A16v).
+            </p>
+            <p>
+                Po stisknutí tlačítka Vložit, je v místě kurzoru vloženo aktuální označení znakovým stylem foliace a
+                nástroj inkrementuje hodnotu pro další použití. Způsob značení stran lze zvolit v rozbalovacím seznamu
+                umístěným uprostřed, nebo zapsáním hodnoty do textového pole v horní části, kde se nástroj pokusí
+                odhadnout způsob značení stran. Značení lze také manuálně inkrementovat, či dekrementovat pomocí
+                tlačítek se znaky plus a mínus.
+            </p>
+            <h2>Bible</h2>
+            <p>
+                Pátá část s názvem Bible obsahuje nástroj pro vkládání označení biblických veršů. Podobně jako v
+                případě vkládání paginace se po stisknutí tlačítka Vložit vloží aktuální označení biblického verše. Po
+                vložení označení biblického verše se aktuální označení automaticky inkrementuje na následující verš.
+                Pomocí rozbalovacích seznamů lze měnit aktuální označení. Označení biblického verše se skládá ze
+                zkratky biblické knihy, čísla biblické kapitoly a čísla biblického verše. Např. Gn<sup>1,4</sup>
+            </p>
+
+            <figure>
+                <img class="half-img" src="img/bible.png" alt="Obrázek č. 26 - Skupina Bible">
+                <figcaption>
+                    Obrázek č. 26 - Skupina Bible
+                </figcaption>
+            </figure>
+
+            <h2>Verš</h2>
+            <p>
+                Šestá část s názvem Verš obsahuje nástroj pro vkládání čísel veršů poetického textu. Podobně jako v
+                případě vkládání paginace se po stisknutí tlačítka Vložit vloží aktuální číslo verše na pozici kurzoru
+                v textu označené znakovým stylem verš. Po vložení čísla verše se aktuální číslo automaticky
+                inkrementuje.
+            </p>
+            <p>
+                Do textového pole lze vložit vlastní numerickou hodnotu, případně lze aktuální hodnotu sekvenčně
+                inkrementovat, nebo dekrementovat pomocí tlačítek se znaky plus a mínus.
+            </p>
+            <p>
+                Pokud uživatel zadá do textového pole neplatnou hodnotu (např. znak anglické abecedy), je upozorněn, že
+                zadaná hodnota je neplatná.
+            </p>
+
+            <figure>
+                <img class="half-img" src="img/vers.png" alt="Obrázek č. 27 - Skupina Verš">
+                <figcaption>
+                    Obrázek č. 27 - Skupina Verš
+                </figcaption>
+            </figure>
+
+            <h2>Nástroje</h2>
+            <p>
+                V poslední skupině s názvem Nástroje nalezne informace o verzi doplňku eEdice a jeho autorech, dále
+                možnost kontroly a stažení aktuální verze doplňku a také nastavení doplňku.
+            </p>
+            <figure>
+                <img class="half-img" src="img/nastroje.png" alt="Obrázek č. 28 - Skupina Nástroje">
+                <figcaption>
+                    Obrázek č. 28 - Skupina Nástroje
+                </figcaption>
+            </figure>
+            <h3>Zkontrolovat aktualizace</h3>
+            <p>
+                Ve skupině Nástroje karty Elektronická edice se po stisknutí rozbalovacího seznamu Nápověda objeví
+                tlačítko s označením Zkontrolovat aktualizace. Pokud je uživatel připojen k síti internet, pak po
+                stisknutí tohoto tlačítka proběhne automatická kontrola existence novější verze nástroje. Pokud má
+                uživatel nainstalovanou aktuální verzi nástroje, je o této skutečnosti informován v nově otevřeném
+                dialogovém okně.
+            </p>
+            <figure class="floating-img">
+                <img src="/nastroje/img/aktualizace1.png" alt="Obrázek č. 29 - Kontrola aktualizací (aktuální)">
+                <figcaption>
+                    Obrázek č. 29 - Kontrola aktualizací (aktuální)
+                </figcaption>
+            </figure>
+            <figure class="floating-img">
+                <img src="/nastroje/img/aktualizace2.png" alt="Obrázek č. 30 - Kontrola aktualizací (nová verze)">
+                <figcaption>
+                    Obrázek č. 30 - Kontrola aktualizací (nová verze)
+                </figcaption>
+            </figure>
+            <div class="clear"></div>
+            <p>
+                Pokud existuje novější verze nástroje, pak je uživateli nabídnuta možnost stažení instalačního balíčku.
+            </p>
+            <h3>Nastavení</h3>
+            <p>
+                V současnosti lze měnit nastavení zobrazení nabídky odstavcových a znakových stylů a nastavení
+                klávesových zkratek.
+            </p>
+            <p>
+                Nastavení zobrazení obsahuje seznam všech dostupných stylů se zaškrtávacími políčky. Pokud chce
+                uživatel některé styly skrýt, pak odškrtne vybrané styly a potvrdí volbu tlačítkem uložit.
+            </p>
+
+            <figure>
+                <img class="half-img" src="img/viditelnost-stylu.png" alt="Obrázek č. 31 - Nastavení viditelnosti stylů ve skupině Značkování">
+                <figcaption>
+                        Obrázek č. 31 - Nastavení viditelnosti stylů ve skupině Značkování
+                </figcaption>
+            </figure>
+            <p>
+                Nastavení klávesových zkratek obsahuje seznam vybraných funkcí nástroje eEdice, kterým lze přiřadit
+                klávesovou zkratku. Po zvolení funkce se objeví možnost nastavení klávesové zkratky a stručný popis
+                funkce.
+            </p>
+            <figure>
+                <img class="half-img" src="img/klavasove-zkratky.png" alt="Obrázek č. 32 - Nastavení klávesových zkratek">
+                <figcaption>
+                        Obrázek č. 32 - Nastavení klávesových zkratek
+                </figcaption>
+            </figure>
+
+            <p>
+                Pro nastavení nové, nebo úpravu existující klávesové zkratky vybere uživatel v seznamu funkci a stiskne
+                kurzorem myši v šedém poli. Následně stiskne kombinaci kláves na klávesnici. Pokud je daná kombinace
+                podporována, pak se objeví v šedém poli. Zároveň se aktivuje tlačítko Přiřadit, které zkontroluje, zda
+                pod danou kombinací kláves není již nastavena jiná funkce a přiřadí klávesovou zkratku. Uživatel
+                následně uloží nové nastavení tlačítkem Uložit.
+            </p>
+            <p>
+                Seznam povolených kombinací kláves je uveden v Příloha B – Povolené kombinace klávesových zkratek
+            </p>
+
+            <figure>
+                <img class="half-img" src="img/prirazeni-klav-zkratky.png" alt="Obrázek č. 33 - Přiřazení nové klávesové zkratky">
+                <figcaption>
+                        Obrázek č. 33 - Přiřazení nové klávesové zkratky
+                </figcaption>
+            </figure>
+
+
+            <h2>Reference</h2>
+            <p>
+                    Černá, Alena M. – Lehečka, Boris. Metodika přípravy a zpracování elektronických edic starších českých
+                    textů. Oddělení vývoje jazyka Ústavu pro jazyk český AV ČR, v. v. i., Praha, 2015, 136 s.
+            </p>
+            <p>
+                    Vokabulář webový [online]. Praha: Výzkumná infrastruktura pro diachronní bohemistiku, 2018 [cit.
+                    2018-03-10]. Dostupné z: https://vokabular.ujc.cas.cz
+            </p>
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </main>
+        <button class="box-effect" id="scroll-up">Nahoru</button>
+        <footer>
+            <div class="credits">Copyright &copy; 2018 oddělení vývoje jazyka, Ústav pro jazyk český AV ČR, v. v. i.</div>
+            <div>Web je podpořen projektem Ministerstva školství, mládeže a tělovýchovy č. LM2015081 „Výzkumná
+                infrastruktura pro diachronní bohemistiku“ (akronym RIDICS) v rámci Projektu velkých infrastruktur pro
+                VaVaI.</div>
+        </footer>
+    </div>
+    <script>
+        var navButton = document.getElementById("mobile-nav-button");
+        navButton.addEventListener("click", openMobileNav);
+
+        var scrollUp = document.getElementById("scroll-up");
+        scrollUp.addEventListener("click", function (element) {
+            window.scrollTo(0, 0);
+        });
+
+        var nav = document.getElementById("navigation");
+        nav.classList.add("mobile-navigation");
+    </script>
+</body>
+
+</html>

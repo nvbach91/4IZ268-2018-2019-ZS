@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Úvod - Výzkumná infrastruktura pro diachronní bohemistiku</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
+    <link rel="manifest" href="img/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="js/scripts.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header id="header">
+            <button id="mobile-nav-button">
+                <svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+                    <g>
+                        <path id="top-menu-bar" d="M256,56c0,-4.415 -3.585,-8 -8,-8l-240,0c-4.415,0 -8,3.585 -8,8l0,16c0,4.415 3.585,8 8,8l240,0c4.415,0 8,-3.585 8,-8l0,-16Z"
+                            style="fill:#fff;" />
+                        <path id="bottom-menu-bar" d="M256,184c0,-4.415 -3.585,-8 -8,-8l-240,0c-4.415,0 -8,3.585 -8,8l0,16c0,4.415 3.585,8 8,8l240,0c4.415,0 8,-3.585 8,-8l0,-16Z"
+                            style="fill:#fff;" />
+                        <path id="mid-menu-bar1" d="M256,120c0,-4.415 -3.585,-8 -8,-8l-240,0c-4.415,0 -8,3.585 -8,8l0,16c0,4.415 3.585,8 8,8l240,0c4.415,0 8,-3.585 8,-8l0,-16Z"
+                            style="fill:#fff;" />
+                        <path id="mid-menu-bar2" d="M256,120c0,-4.415 -3.585,-8 -8,-8l-240,0c-4.415,0 -8,3.585 -8,8l0,16c0,4.415 3.585,8 8,8l240,0c4.415,0 8,-3.585 8,-8l0,-16Z"
+                            style="fill:#fff;" />
+                    </g>
+                </svg>
+            </button>
+            <a href="/index.html" class="logo-link">
+                <img class="logo" src="img/Ridics_Full_Pack.svg" alt="RIDICS">
+            </a>
+            <div id="navigation">
+                <div class="navigation-ridics-logo">
+                    <img src="img/Ridics_Full_Pack_Dark.svg" alt="RIDICS logo">
+                </div>
+                <nav id="main-nav" aria-label="Hlavní navigace">
+                    <ul>
+                        <li>
+                            <a href="/index.html">Úvod</a>
+                        </li>
+                        <li><a href="/nastroje.html" class="active">Nástroje</a></li>
+                        <!-- <li><a href="/citace.html">Jak citovat</a></li> -->
+                        <li><a href="/kontakt.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+        <main>
+            <div class="poster">
+                <h1>Nástroje</h1>
+                <p>
+                    Na těchto stránkách najdete nástroje určené pro badatele. Obvykle jsou k dispozici zdarma, a to
+                    včetně zdrojových kódů.
+                </p>
+                <nav>
+                    <ul class="content-list">
+                        <li><a href="#eedice">eEdice</a></li>
+                        <li><a href="#transcriptorium">Transcriptorium</a></li>
+                        <li><a href="#kolacni-pravitko">Kolační pravítko</a></li>
+                        <li><a href="#specialni-znaky">Speciální znaky</a></li>
+                        <li><a href="#analyza-tokenu">Analýza tokenů</a></li>
+                    </ul>
+                </nav>
+
+                <p>
+                    Vznik nástrojů byl podpořen projekty Ministerstva kultury ČR č. DF12P01OVV028 „Informační
+                    technologie
+                    ve službách jazykového kulturního bohatství (IT JAKUB)“ a Ministerstva školství, mládeže a
+                    tělovýchovy
+                    č. LM2015081 „Výzkumná infrastruktura pro diachronní bohemistiku“ (akronym RIDICS) v rámci Projektu
+                    velkých infrastruktur pro VaVaI.
+                </p>
+            </div>
+
+            <h2 id="eedice">eEdice</h2>
+
+            <div class="tool-links">
+                    <a class="tool-link" href="/nastroje/eedice.html">Nápověda</a>
+                    <a class="tool-link" href="http://vokabular.ujc.cas.cz/soubory/nastroje/eEdice/eEdice.msi">Stáhnout</a>
+            </div>
+            <div class="clear"></div>
+            <p>
+                    Nástroj eEdice je software, který slouží k označování relevantních částí textů psaných historickou češtinou a k vytváření sémantické anotace pro potřeby automatického zpracování dalšími nástroji, zejména při převodu do formátu XML podle standardu TEI P5 a do formátu vertikály pro korpusový manažer.
+               </p> 
+               <img class="wide-img" src="/nastroje/img/eedice.png" alt="Uživatelské rozhraní eEdice">
+               <p>
+                   Tento nástroj se skládá z doplňku textového editoru Microsoft Office Word 2010 a šablony (eEdice.dotx). Doplněk a šablona jsou distribuovány jako instalační balíček (eEdice.msi). Aktuální verze instalačního balíčku je k dispozici ke stažení na webu . Instalační balíček ke svému spuštění nevyžaduje administrátorská práva, což zjednodušuje distribuci na pracovištích s centralizovanou správou IT.                    
+               </p>
+            <h2 id="transcriptorium">Transcriptorium</h2>
+
+            <div class="tool-links">
+                    <a class="tool-link" href="/nastroje/transcriptorium.html">Nápověda</a>
+                    <a class="tool-link" href="http://vokabular.ujc.cas.cz/soubory/nastroje/Transcriptorium/Transcriptorium.zip">Stáhnout</a>
+            </div>
+            <div class="clear"></div>
+            <p>
+                Nástroj pro poloautomatickou transkripci, Transcriptorium, slouží k asistovanému převodu výrazů z
+                transliterované podoby do transkribované.
+            </p>
+            <h2 id="kolacni-pravitko">Kolační pravítko</h2>
+
+            <div class="tool-links">
+                    <a class="tool-link" href="/nastroje/kolacni-pravitko.html">Nápověda</a>
+                    <a class="tool-link" href="http://vokabular.ujc.cas.cz/soubory/nastroje/Ruler/Ruler.zip">Stáhnout</a>
+            </div>
+            <div class="clear"></div>
+            <p>
+                Kolační pravítko umožňuje graficky ohraničit výsek textu na monitoru. Tento nástroj slouží pro snadné
+                čtení/sledování textů, zejména digitálních obrázků rukopisných, ale i tištěných pramenů. Program
+                umožňuje definovat a uložit několik pravítek (pro různé předlohy), nastavit jejich barvu a průhlednost
+                a také způsob zobrazení (jako klasické pravítko nebo ve formě výřezu s nastavitelnou výškou). Velikost
+                vnitřního výřezu lze upravovat podle potřeby. Pravítko lze umístit jak vertikálně, tak horizontálně,
+                např. pro čtení orientálních textů. Pravítko rovněž obsahuje metrickou stupnici, a to jak na vnějším
+                okraji, tak ve výřezu, takže může sloužit k získání orientačních údajů o rozměrech zobrazeného
+                artefaktu (pramene, písma, grafiky ap.). Pro každou instanci pravítka lze nastavit výchozí pozici,
+                takže se je možné pomocí kláves rychle přesunout na začátek následující stránky. Pravítko lze rovněž
+                uzamknout, takže s ním lze posunovat pouze jedním směrem (vertikálně), čímž se zabrání nechtěnému
+                přesunutí pravítka myší mimo sledovaný rámec.
+            </p>
+            <h2 id="specialni-znaky">Speciální znaky</h2>
+
+            <div class="tool-links">
+                    <a class="tool-link" href="http://vokabular.ujc.cas.cz/soubory/nastroje/SpecialCharacters/SpecialCharacters.zip">Stáhnout</a>
+            </div>
+            <div class="clear"></div>
+            <p>
+                Tento nástroj slouží ke snazšímu výběru nestandardních znaků ze znakové sady Unicode, a to seskupením
+                souvisejících znaků (např. pro řečtinu, azbuku ap.) na jednu plochu. Repertoár znaků a rozčlenění do
+                skupin lze definovat v souboru XML.
+            </p>
+            <p>
+                Dále tento editor umožňuje „složení“ neobvyklého znaku kombinací základního znaku s diakritickými
+                znaménky z oblasti 0300–036F. Repertoár diakritických znamének je opět konfigurovatelný pomocí souboru
+                XML. Pořadí jednotlivých diakritik lze po sestavení znaku měnit jejich přesouváním v pravé části
+                dialogového okna.
+            </p>
+            <h2 id="analyza-tokenu">Analýza tokenů</h2>
+
+            <div class="tool-links">
+                    <a class="tool-link" href="http://vokabular.ujc.cas.cz/soubory/nastroje/TokensAnalyzer/TokensAnalyzer.zip">Stáhnout</a>
+            </div>
+            <div class="clear"></div>
+            <p>
+                Nástroj využívá tabulkový kalkulátor Microsoft Excel a jeho doplňky PowerPivot a Power Query. Na vstupu
+                jsou jednak metadata o textových pramenech, zejména období jejich vzniku, a dále informace o
+                jednotlivých tokenech a jejich výskytu v konkrétních pramenech. Tato vstupní data, která mají formát
+                CSV souborů, využívá doplněk PowerPivot, který umožňuje zpracovat v relativně krátkém čase velké
+                množství dat (analyzovaný materiál měl přibližně 9 milionů tokenů). Doplněk Power Query se využívá ke
+                generování tvarů slov na základě zadaných koncovek a kmenů. S tímto nástrojem lze analyzovat velké
+                objemy dat, navíc není nutno mít přístup k internetu a korpusovému manažeru, které obvyklé slouží k
+                podobné analýze. Doplněk je také unikátní tím, že zpracovává údaje o více tvarech, popř. koncovkách
+                určitého vzoru najednou. Další předností je možnost vytvářet kontingenční tabulky a přehledy ad hoc
+                podle potřeb a zaměření uživatele. Navržená architektura umožňuje měnit zdrojová data (z
+                aktualizovaného nebo ze zcela odlišného korpusu textů), takže je tento nástroj obecně použitelný pro
+                analýzu zastoupení tokenů v libovolných korpusech.
+            </p>
+        </main>
+        <button class="box-effect" id="scroll-up">Nahoru</button>
+        <footer>
+            <div class="credits">Copyright &copy; 2018 oddělení vývoje jazyka, Ústav pro jazyk český AV ČR, v. v. i.</div>
+            <div>Web je podpořen projektem Ministerstva školství, mládeže a tělovýchovy č. LM2015081 „Výzkumná
+                infrastruktura pro diachronní bohemistiku“ (akronym RIDICS) v rámci Projektu velkých infrastruktur pro
+                VaVaI.</div>
+        </footer>
+    </div>
+    <script>
+        var navButton = document.getElementById("mobile-nav-button");
+        navButton.addEventListener("click", openMobileNav);
+
+        var scrollUp = document.getElementById("scroll-up");
+        scrollUp.addEventListener("click", function (element) {
+            window.scrollTo(0, 0);
+        });
+
+        var nav = document.getElementById("navigation");
+        nav.classList.add("mobile-navigation");
+    </script>
+</body>
+
+</html>
