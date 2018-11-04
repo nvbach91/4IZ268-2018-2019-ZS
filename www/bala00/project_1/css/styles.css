@@ -35,9 +35,11 @@ nav li {
     padding: 0 14px;
     line-height: 40px;
 }
+
 nav li a.active {
     font-weight: 600;
 }
+
 nav a:link,
 a:link {
     color: #C1403D;
@@ -291,9 +293,11 @@ footer {
     vertical-align: middle;
     width: 100%;
 }
+
 .content-contact h1 {
     padding-bottom: 0;
 }
+
 .form {
     position: absolute;
     left: 50%;
@@ -312,10 +316,12 @@ footer {
     font-weight: 700;
     letter-spacing: 2px;
 }
+
 .form input:focus {
     outline: none;
     font-weight: 700;
 }
+
 #msg {
     margin-top: 50px;
     margin-bottom: 30px;
@@ -334,14 +340,36 @@ footer {
     margin-bottom: 20px;
     background: none;
 }
+
 .content-contact button:focus {
-    outline: none;  
+    outline: none;
+}
+
+#about-p {
+    width: 90vw;
+    margin: 0;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+/* about.html */
+.about {
+    color: white;
+    font-weight: 100;
 }
 
 /* Media Queries */
 @media only screen and (max-width: 480px) {
     body .content-contact {
         margin-bottom: 80%;
+    }
+
+    body #about-p {
+        width: 90vw;
+        margin-top: 80px;
+        line-height: 30px;
+        margin-bottom: -40px;
     }
 }
 
@@ -365,6 +393,13 @@ footer {
         width: 49%;
         height: 35vh;
         line-height: 35vh;
+    }
+
+    body #about-p {
+        width: 90vw;
+        margin-top: 60px;
+        line-height: 30px;
+        margin-bottom: -20px;
     }
 }
 
@@ -392,6 +427,13 @@ footer {
         width: 49%;
         height: 40vh;
         line-height: 40vh;
+    }
+
+    body #about-p {
+        width: 70vw;
+        margin-top: 70px;
+        line-height: 30px;
+        margin-bottom: -20px;
     }
 
     body footer {
@@ -426,6 +468,13 @@ footer {
         line-height: 45vh;
     }
 
+    body #about-p {
+        width: 80vw;
+        margin-top: 50px;
+        margin-bottom: 0;
+        line-height: 30px;
+    }
+
     body footer {
         font-size: 80%;
         margin: 50px;
@@ -455,7 +504,9 @@ footer {
     body .form {
         width: 55%;
     }
-    body ::-webkit-input-placeholder, .form input {
+
+    body ::-webkit-input-placeholder,
+    .form input {
         font-size: 14px;
     }
 
@@ -464,6 +515,13 @@ footer {
         height: 50vh;
         line-height: 50vh;
         margin: 2px;
+    }
+
+    body #about-p {
+        width: 60vw;
+        margin-top: 50px;
+        line-height: 30px;
+        margin-bottom: -10px;
     }
 
     body footer {
@@ -480,7 +538,8 @@ footer {
         font-size: 500%;
     }
 
-    body .intro .btn, .content-contact .btn {
+    body .intro .btn,
+    .content-contact .btn {
         font-size: 100%;
         font-weight: 400;
     }
@@ -496,14 +555,25 @@ footer {
     body .form {
         width: 50%;
     }
-    body ::-webkit-input-placeholder, .form input {
+
+    body ::-webkit-input-placeholder,
+    .form input {
         font-size: 15px;
     }
+
     body .flex-container>div {
         width: 49%;
         height: 50vh;
         line-height: 50vh;
         margin: 2px;
+    }
+
+    body #about-p {
+        width: 60vw;
+        margin-top: 20px;
+        line-height: 30px;
+        margin-bottom: -5px;
+        font-size: 110%;
     }
 
     body footer {
