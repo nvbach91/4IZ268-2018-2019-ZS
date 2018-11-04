@@ -1,12 +1,12 @@
 body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     background-color: rgb(255, 255, 255);
     width: 100%;
     height: 100%;
     padding: 0;
 }
 
-ul {
+ul li {
     list-style: none;
 }
 
@@ -35,7 +35,7 @@ nav {
     margin-left: auto;
     text-transform: uppercase;
     border-bottom: 7px solid rgb(153, 153, 153);
-    width: 1800px;
+    width: 100%;
     border-radius: 5px;
 }
 
@@ -123,7 +123,7 @@ nav li a:hover {
 
 .article h3 {
     margin: 0 auto;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .article p {
@@ -338,6 +338,10 @@ footer p {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.article_00 {
+    list-style: none;
 }
 
 .article_01 {
