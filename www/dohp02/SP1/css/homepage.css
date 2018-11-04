@@ -238,19 +238,31 @@
   font-size: 18px;
   }
   .article-contentAlt{
-    text-align: justify;
-    background-color: lightgreen;
-    width: 80%;
-    border: 2px;
-    border-style: solid;
-    box-sizing: border-box;
-    border-color: black;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 10px;
-    font-size: 18px;
-    }
+  text-align: justify;
+  background-color: lightgreen;
+  width: 80%;
+  border: 2px;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: black;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 18px;
+  }
+  .article-contentFoto{
+  text-align: justify;
+  width: 80%;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 18px;
+  align-items: center;
+  margin: 0 center;
+  }
   .h1-nadpisy{
   font-size: 30px;
   text-align: center;
@@ -262,7 +274,7 @@
   border-color: black;
   font-family: 'Courier New', Courier, monospace;
   }
-.h1-nadpisyAlt{
+  .h1-nadpisyAlt{
   font-size: 30px;
   text-align: center;
   background-image: linear-gradient(-360deg, red, lightblue);
@@ -294,4 +306,13 @@
   margin-bottom: 30px;
   max-width: 175px;
   height: auto;
+  }
+  .gallery{
+  width: auto;
+  height: 200px;
+  }
+  .work{
+  width: auto;
+  height: 350px;
+  margin-left: 150px;
   }
