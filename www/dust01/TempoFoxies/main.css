@@ -27,6 +27,9 @@ li a:hover{
     color: white;
     transition: 0.5s;
 }
+.active{
+color:#F1C40F;
+}
 #li-end{
     border: 0;
 }
@@ -77,59 +80,71 @@ h2{
 
 }
 
-#uvod-sekce {
+#intro-section {
     display: flex;
     flex-direction: row;
     margin-top: 20px;
     margin-bottom: 40px;
 }
-#uvod-sekce img {
+#intro-section img {
     width:500px;
 }
 
-#uvod-sekce div:first-child {
-    flex: 1;
+#intro-section div:first-child {
+    flex: 2;
     
 }
-#uvod-sekce p{
+#intro-section p{
     text-align: justify;
 }
 
-#uvod-sekce div:last-child {
+#intro-section div:last-child {
     padding-left: 30px;
-    flex: 2;
+    flex: 1;
 }
 
-#uvod-obrazek img {
+/*#uvod-obrazek img {
     width: 100%;
     height: 300px;
+}*/
+#intro-section h2{
+    color: black;
+    text-shadow: 2px 2px #F1C40F;
 }
 
 header>p {
     text-align: center;
     font-size: 2em;
 }
+/*NOVINKY*/
+#news h3{
+    color:  #1A421C;
+    text-shadow: 1px 2px #F1C40F;
 
-#novinky img {
+
+}
+
+#news img {
     width: 350px;
     height: 233.3px;
     border: 1px solid black;
 }
 
-.novinky-obsah div {
+.news-content div {
     width: 350px;
     text-align: justify;
 }
 
-.novinky-obsah {
+.news-content {
     margin-right: 30px;
     
 }
 
-#novinky {
+#news {
     display: flex;
     justify-content: space-around;
 }
+/**/
 nav img{
     width: 125px;
     float: left;
@@ -139,12 +154,13 @@ header > p{
     margin-bottom: 15px;
 }
 
-#uvod-obrazek {
+/*#uvod-obrazek {
     background-image: url("img/1.jpg");
 
-}
+}*/
 
-.uvod-img {
+/*Uvodni Obrazek*/
+.intro-img {
     background-image: url("img/1.jpg");
     background-color: #cccccc;
     height: 300px;
@@ -155,7 +171,7 @@ header > p{
 
 }
 
-.uvod-text {
+.intro-text {
     text-align: center;
     position: absolute;
     top: 50%;
@@ -166,12 +182,8 @@ header > p{
     text-shadow: 3px 2px black;
     font: status-bar;
 }
-#novinky h3{
-    color:  #1A421C;
-    text-shadow: 1px 2px #F1C40F;
+/**/
 
-
-}
 /*KONEC INDEX*/
 
 /*SOUTEZ*/
@@ -228,6 +240,10 @@ td {
 #tableThreeFour{
     align-items: flex-start;
     margin-left: 35px;
+}
+.tempo-row{
+    background-color: #244c35;
+    color: #F1C40F;
 }
 
 
@@ -336,6 +352,7 @@ img#history-img {
     float: right;
     border: 1px solid black;
 }
+
 /* SOUPISKA */
 div.teams-soupiska {
             display: flex;
@@ -352,3 +369,213 @@ div.teams-soupiska {
         div.teams-soupiska img {
             margin-top: 19px;
         }
+/*KONEC TYMY*/
+@media screen and (max-width:1900px) {
+     /*kontakty*/
+    table#contact-table,
+    th,
+    td {
+        margin-left: 450px;
+    }
+}
+
+@media screen and (max-width:1360px) {
+ /*kontakty*/
+    table#contact-table,
+    th,
+    td {
+        margin-left: 350px;
+    }
+}
+
+@media screen and (max-width:1280px) {
+    .news-contentdiv {
+        width: 300px;
+    }
+
+    #news img {
+        width: 300px;
+        height: 200px;
+        border: 1px solid black;
+
+    }
+
+    #intro-section img {
+        margin-top: 100px;
+    }
+    /*kontakty*/
+    table#contact-table,
+    th,
+    td {
+        margin-left: 250px;
+    }
+/*tymy*/
+    .img-teams{
+        height:300px;
+    }
+
+}
+
+@media screen and (max-width:1024px) {
+    .news-content div {
+        width: 250px;
+    }
+
+    #news img {
+        width: 250px;
+        height: 133.3px;
+        border: 1px solid black;
+    }
+
+    #intro-section {
+        flex-direction:column;
+    }
+
+    #intro-section img {
+        width: 500px;
+    }
+    /*kontakty*/
+    table#contact-table,
+    th,
+    td {
+        margin-left: 150px;
+    }
+    #contacts{
+        flex-direction: column;
+    }
+    #contact-section div{
+        padding: auto;
+    }
+    #contacts div{
+        width:auto;
+    }
+/*tymy*/
+.TeamsInfo{
+    width:250px;
+}
+
+ .img-teams{
+     height:250px;
+     width:350px
+ }
+}
+
+@media screen and (max-width:800px) {
+   #news{
+    flex-direction: column;
+    margin-left: 100px;
+   }
+    .news-content div {
+        width: 350px;
+        text-align: justify;
+       
+    }
+
+    #news img {
+        width: 350px;
+        height: 300px;
+        border: 1px solid black;
+    }
+
+    #intro-section {
+       flex-direction: column;
+    }
+
+    #intro-section img {
+        width: 500px;
+
+    }
+
+    #intro-section div:last-child {
+        padding-left: 50px;
+        
+    }
+/*Soutěže*/
+    #competition-tables {
+        display: block;
+    }
+
+    #tableOneTwo {
+       
+        padding: 0 55px;
+    }
+
+    #tableThreeFour {
+        margin-right:35px;
+        
+        align-items: center;
+    }
+/*kontakty*/
+    table#contact-table,
+            th,
+            td {
+                margin-left: auto;
+            }
+            #contacts{
+                flex-direction: column;
+            }
+            #contact-section div{
+                padding: auto;
+            }
+            #contacts div{
+                width:auto;
+            }
+/*tymy*/
+.img-teams{
+    height:200px;
+    width:250px
+}
+
+#Info{
+flex-direction: column;
+ }
+ div.teams-soupiska div:first-child{
+    width: 300px;
+ }
+   
+}
+@media screen and (max-width:600px){
+    #intro-section div:last-child {
+        padding-left: 20px;
+        
+    }
+    .img-teams{
+        display:none;
+     }
+    /*tymy*/
+
+#tableThreeFour {
+    margin-right:225px;  
+}
+}
+
+@media screen and (max-width:400px) {
+    #news {
+        flex-direction: column;
+        margin-left: 25px;
+
+    }
+    #news img {
+        width: 300px;
+        height: 233.3px;
+    }
+    .news-content div {
+        width: 350px;
+        text-align: justify;
+    }
+    #intro-section div:last-child {
+        padding-left: 0px;
+        
+    }
+    #intro-section img {
+        width: 300px;
+
+    }
+ /*tymy*/
+    .img-teams{
+        display:none;
+     }
+
+
+   
+}
