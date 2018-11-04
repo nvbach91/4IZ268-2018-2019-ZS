@@ -4,6 +4,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(191, 255, 189);
 }
 
 body a {
@@ -78,15 +79,12 @@ h2 {
 
 .float-box {
     float: left;
-    width: 33.3333333333%;
-    height: 300px;
-    border: 10px solid white;
+    width: 25%;
+    height: auto;
+    border: 10px solid rgb(191, 255, 189);
     background-color: rgb(67, 158, 37);
     border-radius: 25px;
-}
-
-h3, .float-box p {
-    margin: 15px;
+    padding: 10px;
 }
 
 h3 {
@@ -94,11 +92,13 @@ h3 {
     color: white;
     padding: 8px;
     border-radius: 25px;
+    margin: 15px;
+    text-align: center;
 }
 
 .float-box p {
     font-size: 16px;
-    padding: 8px;
+    margin: 10px 25px;
 }
 
 /*............Zapasy...............*/
@@ -132,10 +132,88 @@ h3 {
     object-fit: cover;
 }
 
+footer {
+    text-align: center;
+    color: white;
+    background-color: rgba(0,0,0,0.671);
+    position: absolute;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+footer p {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.facebook {
+    background-image: url(../pics/fb.png);
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    background-size: contain;
+}
 
 
-/*.float-box:nth-child(1) {background-color: red;}
-.float-box:nth-child(2) {background-color: blue;}
-.float-box:nth-child(3) {background-color: green}
-.float-box:nth-child(4) {background-color: gold}
-.float-box:nth-child(5) {background-color: firebrick}
+@media screen and (max-width: 1024px) {
+    .float-box {
+        width: 33.33333333%;
+    }
+
+    .gallery {
+        width: 33.33333333%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logo h1 {
+        font-size: 40px;
+    }
+    
+    .float-box {
+        width: 50%;
+    }
+
+    .gallery {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .logo h1 {
+        font-size: 30px;
+    }
+    
+    nav {
+        display: grid;
+        height: auto;
+    }
+
+    nav a {
+        border-bottom: 1px solid black;
+    }
+    
+    .float-box {
+        width: 100%;
+    }
+
+    .gallery {
+        width: 100%;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+}
+
+
+@media print {
+    body {
+        color: black;
+        font-size: 12px;
+    }
+}
