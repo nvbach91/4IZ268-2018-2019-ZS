@@ -130,20 +130,22 @@ h2 {
 }
 
 .social {
-    width: 30%;
+    width: 90%;
     margin: 0 auto;
     margin-top: 30px;
-    margin-bottom: 40px;
     text-align: center;
 }
 
 .social-item {
-    padding: 5px;
+    float: left;
+    width: 25%;
+    margin-top: 10px;
+    height: 280px;
 }
 
 .social .s-img {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
 }
 
 .s-img:hover {
@@ -163,9 +165,11 @@ h2 {
 }
 
 .mail-sentence {
+    padding-top: 30px;
     text-align: center;
     font-size: 20px;
     font-style: italic;
+    clear: both;
 }
 
 p {
@@ -177,8 +181,8 @@ p::first-letter {
 }
 
 .avatar {
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     margin: 10px;
 }
@@ -219,24 +223,19 @@ footer>p {
         height: 50%;
         width: 50%;
     }
-    .social .s-img {
-        width: 30%;
-        height: 30%;
-    }
-
     .text {
         padding-left: 80px;
         padding-right: 80px;
+    }
+    .social-item {
+        width: 33%;
+        height: 33%;
     }
 }
 
 @media screen and (max-width: 840px) {
     .navbar li {
         padding-left: 40px;
-    }
-    .social .s-img {
-        width: 70%;
-        height: 70%;
     }
     .column-1 {
         clear: both;
@@ -271,11 +270,12 @@ footer>p {
         margin-right: auto;
     }
     .social .s-img {
-        width: 33.33%;
-        height: 33.33%;
+        width: 70%;
+        height: 70%;
     }
     .social-item {
-        width: 100%
+        width: 33%;
+        height: 33%;
     }
     .column-2 {
         width: 100%;
@@ -336,6 +336,14 @@ footer>p {
     li a {
         text-align: center;
     }
+    .social .s-img {
+        width: 30%;
+        height: 30%;
+    }
+    .social-item {
+        clear: both;
+        width: 100%;
+    }
 }
 
 @media print {
@@ -358,11 +366,9 @@ footer>p {
     .column-1 {
         width: 100%;
     }
-
     footer {
         display: none;
     }
-
     .navbar {
         display: none;
     }
