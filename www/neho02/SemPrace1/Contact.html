@@ -8,17 +8,19 @@
     <meta name="description" content="Website for VSE 'My page'"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css"> 
+    <link rel="stylesheet" media="print" href="css/Print.css">
   </head>
   
   <body class="Site">
+    <div class="noprint"> 
       <header class="topnav">
           <a href="Home.html">Home</a>
           <a href="CV.html">CV</a>
           <a href="Timetable.html">Timetable</a>
           <a href="Photos.html">Photos</a>
           <a class="active" href="Contact.html">Contacts</a>
-        </header>
-
+      </header>
+    </div>
     <div class="box">
     <h1>My Contacts</h1>
     <div class="CVmain">
@@ -30,14 +32,16 @@
         <strong>E-mail: </strong> iplesha7@gmail.com 
       </p>
     </div>
+    <div class="noprint">
     <div class="Empty-box"></div>
   </div>
-    <footer>
+    <footer class="noprint">
       <div class="social">
         <a href="https://vk.com/l.negoy" title="vk" class="social-vk"></a>
         <a href="https://www.facebook.com/profile.php?id=100010387173038&ref=bookmarks" title="fc" class="social-facebook"></a>
         <a href="https://www.linkedin.com/in/alexey-nehoi-835823164/" title="in" class="social-linkedin"></a>
       </div>
+    </div>
     </footer>
   </body>
 </html>

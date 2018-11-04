@@ -8,9 +8,11 @@
     <meta name="description" content="Website for VSE 'My page'"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href=css/styles.css>
+    <link rel="stylesheet" media="print" href="css/Print.css">
   </head>
   
   <body class="Site">
+    <div class="noprint">
     <header class="topnav">
       <a href="Home.html">Home</a>
       <a href="CV.html">CV</a>
@@ -18,6 +20,7 @@
       <a class="active" href="Photos.html">Photos</a>
       <a href="Contact.html">Contacts</a>
     </header>
+    </div>
     <h1>My photos</h1>
     <div id="gallery">
       <ul id="navigation">
@@ -35,12 +38,14 @@
         <div><a name="pic5"></a><img alt="" src="img/pic5l.jpg" /></div>
       </div>
     </div>
-    <footer>
+    <div class="noprint">
+    <footer class="noprint">
       <div class="social">
         <a href="https://vk.com/l.negoy" title="vk" class="social-vk"></a>
         <a href="https://www.facebook.com/profile.php?id=100010387173038&ref=bookmarks" title="fc" class="social-facebook"></a>
         <a href="https://www.linkedin.com/in/alexey-nehoi-835823164/" title="in" class="social-linkedin"></a>
       </div>
+    </div>
     </footer>
   </body>
 </html>
