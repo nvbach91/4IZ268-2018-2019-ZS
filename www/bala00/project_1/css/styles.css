@@ -17,6 +17,7 @@
 #D09683 персик
 */
 
+/* common CSS */
 nav {
     display: flex;
     color: #C1403D;
@@ -34,6 +35,39 @@ nav li {
     padding: 0 14px;
     line-height: 40px;
 }
+nav li a.active {
+    font-weight: 600;
+}
+nav a:link,
+a:link {
+    color: #C1403D;
+    text-decoration: none;
+}
+
+nav a:visited,
+a:visited {
+    color: #C1403D;
+    text-decoration: none;
+}
+
+nav a:hover,
+a:hover {
+    color: #C1403D;
+    text-decoration: none;
+}
+
+nav a:active,
+a:active {
+    color: #C1403D;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    font-size: 50%;
+    line-height: 100%;
+    margin: 30px;
+}
 
 /* nepodarilo se mi posunout vyhledavaci tlacitko uplne vpravo, 
    bez inputu to fungovalo dobre)) */
@@ -42,6 +76,7 @@ nav li {
     border: none;
     box-sizing: border-box;
     font-size: 16px;
+    letter-spacing: 1px;
     font-weight: 300;
     background-color: white;
     background-image: url(../images/search.png);
@@ -57,6 +92,8 @@ nav li {
 
 .search input[type=text]:focus {
     width: 100%;
+    outline: none;
+    font-weight: 700;
 }
 
 .logo-navbar img {
@@ -64,6 +101,7 @@ nav li {
     height: 40px;
 }
 
+/* index.html */
 .intro {
     height: 90vh;
     width: 100%;
@@ -71,7 +109,7 @@ nav li {
     padding: 0;
     display: table;
     background: url(../images/prague1.jpg) center center;
-    background-size: cover; 
+    background-size: cover;
 }
 
 .intro .inner {
@@ -86,7 +124,14 @@ nav li {
     margin-bottom: 20%;
 }
 
-.content h1 {
+.content-contact {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 55%;
+}
+
+.content h1,
+.content-contact h1 {
     font-family: 'Yantramanav', sans-serif;
     font-size: 300%;
     font-weight: 100;
@@ -115,18 +160,19 @@ nav li {
     color: white;
 }
 
-.intro a:hover {
+.intro a:hover,
+.content-contact .btn:hover {
     border-color: white;
     animation-name: flash_button;
-    animation-duration: 10s;
+    animation-duration: 3s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     -webkit-animation-name: flash_button;
-    -webkit-animation-duration: 10s;
+    -webkit-animation-duration: 3s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
     -moz-animation-name: flash_button;
-    -moz-animation-duration: 10s;
+    -moz-animation-duration: 3s;
     -moz-animation-timing-function: linear;
     -moz-animation-iteration-count: infinite;
 }
@@ -229,41 +275,86 @@ nav li {
     line-height: 30vh;
 }
 
-nav a:link,
-a:link {
-    color: #C1403D;
-    text-decoration: none;
+/* Contact.html */
+.intro-contact {
+    height: 90vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: table;
+    background: url(../images/prague1.jpg) center center;
+    background-size: cover;
 }
 
-nav a:visited,
-a:visited {
-    color: #C1403D;
-    text-decoration: none;
+.intro-contact .inner-contact {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+.content-contact h1 {
+    padding-bottom: 0;
+}
+.form {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
 }
 
-nav a:hover,
-a:hover {
-    color: #C1403D;
-    text-decoration: none;
+.form input {
+    width: 100%;
+    margin: 10px 10px 0 0;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #C1403D;
+    background: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.form input:focus {
+    outline: none;
+    font-weight: 700;
+}
+#msg {
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
-nav a:active,
-a:active {
-    color: #C1403D;
-    text-decoration: none;
+::-webkit-input-placeholder {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: black;
+    font-weight: 300;
 }
 
-footer {
-    text-align: center;
-    font-size: 50%;
-    line-height: 100%;
-    margin: 30px;
+.content-contact .btn {
+    color: #C1403D;
+    border-color: #C1403D;
+    margin-bottom: 20px;
+    background: none;
+}
+.content-contact button:focus {
+    outline: none;  
+}
+
+/* Media Queries */
+@media only screen and (max-width: 480px) {
+    body .content-contact {
+        margin-bottom: 80%;
+    }
 }
 
 /* Extra small devices (480px and up) */
 @media only screen and (min-width: 480px) {
-    body .intro h1 {
+
+    body .intro h1,
+    .intro-contact h1 {
         font-size: 300%;
+    }
+
+    body .content-contact {
+        margin-bottom: 60%;
     }
 
     body .intro .btn {
@@ -279,13 +370,24 @@ footer {
 
 /* Small devices (600px and up) */
 @media only screen and (min-width: 600px) {
-    body .intro h1 {
+
+    body .intro h1,
+    .intro-contact h1 {
         font-size: 300%;
+    }
+
+    body .content-contact {
+        margin-bottom: 50%;
+    }
+
+    body .form {
+        width: 70%;
     }
 
     body .intro .btn {
         font-size: 100%;
     }
+
     body .flex-container>div {
         width: 49%;
         height: 40vh;
@@ -300,8 +402,18 @@ footer {
 
 /* Medium devices (768px and up) */
 @media only screen and (min-width: 768px) {
-    body .intro h1 {
+
+    body .intro h1,
+    .intro-contact h1 {
         font-size: 350%;
+    }
+
+    body .content-contact {
+        margin-bottom: 40%;
+    }
+
+    body .form {
+        width: 60%;
     }
 
     body .intro .btn {
@@ -322,16 +434,31 @@ footer {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    body .intro h1 {
+
+    body .intro h1,
+    .intro-contact h1 {
         font-size: 400%;
     }
 
     body .intro .btn {
         font-size: 100%;
     }
+
     body .content {
         margin-bottom: 17%;
     }
+
+    body .content-contact {
+        margin-bottom: 35%;
+    }
+
+    body .form {
+        width: 55%;
+    }
+    body ::-webkit-input-placeholder, .form input {
+        font-size: 14px;
+    }
+
     body .flex-container>div {
         width: 49%;
         height: 50vh;
@@ -347,17 +474,30 @@ footer {
 
 /* Extra large devices (1200px and up) */
 @media only screen and (min-width: 1200px) {
-    body .intro h1 {
+
+    body .intro h1,
+    .intro-contact h1 {
         font-size: 500%;
     }
 
-    body .intro .btn {
+    body .intro .btn, .content-contact .btn {
         font-size: 100%;
         font-weight: 400;
     }
 
     body .content {
         margin-bottom: 15%;
+    }
+
+    body .content-contact {
+        margin-bottom: 33%;
+    }
+
+    body .form {
+        width: 50%;
+    }
+    body ::-webkit-input-placeholder, .form input {
+        font-size: 15px;
     }
     body .flex-container>div {
         width: 49%;

@@ -3,19 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Kontakty</title>
+    <title>Kontakty - Prague On Grid</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400|Yantramanav:100&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,700|Yantramanav:100&amp;subset=latin-ext" rel="stylesheet">
     <meta name="author" content="Alina Baltabaeva, bala00" />
     <meta name="description" content="Kontakty webu s popisem různých částí Prahy 
     (dobré kavárny, zajímavé muzei, krásné a neobyčejné věci), bude tady 
     opravdu 'moderní' informace o netypických zajímavých místech pro cestující mládež (a nejen :) )" />
-    <link rel="icon" href="images/logo-sm.png">
-    <!-- ?? -->
-    <meta name="keywords" content="PŘIDÁM" />
-    <link rel="canonical" href="https://abc.com/xyz" />
+    <link rel="icon" href="images/favicon.png">
+    <meta name="keywords" content="prague,praha,kavárna,cafe,museum,muzeum,architecture,architektura" />
+    <link rel="canonical" href="http://example.com/pragueongrid/contact/" />
 </head>
 
 <body>
@@ -23,14 +22,14 @@
     <header>
         <nav>
             <!-- Logo -->
-            <span class="logo-navbar"><a href="index.html"><img src="images/logo.png" alt="Prague On Grid">
+            <span class="logo-navbar"><a href="index.html"><img src="images/logo.png" alt="Prague On Grid" title="Hlavní stránka">
             </a></span>
 
             <!-- Links -->
             <ul>
                 <li><a href="map.html">Mapa</a></li>
                 <li><a href="about.html">O nás</a></li>
-                <li><a href="contact.html">Kontakty</a></li>
+                <li><a href="contact.html" class="active">Kontakty</a></li>
             </ul>
             <div class="search">
                 <input type="text" name="search" placeholder="Hledat..">
@@ -39,7 +38,23 @@
     </header>
     <!-- End of navigation -->
 
-
+    <!-- Intro -->
+    <div class="intro-contact">
+        <div class="inner-contact">
+            <div class="content-contact">
+                <h1>Napište nám</h1>
+                <div class="form">
+                    <form>
+                        <input type="text" placeholder="Jméno">
+                        <input type="text" placeholder="E-Mail">
+                        <input type="text" placeholder="Zpráva" id="msg">
+                    </form>
+                    <button type="button" class="btn">Odeslat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of intro -->
 
     <!-- Footer -->
     <footer>
