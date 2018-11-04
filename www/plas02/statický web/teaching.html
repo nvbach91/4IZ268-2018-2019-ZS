@@ -8,15 +8,15 @@
     <meta name="author" content="Plas02">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="120" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-    <link rel="stylesheet" href="tykadylko_styles.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="css/tykadylko_styles.css">
     <title>Jazykové centrum Club Tykadýlko</title>
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="tykadylko.html">
+            <a href="index.html">
                 <div class="logo"></div>
             </a>
             <ul>
@@ -35,40 +35,39 @@
 
     <div class="mini_nav">
         <ul class="products">
-            <li class=product1>
+            <li class="product1">
                 <h2>Mortimer Kurzy</h2>
                 <p>Odpolední kurzy angličtiny u nás v centru pro děti od 4 let a dospělé. Výuka světově ověřenou
                     metodou
                     Mortimer, dle vlastních výukových materiálů.</p>
-                <button onclick="window.location.href = '#mec';">Více informací</button>
-            </li>
-            <li class=product2>
+                <a href="#mec" class="button">Více informací</a>
+            <li class="product2">
                 <h2>After school</h2>
                 <p>Odpolední 3-hodinový konverzační blok na základních školách.</p>
-                <button onclick="window.location.href = '#as';">Více informací</button>
+                <a href="#as" class="button">Více informací</a>
             </li>
-            <li class=product3>
+            <li class="product3">
                 <h2>Anglický dopolední klub</h2>
                 <p>Anglická školka pro děti od 2 do 6 let. Možnost vybrat den v týdnu od 8 hodin do 13 hodin.</p>
-                <button onclick="window.location.href = '#hs';">Více informací</button>
+                <a href="#hs" class="button">Více informací</a>
             </li>
-            <li class=product4>
+            <li class="product4">
                 <h2>Individuální výuka</h2>
                 <p>Výuka přizpůsobená vašim potřebám. Možné zvlot si délku hodiny, četnost a úroveň angličtiny.</p>
-                <button onclick="window.location.href = '#ind';">Více informací</button>
+                <a href="#ind" class="button">Více informací</a>
             </li>
-            <li class=product5>
+            <li class="product5">
                 <h2>Firemní výuka</h2>
                 <p>Výuka pro firmy situovaná u nás v centru nebo přímo ve vaší firmě. Možnost volby obecné angličtiny,
                     obchodní nebo soustředěné na typ firmy.</p>
-                <button onclick="window.location.href = '#comp';">Více informací</button>
+                <a href="#comp" class="button">Více informací</a>
             </li>
         </ul>
     </div>
 
 
     <div id="mec">
-        <img class="imgpr" src="mec.jpg" alt="mortimer">
+        <img class="imgpr" src="obr/mec.jpg" alt="mortimer">
         <h3>Kdo je to Mortimer?</h3>
         <p>Mortimer je rytíř ze středověku. Bydlí na opravdovém hradě a spolu se svými kamarády, drakem Malcolmem,
             netopýrkou Betty a svým strýcem, čarodějem Godfreyem zažívá velká dobrodružství. A když už středověká
@@ -111,13 +110,12 @@
             podpoří víru dítěte ve vlastních schopnosti!</p>
         <p>Zkoušky Cambridge YLE jsou připraveny syndikátem Cambridge ESOL, který je součástí světoznámé University of
             Cambridge. Anglické zkoušky pro děti YLE jsou přehledné, zábavné a velmi důvěryhodné.</p>
-
-        <button onclick="window.location.href = 'formular.html';">přihlásit se</button>
+        <a href="formular.html" class="button">přihlásit se</a>
     </div>
 
 
     <div id="as">
-        <img class="imgpr" src="AS.jpg" alt="after_school">
+        <img class="imgpr" src="obr/AS.jpg" alt="after_school">
         <p>After school je odpolední program probíhající na základních škola. Přesněji na Základní škole ve Staré
             Boleslavi, V zelenči a v Brandýs nad Labemna základní škole Na Výsluní.</p>
         <p>Blok začíná ve 13 hodin a končí v16 hodin. Během tothoto bliku se děti učí slovíčka, tvoří, hají různé hry v
@@ -135,36 +133,36 @@
             <li>simulujeme reálné životní situace a role</li>
             <li>trénujeme praktické fráze v reálné komunikaci z běžného života</li>
         </ul>
-        <button onclick="window.location.href = 'formular.html';">přihlásit se</button>
+        <a href="formular.html" class="button">přihlásit se</a>
     </div>
 
     <div id="hs">
-        <img class="imgpr" src="HS.jpg" alt="head_start">
+        <img class="imgpr" src="obr/HS.jpg" alt="head_start">
         <p>Dopolední vzdělávací program, který je vedený zcela přirozenou a zábavnou formou pouze v angličtině.
             Programem provází proškolená lektorka. Je určen pro děti ve věku 2 - 6 let. Program probíhá 4x týdně od
             8:00 – 13:00, možno navštěvovat pouze některé dny. CENA 400 ,- Kč za jeden den</p>
         <h3>Program dne:</h3>
         <ul>
-            <li><b>8.00 – 8.30</b> scházení dětí, sledování anglických
+            <li><strong>8.00 – 8.30</strong> scházení dětí, sledování anglických
                 pohádek, popř. menší svačinka/snídaně</li>
-            <li><b>8.30 – 10.00</b> ranní hudebně – pohybová výchova
+            <li><strong>8.30 – 10.00</strong> ranní hudebně – pohybová výchova
                 + úkol dne, didakticky cílené činnosti-záměrné
-            <li><b>10.00 – 10.20</b> dopolední svačinka</li>
-            <li><b>10.20 – 11.00</b> výtvarná práce, didaktické hry ve
+            <li><strong>10.00 – 10.20</strong> dopolední svačinka</li>
+            <li><strong>10.20 – 11.00</strong> výtvarná práce, didaktické hry ve
                 skupinkách, rytmika s jednoduchými dětskými
                 hudebními nástroji</li>
-            <li><b>11.00 – 11.40</b> didakticky cílené činnosti-spíše
+            <li><strong>11.00 – 11.40</strong> didakticky cílené činnosti-spíše
                 spontánní (při samovolném hraní), zábavně naučné
                 hry, výtvarná činnost</li>
-            <li><b>11.40 – 12.00</b> dopolední svačinka</li>
-            <li><b>12.00 – 13.00</b> volná hra, čtení pohádek, hraní scének a pod.</li>
-            <li><b>13.00</b> rozchod domů</li>
+            <li><strong>11.40 – 12.00</strong> dopolední svačinka</li>
+            <li><strong>12.00 – 13.00</strong> volná hra, čtení pohádek, hraní scének a pod.</li>
+            <li><strong>13.00</strong> rozchod domů</li>
         </ul>
-        <button onclick="window.location.href = 'formular.html';">přihlásit se</button>
+        <a href="formular.html" class="button">přihlásit se</a>
     </div>
 
     <div id="ind">
-        <img class="imgpr" src="IND.jpg" alt="head_start">
+        <img class="imgpr" src="obr/IND.jpg" alt="head_start">
         <p>Club Tykadýlko nabízí individuální výuku pro všechny úrovně angličtiny, od začátečníků až po velmi pokročilé
             studenty. Nejprve určíme vaši současnou úroveň angličtiny, zjistíme vaše potřeby a po té se s vámi
             domluvíme na zaměření hodin.
@@ -179,11 +177,11 @@
             <li>příprava na obchodní jednání, konferenci nebo veletrh</li>
             <li>prezentace v anglickém jazyce</li>
         </ul>
-        <button onclick="window.location.href = 'formular.html';">přihlásit se</button>
+        <a href="formular.html" class="button">přihlásit se</a>
     </div>
 
     <div id="comp">
-        <img class="imgpr" src="FIRMA.jpg" alt="head_start">
+        <img class="imgpr" src="obr/FIRMA.jpg" alt="head_start">
         <h3>Možné formy spolupráce</h3>
         <ul>
             <li>výuka angličtiny ve firmách (naši lektoři dochází do firem)</li>
@@ -206,7 +204,7 @@
             <li>profesionální, proškolení lektoři</li>
             <li>20 let zkušeností na mezinárodním trhu</li>
         </ul>
-        <button onclick="window.location.href = 'formular.html';">přihlásit se</button>
+        <a href="formular.html" class="button">přihlásit se</a>
     </div>
     <footer>
         <div class="credits">Copyright &copy; 2018 Tykadylko</div>

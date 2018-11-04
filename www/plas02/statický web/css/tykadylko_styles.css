@@ -1,5 +1,28 @@
 * {
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a.button {
+    border: none;
+    padding: 10px;
+    width: 180px;
+    margin: 0 auto;
+    background-color: #4bcabf;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;
+
+}
+
+a.button:hover {
+    background-color: #246466;
+}
+a.button:active {
+    background-color: #58949e;
 }
 
 .active, .nav:hover {
@@ -8,7 +31,7 @@
 
 .application{
     font-size: 20px;
-    text-transform: uppercase;
+    text-transform: upperce;
 	max-width: 600px;
 	margin: 10px auto;
 	padding: 16px;
@@ -74,22 +97,9 @@
 }
 
 body {
-    background-image: url(background.jpg);
+    background-image: url(../obr/background.jpg);
     
     background-size: cover;
-}
-
-button {
-    border: none;
-    padding: 10px 0;
-    width: 180px;
-    margin: 0 auto;
-    background-color: #4bcabf;
-    text-transform: uppercase;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 3px;
 }
 
 #comp {
@@ -126,7 +136,7 @@ button {
 
 .facebook {
 
-    width: 500px;
+    width: 50%;
     height: 500px;
     border: none;
     overflow:hidden;
@@ -186,7 +196,7 @@ img {
 }
 
 .intext p {
-    font-size: 22px;
+    font-size: 20px;
 }
 
 #list {
@@ -200,7 +210,7 @@ img {
     padding: 10px;
     margin-top: 8px;
     margin-left: 16px;
-    background-image: url(logo.jpg);
+    background-image: url(../obr/logo.jpg);
     background-position: center;
     background-size: cover;
     float: left;
@@ -235,9 +245,10 @@ img {
 }
 
 .map {
-    width: 800px;
-    height: 450;
-    border:0px; 
+    width: 90%;
+    height: 150px;
+    overflow:hidden;
+    resize: both;
 }
 
 #mec {
@@ -361,12 +372,6 @@ nav a {
     background-color: rgba(253, 253, 253, 0.671);  
 }
 
-.products button:hover {
-    background-color: #246466;
-}
-.products button:active {
-    background-color: #58719e;
-}
 .product h2 {
     padding: 10px;
 }
@@ -383,7 +388,7 @@ nav a {
 }
 
 .sleepover {
-    background-image: url(christmas.jpg);
+    background-image: url(../obr/christmas.jpg);
     width: 550px;
     height: 550px;
     border-radius: 50%;
@@ -396,7 +401,7 @@ nav a {
 }
 
 .weekend {
-    background-image: url(week.jpg);
+    background-image: url(../obr/week.jpg);
     width: 550px;
     height: 550px;
     border-radius: 50%;
@@ -411,8 +416,9 @@ nav a {
 .worker {
     width:80%;
     height:500px;
-    margin: 20px auto 20px auto;
+    margin: 10px auto 20px auto;
     padding:15px 20px 15px 20px;
+    display: table;
 }
 
 .workers_pictures {
@@ -428,8 +434,7 @@ nav a {
     font-size: 24px;
     text-transform: uppercase;
     text-align: left;
-    margin-left: 2%;
-    margin-bottom: 5px;
+    margin: 5px 0 5px 2%;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     padding: 5px;
@@ -444,7 +449,7 @@ nav a {
         width: auto;
     }
     
-    button {
+    a.button {
         visibility: hidden;
     }
 
@@ -460,12 +465,6 @@ nav a {
         margin: 15px auto;
         height: auto;
         width: auto;
-    }
-  
-
-    iframe {
-        width: 55%;
-        height: auto;
     }
     
     img {
@@ -674,11 +673,6 @@ nav a {
         width: auto;
     }
 
-    iframe {
-        width: 55%;
-        height: auto;
-    }
-
     img {
         width: 45%;
         height: 45%;
@@ -704,7 +698,7 @@ nav a {
     }
 
     .intext h2{
-        font-size: 16px;
+        font-size: 14px;
     }
     
     .intext p {
