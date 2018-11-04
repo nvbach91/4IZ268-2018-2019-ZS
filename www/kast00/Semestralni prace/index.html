@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Cashless VŠE">
+  <meta name="keywords" content="Cashless, VŠE, university">
+  <meta name="author" content="Tomáš Kašpar">
     <title>Cashless VŠE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="img/credit-card.png"/>
 </head>
 
 <body>
@@ -180,28 +185,28 @@
     <footer>Created by Tomáš F. Kašpar</footer>
     <div class="scrollToTop" id="scrollButton">&#8679;</div>
     <script>
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
-    });
-});
 
 
         $(document).scroll(function () {
-    var y = $(this).scrollTop();
-    if (y > 200) {
-        $('.scrollToTop').fadeIn();
-    } else {
-        $('.scrollToTop').fadeOut();
-    }
+            var y = $(this).scrollTop();
+            if (y > 200) {
+                $('.scrollToTop').fadeIn();
+            } else {
+                $('.scrollToTop').fadeOut();
+            }
 
-});
+        });
 
-$(function(){$("#scrollButton").click(function(){$("html,body").animate({scrollTop:$("#wrapper").offset().top},"1000");return false})})
+        $(function () { $("#scrollButton").click(function () { $("html,body").animate({ scrollTop: $("#wrapper").offset().top }, "1000"); return false }) })
 
         function openRestaurant(evt, restaurantName) {
             var i, x, tabnavs;
