@@ -12,17 +12,17 @@ body {
 
 h1 {
     font-weight: bold;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 h2 {
     font-weight: normal;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 h3 {
     font-weight: normal;
-    font-size: 20px;
+    font-size: 19px;
 }
 
 h4 {
@@ -37,7 +37,7 @@ a {
 }
 
 p {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.8em;
 }
 
@@ -75,7 +75,6 @@ header {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 6px;
-    font-size: 60px;
     margin: 5px 0;
 }
 
@@ -97,7 +96,7 @@ header {
     letter-spacing: 3px;
 }
 
-.navigation{
+.navigation {
     position: sticky;
     top: 0;
     z-index: 1;
@@ -117,7 +116,7 @@ header {
 .main-nav a {
     text-align: center;
     display: block;
-    padding: 20px;
+    padding: 15px;
     text-transform: uppercase;
     color:white;
 }
@@ -137,35 +136,43 @@ header {
     letter-spacing: 10px;   
 }
 
-.welcome, .features, .about {
-    display: flex;
-}
-
-.flex-box1, .flex-box2 {
-    flex: 1;
-    padding: 10px;
-}
-
-.sep {
-    width: 90%;
-    height: 1px;
-    background-color: #162c1e;
-    margin: 20px auto;
-    border-radius: 10px; 
-}
-
-.flex-box3, .flex-box4, .flex-box5 {
+.wrapper > h3 {
     text-align: center;
+    color: black;
+    letter-spacing: 5px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.flex-box, .flex-box2 {
+    width: 50%;
     flex: 1;
     padding: 10px;
 }
 
-.features button {
-    display: block;
+.flex-box h4 {
+    text-align: center;
+}
+
+.flex-box img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex-box button {
+    display: flex;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
     border: none;
-    padding: 10px 0;
+    padding: 12px 0;
     width: 180px;
     background-color: #405947;
     text-transform: uppercase;
@@ -174,26 +181,28 @@ header {
     cursor: pointer;
 }
 
-.flex-box6, .flex-box7 {
-    flex: 1;
-    padding: 10px;
-}
-
-.flex-box6 {
+.flex-box2 {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.flex-box6 img {
+.profile {
     border-radius: 50%;
+}
+
+.sep {
+    width: 40%;
+    height: 1px;
+    background-color: #162c1e;
+    margin: 20px auto;
+    border-radius: 10px; 
 }
 
 footer {
     display: flex;
     justify-content: center;
     flex-basis: 100%;
-    border: 1px solid black;
     background-color: #405947;
 }
 
