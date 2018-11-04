@@ -107,8 +107,8 @@ h2 {
 }
 
 .column-2 img {
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     margin-bottom: 20px;
     margin-top: 10px;
     padding-bottom: 5px;
@@ -216,12 +216,17 @@ footer>p {
 
 @media screen and (min-width: 1024px) {
     .column-2 img {
-        height: 120%;
-        width: 120%;
+        height: 50%;
+        width: 50%;
     }
     .social .s-img {
         width: 30%;
         height: 30%;
+    }
+
+    .text {
+        padding-left: 80px;
+        padding-right: 80px;
     }
 }
 
@@ -352,5 +357,13 @@ footer>p {
     }
     .column-1 {
         width: 100%;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .navbar {
+        display: none;
     }
 }
