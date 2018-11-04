@@ -1,15 +1,16 @@
+*{
 
+    font-family: 'Amatic SC', cursive, 'Courier New', Courier, monospace;
+}
 
 body, html {
     height: 100%;
     margin: 0;
-    font-family: 'Amatic SC', cursive;
     font-size: 25px;
 }
 
 article.flex-item{
     font-size: 20px;
-
 }
 
 .main-headline{
@@ -19,8 +20,7 @@ text-align: center;
 a {
     color: white;
     text-transform: uppercase;
-    text-decoration: none;
-    
+    text-decoration: none;  
 }
 
 a:hover {
@@ -58,7 +58,6 @@ a:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
 }
 
 .bg-contacts{
@@ -66,8 +65,7 @@ a:hover {
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    
+    background-size: cover; 
 }
 
 .bg-gallery{
@@ -75,8 +73,7 @@ a:hover {
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    
+    background-size: cover;  
 }
 
 .bg-socialmedia{
@@ -84,8 +81,7 @@ a:hover {
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    
+    background-size: cover;   
 }
 
 ul{
@@ -99,10 +95,18 @@ li {
     margin-right: 20px;
 }
 
-h2{
-    text-align: center;
+h1{
+    font-size: 50px;
 }
 
+h2{
+    text-align: left;
+}
+
+h3{
+    text-align: center;
+    font-size: 30px;
+}
 
  li a {
     display: block;
@@ -128,6 +132,7 @@ li:hover a.soc-med-logo {
 li:hover a {
     background: rgba(0, 0, 0, 0.5);
 }
+
 .li-active {
     background: black;
 }
@@ -138,6 +143,17 @@ li:hover a {
 
 .gallery{
     margin-left: 20%; 
+}
+
+.about-me{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.about-image{
+    margin-bottom: 200px;
 }
 
 .social-media{
@@ -165,13 +181,11 @@ li:hover a {
   width: 500px;
   height: 400px;
   
-  line-height: 20px;
+  line-height: 35px;
   color: black;
-  font-size: 20px;
+  font-size: 30px;
   text-align: justify;
-  font-family: 'Courier New', Courier, monospace;
 }
-
 
 .row {
     display: -ms-flexbox;
@@ -193,7 +207,23 @@ li:hover a {
     vertical-align: middle;
 }
 
+.p-contacts{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+p > a {
+    color: black;
+}
+
+a > img{
+    width:100%;
+}
+
 @media screen and (max-width : 760px){
+
     li {
         margin-bottom: 1px;
     }
@@ -208,7 +238,7 @@ li:hover a {
     }
 
     img {
-        width: 250px;
+        width: 100%;
         height: 250px;
     }
 
@@ -217,9 +247,25 @@ li:hover a {
         flex: 70%;
         max-width: 70%;
     }
+
+    .about-me {
+        margin-bottom: 50px;
+    }
+
+    img.about-me{
+        width: 300px;
+        height: 410px;
+    }
+
+    img.contacts{
+        
+        width: 20%;
+        height: 20%;
+    }
 }
 
 @media screen and (max-width : 420px){
+
     .menu{
         width: 200px;
 
@@ -239,13 +285,12 @@ li:hover a {
     }
 
     li.flex-item {
-        height: 360px;
+        height: 450px;
         margin-left: 5%;
-        line-height: 30px;
+        line-height: 35px;
         color: black;
-        font-size: 20px;
+        font-size: 30px;
         text-align: justify;
-        font-family: 'Courier New', Courier, monospace;
       }
 
       .column {
@@ -256,5 +301,44 @@ li:hover a {
 
     .main-info{
         margin-left: 0%; 
+    }
+
+    .about-me {
+        margin-bottom: 50px;
+        
+    }
+    
+    img.about-me{
+        width: 300px;
+        height: 410px;
+    }
+}
+
+@media print {
+    *{
+        font-family: 'Times New Roman', Times, serif;
+    }
+    nav{
+    display: none;
+    }
+
+    footer{
+    display: none;
+    }
+
+    .flex-item{
+    font-size: 12px;
+    }
+
+    h1{
+        text-align: left;
+    }
+
+    img.contacts{
+        display: none;
+    }
+
+    img.social-media-logo{
+        display: none;
     }
 }
