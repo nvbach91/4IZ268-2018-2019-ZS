@@ -337,6 +337,10 @@ input {
     padding: 5px;
 }
 
+.print {
+    display: none;
+}
+
 /* BOTTOM */
 footer {
     text-align: center;
@@ -433,8 +437,32 @@ footer p, footer a, footer div {
         display: none;
     }
 
-    .mobile-projects {
+    .slideshow {
+        display: none;
+    }
+
+    .videodiv {
+        display: none;
+    }
+
+    .biglogo {
+        display: none;
+    }
+
+    .print {
         display: initial;
-        background-image: initial;
+        position: absolute;
+    }
+
+    form {
+        display: none;
+    }
+
+    .contact-us {
+        position: absolute;
+    }
+
+    .logo {
+        display: none;
     }
 }
