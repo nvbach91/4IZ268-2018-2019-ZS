@@ -1,11 +1,10 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: "Roboto";
+  font-family: 'Roboto', 'Arial';
   color: #312c32;
 }
 
@@ -29,6 +28,9 @@ body {
   padding: 20px;
   text-align: center;
 }
+.logo-print{
+  display: none;
+}
 .category{
   background-color: #474448;
   color: #feffff;
@@ -38,7 +40,7 @@ body {
 .map {
   display: block;
   width: 100%;
-  height: 400px;
+  height: 500px;
 }
 .nav {
   background-color: #312c32;
@@ -131,20 +133,31 @@ iframe{
 }
 /*Nastavení pro tisk*/
 @media print {
+  body{
+    background-image: none;
+    font-size: 12px;
+  }
+  .nav {
+    display: none;
+  }
+  .footer {
+    display: none;
+  }
   img {
     max-width: 500px;
   }
   .category {
     background-color: #474448;
-    color: #black;
+    color: black;
     padding: 20px;
     text-align: center;
   }
-  .logo-1 {
+  .logo-print{
+    display: inline;
     max-width: 28%;
-    display: list-item;
-    list-style-image: url("img/header_black.png");
-    list-style-position: inside;
+  }
+  .logo-1 {
+    display: none;
   }
   .column.side {
     width: 45%;
