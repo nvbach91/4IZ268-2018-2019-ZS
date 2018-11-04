@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Návody</title>
+    <link rel="stylesheet" type="text/css" href="data/css/layout.css">
+    <link rel="icon" href="data/images/UO_icon.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="data/css/navody.css">
+</head>
+<body>
+<ul class="nav">
+    <li><img class="logo" alt="Logo UO" src="data/images/logo.gif"></li>
+    <li><a href="index.html">Úvod</a></li>
+    <li><a class=active href="navody.html">Návody</a></li>
+    <li class="nav-separator"></li>
+    <li><a href="skripty.html">Skripty</a></li>
+    <li><a href="sfera.html">Sfera</a></li>
+    <li><a href="klient.html">Klient</a></li>
+    <li><a href="galery.html">Galerie</a></li>
+    <li><a href="odkazy.html">Odkazy</a></li>
+    <li><a href="changelog.html">ChangeLog</a></li>
+    <li class="nav-separator"></li>
+    <li><a href="contact.html">Kontakt</a></li>
+    <li><a href="about.html">O stránkách</a></li>
+    <li><b>2018</b></li>
+</ul>
+<section class="content">
+    <h1>Návody</h1>
+    <h2>Sfera</h2>
+    <p>
+        Hlavni navody na sferu jsou na strankach <a href="http://wiki.spherecommunity.net/">spherewiki</a> A jeho pod
+        forum <a href="https://www.sphereserver.net/">sphere forum</a>
+        Silně doporučuji projít si 14 základních kapitol, počínaje tématy, kde si sehnat vlastní <a
+            href="http://wiki.spherecommunity.net/index.php?title=Where_to_get_Sphere">sféru</a>,
+        přes <a href="http://wiki.spherecommunity.net/index.php?title=Installing_Sphere">instalaci</a> a její <a
+            href="http://wiki.spherecommunity.net/index.php?title=Configuring_Sphere.ini">nastavení</a> a hlavních 10
+        témat o základech <a href="http://wiki.spherecommunity.net/index.php?title=Chapter_1">skriptování</a> do sféry.
+        Je nutné upozornit na fakt, že dokumentace na této wikipedii není zcela kompletní a může se lišit od vaší sfery
+        v klíčových bodech. Proto je nutné ještě sledovat <a
+            href="http://wiki.spherecommunity.net/index.php?title=Revisions_Changelog">changelog</a>, kde najdete co je
+        a není naimplementované ve vaší sféře.
+    </p>
+    <h2>GM-správa</h2>
+    <p>
+        Pokud jste se stali Grand Masterem dále jen GM, budou vás zajímat hlavně podpůrné programy. Jako vývojář při
+        hledání se koukám do zdrojového kódu, ale všichni ostatní používají hlavně program <a
+            href="https://forum.spherecommunity.net/sshare.php?srt=4&uid=603">Axis</a>, který
+        značně ulehčuje práci při administrativě GM. Vypíšu zde věcí které Axise zjednodušuje:
+    </p>
+    <ul>
+        <li>Pohyb po mapě</li>
+        <li>Základní příkazy na tlačítkách</li>
+        <li>Přidávání věcí a Npc</li>
+        <li>Vybírání barvy</li>
+        <li>Tvoření Spawnů</li>
+        <li>Úprava charakterů</li>
+        <li>Úprava předmětů</li>
+        <li>Úpravy hráčů</li>
+        <li>Spouštění hudby</li>
+        <li>Upozornění</li>
+        <!-- Obrazky k seznamu-->
+    </ul>
+    <h2>Grafika</h2>
+    <p>
+        S grafikou nemám moc velké zkušenosti, ale na procházení dostupný grafiky se používá <a href="">Fiddler</a> nebo
+        <a href="">InsideUO</a>, kde také můžete upravovat barvy a vše spojené s grafikou. Pro více informací vás odkáži
+        na stránky
+        <!-- TODO na jaky stranky-->
+    </p>
+    <h2>Statik</h2>
+    <p>
+        Statik jsou všechny statické objekty ve hře, které se nacházi v mapě. Voda, písek, zem, důlní šachty, krápníky,
+        moře, budovy, stěny a stromy. Pro úpravu mapy se používá...
+        <!-- TODO TBD-->
+    </p>
+    <h2>Easy UO</h2>
+    <p>
+        Pokud člověk chce hrát Ultimu na vyšší úrovni automatizace dá určitě za vděk programu EasyUO (EUO). Toto je
+        skriptovací jazyk požívající uo.dll, ve kterém je možné tvořit skripty, které automatizují, některé procesy jako
+        je otravné třídění předmětů do skladů nebo trénování postavy.
+    </p>
+    <p>Pro více informací naštivte stránky <a href="http://www.easyuo.com/">EasyUO</a>, které jsou velmi kvalitně
+        zdokumentovaný </p>
+    <h2>Open Easy UO</h2>
+    <p>
+        Open Easy UO je program odvozen od EasyUO. EUO je nekvalitně udělané a pro lepší programátory velice
+        nepřehledné. Nedají se tam dělat struktury a objekty už vůbec. Proto vznikl projekt Open Easy UO neboli OEUO,
+        které napojilo knihovnu uo.dll na skriptovací jakyk Lua. Nápad byl dobrý, ale projekt byl označen jako
+        nevyhovující a následně přestal vývoj. Aktuální stav programu je dobrý s výjmkou tvorby oken (menu), zvuků a
+        podpory například http requestů. I přes tyto nevýhody má OEUO přednost, kterou EUO nemá : rychlost a možnost víc
+        vláken. Proto doporučuji pokročilejším, aby rovnou přešli na OEUO.
+    </p>
+    <p>
+        Silně doporučuji si stáhnout nějaký lepší vývojové prostředí pro Lua, jako je třeba <a
+            href="http://luaedit.sourceforge.net/">LuaEdit</a> nebo jiné. Poté se můžete vrhnout na skripty podle <a
+            href="http://www.easyuo.com/openeuo/wiki/index.php/Documentation">dokumentace</a>.
+    </p>
+</section>
+</body>
+</html>

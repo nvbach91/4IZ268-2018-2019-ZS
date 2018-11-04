@@ -1,0 +1,16 @@
+
+.content p{
+    text-align: justify;
+    text-indent: 1em;
+}
+
+.content img{
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.blankBox{
+    margin: 50px;
+}

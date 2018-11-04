@@ -1,0 +1,13 @@
+.galeryList{
+
+}
+
+.galeryList a{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.galeryList a img{
+    height: 300px;
+    color: red;
+}

@@ -1,0 +1,10 @@
+
+.content p{
+    text-align: justify;
+    text-indent: 1em;
+}
+
+.content img{
+    display: block;
+    margin: auto;
+}
