@@ -5,27 +5,21 @@
 .header1{
     font-size: 40px;
     font-weight:bold;
-    color: white;
-}
 
-body{
-    background-color:rgb(39, 39, 39);
-    color:white;
 }
 
 footer{
     margin-top: 50px;
     background-color:rgb(39, 39, 39);
-    border-top:2px solid white;
+    border-top:2px solid black;
     height: 100px;
-    color:white;
+
 }
 
 .video{
-    width: 100%;
-    max-width: 640px;
-    height: 480px;
+    display: none;
 }
+    
 
 .list_nav{
 list-style: none;
@@ -56,7 +50,7 @@ list-style: none;
     width:80%
 }
 .concert{
-    border-top: 2px solid white;
+    border-top: 2px solid black;
 }
 
 .c_place{
@@ -72,10 +66,6 @@ list-style: none;
     color:green;
 }
 
-a{
-    color: white;
-    font-weight: bold;
-}
 
 h2{
     padding-left: 10px;
@@ -140,8 +130,7 @@ h2{
 }
 
     @media screen and (max-width: 1024px) {
-    .Album  { width: calc(100% / 3) }
-    .person{width: 100%;} 
+    .Album  { width: calc(100% / 3) } 
 }
 
     @media screen and (max-width: 800px) {
