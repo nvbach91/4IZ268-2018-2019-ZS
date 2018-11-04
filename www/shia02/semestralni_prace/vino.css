@@ -205,9 +205,14 @@ div h4 {
     .wine, .classification, .criterion {
         width: 50%;
     }
-    .wine p, .region p, .criterion p, .classification p {
+    .wine p, .region p, .criterion p {
         min-height: 200px;
     }
+
+    .classification p {
+        min-height: 270px;
+    }
+
 
     .three p {
         min-height: 100px;
@@ -218,7 +223,7 @@ div h4 {
     }
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 480px) {
     .wine, .region, .criterion, .classification {
         float: none;
         width: 100%;
