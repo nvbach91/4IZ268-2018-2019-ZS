@@ -238,6 +238,10 @@ div h4 {
 }
 
 @media print {
+    body {
+        background-color: none !important;
+    }
+
     .intro, header, .etiketa {
         display: none;
     }
