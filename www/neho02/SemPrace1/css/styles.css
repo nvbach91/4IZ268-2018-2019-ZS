@@ -1,22 +1,28 @@
-body {
+html {
   /* The image used */
    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqGaw7w2Ujk8i-HVYvT5ww5T_1Cgj4znO5WxC_ncuvnc0-q1M9);
    background-size: cover;
    background-repeat: no-repeat;
+}
+body{
+  margin: 0;
 }
 /*Header*/
 .topnav {
    background-color: #333;
    overflow: hidden;
 }
+
 /* Style the links inside the navigation bar */
 .topnav a {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    float: left;
    color: #f2f2f2;
    text-align: center;
-   padding: 15px 89px;
+   padding: 15px 0px;
    text-decoration: none;
    font-size: 30px;
+   width:20%;
 }
 /* Change the color of links on hover */
 .topnav a:hover {
@@ -30,6 +36,7 @@ body {
 }
 /*Home page*/
 .H1Home {
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    padding: 10px;
    text-align: center;
    font-size: 80px;
@@ -45,16 +52,17 @@ body {
 }
 /*H1 at all pages*/
 h1 {
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    text-align: center;
    font-size: 50px;
    font-weight: inherit;
    cursor: pointer;
-   text-shadow: -1px -1px rgb(255, 255, 255), 0 1px 0 rgb(98, 0, 255);
-   color: rgba(4, 238, 141, 0.801);
+   text-shadow: -1px -1px rgba(0, 0, 0, 0.637), 0 1px 0 rgb(76, 0, 255);
+   color: rgb(0, 255, 42);
    transition: all 1s;
 }
 h1:hover {
-   color: rgb(255, 255, 255);
+   color: rgb(126, 218, 241);
 }
 /*CV page*/
 .CV H2 {
@@ -62,21 +70,18 @@ h1:hover {
    color: #19074b;
 }
 .CV H2:hover {
-   color: rgb(10, 212, 70);
+   color: rgb(8, 8, 8);
 }
 .CVmain {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    font-size: 22px;
    text-align: center;
-   color: #ddd;
+   color: rgb(0, 0, 0);
 }
-.CVtable{
-   font-family: arial, sans-serif;
-   border-collapse: collapse;
-   width: 100%;
-}
+
 /*Timetable page*/
 .table_dark {
-   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    font-size: 20px;
    width: 1310px;
    text-align: center;
@@ -170,8 +175,28 @@ footer {
 .Site {
    display: flex;
    min-height: 97vh;
-   flex-direction: column;
+   flex-direction: column;  
 }
-.Site-content {
-   flex: 1;
+
+
+.box{
+  width:70%;
+  background-color: rgba(0, 240, 200, 0.527);
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow:0 0 15px #039e25;
+}
+
+.Empty-box1{
+  width:50%;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Empty-box{
+  width:50%;
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
 }
