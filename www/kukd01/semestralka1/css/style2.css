@@ -172,9 +172,16 @@ footer{
     list-style: disc; 
 }
 
-.img-pad{
+.img-pad-a{
     padding: 2em;
-   
+    height: auto;
+    width: 50%;
+}
+
+.img-pad-b{
+    padding: 2em;
+    height: auto;
+    width: 50%;
 }
 
 
@@ -291,6 +298,7 @@ footer{
         grid-area: img-pad-b;
         align-self: center;
         width: 50%;
+        
     height: auto;
     }
 
