@@ -162,6 +162,21 @@ footer{
     border-bottom: solid;
 }
 
+.list1 {
+    font-weight: normal;
+    font-size: medium;
+    
+}
+
+.list1 li{
+    list-style: disc; 
+}
+
+.img-pad{
+    padding: 2em;
+   
+}
+
 
 
  @media screen and (min-width: 720px){
@@ -170,29 +185,33 @@ footer{
         border-bottom: solid;
 
     }
+
+    
     
  .uvod-nastrojarna{
     display: flex;
     flex-wrap:wrap;
-    align-items: center ;
-    justify-content: center ;
+    max-width:90%; 
+   justify-content: center;
+   align-items: center;
     background-color: rgba(255, 255, 255, 0.733);
         padding: 2em;
-        width: 86.9%;
-        margin-left: auto;
-        margin-right: auto;
+        
+       
  }
 
  .nastrojarna {
     display: flex;
     flex-wrap: wrap;
-    padding: 1em;
-    margin-bottom: 0;
-    width: 40%;
-    height: 25em;
+    padding: 2em;
+    max-width:90%; 
+    margin-bottom: 1em;
+    
+    align-items: center;
+    justify-content: center;
+  
     background-color: rgba(255, 255, 255, 0.733);
-    align-items: center ;
-    justify-content: center ;
+   
 }
 
 
@@ -200,18 +219,19 @@ footer{
      background-color: rgba(64, 132, 177, 0.747);
      margin-bottom: 2em;
      flex-direction: column;
+     max-width:80%; 
+     
+     align-items: center;
+   justify-content: center;
      }
 
-     .main-products{
-      
-            background-color: rgba(64, 132, 177, 0.747);
-            margin-bottom: 2em;
-            flex-direction: column;
-            }
+ 
+          
+
+ 
      
     .products {
-        display: flex;
-        flex-wrap: wrap;
+        
         padding: 1em;
         margin-bottom: 0;
        margin-top:2em;  
@@ -220,15 +240,14 @@ footer{
       
     }
 
- 
-    
- 
+   
 
     .menu{
         display: flex;
         flex-direction: row;
         margin: 0;
     }
+
 
     .box_historie{
         grid-area: box_historie;
@@ -247,6 +266,89 @@ footer{
         "h1 h1"
         "box_historie panak"
         "box_vyroba box_vyroba"  ;
+    }
+
+
+    .products-kov{
+        padding: 1em;
+        grid-area: products-kov;
+        background-color: rgba(255, 255, 255, 0.733);
+      
+        
+     }
+     .products-revize{
+        grid-area: products-revize;
+        background-color: rgba(255, 255, 255, 0.733);
+        padding: 1em;
+        
+     }  
+     
+     .products-lis{
+        grid-area: products-lis;
+        background-color: rgba(255, 255, 255, 0.733);
+        padding: 1em;
+     }
+
+    .img-pad-a{
+        grid-area: img-pad-a;
+        align-self: center;
+        float: left;
+        margin-right: 2em;
+        width: 40%;
+    height: auto;
+    }
+
+    .img-pad-b{
+        grid-area: img-pad-b;
+        align-self: center;
+        width: 40%;
+    height: auto;
+    }
+
+    .products-svar{
+        grid-area: products-svar;
+        background-color: rgba(255, 255, 255, 0.733);
+        padding: 1em;
+        
+     }
+
+     .products-sanit{
+        grid-area: products-sanit;
+        background-color: rgba(255, 255, 255, 0.733);
+        padding: 1em;
+     }
+
+     .products-konstrukce{
+        grid-area: products-konstrukce;
+        background-color: rgba(255, 255, 255, 0.733);
+        padding: 1em;
+        
+     }
+
+     .products-ostatni{
+        grid-area: products-ostatni;
+        background-color: rgba(255, 255, 255, 0.733);
+        padding: 1em;
+     }
+
+    .main-products {
+        display: grid;
+        max-width:80%; 
+        background-color: rgba(64, 132, 177, 0.747);
+    grid-gap: 1em 1em;
+    margin-bottom: 3em;
+    grid-auto-flow: row;
+    grid-template:
+    "h1 h1"
+    "products-kov products-kov"
+    "products-revize products-revize"
+    "img-pad-a products-lis" 
+    "products-svar products-svar"
+    "products-sanit img-pad-b"
+    "products-konstrukce products-konstrukce"
+    "products-ostatni products-ostatni" ;
+        
+       
     }
 
     
@@ -302,6 +404,16 @@ footer{
         display: block;
     }
 
+
+
   
+}
+
+
+@media print {
+    .poster{
+        background-image: none;
+        padding: 0;
+    }
 }
 
