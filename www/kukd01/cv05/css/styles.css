@@ -1,0 +1,108 @@
+body{
+    font-family: arial;
+}
+
+li {
+    list-style: none;
+}
+
+nav ul li {
+    float:left;
+}
+
+.clear{
+    float:none;
+    clear:both;
+}
+
+.poster{
+    background-image: url("https://images.pexels.com/photos/1250260/pexels-photo-1250260.jpeg?auto=compress&cs=tinysrgb&h=350")
+}
+
+.poster h1 , .poster h3 {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color:white;
+}
+
+.intro{
+    margin: 0 auto;
+    width:80%;
+}
+
+.intro,.slideshow,.products {
+    margin: 0 auto;
+    width:80%;
+}
+
+.slideshow{
+   padding: 50px 0;
+    text-align:center;
+    background-image: url("https://images.pexels.com/photos/1250260/pexels-photo-1250260.jpeg?auto=compress&cs=tinysrgb&h=350");
+}
+
+.slideshow h2{
+    line-height: 200px;
+    background-color: rgba(255, 255, 255, 0.63);
+    margin-top:auto;
+}
+
+.products{
+    padding: 5px;
+    float:left;
+    width: 25%;
+    height: 320px;
+}
+
+.products h2 {
+    border-bottom:5px solid red;
+}
+
+.products:nth-child(1) h2 { border-color:cadetblue}
+.products:nth-child(2) h2 { border-color:rgb(0, 94, 97)}
+.products:nth-child(3) h2 { border-color:rgb(179, 194, 138)}
+.products:nth-child(4) h2 { border-color:rgb(90, 62, 97)}
+.products:nth-child(5) h2 { border-color:cadetblue}
+.products:nth-child(6) h2 { border-color:rgb(72, 255, 26)}
+.products:nth-child(7) h2 { border-color:rgb(46, 45, 46)}
+.products:nth-child(8) h2 { border-color:rgb(255, 145, 0)}
+
+.products p {
+    height:220px;
+}
+
+.products button {
+    background-color: brown;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    padding: 5px 15px;
+    transition: background-color 0.2s linear;
+}
+
+.product button:hover {
+    background-color: green;
+}
+
+footer {
+    background-color: blue;
+    color:white;
+    text-align: center;
+}
+
+@media screen and (max-width: 480px){
+    .poster h1 {
+        font-size:14px;
+    }
+}
+@media print {
+    .poster{
+        background-image: none;
+        padding: 0;
+    }
+
+.poster h1, .poster h3 {
+    background-color: transparent;
+}
+
+}

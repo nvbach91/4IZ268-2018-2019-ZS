@@ -1,0 +1,443 @@
+body{
+
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+
+}
+
+li {
+    list-style:none;
+}
+
+.clear{
+    float:none;
+    clear:both;
+}
+
+
+
+header{
+    max-width: 70em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+    background-color: black;
+}
+
+h1{
+    margin: 0;
+}
+
+
+.logo img {
+    max-height: 200px;
+}
+
+.mySlides {display:none;}
+
+.menu{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+nav{
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+}
+ .menu a{
+     display: block;
+     text-decoration: none;
+     padding: 0.8em 1em;
+     color:black;
+ }
+
+ .active {
+    background-color: rgb(135, 155, 221);
+}
+
+.menu-toggle  {
+    font-weight: bold;
+    height: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1em;
+}
+
+
+
+ .opening{
+     display: flex;
+     flex-direction: column;
+ }
+ main{
+    max-width: 70em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+ .main-index{
+     display: grid;
+     grid-template-areas:
+     "box_prezentace" 
+     "box_produkty"
+     "box_nastrojarna";
+     grid-gap: 1em 1em;
+     margin-bottom: 3em;
+ }
+ .box_prezentace{
+    grid-area: box_prezentace;
+    
+ }
+ .box_produkty{
+    grid-area: box_produkty;
+}
+.box_nastrojarna{
+    grid-area: box_nastrojarna;
+}
+
+.box_prezentace .slideshow{
+    margin-left: auto;
+    margin-right: auto;
+    max-width:500px;
+
+}
+
+
+
+.main-firma {
+    display: grid;
+ 
+    grid-gap: 1em 1em;
+    margin-bottom: 3em;
+}
+
+.panak{
+    width: 70%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slideshow img {
+    width: 100%;
+}
+
+footer{
+    padding: 0.02em;
+    text-align: center;
+    color: rgb(248, 248, 248);
+    background-color: rgb(49, 70, 138);
+    position: relative;
+    bottom: 0px;
+}
+.dropdown-content a{
+    text-align: right;
+}
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.list li {
+    list-style: disc;
+
+}
+
+.nastrojarna h2 {
+    border-bottom: solid;
+}
+
+.list1 {
+    font-weight: normal;
+    font-size: medium;
+    
+}
+
+.list1 li{
+    list-style: disc; 
+}
+
+.img-pad-a{
+    padding: 2em;
+    height: auto;
+    width: 50%;
+}
+
+.img-pad-b{
+    padding: 2em;
+    height: auto;
+    width: 50%;
+}
+
+
+
+ @media screen and (min-width: 720px){
+    
+    .nastrojarna h2 {
+        border-bottom: solid;
+
+    }
+
+    
+
+
+ .nastrojarna {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em;
+    max-width:90%; 
+    margin-bottom: 1em;
+    
+    align-items: center;
+    justify-content: center;
+  
+    background-color: rgba(255, 255, 255, 0.733);
+   
+}
+
+
+ .main-nastrojarna{
+     background-color: rgba(64, 132, 177, 0.747);
+     margin-bottom: 2em;
+     
+     max-width:80%; 
+     
+     align-items: center;
+   justify-content: center;
+     }
+
+ 
+          
+
+ 
+     
+    .products {
+        
+        padding: 1em;
+        margin-bottom: 0;
+       margin-top:2em;  
+       
+        background-color: rgba(255, 255, 255, 0.733);
+      
+    }
+
+   
+
+    .menu{
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+    }
+
+
+    .box_historie{
+        grid-area: box_historie;
+        
+     }
+     .box_vyroba{
+        grid-area: box_vyroba;
+    }
+    .panak{
+        grid-area: panak;
+        align-self: center;
+    }
+
+    .main-firma {
+        grid-template:
+        "h1 h1"
+        "box_historie panak"
+        "box_vyroba box_vyroba"  ;
+    }
+
+
+    .products-kov{
+        padding: 1em;
+        grid-area: products-kov;
+        background-color: rgba(255, 255, 255, 0.733);
+      
+        
+     }
+     .products-revize{
+        grid-area: products-revize;
+        background-color: rgba(255, 255, 255, 0.733);
+        padding: 1em;
+        
+     }  
+     
+     .products-lis{
+        grid-area: products-lis;
+        background-color: rgba(255, 255, 255, 0.733);
+        padding: 1em;
+     }
+
+    .img-pad-a{
+        grid-area: img-pad-a;
+        align-self: center;
+        float: left;
+        margin-right: 2em;
+        width: 50%;
+    height: auto;
+    }
+
+    .img-pad-b{
+        grid-area: img-pad-b;
+        align-self: center;
+        width: 50%;
+        
+    height: auto;
+    }
+
+    .products-svar{
+        grid-area: products-svar;
+        background-color: rgba(255, 255, 255, 0.733);
+        padding: 1em;
+        
+     }
+
+     .products-sanit{
+        grid-area: products-sanit;
+        background-color: rgba(255, 255, 255, 0.733);
+        padding: 1em;
+     }
+
+     .products-konstrukce{
+        grid-area: products-konstrukce;
+        background-color: rgba(255, 255, 255, 0.733);
+        padding: 1em;
+        
+     }
+
+     .products-ostatni{
+        grid-area: products-ostatni;
+        background-color: rgba(255, 255, 255, 0.733);
+        padding: 1em;
+     }
+
+    .main-products {
+        display: grid;
+        max-width:80%; 
+        background-color: rgba(64, 132, 177, 0.747);
+    grid-gap: 1em 1em;
+    margin-bottom: 3em;
+    grid-auto-flow: row;
+    grid-template:
+    "h1 h1"
+    "products-kov products-kov"
+    "products-revize products-revize"
+    "img-pad-a products-lis" 
+    "products-svar products-svar"
+    "products-sanit img-pad-b"
+    "products-konstrukce products-konstrukce"
+    "products-ostatni products-ostatni" ;
+        
+       
+    }
+
+    
+
+    .menu-toggle{
+        display: none;
+    }
+
+    .main-index{
+        grid-template:
+        "box_prezentace box_prezentace"
+        "box_produkty box_nastrojarna";
+    }
+
+   
+
+    menu li a, .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    
+    menu li a:hover, .dropdown:hover .dropbtn {
+        background-color:lightblue;
+    }
+    
+    menu li.dropdown {
+        display: inline-block;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .dropdown-content a:hover {background-color: #f1f1f1}
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+
+
+  
+}
+
+
+@media print {
+    @page{
+        size: A4;
+        margin:15mm 15mm 15mm 15mm;
+        
+       
+    }
+
+  
+
+    .logo{
+        display:none;
+    }
+
+    .menu{
+        display:none;
+    }
+
+    footer{
+        display:none;
+    }
+
+    span{
+        display:none;
+    }
+
+    .map-responsive{
+        display:none;
+    }
+    body{
+    font-size: small;
+    }
+}
+
