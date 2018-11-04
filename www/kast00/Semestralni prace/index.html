@@ -8,15 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet">
-    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
     <div id="wrapper">
 
         <header class="container"> <a href="#wrapper"><img src="img/credit-card.png" alt="logo">
-            <div class="logoText">
-                    <h1>Cashless VŠE</h1></div>
+                <div class="logoText">
+                    <h1>Cashless VŠE</h1>
+                </div>
             </a>
 
             <nav>
@@ -30,49 +31,192 @@
             <div class="clear"></div>
         </header>
         <div id="hero" class="container">
-        <div class="container">
-            <div class="heroTitle">                <div class="logoText">
-                <h1>Cashless VŠE</h1>
-                <p>Enjoy university - cash free</p>
-            </div></div></div>
+            <div class="container">
+                <div class="heroTitle">
+                    <div class="logoText">
+                        <h1>Cashless VŠE</h1>
+                        <p>Enjoy university - cash free</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="about" class="container">
-                <h2>About the project</h2>
+            <h2>About the project</h2>
             <div class="left">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem dignissimos pariatur mollitia at obcaecati quam similique aut. Saepe aliquam ad atque reprehenderit quasi. Soluta quo provident, praesentium eum est numquam.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem dignissimos pariatur mollitia at obcaecati quam similique aut. Saepe aliquam ad atque reprehenderit quasi. Soluta quo provident, praesentium eum est numquam.</p></div>
+                <p>Cashless VŠE is a project focused on helping students find and help to use all places where you can
+                    pay without cash inside school campus. The goal is to provide all information about restaurants,
+                    shops and vending machines.</p>
+                <p>Yes, restaurants and shops are easy, they are changing maybe once in decade. But vending machines
+                    are more complicated because there are so many of them and they are changing constantly. Some of
+                    them are cashless but not always working. That is why we give you option to report new cashless
+                    vending machines or to report some that are not working.</p>
+                <p>We hope that this website will help you when you are in the rush and you don't have cash on you.</p>
+            </div>
             <div class="right"><img src="img/project.jpg" alt="slecna z fotobanky" />
-            <span class="imgDesc">You probably won't be happy as this lady from photobank but still you will discover where you can pay without cash. And that is something!</span>
+                <span class="imgDesc">You probably won't be happy as this lady from photobank but still you will
+                    discover where you can pay without cash. And that is something!</span>
             </div>
             <div class="clear"></div>
         </div>
-<hr />
+        <hr />
         <div id="vendingMachines" class="container">
-                <h2>Cashless vending machines</h2>
-            <div class="left">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem dignissimos pariatur mollitia at obcaecati quam similique aut. Saepe aliquam ad atque reprehenderit quasi. Soluta quo provident, praesentium eum est numquam.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem dignissimos pariatur mollitia at obcaecati quam similique aut. Saepe aliquam ad atque reprehenderit quasi. Soluta quo provident, praesentium eum est numquam.</p></div>
-            <div class="right"><img src="img/project.jpg" alt="slecna z fotobanky" />
-            <span class="imgDesc">You probably won't be happy as this lady from photobank but still you will discover where you can pay without cash. And that is something!</span>
-            </div>
+            <h2>Cashless vending machines</h2>
+            <div class="placeholder">This is placeholder for active map of vending machines. (second task)</div>
             <div class="clear"></div>
         </div>
 
         <hr />
         <div id="restaurants" class="container">
-                <h2>Cashless restaurants</h2>
+            <h2>Restaurants</h2>
+
+
+            <div>
+                <button class="tabNav activeTab" onclick="openRestaurant(event,'res1')">Akademický klub</button>
+                <button class="tabNav" onclick="openRestaurant(event,'res2')">Deštník / Kantýna</button>
+                <button class="tabNav" onclick="openRestaurant(event,'res3')">Menza Italská</button>
+            </div>
+
+            <div id="res1" class="restaurant">
+                <div class="left">
+                    <p>Akademický klub is located at third floor of Italian building.</p>
+
+                    <p>This restaurant offers</p>
+                    <ul>
+                        <li>Lunch menu and stable minute menu</li>
+                        <li>Catering services (seminars, workshopts etc.) for discounted "student prices"</li>
+                        <li>Terrace</li>
+                        <li>Freshly own made cakes, lemonades and pastry</li>
+                    </ul>
+                    <p><strong>Open:</strong> Monday to friday 11:00 to 19:00</p>
+
+                </div>
+                <div class="right"><img src="img/akademicky_klub.jpg" alt="akademicky klub" />
+                    <span class="imgDesc">Interior of Akademický klub</span>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div id="res2" class="restaurant" style="display:none">
+                <h2>Café bar Deštník and Kantýna VŠE</h2>
+                <div class="left">
+                    <p>Welcome to restaurant Cafe bar Deštník and canteen at the University of Economics in Prague. Our
+                        workshops are part of the concept of "Eat bread / Drink Coffee", which we launched successfully
+                        on the Czech market in modern canteen in the Café Museum.</p>
+                    <p>All long-term accumulated experience will also bring in the Canteen and Cafe bar Deštník. In all
+                        our operations, including University of Economics we offer a simple modern cuisine based on
+                        fresh and high quality raw materials for domestic production, honest bakery and confectionery.
+                        Drink coffee, Eat bread is freshly roasted one sort &nbsp;coffee, homemade breads and spreads.
+                        Part of this concept are also homemade lemonade and quality burgers, which we produce ourselves
+                        completely, including buns baked according to a secret recipe.</p>
+                    <p>All bakery and confectionery products we produce for you in the <a href="http://www.kavarnamuzeum.cz"
+                            target="_blank">Café Museum</a>, which serves as a factory meals and products for the
+                        catering division<a href="http://www.divadelnicatering.cz" target="_blank"> Theater Catering</a>.</p>
+                    <p>Dear students, staff and visitors to the school, cordially invite you to visit our operations at
+                        the University of Economics in Prague.</p>
+                    <p>You can find us by turning left right behind entrance to new building.</p>
+                    <p><strong>Open:</strong> Monday to friday 08:00 to 20:00</p>
+
+                </div>
+                <div class="right"><img src="img/destnik.jpg" alt="destnik" />
+                    <span class="imgDesc">Interior of Café deštník</span>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div id="res3" class="restaurant" style="display:none">
+                <div class="left">
+                    <p>Menza Italská is located in campus of VŠE in Rajská budova. Current operator of menza is company
+                        <a href="http://avgastro.cz/">AV Gastro, s.r.o.</a></p>
+                    <p>Current menza menu is available thru portal <a title="Webkredit" href="https://webkredit.vse.cz/webkredit_italska/">Webkredit</a>.</p>
+                    <p><b>Breakfast:</b> Po–Pá 8:00 – 10:00 (students diner)</p>
+                    <p><b>Lunch:</b> Mon-Thu 11:00 – 15:00 (students diner), 15:00 – 17:00 (employees diner)</p>
+                    <p>Fri 11:00 – 15:00 (students diner)</p>
+                    <p><b>Dinner:</b> Mon-Thu 17:00 – 20:00 (employees diner)</p>
+
+                </div>
+                <div class="right"><img src="img/italska.jpg" alt="italska menza" />
+                    <span class="imgDesc">Interior of menza Italská</span>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <hr />
+        <div id="bookshop" class="container">
+            <h2>Ekopress Bookshop</h2>
             <div class="left">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem dignissimos pariatur mollitia at obcaecati quam similique aut. Saepe aliquam ad atque reprehenderit quasi. Soluta quo provident, praesentium eum est numquam.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem dignissimos pariatur mollitia at obcaecati quam similique aut. Saepe aliquam ad atque reprehenderit quasi. Soluta quo provident, praesentium eum est numquam.</p></div>
-            <div class="right"><img src="img/project.jpg" alt="slecna z fotobanky" />
-            <span class="imgDesc">You probably won't be happy as this lady from photobank but still you will discover where you can pay without cash. And that is something!</span>
+                <p>This bookshop is located in VŠE campus, old building, ground floor.</p>
+                <p>It offers books about economy, management, accounting, marketing, psychology, personal development,
+                    career etc. You can also find language textbooks, foreign publications and professional
+                    periodicals.
+                </p>
+                <p>Scripts, publications for VŠE lectures and promotionals items of university can also be bought in
+                    this shop.
+                </p>
+                <p>Store accepts credit/debit cards.</p>
+
+                <p><strong>Open:</strong><br /> Mon 8,30–17,00, Tue 8,30–17,00, Wed 8,30–18,00, Thu 8,30–17,00,
+                    Fri 8,30–15,00</p>
+
+            </div>
+            <div class="right"><img src="img/bookshop.jpg" alt="bookshop" />
+                <span class="imgDesc">In this store you can find over 7 thousand books from fields of economy,
+                    management, accounting, marketing etc.</span>
             </div>
             <div class="clear"></div>
         </div>
-        
+        <hr />
+
+        <div id="author" class="container">
+            <h2>About author</h2>
+            <img src="img/author.jpg" alt="tomas kaspar" />
+            <p>My name is Tomáš Kašpar. I'm student of University of economics in Prague (applied informatics).</p>
+            <p>I have created this project because I don't carry much cash on me and that could be sometimes quite
+                issue in our campus. You have only few minutes to get from one class to another and you can't just run
+                around the school and look for some place where you can use your credit/debit card.</p>
+        </div>
+
     </div>
     <footer>Created by Tomáš F. Kašpar</footer>
+    <div class="scrollToTop" id="scrollButton">&#8679;</div>
+    <script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+
+        $(document).scroll(function () {
+    var y = $(this).scrollTop();
+    if (y > 200) {
+        $('.scrollToTop').fadeIn();
+    } else {
+        $('.scrollToTop').fadeOut();
+    }
+
+});
+
+$(function(){$("#scrollButton").click(function(){$("html,body").animate({scrollTop:$("#wrapper").offset().top},"1000");return false})})
+
+        function openRestaurant(evt, restaurantName) {
+            var i, x, tabnavs;
+            x = document.getElementsByClassName("restaurant");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tabnavs = document.getElementsByClassName("tabNav");
+            for (i = 0; i < x.length; i++) {
+                tabnavs[i].className = tabnavs[i].className.replace("activeTab", "");
+            }
+            document.getElementById(restaurantName).style.display = "block";
+            evt.currentTarget.className += " activeTab";
+        }
+    </script>
 </body>
 
 </html>

@@ -59,6 +59,8 @@ footer {
 .left  {
     float: left;
     width: 60%;
+    padding: 0px 18px;
+    text-align: justify;
 }
 .right {
     float: left;
@@ -73,7 +75,7 @@ footer {
     text-align: center;
 }
 .container {
-padding: 20px 0px;
+padding: 20px 20px;
 max-width: 1024px;
 margin-right: auto;
 margin-left: auto;
@@ -104,3 +106,62 @@ hr {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
     max-width: 1024px;
 }
+
+button {
+    background-color: #e7e7e7;
+    border: none;
+    color: black;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0px 0px 0px;
+}
+.activeTab {
+    color: white;
+    background-color: black;
+}
+.placeholder {
+    text-align: center;
+    padding: 200px 10px;
+    border: 1px solid black;
+}
+.restaurant {
+    padding: 20px;
+}
+#author img {
+    width: 120px;
+    border-radius: 120px;
+}
+.scrollToTop {
+    display: none;
+    position: fixed;
+    /* width: 50px; */
+    /* height: 50px; */
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 80px;
+    bottom: 0px;
+    right: 0px;
+    padding: 0px 17px;
+    color: white;
+    margin: 20px;
+    font-size: 46px;
+    z-index: 1;
+    cursor: pointer;
+}
+@media screen and (max-width: 960px) {
+    nav {
+        float: left!important;}
+} 
+
+@media screen and (max-width: 768px) {
+    .left {
+        width: 100%;
+    }
+    .right {
+        width: 100%;
+    }
+} 
+
