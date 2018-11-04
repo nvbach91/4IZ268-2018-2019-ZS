@@ -1,0 +1,40 @@
+    .menu {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            .menu li {
+                display: inline;
+            }
+
+            .menu a {
+                text-decoration: none;
+                border-bottom: 0;
+                background: #fff;
+                padding: .2em;
+                float: left;
+                width: 325px;
+                line-height: 70px;
+                text-align: center;
+                background-color:rgb(236, 147, 248);
+                font-size: 30px;
+               }
+            .menu a:hover {
+                background-color:rgb(202, 255, 116);
+            }
+    .poster{
+    font-size: 120px;
+    color: black;
+    min-height: 270px;
+    line-height: 2.6em;
+    padding: 00px 00px 00px 00px;
+    text-align: center;
+    background-image: url("http://www.butterfly-karlin.cz/image/blogs/images/1024x0/4/jpg/72_225_590887e80aebd_cafe_vitkov.jpg");
+    /*background-image: url("/fotky/top.jpg");*/
+    /*tady kdyz jsem dal nejaky obrazek od sebe, tak to nefungovalo z nejakeho duvodu*/
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 2px;
+} 
