@@ -78,7 +78,7 @@ header {
     margin: 5px 0;
 }
 
-.hero-banner h1 .f {
+.hero-banner h1 .special {
     color: #405947;
 }
 
@@ -87,12 +87,12 @@ header {
     color: white;
     text-transform: uppercase;
     letter-spacing: 15px;
-    margin: 0px;
+    margin: 0;
 }
 
 .hero-banner h3 {
     color: white;
-    margin: 0px;
+    margin: 0;
     letter-spacing: 3px;
 }
 
@@ -215,9 +215,120 @@ footer {
     font-size: 15px;
     margin: 0;
 }
+                   
+@media screen and (max-width: 1024px) {
+    .wrapper {
+        max-width: 85%;
+        margin: 0px auto;
+    }
 
+    .flex-box2 img {
+        width: 80%;
+        height: auto;
+    }
+}
+@media screen and (max-width: 800px)  { 
+    .wrapper {
+        max-width: 85%;
+        margin: 0px auto;
+    }
+    
+    .container {
+        flex-wrap: wrap;
+        flex-direction: column
+    }
+ 
+    .flex-box {
+        width: 100%;
+    }
+ 
+    .flex-box2 {
+        width: 100%;
+    }
+ 
+    .flex-box2 img {
+        width: 50%;
+        height: auto;
+    }
 
+    .button {
+        width: 40%;
+        margin-bottom: 50px;
+    }
+}
+@media screen and (max-width: 480px)  {
+    .wrapper {
+        max-width: 85%;
+        margin: 0px auto;
+    }
 
+    .hero-banner h1 {
+        font-size: 25px;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .hero-banner h3 {
+        font-size: 15px;
+    }
+
+   .main-nav li {
+       flex-basis: 80px;
+       font-size: 14px;
+   }
+
+   .navigation {
+       position: static;
+   }
+
+   .container {
+       flex-wrap: wrap;
+       flex-direction: column
+   }
+
+   .flex-box {
+       width: 100%;
+   }
+
+   .flex-box2 {
+       width: 100%;
+   }
+
+   .flex-box2 img {
+       width: 70%;
+       height: auto;
+   }
+
+   .button {
+       width: 70%;
+   }
+
+} 
+
+@media print {
+
+    .index-bg, .about-bg, .food-bg, .rege-bg,
+     .train-bg {
+         background-image: none;
+     }
+
+    footer, .credits, .navigation {
+        display: none;
+    }
+    
+    a:after {
+        content: "("attr(href)")";
+      }
+
+}
+    
 
 
 
