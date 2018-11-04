@@ -1,0 +1,271 @@
+body{
+    font-family: 'Cinzel', serif;
+    margin: 0;
+    padding:0;
+    font-size:18px;
+}
+a {
+    color: #000;
+}
+h1 {
+    font-size: 5px;
+    letter-spacing: 2px;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 35%;
+    z-index: 10;
+}
+nav ul {
+    list-style: none;
+}
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+.right{
+    background-color: #fff;
+    width:50%;
+}
+.left {
+    background-color: darkgreen;
+    width: 50%;
+}
+#main .left {
+    height: 100vh;
+}
+section.first {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.first h3 {
+    font-size: 20px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+section.first h1 {
+    font-size:25px;
+    position: relative;
+}
+p {
+    line-height: 150%;
+}
+.second {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    width: 50%;
+    height:621px;
+    background-color:#fff;
+    background-image: url('../images/Eren_jaeger.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    float:left;
+   
+}
+.info-1 {
+    width: 90%;
+    padding: 100px 0;
+    position: right;
+    float: left;
+    padding: 100px;
+}
+.second:hover{
+    background-color: darkgreen;
+}
+.third {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    width: 50%;
+    height: 621px;
+    background-color: #fff;
+    background-image: url('../images/mikasa.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    float: right;
+}
+.info-2 {
+    width: 90%;
+    padding: 100px 0;
+    position: relative;
+    float: left;
+    padding: 100px;
+}
+.third:hover{
+    background-color: rgb(133, 21, 21);
+}
+.fourth {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    width: 50%;
+    height:621px;
+    background-color:#fff;
+    background-image: url('../images/armin.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    float:left;
+}
+.info-3 {
+    width: 90%;
+    padding: 100px 0;
+    position: right;
+    float: top right;
+    padding: 100px;
+}
+.fourth:hover{
+    background-color:royalblue;
+}
+.fifth {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    width: 50%;
+    height: 621px;
+    background-color: #fff;
+    background-image: url('../images/levi.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    float: right;
+}
+.info-4 {
+    width: 90%;
+    padding: 100px 0;
+    position: relative;
+    float: top left;
+    padding: 100px;
+}
+.fifth:hover{
+    background-color:grey;
+}
+.underline {
+    padding-bottom: 2px;
+    border-bottom: 2px solid;
+    display: inline-block;
+}
+.author-1 {
+    top: 100px;
+    position: relative;
+    left: 10%;
+    width: 50%;
+}
+.author-2 {
+    position: relative;
+    top: -20px;
+    left: 200px;
+    color: #000;
+}
+img.author-image{
+    width: 200px;
+    position: relative;
+    margin-left: 200px;
+}
+
+footer {
+    width: 100%;
+}
+
+footer p {
+    text-align: center;
+    margin: 30px 0;
+}
+.eren-1 {
+    top: 100px;
+    position: relative;
+    left: 10%;
+    width: 50%;
+}
+.eren-2 {
+    position: relative;
+    top: -5px;
+    left: 200px;
+    color: #000;
+}
+img.eren-image{
+    width: 400px;
+    position: relative;
+}
+.eren-BI {
+    list-style: none;
+}
+.mikasa-1 {
+    top: 100px;
+    position: relative;
+    left: 10%;
+    width: 50%;
+}
+.mikasa-2 {
+    position: relative;
+    top: -5px;
+    left: 200px;
+    color: #000;
+}
+img.mikasa-image{
+    width: 300px;
+    position: relative;
+}
+.mikasa-BI {
+    list-style: none;
+}
+.armin-1 {
+    top: 100px;
+    position: relative;
+    left: 10%;
+    width: 50%;
+}
+.armin-2 {
+    position: relative;
+    top: -5px;
+    left: 200px;
+    color: #000;
+}
+img.armin-image{
+    width: 300px;
+    position: relative;
+}
+.armin-BI {
+    list-style: none;
+}
+.levi-1 {
+    top: 100px;
+    position: relative;
+    left: 10%;
+    width: 50%;
+}
+.levi-2 {
+    position: relative;
+    top: -5px;
+    left: 200px;
+    color: #000;
+}
+img.levi-image{
+    width: 300px;
+    position: relative;
+}
+.levi-BI {
+    list-style: none;
+}
+.author-links{
+    list-style: none;
+}
+
+/*@media screen and (min-width: 1600px) {
+    section.first {
+        top: 50px;
+    }
+
+     main#about section.first{
+        top: 50px;
+    }    
+
+    .scroll-down {
+        display: block;
+    }
+
+    .author-1,.armin-1,.levi-1,.mikasa-1,.eren-1 {
+        left: 50px;
+    }
+
+}
