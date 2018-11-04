@@ -1,6 +1,6 @@
 * {
     box-sizing:border-box;
-    font-family: 'Century Gothic';
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 header > .nadpis {
@@ -10,6 +10,7 @@ header > .nadpis {
 .pozadi {
     color: white;
     min-height: 600px;
+    width:100%;
     padding-top: 60px;
     background-image: url('../img/pozadi.png');
     background-size: cover;
@@ -440,9 +441,9 @@ footer {
     color: black;
 }
  
-.facebook { background-image: url('https://image.flaticon.com/icons/svg/54/54997.svg'); }
-.twitter { background-image: url('https://www.iconsdb.com/icons/preview/black/twitter-4-xxl.png'); }
-.instagram { background-image: url('https://iconsplace.com/wp-content/uploads/_icons/000000/256/png/instagram-icon-256.png'); }
+.facebook { background-image: url('../img/facebook.png'); }
+.twitter { background-image: url('../img/twitter.png'); }
+.instagram { background-image: url('../img/instagram.png'); }
 
 .o_nas .ukazka:nth-child(3) ul {
     margin-top: 30px;
