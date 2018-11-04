@@ -1,0 +1,373 @@
+* {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+
+/* 
+#C1403D красный
+#90AFC5 нежно-голубой
+#336B87 голубой
+#2D4262 индиго
+#2A3132 серо-синий
+#363237 серый
+#763626 коричневый
+#73605B бежево-коричневый
+#D09683 персик
+*/
+
+nav {
+    display: flex;
+    color: #C1403D;
+    margin: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    padding: 0 14px;
+    line-height: 40px;
+}
+
+/* nepodarilo se mi posunout vyhledavaci tlacitko uplne vpravo, 
+   bez inputu to fungovalo dobre)) */
+.search input[type=text] {
+    width: 20px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 300;
+    background-color: white;
+    background-image: url(../images/search.png);
+    background-position: 10px;
+    background-size: 20px;
+    padding: 10px 20px 10px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    /* margin-left: auto;
+    margin-inline-end: 5px; */
+    cursor: pointer;
+}
+
+.search input[type=text]:focus {
+    width: 100%;
+}
+
+.logo-navbar img {
+    width: 40px;
+    height: 40px;
+}
+
+.intro {
+    height: 90vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: table;
+    background: url(../images/prague1.jpg) center center;
+    background-size: cover; 
+}
+
+.intro .inner {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.content {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20%;
+}
+
+.content h1 {
+    font-family: 'Yantramanav', sans-serif;
+    font-size: 300%;
+    font-weight: 100;
+    color: black;
+    line-height: 100%;
+    padding-bottom: 10px;
+}
+
+.intro .btn {
+    border-color: #C1403D;
+}
+
+.btn {
+    font-size: 100%;
+    font-weight: 300;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 10px 20px;
+}
+
+.flex-container .btn {
+    border: 1px solid white;
+    color: white;
+}
+
+.intro a:hover {
+    border-color: white;
+    animation-name: flash_button;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: flash_button;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: flash_button;
+    -moz-animation-duration: 10s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+}
+
+@keyframes flash_button {
+    0% {
+        border-color: #C1403D;
+        color: #C1403D;
+    }
+
+    25% {
+        border-color: #D09683;
+        color: #D09683;
+    }
+
+    50% {
+        border-color: #90AFC5;
+        color: #90AFC5;
+    }
+
+    75% {
+        border-color: #2D4262;
+        color: #2D4262;
+    }
+
+    100% {
+        border-color: #C1403D;
+        color: #C1403D;
+    }
+}
+
+@-webkit-keyframes flash_button {
+    0% {
+        border-color: #C1403D;
+        color: #C1403D;
+    }
+
+    25% {
+        border-color: #D09683;
+        color: #D09683;
+    }
+
+    50% {
+        border-color: #90AFC5;
+        color: #90AFC5;
+    }
+
+    75% {
+        border-color: #2D4262;
+        color: #2D4262;
+    }
+
+    100% {
+        border-color: #C1403D;
+        color: #C1403D;
+    }
+}
+
+@-moz-keyframes flash_button {
+    0% {
+        border-color: #C1403D;
+        color: #C1403D;
+    }
+
+    25% {
+        border-color: #D09683;
+        color: #D09683;
+    }
+
+    50% {
+        border-color: #90AFC5;
+        color: #90AFC5;
+    }
+
+    75% {
+        border-color: #2D4262;
+        color: #2D4262;
+    }
+
+    100% {
+        border-color: #C1403D;
+        color: #C1403D;
+    }
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.flex-container>div {
+    background-color: #C1403D;
+    /* opacity: .9; */
+    width: 100%;
+    height: 30vh;
+    margin: 1px;
+    text-align: center;
+    line-height: 30vh;
+}
+
+nav a:link,
+a:link {
+    color: #C1403D;
+    text-decoration: none;
+}
+
+nav a:visited,
+a:visited {
+    color: #C1403D;
+    text-decoration: none;
+}
+
+nav a:hover,
+a:hover {
+    color: #C1403D;
+    text-decoration: none;
+}
+
+nav a:active,
+a:active {
+    color: #C1403D;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    font-size: 50%;
+    line-height: 100%;
+    margin: 30px;
+}
+
+/* Extra small devices (480px and up) */
+@media only screen and (min-width: 480px) {
+    body .intro h1 {
+        font-size: 300%;
+    }
+
+    body .intro .btn {
+        font-size: 100%;
+    }
+
+    body .flex-container>div {
+        width: 49%;
+        height: 35vh;
+        line-height: 35vh;
+    }
+}
+
+/* Small devices (600px and up) */
+@media only screen and (min-width: 600px) {
+    body .intro h1 {
+        font-size: 300%;
+    }
+
+    body .intro .btn {
+        font-size: 100%;
+    }
+    body .flex-container>div {
+        width: 49%;
+        height: 40vh;
+        line-height: 40vh;
+    }
+
+    body footer {
+        font-size: 70%;
+        margin: 40px;
+    }
+}
+
+/* Medium devices (768px and up) */
+@media only screen and (min-width: 768px) {
+    body .intro h1 {
+        font-size: 350%;
+    }
+
+    body .intro .btn {
+        font-size: 90%;
+    }
+
+    body .flex-container>div {
+        width: 49%;
+        height: 45vh;
+        line-height: 45vh;
+    }
+
+    body footer {
+        font-size: 80%;
+        margin: 50px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    body .intro h1 {
+        font-size: 400%;
+    }
+
+    body .intro .btn {
+        font-size: 100%;
+    }
+    body .content {
+        margin-bottom: 17%;
+    }
+    body .flex-container>div {
+        width: 49%;
+        height: 50vh;
+        line-height: 50vh;
+        margin: 2px;
+    }
+
+    body footer {
+        font-size: 80%;
+        margin: 50px;
+    }
+}
+
+/* Extra large devices (1200px and up) */
+@media only screen and (min-width: 1200px) {
+    body .intro h1 {
+        font-size: 500%;
+    }
+
+    body .intro .btn {
+        font-size: 100%;
+        font-weight: 400;
+    }
+
+    body .content {
+        margin-bottom: 15%;
+    }
+    body .flex-container>div {
+        width: 49%;
+        height: 50vh;
+        line-height: 50vh;
+        margin: 2px;
+    }
+
+    body footer {
+        font-size: 90%;
+        margin: 60px;
+    }
+}
