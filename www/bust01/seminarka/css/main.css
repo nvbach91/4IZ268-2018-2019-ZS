@@ -778,6 +778,7 @@ footer {
         margin: 0 300px;
     }
     .pozadi {
+        color:black;
         background:none;
         height:650px;
     }
@@ -819,6 +820,9 @@ footer {
     .hlavni_stranka .ukazka:nth-child(2), .hlavni_stranka .ukazka:nth-child(3) {
         height: 150px;
     }
+    .sportovci:nth-child(2) {
+        margin-top:50px;
+    }
     .sportovec {
         width:48%;
     }
@@ -850,16 +854,20 @@ footer {
     .sport_loh {
         height:370px;
     }
-    .sport_loh:nth-child(1),.sport_loh:nth-child(2){
+    .sport_loh:nth-child(1) {
         width:100%;
-        height:430px;
+        height:450px;
+    }
+    .sport_loh:nth-child(2){
+        width:100%;
+        height:400px;
     }
     .sport_loh:nth-child(1) ul,.sport_loh:nth-child(2) ul {
         margin-left:120px;
     }
     .sport_zoh:nth-child(1), .sport_zoh:nth-child(2), .sport_zoh:nth-child(3) {
-        height:380px;
-        margin-bottom: 30px;
+        height:400px;
+        margin-bottom: 70px;
         width:27%;
     }
     .sport_zoh:nth-child(4), .sport_zoh:nth-child(5), .sport_zoh:nth-child(6),
