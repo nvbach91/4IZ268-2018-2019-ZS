@@ -14,6 +14,14 @@ nav span {
     padding: 14px 16px;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.div-center {
+    margin: auto auto;
+}
+
 .default-margin {
     margin-top: 50px;
 }
@@ -83,7 +91,6 @@ body {
 /* OBSAH */
 .ultimate-container {
     width: 90%;
-    height: 800px;
     display: flex;
     flex-direction: row;
     margin: 20px auto;
@@ -170,6 +177,7 @@ footer {
     color: white;
     text-align: right;
     margin: 0;
+    margin-top: 50px;
 
 }
 
@@ -183,7 +191,7 @@ footer p {
 
 
 .header-page2 {
-    background-image: url("https://the-brandidentity.com/app/uploads/2017/08/PremierLeague_2.jpeg");
+    background-image: url("/img/PremierLeague_2.jpeg");
 }
 
 .content {
@@ -192,14 +200,12 @@ footer p {
     flex-direction: row;
     flex-wrap: wrap;
     margin: 40px auto;
+    justify-content: space-between;
 }
 
-section {
-    width: 50%;
-}
-
-section .round {
-    margin: 5px 5px;
+.round {
+    width: 45%;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     border-top-right-radius: 10px;
@@ -210,7 +216,7 @@ section .round {
 .upcoming {
     display: block;
     text-align: center;
-    padding 20px 16px;
+    padding: 16px 14px;
 }
 
 .round-content {
@@ -247,14 +253,11 @@ table {
     border-collapse: collapse;
     text-align: center;
 }
+
 table .team {
     text-align: left;
     padding: 5px 10px;
-    padding-right: 40px;d
-}
-
-table th, tr {
-    overflow: hidden;
+    padding-right: 40px;
 }
 
 table th {
@@ -310,7 +313,6 @@ table tr {
     background-repeat: no-repeat;
     position: relative;
     border-bottom: 1px solid #e8e8e8;
-    display: inline-block;
     float: left;
 }
 
@@ -322,7 +324,6 @@ table tr {
 .footballerImg {
     height: 18vw;
     position: absolute;
-    display: inline-block;
     float: right;
     bottom: 0;
     right: 15px;
@@ -373,7 +374,6 @@ table tr {
     .footballerImg {
         height: 85%;
         position: absolute;
-        display: inline-block;
         float: right;
         bottom: 0;
         right: 15px;
@@ -384,9 +384,142 @@ table tr {
     .footballerImg {
         height: 95%;
         position: absolute;
-        display: inline-block;
         float: right;
         bottom: 0;
         right: 15px;
     }
+}
+
+
+
+
+/* PRESTUPY */
+
+#transfers {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+    margin: 0px auto;
+}
+
+
+.transferFromTo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 14px 0;
+}
+
+.transfer {
+    margin: 200px 0px;
+    min-height: 100px;
+    display: inline-block;
+    border: solid #DDD 1px;
+    text-align: center;
+    width: 20vw;
+}
+
+.mostExpensive {
+    display: inline-block;
+    text-align: center;
+    border: solid #DDD 1px;
+    height: 100%;
+    width: 20vw;
+}
+
+.playerImg {
+    height: 18vw;
+    display: inline-block;
+    bottom: 0;
+    right: 15px;
+    margin-bottom: 0px;
+}
+
+.transferInfo {
+    background-color: #eaeaea;
+}
+
+.teamFrom, .teamTo {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.teamFrom h4, .teamTo h4 {
+    margin-top: 0;
+}
+
+
+.transferInfo h4 {
+    font-size: 1.21rem;
+    margin-bottom: 0px;
+}
+
+.price h4 {
+    margin-top: 0px;
+}
+
+.logo {
+    background-color: #FFF;
+    height: 120px;
+    width: 120px;
+    border-radius: 300px;
+}
+
+.juventus {
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/juventus.png);
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.manutd{
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/manutd.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.liverpool{
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/liverpool.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.barcelona{
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/barcelona.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tottenham{
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/tottenham.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.real{
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/real.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.transfer .teamLogo, .mostExpensive .teamLogo {
+    display: none;
 }
