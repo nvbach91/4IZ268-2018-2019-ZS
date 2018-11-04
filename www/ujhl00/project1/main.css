@@ -166,18 +166,16 @@ header {
     margin-right: auto;
 }
 
-.flex-box button {
-    display: flex;
-    justify-content: center;
+.button {
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    border: none;
-    padding: 12px 0;
-    width: 180px;
+    padding: 10px;
+    width: 130px;
+    text-align: center;
     background-color: #405947;
     text-transform: uppercase;
     color: white;
-    font-weight: bold;
     cursor: pointer;
 }
 
@@ -204,6 +202,7 @@ footer {
     justify-content: center;
     flex-basis: 100%;
     background-color: #405947;
+    margin-top: 50px;
 }
 
 .credits {
