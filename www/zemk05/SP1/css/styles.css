@@ -10,12 +10,11 @@ body,ul {
 body {
     padding: 10px;
     letter-spacing: 1px;
-    background-color:rgba(184, 98, 131, 0.822);
+    background-color:#a0807f;
     font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 ul h2 {
     text-align:center;
-    border: 1px solid black;
 }
 
 p {
@@ -28,8 +27,7 @@ ul {
 
 header {
     height: 50px;
-    background-color:rgb(19, 141, 70);
-    border-top: 2px solid black;
+    background-color:#574c49;
     display: flex;
     margin-top:0;
 }
@@ -59,20 +57,23 @@ nav li a {
     color: white;
 }
 nav li:hover {
-    background-color: rgb(27, 80, 49);
+    background-color: #493939;
 }
 
 nav a {
     text-decoration: none;
 }
-#current_page {
+.current_page {
     padding: 5px 5px;
     color: white;
-    background-color: black;
+    background-color: #362b2b;
+}
+h1 {
+    background-color:#755d59;
+    text-align:center;
 }
 h2 {
-    background-color: rgb(19, 141, 70);
-    border:1px solid black;
+    background-color: #665757;
     text-align:center; 
 }
 /*STRÁNKA MAIN*/
@@ -85,9 +86,7 @@ h2 {
     background-image: url('../images/2.png');
     background-size: auto;
     background-position: center;
-    margin-top: 20px;
-    border: 2px solid black;
-    
+    margin-top: 20px;  
 }
 .intro h1 {
     font-size: 50px;
@@ -127,17 +126,16 @@ main > * {
     font-size:12px;
     position:relative;
 }
-.product:nth-child(1) {background-color:rgb(27, 173, 88);height:230px;margin-bottom: 60px; margin-right:5px;}
-.product:nth-child(2) { background-color:rgb(160, 165, 162);height:230px;margin-bottom: 60px;margin-right:5px;}
-.product:nth-child(3) { background-color:rgb(27, 173, 88); height:230px;margin-bottom: 60px;}
-.product:nth-child(4) {  background-color:rgb(160, 165, 162); height:230px;margin-bottom: 60px;margin-right:5px;}
-.product:nth-child(5) { background-color:rgb(27, 173, 88); height:230px;margin-bottom: 60px;margin-right:5px; }
-.product:nth-child(6) {  background-color:rgb(160, 165, 162); height:230px;margin-bottom: 60px; }
+.product:nth-child(1) {background-color:#cabcb9;height:230px;margin-bottom: 60px; margin-right:5px;}
+.product:nth-child(2) { background-color:#cabcb9;height:230px;margin-bottom: 60px;margin-right:5px;}
+.product:nth-child(3) { background-color:#cabcb9; height:230px;margin-bottom: 60px;}
+.product:nth-child(4) {  background-color:#cabcb9; height:230px;margin-bottom: 60px;margin-right:5px;}
+.product:nth-child(5) { background-color:#cabcb9; height:230px;margin-bottom: 60px;margin-right:5px; }
+.product:nth-child(6) {  background-color:#cabcb9; height:230px;margin-bottom: 60px; }
 
  .button {
     padding: 10px 0;
     width: 60%;
-    border: 3px solid black;
     margin: 0 auto;
     background-color: rgb(85, 87, 86);
     text-transform: uppercase;
@@ -164,20 +162,10 @@ main > * {
     background-position: center;
     padding:5px;
 }
-.about h1 {
-    text-align: center;
-    background-color: rgb(29, 212, 105);
-    border: 2px solid black;
-}
 /*STRÁNKA PRODUKTY*/
 .products {
     padding: 0;
     text-align:center;
-}
-.products h1 {
-    text-align: center;
-    background-color: rgb(29, 212, 105);
-    border: 2px solid black;
 }
 .product_price table {
     border-collapse: collapse;
@@ -185,38 +173,24 @@ main > * {
     background-color:grey;
 }
 .product_price table, td, th {
-    border: 1px solid black;
     padding: 10px;
 }
-.product_price table, thead, th {
-    border: 2px solid black;
-}
 .product_price thead {
-    background-color:rgb(29, 212, 105);
+    background-color:#5c5151;
     color: black;
 }
 /*STRÁNKA CHARITA*/
-.charity h1 {
-    text-align: center;
-    background-color: rgb(29, 212, 105);
-    border: 2px solid black;
-}
 .charity article {
-    background-color:grey;
+    background-color:#746464;
     padding: 10px 10px 10px 10px;
 }
 
 /*STRÁNKA KONTAKTY*/
-.Contact h1 {
-    text-align:center;
-    background-color: rgb(29, 212, 105);
-    border: 2px solid black;
+.contact a:link {
+    color:rgb(29, 27, 27);
 }
-.Contact a:link {
-    color:white;
-}
-.Contact a:visited {
-    color:white;
+.contact a:visited {
+    color:rgb(29, 27, 27);
 }
 
 .store{
@@ -233,7 +207,7 @@ footer {
     text-align: center;
 }
 .social {
-    background-color:rgb(19, 141, 70);
+    background-color:#755d59;
     padding: 20px 0;
 }
 .social > div {
@@ -246,117 +220,12 @@ footer {
 }
 
 .credits {
-    color: rgb(19, 141, 70);
+    color: #bdadaa;
     padding: 40px 0;
     text-align: center;
     background-color: rgb(24, 26, 34);
 }
-/*PŘIZPŮSOBENÍ PRO TISK*/
-@media print {
-body {
-    background-color:white;
-    padding:0;
-}
-p {
-    margin: 5px 0;
-}
-nav {
-    border:none;
-}
-nav a {
-    color: black;
-}
-nav li {
-    display: block;
-    margin-right: 20px;
-    padding: 0 5px;
-}
-#current_page {
-    color: black;
-    background-color: none;
-}
-header {
-    height: 25px;
-    background-color:white;
- 
-}
 
-.intro {
-    background:none;
-    max-width: 800px;
-    min-height: 40px;
-    padding: 0;
-}
-.intro h1 {
-    font-size: 25px;
-    line-height: 60px;
-}
-.intro h3 {
-    font-size:15px;
-}
-.intro h1, .intro h3 {
-    background-color: black;
-    width: 100%;
-    margin: 10px auto;
-    padding: 0px;
-}
-.logo {
-    background:none;
-    font-size:20px;
-}
-
-.product_price thead {
-    background-color: white;
-    color: black;
-}
-footer {
-    color: black;
-    border-top: solid 2px #cccccc;
-}
-.slideshow {
-    width: 100%;
-    height: 80px;
-    background-size: cover;
-    background-position: center;
-    padding:0;
-}
-.slideshow h2 {
-    margin: 0 auto;
-    padding:0;
-    text-align: center;
-    background-color: none;
-    border: 2px solid black;
-}
-.products {
-    padding:0;
-}
-.product {
-    float: left;
-    width: 30%;
-    font-size:10px;
-
-}
-.product:nth-child(1) {background-color:none;height:180px;}
-.product:nth-child(2) {background-color:none;height:180px;}
-.product:nth-child(3) { background-color:none;height:180px;}
-.product:nth-child(4) { background-color:none;height:180px;}
-.product:nth-child(5) { background-color:none;height:180px;}
-.product:nth-child(6) { background-color:none;height:180px;}
-
- .button {
-    display:none;
-}
-.social {
-    background-color:none;
-    padding: 0;
-}
-.credits {
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    background-color: rgb(24, 26, 34);
-}
-}
 /*RESPONZIVITA*/
 @media screen and (max-width: 1000px) {
     .product {
@@ -368,7 +237,7 @@ footer {
 .product:nth-child(4) {margin-bottom: 30px;}
 .product:nth-child(6) {margin-bottom: 30px; }
 }
-@media screen and (max-width: 784px) {
+@media screen and (max-width: 809px) {
     .intro {
         line-height: 1.6em;
         max-width: 800px;
@@ -396,16 +265,24 @@ footer {
         padding: 50px 0;
     }
 }
-@media screen and (max-width: 652px) {
+@media screen and (max-width: 725px) {
+    .product:nth-child(1) {height:330px;}
+    .product:nth-child(2) {height:330px;}
+    .product:nth-child(3) {height:330px;}
+    .product:nth-child(4) {height:260px;}
+    .product:nth-child(5) {height:260px;}
+    .product:nth-child(6) {height:260px;}
+}
+@media screen and (max-width: 663px) {
     nav li {
         margin-right: 10px;
     }
-    .product:nth-child(1) {height:350px;}
-    .product:nth-child(2) {height:350px;}
-    .product:nth-child(3) {height:350px;}
-    .product:nth-child(4) {height:280px;}
-    .product:nth-child(5) {height:280px;}
-    .product:nth-child(6) {height:280px;}
+    .product:nth-child(1) {height:360px;margin-right:5px;}
+    .product:nth-child(2) {height:360px;margin-right:5px;}
+    .product:nth-child(3) {height:360px;margin-right:5px;}
+    .product:nth-child(4) {height:300px;margin-right:5px;}
+    .product:nth-child(5) {height:300px;margin-right:5px;}
+    .product:nth-child(6) {height:300px;margin-right:5px;}
 }
 @media screen and (max-width: 628px) {
     .product {
@@ -413,7 +290,7 @@ footer {
     }
     .product:nth-child(1) {height:270px;}
     .product:nth-child(2) {height:270px;}
-    .product:nth-child(3) {height:270px;}
+    .product:nth-child(3) {height:260px;}
     .product:nth-child(4) {height:260px;}
     .product:nth-child(5) {height:260px;}
     .product:nth-child(6) {height:260px;}
@@ -421,7 +298,7 @@ footer {
         margin-right: 5px;
     }
 }
-@media screen and (max-width: 579px) {
+@media screen and (max-width: 587px) {
     .logo {
         width: 80px;
     }
@@ -437,7 +314,7 @@ footer {
         line-height: 1.5em;
         background-size:680px auto;
     }
-    #current_page {
+    .current_page {
         padding: 0 5px;
     }
     nav li {
@@ -486,9 +363,8 @@ footer {
         line-height: 20px;
     }
     .slideshow h2 {
-        font-size:17px;
+        font-size:20px;
     }
-
     .button {
         width: 70%;
         left: 15%; 
@@ -512,15 +388,18 @@ footer {
         padding: 5px;
         font-size: 13px;
     }
-    .products h2 {
-        font-size:18px;
+    .slideshow h2 {
+        font-size:20px;
     }
     .product {
         width:100%;
-        }
-    .product:nth-child(1) {height:220px;}
-    .product:nth-child(2) {height:220px;}
-    .product:nth-child(3) {height:220px;}
+    }
+    .product h2 {
+        font-size:14px;
+    }
+    .product:nth-child(1) {height:210px;}
+    .product:nth-child(2) {height:210px;}
+    .product:nth-child(3) {height:210px;}
     .product:nth-child(4) {height:190px;}
     .product:nth-child(5) {height:190px;}
     .product:nth-child(6) {height:190px;}
@@ -544,8 +423,14 @@ footer {
     }
 }
 @media screen and (max-width: 458px) {
-    
+    .intro {
+    box-sizing:border-box;
+    max-width:800px;
+    min-height:60px;
+    background-size:cover;
+    }
     .intro h1 {
+    margin-top:10px auto;
     font-size:14px;
     }
     .intro h3 {
@@ -574,6 +459,9 @@ footer {
     .social {
         padding:15px;
     }
+    .slideshow h2 {
+
+    }
 }
 @media screen and (max-width: 376px) {
     .about,.years p,.charity article p {
@@ -586,5 +474,115 @@ footer {
     }
     .store {
         width:100%;
+    }
+}
+
+
+
+
+/*PŘIZPŮSOBENÍ PRO TISK*/
+@media print {
+    body {
+        background-color:white;
+        padding:0;
+    }
+    p {
+        margin: 5px 0;
+        font-size:10px;
+    }
+    nav {
+        display:none;
+    }
+    header {
+        height: 25px;
+        background-color:white;
+    }
+    .intro {
+        background:none;
+        max-width: 800px;
+        min-height: 40px;
+        padding: 0;
+    }
+    .intro h1 {
+        line-height: 60px;
+    }
+    h1 {
+        font-size:20px;
+    }
+    h2 {
+        font-size:16px;
+    }
+    h3 {
+        font-size:12px;
+    }
+    .intro h1 {
+        font-size:20px;
+    }
+
+    .intro h1, .intro h3 {
+        background-color: black;
+        width: 100%;
+        margin: 10px auto;
+        padding: 0px;
+    }
+    .logo {
+        background:none;
+        font-size:20px;
+    }
+
+    .product_price thead {
+        background-color: white;
+        color: black;
+    }
+    footer {
+        display:none;
+    }
+    .slideshow {
+        width: 100%;
+        height: 80px;
+        background-size: cover;
+        background-position: center;
+        padding:30px;
+    }
+    .slideshow h2 {
+        margin: 0 auto;
+        padding:0;
+        text-align: center;
+        background-color: none;
+    }
+    .products {
+        padding:0;
+    }
+    .product {
+        float: left;
+        width: 30%;
+        font-size:10px;
+    
+    }
+    .product:nth-child(1) {background-color:none;height:180px;}
+    .product:nth-child(2) {background-color:none;height:180px;}
+    .product:nth-child(3) { background-color:none;height:180px;}
+    .product:nth-child(4) { background-color:none;height:180px;}
+    .product:nth-child(5) { background-color:none;height:180px;}
+    .product:nth-child(6) { background-color:none;height:180px;}
+    
+     .button {
+        display:none;
+    }
+    .social {
+        background-color:none;
+        padding: 0;
+    }
+    .credits {
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        background-color: rgb(24, 26, 34);
+    }
+    .product_price thead {
+        font-size:14px;
+    }
+    .product_price th,tr,td {
+        font-size:11px;
     }
 }
