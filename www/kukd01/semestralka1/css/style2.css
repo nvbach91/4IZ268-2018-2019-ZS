@@ -408,9 +408,36 @@ footer{
 
 
 @media print {
-    .poster{
-        background-image: none;
-        padding: 0;
+    @page{
+        size: A4;
+        margin:15mm 15mm 15mm 15mm;
+        
+       
+    }
+
+  
+
+    .logo{
+        display:none;
+    }
+
+    .menu{
+        display:none;
+    }
+
+    footer{
+        display:none;
+    }
+
+    span{
+        display:none;
+    }
+
+    .map-responsive{
+        display:none;
+    }
+    body{
+    font-size: small;
     }
 }
 
