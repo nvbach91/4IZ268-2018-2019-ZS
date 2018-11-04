@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url("images/background2.jpg");
+    background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: lighten;
@@ -41,7 +41,7 @@ nav li {
     margin-left: 10px;
     padding: 20px 50px;
     background-color: #F2F2EB;
-    opacity: 0.5;
+    opacity: 0.7;
     text-decoration: none;
     float: left;
 }
@@ -59,22 +59,22 @@ nav li:hover a {
     color: white;
 }
 
-nav li:active {
-    background-color: rgb(124, 34, 42);
-    opacity: 0.5;
+.active {
+    background-color: rgb(166, 46, 56);
+	color: white;
 }
 
 /* LOGOS & TOPS */
 
 .logo {
-    content: url("images/logo_white.png");
+    content: url("../images/logo_white.png");
     width: 300px;
     float: right;
     margin-top: 20px;
 }
 
 .videodiv, .topimage {
-    background-image: url("images/ai1.jpg");
+    background-image: url("../images/ai1.jpg");
     background-size: cover;
     opacity: 0.6;
     position: absolute;
@@ -94,7 +94,7 @@ nav li:active {
 
 .biglogo {
     height: 410px;
-    background-image: url("images/logo_white.png");
+    background-image: url("../images/logo_white.png");
     background-position: top;
     background-position-y: 100px;
     background-repeat: no-repeat;
@@ -114,7 +114,7 @@ nav li:active {
 }
 
 .main-text {
-    background-color: rgba(242,242,235, 0.5);
+    background-color: rgba(242,242,235, 0.7);
     padding: 20px;
     margin: 10px auto;
     text-align: justify;
@@ -123,37 +123,37 @@ nav li:active {
 /* ABOUT */
 
 .member1 {
-    content: url("images/jan.jpg");
+    content: url("../images/jan.jpg");
     height: 290px;
     width: 290px;
 }
 
 .member2 {
-    content: url("images/vaclav.jpg");
+    content: url("../images/vaclav.jpg");
     height: 290px;
     width: 290px;
 }
 
 .member3 {
-    content: url("images/dimo.jpg");
+    content: url("../images/dimo.jpg");
     height: 290px;
     width: 290px;
 }
 
 .member4 {
-    content: url("images/kaja.jpg");
+    content: url("../images/kaja.jpg");
     height: 290px;
     width: 290px;
 }
 
 .member5 {
-    content: url("images/eva.jpg");
+    content: url("../images/eva.jpg");
     height: 290px;
     width: 290px;
 }
 
 .member6 {
-    content: url("images/petra.jpg");
+    content: url("../images/petra.jpg");
     height: 290px;
     width: 290px;
 }
@@ -174,14 +174,14 @@ nav li:active {
 
 .grid-item2 {
     padding: 50px;
-    background-color: rgba(242,242,235, 0.5);
+    background-color: rgba(242,242,235, 0.7);
     transition: transform .2s;
     width: 100%;
     height: 200px;
 }
 
 .grid-item, .intro, .anotation, form {
-    background-color:rgba(242,242,235, 0.5);
+    background-color:rgba(242,242,235, 0.7);
     border-radius: 10px;
     padding: 20px;
     text-align: justify;
@@ -199,7 +199,7 @@ nav li:active {
 /* FORM */
 
 form {
-    background-color: rgba(242,242,235, 0.5);
+    background-color: rgba(242,242,235, 0.7);
 
 }
 
@@ -225,15 +225,15 @@ input {
 
 
 .image1 {
-    content: url("images/engineer.png");
+    content: url("../images/engineer.png");
 }
 
 .image2 {
-    content: url("images/course.png");
+    content: url("../images/course.png");
 }
 
 .image3 {
-    content: url("images/startup.png");
+    content: url("../images/startup.png");
 }
 
 /* KARIÉRA */
@@ -248,14 +248,14 @@ input {
 }
 
 .career1 {
-    content: url("images/flash.png");
+    content: url("../images/flash.png");
     height: 150px;
     width: 120px;
     float: left;
 }
 
 .career2 {
-    content: url("images/einstein.png");
+    content: url("../images/einstein.png");
     height: 150px;
     width: 100px;
     float: right;
@@ -289,19 +289,19 @@ input {
 }
 
 .slide:nth-child(1) {
-    background-image: url("images/jobsdev.jpg");
+    background-image: url("../images/jobsdev.jpg");
 }
   
 .slide:nth-child(2) {
-    background-image: url("images/startupakademie.jpg");
+    background-image: url("../images/startupakademie.jpg");
 }
   
 .slide:nth-child(3) {
-    background-image: url("images/StartupWorldCupSummit.jpg");
+    background-image: url("../images/StartupWorldCupSummit.jpg");
 }
   
 .slide:nth-child(4) {
-    background-image: url("images/coursera.jpg");
+    background-image: url("../images/coursera.jpg");
 }
   
 .slide p {
@@ -343,6 +343,12 @@ footer {
     border-top: 5px solid #A62E38;
     width: 100%;
     bottom: 3px;
+
+}
+
+footer p, footer a, footer div {
+    color: #F2F2EB;
+    font-weight: normal;
 }
 
 
