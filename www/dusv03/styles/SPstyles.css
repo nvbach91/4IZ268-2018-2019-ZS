@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;  
+  }
+
 .header1{
     font-size: 40px;
     font-weight:bold;
@@ -10,10 +14,17 @@ body{
 }
 
 footer{
+    margin-top: 50px;
     background-color:rgb(39, 39, 39);
     border-top:2px solid white;
     height: 100px;
     color:white;
+}
+
+.video{
+    width: 100%;
+    max-width: 640px;
+    height: 480px;
 }
     
 .bot_space{
@@ -28,7 +39,6 @@ display: flex;
 
 .paige_nav{
     padding: 2px 12px;
-    background-color: lightslategray;
 }
 
 .welcome{
@@ -37,7 +47,8 @@ display: flex;
 }
 
 .band_img{
-    width:100%
+    width:100%;
+    max-width: 1024px;
 }
 
 .band_logo_about{
@@ -51,4 +62,65 @@ display: flex;
 }
 .concert{
     border-top: 2px solid white;
+}
+
+.c_place{
+    padding-top:5px;
+}
+
+.tickets{
+    padding-bottom: 5px;
+    color:red;
+}
+
+.tickets a{
+    color:green;
+}
+
+a{
+    color: white;
+}
+
+h2{
+    padding-left: 10px;
+}
+
+
+.Album_img{
+    width: 200px;
+}
+
+.Album{
+    width:25%;
+    float:left;
+    padding:5px;
+}
+
+.Alb_name{
+    padding-top:5px;
+    font-size:20px;
+}
+
+.Alb_year{
+    padding-top:5px;
+    font-size:20px;
+}
+.clear{
+    clear: both;
+}
+
+.Alb_songs{
+    height: 350px;
+}
+
+.photo{
+    width:25%;
+    float:left;
+    max-width: 200px;
+}
+
+.info{
+    width:72%;
+    float:left;
+    padding:5px;
 }
