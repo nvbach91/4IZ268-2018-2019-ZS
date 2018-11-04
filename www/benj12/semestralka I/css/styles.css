@@ -1,0 +1,152 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto";
+  color: #312c32;
+}
+
+.logo-1 {
+  max-width: 28%;
+}
+.img-avatar {
+  border-radius: 50%;
+  width: 200px;
+}
+.slideshow {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  text-align: center;
+  height: auto;
+}
+.header {
+  background-color: #312c32;
+  padding: 20px;
+  text-align: center;
+}
+.category{
+  background-color: #474448;
+  color: #feffff;
+  padding: 20px;
+  text-align: center;
+}
+.map {
+  display: block;
+  width: 100%;
+  height: 400px;
+}
+.nav {
+  background-color: #312c32;
+  color: #feffff;
+  text-align: center;
+  font-size: 20px;
+}
+.nav-active {
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+  background-color: #312c32;
+}
+.nav a {
+  display: inline-block;
+  color: #feffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.nav a:hover {
+  background-color: #feffff;
+  color: #312c32;
+}
+/* Rozdělení sloupců */
+.column {
+  float: left;
+  padding: 10px;
+}
+.column.side {
+  width: 25%;
+}
+.column.middle {
+  width: 50%;
+  text-align: center;
+}
+.column.right {
+  width: 75%;
+  max-width: 50%;
+}
+.row {
+  padding-left: 20%;
+  padding-right: 50px;
+}
+.row-1 {
+  padding-left: 0%;
+  padding-right: 0px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footer {
+  background-color: #312c32;
+  color: #feffff;
+  text-align: center;
+  padding: 10px;
+}
+iframe{
+  border-width: 0px;
+}
+/* Nastavení responzivity pro šírku pod 1000px - mobily*/
+@media screen and (max-width: 1000px) {
+  .column.side,
+  .column.middle,
+  .column.right {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+  /* Stacking menu pod sebe
+  .nav {
+    overflow: auto;
+    text-align: center;
+    font-size: 13px;
+  }
+  .nav a {
+    float: center;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  */
+  .row {
+    padding-left: 0%;
+    padding-right: 0px;
+  }
+}
+/*Nastavení pro tisk*/
+@media print {
+  img {
+    max-width: 500px;
+  }
+  .category {
+    background-color: #474448;
+    color: #black;
+    padding: 20px;
+    text-align: center;
+  }
+  .logo-1 {
+    max-width: 28%;
+    display: list-item;
+    list-style-image: url("img/header_black.png");
+    list-style-position: inside;
+  }
+  .column.side {
+    width: 45%;
+  }
+}
