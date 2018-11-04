@@ -47,7 +47,6 @@ nav li {
 }
 
 nav li:hover {
-    font-size: 20px;
     background-color: grey;
     border-radius: 5px;
 }
