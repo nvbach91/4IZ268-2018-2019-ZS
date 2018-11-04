@@ -436,6 +436,7 @@ footer p, footer a, footer div {
     }
 }
 
+/* PRINT */
 @media print {
     h1 {
         page-break-after: avoid;
