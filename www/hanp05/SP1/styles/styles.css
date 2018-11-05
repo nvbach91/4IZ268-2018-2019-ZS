@@ -229,7 +229,7 @@ footer .book_name, footer .author_name {
         min-width: auto;
         height: 50px;
     }
-    .half_paragraph_grid, .third_paragraph_grid {
+    .half_paragraph_grid, .half_paragraph_grid_noborder, .third_paragraph_grid {
         grid-template-columns: 1fr;
     }
 }
