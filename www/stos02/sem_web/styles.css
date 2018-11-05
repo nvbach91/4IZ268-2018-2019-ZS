@@ -343,14 +343,11 @@
   }
 }
 
-@media print 
-{
-  .main_head{
-      height:136px;
-  }
-  .heading h1{
-    font-size:20px;
-  }
+@media print {
+
+  #signpost{
+    display: none;
+}
   .social{
       margin-left: 10px;
   }
@@ -364,7 +361,9 @@
      width:auto;
      padding:20px;
   }
-
+  .article_img{
+      display:none;
+  }
   .article_text_home{
       margin:10px 50px;
   }
