@@ -1,0 +1,375 @@
+*{
+    margin:0;
+}
+
+/*záhlaví*/
+#signpost{
+    float:right;
+    position: relative;
+    right: 20px;
+    top:6px;
+}
+#signpost a{
+    text-decoration: none;
+    font-size:15px;
+    color:white;
+}
+#signpost li{
+    display:inline-block;
+    padding:10px 20px;
+    border: solid 1px white;
+    margin:10px;
+}
+ #signpost li.active{
+    background-color: rgba(184, 217, 221, 0.616);
+}
+.main_head{
+    position:relative;
+    height:75px;
+    width:100%;
+    background-color:rgb(17, 56, 71);
+    border-bottom: solid 2px rgb(12, 72, 87);
+    }   
+.main_head img{
+        height:70px;
+        width:70px;
+        margin-left:20px;
+    }
+.main_head h1{
+        position:absolute;
+        font:bold 18px Tahoma;
+        top:30px;
+        padding-left: 105px;
+        color: white;
+    }
+.heading{
+        font: bold 20px Tahoma;
+        color:black;
+        padding-left:50px;
+        padding-top:10px;
+    
+}
+  /*home*/
+.articles_home{
+    background-image: url(images/background.JPG);
+    background-repeat: no-repeat;
+}
+.heading_home{
+    font: bold 20px Tahoma;
+    color:rgba(255, 255, 255, 0.664);
+    padding-left:50px;
+    padding-top:10px;
+}
+.article_text_home{
+    background-color: rgba(255, 255, 255, 0.664);
+    margin:50px 400px;
+    padding:20px;
+    text-align: center;
+}
+.article_title a{
+    text-decoration: none;
+    font: bold 22px Tahoma;
+    color: black;
+}
+
+
+/*apple s články*/
+.article_description_apple{
+    font: normal 15px Tahoma;
+    padding-top:20px;
+}
+.article_apple{
+      margin:40px 50px;  
+}
+.article_apple a{
+    text-decoration: none;
+    font: bold 22px Tahoma;
+    color: black;
+}
+.article_text{
+    padding:0 50px;
+    width:60%;
+}
+.article_section{
+    display:flex;
+    margin:20px 50px;
+}
+.article_img{
+    width: 40%;
+    margin-right:20px;
+}
+.article_img img{
+     width: 100%
+}
+
+
+/*samostatné články */
+.article{
+    padding:30px 30px;
+}
+.article_title h1{
+    text-align: center;
+    font: bold 30px Tahoma;
+    color:rgb(17, 56, 71);
+    margin-bottom:40px;
+}
+.article_description{
+    padding:20px;
+    font:normal 15px Tahoma;
+}
+.article_own{
+    font:normal 15px Tahoma;
+    padding: 10px 170px;
+    text-align: justify;
+}
+.article_own p{
+    padding:10px 10px;
+}
+.greeting p{
+    text-align: right;
+    padding-right:180px;
+}
+.own_img img{
+    height:230px;
+    width:auto;
+    padding:0 10px;
+}
+.own_img{
+    margin:10px 200px;
+    text-align: center;
+}
+.article_own h3{
+    padding-left: 10px;
+    padding-top:15px;
+    padding-bottom:5px;
+}
+.contact h1{
+    font:bold 35px Tahoma;
+    padding: 30px 30px;
+    color: rgb(17, 56, 71);
+}  
+.section_people{
+    margin: 0 100px;
+    padding-bottom:100px;
+    column-count:2;
+    text-align:center;  
+}
+.people{
+    padding: 10px 0;
+}
+.people li{
+    list-style-type: none;
+    font: normal 12px Tahoma;   
+}
+.people ul{
+    padding:0;    
+}
+.people p{
+    font: normal 12px Tahoma;
+}
+.people h3{
+    font: bold 16px Tahoma;
+    color: rgb(51, 159, 179);
+    padding:30px 0;
+}
+.people a{
+    text-decoration: none;
+    font:bold 12px Tahoma;
+    color:black;
+}
+
+
+/*zápatí*/ 
+
+.footer{
+      display: flex;
+      width:auto;
+      background-color: rgb(17, 56, 71);
+      padding:20px 20px;
+  }
+.right{
+      color:white;
+      width:950px;
+  }
+.right h2{
+      font:bold 12px Tahoma;
+      padding-bottom:5px;
+  }
+.right p{
+      font:normal 10px Tahoma;
+  }
+  
+.social{
+      display:flex;
+      margin-left:250px;
+      padding-top:10px;
+  }
+.son_twitter img, .son_facebook img, .son_instagram img{
+      width:50px;
+      height:50px;
+  }
+
+
+/*styly*/
+
+@media screen and (max-width:1200px)
+  {
+      .article_text_home{
+          margin:50px 250px;
+      }
+      .own_img{
+          margin:auto;
+      }
+  }
+
+@media screen and (max-width:1000px)
+{       
+    #signpost{
+          float:none;
+          right:0;
+          top:0;
+      }
+    .main_head{
+          height:136px;
+      }
+    .social{
+          margin-left: 100px;
+      }
+    .article_apple{
+          margin:40px 5px;
+          padding: 0 10px;
+      }
+    .article_text_home{
+          margin:50px 50px;
+      }
+    .own_image{
+          margin:auto;
+      }
+    .article_own{
+        padding: 10px 90px;
+    }
+}
+@media screen and (max-width:800px)
+{       
+
+    #signpost li{
+        font-size:20px;
+        padding:15px;
+        margin:0;
+    }
+    ul{
+        margin-left:10px;
+    }
+    #signpost{
+          float:none;
+          right:0;
+          top:0;
+    }
+    .main_head{
+          height:100px;
+    }
+    .main_head img{
+        height:40px;
+        width:40px;
+        margin-left:20px;
+    }
+    .section_people{
+        margin:0;
+        column-count:1;
+    }
+    .main_head h1{
+        font:bold 10px Tahoma;
+        top:10px;
+        padding-left: 70px;
+    }
+    .social{
+        margin-left: 100px;
+    }
+    .article_apple{
+        margin:40px 5px;
+        padding: 0 10px;
+    }
+    .article_section{
+        display:inline;
+    }
+    .own_image{
+        margin:auto;
+    }
+    .article_img{
+        margin:auto;
+    }
+    .article_text{
+    width:auto;
+    }
+}
+
+@media screen and (max-width:600px)
+{
+    #signpost li{
+        font-size:16px;
+        padding:5px;
+        margin:0;
+    }
+  ul{
+        margin-left:10px;
+    }
+  .main_head h1{
+      font:bold 10px Tahoma;
+      top:10px;
+      padding-left: 70px;
+  }
+  .main_head{
+      height:100px;
+  }
+  .main_head img{
+      height:40px;
+      width:40px;
+      margin-left:20px;
+  }
+  .heading{
+      padding-top:0;
+  }
+  .heading h1{
+    font-size:20px;
+  }
+  .social{
+      margin-left: 10px;
+  }
+  .right h2{
+      font:bold 10px Tahoma;
+  }
+  .right p{
+      font:normal 8px Tahoma;
+  }
+}
+
+@media print {
+
+  #signpost{
+    display: none;
+}
+  .social{
+      margin-left: 10px;
+  }
+  .right h2{
+      font:bold 10px Tahoma;
+  }
+  .right p{
+      font:normal 8px Tahoma;
+  }
+  .article_text, .article_own{
+     width:auto;
+     padding:20px;
+  }
+  .article_img{
+      display:none;
+  }
+  .article_text_home{
+      margin:10px 50px;
+  }
+  .own_img{
+      display:none;;
+  }
+}
+
+    
