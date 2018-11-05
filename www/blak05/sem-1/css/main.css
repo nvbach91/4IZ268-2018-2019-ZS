@@ -1,0 +1,304 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.clear {
+  clear: both;
+}
+.whole-page{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 10px;
+    color: black;
+    font-size: 30px;
+}
+
+.logo{
+    width: 20%;
+    height: 80px;
+    background-image: url("../img/logo.png");
+    background-size: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0,0,0,0.6);
+    padding: 20px; 
+    float: left;
+}
+nav{
+    width: 80%;
+    height: 80px;
+    float: right;
+    background-color: rgba(0,0,0,0.6);
+    padding-left: 27%;
+}
+nav li {
+    list-style: none;
+    padding-left: 30px;
+    float: left;
+    font-size: 20px;
+}
+nav a {text-decoration: none; color: #e78788;}
+nav a.active, nav a:hover{color: white;}
+.poster{
+    width: 100%;
+    background-image: url("../img/poster.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 290px;
+    border-bottom: 3px solid black;
+    border: 3px solid black;
+}
+
+.frame h1 {font-size: 25px; color:#e78788; padding-top: 120px;padding-left: 15%;}
+.frame h2 {font-size: 10px; color:#e78788;padding-left: 15%;}
+
+main{
+    width: 75%;
+    float: left;
+    height: 100%;
+    background-color: white;
+}
+
+/* INDEX PAGE */
+.articles h1 {text-align: center;}
+.articles{
+    width:90%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+.articles .vice a {text-decoration: none; color: #e78788; font-size: 25px; float:right;}
+.articles .vice a:hover{color:black;}
+article{
+    background-color: #e78788;
+    border: 3px black solid;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    line-height: 0.8em;
+}
+article h2{font-size: 20px;}
+article p{font-size: 15px; padding: 1px 20px; margin-top: 15px; margin-bottom: 5px;}
+article button{background-color: black; color:#e78788; padding: 5px; margin-left: 85%;}
+article img {float: left; height: 120px; width: 200px;margin: 10px; border: 3px solid black;}
+.more{padding-bottom: 50px; margin-top: 10px; float: right;}
+.more a{font-size: 25px; text-decoration: none; color:#e87877; font-weight: bold;}
+.more a:hover{color:black;}
+
+/* MUSIC PAGE */
+.whole-music{
+    width: 90%;
+    border: 3px black solid;
+    background-color: #e78788;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.whole-music h1,.whole-music  h2{text-align: center;} 
+.whole-music h2{
+    font-size: 30px;
+}
+.whole-music .yt-vid {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 20px;
+    width: 100%;
+}
+.whole-music p{
+    font-size: 25px;
+    padding: 30px;
+}
+
+/* LIVE (REPORTS) PAGE */
+.whole-reports h1 {text-align: center; text-transform: uppercase;}
+.whole-reports{
+    width:90%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+article p.date{font-size: 15px; font-style: italic;}
+article.report h2{margin-bottom: 0px;}
+article.report p{margin-top: 0px; line-height: 1.5em;}
+article.report {margin-top: 20px;}
+article.report .yt-vid{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    height: 400px;
+    width: 100%;
+}
+
+
+/* GALERIE PAGE */
+.whole-galerie{
+    width: 90%;
+    border: 3px black solid;
+    background-color: #e78788;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.whole-galerie h2{text-align: center;}
+.galerie{
+    background-color: #cf797a;
+    width: 80%;
+    margin: 0 auto;
+    border: 3px solid black;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.photos{width: 100%; margin: 0 auto;margin-left: 2%;}
+.galerie img {width: 27%; margin: 10px; border: 3px solid black;}
+.galerie h3{font-size: 1.0em; margin-top: -5px;color:black; margin-bottom: 0px;}
+.galerie a{text-decoration: none;}
+@media only screen and (max-width: 600px) {
+    .whole-galerie, .galerie{
+        width: 100%; 
+        text-align: center;
+        background-color: #e78788;
+    }
+    .galerie{border-left: 0px; border-right: 0px; border-bottom: 0px;}
+}
+@media only screen and (max-width: 500px) {    
+    .galerie img{width: 80%;}
+    .galerie{border-bottom: 0px; border-top: 0px; margin-bottom: 0px;}
+    .whole-galerie h2{
+        border-bottom: 3px solid black;
+        padding-bottom: 20px;
+    }
+}
+
+/* FOR PROMOTERS PAGE */
+.whole-promoters{
+    width: 90%;
+    border: 3px black solid;
+    background-color: #e78788;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.whole-promoters h1{text-align: center;}
+.whole-promoters h2{padding-left: 20px; margin:0; font-size: 35px;}
+.whole-promoters p{padding-left: 20px; font-size: 20px;margin-top:10px;line-height: 1.3em;}
+.whole-promoters a{text-decoration: none; color:white;}
+.whole-promoters a:hover{color:black;}
+.whole-promoters .yt-vid {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 20px;
+    width: 100%;
+}
+.youtube{ 
+    width:560px; 
+    height:315px;
+    border:none;
+}
+
+/* ASIDE bar which stills same everytimes */
+aside{text-align: center;}
+.singl{
+    width: 25%;
+    float: right;
+    height: 100%;
+    color: #e78788;
+    background-color: rgba(0,0,0,0.9);
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+}
+.singl audio {width: 90%;}
+.singl h2 {font-size: 100%;}
+.gigs h2{font-size: 25px;}
+.gigs a{text-decoration: none; color:black;}
+.gigs a:hover{color:white;}
+.gigs{
+    width: 25%;
+    float: right;
+    height: 100%;
+    background-color: rgb(13, 14, 155);
+    font-size: 14px;
+    background-color: #e78788;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+}
+
+/*FOOTER */
+footer{
+    width: 30%;
+    margin: 0 auto;
+    height: 120px;
+    padding: 20px;
+    text-align: center;
+    border-top:  3px solid black;
+}
+
+.social img {height: 50px; width: 50px; margin-top: 20px;}
+.social a {text-decoration: none;}
+
+
+
+/* Index + main parts of all pages on mobile */
+
+@media only screen and (max-width: 1130px) {
+    nav {padding-left: 23%;}
+}
+@media only screen and (max-width: 1070px) {
+    nav {padding-left: 19%;}
+}
+@media only screen and (max-width: 1000px) {
+    nav {padding-left: 12%;}
+    article button{ margin-left: 75%;}
+}
+@media only screen and (max-width: 900px) {
+    nav {padding-left: 7%;}
+    .singl h2 {font-size: 25px;}
+}
+@media only screen and (max-width: 835px) {
+    nav {padding-left: 1%;}
+}
+@media only screen and (max-width: 790px) {
+    nav {padding: 0;}
+    nav li {padding-left: 15px;}
+}
+@media only screen and (max-width: 700px) {
+    .logo{ width: 30%;}
+    nav{width: 70%;}
+    nav li {padding-left: 10px;
+    font-size: 18px;}
+}
+@media only screen and (max-width: 670px){
+    nav li {padding-left: 8px; font-size: 16px;}
+}
+@media only screen and (max-width: 600px) {
+    main, .articles, .logo{
+        width: 100%;
+        background-color: black;
+    }
+    .frame h1{text-align: center;padding-left: 0;padding-top: 280px;font-size: 25px;}
+    .frame h2{display: none;}
+    .logo{float: none;}
+    .whole-page{padding: 0;}
+    .articles h1, .whole-reports h1 {display: none;}
+    article.report {margin-top: 50px;}
+    p.date {text-align: center;}
+    article img {display: none;}
+    article h2 {text-align: center;}
+    article button {width: 80%; margin-left: 10%;}
+    nav {float: none; height: 100%;background-color: #e78788;}
+    nav li , nav ul{float: none; padding-left: 0px;padding-top:3px; text-align: center; margin: 0;}
+    nav li a {color:black;}
+    .gigs, .singl{
+        width: 100%;
+        padding: 0;
+    }
+    nav{width: 100%; padding-left: 0; padding-bottom: 10px;}
+    .more{padding: 0; text-align: center;}
+    .articles .more {float: none;}
+    .articles .more a:hover{color:white;}
+    footer{border: none; font-size: 20px;width: 80%;}
+    
+}
