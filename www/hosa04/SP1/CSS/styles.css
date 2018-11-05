@@ -79,7 +79,7 @@ a:link {
   width: 300px;
   height: 300px;
   margin-left: 25px;
-  background-image: url(images/fr_press.jpg);
+  background-image: url(/hosa04/SP1/images/fr_press.jpg);
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -108,7 +108,7 @@ a:link {
     margin-left: 25px;
     margin-right: 25px;
 
-    background-image: url(images/chemex.jpg);
+    background-image: url(/hosa04/SP1/images/chemex.jpg);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -137,7 +137,7 @@ a:link {
     height: 300px;
     margin-left: 25px;
     
-    background-image: url(images/moka.jpg);
+    background-image: url(/hosa04/SP1/images/moka.jpg);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -165,7 +165,7 @@ a:link {
     margin-left: 25px;
     margin-right: 25px;
 
-    background-image: url(images/v60.jpg);
+    background-image: url(/hosa04/SP1/images/v60.jpg);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -192,7 +192,7 @@ a:link {
     height: 300px;
     margin-left: 25px;
 
-    background-image: url(images/aeropress.jpg);
+    background-image: url(/hosa04/SP1/images/aeropress.jpg);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -220,7 +220,7 @@ a:link {
     margin-left: 25px;
     margin-right: 25px;
 
-    background-image: url(images/syphon.jpg);
+    background-image: url(/hosa04/SP1/images/syphon.jpg);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -238,7 +238,7 @@ a:link {
     transition: .25s ease-in;
     transform: scale(1.1);
     font-size: 220%;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.42);
+    text-shadow: 2px 2px 8px rgba(247, 247, 247, 0.591);
   }
 
 

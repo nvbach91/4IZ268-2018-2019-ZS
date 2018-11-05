@@ -6,15 +6,10 @@
 .main_image{
     padding-top: 100px;
     padding-bottom: 100px;
-    background-image: url(/hosa04/Semestrální_práce/images/fr_press.jpg);
+    background-image: url(/hosa04/SP1/images/moka.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-}
-
-h2 {
-    letter-spacing: 5px;
-    padding-top: 20px;
 }
 
 .content{
@@ -32,7 +27,8 @@ h2 {
     color: rgb(0, 0, 0);
     font-weight: bold;
     border-top: 5px solid black;
-    border-bottom: 5px solid black;    
+    border-bottom: 5px solid black;
+    
 }
 
 .home{
@@ -52,11 +48,8 @@ h2 {
 .homelink:hover{
     transition: 0.3s ease-in;
     color: rgb(255, 255, 255);
-    background-color: rgb(186, 0, 0);
-    /*color: rgb(193, 18, 18);*/
-
+    background-color: rgb(223, 208, 2);
 }
-
 
 
 footer{
