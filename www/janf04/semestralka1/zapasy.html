@@ -8,19 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Fotbalový klub Galacticos FC vznikl v roce 2016. Aktuálně hrajeme ligu PKFL.">
     <meta name="keywords" content="fotbal, gol, míč, stránky, klub, hráči, zápas">
-    <link rel="shortcut icon" type="image/ico" href="pics/favicon.ico"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
+    <link rel="shortcut icon" type="image/ico" href="pics/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <script src="main.js"></script>
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <h1>Galacticos Praha</h1>
+            <h1>Galacticos FC</h1>
         </div>
         <nav>
             <a href="index.html">Aktuality</a>
-            <a href="zapasy.html">Zápasy</a>
+            <a class="current" href="zapasy.html">Zápasy</a>
             <a href="hraci.html">Hráči</a>
             <a href="fotogalerie.html">Fotogalerie</a>
             <a href="oklubu.html">O klubu</a>
@@ -31,69 +31,73 @@
         <h2>Seznam zápasů</h2>
         <div class="container">
             <table class="match-table">
-                <tr>
-                    <th class="hide-mobile">Datum</th>
-                    <th class="hide-mobile">Čas</th>
-                    <th>Domácí</th>
-                    <th>Hosté</th>
-                    <th>Výsledek</th>
-                </tr>
-                <tr>
-                    <td class="hide-mobile">9.9.2018</td>
-                    <td class="hide-mobile">18:00</td>
-                    <td>FC Eintopf</td>
-                    <td><b>FC Galácticos</b></td>
-                    <td>7:1</td>
-                </tr>
-                <tr>
-                    <td class="hide-mobile">16.9.2018</td>
-                    <td class="hide-mobile">15:00</td>
-                    <td><b>FC Galácticos</b></td>
-                    <td>Parma AG</td>
-                    <td>0:3</td>
-                </tr>
-                <tr>
-                    <td class="hide-mobile">7.10.2018</td>
-                    <td class="hide-mobile">18:00</td>
-                    <td><b>FC Galácticos</b></td>
-                    <td>Eurest Runners</td>
-                    <td>1:2</td>
-                </tr>
-                <tr>
-                    <td class="hide-mobile">14.10.2018</td>
-                    <td class="hide-mobile">20:00</td>
-                    <td>FC Tvoja Máma</td>
-                    <td><b>FC Galácticos</b></td>
-                    <td>4:1</td>
-                </tr>
-                <tr>
-                    <td class="hide-mobile">28.10.2018</td>
-                    <td class="hide-mobile">13:00</td>
-                    <td><b>FC Galácticos</b></td>
-                    <td>FC Atlepast</td>
-                    <td>1:4</td>
-                </tr>
-                <tr>
-                    <td class="hide-mobile">3.11.2018</td>
-                    <td class="hide-mobile">15:00</td>
-                    <td>INTERBALLS</td>
-                    <td><b>FC Galácticos</b></td>
-                    <td><b>1:4</b></td>
-                </tr>
-                <tr>
-                    <td class="hide-mobile">11.11.2018</td>
-                    <td class="hide-mobile">11:00</td>
-                    <td><b>FC Galácticos</b></td>
-                    <td>Druhá Šance</td>
-                    <td>:</td>
-                </tr>
-                <tr>
-                    <td class="hide-mobile">16.11.2018</td>
-                    <td class="hide-mobile">15:00</td>
-                    <td>Ligový soubor Deziluzy</td>
-                    <td><b>FC Galácticos</b></td>
-                    <td>:</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th class="hide-mobile">Datum</th>
+                        <th class="hide-mobile">Čas</th>
+                        <th>Domácí</th>
+                        <th>Hosté</th>
+                        <th>Výsledek</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="hide-mobile">9.9.2018</td>
+                        <td class="hide-mobile">18:00</td>
+                        <td>FC Eintopf</td>
+                        <td><strong>FC Galácticos</strong></td>
+                        <td>7:1</td>
+                    </tr>
+                    <tr>
+                        <td class="hide-mobile">16.9.2018</td>
+                        <td class="hide-mobile">15:00</td>
+                        <td><strong>FC Galácticos</strong></td>
+                        <td>Parma AG</td>
+                        <td>0:3</td>
+                    </tr>
+                    <tr>
+                        <td class="hide-mobile">7.10.2018</td>
+                        <td class="hide-mobile">18:00</td>
+                        <td><strong>FC Galácticos</strong></td>
+                        <td>Eurest Runners</td>
+                        <td>1:2</td>
+                    </tr>
+                    <tr>
+                        <td class="hide-mobile">14.10.2018</td>
+                        <td class="hide-mobile">20:00</td>
+                        <td>FC Tvoja Máma</td>
+                        <td><strong>FC Galácticos</strong></td>
+                        <td>4:1</td>
+                    </tr>
+                    <tr>
+                        <td class="hide-mobile">28.10.2018</td>
+                        <td class="hide-mobile">13:00</td>
+                        <td><strong>FC Galácticos</strong></td>
+                        <td>FC Atlepast</td>
+                        <td>1:4</td>
+                    </tr>
+                    <tr>
+                        <td class="hide-mobile">3.11.2018</td>
+                        <td class="hide-mobile">15:00</td>
+                        <td>INTERBALLS</td>
+                        <td><strong>FC Galácticos</strong></td>
+                        <td><strong>1:4</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="hide-mobile">11.11.2018</td>
+                        <td class="hide-mobile">11:00</td>
+                        <td><strong>FC Galácticos</strong></td>
+                        <td>Druhá Šance</td>
+                        <td>:</td>
+                    </tr>
+                    <tr>
+                        <td class="hide-mobile">16.11.2018</td>
+                        <td class="hide-mobile">15:00</td>
+                        <td>Ligový soubor Deziluzy</td>
+                        <td><strong>FC Galácticos</strong></td>
+                        <td>:</td>
+                    </tr>
+                </tbody>
             </table>
 
 
@@ -107,6 +111,8 @@
         <a target="blank" href="https://www.facebook.com/FcGalacticosFamily/">
             <div class="facebook"></div>
         </a>
+        <p>&copy; 2018</p>
+        <p>Autor: Filip Jantač</p>
     </footer>
 </body>
 

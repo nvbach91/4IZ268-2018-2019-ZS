@@ -40,7 +40,7 @@ nav {
     max-width: 1280px;
     margin: 0 auto;
     background-color: rgb(67, 158, 37);
-    height: 60px;
+    height: 62px;
     border: 2px solid rgb(0, 0, 0);
 
 }
@@ -57,6 +57,11 @@ nav a {
 
 nav a:hover{
     background-color: black;
+}
+
+nav .current {
+    background-color: green;
+    border-bottom: 2px solid black;
 }
 
 .wrapper {
@@ -132,6 +137,12 @@ h3 {
     object-fit: cover;
 }
 
+.imgcenter {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
 footer {
     text-align: center;
     color: white;
@@ -147,8 +158,12 @@ footer {
 
 footer p {
     font-size: 20px;
-    margin-bottom: 0;
+    margin: 0;
 }
+
+footer p:nth-child(1) {margin-top: 15px;}
+footer p:nth-child(3) {font-size: 13px;}
+footer p:nth-child(4) {font-size: 13px;}
 
 .facebook {
     background-image: url(../pics/fb.png);
@@ -158,14 +173,27 @@ footer p {
     background-size: contain;
 }
 
+.float-box:nth-child(1) {background-color: rgb(74, 173, 41);}
+.float-box:nth-child(2) {background-color: mediumaquamarine;}
+.float-box:nth-child(3) {background-color: cornflowerblue;}
+.float-box:nth-child(4) {background-color: mediumturquoise;}
+.float-box:nth-child(5) {background-color: cadetblue;}
+.float-box:nth-child(6) {background-color: chocolate;}
+.float-box:nth-child(7) {background-color: gold;}
+.float-box:nth-child(8) {background-color: firebrick;}
+
+.gkeepers .float-box {background-color: rgb(74, 173, 41);}
+.defence .float-box {background-color: mediumaquamarine;}
+.midfield .float-box {background-color: cornflowerblue;}
+.attack .float-box {background-color: mediumturquoise;}
 
 @media screen and (max-width: 1024px) {
     .float-box {
-        width: 33.33333333%;
+        width: calc(100% / 3);
     }
 
     .gallery {
-        width: 33.33333333%;
+        width: calc(100% / 3);
     }
 }
 
@@ -212,8 +240,28 @@ footer p {
 
 
 @media print {
+    header {
+        display: none;
+    }
     body {
         color: black;
         font-size: 12px;
+    }
+
+    h3 {
+        color: black;
+    }
+
+    .float-box {
+        border-color: transparent;
+        width: 50%;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .dont-print {
+        display: none;
     }
 }
