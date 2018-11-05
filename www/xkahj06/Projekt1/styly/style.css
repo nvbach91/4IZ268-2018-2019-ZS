@@ -1,3 +1,4 @@
+   
     .menu {
                 list-style: none;
                 padding: 0;
@@ -38,3 +39,45 @@
     background-position: center;
     margin-bottom: 2px;
 } 
+.poster h1{
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 0 auto;
+    text-align: center;
+}
+.articles {
+    padding: 50px 0;
+    font-size: 34px;
+}
+.article{
+    float: left;
+    width: 45%;
+    padding: 30px;
+    float: left;
+    
+}
+.article:nth-child(1) h2 { 
+     background-color: rgba(255, 199, 255, 0.7);
+}
+.article:nth-child(2) h2 {  background-color: bisque;}
+.article:nth-child(3) h2 { background-color: cornflowerblue; }
+.article:nth-child(1){border: 4px solid rgba(255, 199, 255, 0.7);}
+.article:nth-child(2){border: 4px solid bisque;}
+.article:nth-child(3){border: 4px solid cornflowerblue;}
+.hmain{ 
+    font-size: 45px;
+    text-align: center;
+}
+.tmain{
+    font-size: 35px;
+    text-align: center;
+}
+
+
+
+.article:nth-child(3) h2 { background-color: cornflowerblue; }
+.article:nth-child(4) h2 { border-bottom: 5px solid darkgoldenrod; }
+.article:nth-child(5) h2 { border-bottom: 5px solid lightcoral; }
+.article:nth-child(6) h2 { border-bottom: 5px solid lightpink; }
+.article:nth-child(7) h2 { border-bottom: 5px solid mediumaquamarine; }
+.article:nth-child(8) h2 { border-bottom: 5px solid palegreen; }
+
