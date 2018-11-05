@@ -335,6 +335,10 @@ footer p, footer a, footer div {
         display: none;
     }
 
+    #careerr {
+        height: 100%;
+    }
+    
     #careerr p, #careerr a {
         padding: 20px;
         margin: 10px 0;
@@ -389,6 +393,10 @@ footer p, footer a, footer div {
 
    .big-picture {
     display: none;
+    }
+
+    #careerr {
+        height: 100%;
     }
 
     #careerr p, #careerr a {
@@ -450,5 +458,9 @@ footer p, footer a, footer div {
 
     .logo {
         display: none;
+    }
+
+    #careerr {
+        height: 100%;
     }
 }
