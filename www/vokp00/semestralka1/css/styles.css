@@ -41,7 +41,6 @@ nav li {
     margin-left: 10px;
     padding: 20px 50px;
     background-color: #F2F2EB;
-    opacity: 0.7;
     text-decoration: none;
     float: left;
 }
@@ -51,7 +50,6 @@ nav a {
 }
 nav li:hover {
     background-color: rgb(166, 46, 56);
-    opacity: 1;
     cursor: pointer;
 }
 
@@ -100,7 +98,7 @@ nav li:hover a {
 }
 
 .main-text {
-    background-color: rgba(242,242,235, 0.7);
+    background-color: #F2F2EB;
     padding: 20px;
     margin: 10px 0;
     text-align: justify;
@@ -108,47 +106,11 @@ nav li:hover a {
 
 /* ABOUT */
 
-.member1 {
-    background-image: url('../images/jan.jpg');
-    background-size: cover;
+.member {
     height: 290px;
     width: 290px;
 }
 
-.member2 {
-    background-image: url("../images/vaclav.jpg");
-    background-size: cover;
-    height: 290px;
-    width: 290px;
-}
-
-.member3 {
-    background-image: url("../images/dimo.jpg");
-    background-size: cover;
-    height: 290px;
-    width: 290px;
-}
-
-.member4 {
-    background-image: url("../images/kaja.jpg");
-    background-size: cover;
-    height: 290px;
-    width: 290px;
-}
-
-.member5 {
-    background-image: url("../images/eva.jpg");
-    background-size: cover;
-    height: 290px;
-    width: 290px;
-}
-
-.member6 {
-    background-image: url("../images/petra.jpg");
-    background-size: cover;
-    height: 290px;
-    width: 290px;
-}
 
 /* GRID */
 
@@ -165,8 +127,8 @@ nav li:hover a {
 }
 
 .grid-item, .intro, .anotation, form {
-    background-color:rgba(242,242,235, 0.7);
-    border-radius: 10px;
+    background-color: #F2F2EB;
+    border-radius: 1px;
     padding: 20px;
     text-align: justify;
 }
@@ -183,7 +145,7 @@ nav li:hover a {
 /* FORM */
 
 form {
-    background-color: rgba(242,242,235, 0.7);
+    background-color: #F2F2EB;
 
 }
 
@@ -230,19 +192,21 @@ input {
 }
 
 .career1 {
-    content: url("../images/flash.png");
     height: 150px;
     width: 120px;
     float: left;
 }
 
 .career2 {
-    content: url("../images/einstein.png");
     height: 150px;
     width: 100px;
     float: right;
 }
 
+#careerr {
+    height: 300px;
+    margin: 0 0;
+}
 
 /* PROJEKTY - SLIDESHOW */
 
@@ -290,7 +254,7 @@ input {
 .slide p {
     color: black; 
     padding: 15px 25px;
-    background-color: rgba(29, 115, 165, 1);
+    background-color: rgb(29, 115, 165);
     font-size: 16px;
     text-align: center;
 }
@@ -338,7 +302,6 @@ footer p, footer a, footer div {
     color: #F2F2EB;
     font-weight: normal;
 }
-
 
 .networks {
     display: inline-block;
