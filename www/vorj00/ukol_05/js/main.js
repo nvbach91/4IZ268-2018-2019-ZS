@@ -24,8 +24,8 @@ var celsius = 20;
 var fToC = (fahrenheiht - 32) * 5 / 9;
 var cToF = celsius * 9 / 5 + 32;
 
-console.log(celsius+'°C =',Math.round(cToF)+'°C');
-console.log(fahrenheiht+'°F =',Math.round(fToC)+'°C');
+console.log(celsius + '°C =',Math.round(cToF) + '°C');
+console.log(fahrenheiht + '°F =',Math.round(fToC) + '°C');
 
 /**
  * Funkce function fonction funktio. Vemte předchozí úlohy a udělejte z nich funkce. Tj. vytvořte funkce, 
@@ -34,7 +34,11 @@ console.log(fahrenheiht+'°F =',Math.round(fToC)+'°C');
  */
 /* ES6! protože podpora je už (docela) dost dobrá — https://caniuse.com/#search=ES6 */
 getAge = birthYear => {
-    thisYear < birthYear ? console.log("Nemůže se narodit v budoucnu") : console.log('Věk:', thisYear - birthYear);
+    if(thisYear < birthYear){
+        console.log("Nemůže se narodit v budoucnu")
+    } else {
+        console.log('Věk:', thisYear - birthYear)
+    }
 };
 
 function temperatureConverter(n, resultUnit){
@@ -51,7 +55,7 @@ function temperatureConverter(n, resultUnit){
             return console.log("zadej prosím jednotku `C` nebo `F`");
     }
 
-    console.log("Výsledek je:", result+"°"+resultUnit)
+    console.log("Výsledek je:", result + "°" + resultUnit)
 }
 
 temperatureConverter(451, "C");
@@ -72,7 +76,7 @@ getAge(2048);
  */
 /* opět jiný zápis */
 var percentage = function(n1, n2){
-    if(n2 == 0){
+    if(n2 === 0){
         return console.log("Dělení nulou!")
     };
 
@@ -97,7 +101,7 @@ percentage(3.1415926535,259);
  * je párkrát zavolat v kódu a výsledky uložit do proměnných. 
  */
 var maxNumber = (n1, n2) => {
-    if(n1 == n2){
+    if(n1 === n2){
         console.log("Čísla se rovnají");
     } else {
         console.log("Větší je číslo",Math.max(n1, n2));
@@ -110,11 +114,14 @@ maxNumber(1,1);
 maxNumber(-1,0);
 
 // trololoJS
+/* RIP */
+/*
 maxNumber(1,"1");
 maxNumber(1,true);
 maxNumber(0,[]);
 maxNumber(9, (!+[]+[]+![]).length);
 maxNumber(91, 9+"1");
+*/
 
 /**
  * I can cleary see the pattern. Vytvořte funkci, která vypíše popořadě všechny násobky 13, které jsou menší 
@@ -146,12 +153,16 @@ var isTriangle = (n1, n2, n3) => {
     let values = [n1, n2, n3];
     let sum = values.reduce((a, b) => a + b, 0); // sečtu
 
-    values.forEach((value) => {
-        if((sum - value) < value){ // vynechávám záměrně rovno, protože by pak hodnota byla 0 a nedávalo by to smysl
+    if(sum === 0){
+        return false;
+    }
+
+    for(let value = 0; value < values.length; value++){
+        if((sum - values[value]) < values[value]){ // vynechávám záměrně rovno, protože by pak hodnota byla 0 a nedávalo by to smysl
             result = false;
-            return;
+            break;
         }
-    })
+    }
 
     return result;
 }
