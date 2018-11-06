@@ -4,16 +4,15 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Cashless VŠE">
-  <meta name="keywords" content="Cashless, VŠE, university">
-  <meta name="author" content="Tomáš Kašpar">
+    <meta name="description" content="Cashless VŠE">
+    <meta name="keywords" content="Cashless, VŠE, university">
+    <meta name="author" content="Tomáš Kašpar">
     <title>Cashless VŠE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="shortcut icon" type="image/png" href="img/credit-card.png"/>
+    <link rel="shortcut icon" type="image/png" href="img/credit-card.png" />
 </head>
 
 <body>
@@ -58,7 +57,7 @@
                     vending machines or to report some that are not working.</p>
                 <p>We hope that this website will help you when you are in the rush and you don't have cash on you.</p>
             </div>
-            <div class="right"><img src="img/project.jpg" alt="slecna z fotobanky" />
+            <div class="right"><a href="img/project.jpg"><img src="img/project.jpg" alt="slecna z fotobanky" /></a>
                 <span class="imgDesc">You probably won't be happy as this lady from photobank but still you will
                     discover where you can pay without cash. And that is something!</span>
             </div>
@@ -77,9 +76,9 @@
 
 
             <div>
-                <button class="tabNav activeTab" onclick="openRestaurant(event,'res1')">Akademický klub</button>
-                <button class="tabNav" onclick="openRestaurant(event,'res2')">Deštník / Kantýna</button>
-                <button class="tabNav" onclick="openRestaurant(event,'res3')">Menza Italská</button>
+                <button id="btn1" class="tabNav activeTab">Akademický klub</button>
+                <button id="btn2" class="tabNav">Deštník / Kantýna</button>
+                <button id="btn3" class="tabNav">Menza Italská</button>
             </div>
 
             <div id="res1" class="restaurant">
@@ -96,13 +95,13 @@
                     <p><strong>Open:</strong> Monday to friday 11:00 to 19:00</p>
 
                 </div>
-                <div class="right"><img src="img/akademicky_klub.jpg" alt="akademicky klub" />
+                <div class="right"><a href="img/akademicky_klub.jpg"><img src="img/akademicky_klub.jpg" alt="akademicky klub" /></a>
                     <span class="imgDesc">Interior of Akademický klub</span>
                 </div>
                 <div class="clear"></div>
             </div>
 
-            <div id="res2" class="restaurant" style="display:none">
+            <div id="res2" class="restaurant">
                 <h2>Café bar Deštník and Kantýna VŠE</h2>
                 <div class="left">
                     <p>Welcome to restaurant Cafe bar Deštník and canteen at the University of Economics in Prague. Our
@@ -123,24 +122,24 @@
                     <p><strong>Open:</strong> Monday to friday 08:00 to 20:00</p>
 
                 </div>
-                <div class="right"><img src="img/destnik.jpg" alt="destnik" />
+                <div class="right"><a href="img/destnik.jpg"><img src="img/destnik.jpg" alt="destnik" /></a>
                     <span class="imgDesc">Interior of Café deštník</span>
                 </div>
                 <div class="clear"></div>
             </div>
 
-            <div id="res3" class="restaurant" style="display:none">
+            <div id="res3" class="restaurant">
                 <div class="left">
                     <p>Menza Italská is located in campus of VŠE in Rajská budova. Current operator of menza is company
                         <a href="http://avgastro.cz/">AV Gastro, s.r.o.</a></p>
                     <p>Current menza menu is available thru portal <a title="Webkredit" href="https://webkredit.vse.cz/webkredit_italska/">Webkredit</a>.</p>
-                    <p><b>Breakfast:</b> Po–Pá 8:00 – 10:00 (students diner)</p>
-                    <p><b>Lunch:</b> Mon-Thu 11:00 – 15:00 (students diner), 15:00 – 17:00 (employees diner)</p>
+                    <p><strong>Breakfast:</strong> Po–Pá 8:00 – 10:00 (students diner)</p>
+                    <p><strong>Lunch:</strong> Mon-Thu 11:00 – 15:00 (students diner), 15:00 – 17:00 (employees diner)</p>
                     <p>Fri 11:00 – 15:00 (students diner)</p>
-                    <p><b>Dinner:</b> Mon-Thu 17:00 – 20:00 (employees diner)</p>
+                    <p><strong>Dinner:</strong> Mon-Thu 17:00 – 20:00 (employees diner)</p>
 
                 </div>
-                <div class="right"><img src="img/italska.jpg" alt="italska menza" />
+                <div class="right"><a href="img/italska.jpg"><img src="img/italska.jpg" alt="italska menza" /></a>
                     <span class="imgDesc">Interior of menza Italská</span>
                 </div>
                 <div class="clear"></div>
@@ -164,7 +163,7 @@
                     Fri 8,30–15,00</p>
 
             </div>
-            <div class="right"><img src="img/bookshop.jpg" alt="bookshop" />
+            <div class="right"><a href="img/bookshop.jpg"><img src="img/bookshop.jpg" alt="bookshop" /></a>
                 <span class="imgDesc">In this store you can find over 7 thousand books from fields of economy,
                     management, accounting, marketing etc.</span>
             </div>
@@ -184,44 +183,8 @@
     </div>
     <footer>Created by Tomáš F. Kašpar</footer>
     <div class="scrollToTop" id="scrollButton">&#8679;</div>
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-
-        $(document).scroll(function () {
-            var y = $(this).scrollTop();
-            if (y > 200) {
-                $('.scrollToTop').fadeIn();
-            } else {
-                $('.scrollToTop').fadeOut();
-            }
-
-        });
-
-        $(function () { $("#scrollButton").click(function () { $("html,body").animate({ scrollTop: $("#wrapper").offset().top }, "1000"); return false }) })
-
-        function openRestaurant(evt, restaurantName) {
-            var i, x, tabnavs;
-            x = document.getElementsByClassName("restaurant");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            tabnavs = document.getElementsByClassName("tabNav");
-            for (i = 0; i < x.length; i++) {
-                tabnavs[i].className = tabnavs[i].className.replace("activeTab", "");
-            }
-            document.getElementById(restaurantName).style.display = "block";
-            evt.currentTarget.className += " activeTab";
-        }
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
