@@ -45,7 +45,7 @@ nav li:active {
     min-width: 50px;
     height: 50px;
     cursor: pointer;
-    float: right;
+    margin-left: auto;
 }
 
 .search:hover {
