@@ -180,11 +180,11 @@ console.log(isTriangle(2,2,2));
  var heronTriangle = (n1, n2, n3) => {
      if(!isTriangle(n1, n2, n3)){
          return "Nelze počítat"
-     } else {
-        let values = [n1, n2, n3];
-        let semiperimeter = values.reduce((a, b) => a + b, 0) / 2;
-        return (Math.sqrt(semiperimeter * (semiperimeter - n1) * (semiperimeter - n2) * (semiperimeter - n3)))
      }
+        
+    let values = [n1, n2, n3];
+    let semiperimeter = values.reduce((a, b) => a + b, 0) / 2;
+    return (Math.sqrt(semiperimeter * (semiperimeter - n1) * (semiperimeter - n2) * (semiperimeter - n3)))
  }
 
  console.log(heronTriangle(2,5,9));
