@@ -33,9 +33,10 @@ nav li:hover {
     background-color: rgb(233, 127, 127);
 }
 
-nav li:active {
+nav li:active, .highlight {
     background-color: rgb(214, 116, 116);
 }
+
 
 .search {
     background-image: url('https://cdn3.iconfinder.com/data/icons/eightyshades/512/11_Search-512.png');
@@ -248,7 +249,7 @@ div h4 {
     .wine p, .region p, .criterion p, .classification p {
         min-height: initial;
     }
-    nav, .intro {
+    .intro {
         display: none;
     }
 }
