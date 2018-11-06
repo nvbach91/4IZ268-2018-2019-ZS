@@ -244,6 +244,13 @@ img {
     margin-bottom: 5px; 
 }
 
+#main_page {
+
+    float: left;
+
+
+}
+
 .map {
     width: 90%;
     height: 150px;
@@ -441,6 +448,9 @@ nav a {
 }
 
 @media print {
+    * {
+        font-size: 12px;
+    }
     
     #as {
         padding: unset;
@@ -460,6 +470,11 @@ nav a {
         width: auto;
     }
 
+    .facebook {
+        width: 0;
+        height: 0;
+    }
+
     #hs {
         padding: unset;
         margin: 15px auto;
@@ -470,6 +485,12 @@ nav a {
     img {
         width: 45%;
         height: 45%;
+    }
+
+    .imgpr {
+        width: 40%;
+        height: 40%;
+        margin: 0 30%;
     }
 
     #ind {
@@ -494,17 +515,17 @@ nav a {
     }
 
     nav {
-        font-size: 14px;
-        margin: auto;
+        visibility: hidden;
     }
 
     .poster {
-        margin: 5px;
+        margin: 0;
         padding: unset;
     }
 
     .products {
         display: inline-block;
+        height: 400px;
 
     }
 
@@ -556,8 +577,8 @@ nav a {
 
     .photo {
         width: 100%;
-        margin: 0 20% 10px 30%;
-        padding: 20px;
+        text-align: center;
+        margin-bottom: 5px;
         display: block;
     }
 
@@ -631,8 +652,10 @@ nav a {
    
     .workers_pictures {
         float: none;
-        margin-left: unset;
-        margin-top: unset;
+        margin: unset;
+        display: unset;
+        text-align: center;
+        padding: unset;
     }
 }
 
