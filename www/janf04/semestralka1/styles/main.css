@@ -86,6 +86,7 @@ h2 {
     float: left;
     width: 25%;
     height: auto;
+    min-height: 10cm;
     border: 10px solid rgb(191, 255, 189);
     background-color: rgb(67, 158, 37);
     border-radius: 25px;
@@ -137,10 +138,32 @@ h3 {
     object-fit: cover;
 }
 
+/*..............Hraci.............*/
+
 .imgcenter {
     width: 50%;
     margin: 0 auto;
     display: block;
+}
+
+.player-img img {
+    width: 100%;
+    display: block;
+    margin: 11px 5px 0 15px;
+}
+
+.player-img {
+    float: left;
+    width: 25%;
+}
+
+.player-info {
+    float: left;
+    width: 75%;
+}
+
+.gkeepers .float-box, .defence .float-box, .midfield .float-box, .attack .float-box {
+    min-height: auto;
 }
 
 footer {
@@ -204,6 +227,7 @@ footer p:nth-child(4) {font-size: 13px;}
     
     .float-box {
         width: 50%;
+        min-height: 8cm;
     }
 
     .gallery {
@@ -227,6 +251,7 @@ footer p:nth-child(4) {font-size: 13px;}
     
     .float-box {
         width: 100%;
+        min-height: auto;
     }
 
     .gallery {
@@ -235,6 +260,17 @@ footer p:nth-child(4) {font-size: 13px;}
 
     .hide-mobile {
         display: none;
+    }
+
+    .player-img, .player-info {
+        float: none;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .player-img img {
+        min-width: 30%;
+        margin: 0 0 0 0;
     }
 }
 
