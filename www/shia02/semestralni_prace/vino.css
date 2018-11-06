@@ -154,6 +154,16 @@ p, ol li {
     width:300px;
 }
 
+footer {
+    clear: both;
+    background-color: #641C34;
+    color: white;
+    text-align: center;
+}
+.copyright, .contact {
+    padding: 10px 0;
+}
+
 
 /* HISTORIE */
 
@@ -263,8 +273,17 @@ div h4 {
         display: none;
     }
     div h1, div h2 {
-        color: black;
+        color: rgba(0, 0, 0, 0.863);
         padding: 5px;
+    }
+
+    .wine, .criterion, .classification, .region {
+        float: none;
+        width: 100%;
+    }
+
+    .wine p, .region p, .criterion p, .classification p {
+        min-height: auto;
     }
 
     .newpage { 
@@ -275,24 +294,12 @@ div h4 {
         padding: 0px;
     }
 
-    .wine p {
-        min-height: 200px;
-    }
-
     p, ol li {
         line-height: 25px;
     }
 
     .none {
         display: none;
-    }
-
-    .classification {
-        width: 25%;
-    }
-
-    .region, .four {
-        width: 50%;
     }
 
     .glass, .nonprint {
