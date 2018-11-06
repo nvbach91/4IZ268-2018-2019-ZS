@@ -246,6 +246,7 @@ div h4 {
         display: none;
     }
     div h1, div h2 {
+        color: black;
         padding: 5px;
     }
 
