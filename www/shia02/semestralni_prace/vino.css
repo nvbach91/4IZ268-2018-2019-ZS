@@ -108,7 +108,7 @@ div h1, div h2 {
 
 .wine, .criterion, .classification, .region {
     float: left;
-    padding-left: 20px;
+    padding: 0 10px;
     text-align: center;
 }
 
