@@ -35,12 +35,13 @@
         width:70px;
         margin-left:20px;
     }
-.main_head h1{
+#name{
         position:absolute;
         font:bold 18px Tahoma;
         top:30px;
         padding-left: 105px;
         color: white;
+        text-decoration: none;
     }
 .heading{
         font: bold 20px Tahoma;
@@ -201,7 +202,7 @@
   
 .social{
       display:flex;
-      margin-left:250px;
+      margin-left:150px;
       padding-top:10px;
   }
 .son_twitter img, .son_facebook img, .son_instagram img{
@@ -233,7 +234,7 @@
           height:136px;
       }
     .social{
-          margin-left: 100px;
+          margin-left: 70px;
       }
     .article_apple{
           margin:40px 5px;
@@ -277,13 +278,18 @@
         margin:0;
         column-count:1;
     }
-    .main_head h1{
+    #name{
         font:bold 10px Tahoma;
         top:10px;
         padding-left: 70px;
     }
     .social{
-        margin-left: 100px;
+        display:block;
+        margin-left: 10px;
+    }
+    .social img{
+        height:30px;
+        width:30px;
     }
     .article_apple{
         margin:40px 5px;
@@ -313,7 +319,7 @@
   ul{
         margin-left:10px;
     }
-  .main_head h1{
+  #name{
       font:bold 10px Tahoma;
       top:10px;
       padding-left: 70px;
@@ -333,7 +339,12 @@
     font-size:20px;
   }
   .social{
+      display:block;
       margin-left: 10px;
+  }
+  .social img{
+      height:20px;
+      width:20px;
   }
   .right h2{
       font:bold 10px Tahoma;
