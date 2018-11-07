@@ -35,11 +35,11 @@ var age = function (yearOfBirth) {
     var currentYear = new Date().getFullYear();
     if (yearOfBirth <= currentYear) {
         var pepesAge = currentYear - yearOfBirth;
-        return console.log('Věk Pepy je ' + pepesAge);
+        console.log('Věk Pepy je ' + pepesAge);
     } else {
         console.log('Rok narození musí být menší než současný rok');
     }
-
+    
 };
 age(2006);
 age(2020);
@@ -47,14 +47,14 @@ age(2020);
 
 var tempInFah = function (c) {
     var fahrenheiht = c * 9 / 5 + 32;
-    return console.log(c + '°C = ' + fahrenheiht + '°F');
+   console.log(c + '°C = ' + fahrenheiht + '°F');
 };
 tempInFah(20);
 
 
 var tempInCel = function (f) {
     var celsius = (f - 32) * 5 / 9;
-    return console.log(f + '°F = ' + celsius + '°C');
+    console.log(f + '°F = ' + celsius + '°C');
 };
 tempInCel(68);
 
@@ -68,9 +68,9 @@ tempInCel(68);
 var divide = function (a, b) {
     if (b !== 0) {
         var c = a / b * 100;
-        return console.log(a + ' je ' + c.toFixed(2) + '% z ' + b);
+        console.log(a + ' je ' + c.toFixed(2) + '% z ' + b);
     } else {
-        return console.log('Nelze dělit nulou!');
+        console.log('Nelze dělit nulou!');
     }
 
 };
@@ -86,29 +86,13 @@ divide(13, 0);
 
 var comparison = function (a, b) {
     if (a > b) {
-        return console.log(a);
-    } else {
-        if (b > a) {
-            return console.log(b);
-        } else {
-            if (a == b) {
-                return console.log(a + ' se rovná ' + b);
-            } else {
-                return console.log('chyba');
-            }
-
-        }
+        return a;
     }
+    if (b > a) {
+        return b;
+    }
+    return "čísla se rovnájí";
 };
-comparison(2, 5);
-comparison(2, 0);
-comparison(2, 2);
-comparison(1.65, 2.3);
-comparison(3 / 4, 1 / 2);
-comparison(1.65, 2);
-comparison(10 / 8, 1);
-comparison(10.05, 3 / 8);
-comparison(10.05, 'abcd');
 
 
 
@@ -130,9 +114,9 @@ for (var i = 0; i <= 730; i += 13) {
 var areaOfACircle = function (radius) {
     const pi = 3.14;
     var area = pi * radius * radius;
-    return console.log(area);
+    return area;
 };
-areaOfACircle(10);
+console.log(areaOfACircle(10));
 
 
 
@@ -142,11 +126,11 @@ areaOfACircle(10);
 
 var volumeOfACone = function (height, radius) {
     const pi = 3.14;
-    var volume = (1/3) * pi * radius * radius * height;
-    return console.log(volume);
+    var volume = (1 / 3) * pi * radius * radius * height;
+    console.log(volume);
 };
 volumeOfACone(10, 20);
-volumeOfACone(5.2, 3/4);
+volumeOfACone(5.2, 3 / 4);
 
 
 /** 
@@ -154,12 +138,11 @@ volumeOfACone(5.2, 3/4);
  * dodaných 3 délek dá postavit trojúhelník, tj. vypíše buď true/yes nebo false/no. 
  */
 
-var triangle = function (a,b,c) {
-    if ((a < b+c) && (b < a+c) && (c < a+b)) {
+var triangle = function (a, b, c) {
+    if ((a < b + c) && (b < a + c) && (c < a + b)) {
         return true;
-    } else {
-        return false;
     }
+    return false;
 };
 
 
@@ -171,13 +154,13 @@ var triangle = function (a,b,c) {
  */
 
 var areaOfATriangle = function (a, b, c) {
-    if (triangle(a,b,c)) {
-        var s = (a+b+c)/2;
-        var area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
-        return console.log(area);
+    if (triangle(a, b, c)) {
+        var s = (a + b + c) / 2;
+        var area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+        console.log(area);
     } else {
-        return console.log('Nelze postavit trojúhelník')
+        console.log('Nelze postavit trojúhelník');
     }
-}
-areaOfATriangle(30,40,50);
-areaOfATriangle(130,40,50);
+};
+areaOfATriangle(30, 40, 50);
+areaOfATriangle(130, 40, 50);
