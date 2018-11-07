@@ -283,3 +283,6 @@ footer p {
     .tariff_02 h3 {
         font-size: 12px;
     }
+    .infobox p, .infobox_02, .infobox_02 p, .articles p, .mapinfo p, .tariff_02 p {
+        font-weight: normal;
+    }
