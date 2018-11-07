@@ -3,6 +3,7 @@
 
 /**
  * Pepe's age. Vypište na konzoli smysluplnou oznamovací větu ohledně věku Pepy, pokud znáte jeho rok narození. 
+ 
  * Použijte proměnné a pro výpis použijte zřetězení stringů. Jako názvy proměnných používejte anglické pojmy.
  */
 // SPOILER ALERT!
@@ -10,15 +11,13 @@
 
 
 
-
-/**
+/*
  * WTF (wow, that's fun). Vypište teplotu v Fahrenheiht, pokud znáte teplotu v Celsius, a také naopak. 
  * Formát výpisu je: 20°C =  68°F resp. 68°F = 20°C. Výpočet probíhá takto:
  *     z C na F: vynásobit devíti, vydělit pěti a přičíst 32. 
  *     z F na C: odečíst 32, vynásobit pěti a vydělit devítkou. 
  */
 // SPOILER ALERT!
-
 
 
 

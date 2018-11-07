@@ -11,10 +11,95 @@
 </head>
 
 <body>
-        <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 
-        
     <button onclick="alert('Hello world!')">Click me</button>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    <p id="Pepe's age"></p>
+
+    <button onclick="returnPepesAge()">Type Pepe's age</button>
+    <script>
+
+    function returnPepesAge() {
+        var age = prompt("Please enter Pepe's age");
+        if (age != null){
+            document.getElementById("Pepe's age").innerHTML =
+            "Pepe's is " + age + " years old";
+             }   
+        }
+
+    
+    </script>
+
+    <div> </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        function calc() {
+        var n1 = parseFloat(document.getElementById('n1').value);
+
+        if(n1 != 0){
+        document.getElementById('result').value = ((n1*9)/5)+32;
+        }
+        }
+
+    </script> 
+
+    <br/>
+    <br/>
+    <p>Insert Celsius</p>
+    <input type="text" id="n1">
+    <br/>
+
+    <button onclick="calc();">=</button>
+    <input type="text" id="result"/>
+           
+    
+    <script>
+        function calc2() {
+            var n2 = parseFloat(document.getElementById('n2').value);
+
+            if(n2 != 0){
+                document.getElementById('result2').value = ((n2-32)*5)/9;
+             }
+        }
+    </script>
+
+    <br/>
+    <br/>
+    <p>Insert Fahrenheit</p>
+    <input type="text" id="n2">
+    <br/>
+    
+
+    <button onclick="calc2();">=</button>
+    <input type="text" id="result2"/>
+
 
    
 </body>
