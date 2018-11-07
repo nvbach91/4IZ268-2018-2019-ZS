@@ -246,10 +246,16 @@ footer p {
     .contacts_02 {
         width: 100%;
     }
+    .infobox_02 {
+        width: 50%;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .tariff_02 {
+        width: 100%;
+    }
+    .infobox_02 {
         width: 100%;
     }
 }
