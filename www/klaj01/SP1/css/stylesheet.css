@@ -1,229 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(255, 255, 255);
-    width: 99%;
-    height: 100%;
-    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #312c32;
 }
 
-ul li {
-    list-style: none;
-}
-
-ul li p {
-    font-size: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    color: rgb(70, 70, 70);
-    width: 80%;
-}
-
-h2 {
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-}
-
-h1 {
-    padding-top: 50px;
-    text-align: center
-}
-
-h3 {
-    text-align: center;
-}
-
-nav {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-transform: uppercase;
-    border-bottom: 7px solid rgb(153, 153, 153);
-    width: 99%;
-    border-radius: 5px;
-}
-
-nav li {
-    display: block;
-    margin-right: 10px;
-    float: right;
-    padding: 20px;
-}
-
-nav li:hover {
-    background-color: grey;
-    border-radius: 5px;
-}
-
-nav li a {
-    color: black;
-}
-
-nav li a:hover {
-    color: white;
-}
-
-.poster-img {
-    text-align: center;
-}
-
-.poster h1 {
-    text-align: center;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-    padding: 30px;
-    font-weight: bold;
-    font-size: 50px;
-}
-
-.poster h2 {
-    text-align: center;
-    font-weight: bold;
-    color: rgb(94, 94, 94);
-    padding: 0px;
-    font-weight: bold;
-    font-size: 40px;
-}
-
-.img_1 {
-    padding-left: 140px;
-}
-
-.news {
-    text-align: center;
-    padding-top: 400px;
-}
-
-.aboutus_01 {
-    text-align: center;
-}
-
-.aboutus_03 {
-    max-width: 1790px;
-    padding-left: 20px;
-    text-align: left;
-    list-style: none;
-}
-
-.aboutus_03 p {
-    font-size: 22px;
-    text-align: center;
-    color: rgb(94, 94, 94);
-}
-
-.articles {
-    padding-top: 70px;
-    padding-bottom: 400px;
-    list-style: none;
-    text-align: justify;
-}
-
-.article {
+.infobox {
+    width: 50%;
     margin: 0 auto;
-    float: left;
-    padding: 10px;
-    width: 23%;
 }
 
-.article h3 {
-    margin: 0 auto;
-    font-size: 20px;
-}
-
-.article p {
-    min-height: 100px;
-    font-size: 15px;
-}
-
-.moreinfo {
-    color: black;
-    padding-left: 170px;
-}
-
-.article:nth-child(1) h3 {
-    border-bottom: 5px solid rgba(0, 0, 0, 0.973);
-    border-radius: 5px;
-}
-
-.article:nth-child(2) h3 {
-    border-bottom: 5px solid rgb(59, 59, 59);
-    border-radius: 5px;
-}
-
-.article:nth-child(3) h3 {
-    border-bottom: 5px solid rgb(94, 94, 94);
-    border-radius: 5px;
-}
-
-.article:nth-child(4) h3 {
-    border-bottom: 5px solid rgb(175, 175, 175);
-    border-radius: 5px;
-}
-
-.clear {
-    clear: both;
-}
-
-footer {
-    text-align: center;
-    border-top: 5px solid;
-    border-image: linear-gradient(to right, rgb(56, 56, 56) 25%, rgb(59, 59, 59) 25%, rgb(94, 94, 94) 50%, rgb(94, 94, 94) 50%, rgb(175, 175, 175) 75%, rgb(207, 207, 207) 75%) 5;
-}
-
-footer p {
-    text-align: center;
-    border-top: 5px solid grey;
-}
-
-.img_1 {
-    padding-left: 250px;
-    width: 75%;
+.infobox p {
+    font-weight: bold;
+    color: grey;
 }
 
 .infobox_01 {
     list-style: none;
     text-align: justify;
-    padding-bottom: 100px;
+    padding-top: 10px;
 }
 
 .infobox_02 {
     text-align: center;
     float: left;
-    width: 33.333%;
-}
-
-.tariff_01 {
+    width: 33.33333%;
     list-style: none;
-    text-align: justify;
-    padding-bottom: 800px;
-}
-
-.tariff_02 {
-    text-align: center;
-    float: left;
-    width: 33.3333%;
-    padding-top: 10px;
-    border-bottom: 1px solid rgb(148, 148, 148);
-}
-
-.tariff_02 p {
-    font-size: 15px;
-    min-height: 100px;
-    color: grey;
     font-weight: bold;
-}
-
-.infobox_02 h3 {
-    padding-top: 50px;
-    margin: 0 auto;
-    font-size: 22px;
+    padding-bottom: 25px;
 }
 
 .infobox_02 p {
-    font-size: 14px;
-    min-height: 70px;
-    color: grey;
+    color: rgb(92, 92, 92);
     font-weight: bold;
 }
 
@@ -233,9 +44,71 @@ footer p {
     padding-top: 0;
 }
 
+.nav {
+    background-color: rgb(92, 92, 92);
+    color: #feffff;
+    text-align: center;
+    font-size: 25px;
+    margin: 0 auto;
+}
+
+.activepage {
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    background-color: grey;
+}
+
+.nav a {
+    display: inline-table;
+    color: #feffff;
+    padding: 25px;
+    text-decoration: unset;
+}
+
+.nav a:hover {
+    background-color: white;
+    color: rgb(92, 92, 92);
+}
+
+h1 {
+    text-align: center;
+    color: rgb(92, 92, 92);
+}
+
+.poster {
+    text-align: center;
+}
+
+.img_1 {
+    width: 100%;
+    border: 5px solid rgb(92, 92, 92);
+}
+
+.infobox {
+    text-align: center;
+}
+
+.news, .review, .articles_02 {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
+
+footer {
+    text-align: center;
+    border-top: 5px solid;
+    border-image: linear-gradient(to right, rgb(56, 56, 56) 25%, rgb(59, 59, 59) 25%, rgb(94, 94, 94) 50%, rgb(94, 94, 94) 50%, rgb(175, 175, 175) 75%, rgb(207, 207, 207) 75%) 5;
+}
+
 .social {
-    background-color: #eee;
     padding: 25px 0;
+}
+
+footer p {
+    text-align: center;
+    border-top: 5px solid grey;
 }
 
 .social>div {
@@ -250,7 +123,6 @@ footer p {
 .credits {
     color: white;
     padding: 40px 0;
-    text-align: center;
     background-color: rgb(87, 87, 87);
 }
 
@@ -269,331 +141,139 @@ footer p {
     max-height: 40px;
 }
 
-.headerimg {
-    text-align: center;
-    max-width: 150px;
-    max-height: 150px;
-    border-radius: 5px
-}
-
-.map, .intro, .price, .contacts, .topics, .home {
-    background-color: rgb(153, 153, 153);
-    border-radius: 5px;
-}
-
-.contact_01 {
-    list-style: none;
-    text-align: justify;
-    padding-bottom: 500px;
-}
-
-.contact_02 {
-    text-align: center;
-    float: left;
-    width: 33.3333%;
-}
-
-.contact_02 h3 {
-    padding-top: 50px;
+.articles, .mapinfo, .zoomaps_01 {
     margin: 0 auto;
-    font-size: 22px;
+    text-align: center;
+    width: 50%;
 }
 
-.contact_02 p {
-    font-size: 14px;
-    min-height: 30px;
+.articles p, .mapinfo p {
     color: grey;
     font-weight: bold;
 }
 
-.rating {
-    background-color: rgb(182, 182, 182);
-    border-radius: 5px;
-    font-size: 20px;
-    color: black;
-}
-
-.rating:hover {
-    background-color: rgb(185, 184, 184);
-    border-radius: 5px;
-    font-size: 30px;
-    color: black;
-}
-
-.zoomaps {
-    max-width: 1200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 100px;
-}
-
 .infoimg {
-    max-width: 1000px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 100px;
+    width: 50%;
 }
 
 .googlemap {
-    padding-bottom: 100px;
-    max-width: 1200px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 50%;
 }
 
-.article_00 {
+.zoomaps_02 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.tariff_01 {
     list-style: none;
+    text-align: justify;
 }
 
-.article_01 {
-    border-bottom: 0.5px solid rgb(231, 231, 231);
+.tariff_02 {
+    text-align: center;
+    float: left;
+    width: 33.3333%;
+    padding-bottom: 50px;
 }
 
-.article_00 li p {
-    max-width: 800px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.tariff_02 p {
+    color: grey;
+    font-weight: bold;
 }
 
-@media screen and (max-width: 1366px) {
-    .img_1 {
-        max-width: 75%;
+.ticket {
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.contact {
+    width: 200px;
+}
+
+.contacts_01 {
+    list-style: none;
+    text-align: justify;
+    padding-top: 10px;
+}
+
+.contacts_02 {
+    text-align: center;
+    float: left;
+    width: 50%;
+    list-style: none;
+    padding-bottom: 25px;
+}
+
+.handicap {
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+    .nav {
+        font-size: 15px;
     }
-    nav li {
-        float: left;
-        padding: 15px;
+}
+
+@media screen and (max-width: 800px) {
+    .nav {
+        font-size: 15px;
     }
-    .article {
-        width: 50%;
+    .nav {
+        font-size: 15px;
+        text-align: center;
+    }
+    .nav a {
+        display: block;
+        text-align: center;
     }
     .tariff_02 {
-        height: 80px;
         width: 50%;
-        border: none;
     }
-    .article p {
-        min-height: 220px;
+    .contacts_02 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tariff_02 {
+        width: 100%;
+    }
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 5px;
+    }
+    nav {
+        display: none
     }
     footer {
-        padding-top: 1200px;
-        border: none;
+        display: none
     }
-    .contact_02 {
-        text-align: center;
-        float: left;
-        width: calc(100/3);
+    img, .infoimg, .googlemap, .zoomaps_01, .moreinfo {
+        display: none;
     }
-    @media screen and (max-width: 1024px) {
-        .img_1 {
-            max-width: 50%;
-        }
-        nav li {
-            float: left;
-            padding: 15px;
-        }
-        .article {
-            width: 50%;
-        }
-        .article p {
-            min-height: 220px;
-        }
-        .tariff_01 {
-            list-style: none;
-            text-align: justify;
-            padding-left: 170px;
-            padding-bottom: 10px;
-        }
-        .tariff_02 {
-            height: 80px;
-            width: 50%;
-            border: none;
-        }
-        .article {
-            float: left;
-            padding: 10px;
-            width: 90%;
-        }
-        footer {
-            padding-top: 900px;
-            border: none;
-        }
-        .contact_02 {
-            text-align: center;
-            float: left;
-            width: 50%;
-        }
+    .news, .infobox, .review, .articles_02, .articles, .mapinfo, .ticket {
+        width: 90%;
     }
-    @media screen and (max-width: 800px) {
-        .img_1 {
-            visibility: hidden;
-        }
-        header {
-            padding-bottom: 0px
-        }
-        nav {
-            width: 100%;
-            height: 100%;
-            background-color: rgb(190, 190, 190);
-        }
-        nav li {
-            float: none;
-            padding: 15px;
-        }
-        nav ul li a {
-            text-align: center;
-        }
-        .infobox_02 {
-            width: 50%
-        }
-        .article {
-            width: 100%
-        }
-        .tariff_02 {
-            text-align: center;
-            float: left;
-            width: 100%;
-            padding-bottom: 10px;
-            border: none;
-        }
-        footer {
-            padding-top: 900px;
-            text-align: center;
-            border: none;
-        }
-        .zoomaps, .googlemap {
-            max-width: 100%;
-        }
-        .infoimg {
-            max-width: 100%;
-        }
-        .contact_02 {
-            text-align: center;
-            float: left;
-            width: 50%;
-        }
-        @media screen and (max-width: 480px) {
-            .img_1 {
-                visibility: hidden;
-            }
-            header {
-                padding-bottom: 0px
-            }
-            nav {
-                width: 100%;
-                height: 100%;
-                background-color: rgb(190, 190, 190);
-            }
-            nav li {
-                float: none;
-                padding: 15px;
-            }
-            nav ul li a {
-                text-align: center;
-            }
-            .infobox_02 {
-                width: 100%
-            }
-            .article {
-                width: 100%
-            }
-            .contact_02 {
-                text-align: center;
-                float: left;
-                width: 100%;
-            }
-            .tariff_02 {
-                text-align: center;
-                float: left;
-                width: 100%;
-                padding-bottom: 10px;
-            }
-            footer {
-                padding-top: 1200px;
-                text-align: center;
-                border: none;
-            }
-            .zoomaps, .googlemap {
-                max-width: 100%;
-            }
-            .infoimg {
-                max-width: 100%;
-            }
-        }
-        @media print {
-            body {
-                margin: 0;
-                padding: 5px;
-            }
-            nav {
-                display: none
-            }
-            footer {
-                display: none
-            }
-            img, .infoimg, .googlemap, .zoomaps {
-                display: none;
-            }
-            .tariff_01 {
-                list-style: none;
-                text-align: justify;
-                padding-bottom: 700px;
-            }
-            .tariff_02 {
-                text-align: center;
-                float: left;
-                width: 15%;
-                padding: 0px;
-            }
-            .contact_02 h3 {
-                font-size: 15px;
-                font-weight: bold;
-            }
-            .news {
-                text-align: center;
-                padding-top: 100px;
-            }
-            .articles {
-                padding-top: 10px;
-                list-style: none;
-                text-align: justify;
-            }
-            .article {
-                margin: 0 auto;
-                float: left;
-                padding: 10px;
-                width: 100%;
-            }
-            .article h3 {
-                margin: 0 auto;
-                font-size: 15px;
-            }
-            .article_01 {
-                border-bottom: none;
-            }
-            article p {
-                min-height: 100px;
-                font-size: 15px;
-            }
-            .moreinfo {
-                display: none;
-            }
-            .article:nth-child(1) h3 {
-                border-bottom: none;
-            }
-            .article:nth-child(2) h3 {
-                border-bottom: none;
-            }
-            .article:nth-child(3) h3 {
-                border-bottom: none;
-            }
-            .article:nth-child(4) h3 {
-                border-bottom: none;
-            }
-            .rating {
-                display: none
-            }
-        }
+    .tariff_02 {
+        width: 25%;
+    }
+    .tariff_02 h3 {
+        font-size: 12px;
+    }
