@@ -60,7 +60,7 @@ nav a:hover{
 }
 
 nav .current {
-    background-color: green;
+    background-color: rgb(0, 92, 0);
     border-bottom: 2px solid black;
 }
 
@@ -290,7 +290,8 @@ footer p:nth-child(4) {font-size: 13px;}
 
     .float-box {
         border-color: transparent;
-        width: 50%;
+        width: 100%;
+        min-height: 0;
     }
 
     footer {
