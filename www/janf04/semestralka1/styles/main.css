@@ -1,0 +1,304 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(191, 255, 189);
+}
+
+body a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    min-height: 250px;
+    background-image: url('../pics/logo.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 30px 60px 30px;
+    text-align: center;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    background-color: rgba(0,0,0,0.671);
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 50px;
+}
+
+.clear {
+    clear: both;
+}
+
+nav {
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: rgb(67, 158, 37);
+    height: 62px;
+    border: 2px solid rgb(0, 0, 0);
+
+}
+
+nav a {
+    text-align: center;
+    display: block;
+    float: left;
+    padding: 20px 20px;
+    border-right: 2px solid black;
+    color: white;
+    text-transform: uppercase;
+}
+
+nav a:hover{
+    background-color: black;
+}
+
+nav .current {
+    background-color: rgb(0, 92, 0);
+    border-bottom: 2px solid black;
+}
+
+.wrapper {
+    margin: 5px auto;
+    max-width: 1280px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-left: 20px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid black;
+}
+
+.container {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.float-box {
+    float: left;
+    width: 25%;
+    height: auto;
+    min-height: 10cm;
+    border: 10px solid rgb(191, 255, 189);
+    background-color: rgb(67, 158, 37);
+    border-radius: 25px;
+    padding: 10px;
+}
+
+h3 {
+    background-color: rgba(0,0,0,0.671);
+    color: white;
+    padding: 8px;
+    border-radius: 25px;
+    margin: 15px;
+    text-align: center;
+}
+
+.float-box p {
+    font-size: 16px;
+    margin: 10px 25px;
+}
+
+/*............Zapasy...............*/
+
+.match-table {
+    width: 100%;
+}
+
+.match-table th, .match-table td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+
+/*.............Fotogalerie...........*/
+.gallery {
+    padding: 5px;
+    border: 1px solid rgb(192, 189, 189);
+    float: left;
+    width: 25%;
+    height: 200px;
+}
+
+.gallery:hover {
+    border: 1px solid black;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*..............Hraci.............*/
+
+.imgcenter {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.player-img img {
+    width: 100%;
+    display: block;
+    margin: 11px 5px 0 15px;
+}
+
+.player-img {
+    float: left;
+    width: 25%;
+}
+
+.player-info {
+    float: left;
+    width: 75%;
+}
+
+.gkeepers .float-box, .defence .float-box, .midfield .float-box, .attack .float-box {
+    min-height: auto;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    background-color: rgba(0,0,0,0.671);
+    position: absolute;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+footer p {
+    font-size: 20px;
+    margin: 0;
+}
+
+footer p:nth-child(1) {margin-top: 15px;}
+footer p:nth-child(3) {font-size: 13px;}
+footer p:nth-child(4) {font-size: 13px;}
+
+.facebook {
+    background-image: url(../pics/fb.png);
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    background-size: contain;
+}
+
+.float-box:nth-child(1) {background-color: rgb(74, 173, 41);}
+.float-box:nth-child(2) {background-color: mediumaquamarine;}
+.float-box:nth-child(3) {background-color: cornflowerblue;}
+.float-box:nth-child(4) {background-color: mediumturquoise;}
+.float-box:nth-child(5) {background-color: cadetblue;}
+.float-box:nth-child(6) {background-color: chocolate;}
+.float-box:nth-child(7) {background-color: gold;}
+.float-box:nth-child(8) {background-color: firebrick;}
+
+.gkeepers .float-box {background-color: rgb(74, 173, 41);}
+.defence .float-box {background-color: mediumaquamarine;}
+.midfield .float-box {background-color: cornflowerblue;}
+.attack .float-box {background-color: mediumturquoise;}
+
+@media screen and (max-width: 1024px) {
+    .float-box {
+        width: calc(100% / 3);
+    }
+
+    .gallery {
+        width: calc(100% / 3);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logo h1 {
+        font-size: 40px;
+    }
+    
+    .float-box {
+        width: 50%;
+        min-height: 8cm;
+    }
+
+    .gallery {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .logo h1 {
+        font-size: 30px;
+    }
+    
+    nav {
+        display: grid;
+        height: auto;
+    }
+
+    nav a {
+        border-bottom: 1px solid black;
+    }
+    
+    .float-box {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .gallery {
+        width: 100%;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+
+    .player-img, .player-info {
+        float: none;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .player-img img {
+        min-width: 30%;
+        margin: 0 0 0 0;
+    }
+}
+
+
+@media print {
+    header {
+        display: none;
+    }
+    body {
+        color: black;
+        font-size: 12px;
+    }
+
+    h3 {
+        color: black;
+    }
+
+    .float-box {
+        border-color: transparent;
+        width: 100%;
+        min-height: 0;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .dont-print {
+        display: none;
+    }
+}
