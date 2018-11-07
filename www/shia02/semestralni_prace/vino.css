@@ -164,6 +164,10 @@ footer {
     padding: 10px 0;
 }
 
+.mail {
+    color: rgb(214, 116, 116);
+}
+
 
 /* HISTORIE */
 
@@ -267,12 +271,13 @@ div h4 {
 @media print {
     body {
         background-color: none !important;
+        font-size: 12px;
     }
 
     .intro, header, .etiketa {
         display: none;
     }
-    div h1, div h2 {
+    div h1, div h2, footer {
         color: rgba(0, 0, 0, 0.863);
         padding: 5px;
     }
