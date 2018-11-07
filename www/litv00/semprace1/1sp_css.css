@@ -4,14 +4,12 @@ html, body{
   padding: 0;
   font-family: Helvetica, Arial, Sans-Serif;
   background: #f2f2f2;
-  
 }
 
 /*header*/
 
 .poster {
   color: white;
-  
   font-size: 30px;
   padding: 60px 30px 60px 30px;
   text-align: center;
@@ -19,12 +17,9 @@ html, body{
   background-size: 100%;
   background-position: center;
   margin-bottom: 20px;
-  
 }
 
 .menu-main {
-
-  
   margin: 30px 0 5px;
   padding: 25px 0 5px;
   text-align: center;
@@ -48,12 +43,20 @@ html, body{
   position: relative;
   padding-bottom: 20px;
   margin: 0 30px 0 30px;
-  font-size: 17px;
   text-transform: uppercase;
   display: inline-block;
   color: white;
-  
 }
+
+@media(min-width: 800px){
+  .menu-main a {
+    font-size: 17px;
+    }}
+@media(max-width: 799px){
+  .menu-main a {
+    font-size: 10px;
+    }}
+
 .menu-main a:hover, .menu-main a.active{
   color: #feb386;
 }
@@ -61,7 +64,7 @@ html, body{
 /*homepage*/
 
 .main-div{
-  width: 1200px;
+  width: 79%;
   min-height: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -74,9 +77,11 @@ html, body{
   margin-right: 20px;
   margin-left: 15px;
   padding-bottom: 10px;
-  height: 200px;
+  max-width: 30%;
+  height: auto;
   float: right;
 }
+
 .homepage_text p{
   margin-left: 20px;
   margin-right: 20px;
@@ -94,9 +99,28 @@ footer{
   height: 50px;
   background-color: #212121;
   color: #aaa;
-  font-size: 15px;
   margin-top: 15px;
 }
+
+@media(min-width: 800px){
+  footer{
+    font-size: 15px;
+    }
+      .photo-mail, .photo-clock{
+  height: 18px;
+  width: 18px;
+}
+}
+
+@media(max-width: 799px){
+  footer{
+    font-size: 8px;
+    }
+    .photo-mail, .photo-clock{
+  height: 11px;
+  width: 11px;
+}
+  }
 
 .footer-cell{
   display: table-cell;
@@ -126,14 +150,10 @@ footer{
 
 .photo-mail{
   padding-left: 5px;
-  height: 18px;
-  width: 18px;
   vertical-align: middle;
 }
 .photo-clock{
   padding-left: 5px;
-  height: 18px;
-  width: 18px;
   vertical-align: middle;
 }
 
@@ -163,76 +183,92 @@ section {
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 14px; /*pro odstraneni mezer mezi inline-blocks*/
-}
-
-section:nth-of-type(1), section:nth-of-type(4), section:nth-of-type(5), section:nth-of-type(7), section:nth-of-type(9){
   margin-left: 40px;
-  margin-right: 40px;
-
 }
-section:nth-of-type(3n+2), section:nth-of-type(10){
-  margin-right: 40px;
-}
-
-
 
 .shape {
-  
-  width: 250px;
-  height: 250px;
   background-color: #ffffff;
   overflow: hidden;
   filter: grayscale(30%);
   opacity: 0.9;
-
+ 
+}
+@media(min-width: 600px){
+  .shape, .details{
+  width: 250px;
+  height: 250px;
+}
+  .details p{
+  font-size: 14.5px;
+}
+}
+@media(max-width: 599px){
+  .shape, .details{
+  width: 150px;
+  height: 150px;
+}
+.details p{
+  font-size: 7px;
+}
 }
 
 
 .shape-1{
   background: url("flags/phi.png") no-repeat 30% 0%;
+  background-size: 100%;
 }
 .shape-2{
   background: url("flags/chi.png") no-repeat 30% 0%;
+  background-size: 100%;
 }
 .shape-3{
   background: url("flags/ger.png") no-repeat 30% 0%;
+ background-size: 100%;
 }
 .shape-4{
   background: url("flags/est.png") no-repeat 30% 0%;
+  background-size: 100%;
 }
 .shape-5{
   background: url("flags/den.png") no-repeat 30% 0%;
+  background-size: 100%;
 }
 .shape-6{
   background: url("flags/tur.png") no-repeat 30% 0%;
+  background-size: 100%;
 }
 .shape-7{
   background: url("flags/gre.png") no-repeat 30% 0%;
+  background-size: 100%;
 }
 .shape-8{
   background: url("flags/jap.png") no-repeat 30% 0%;
+  background-size: 100%;
 }
 .shape-9{
   background: url("flags/ecu.png") no-repeat 30% 0%;
+  background-size: 100%;
 }
 .shape-10{
   background: url("flags/bra.png") no-repeat 30% 0%;
+  background-size: 100%;
 }
 .shape-11{
   background: url("flags/spa.png") no-repeat 30% 0%;
+  background-size: 100%;
 }
 .shape-12{
   background: url("flags/pan.png") no-repeat 30% 0%;
+  background-size: 100%;
 }
 
 .details {
   display: none;
-  width: 250px;
-  height: 250px;
   padding-top: 20px;
   color: #ffffff;
   background-color: rgba(75, 90, 120, 0.9);
 }
+
 
 .details h3 {
   padding-bottom: 10px;
@@ -247,7 +283,7 @@ section:nth-of-type(3n+2), section:nth-of-type(10){
 
 
 .details p {
-  font-size: 14.5px;
+  
   width: 90%;
   margin: 10px auto;
   line-height: 1.4;
@@ -259,10 +295,7 @@ section:nth-of-type(3n+2), section:nth-of-type(10){
 
 /*about santa*/
 
-.santapage{
-  font-family: "Lucida Console", Monaco, monospace;
 
-}
 .santapage h2{
   padding-top: 20px;
 }
@@ -273,23 +306,29 @@ section:nth-of-type(3n+2), section:nth-of-type(10){
 .santa-text-right{
   margin-right: 50px;
   margin-top: 50px;
-  margin-left: 500px;
+}
+
+@media(max-width: 699px){
+  .santa-text-left, .santa-text-right{
+    font-size: 10px;
+    margin-left: 20px;
+  }
 }
 
 .part-1{
-  height: 500px;
+  min-height: 500px;
   border-bottom: 1px solid black;
   background-color: #b3d9ff;
   
 }
 .part-2{
-  height: 500px;
+  min-height: 500px;
   border-bottom: 1px solid black;
   background-color: #ccffe6;
   margin-top: -20px;
 }
 .part-3{
-  height: 500px;
+  min-height: 500px;
   background-color: #e0ccff;
   margin-top: -20px;
 }
@@ -299,23 +338,20 @@ section:nth-of-type(3n+2), section:nth-of-type(10){
   margin-right: 50px;
   margin-left: 100px;
   padding-bottom: 10px;
-  height: 350px;
   float: right;
+  max-width: 20%;
+  height: auto;
 }
 .santa_photo2{
   margin-top: 30px;
   margin-right: 50px;
   margin-left: 50px;
   padding-bottom: 10px;
-  height: 250px;
   float:left;
+  max-width: 30%;
+  height: auto;
 }
 
-.part-3{
-  height: 500px;
-  background-color: #e0ccff;
-  margin-top: -20px;
-}
 
 .photo-tree{
   height: 40px;
@@ -342,9 +378,8 @@ section:nth-of-type(3n+2), section:nth-of-type(10){
 
 .gallery-height{
   height: 1200px;
-  
-
 }
+
 .gallery h1 {
   margin: 0;
   padding: 10px 0;
@@ -428,7 +463,6 @@ section:nth-of-type(3n+2), section:nth-of-type(10){
 
 
 table {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   text-align: left;
   border-collapse: separate;
   border-spacing: 5px;
@@ -458,12 +492,18 @@ td {
   margin-right: 20px;
   font-size: 17px;
 }
+@media(min-width: 1500px){
 .beginning_tree{
   position: absolute;
    top: 340px;
    right: 50px;
    float: right;
-}
+}}
+@media(max-width: 1499px){
+  .beginning_tree{
+  display: none;
+}}
+
 
 
 
