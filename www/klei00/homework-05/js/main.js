@@ -1,6 +1,7 @@
 /* 1.	Pepe's age. Vypište na konzoli smysluplnou oznamovací větu ohledně věku Pepy, pokud znáte jeho rok narození. Použijte proměnné a pro výpis použijte zřetězení stringů. Jako názvy proměnných používejte anglické pojmy. */
 var birthYear = 1973;
-console.log("Pepovi je " + (2018 - birthYear) + " let.");
+var currentYear = (new Date()).getFullYear();
+console.log("Pepovi je " + (currentYear - birthYear) + " let.");
 
 /* 2.	WTF (wow, that's fun). Vypište teplotu v Fahrenheiht, pokud znáte teplotu v Celsius, a také naopak. Formát výpisu je: 20°C =  68°F resp. 68°F = 20°C. Výpočet probíhá takto: 
 a.	z C na F: vynásobit devíti, vydělit pěti a přičíst 32.
@@ -12,7 +13,7 @@ console.log(cels + "°C = " + (cels * 9 / 5 + 32) + "°F");
 
 /* 3.	Funkce function fonction funktio. Vemte předchozí úlohy a udělejte z nich funkce. Tj. vytvořte funkce, které přijímají argumenty, a na základě argumentů po zavolání vypíše výsledek na konzoli. Párkrát zavolejte tyto funkce s různými argumenty. V konzoli také vyzkoušejte, zda fungují vaše funkce. */
 function age(birthYear) {
-    console.log("Pepovi je " + (2018 - birthYear) + " let.");
+    console.log("Pepovi je " + (currentYear - birthYear) + " let.");
 }
 function fahrToCels(fahr) {
     console.log(fahr + "°F = " + ((fahr - 32) * 5 / 9) + "°C");
@@ -81,7 +82,7 @@ function isTriangle(a, b, c) {
     if (a < 0 || b < 0 || c < 0) {
         console.log("Parametry nemohou být záporné.")
     } else {
-        if (a + b <= c || b + c <= a || a + c <= b) {
+        if (a + b <= c || b + c <= a || a + c <= b || a * b * c === 0) {
             return false;
         }
         return true;
