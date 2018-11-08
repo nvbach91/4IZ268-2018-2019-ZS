@@ -1,5 +1,4 @@
 
-
 *{
     -ms-box-sizing: border-box;
     -o-box-sizing: border-box;
@@ -56,13 +55,18 @@ body {
 }
 
 .cover{
-    right: 0px;
+    right: auto;
     position: fixed;
-    left: auto;
-    top: 190px;
+    left: 50%;
+    top: auto;
+    z-index: 1;
     width: auto;
-    height: 90%;
-    z-index: 1; 
+    height: auto;  
+}
+
+.coverIndex{
+left: 52%;
+height: 92%;
 }
 
 strong, b {
@@ -143,7 +147,14 @@ nav li a:hover {
 
 main {
     width: 100%;
-  }
+}
+.pageWithAsideImg{
+    position: relative;
+     
+    padding: 0 25px;
+    margin-top: 100px;
+    width: 50%;   
+}
 
 aside {
     width: 100%;
@@ -152,6 +163,12 @@ aside {
     padding: 25px 0;
     margin-bottom: 25px;
   }
+  .asideTitleImg{
+    position: sticky;
+    width: 50%;
+    float: right;
+  }
+  .asideTitleImg img
 
   aside h2{
     text-align: center;
@@ -177,7 +194,8 @@ aside {
     margin-left: 25px;
     margin-top: 100px;
     border: 0;
-}
+} 
+
 .pageContent{
     position: relative;
     width: 100%;
@@ -260,17 +278,6 @@ border-radius: 10px;
         display: list-item;
         text-transform: uppercase;
     }
-    .cover{
-        right: 0px;
-        position: fixed;
-        left: auto;
-        top: auto;
-        bottom: 0;
-        width: 50%;
-        height: auto;
-        max-height: 100%;
-        z-index: 1; 
-    }
     .mainContent{
         position: relative;
         padding: 0;
@@ -285,6 +292,20 @@ border-radius: 10px;
 }
 
 @media screen and (max-width: 690px) {
+    th{
+        display: none;
+    }
+    td{
+        display: block;
+        text-align: center;
+    }
+    tr{
+    background-color: darkgreen;
+    
+    }
+    td.right{
+        text-align: center;
+    }
     a img{
         width: 50px;
         height: 49px;
@@ -307,6 +328,9 @@ border-radius: 10px;
 
     .blackBox{
         margin-right: 0px;
+    }
+    .tabOverFlow{
+    overflow-x:auto;
     }
 
     nav{
@@ -334,24 +358,7 @@ border-radius: 10px;
     }
 
     .cover{
-        right: 0px;
-        position: fixed;
-        left: auto;
-        top: 80%;
-        height: auto;
-        max-height: 100%;
-        z-index: 1; 
-    }
-
-    .cover:hover{
-        right: 0px;
-        position: fixed;
-        left: auto;
-        top: auto;
-        bottom: 0;
-        height: auto;
-        max-height: 100%;
-        z-index: 1; 
+      display: none;
     }
 
     li a {
