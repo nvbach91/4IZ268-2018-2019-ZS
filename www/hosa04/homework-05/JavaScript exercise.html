@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+
+
+<!-- Omlouvam se, mam pouze tuto cast kodu. Na cviceni jsme si toho moc podrobne neukazovali, vsechno jsem musel stavet sam. Dekuji za pochopeni. -->
+
 <html>
 
 <head>
@@ -92,14 +96,54 @@
 
     <br/>
     <br/>
+
     <p>Insert Fahrenheit</p>
+
     <input type="text" id="n2">
     <br/>
     
 
     <button onclick="calc2();">=</button>
+
     <input type="text" id="result2"/>
 
+
+    <script>
+        function calc3() {
+
+            var n3 = parseFloat(document.getElementById('n3').value);
+
+            var n4 = parseFloat(document.getElementById('n4').value);
+
+            document.getElementById("result3").value = ((n3)/(n4/100))
+         }
+
+        
+
+    </script>
+
+
+<br/>
+<br/>
+
+<br/>
+<br/>
+<h2>Percentage division</h2>
+
+<br/>
+<p>This much</p>
+<input type="text" id="n3"/>
+
+<br/>
+
+<p>From this much</p>
+<input type="text" id="n4"/>
+
+<br/>
+
+<p>is these much percet</p>
+<button onclick="calc3();">=</button>
+<input type="text" id="result3"/>
 
    
 </body>
