@@ -31,39 +31,58 @@ li a {
     border-bottom: black solid 1px;
     }
  
-li a:hover:not(.active) {
-    background-color: #c6ecc6;
-    }
+nav ul li:hover, .active {
+    background-color: #d9f2d9;
+}
+
+.box {
+    margin-top: 75px;
+
+}
 
 .borders {
-    width: 100%;
-    padding: 20px;
-    border: 1px solid gray;
-    vertical-align: top;
-
+    width: 85%;
+    border: none;
 }    
 
-.map {
-
+.border-treneri {
+    width: 100%;
+    border: none;
+    background-color: #d9f2d9;
 
 }
 
-.active {
-    background-color: #4CAF50;
+.fotogalerie-reklama{
+    padding-left: 0px;
 }
+.fotogalerie-reklama img {
+    border: 1px solid #ccc; 
+    padding: 2px;
+    margin-right: 10px;  
+    }
 
 .gallery img {
     border: 1px solid grey;
     padding: 6px;
     box-shadow: 3px 3px 6px #999999;
     margin-right: 6px;
+    background-color: white;
+}
+
+.oteviracidoba table{
+    width: 350px;
+    margin-top: 1px;
+    line-height: 130%;
+    text-align: left;
 }
 
 .footer {
+    margin-top: 25px;
+    width: 100%;
     text-align: center;
-    padding: 30px 10px;
+    padding: 20px 10px;
     color: black;
-    background-color: #4CAF50;
+    background-color: #d9f2d9;
 }
 
 
