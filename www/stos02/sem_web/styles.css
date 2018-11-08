@@ -118,17 +118,23 @@
     padding:20px;
     font:normal 15px Tahoma;
 }
-.article_own{
+#article_own_3,#article_own_2{
     font:normal 15px Tahoma;
     padding: 10px 170px;
     text-align: justify;
+    padding:10px;
 }
-.article_own p{
-    padding:10px 10px;
+#article_own_3{
+    column-count:3;
+}
+#article_own_2{
+    column-count:2;
+}
+#article_own_3 p, #article_own_2 p{
+    padding:10px;
 }
 .greeting p{
     text-align: right;
-    padding-right:180px;
 }
 .own_img img{
     height:230px;
@@ -136,10 +142,9 @@
     padding:0 10px;
 }
 .own_img{
-    margin:10px 200px;
     text-align: center;
 }
-.article_own h3{
+#article_own_2 h3,#article_own_3 h3{
     padding-left: 10px;
     padding-top:15px;
     padding-bottom:5px;
@@ -218,41 +223,38 @@
       .article_text_home{
           margin:50px 250px;
       }
-      .own_img{
-          margin:auto;
-      }
   }
 
 @media screen and (max-width:1000px)
-{       
+{   
     #signpost{
-          float:none;
-          right:0;
-          top:0;
-      }
+        float:none;
+        right:0;
+        top:0;   
+    }
     .main_head{
-          height:136px;
-      }
+        height:136px;
+    }
     .social{
-          margin-left: 70px;
-      }
+        margin-left: 70px;
+    }
     .article_apple{
-          margin:40px 5px;
-          padding: 0 10px;
-      }
+        margin-left:5px;
+        margin-right:5px;
+        padding: 0 10px;
+    }
     .article_text_home{
-          margin:50px 50px;
-      }
-    .own_image{
-          margin:auto;
-      }
-    .article_own{
-        padding: 10px 90px;
+        margin:50px;
+    }
+    #article_own_3{
+        column-count:2;
+    }
+    .own_img img{
+        height:150px;
     }
 }
 @media screen and (max-width:800px)
-{       
-
+{ 
     #signpost li{
         font-size:20px;
         padding:15px;
@@ -260,11 +262,6 @@
     }
     ul{
         margin-left:10px;
-    }
-    #signpost{
-          float:none;
-          right:0;
-          top:0;
     }
     .main_head{
           height:100px;
@@ -279,7 +276,7 @@
         column-count:1;
     }
     #name{
-        font:bold 10px Tahoma;
+        font-size: 10px;
         top:10px;
         padding-left: 70px;
     }
@@ -292,14 +289,12 @@
         width:30px;
     }
     .article_apple{
-        margin:40px 5px;
+        margin-left:5px;
+        margin-right:5px;
         padding: 0 10px;
     }
     .article_section{
         display:inline;
-    }
-    .own_image{
-        margin:auto;
     }
     .article_img{
         margin:auto;
@@ -314,44 +309,27 @@
     #signpost li{
         font-size:16px;
         padding:5px;
-        margin:0;
     }
-  ul{
-        margin-left:10px;
+    .heading{
+        padding-top:0;
     }
-  #name{
-      font:bold 10px Tahoma;
-      top:10px;
-      padding-left: 70px;
-  }
-  .main_head{
-      height:100px;
-  }
-  .main_head img{
-      height:40px;
-      width:40px;
-      margin-left:20px;
-  }
-  .heading{
-      padding-top:0;
-  }
-  .heading h1{
-    font-size:20px;
-  }
-  .social{
-      display:block;
-      margin-left: 10px;
-  }
-  .social img{
-      height:20px;
-      width:20px;
-  }
-  .right h2{
-      font:bold 10px Tahoma;
-  }
-  .right p{
-      font:normal 8px Tahoma;
-  }
+    .heading h1{
+      font-size:20px;
+    }
+    .social img{
+        height:20px;
+        width:20px;
+    }
+    .right h2{
+        font-size:10px;
+    }
+    .right p{
+        font-size:8px;
+    }
+    #article_own_3, #article_own_2{
+      column-count:1;
+    }
+
 }
 
 @media print {
@@ -363,12 +341,12 @@
       margin-left: 10px;
   }
   .right h2{
-      font:bold 10px Tahoma;
+      font-size:10px;
   }
   .right p{
-      font:normal 8px Tahoma;
+      font-size:8px;
   }
-  .article_text, .article_own{
+  .article_text{
      width:auto;
      padding:20px;
   }
@@ -381,6 +359,7 @@
   .own_img{
       display:none;;
   }
+  #article_own_3, #article_own_2{
+    column-count: 2;
+    }
 }
-
-    
