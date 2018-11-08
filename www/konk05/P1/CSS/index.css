@@ -28,7 +28,7 @@ ul {
 nav li {
     display: block;
     float: left;
-    border-left: solid 1.5px #95803D;
+    border-left: solid 1.5px #2E2B26;
     padding: 15px;
     margin-top: 5px;
 }
@@ -48,7 +48,7 @@ nav a {
     font-weight: 350;
     font-size: 16px;
     text-decoration: none;
-    color:rgb(131, 112, 52);
+    color:#2E2B26;
 }
 
 h1, h2 {
@@ -68,10 +68,13 @@ h1 {
 h2 {
     font-size: 30px;
 }
+.disc {
+    color: #FEFAEE;
+}
 
 p {
     font-family: "Cardo", serif;
-    color: #1D1D1B;
+    color: #2E2B26;
 }
 
 .strip1 {
@@ -145,7 +148,7 @@ p {
     text-transform: uppercase;
     font-family: "Montserrat";
     font-weight: 350;
-    color: white;
+    color: #FEFAEE;
     font-size: 16px;
 }
 

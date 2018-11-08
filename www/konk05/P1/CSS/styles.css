@@ -7,23 +7,23 @@ html {
   }
 
 body {
-    background-color: #141319;
+    background-color: #FEFAEE;
     margin: 0;
     padding: 0;
 }
 
 h1 {
     text-align: center;
-    color: #FEFAEE;
+    color: #95803D;
     font-family: "Montserrat";
     text-transform: uppercase;
     font-weight: 300;
     font-size: 50px;
-    padding: 0;
+    padding: 0px 0;
     margin: 0;
 }
 
-.main {  
+.container {  
     display: flex;
     width: 100%;
     height: 100%;
@@ -34,11 +34,10 @@ h1 {
 
 .title {
     width: 100%;
-    margin: 25px 10px 0 10px;
-    text-align: center;
+    margin: 0 10px;
 }
 
-.container {
+.songs {
     width: 100%;
     margin: 10px 50px;
     display: flex;
@@ -46,9 +45,8 @@ h1 {
     align-items: center;
 }
 
-.cover {
+.cover-lungs, .cover-ceremonials, .cover-howbig, .cover-highashope {
     width: 50%;
-    background-image: url(../image/lungs.jpg);
     min-height: 500px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -56,9 +54,25 @@ h1 {
     margin: 25px;
 }
 
+.cover-lungs {
+    background-image: url(../image/lungs.jpg);
+}
+
+.cover-ceremonials {
+    background-image: url(../image/ceremonials.jpg);
+}
+
+.cover-howbig {
+    background-image: url(../image/howbig.jpg);
+}
+
+.cover-highashope {
+    background-image: url(../image/highashope.jpg);
+}
+
 .songs-left, .songs-right {
     width: 25%;
-    color: #FEFAEE;
+    color: #2E2B26;
     font-family: "Montserrat";
     font-size: 20px;
     font-weight: 250;
@@ -81,7 +95,7 @@ h1 {
 }
 
 .buttons a {
-    background-color: #FEFAEE;
+    background-color: #95803D;
     border: none;
     padding: 10px 40px;
     margin: 0 10px;
@@ -91,7 +105,7 @@ h1 {
     text-transform: uppercase;
     font-family: "Montserrat";
     font-weight: 350;
-    color: #141319;
+    color: #FEFAEE;
     font-size: 16px;
 }
 
@@ -110,7 +124,7 @@ h1 {
     .songs-left, .songs-right {
         font-size: 17px;
     }
-    .cover {
+    .cover-lungs, .cover-ceremonials, .cover-howbig, .cover-highashope {
         min-height: 400px;
     }
 }
@@ -119,7 +133,7 @@ h1 {
     .songs-left, .songs-right {
         font-size: 16px;
     }
-    .cover {
+    .cover-lungs, .cover-ceremonials, .cover-howbig, .cover-highashope {
         min-height: 350px;
     }
     .buttons {
@@ -135,10 +149,10 @@ h1 {
         text-align: center;
         width: 80%;
     } 
-    .container {
+    .songs {
         flex-direction: column;
     }
-    .cover {
+    .cover-lungs, .cover-ceremonials, .cover-howbig, .cover-highashope {
         width: 80%;
         min-height: 400px;
         margin: 5px;
@@ -156,10 +170,10 @@ h1 {
         padding: 5px 20px;
         font-size: 14px;
     }
-    .container {
+    .songs {
         margin: 10px 20px;
     }
-    .cover {
+    .cover-lungs, .cover-ceremonials, .cover-howbig, .cover-highashope {
         width: 90%;
         min-height: 250px;
     }
