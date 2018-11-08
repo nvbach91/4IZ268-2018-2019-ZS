@@ -71,8 +71,11 @@ var isGreater = function (num1, num2) {
     if (num1 == num2) {
         return 'Čísla se rovnají.';
     } else
-        return Math.max(num1, num1) + ' is greater';
+        return Math.max(num1, num2) + ' is greater';
 }
+var num3 = isGreater(1, 2);
+var num4 = isGreater(3.8, 5.8);
+var num5 = isGreater(1 / 3, 2 / 3);
 
 /** 
  * 6. I can cleary see the pattern. 
@@ -81,8 +84,8 @@ var isGreater = function (num1, num2) {
  */
 
 var thirteen = function () {
-    for (var i = 0; i <= 730; i += 13) {
-        return i;
+    for (var i = 0; i < 730; i += 13) {
+        console.log(i);
     }
 }
 
