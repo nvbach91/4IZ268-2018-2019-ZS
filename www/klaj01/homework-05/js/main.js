@@ -27,7 +27,7 @@ var ageOfPepa = function (yearOfBirth) {
     else {
         return 'Špatně zadaný rok narození';
     }
-}
+};
 var convertor = function (targetScale, tempeture) {
     switch (targetScale) {
         case 'C':
@@ -37,7 +37,7 @@ var convertor = function (targetScale, tempeture) {
         default:
             return 'Neznámé hodnoty';
     }
-}
+};
 /*4)%CENSORED%. Vytvořte funkci, která vezme 2 číselné argumenty a vrátí podíl prvního čísla a druhého čísla v procentech. Výsledek vypište do konzole, např. 21 je 50% z 42. Pro zkrácení / zaokrouhlování desetinných míst použijte funkci .toFixed(n). Např. var pi = 3.1415926535; pi.toFixed(2); Pozor na dělení nulou!*/
 
 var divide = function (a, b) {
@@ -48,7 +48,7 @@ var divide = function (a, b) {
         console.log('Nulou nelze dělit');
     }
 
-}
+};
 
 /*5)Kdo s koho. Vytvořte funkci, která vezme 2 číselné argumenty a vrátí ten větší z nich. Pokud se čísla rovnají, vypište, že se rovnají. Vyzkoušejte funkčnost pro celá čísla, desetinná čísla, zlomky. Zkuste je párkrát zavolat v kódu a výsledky uložit do proměnných.*/
 var biggerNumber = function (num1, num2) {
@@ -61,27 +61,27 @@ var biggerNumber = function (num1, num2) {
     }
 
     return 'Čísla se rovnají';
-}
+};
 var a = biggerNumber(3 / 4, 5 / 6);
 var b = biggerNumber(0.3, 0.5);
 var c = biggerNumber(7, 7);
 /*6)I can cleary see the pattern. Vytvořte funkci, která vypíše popořadě všechny násobky 13, které jsou menší nebo rovno 730. Použijte for loop.*/
 for (var i = 0; i <= 730; i += 13) {
     console.log(i);
-}
+};
 /*7)Around and about. Vytvořte funkci, která vypočte obsah kružnice podle dodaného poloměru.*/
 
 var circleArea = function (radius) {
-    return (pi * Math.pow(radius * radius));
-}
+    return (Math.Pi * Math.pow(radius * radius));
+};
 
 /*8) Another dimension. Vytvořte funkci, která vypočte objem kuželu, pokud znáte jeho výšku a poloměr.*/
 var coneVolume = function (radius, height) {
-    return (1 / 3 * pi * Math.pow(radius * raius) * height);
+    return (1 / 3 * Math.Pi * Math.pow(radius * radius) * height);
 }
 /*9)Not sure if triangle, or just some random values. Vytvořte funkci, která rozhodne, zda se z dodaných 3 délek dá postavit trojúhelník, tj. vypíše buď true/yes nebo false/no.*/
 var triangle = function (a, b, c) {
-    if ((a < b + c) && (b < a + c) && (c < a + b)) {
+    if ((a >= b + c || b >= a + c || c >= a + b)) {
         return true;
     }
     return false;
