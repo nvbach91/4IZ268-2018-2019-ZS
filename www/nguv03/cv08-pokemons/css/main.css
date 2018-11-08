@@ -23,17 +23,6 @@ header, main, footer {
     margin: 0 auto;
     text-align: center;
 }
-.pokeball {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-image: url(../img/pokeball.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
 .form-row {
     padding: 20px 0;
     background-color: #eee;
@@ -46,6 +35,7 @@ input {
 #pokemon-list {
     list-style-type: none;
     padding: 0;
+    min-height: 400px;
 }
 .pokemon {
     text-align: left;
@@ -71,4 +61,21 @@ input {
 }
 button, .pokemon-name {
     transition: background-color .2s ease;
+}
+.pokeball {
+    width: 100%;
+    height: 100px;
+    
+    background-image: url(../img/pokeball.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+@media screen and (min-width: 640px) {
+    .pokeball {
+        width: 100px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
 }
