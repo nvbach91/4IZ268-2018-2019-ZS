@@ -23,7 +23,7 @@ var createNewPokemon = function(name) {
       existingPokemon.classList.remove('selected');
     });
     this.classList.toggle('selected');
-    selectedPokemon.innerText = name + ', I choose you!';
+    selectedPokemon.innerText = name + ', I choose you! :)';
   });
 
   var deleteButton = document.createElement('button');
@@ -31,7 +31,7 @@ var createNewPokemon = function(name) {
   deleteButton.innerText = 'Bye';
   deleteButton.addEventListener('click', function() {
     this.parentNode.parentNode.removeChild(pokemon);
-    selectedPokemon.innerText = 'Bye bye, ' + name + '!';
+    selectedPokemon.innerText = 'Bye bye, ' + name + ' :(';
   });
 
   pokemon.appendChild(pokemonName);
@@ -40,9 +40,7 @@ var createNewPokemon = function(name) {
   return pokemon;
 };
 
-var addPokemon = function() {
-  var newPokemonName = pokemonInput.value;
-
+var addPokemon = function(newPokemonName) {
   // checking if the input is empty
   if (!newPokemonName) {
     alert('Please enter a pokemon name');
@@ -53,7 +51,7 @@ var addPokemon = function() {
   var existingPokemonNames = document.querySelectorAll('.pokemon-name');
   for (var i = 0; i < existingPokemonNames.length; i++) {
     var existingPokemonName = existingPokemonNames[i].innerText;
-    if (newPokemonName === existingPokemonName) {
+    if (newPokemonName.toLowerCase() === existingPokemonName.toLowerCase()) {
       alert('Pokemon ' + newPokemonName + ' already exists!');
       return false;
     }
@@ -71,16 +69,11 @@ var addPokemon = function() {
 
 pokemonForm.addEventListener('submit', function(e) {
   e.preventDefault();
-  addPokemon();
+  var newPokemonName = pokemonInput.value;
+  addPokemon(newPokemonName);
 });
 
-addButton.addEventListener('click', addPokemon);
-
-pokemonInput.value = 'Pikachu';
-addPokemon();
-pokemonInput.value = 'Charmander';
-addPokemon();
-pokemonInput.value = 'Bulbasaur';
-addPokemon();
-pokemonInput.value = 'Squirtle';
-addPokemon();
+addPokemon('Pikachu');
+addPokemon('Charmander');
+addPokemon('Bulbasaur');
+addPokemon('Squirtle');
