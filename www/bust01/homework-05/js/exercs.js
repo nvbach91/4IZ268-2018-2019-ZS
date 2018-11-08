@@ -29,7 +29,7 @@ var countAge = function (birthYear) {
     var currentYear = new Date().getFullYear();
     var age = currentYear - birthYear;
     console.log("Pepův věk je " + age + " let");
-}
+};
 
 //převod C a F
 var transform = function (a, unit) {
@@ -49,7 +49,7 @@ var transform = function (a, unit) {
             console.log("error");
         }
     }
-}
+};
 
 /*%CENSORED%. Vytvořte funkci, která vezme 2 číselné 
 argumenty a vrátí podíl prvního čísla a druhého 
@@ -66,7 +66,7 @@ var division = function (a, b) {
     else {
         console.log("Dělení nulou!");
     }
-}
+};
 
 /*Kdo s koho. Vytvořte funkci, která vezme 2 číselné
 argumenty a vrátí ten větší z nich. Pokud se čísla 
@@ -89,7 +89,7 @@ var comparison = function (a, b) {
         x = b;
     }
     return x;
-}
+};
 
 var a = comparison(5,5);
 var b = comparison(2,3);
@@ -103,7 +103,7 @@ var pattern = function () {
     for (var i = 0; i <= 730; i += 13) {
         console.log(i);
     }
-}
+};
 
 /*Around and about. Vytvořte funkci, která vypočte obsah
 kružnice podle dodaného poloměru.*/
@@ -111,7 +111,7 @@ var circleArea = function (r) {
     const pi = Math.PI;
     result = pi * r * r;
     console.log(result);
-}
+};
 
 /*Another dimension. Vytvořte funkci, která vypočte objem
 kuželu, pokud znáte jeho výšku a poloměr.*/
@@ -119,25 +119,22 @@ var coneVolume = function (r, v) {
     const pi = Math.PI;
     result = 1 / 3 * (pi * r * r * v);
     console.log(result);
-}
+};
 
 /*Not sure if triangle, or just some random values. Vytvořte
 funkci, která rozhodne, zda se z dodaných 3 délek dá postavit
 trojúhelník, tj. vypíše buď true/yes nebo false/no.*/
 var triangle = function (a, b, c) {
-    var decision = true;
     var x = a + b;
     var y = a + c;
     var z = b + c;
     if (x > c && y > b && z > a) {
-        console.log(decision);
+        return true;
     }
     else {
-        decision = false;
-        console.log(decision);
+        return false;
     }
-    return decision;
-}
+};
 
 /*Heroic performance. Vytvořte funkci, která vypočte obsah 
 trojúhelníka podle Heronova vzorce, tj. funkce dostane 
@@ -145,7 +142,7 @@ délky všech 3 stran. Použijte přitom předchozí validaci, tj. počítejte
 pouze, když to má smysl. Hint: funkce pro odmocninu je Math.sqrt()*/
 var heron = function (a, b, c) {
     var s = ((a + b + c) / 2);
-    if (triangle(a,b,c)===true) {
+    if (triangle(a,b,c)) {
         var S = s * ((s - a) * (s - b) * (s - c));
         var result = Math.sqrt(S);
         console.log(S);
@@ -154,4 +151,4 @@ var heron = function (a, b, c) {
     else {
         console.log("Nelze sestrojit trojúhelník");
     }
-}                                        
+};                                        
