@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-wrap: break-word;
 }
 
 a.button {
@@ -31,7 +32,7 @@ a.button:active {
 
 .application{
     font-size: 20px;
-    text-transform: upperce;
+    text-transform: uppercase;
 	max-width: 600px;
 	margin: 10px auto;
 	padding: 16px;
@@ -208,8 +209,7 @@ img {
     width: 45px;
     height: 50px;
     padding: 10px;
-    margin-top: 8px;
-    margin-left: 16px;
+    margin: 15px 0 10px 10px;
     background-image: url(../obr/logo.jpg);
     background-position: center;
     background-size: cover;
@@ -245,10 +245,7 @@ img {
 }
 
 #main_page {
-
     float: left;
-
-
 }
 
 .map {
@@ -277,6 +274,7 @@ img {
 nav {
     overflow: hidden;
     text-align: center; 
+    vertical-align: middle;
     text-transform: uppercase;
     font-size: 25px;
     background-color: rgba(253, 253, 253, 0.767);  
@@ -286,8 +284,9 @@ nav {
 nav li{
     display: block;
     float: right;
-    padding: 0 30px 15px 30px;
+    padding: 0 10px 15px 15px;
     color: black;
+    margin: 5px 0 10px 0;
 }
 
 nav li:hover a {
@@ -457,6 +456,7 @@ nav a {
         margin: 15px auto;
         height: auto;
         width: auto;
+        border: none;
     }
     
     a.button {
@@ -468,6 +468,7 @@ nav a {
         margin: 15px auto;
         height: auto;
         width: auto;
+        border: none;
     }
 
     .facebook {
@@ -480,8 +481,12 @@ nav a {
         margin: 15px auto;
         height: auto;
         width: auto;
+        border: none;
     }
     
+    .intext {
+        color:black;
+    }
     img {
         width: 45%;
         height: 45%;
@@ -498,6 +503,7 @@ nav a {
         margin: 15px auto;
         height: auto;
         width: auto;
+        border: none;
     }
 
     .main_body {
@@ -505,6 +511,7 @@ nav a {
         padding: unset;
         margin: auto;
         height: auto;
+        border: none;
     }
 
     #mec {
@@ -512,6 +519,7 @@ nav a {
         margin: auto;
         height: auto;
         width: auto;
+        border: none;
     }
 
     nav {
@@ -524,49 +532,37 @@ nav a {
     }
 
     .products {
-        display: inline-block;
+        display: none;
         height: 400px;
 
     }
 
-    .products p {
-        font-size: 16px;
+    .resume {
+        width: 80%;
     }
-
-    .product1 {
-        width: 17%;
-        margin: 5px 5px 5px 10px;
-    }
-
-    .product2 {
-        width: 17%;
-        margin: 5px;
-    }
-
-    .product3 {
-        width: 17%;
-        margin: 5px;
-    }
-
-    .product4 {
-        width: 17%;
-        margin: 5px;
-    }
-
-    .product5 {
-        width: 17%;
-        margin: 5px;
-    }  
 
     .sleepover {
         background-color: white;
         margin: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
     }
 
     .weekend {
         background-color: white;
         margin: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
     } 
+
+    .workers_pictures {
+        margin-top: 15px;
+        margin: 0;
+        width: 100px;
+        height: 150px;
+    }
 }
 
 @media screen and (max-width: 1450px)
@@ -659,7 +655,7 @@ nav a {
     }
 }
 
-@media screen and (max-width: 960px)
+@media screen and (max-width: 1026px)
 {
     #as {
         padding: unset;
@@ -683,10 +679,10 @@ nav a {
     }
 
     .emails{
-        width: auto;
-        padding: unset;
-        margin: auto;
+        width: 70%;
+        margin: 0 15%;
         text-align: center;
+        overflow-wrap: break-word;
     }
 
     #hs {
@@ -728,11 +724,22 @@ nav a {
         font-size: 12px;
     }
 
+    .logo {
+        margin: 10px 47%;
+    }
+
     .main_body {
         padding: unset;
         margin: auto;
         height: auto;
         width: auto;
+    } 
+
+    #main_page {
+        padding: 2px;
+        text-align: center;
+        width: 100%;
+        margin: 5px;
     }
 
     #mec {
@@ -742,19 +749,26 @@ nav a {
         width: auto;
     }
 
-    nav li {
-        float: none;
+    nav {
+        padding: 0;
+        width: 100%;
     }
 
-    nav a {
+    nav li {
         float: none;
+        padding: 5px;
         width: 100%;
+        margin: 5px;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
     }
 
     .phones{
         width: 70%;
-        padding: unset;
-        margin: unset;
+        margin: 0 15%;
         text-align: center;
     }
 
