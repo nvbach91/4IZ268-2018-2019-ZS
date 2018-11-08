@@ -93,7 +93,7 @@ function Circle(r) {
  * Another dimension. Vytvořte funkci, která vypočte objem kuželu, pokud znáte jeho výšku a poloměr. 
  */
 function Cone(h, r) {
-    if (h <= 0 | r <= 0) {
+    if (h <= 0 || r <= 0) {
         console.log("Function will not work");
     }
     else {
@@ -107,11 +107,11 @@ function Cone(h, r) {
  */
 
 function Triangle(z, y, x) {
-    if (z <= 0 | y <= 0 | x <= 0) {
+    if (z <= 0 || y <= 0 || x <= 0) {
         console.log("Function will not work");
     }
     else {
-        if (z > (y + x) | y > (x + z) | x > (y + x)) {
+        if (z > (y + x) || y > (x + z) || x > (y + x)) {
             return false;
         }
         return true;
