@@ -356,6 +356,7 @@ footer{
 
     .main-index{
         grid-template-areas:
+        "h1 h1"
         "box_prezentace box_prezentace"
         "box_produkty box_nastrojarna";
     }
