@@ -1,9 +1,0 @@
-.galeryList{
-    display: flex;
-}
-
-.galeryList img{
-    flex: 1;
-
-    flex-wrap:wrap;
-}

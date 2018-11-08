@@ -15,11 +15,11 @@ header {
     text-align: center;
 }
 
-section {
+body {
     display: flex;
 }
 
-.nav ul {
+nav ul {
     display: flex;
     flex-direction: column;
     width: 180px;
@@ -29,19 +29,19 @@ section {
     margin: 0;
 }
 
-.nav ul {
+nav ul {
     padding: 0;
     margin: 0;
 }
 
-.nav li {
+nav li {
     overflow: auto;
     padding: 0;
     margin: 0;
     list-style-type: none;
 }
 
-.nav li:first-child {
+nav li:first-child {
     position: center;
 }
 
@@ -53,29 +53,29 @@ section {
     width: 100px;
 }
 
-.nav li:nth-child(2) {
+nav li:nth-child(2) {
     margin-top: 15px;
 }
 
-.nav li:last-child {
+nav li:last-child {
     margin-top: auto;
     margin-left: auto;
     margin-right: auto;
 }
 
-.nav li a {
+nav li a {
     color: black;
     padding: 4px 16px;
     display: block;
     text-decoration: none;
 }
 
-.nav li a.active {
+nav li a.active {
     background-color: #4b4b4b;
     color: #dbdbdb;
 }
 
-.nav li a:hover:not(.active) {
+nav li a:hover:not(.active) {
     background-color: #555;
     color: white;
 }
@@ -86,7 +86,7 @@ section {
     max-width: 85%;
 }
 
-.content {
+main {
     margin-left: auto;
     margin-right: auto;
     padding: 0 15px 0;
@@ -95,8 +95,28 @@ section {
     float: left;
 }
 
+main p{
+    text-align: justify;
+    text-indent: 1em;
+}
+
+main article img{
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.blankBox{
+    margin: 50px;
+}
+
 @media print {
-    .nav, img {
+    nav {
+        display: none;
+    }
+
+    img {
         display: none;
         height: 0;
     }
@@ -104,14 +124,14 @@ section {
 
 @media screen and (max-width: 600px) {
     body {
-        font-size: 38px;
+        font-size: 22px;
     }
 
     section {
         flex-direction: column;
     }
 
-    .nav ul {
+    nav ul {
         width: 100%;
         padding: 0;
         margin: 0;
