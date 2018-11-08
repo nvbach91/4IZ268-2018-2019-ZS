@@ -268,7 +268,11 @@ a > img{
         height: 20%;
     }
 
-    #instagram-facebook{
+    #instagram{
+        height: 300px;
+    }
+
+    #facebook{
         height: 200px;
     }
 }
@@ -338,7 +342,11 @@ a > img{
         height: 410px;
     }
 
-    #instagram-facebook{
+    #instagram{
+        height: 200px;
+    }
+
+    #facebook{
         height: 200px;
     }
 
