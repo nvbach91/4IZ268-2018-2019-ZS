@@ -1,14 +1,14 @@
 //1.	Pepe's age. Vypište na konzoli smysluplnou oznamovací větu ohledně věku Pepy, pokud znáte jeho rok narození. 
 // Použijte proměnné a pro výpis použijte zřetězení stringů. Jako názvy proměnných používejte anglické pojmy.
 var age;
-year = 2018;
+var year = new Date().getFullYear();
 var birth;
 birth = 1997;
 
 age = year - birth;
 
-document.write("1.Pepe´s " + age + " old.");
-document.write("<br>");
+console.log("1.Pepe´s " + age + " old.");
+
 
 
 //2.	WTF (wow, that's fun). Vypište teplotu v Fahrenheiht, pokud znáte teplotu v Celsius, a také naopak. 
@@ -30,8 +30,7 @@ document.write("2. WTF=" + vys2);
 //Párkrát zavolejte tyto funkce s různými argumenty. V konzoli také vyzkoušejte, zda fungují vaše funkce.
 function pepesAge(year, birth) {
     var age;
-    var year;
-    var birth;
+
     age = year - birth;
     alert("Pepovi je " + age + " let");
 };
@@ -39,13 +38,13 @@ function pepesAge(year, birth) {
 function temF(tempC) {
     var vys1;
     vys1 = (tempC * 9) / 5 + 32 + "°F";
-    alert(vys1)
+    alert(vys1);
 }
 
 function temC(tempF) {
     var vys2;
     vys2 = ((tempF - 32) * 5) / 9 + "°C";
-    alert(vys2)
+    alert(vys2);
 }
 
 
@@ -53,35 +52,36 @@ function temC(tempF) {
 // Výsledek vypište do konzole, např. 21 je 50% z 42. Pro zkrácení / zaokrouhlování desetinných míst použijte funkci .toFixed(n). 
 //Např. var pi = 3.1415926535; pi.toFixed(2); Pozor na dělení nulou!
 function deleni(c1, c2) {
-    var c1;
-    var c2;
+
     var proc;
     if (c2 === 0) {
-        console.log("Nelze dělit nulou!")
+        console.log("Nelze dělit nulou!");
     }
-    proc = (c1 / c2) * 100; proc.toFixed(2);
-    console.log(proc + "%");
+    else {
+        proc = ((c1 / c2) * 100).toFixed(2);
+        console.log(c1 + " je " + proc + " % z " + c2);
+    }
 }
 
 
 //5.	Kdo s koho. Vytvořte funkci, která vezme 2 číselné argumenty a vrátí ten větší z nich. 
 //Pokud se čísla rovnají, vypište, že se rovnají. Vyzkoušejte funkčnost pro celá čísla, desetinná čísla, zlomky. 
 //Zkuste je párkrát zavolat v kódu a výsledky uložit do proměnných.
-function porovnani(c1, c2) {
+function comparision(c1, c2) {
 
     if (c1 === c2) {
-        console.log("Čísla jsou stejná.")
+        console.log("Čísla jsou stejná.");
     }
     else if (c1 > c2) {
-        console.log("první číslo je větší.")
+        console.log(c1);
     } else {
-        console.log("druhé číslo je větší.")
+        console.log(c2);
     }
 
 }
 
-var a = porovnani(50.5, 40);
-var b = porovnani(40 / 50, 20 / 3);
+var a = comparision(50.5, 40);
+var b = comparision(40 / 50, 20 / 3);
 
 //6.	I can cleary see the pattern. Vytvořte funkci, která vypíše popořadě všechny násobky 13, které jsou menší nebo rovno 730. 
 //Použijte for loop.
@@ -111,23 +111,10 @@ function kuzel(vyska, polomer) {
 //9.	Not sure if triangle, or just some random values. Vytvořte funkci, která rozhodne, zda se z dodaných 3 délek dá postavit trojúhelník, 
 //tj. vypíše buď true/yes nebo false/no.
 function triangle(a, b, c) {
-    if (a + b > c) {
-        if (a + c > b) {
-            if (b + c > a) {
-                console.log("YES")
-            }
-            else {
-                console.log("NO")
-            }
-        }
-        else {
-            console.log("NO")
-        }
+    if (a + b <= c || a + c <= b || b + c <= a || a * b * c === 0) {
+        return false;
     }
-    else {
-        console.log("NO")
-    }
-
+    return true;
 }
 
 
@@ -136,24 +123,9 @@ function triangle(a, b, c) {
 //Hint: funkce pro odmocninu je Math.sqrt()
 function heron(a, b, c) {
     var yn;
-    if (a + b > c) {
-        if (a + c > b) {
-            if (b + c > a) {
-                yn = "YES";
-            }
-            else {
-                yn = "NO";
-            }
-        }
-        else {
-            yn = "NO";
-        }
-    }
-    else {
-        yn = "NO";
-    }
 
-    if (yn === "YES") {
+
+    if (triangle(a, b, c) === true) {
 
         var s = (a + b + c) / 2;
         var objem = Math.sqrt(s * (s - a) * (s - b) * (s - c));
