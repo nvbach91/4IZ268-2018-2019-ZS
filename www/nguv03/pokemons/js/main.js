@@ -31,7 +31,7 @@ var createNewPokemon = function(name) {
   deleteButton.innerText = 'Bye';
   deleteButton.addEventListener('click', function() {
     this.parentNode.parentNode.removeChild(pokemon);
-    selectedPokemon.innerText = 'Bye bye, ' + name + ' :(';
+    selectedPokemon.innerText = 'Bye bye, ' + name + ' :\'(';
   });
 
   pokemon.appendChild(pokemonName);
