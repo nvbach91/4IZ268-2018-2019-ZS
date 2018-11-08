@@ -5,20 +5,20 @@
 }
 
 html {
-	background-color: lightgreen;
+	background-image: linear-gradient(#b3d1ff 75%,green,green);
 	font-family: "Roboto", sans-serif;
 	text-align: center;
 }
 
 body {
-	border: 5px solid black;
-	margin-top: 10px;
+	background: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/0kjHIH6/animated-cartoon-blue-sky-with-white-clouds_vj92cw5je__F0000.png');
+	border: 5px solid #0059b3;
+	margin: 22px;
 	box-shadow: 10px 10px 20px #888888;
 }
 
 h1 {
 	font-size: 50px;
-	font-family: 'Lobster', sans-serif;
 }
 
 h1,h2{
@@ -31,39 +31,57 @@ h3{
 }
 
 div button:hover {
-  cursor: pointer;
-}
-
-audio {
-	position: fixed;
-	right:0px;
-	top:0px;
+	cursor: pointer;
 }
 /* ---End styling all html docs--->
 
 /* ---Styling Home Page--- */
 .main button {
-  width: 50%;
-  height: 90%;
-  font-size: 30px;
-  font-family: Times New Roman;
-  padding: 30px;
-  margin-bottom: 5px;
-  border-radius: 22px;
-  background-color: white;
+	width: 300px;
+	height: 300px;
+	font-size: 30px;
+	font-family: 'Roboto';
+	font-weight: bolder;
+	padding: 30px;
+	margin-bottom: 5px;
+	border-radius: 22px;
+	border-radius: 50%;
+	box-shadow: 10px 10px 20px black;
+	background-color: white;
+	color: white;
+	text-shadow: 1px 2px 5px black;
 }
 
-.header {
-	background-image: url();
-}
 
 .main {
-	background: url('https://www.kidschat.net/images/left-picture.png');
+	padding: 20px;
+	column-count: 4;
+	column-rule: 0.3em double silver;
 }
 
-.footer {
+.btn-1 {
+	background: url('https://i.ytimg.com/vi/lGkczKwP6QA/maxresdefault.jpg');
+	background-size: cover;
+}
+
+.btn-2 {
+	background: url('https://cdn1.iconfinder.com/data/icons/world-flags-circular/1000/Flag_of_United_Kingdom_-_Circle-512.png');
+	background-size: cover;
+}
+
+.btn-3 {
+	background: url('https://i1.wp.com/kiddyhouse.com/wp-content/uploads/2017/05/hands3.png?resize=300%2C292');
+	background-size: cover;
+}
+
+.btn-4 {
+	background: url('https://is5-ssl.mzstatic.com/image/thumb/Purple5/v4/bb/56/77/bb56771c-63a5-54d3-b133-651fffa1f07e/mzl.pmvjtums.jpg/1080x800bb.jpg');
+	background-size: cover;
+}
+
+footer {
 	padding: 22px;
-	background-color: black;
+	background-color: green;
 	color:white;
 }
 
@@ -169,15 +187,15 @@ audio {
 
 .content-2::after {
 	content: "";
-    display: table;
-    clear: both;
+	display: table;
+	clear: both;
 }
 
 .content-2 div {
 	float: left;
-    width: 33.33%;
-    font-size: 22px;
-    padding-bottom: 5px;
+	width: 33.33%;
+	font-size: 22px;
+	padding-bottom: 5px;
 }
 
 .num {
@@ -190,10 +208,10 @@ audio {
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0; 
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0; 
 }
 
 /* ---End styling Counting--- */
@@ -203,9 +221,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .content-3 div {
 	float: left;
-    width: 50%;
-    font-size: 28px;
-    border: 1px solid black;
+	width: 50%;
+	font-size: 28px;
+	border: 1px solid black;
 }
 
 .txt-1 {
@@ -215,11 +233,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* ---End styling English--- */
 
-/* ---Responsible web---*/
+/* ---Responsive web---*/
 @media screen and (max-width:1280px){
 	.content-1 div {
-	height: 200px;
-	width: 100%;
+		height: 200px;
+		width: 100%;
 	}
 
 	.txt {
@@ -235,9 +253,10 @@ input[type=number]::-webkit-outer-spin-button {
 	}
 
 	.content-2 div {
-	    width: 50%;
-	    font-size: 22px;
-	    padding-bottom: 10px;
+		width: 50%;
+		font-size: 22px;
+		padding-bottom: 10px;
 	}
 
 }
+
