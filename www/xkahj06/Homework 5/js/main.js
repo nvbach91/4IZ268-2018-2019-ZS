@@ -68,14 +68,15 @@ console.log(158 + "°F = " + FromFtoC(158) + "°F");
 
 
 function percentFrom(A, B) {
-    /** if (B = 0) {
-       *   B = 0.0000000001}
-     */
-    T1 = 100 / B * A
-    T2 = T1.toFixed(2)
-    return T2
+    if (B == 0) {
+        console.log("Deleni nulou");
+    } else {
+        T1 = 100 / B * A
+        T2 = T1.toFixed(2)
+        console.log(A + " je " + T2 + "% z " + B + ".");
+    }
 };
-console.log("10 je " + percentFrom(10, 6) + "% z 6.");
+percentFrom(10, 6)
 
 /**
  * Kdo s koho. Vytvořte funkci, která vezme 2 číselné argumenty a vrátí ten větší z nich. Pokud se čísla 
@@ -83,16 +84,16 @@ console.log("10 je " + percentFrom(10, 6) + "% z 6.");
  * je párkrát zavolat v kódu a výsledky uložit do proměnných. 
  */
 function compare(A, B) {
-    if (A < B) {
+    if (A > B) {
         T = "prvni clen je vetsi";
-    } else if (B < A) {
+    } else if (B > A) {
         T = "druhy clen je vetsi";
     } else {
         T = "Jsou stejne.";
     }
-    return T;
+    console.log("Kdyz se porovnaji " + A + " a " + B + " , tak " + T);
 };
-console.log("Kdyz se porovnaji 85 a 32, tak" + compare(85, 32));
+compare(85, 32);
 
 
 
