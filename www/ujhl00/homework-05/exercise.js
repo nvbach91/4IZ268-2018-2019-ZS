@@ -33,9 +33,7 @@ Párkrát zavolejte tyto funkce s různými argumenty. V konzoli také vyzkouše
 
 function pepesAge(birthYear) {
     //const currentYear = new Date().getFullYear(); - už deklarovaná
-    if (birthYear <= 0) {
-        console.log('Rok nesmie byť menší alebo rovný nule')
-    } else if (birthYear > currentYear) {
+    if (birthYear > currentYear) {
         console.log('Pepe sa nenarodil v budúcnosti')
     } else {
         var age = currentYear - birthYear;
@@ -151,7 +149,8 @@ zda se z dodaných 3 délek dá postavit trojúhelník, tj. vypíše buď true/y
 
 function isTriangle(a, b, c) {
     if (a < 0 || b < 0 || c < 0) {
-        console.log("Zadané strany trojuholníka sú záporné")
+        console.log("Zadané strany trojuholníka sú záporné");
+        return false;
     } else {
         if (a + b <= c || b + c <= a || a + c <= b) {
             return false;
@@ -177,6 +176,8 @@ function heroicTriangle(a, b, c) {
     if (isTriangle(a, b, c)) {
         var s = (a + b + c) / 2;
         return (Math.sqrt(s * (s - a) * (s - b) * (s - c))).toFixed(4);
+    } else {
+        console.log('Trojuholník sa nedá zostrojiť');
     }
 }
 

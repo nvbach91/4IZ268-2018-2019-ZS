@@ -52,11 +52,11 @@ header {
     background-size: cover;
 }
 
-.index-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/www/ujhl00/project1/img/wallropes-min.jpg);}
-.about-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/www/ujhl00/project1/img/wallme.jpg);}
-.train-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/www/ujhl00/project1/img/walltrx.jpg);}
-.rege-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/www/ujhl00/project1/img/rege.jpg);}
-.food-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(/www/ujhl00/project1/img/food.jpg);}
+.index-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(img/wallropes-min.jpg);}
+.about-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(img/wallme.jpg);}
+.train-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(img/walltrx.jpg);}
+.rege-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(img/rege.jpg);}
+.food-bg {background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(img/food.jpg);}
 
 .hero-banner {
     background-color: rgba(0,0,0,.3);
@@ -313,21 +313,40 @@ footer {
 } 
 
 @media print {
-
-    .index-bg, .about-bg, .food-bg, .rege-bg,
-     .train-bg {
-         background-image: none;
-     }
-
-    footer, .credits, .navigation {
-        display: none;
+    * {
+        color: #000 !important;
+        background-color: #fff !important;
+        margin-top: 5px !important;
     }
-    
-    a:after {
-        content: "("attr(href)")";
-      }
+
+    h1,h2,h3,h4 {
+        text-align: left !important;
+        letter-spacing: 0 !important;
+        margin-top: 5px !important;
+    }
+
+    .wrapper, .container, .flex-box, .flex-box2 {
+        display: block !important;
+        width: 100% !important;
+        text-align: left !important;
+    }
+
+    header,.navigation, footer ,.main-nav,
+    .credits, .button {
+        display: none !important;
+    }
+
+    img {
+        width: 40% !important;
+        height: auto !important;
+    }
+
+    .icon {
+        display: none !important;
+    }
 
 }
+
     
 
 
