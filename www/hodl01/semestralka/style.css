@@ -374,5 +374,8 @@ border-radius: 10px;
         margin-bottom: 25%;
         border: 0;
     }
+    .bigsocialicons{
+        display: none;
+    }
 }
 
