@@ -106,7 +106,14 @@ h2 {
     text-align: left;
 }
 
-.column-2 img {
+.column-3 {
+    float: right;
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+}
+
+.column-3 img {
     width: 150px;
     height: 150px;
     margin-bottom: 20px;
@@ -115,7 +122,7 @@ h2 {
     border-bottom: 1px dotted black;
 }
 
-.column-2 img:last-child {
+.column-3 img:last-child {
     border-bottom: 0px;
 }
 
@@ -127,6 +134,7 @@ h2 {
 .blog-post {
     padding-bottom: 15px;
     border-bottom: 1px dotted black;
+    text-align: center;
 }
 
 .social {
@@ -219,7 +227,11 @@ footer>p {
 }
 
 @media screen and (min-width: 1024px) {
-    .column-2 img {
+
+    .navbar li {
+        padding-left: 40px;
+    }
+    .column-3 img {
         height: 50%;
         width: 50%;
     }
@@ -231,17 +243,26 @@ footer>p {
         width: 33%;
         height: 33%;
     }
+    
+.blog-post {
+    column-count: 2;
+    text-align: justify;
+}
 }
 
 @media screen and (max-width: 840px) {
     .navbar li {
-        padding-left: 40px;
+        padding-left: 30px;
     }
     .column-1 {
         clear: both;
     }
     h1 {
         text-align: center;
+    }
+    .blog-post {
+        column-count: 2;
+        text-align: justify;
     }
 }
 
@@ -270,14 +291,18 @@ footer>p {
         margin-right: auto;
     }
     .social .s-img {
-        width: 70%;
-        height: 70%;
+        width: 50%;
+        height: 50%;
     }
     .social-item {
         width: 33%;
         height: 33%;
     }
     .column-2 {
+        width: 100%;
+    }
+
+    .column-3 {
         width: 100%;
     }
     .column-1 {
@@ -360,7 +385,7 @@ footer>p {
     .avatar {
         display: none;
     }
-    .column-2 {
+    .column-3 {
         display: none;
     }
     .column-1 {
