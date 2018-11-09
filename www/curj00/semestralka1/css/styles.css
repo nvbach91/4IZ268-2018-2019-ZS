@@ -85,13 +85,9 @@ img:hover{
 }
 p{
     line-height: 15px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
     font-size: 14px;
-}
-.p_float{
-    margin-left: 10px;
-    margin-right: 10px;
 }
 h2{
     background-color: rgba(177, 177, 177, 0.639);
@@ -99,39 +95,20 @@ h2{
     font-size: 18px;
 }
 h3{
-    text-align: left;
-    padding-left: 100px;
+    text-align: center;
+    padding-left: 0px;
     text-decoration: underline;
     background-color: #EFEFEF;
     border-radius: 50%;
     font-size: 16px;
 }
-.article h3{
-    text-align: center;
-    padding-left: 0;
-}
-.article h4{
-    text-align: center;
-    padding-left: 0;
-}
+
 h4{
     text-align: left;
     padding-left: 50px;
     font-size: 15px;
 }
-.float_text{
-    overflow: hidden;
-    width: 100%;
-}
-.article{
-    float: left;
-}
-.left_text{
-    width: 50%;
-}
-.right_text{
-    width: 50%;
-}
+
 iframe{
     max-width: 750px; 
     width: 100%;
@@ -238,6 +215,27 @@ footer{
     h4{
         padding-left: 150px;
         font-size: 18px;
+    }
+    .float_text{
+        overflow: hidden;
+        width: 100%;
+    }
+    .article{
+        float: left;
+    }
+    .left_text{
+        width: 50%;
+    }
+    .right_text{
+        width: 50%;
+    }
+    .article h3{
+        text-align: center;
+        padding-left: 0;
+    }
+    .article h4{
+        text-align: center;
+        padding-left: 0;
     }
     footer{
         font-size: 20px;
