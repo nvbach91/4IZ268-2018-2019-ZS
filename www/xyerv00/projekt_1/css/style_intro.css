@@ -36,8 +36,14 @@ li {
 }
 
 @keyframes runnav {
-    0%   {bottom: 0; opacity: 0;}
-    100% {bottom: 40px; opacity: 1.0;}
+    0% {
+        bottom: 0;
+        opacity: 0;
+    }
+    100% {
+        bottom: 40px;
+        opacity: 1.0;
+    }
 }
 
 ul {
@@ -100,10 +106,12 @@ a {
         font-size: 60px;
         letter-spacing: -6px;
     }
+
     .navigation {
         max-width: 800px;
         left: calc(50% - 400px);
     }
+
     .nav_li {
         float: left;
         width: 25%;
