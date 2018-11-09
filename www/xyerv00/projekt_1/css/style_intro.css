@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+body {
+    background-color: #efedee;
+}
+
+header, footer, img {
+    display: none;
+}
+
+.start-screen {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: url("pics/Mika_brokard.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+li {
+    list-style: none;
+}
+
+.navigation {
+    position: fixed;
+    bottom: 40px;
+    width: 100%;
+    animation-name: runnav;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes runnav {
+    0%   {bottom: 0; opacity: 0;}
+    100% {bottom: 40px; opacity: 1.0;}
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.nav_li {
+    border-bottom: 3px solid white;
+    font-size: 20px;
+    height: 60px;
+    width: inherit;
+    padding: 30px 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.nav_li:hover {
+    font-size: 25px;
+    border-bottom: 10px solid white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.label {
+    position: absolute;
+    text-align: center;
+    width: 90px;
+    height: 80px;
+    border: 4px solid white;
+    border-top-width: 0;
+    left: 15%;
+    font-size: 30px;
+    letter-spacing: -3px;
+    padding: 0;
+    font-weight: bold;
+}
+
+.clear {
+    clear: both;
+}
+
+@media screen and (min-width: 720px) {
+    .start-screen {
+        background-position: 0 -300px;
+    }
+
+    .label {
+        width: 180px;
+        height: 160px;
+        left: calc(50% - 360);
+        font-size: 60px;
+    }
+
+    h1 {
+        font-size: 60px;
+        letter-spacing: -6px;
+    }
+    .navigation {
+        max-width: 800px;
+        left: calc(50% - 400px);
+    }
+    .nav_li {
+        float: left;
+        width: 25%;
+        height: 60px;
+    }
+}
+
+@media print {
+    * {
+        color: black;
+    }
+}

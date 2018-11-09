@@ -34,7 +34,7 @@ body {
 }
 
 @keyframes runtext {
-    0%   {left: 0px; color: rgba(105, 105, 105, 0);}
+    0%   {left: 0; color: rgba(105, 105, 105, 0);}
     100% {left: 100px;color: rgba(105, 105, 105, 1);}
 }
 
@@ -86,8 +86,7 @@ table{
 }
 
 .top-box {
-    background-image: url('https://amp.businessinsider.com/images/56a0efcee6183e9d408babaa-750-563.jpg');
-    background-repeat: no-repeat;
+    background: url('https://amp.businessinsider.com/images/56a0efcee6183e9d408babaa-750-563.jpg') no-repeat;
     background-size: cover;
     height: 600px;
     position: relative;
