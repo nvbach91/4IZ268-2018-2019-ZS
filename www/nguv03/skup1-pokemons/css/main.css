@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+form {
+    background-color: #eee;
+    padding: 20px 0;
+}
+input {
+    padding: 10px;
+}
+button {
+    padding: 10px;
+    background-color: cadetblue;
+    color: white;
+}
+input, button {
+    border: none;
+}
+hr {
+    border-style: none;
+    border-bottom: 2px solid #ddd;
+}
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+.pokeball {
+    width: 100%;
+    height: 100px;
+    background-image: url(../img/pokeball.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.pokemon {
+    display: flex;
+}
+.pokemon-name {
+    flex-grow: 1;
+    text-align: left;
+    background-color: #ccc;
+    padding: 10px;
+}

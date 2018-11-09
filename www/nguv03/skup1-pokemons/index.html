@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+    <h1 id="heading">Pokemons</h1>
+    <p>Add a pokemon by typing a name and clicking the button</p>
+    <p>Then you can click on a pokemon call it out</p>
+    <form id="pokemon-form">
+        <div class="form-row">
+            <input id="name-input" placeholder="Pokemon name">
+            <button>Add to list</button>
+        </div>
+    </form>
+    <hr>
+    <div>
+        Pikachu, I choose you! :)
+    </div>
+    <hr>
+    <ul id="pokemon-list">
+        <!-- pokemons -->
+        <li class="pokemon">
+            <div class="pokemon-name">Pikachu</div>
+            <button class="pokemon-delete">Bye</button>
+        </li>
+        <li class="pokemon">
+            <div class="pokemon-name">Charmander</div>
+            <button class="pokemon-delete">Bye</button>
+        </li>
+        <li class="pokemon">
+            <div class="pokemon-name">Bulbasaur</div>
+            <button class="pokemon-delete">Bye</button>
+        </li>
+
+    </ul>
+    <div class="pokeball"></div>
+    <footer>2018 &copy; Severus Snape</footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
