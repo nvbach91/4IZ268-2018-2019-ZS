@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&subset=latin-ext');
-
 body {
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     margin: 0;
 }
@@ -51,7 +49,7 @@ nav a {
     font-weight: 700;
     padding: 10px;
     margin: 0 5px;
-    transition: color 0.3s;
+    transition: color 0.3s linear;
 }
 
 nav a:hover {
@@ -60,33 +58,6 @@ nav a:hover {
 
 nav a.active {
     color: #000;
-}
-
-@media (max-width: 749px) {
-    nav {
-        display: none;
-    }
-
-    nav.show-mobile-nav {
-        display: block;
-        width: 100%;
-        padding-top: 20px;
-    }
-
-    nav.show-mobile-nav a {
-        display: block;
-        text-align: left;
-        line-height: 20px;
-    }
-
-    .navbar-icon {
-        display: block;
-        height: 30px;
-        padding: 7px;
-        float: right;
-        margin-right: 10px;
-        cursor: pointer;
-    }
 }
 
 /* Main */
@@ -104,7 +75,7 @@ main {
 section.jumbotron {
     width: 100%;
     height: 500px;
-    background: url('/assets/main-burger.jpg');
+    background: url('../assets/main-burger.jpg');
     background-position: 50%;
     background-size: cover;
     display: table;
@@ -162,29 +133,6 @@ section.cards {
 .cards .card .text {
     margin: 5px 5px 0 5px;
     font-size: 11pt;
-}
-
-@media (max-width: 800px) {
-    .jumbotron .text {
-        padding: 0 50px;
-    }
-} 
-
-@media (max-width: 599px) {
-    .cards .card {
-        width: calc(100% - 40px);
-    }
-}
-
-@media (min-width: 600px) and (max-width: 800px) {
-    .cards .card {
-        width: calc(100% / 2 - 40px);
-    }
-
-    .cards .last-card {
-        margin: 20px auto;
-        float: none;
-    }
 }
 
 /* menu */
@@ -253,18 +201,6 @@ section.menu {
     min-height: 75px;
 }
 
-@media (max-width: 679px) {
-    .menu .menu-item, .gallery .gallery-item {
-        width: calc(100% - 40px);
-    }
-}
-
-@media (min-width: 680px) and (max-width: 980px) {
-    .menu .menu-item, .gallery .gallery-item {
-        width: calc(100% / 2 - 40px);
-    }
-}
-
 /* galerie */
 
 .gallery {
@@ -289,7 +225,7 @@ iframe.map {
 }
 
 .contact-col-right {
-    float: right !important;
+    float: right;
 }
 
 .adress {
@@ -339,12 +275,6 @@ iframe.map {
     font-weight: 500;
 }
 
-@media (max-width: 830px) {
-    .contact-col {
-        width: 100%;
-    }
-}
-
 /* Footer */
 
 footer {
@@ -371,4 +301,113 @@ footer .copyright {
     text-align: right;
     text-transform: uppercase;
     font-weight: 700;
+}
+
+/* media */
+
+@media screen and (max-width: 749px) {
+    nav {
+        display: none;
+    }
+
+    nav.show-mobile-nav {
+        display: block;
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    nav.show-mobile-nav a {
+        display: block;
+        text-align: left;
+        line-height: 20px;
+    }
+
+    .navbar-icon {
+        display: block;
+        height: 30px;
+        padding: 7px;
+        float: right;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .jumbotron .text {
+        padding: 0 50px;
+    }
+} 
+
+@media screen and (max-width: 599px) {
+    .cards .card {
+        width: calc(100% - 40px);
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+    .cards .card {
+        width: calc(100% / 2 - 40px);
+    }
+
+    .cards .last-card {
+        margin: 20px auto;
+        float: none;
+    }
+}
+
+@media screen and (max-width: 679px) {
+    .menu .menu-item, .gallery .gallery-item {
+        width: calc(100% - 40px);
+    }
+}
+
+@media screen and (min-width: 680px) and (max-width: 980px) {
+    .menu .menu-item, .gallery .gallery-item {
+        width: calc(100% / 2 - 40px);
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .contact-col {
+        width: 100%;
+    }
+}
+
+@media print {
+    header {
+        position: absolute;
+    }
+
+    header.scrolled {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+
+    nav, .navbar-icon {
+        display: none;
+    }
+
+    section.jumbotron {
+        height: auto;
+        background: transparent;
+    }
+
+    .jumbotron .text {
+        color: #000;
+        padding: 0;
+    }
+
+    .menu .menu-item, .gallery .gallery-item {
+        width: calc(100% / 2 - 40px);
+    }
+
+    .reservation {
+        display: none;
+    }
+
+    .adress {
+        width: 100%;
+    }
+
 }
