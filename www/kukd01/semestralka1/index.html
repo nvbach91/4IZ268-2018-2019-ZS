@@ -4,21 +4,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Úvodní stránka</title>
+    <meta name="author" content="David Kukla">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Výroba a prodej sádrokartonového příslušenství.">
+    <meta name="keywords" content="sádrokarton,tmel,šrouby,prodej,Tamadex,úchyt">
+    <title>Úvodní stránka</title>
     <link rel="stylesheet" href="css/style2.css">
-    <script src="main.js"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="menu.js"></script>
 
 </head>
 
 <body>
-
-    <script>
-        function toggle() {
-            document.getElementById("hamburger").classList.toggle("opening");
-        }
-    </script>
-
     <header>
         <span class="logo">
             <a href="index.html">
@@ -49,6 +46,7 @@
 
 
     <main class="main-index">
+        <h1>Úvodní stránka</h1>
         <div class="box-text box_produkty">
             <h2><a href="products.html">Produkty </a></h2>
             <p>
@@ -65,9 +63,8 @@
                 <img class="mySlides" src="img/3.jpg" alt="obr" width="300" height="300">
             </div>
 
-
-
         </div>
+
         <div class="box-text box_nastrojarna">
             <h2><a href="nastrojarna.html">Nástrojárna </a></h2>
             <p>Nástrojárna
@@ -80,21 +77,6 @@
         </div>
 
     </main>
-    <script>
-        var myIndex = 0;
-        carousel();
-
-        function carousel() {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            myIndex++;
-            if (myIndex > x.length) { myIndex = 1 }
-            x[myIndex - 1].style.display = "block";
-            setTimeout(carousel, 3500); // Change image every 2 seconds
-        }</script>
 
 
 
@@ -111,6 +93,27 @@
         </div>
 
     </footer>
+
+
+
+    <script src="menu.js"></script>
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 3500); // Change image every 2 seconds
+        }
+    </script>
+
 </body>
 
 </html>

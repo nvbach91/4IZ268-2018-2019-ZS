@@ -258,7 +258,7 @@ footer{
     }
 
     .main-firma {
-        grid-template:
+        grid-template-areas:
         "h1 h1"
         "box_historie panak"
         "box_vyroba box_vyroba"  ;
@@ -335,7 +335,7 @@ footer{
     grid-gap: 1em 1em;
     margin-bottom: 3em;
     grid-auto-flow: row;
-    grid-template:
+    grid-template-areas:
     "h1 h1"
     "products-kov products-kov"
     "products-revize products-revize"
@@ -355,7 +355,8 @@ footer{
     }
 
     .main-index{
-        grid-template:
+        grid-template-areas:
+        "h1 h1"
         "box_prezentace box_prezentace"
         "box_produkty box_nastrojarna";
     }
