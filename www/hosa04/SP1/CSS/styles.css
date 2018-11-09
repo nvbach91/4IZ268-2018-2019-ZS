@@ -1,6 +1,6 @@
 body {
   
-    background-image: url(/hosa04/SP1/images/background.jpg);
+    background-image: url(/hosa04/SP1/images/background-min.jpg);
     background-repeat: repeat;
     background-size: 100%;
     background-attachment: fixed;
@@ -79,7 +79,7 @@ a:link {
   width: 300px;
   height: 300px;
   margin-left: 25px;
-  background-image: url(/hosa04/SP1/images/fr_press.jpg);
+  background-image: url(/hosa04/SP1/images/fr_press-min.jpg);
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -108,7 +108,7 @@ a:link {
     margin-left: 25px;
     margin-right: 25px;
 
-    background-image: url(/hosa04/SP1/images/chemex.jpg);
+    background-image: url(/hosa04/SP1/images/chemex-min.jpg);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -137,7 +137,7 @@ a:link {
     height: 300px;
     margin-left: 25px;
     
-    background-image: url(/hosa04/SP1/images/moka.jpg);
+    background-image: url(/hosa04/SP1/images/moka-min.jpg);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -165,7 +165,7 @@ a:link {
     margin-left: 25px;
     margin-right: 25px;
 
-    background-image: url(/hosa04/SP1/images/v60.jpg);
+    background-image: url(/hosa04/SP1/images/v60-min.jpg);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -192,7 +192,7 @@ a:link {
     height: 300px;
     margin-left: 25px;
 
-    background-image: url(/hosa04/SP1/images/aeropress.jpg);
+    background-image: url(/hosa04/SP1/images/aeropress-min.jpg);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -220,7 +220,7 @@ a:link {
     margin-left: 25px;
     margin-right: 25px;
 
-    background-image: url(/hosa04/SP1/images/syphon.jpg);
+    background-image: url(/hosa04/SP1/images/syphon-min.jpg);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
