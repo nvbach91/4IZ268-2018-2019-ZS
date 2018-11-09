@@ -1,0 +1,186 @@
+.dummyClassColorPalette{
+   color:#E95241;
+   color:#066ACC;
+   color:#B4B8E5;
+   color:#C0DED2;
+   color:#0437B6;
+   color:#C30011;
+   color:#002868;
+  
+}
+
+/*https://konform.com/cases/danske-rederier*/
+
+.menu_active{
+  
+color: #C30011;
+background-color:whitesmoke;
+}
+
+
+body{
+   margin:0 auto;
+   font-family: sans-serif;
+}
+header{
+  background-color:#C30011;
+  display:flex;
+  flex-direction:column;  
+  justify-content: center;
+  justify-items: center;
+ 
+}
+
+h1{
+font-size: xx-large;
+color:whitesmoke;
+text-align: center;
+margin: 20px 10px 20px 10px;
+
+}
+
+
+nav{
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+}
+
+nav a{
+  text-align: center;
+  color: whitesmoke;
+  font-size: x-large;
+  text-decoration: none;
+  border: solid whitesmoke 1px;
+  /*border-image: url(flagbig.svg) 60 stretch;*/
+  padding: 10px;
+  
+  height: 30px;
+  width:  130px;
+  margin-bottom:10px;
+  margin-left:10px;
+  margin-right:10px;
+  flex-grow: 1;
+  transition: background-color 0.2s; 
+
+}
+
+nav a:hover {
+ /* animation-name: example;
+  animation-duration:0.2s;
+  background-color: rgba(250,100,100,0.5);
+  */
+  color:whitesmoke;
+  background-color: rgba(250,100,100,0.5);
+}
+
+nav a:active {
+    background-color: rgba(250,100,100,0.5)
+}
+
+
+
+.containmiddle{
+  align-self: center;
+  max-width: 860px;
+  }
+
+
+
+p{
+  padding:15px;
+  text-align: justify;
+  font-size:  16px;
+ 
+}
+
+.imageLeftFloat{
+  float:left;
+  margin-right: 4%;
+  margin-left:15px; 
+  max-width: 100%;
+  display: block;
+
+
+}
+img{ 
+  
+}
+
+li{
+  padding-bottom:10px;
+}
+
+main{
+  max-width: 810px;
+  margin:auto;
+
+}
+
+footer{
+  background-color:navy;
+}
+
+
+
+/*ultra small devices - iPhone SE and similarly tiny phones - 360 and lower*/
+@media only screen and (max-width: 360px) {
+  img{
+    float: none;
+    height: auto;
+    margin: auto;
+  }
+
+  h1{
+    font-size:x-large;
+  }
+
+  nav a{
+    font-size:large;
+    height: 20px;
+    width:  80px;
+
+  }
+} 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  img{
+    float: none;
+    height: auto;
+    margin:auto;
+    margin-top:15px;
+  }
+
+  h1{
+    font-size:xx-large;
+  }
+
+  p{
+    max-width: 90%;
+    margin:auto;
+
+  }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+nav a{
+width: 117px;
+font-size: x-large;
+
+}
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...}
+
+
+
+
