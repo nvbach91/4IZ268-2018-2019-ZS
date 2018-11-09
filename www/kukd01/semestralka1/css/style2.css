@@ -83,6 +83,7 @@ nav{
  .main-index{
      display: grid;
      grid-template-areas:
+     "h1"
      "box_prezentace" 
      "box_produkty"
      "box_nastrojarna";
