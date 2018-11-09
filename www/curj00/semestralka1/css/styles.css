@@ -5,7 +5,8 @@
     clear: both;
 }
 ul {
-    list-style: none;
+    list-style: none;    
+    margin: 0;
 }
 body, body a{
     font-family: 'Open Sans', sans-serif;
@@ -13,38 +14,45 @@ body, body a{
 }
 header{
     display: flex;
-    height: 60px;
+    height: 300px;
 }
 .logo{
-    max-height: 30px;
-    /* height: 50%; */
+    display: none;
+    max-height: 25px;
     padding-left: 10px;
     padding-top: 10px;
 }
 .logo_href{
-    width: 110px;
+
+    width: 0px;
 }
 nav li {
     display: block;
     float: left;
-    padding: 0 5px;
-    font-size: 12px;
+    padding: 10px 0;
+    font-size: 10px;
     margin-bottom: 20px;
+}
+nav li a{
+    margin: 0 2.5px;
 }
 nav {
     margin-left: auto;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 nav a, nav li:hover {
     text-decoration: none;
-    padding-top: 5px;
 }
-nav li:hover, .navi_actual {
-    border-top: 2px solid rgb(59, 76, 224);
+nav li:hover{
+    background-color: #EFEFEF;
+    border-radius: 100%;
+    text-align: center;
+}
+.navi_actual {
+    border-bottom: 2px solid rgb(59, 76, 224);
 }
 main{
     text-align: center;
-    padding-top: 30px;
     padding-bottom: 30px;
     margin: 10px;
     border-top: 1px rgb(48, 47, 47) solid;
@@ -77,14 +85,18 @@ img:hover{
 }
 p{
     line-height: 15px;
-    margin-left: 30px;
-    margin-right: 30px;
-    font-size: 12px;
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: 14px;
+}
+.p_float{
+    margin-left: 10px;
+    margin-right: 10px;
 }
 h2{
     background-color: rgba(177, 177, 177, 0.639);
     border-radius: 50%;
-    font-size: 15px;
+    font-size: 18px;
 }
 h3{
     text-align: left;
@@ -92,12 +104,33 @@ h3{
     text-decoration: underline;
     background-color: #EFEFEF;
     border-radius: 50%;
-    font-size: 14px;
+    font-size: 16px;
+}
+.article h3{
+    text-align: center;
+    padding-left: 0;
+}
+.article h4{
+    text-align: center;
+    padding-left: 0;
 }
 h4{
     text-align: left;
     padding-left: 50px;
-    font-size: 13px;
+    font-size: 15px;
+}
+.float_text{
+    overflow: hidden;
+    width: 100%;
+}
+.article{
+    float: left;
+}
+.left_text{
+    width: 50%;
+}
+.right_text{
+    width: 50%;
 }
 iframe{
     max-width: 750px; 
@@ -113,15 +146,55 @@ footer{
     padding: 10px;
     text-align: center;
     font-size: 15px;
-    /* background-color: rgb(62, 111, 167); */
 }
 .footer_text_2{
     margin-top: 10px;
     margin-bottom: 10px; 
     font-size: 12px;
 }
-
+@media screen and (min-width: 125px) {
+    header{
+        height: 250px;
+    }
+}
+@media screen and (min-width: 150px) {
+    header{
+        height: 180px;
+    }
+}
+@media screen and (min-width: 160px) {
+    header{
+        height: 150px;
+    }
+}
+@media screen and (min-width: 231px) {
+    header{
+        height: 90px;
+    }
+}
+@media screen and (min-width: 295px) {
+    header{
+        height: 20px;
+    }
+}
+@media screen and (min-width: 350px) {
+    .logo_href{
+        width: 50px;
+    }
+    .logo{
+        display: block;
+        max-height: 25px;
+    }
+}
+@media screen and (min-width: 400px) {
+    nav li{
+        font-size: 12px;
+    }
+}
 @media screen and (min-width: 660px) {
+    header{
+        height: 60px;
+    }
     .brand{
         width: calc(100% / 3);
     }
@@ -129,10 +202,14 @@ footer{
         width: 150px;
     }
     .logo{
+        display: block;
         max-height: 45px;
     }
     nav li {
         font-size: 18px;
+    }
+    nav li a{
+        margin: 0 6.5px;
     }
     img{
         height: 150px;
@@ -143,20 +220,24 @@ footer{
     }
     p{
         line-height: 20px;
-        margin-left: 60px;
-        margin-right: 60px;
-        font-size: 16px;
+        margin-left: 160px;
+        margin-right: 160px;
+        font-size: 18px;
+    }
+    .p_float{
+        margin-left: 50px;
+        margin-right: 50px;
     }
     h2{
-        font-size: 20px;
+        font-size: 24px;
     }
     h3{
         padding-left: 100px;
-        font-size: 16px;
+        font-size: 20px;
     }
     h4{
         padding-left: 150px;
-        font-size: 14px;
+        font-size: 18px;
     }
     footer{
         font-size: 20px;
@@ -173,10 +254,12 @@ footer{
         width: 180px;
     }
     .logo{
+        display: block;
         max-height: 50px;
     }
     nav li {
         font-size: 24px;
+        margin: 0 15px;
     }
     img{
         height: 170px;
@@ -187,9 +270,13 @@ footer{
     }
     p{
         line-height: 30px;
-        margin-left: 130px;
-        margin-right: 130px;
-        font-size: 20px;
+        margin-left: 330px;
+        margin-right: 330px;
+        font-size: 22px;
+    }
+    .p_float{
+        margin-left: 100px;
+        margin-right: 100px;
     }
     h2{
         font-size: 30px;
@@ -200,7 +287,7 @@ footer{
     }
     h4{
         padding-left: 150px;
-        font-size: 20px;
+        font-size: 22px;
     }
     footer{
         font-size: 26px;
@@ -235,9 +322,13 @@ footer{
     }
     p{
         line-height: 30px;
-        margin-left: 130px;
-        margin-right: 130px;
+        margin-left: 350px;
+        margin-right: 350px;
         font-size: 20px;
+    }
+    .p_float{
+        margin-left: 80px;
+        margin-right: 80px;
     }
     h2{
         font-size: 30px;
