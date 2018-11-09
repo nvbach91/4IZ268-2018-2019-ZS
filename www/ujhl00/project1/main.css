@@ -255,6 +255,8 @@ footer {
     }
 }
 @media screen and (max-width: 480px)  {
+    
+
     .wrapper {
         max-width: 85%;
         margin: 0px auto;
@@ -277,8 +279,12 @@ footer {
         font-size: 15px;
     }
 
+    .main-nav {
+        flex-direction: column;
+    }
+
    .main-nav li {
-       flex-basis: 80px;
+       flex-basis: auto;
        font-size: 14px;
    }
 
@@ -309,6 +315,7 @@ footer {
    }
 
 } 
+
 
 @media print {
     * {
