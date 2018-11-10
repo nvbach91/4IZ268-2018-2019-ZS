@@ -9,7 +9,7 @@
  *        5 - YMJWJ NX ST QFB JCHJUY YMJ QFB YMFY YMJWJ NX ST QFB. - OTMS FWHMNGFQI BMJJQJW
  *       12 - M YMZ ITA PMDQE FA IMEFQ AZQ TAGD AR FUYQ TME ZAF PUEOAHQDQP FTQ HMXGQ AR XURQ. ― OTMDXQE PMDIUZ
  * 
- * Následně vytvořte uživatelské rozhraní, ve které bude možné zadat zmíněné dvě 
+ * Následně vytvořte uživatelské rozhraní, ve kterém bude možné zadat zmíněné dvě 
  * vstupní hodnoty (zašifrovaný text a použitý klíč) a po kliknutí na tlačítko 
  * "Decipher!" se na určeném místě zobrazí dešifrovaný text. Rozhraní také vhodně
  * nastylujte.
