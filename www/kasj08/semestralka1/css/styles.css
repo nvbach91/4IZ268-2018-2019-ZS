@@ -4,6 +4,11 @@
 * {
     margin: 0;
     text-decoration: none;
+    color: white;
+}
+
+body {    
+  font-family: 'Pontano Sans', sans-serif;
 }
 
 h1 {
@@ -61,8 +66,8 @@ thead th {
 /*
 ** HEADER + FOOTER
 */
-header, footer {
-    background-color: rgba(1, 176, 241, 0.2);
+body {
+    background-color: #171717;
 }
 .head, .foot, .image-in {
     max-width: 1024px;
@@ -84,7 +89,7 @@ header, footer {
     margin: auto;
 }
 
-/* navigace */
+/* navigation */
 
 .navi {
     min-width: 80%;
@@ -95,15 +100,10 @@ header, footer {
     display: flex;
     flex-direction: column;
 }
-.navi > div:first-child { background-color: rgba(1, 176, 241, 0.2); }
-.navi > div:last-child { background-color: rgba(1, 176, 241, 0.4); }
 
 .navi-text {
-    padding-top: 3%;
-    padding-left: 5%;
+    padding: 5% 3%;
     display: flex;
-}
-.navi-text h2 {
     margin: auto 0;
     font-size: 24px;
     letter-spacing: 2px;
@@ -127,6 +127,7 @@ nav ul {
 
 nav li {
     padding: 0;
+    display: flex;
 }
 nav li a {
     display: block;
@@ -134,22 +135,28 @@ nav li a {
     padding: 10px 10px;
     text-decoration: none;
     font-size: 15px;
+    max-height: 100%;
+    width: 100%;
 }
 nav li a:hover, .navi-current {
-    background-color: rgba(1, 176, 241, 0.5);
+    background-color: #272727;
 }
-
-.navi > div:first-child p, .navi > div:first-child a { color: #004970; }
-.navi > div:last-child p, .navi > div:last-child a  { color: #003e54; }
+.navi a {
+    color: white;
+}
 
 /**
 ** FOOTER
 **/
+footer {
+    padding: 20px 0;
+}
+
 .foot {    
     height: 200px;
 }
 .foot p {
-    color: #004970;
+    font-size: 15px;
     margin: auto 0 auto auto;
     padding: 4px 0;
 }
@@ -187,7 +194,7 @@ nav li a:hover, .navi-current {
 .foot-icon {
     display: flex;      
     border-radius: 100%;
-    background-color: rgba(1, 176, 241, 0.4);
+    background-color: rgba(89, 89, 89, 0.7);
     border-radius: 100%;
     height: 100%;
     width: 100%;
@@ -195,13 +202,12 @@ nav li a:hover, .navi-current {
 
 .foot-icon i {
     margin: auto;
-    color: black;
     font-size: 30px;
 }
 .fa-google-play { font-size: 27px; }
 
 a:hover .foot-icon {
-    background: rgba(1, 176, 241, 1);
+    background-color: black;
 }
 
 .foot-copy {    
@@ -213,33 +219,39 @@ a:hover .foot-icon {
 **/
 main {
     width: 100%;
-    background-size: cover;
-    background-position: center;
+    background-color: black;
 }
-
-.image-onas { background-image: url('../img/foto-centrala.jpg'); }
-.image-karty { background-image: url('../img/foto-karta.png'); }
-.image-bankovnictvi { background-image: url('../img/foto-bankovnictvi.png'); }
-.image-ucet { background-image: url('../img/foto-ucet.jpg'); }
-.image-pobocky { background-image: url('../img/foto-pobocky.jpg'); }
-.image-vedeni { background-image: url('../img/foto-vedeni.jpg'); }
 
 .image-in {
     padding: 40px 0;
 }
 
+.image-in > .main-boxes {    
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+}
+
 .main-boxes {
-    background-color: rgba(0, 0, 0, 0) !important;
-    padding: 0 !important;
     margin: 20px 0;
     display: flex;
 }
 
+.main-boxes > * {
+    width: 100%;
+}
+
+.image-in > .last {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
 .image-in > *, .box, .table {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #272727;
     color: white;
-    padding: 30px;
     margin-bottom: 15px;
+}
+.image-in > *, .table {
+    padding: 30px;
 }
 
 .image-in > p, .image-in > ul, .table {
@@ -253,12 +265,11 @@ main {
 
 .box {
     margin: 0 30px;
-    width: 100%;
-    padding: 15px!important;
+    padding: 15px;
 }
 
 .box:hover {    
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(39, 39, 39, 0.705);
 }
 
 .box > img {    
@@ -273,7 +284,7 @@ main {
 }
 
 .box h3, .box i {
-    font-size: 28px;
+    font-size: 24px;
     margin-bottom: 20px;
 }
 
@@ -292,16 +303,11 @@ main {
     margin: 0 auto;
 }
 .management div:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #272727;
 }
 
 .table {
     overflow-x: auto;
-}
-
-.last {
-    padding-bottom: 30px !important;
-    margin-bottom: 15px !important;
 }
 
 /**
@@ -309,21 +315,6 @@ main {
 **/
 @media screen and (max-width: 1024px)
 {
-    .navi-text h2 {
-        font-size: 13px;
-        letter-spacing: 0;
-    }
-    nav ul {
-        width: 100%;
-        display: inline;
-    }
-    nav li a {
-        font-size: 13px;
-        padding: 3px;
-    }
-    nav li {
-        width: 100%;
-    }
 }
 
 @media screen and (max-width: 800px)
@@ -338,13 +329,26 @@ main {
 
     .foot-icon i {
         margin: auto;
-        color: black;
         font-size: 20px;
+    }
+    .navi-text {
+        font-size: 18px;
+        letter-spacing: 0;
     }
 }
 
 @media screen and (max-width: 640px)
 {
+    nav ul {
+        width: 100%;
+        display: inline;
+    }
+    nav li a {
+        font-size: 13px;
+    }
+    nav li {
+        width: 100%;
+    }
     nav li a {
         text-transform: none;
     }
@@ -353,37 +357,40 @@ main {
         display: inline;
     }
 
+    .foot-href {
+        padding-left: 20px; 
+    }
+
     .main-boxes {
         display: inline;
     }
 
-    .main-boxes > a {
+    .main-boxes > * {
         display: block;
+        width: auto;
     }
-
-    main h2 {
-        margin-top: 15px!important; 
+    .image-in > h2 {
+        margin-top: 20px;
     }
-
 }
 
 @media screen and (max-width: 420px)
 {
+    .head, .navi {
+        display: inline;
+    }
     .navi-text {
-        height: 30px;
         padding-bottom: 3%;
     }
-    .main-boxes, .box, .table, ul, p {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+
+    .image-in > p, .image-in > .main-boxes, .box, .image-in > .table, .image-in > ul, .image-in > p {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
 @media screen and (max-width: 320px)
 {    
-    .head {
-        display: inline;
-    }
     .logo img {
         max-height: 20px;
     }
@@ -394,8 +401,8 @@ main {
     main h2 {
         font-size: 18px;
     }
-    main h3 {
-        font-size: 17px !important;
+    .box h3 {
+        font-size: 17px;
     }
     main p, main li {
         font-size: 15px;
@@ -403,7 +410,7 @@ main {
 }
 
 @media screen and (max-width: 220px)
-{    
+{
     .navi {
         display: inline;
         min-height: 110px;
@@ -412,13 +419,10 @@ main {
 
 @media print {
     * {
-      background: transparent !important;
+      background: white !important;
       color: black !important;
     }
-    .navi {
+    header, footer {
         display: none;
-    }
-    a {
-        color:black !important;
-    }
+    } 
 }   
