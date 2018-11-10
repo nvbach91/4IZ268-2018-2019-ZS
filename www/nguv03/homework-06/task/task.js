@@ -1,6 +1,6 @@
 /**
  * Long live Sparta! Vytvořte funkci, která vyřeší Caesarovu širfu. Funkce dostane 
- * na vstup zašifrovaný text s hodnotou, která byla použita při šifrování, a pak 
+ * na vstup zašifrovaný text a také hodnotu, která byla použita při šifrování, a pak 
  * vrátí dešifrovaný text. Předpokládejte pouze anglickou abecedu s velkými 
  * písmeny, ostatní znaky ignorujte. Poté v konzoli dešiftujte následující texty.
  * 
