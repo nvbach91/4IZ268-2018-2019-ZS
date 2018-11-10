@@ -4,7 +4,7 @@
 * {
     margin: 0;
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 body {    
@@ -13,6 +13,9 @@ body {
 
 h1 {
     text-transform: uppercase;
+    background-color: rgba(0, 176, 240, 0.9);
+    color: white;   
+    padding: 10px;
 }
 
 p {
@@ -20,11 +23,11 @@ p {
 }
 
 a {
-    color: rgba(1, 176, 241, 1);
+    color: #0084f4;
 }
 
 a:hover {
-    color: rgba(1, 176, 241, 0.5);
+    color: #00599d;
 }
 
 li {
@@ -38,7 +41,7 @@ li {
 table {
     width: 100%;    
     border-collapse: collapse;
-    border: 2px solid white;
+    border: 2px solid black;
 }
 
 thead th, tbody tr {
@@ -49,7 +52,7 @@ thead th {
 }
 
 td, thead th {
-    border-left: 2px solid white;
+    border-left: 2px solid black;
 }
 
 tbody th {
@@ -60,14 +63,14 @@ th, td {
 }
 thead th {
     padding: 20px;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid black;
 }
 
 /*
 ** HEADER + FOOTER
 */
 body {
-    background-color: #171717;
+    background-color: #00b0f0;
 }
 .head, .foot, .image-in {
     max-width: 1024px;
@@ -108,6 +111,7 @@ body {
     font-size: 24px;
     letter-spacing: 2px;
     text-transform: uppercase;
+    color: white;
 }
 
 nav {
@@ -139,7 +143,7 @@ nav li a {
     width: 100%;
 }
 nav li a:hover, .navi-current {
-    background-color: #272727;
+    background-color: #0096f2;/* #8c8c8c;*/
 }
 .navi a {
     color: white;
@@ -174,6 +178,9 @@ footer {
 .foot-href {
     display: flex;
 }
+.foot-href p {    
+    color: white;
+}
 
 .foot-href img {
     max-height: 40px;
@@ -194,7 +201,7 @@ footer {
 .foot-icon {
     display: flex;      
     border-radius: 100%;
-    background-color: rgba(89, 89, 89, 0.7);
+    background-color: #0084f4;/* rgba(89, 89, 89, 0.7);*/
     border-radius: 100%;
     height: 100%;
     width: 100%;
@@ -203,11 +210,12 @@ footer {
 .foot-icon i {
     margin: auto;
     font-size: 30px;
+    color: white;
 }
 .fa-google-play { font-size: 27px; }
 
 a:hover .foot-icon {
-    background-color: black;
+    background-color: #0096f2;
 }
 
 .foot-copy {    
@@ -219,12 +227,26 @@ a:hover .foot-icon {
 **/
 main {
     width: 100%;
-    background-color: black;
+    background-color: white;
 }
 
 .image-in {
     padding: 40px 0;
 }
+
+.image-in > .image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-color: white;
+}
+
+.image-onas { background-image: url('../img/foto-uvod.jpg'); }
+.image-karty { background-image: url('../img/foto-karta.png'); }
+.image-bankovnictvi { background-image: url('../img/foto-bankovnictvi.png'); }
+.image-ucet { background-image: url('../img/foto-ucet.jpg'); }
+.image-pobocky { background-image: url('../img/foto-pobocky.jpg'); }
+.image-vedeni { background-image: url('../img/foto-vedeni.jpg'); }
 
 .image-in > .main-boxes {    
     background-color: rgba(0, 0, 0, 0);
@@ -246,8 +268,8 @@ main {
 }
 
 .image-in > *, .box, .table {
-    background-color: #272727;
-    color: white;
+    background-color: #e6f7fe;/* #e6e6e6;*/
+    color: black;
     margin-bottom: 15px;
 }
 .image-in > *, .table {
@@ -269,7 +291,10 @@ main {
 }
 
 .box:hover {    
-    background-color: rgba(39, 39, 39, 0.705);
+    background-color: #bfebfb;/* rgba(204, 204, 204, 0.3);*/
+}
+.box:hover > a, .box:hover > p > i {    
+    color: #0084f4;
 }
 
 .box > img {    
@@ -303,7 +328,7 @@ main {
     margin: 0 auto;
 }
 .management div:hover {
-    background-color: #272727;
+    background-color: #e6e6e6;
 }
 
 .table {
@@ -313,9 +338,6 @@ main {
 /**
 ** RESPONSIBLE
 **/
-@media screen and (max-width: 1024px)
-{
-}
 
 @media screen and (max-width: 800px)
 {
@@ -372,6 +394,10 @@ main {
     .image-in > h2 {
         margin-top: 20px;
     }
+    
+    .image {
+        height: 100px;
+    }
 }
 
 @media screen and (max-width: 420px)
@@ -418,11 +444,11 @@ main {
 }
 
 @media print {
-    * {
+    *, a {
       background: white !important;
       color: black !important;
     }
-    header, footer {
-        display: none;
+    header, footer, .foot-copy, .head, .navi, nav {
+        display: none !important;
     } 
 }   
