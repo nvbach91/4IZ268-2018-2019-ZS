@@ -1,12 +1,36 @@
 
-
 *{
     -ms-box-sizing: border-box;
     -o-box-sizing: border-box;
     box-sizing: border-box;
     font-family: 'Rajdhani', Helvetica, sans-serif;
 }
-
+/**flexbox**/
+.containerFlex{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: flex-start;
+}
+.containerFlexColumn{
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 45%;
+}
+.box-media{
+    text-align: justify;
+    color: black;
+    background-color: white;
+    width: 100%;
+    margin: 20px 0;
+    padding: 30px;
+}
+/**ENDflexbox**/
 header{
     height: 10px;
     width: 100%;
@@ -26,15 +50,23 @@ body {
     letter-spacing: 0.075em;
     line-height: 1.65em;
 }
+.justify{
+    text-align: justify;
+}
 
 .cover{
-    right: 0px;
+    right: auto;
     position: fixed;
-    left: auto;
-    top: 100px;
+    left: 50%;
+    top: auto;
+    z-index: 1;
     width: auto;
-    height: 90%;
-    z-index: 1; 
+    height: auto;
+}
+
+.coverIndex{
+left: 52%;
+height: 92%;
 }
 
 strong, b {
@@ -82,13 +114,20 @@ ul {
     background-color: #333;
 }
 
-li {
+nav li {
     float: left;
     display: inline-block;
     text-transform: uppercase;
 }
-
-li a {
+a {
+    color:white;
+    text-decoration: none;
+    border-bottom:1px solid #fff;
+}
+a:hover{
+    border:0px;
+}
+nav li a {
     display: block;
     color: white;
     text-align: center;
@@ -98,7 +137,7 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
+nav li a:hover {
     background-color: #111;
 }
 
@@ -106,14 +145,58 @@ li a:hover {
     background-color: #4CAF50;
 }
 
+main {
+    width: 100%;
+}
+.pageWithAsideImg{
+    position: relative;
+     
+    padding: 0 25px;
+    margin-top: 100px;
+    width: 50%;   
+}
+
+aside {
+    width: 100%;
+    background-color:darkgreen;
+    float: left;
+    padding: 25px 0;
+    margin-bottom: 25px;
+  }
+  .asideTitleImg{
+    position: sticky;
+    width: 50%;
+    float: right;
+  }
+  .asideTitleImg img
+
+  aside h2{
+    text-align: center;
+  }
+  aside p{
+      padding: 0 6px;
+  }
+
+  aside li{
+    font-size:16px; 
+    padding: 0 6px;
+  }
+
+  aside li:nth-child(2n){
+      background-color: grey;
+  }
+  
+
 .mainContent{
     position: relative;
     padding: 0;
-    margin-right: 550px;
+    margin-right: 570px;
     margin-left: 25px;
     margin-top: 100px;
     border: 0;
-}
+    max-width: 50%;
+} 
+
 .pageContent{
     position: relative;
     width: 100%;
@@ -139,36 +222,62 @@ li a:hover {
 
 .blackBox{
 background-color: rgba(0, 0, 0, 0.2);
-max-width: 550px;
-min-width: 350px;
 padding: 20px;
-margin: auto;
-margin-right: 15px;
-margin-bottom: 15px;
+margin-bottom: 25px;
+margin-right: 8px;
 border-radius: 10px;
-position: relative;
 }
+.left {
+    text-align: left;
+}
+.center {
+    text-align: center;
+}
+.right {
+    text-align: right;
+}
+.bold, .bold td {
+    font-weight: bold !important;
+}
+.positionimg {
+    height: 18px;
+}
+.dataTable td, .dataTable th {
+    padding: 0px 6px !important;
+}
+.bigsocialicons{
+    border: 0px;
+    float: right;
+    margin-right: 30px;
+    padding-top: 15px;
+}
+.bigsocialicons a{
+    border: 0px;
+}
+.asideImg{
+    width: 100%;
+}
+.citace{
+    font-size: 15px;
+    font-style: italic;
+}
+
+@media screen and (min-width: 900px) {
+   
+    aside ~ main {
+        width: 70%;
+      }
+    aside {
+        width: 30%;
+        float: right;
+      }
+  }
 @media screen and (max-width: 900px) {
-    nav{
-        position: relative;
-        top: 0;
-    }
 
     li {
         float: none;
         display: list-item;
         text-transform: uppercase;
-    }
-    .cover{
-        right: 0px;
-        position: fixed;
-        left: auto;
-        top: auto;
-        bottom: 0;
-        width: 50%;
-        height: auto;
-        max-height: 100%;
-        z-index: 1; 
     }
     .mainContent{
         position: relative;
@@ -178,15 +287,51 @@ position: relative;
         margin-top: 100px;
         border: 0;
     }
+    .containerFlexColumn{
+        width: 100%;
+    }
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 690px) {
+    th{
+        display: none;
+    }
+    td{
+        display: block;
+        text-align: center;
+    }
+    tr{
+    background-color: darkgreen;
+    
+    }
+    td.right{
+        text-align: center;
+    }
+    a img{
+        width: 50px;
+        height: 49px;
+    }
+    header h1{
+        margin-top: 20px;
+        margin-left: 20px;
+    }
     body{
-        font-size: 13px;
+        font-size: 13pt;
     }
 
     .pageHeader{
-        height: 50px;
+        height: 90px;
+    }
+
+    .citace{
+        font-size: 12pt;
+    }
+
+    .blackBox{
+        margin-right: 0px;
+    }
+    .tabOverFlow{
+    overflow-x:auto;
     }
 
     nav{
@@ -201,37 +346,20 @@ position: relative;
     }
 
     .name{
-        font-size: 30px;
+        font-size: 40px;
         font-weight: 800;
         line-height: .8;
         letter-spacing: 0.1em;
     }
     
     .firstName{
-        font-size: 20px;
+        font-size: 30px;
         font-weight: 400;
         line-height: .8;
     }
 
     .cover{
-        right: 0px;
-        position: fixed;
-        left: auto;
-        top: 80%;
-        height: auto;
-        max-height: 100%;
-        z-index: 1; 
-    }
-
-    .cover:hover{
-        right: 0px;
-        position: fixed;
-        left: auto;
-        top: auto;
-        bottom: 0;
-        height: auto;
-        max-height: 100%;
-        z-index: 1; 
+      display: none;
     }
 
     li a {
@@ -246,6 +374,10 @@ position: relative;
         margin-top: 25px;
         margin-bottom: 25%;
         border: 0;
+        max-width: 100%;
+    }
+    .bigsocialicons{
+        display: none;
     }
 }
 
