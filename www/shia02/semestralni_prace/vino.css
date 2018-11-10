@@ -1,43 +1,33 @@
 * {
     box-sizing: border-box;
 }
-
 body {
     font-family: Arial;
     background-color: rgb(253, 234, 234);
 }
-
 ul {
     list-style: none;
 }
-
 header {
     background-color: #641C34;
     display: flex;
 }
-
 nav li {
     text-transform: uppercase;
     float: left;
-    margin-right: 15px;
 }
-
 nav a {
     text-decoration: none;
     color: white;
     padding: 15px;
     display: block;
 }
-
 nav li:hover {
     background-color: rgb(233, 127, 127);
 }
-
 nav li:active, .highlight {
     background-color: rgb(214, 116, 116);
 }
-
-
 .search {
     background-image: url('https://cdn3.iconfinder.com/data/icons/eightyshades/512/11_Search-512.png');
     background-position: center;
@@ -48,19 +38,15 @@ nav li:active, .highlight {
     cursor: pointer;
     margin-left: auto;
 }
-
 .search:hover {
     background-color: rgb(233, 127, 127);
 }
-
 .search:active {
     background-color: rgb(214, 116, 116);
 }
-
 .header {
     text-transform: uppercase;
 }
-
 .intro {
     color: white;
     min-height: 700px;
@@ -74,23 +60,19 @@ nav li:active, .highlight {
     font-family: Garamond, Times, serif;
     font-style: italic;
 }
-
 .introlat {
     font-size: 60px;
     margin-left: 55px;
     margin-bottom: 80px;
 }
-
 .introcs {
     font-size: 50px;
     margin-left: 10px;
     margin-bottom: 80px;
 }
-
 .plinius {
     font-size: 40px;
 }
-
 div h1, div h2 {
     margin-top: 0px;
     margin-bottom: 1px;
@@ -164,7 +146,7 @@ footer {
     padding: 10px 0;
 }
 
-.mail {
+.mail, .link {
     color: rgb(214, 116, 116);
 }
 
@@ -197,7 +179,7 @@ div h4 {
     clear: left;
 }
 
-/* REGIONY */ /* DELENI */ /* KLASIFIKACE */
+/* REGIONY */ /* KLASIFIKACE */
 
 
 .cent {
@@ -217,6 +199,28 @@ div h4 {
     background-position: center;
 }
 
+ /* DELENI */
+
+.criterions-box {
+    padding: 20px 0;
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+}
+.criterion-box {
+    padding: 0 10px;
+    width: 33.333%;
+}
+.criterion-box h3 {
+    padding: 10px;
+    background-color: rgb(233, 127, 127);
+}
+.white {
+    padding-top: 80px;
+}
+
+
 @media screen and (max-width: 1024px) {
     .region, .four {
         width: 50%;
@@ -225,46 +229,70 @@ div h4 {
     .classification {
         width: 25%;
     }
-    .wine p, .region p, .criterion p, .classification p {
+    .criterions-box {
+        display: block;
+    }
+    .criterion-box {
+        float: left;
+    }
+    .wine p, .region p, .criterion p, .criterion-box p .classification p {
         min-height: 220px;
     }
+
     .none {
         display: none;
     }
 }
 
 @media screen and (max-width: 800px) {
-    .wine, .classification, .criterion {
+    .wine, .classification, .criterion, .criterion-box{
         width: 50%;
     }
     .wine p, .region p, .criterion p {
         min-height: 200px;
     }
 
+    .criterion-box p {
+        min-height: 330px;
+    }
+
     .classification p {
         min-height: 270px;
     }
 
-
     .three p {
         min-height: 100px;
     }
-
+    .white {
+    padding-top: 0;
+    }
     .glass {
         display: none;
     }
 }
 
+@media screen and (max-width: 560px) {
+    .criterion-box p {
+        min-height: 415px;
+    }
+}
+
 @media screen and (max-width: 480px) {
-    .wine, .region, .criterion, .classification {
+    .wine, .region, .criterion, .criterion-box, .classification {
         float: none;
         width: 100%;
+    }
+    .criterion-box p {
+        min-height: 200px;
     }
     .wine p, .region p, .criterion p, .classification p {
         min-height: initial;
     }
     .intro {
         display: none;
+    }
+    .smallScreen {
+        clear: both;
     }
 }
 
@@ -282,10 +310,20 @@ div h4 {
         padding: 5px;
     }
 
-    .wine, .criterion, .classification, .region {
+    .criterions-box {
+        display: block;
+    }
+
+    .wine, .criterion, .classification, .criterion-box, .region {
         float: none;
         width: 100%;
     }
+
+    .white {
+        padding-top: 0;
+    }
+    
+
 
     .wine p, .region p, .criterion p, .classification p {
         min-height: auto;
