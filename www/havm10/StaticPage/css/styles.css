@@ -46,16 +46,19 @@
         color: white;
         font-style: normal;
         font-size: 20px;
+        padding: 5px;
     }
     
     .left a:hover{
         color: white;
         background-color: rgba(255, 0, 0, 0.664);
+        border-radius: 5px;
     }
     
     nav a:hover {
         background-color: rgba(255, 0, 0, 0.664);
         color: white;
+        border-radius: 5px;
     }
 
     #active {
@@ -64,6 +67,7 @@
     
     nav a {
         color: white;
+        padding: 5px;
     }
 
     h1 {
