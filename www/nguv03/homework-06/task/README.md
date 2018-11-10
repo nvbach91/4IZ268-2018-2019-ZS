@@ -1,7 +1,7 @@
 
 ## Long live Sparta! 
 
-Vytvořte funkci, která vyřeší **Caesarovu širfu**. Funkce dostane na vstup zašifrovaný text a také hodnotu, která byla použita při šifrování, a pak **vrátí dešifrovaný text**. Předpokládejte pouze anglickou abecedu s **velkými písmeny**, ostatní znaky ignorujte. Poté v konzoli dešiftujte následující texty.
+Vytvořte funkci, která vyřeší **Caesarovu širfu**. Funkce dostane na vstup zašifrovaný text a také hodnotu, která byla použita při šifrování, a pak **vrátí dešifrovaný text**. Předpokládejte pouze anglickou abecedu s **velkými písmeny**, ostatní znaky ignorujte. Poté v konzoli dešifrujte/dešiftujte následující texty.
 ```
 key used - encrypted text
       19 - MPH MABGZL TKX BGYBGBMX: MAX NGBOXKLX TGW ANFTG LMNIBWBMR; TGW B'F GHM LNKX TUHNM MAX NGBOXKLX. - TEUXKM XBGLMXBG
