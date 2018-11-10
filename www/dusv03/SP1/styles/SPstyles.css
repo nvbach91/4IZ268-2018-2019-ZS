@@ -3,14 +3,23 @@
   }
 
 .header1{
-    font-size: 40px;
+    font-size: 64px;
     font-weight:bold;
     color: white;
+    background-image:url("../images/Wolfs.jpg");
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: initial;
+    text-align: center;
 }
 
 body{
     background-color:rgb(39, 39, 39);
     color:white;
+    font-family: Tahoma;
+    min-width: 360px;
 }
 
 footer{
@@ -34,6 +43,18 @@ list-style: none;
 .paige_nav{
     padding: 2px 12px;
     float: left;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-left:5px;
+    margin-top: 5px;
+}
+
+.paige_nav:hover{
+    background-color:white;
+}
+
+.paige_nav:hover a{
+    color:black;
 }
 
 .welcome{
@@ -57,6 +78,7 @@ list-style: none;
 }
 .concert{
     border-top: 2px solid white;
+    width: 50%;
 }
 
 .c_place{
@@ -113,7 +135,7 @@ h2{
 .photo{
     width:25%;
     float:left;
-    max-width: 200px;
+    max-width: 170px;
 }
 
 .info{
@@ -124,33 +146,52 @@ h2{
 .person{
     float: left;
     width:50%;
+    height:300px;
 }
 
 .c_photo{
-    max-width: 400px;
-    max-height: 250px;
+    height: 250px;
     float: left;
-    margin:20px;
+    margin:10px;
     object-position: center;
 }
 
+.tour_img{
+    float: left;
+    width:50%;
+}
+
+.tour{
+    float: left;
+    width:50%;
+}
+
+
 @media screen and (max-width: 1366px) {
     .Album { width: 25%; } 
-    .person{width: 50%;}
+    .person{width: 50%; height:300px;}
 }
 
     @media screen and (max-width: 1024px) {
     .Album  { width: calc(100% / 3) }
-    .person{width: 100%;} 
+    .person{width: 100%; height:300px;}
+    .tour{width:100%;}
+    .concert{width:100%;}
+    .tour_img{width: 100%;}
 }
 
     @media screen and (max-width: 800px) {
     .Album  { width: 50%; }
-    .person{width: 100%;} 
+    .Alb_songs{height: 350px;}
+    .person{width: 100%;}
+    .tour{width:100%;}
+    .concert{width:100%;}
 }
 
     @media screen and (max-width: 480px) {
-    .Album { width: 100%; } 
+    .Album { width: 100%;} 
     .Alb_songs{height: 300px;}
-    .person{width: 100%;}
+    .person{width: 100%;height:300px;}
+    .tour{width:100%;}
+    .concert{width:100%;}
 }
