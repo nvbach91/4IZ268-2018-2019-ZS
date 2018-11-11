@@ -46,7 +46,6 @@ changeFahrenheiht(0);
 /*4. % CENSORED %.Vytvořte funkci, která vezme 2 číselné argumenty a vrátí podíl prvního čísla a druhého čísla v procentech.
 Výsledek vypište do konzole, např. 21 je 50 % z 42. Pro zkrácení / zaokrouhlování desetinných míst použijte funkci.toFixed(n).Např.var pi = 3.1415926535; 
 pi.toFixed(2); Pozor na dělení nulou!*/
-var a, b;
 
 function divide(a, b) {
     if (b !== 0) {
@@ -67,7 +66,7 @@ divide(1, 3);
 Vyzkoušejte funkčnost pro celá čísla, desetinná čísla, zlomky.Zkuste je párkrát zavolat v kódu a výsledky uložit do proměnných.*/
 
 function comparing(a, b) {
-    if (a == b) {
+    if (a === b) {
         console.log("Čísla se rovnají");
     } else {
         c = Math.max(a, b);
@@ -88,21 +87,19 @@ function multiplicity() {
 multiplicity();
 
 /*7. Around and about.Vytvořte funkci, která vypočte obsah kružnice podle dodaného poloměru.*/
-var r;
 
 function circle(r) {
-    S = (Math.PI * r ** 2);
-    S = S.toFixed(2);
-    console.log("Kružnice s poloměrem " + r + " má obsah " + S);
+    var area = (Math.PI * r ** 2);
+    var area = area.toFixed(2);
+    console.log("Kružnice s poloměrem " + r + " má obsah " + area);
 }
 
 circle(2);
 
 /*8. Another dimension.Vytvořte funkci, která vypočte objem kuželu, pokud znáte jeho výšku a poloměr.*/
-var h;
 
 function cone(h, r) {
-    if (h == 0 || r == 0) {
+    if (h === 0 || r === 0) {
         console.log("Takový kužel neexistuje!");
     }
     else {
@@ -118,33 +115,32 @@ cone(10, 2);
 /*9. Not sure if triangle, or just some random values.Vytvořte funkci, která rozhodne, 
 zda se z dodaných 3 délek dá postavit trojúhelník, tj.vypíše buď true / yes nebo false / no.*/
 
-function Triangle(a, b, c) {
+function isTriangle(a, b, c) {
     if (a + b <= c || a + c <= b || b + c <= a) {
-        console.log("no");
+        return false;
     }
     else {
-        console.log("yes");
+        return true;
     }
 }
 
-Triangle(0, 5, 10);
-Triangle(5, 6, 8);
+isTriangle(0, 5, 10);
+isTriangle(5, 6, 8);
 
 
 /*10. Heroic performance.Vytvořte funkci, která vypočte obsah trojúhelníka podle Heronova vzorce,
  tj.funkce dostane délky všech 3 stran.Použijte přitom předchozí validaci, tj.počítejte pouze, když to má smysl.
  Hint: funkce pro odmocninu je Math.sqrt()*/
-var s, d;
 
 function herons_formula(a, b, c) {
-    if (a + b <= c || a + c <= b || b + c <= a) {
-        console.log("Toto není trojuhelník!");
-    }
-    else {
+    if (isTriangle(a, b, c)) {
         s = (a + b + c) / 2;
         d = (s * ((s - a) * (s - b) * (s - c)));
         d = d.toFixed(2);
         console.log("Obsah trojuhelníku je " + d);
+    }
+    else {
+        console.log("Toto není trojuhelník!");
     }
 }
 

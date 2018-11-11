@@ -529,6 +529,11 @@ nav a {
     .poster {
         margin: 0;
         padding: unset;
+        border: none;
+    }
+
+    .poster h1 {
+        font-size: 40px;
     }
 
     .products {
@@ -774,7 +779,6 @@ nav a {
 
     .poster {
         margin: auto;
-       
     }
 
     .products {
