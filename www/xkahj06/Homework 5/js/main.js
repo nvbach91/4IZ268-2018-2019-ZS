@@ -23,12 +23,12 @@ console.log('Pepovi je ' + pepe.age + ' let');
  *     z F na C: odečíst 32, vynásobit pěti a vydělit devítkou. 
  */
 
-InputCelsius = 20;
-InputFarhaint = 68;
-F = InputCelsius * 9 / 5 + 32;
-C = (InputFarhaint - 32) / 9 * 5;
-console.log(InputCelsius + "°C = " + F + "°F");
-console.log(InputFarhaint + "°F = " + C + "°C");
+var inputCelsius = 20;
+var inputFarhaint = 68;
+F = inputCelsius * 9 / 5 + 32;
+C = (inputFarhaint - 32) / 9 * 5;
+console.log(inputCelsius + "°C = " + F + "°F");
+console.log(inputFarhaint + "°F = " + C + "°C");
 
 
 
@@ -39,8 +39,7 @@ console.log(InputFarhaint + "°F = " + C + "°C");
  */
 
 function FunkceAge(yearOfBirth) {
-    pepe = yearOfBirth;
-    const pepeAge = thisYear - pepe
+    const pepeAge = thisYear - yearOfBirth
     return pepeAge;
 };
 console.log("Pepe je " + FunkceAge(1954) + " roku star.")
@@ -85,12 +84,13 @@ percentFrom(10, 6)
  */
 function compare(A, B) {
     if (A > B) {
-        T = "prvni clen je vetsi";
+        var T = "prvni clen je vetsi";
     } else if (B > A) {
-        T = "druhy clen je vetsi";
+        var T = "druhy clen je vetsi";
     } else {
-        T = "Jsou stejne.";
+        var T = "Jsou stejne.";
     }
+
     console.log("Kdyz se porovnaji " + A + " a " + B + " , tak " + T);
 };
 compare(85, 32);
@@ -140,15 +140,16 @@ console.log(dimension(20, 5));
  */
 
 
-function trianglePosible(a, b, c) {
-    if (a + b > c && b + c > a && c + a > b) { result = "True" } else {
+function isTriangle(a, b, c) {
+    if (a + b > c && b + c > a && c + a > b &&) { result = "True" } else {
         result = "False";
     }
     return result;
 
 };
+/* Toto není třeba dalé dělat,pří jakékoliv hodnotě která nebude >0, to hod9 false. , */
 
-console.log(trianglePosible(40, 20, 170));
+console.log(isTriangle(40, 20, 170));
 
 /**
  * Heroic performance. Vytvořte funkci, která vypočte obsah trojúhelníka podle Heronova vzorce, 
@@ -156,10 +157,10 @@ console.log(trianglePosible(40, 20, 170));
  * když to má smysl. Hint: funkce pro odmocninu je Math.sqrt() 
  */
 
-function spaceOfTriangle(a, b, c) {
+function areaOfTriangle(a, b, c) {
     if (a + b > c && b + c > a && c + a > b) {
-        s = (a + b + c) / 2;
-        s2 = s * (s - a) * (s - b) * (s - c)
+        var s = (a + b + c) / 2;
+        var s2 = s * (s - a) * (s - b) * (s - c)
         result = Math.sqrt(s2)
     } else {
         result = 0;
@@ -167,7 +168,7 @@ function spaceOfTriangle(a, b, c) {
     return result;
 
 };
-console.log(spaceOfTriangle(30, 40, 50));
+console.log(areaOfTriangle(30, 40, 50));
 
 /**
  * Tady jsem si trosku hral
