@@ -3,31 +3,64 @@
   }
 
 .header1{
-    font-size: 40px;
+    font-size: 64px;
     font-weight:bold;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:top;
+    max-width: 1024px;
+    text-align: center;
+    font-family: 'Open Sans', serif;
+    margin:auto;
+}
 
+.header_text{
+    padding-top:50px;
+    font-family: 'Open Sans', serif;
+}
+
+body{
+    min-width: 360px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 footer{
     margin-top: 50px;
-    background-color:rgb(39, 39, 39);
     border-top:2px solid black;
     height: 100px;
-
 }
 
 .video{
-    display: none;
+    display:none;
 }
-    
 
 .list_nav{
 list-style: none;
+max-width: 1024px;
+margin-right:auto;
+margin-left:auto;
 }
 
 .paige_nav{
     padding: 2px 12px;
     float: left;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left:5px;
+    margin-top: 5px;
+}
+
+.paige_nav a{
+    text-decoration: none;
+}
+
+#curr_page{
+    background-color:grey;
+}
+
+#curr_page a{
+    color:black;
 }
 
 .welcome{
@@ -36,8 +69,10 @@ list-style: none;
 }
 
 .band_img{
-    width:100%;
-    max-width: 800px;
+    width:480px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .band_logo_about{
@@ -51,6 +86,7 @@ list-style: none;
 }
 .concert{
     border-top: 2px solid black;
+    width: 100%;
 }
 
 .c_place{
@@ -66,9 +102,18 @@ list-style: none;
     color:green;
 }
 
+a{
+    color: black;
+    font-weight: bold;
+}
 
 h2{
     padding-left: 10px;
+}
+
+.m_content, footer{
+    max-width:1024px;
+    margin:auto;
 }
 
 
@@ -80,7 +125,7 @@ h2{
     float:left;
     padding:5px;
     max-width: 300px;
-    width: 25%;
+    width: calc(100% / 3);
 }
 
 .Alb_name{
@@ -97,13 +142,13 @@ h2{
 }
 
 .Alb_songs{
-    height: 350px;
+    height: 400px;
 }
 
 .photo{
     width:25%;
     float:left;
-    max-width: 200px;
+    max-width: 170px;
 }
 
 .info{
@@ -114,32 +159,24 @@ h2{
 .person{
     float: left;
     width:50%;
+    height:400px;
 }
 
 .c_photo{
-    max-width: 400px;
-    max-height: 250px;
+    height: 150px;
     float: left;
-    margin:20px;
+    margin:10px;
     object-position: center;
 }
 
-@media screen and (max-width: 1366px) {
-    .Album { width: 25%; } 
-    .person{width: 50%;}
+.tour_img{
+    float: left;
+    width:50%;
+    padding: 5px;
 }
 
-    @media screen and (max-width: 1024px) {
-    .Album  { width: calc(100% / 3) } 
+.tour{
+    float: left;
+    width:50%;
 }
 
-    @media screen and (max-width: 800px) {
-    .Album  { width: 50%; }
-    .person{width: 100%;} 
-}
-
-    @media screen and (max-width: 480px) {
-    .Album { width: 100%; } 
-    .Alb_songs{height: 300px;}
-    .person{width: 100%;}
-}

@@ -10,16 +10,24 @@
     height: 200px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    font-family: initial;
+    background-position:top;
+    max-width: 1024px;
     text-align: center;
+    margin:auto;
+}
+
+.header_text{
+    padding-top:50px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 200%;
+    font-weight: bold;
 }
 
 body{
     background-color:rgb(39, 39, 39);
     color:white;
-    font-family: Tahoma;
     min-width: 360px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 footer{
@@ -34,10 +42,17 @@ footer{
     width: 100%;
     max-width: 640px;
     height: 480px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
 }
 
 .list_nav{
 list-style: none;
+max-width: 1024px;
+margin-right:auto;
+margin-left:auto;
 }
 
 .paige_nav{
@@ -49,11 +64,23 @@ list-style: none;
     margin-top: 5px;
 }
 
+.paige_nav a{
+    text-decoration: none;
+}
+
 .paige_nav:hover{
     background-color:white;
 }
 
 .paige_nav:hover a{
+    color:black;
+}
+
+#curr_page{
+    background-color:white;
+}
+
+#curr_page a{
     color:black;
 }
 
@@ -65,6 +92,9 @@ list-style: none;
 .band_img{
     width:100%;
     max-width: 800px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .band_logo_about{
@@ -78,7 +108,7 @@ list-style: none;
 }
 .concert{
     border-top: 2px solid white;
-    width: 50%;
+    width: 100%;
 }
 
 .c_place{
@@ -101,6 +131,11 @@ a{
 
 h2{
     padding-left: 10px;
+}
+
+.m_content, footer{
+    max-width:1024px;
+    margin:auto;
 }
 
 
@@ -129,7 +164,7 @@ h2{
 }
 
 .Alb_songs{
-    height: 350px;
+    height: 400px;
 }
 
 .photo{
@@ -159,6 +194,7 @@ h2{
 .tour_img{
     float: left;
     width:50%;
+    padding: 5px;
 }
 
 .tour{
@@ -176,22 +212,19 @@ h2{
     .Album  { width: calc(100% / 3) }
     .person{width: 100%; height:300px;}
     .tour{width:100%;}
-    .concert{width:100%;}
-    .tour_img{width: 100%;}
+    .tour_img{width: 100%;padding:20px}
 }
 
     @media screen and (max-width: 800px) {
     .Album  { width: 50%; }
-    .Alb_songs{height: 350px;}
     .person{width: 100%;}
     .tour{width:100%;}
-    .concert{width:100%;}
+    .header_text{font-size: 150%;}
 }
 
     @media screen and (max-width: 480px) {
     .Album { width: 100%;} 
-    .Alb_songs{height: 300px;}
     .person{width: 100%;height:300px;}
     .tour{width:100%;}
-    .concert{width:100%;}
+    .header_text{font-size: 100%;}
 }

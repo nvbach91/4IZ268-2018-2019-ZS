@@ -12,17 +12,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/SPstyles.css" />
     <link rel=stylesheet href="styles/print.css" media="print" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <div class="header1">Powerwolf</div>
+        <div class="header1">
+            <div class="header_text">Powerwolf</div>
+        </div>
         <nav>
             <ul class="list_nav">
-                <li class="paige_nav"><a href="Mainpaige.html">Hlavní strana</a></li>
+                <li class="paige_nav"><a href="index.html">Hlavní strana</a></li>
                 <li class="paige_nav"><a href="Tour.html">Koncerty</a></li>
                 <li class="paige_nav"><a href="Band.html">Kapela</a></li>
-                <li class="paige_nav"><a href="Discography.html">Diskografie</a></li>
+                <li class="paige_nav" id="curr_page"><a href="Discography.html">Diskografie</a></li>
                 <li class="paige_nav"><a href="Photos.html">Foto</a></li>
                 <li class="paige_nav"><a href="About.html">O stránce</a></li>
                 <li class="paige_nav"><a href="https://www.powerwolf.net/">Oficiální stránka</a></li>
@@ -30,7 +33,7 @@
             <div class="clear"></div>
         </nav>
     </header>
-    <div>
+    <div class="m_content">
         <h2>Diskografie</h2>
         <div class="Album">
             <img class="Album_img" src="images/Sacrament_of_sin.jpg" alt="img Sacrament of Sin">

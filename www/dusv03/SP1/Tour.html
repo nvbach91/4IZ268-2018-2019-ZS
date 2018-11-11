@@ -12,15 +12,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/SPstyles.css" />
     <link rel=stylesheet href="styles/print.css" media="print" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <div class="header1">Powerwolf</div>
+        <div class="header1">
+            <div class="header_text">Powerwolf</div>
+        </div>
         <nav>
             <ul class="list_nav">
-                <li class="paige_nav"><a href="Mainpaige.html">Hlavní strana</a></li>
-                <li class="paige_nav"><a href="Tour.html">Koncerty</a></li>
+                <li class="paige_nav"><a href="index.html">Hlavní strana</a></li>
+                <li class="paige_nav" id="curr_page"><a href="Tour.html">Koncerty</a></li>
                 <li class="paige_nav"><a href="Band.html">Kapela</a></li>
                 <li class="paige_nav"><a href="Discography.html">Diskografie</a></li>
                 <li class="paige_nav"><a href="Photos.html">Foto</a></li>
@@ -30,75 +33,76 @@
             <div class="clear"></div>
         </nav>
     </header>
+    <div class="m_content">
+        <h2>Koncerty</h2>
+        <p>Seznam nejbližších plánovaných koncertů</p>
 
-    <h2>Koncerty</h2>
-    <p>Seznam nejbližších plánovaných koncertů</p>
+        <div>
+            <div class="tour">
+                <div class="concert">
+                    <div class="c_place">Praha(CZ) - Fórum Karlín</div>
+                    <div class="c_time"> 3. listopadu 2018 | Praha | Česká Republika</div>
+                    <div class="tickets">Vyprodáno</div>
+                </div>
 
-    <div>
-        <div clas="tour">
-            <div class="concert">
-                <div class="c_place">Praha(CZ) - Fórum Karlín</div>
-                <div class="c_time"> 3. listopadu 2018 | Praha | Česká Republika</div>
-                <div class="tickets">Vyprodáno</div>
+                <div class="concert">
+                    <div class="c_place">Budapešť(HU) - Barba Negra Music Club</div>
+                    <div class="c_time"> 4. listopadu 2018 | Budapešť | Maďarsko</div>
+                    <div class="tickets">Vyprodáno</div>
+                </div>
+
+                <div class="concert">
+                    <div class="c_place">Vídeň(AT) - Arena</div>
+                    <div class="c_time"> 6. lisopadu 2018 | Vídeň | Rakousko</div>
+                    <div class="tickets">Vyprodáno</div>
+                </div>
+
+                <div class="concert">
+                    <div class="c_place">Milán(IT) - Live Club</div>
+                    <div class="c_time">7. lisopadu 2018 | Milán | Itálie</div>
+                    <div class="tickets"><a href="https://www.ticketone.it/powerwolf-guests-trezzo-sulladda-biglietti.html?affiliate=ITT&doc=artistPages%2Ftickets&fun=artist&action=tickets&key=2083349%2410363851&jumpIn=yTix&kuid=&hideArtist=true&from=erdetaila">Vystupenky</a></div>
+                </div>
+
+                <div class="concert">
+                    <div class="c_place">Mnichov(D) - Zenith</div>
+                    <div class="c_time">9. lisopadu 2018 | Mnichov | Německo</div>
+                    <div class="tickets"><a href="https://www.metaltix.com/powerwolf-tickets-4809.html">Vstupenky</a></div>
+                </div>
+
+                <div class="concert">
+                    <div class="c_place">Ludwigsburg(D) - MHP Arena</div>
+                    <div class="c_time">10. lisopadu 2018 | Ludwigsburg | Německo</div>
+                    <div class="tickets"><a href="https://www.metaltix.com/powerwolf-tickets-4809.html">Vstupenky</a></div>
+                </div>
+
+                <div class="concert">
+                    <div class="c_place">Eindhoven(NL) - Effenaar</div>
+                    <div class="c_time">11. lisopadu 2018 | Eindhoven | Nizozemsko</div>
+                    <div class="tickets">Vyprodáno</div>
+                </div>
+
+                <div class="concert">
+                    <div class="c_place">Londýn(UK) - Koko</div>
+                    <div class="c_time">12. lisopadu 2018 | Londýn | Velká Británie</div>
+                    <div class="tickets">Vyprodáno</div>
+                </div>
+
+                <div class="concert">
+                    <div class="c_place">Lausanne(CH) - Les Docks</div>
+                    <div class="c_time">14. lisopadu 2018 | Lausanne | Švýcarsko</div>
+                    <div class="tickets">Vyprodáno</div>
+                </div>
+
+                <div class="concert">
+                    <div class="c_place">Curich(CH) - Komplex457</div>
+                    <div class="c_time">14. lisopadu 2018 | Curich | Švýcarsko</div>
+                    <div class="tickets">Vyprodáno</div>
+                </div>
             </div>
-
-            <div class="concert">
-                <div class="c_place">Budapešť(HU) - Barba Negra Music Club</div>
-                <div class="c_time"> 4. listopadu 2018 | Budapešť | Maďarsko</div>
-                <div class="tickets">Vyprodáno</div>
-            </div>
-
-            <div class="concert">
-                <div class="c_place">Vídeň(AT) - Arena</div>
-                <div class="c_time"> 6. lisopadu 2018 | Vídeň | Rakousko</div>
-                <div class="tickets">Vyprodáno</div>
-            </div>
-
-            <div class="concert">
-                <div class="c_place">Milán(IT) - Live Club</div>
-                <div class="c_time">7. lisopadu 2018 | Milán | Itálie</div>
-                <div class="tickets"><a href="https://www.ticketone.it/powerwolf-guests-trezzo-sulladda-biglietti.html?affiliate=ITT&doc=artistPages%2Ftickets&fun=artist&action=tickets&key=2083349%2410363851&jumpIn=yTix&kuid=&hideArtist=true&from=erdetaila">Vystupenky</a></div>
-            </div>
-
-            <div class="concert">
-                <div class="c_place">Mnichov(D) - Zenith</div>
-                <div class="c_time">9. lisopadu 2018 | Mnichov | Německo</div>
-                <div class="tickets"><a href="https://www.metaltix.com/powerwolf-tickets-4809.html">Vstupenky</a></div>
-            </div>
-
-            <div class="concert">
-                <div class="c_place">Ludwigsburg(D) - MHP Arena</div>
-                <div class="c_time">10. lisopadu 2018 | Ludwigsburg | Německo</div>
-                <div class="tickets"><a href="https://www.metaltix.com/powerwolf-tickets-4809.html">Vstupenky</a></div>
-            </div>
-
-            <div class="concert">
-                <div class="c_place">Eindhoven(NL) - Effenaar</div>
-                <div class="c_time">11. lisopadu 2018 | Eindhoven | Nizozemsko</div>
-                <div class="tickets">Vyprodáno</div>
-            </div>
-
-            <div class="concert">
-                <div class="c_place">Londýn(UK) - Koko</div>
-                <div class="c_time">12. lisopadu 2018 | Londýn | Velká Británie</div>
-                <div class="tickets">Vyprodáno</div>
-            </div>
-
-            <div class="concert">
-                <div class="c_place">Lausanne(CH) - Les Docks</div>
-                <div class="c_time">14. lisopadu 2018 | Lausanne | Švýcarsko</div>
-                <div class="tickets">Vyprodáno</div>
-            </div>
-
-            <div class="concert">
-                <div class="c_place">Curich(CH) - Komplex457</div>
-                <div class="c_time">14. lisopadu 2018 | Curich | Švýcarsko</div>
-                <div class="tickets">Vyprodáno</div>
-            </div>
+            <img class="tour_img" src="images/Tour-r.jpg">
+            <div class="clear"></div>
         </div>
-        <img class="tour_img" src="images/Tour-r.jpg">
     </div>
-
     <footer>
         <div class="line"></div>
         <div class="credits">
