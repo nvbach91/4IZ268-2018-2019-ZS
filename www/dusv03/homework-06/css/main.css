@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+.divider{
+    padding:10px;
+    margin:10px;
+}
+
+#to_decipher{
+    height: 100px;
+    width: 400px;
+    margin-left:50px;
+    padding:10px;
+    text-align: top;
+}
+
+.decipherb{
+    padding:10px 20px;
+    background-color: cadetblue;
+    margin-left:70px;
+}
+
+#deci_form{
+    width: 500px;
+    height: 400px;
+    background-color: aquamarine;
+    margin: auto;
+    border-right: 2px solid grey;
+    border-left: 2px solid grey;
+}
+
+.ini_text{
+    font-weight: bold;
+    font-size: 32px;
+    padding-left:20px;
+    padding-top:20px;
+    text-align: center;
+}
+
+#deci_index{
+    margin-left:50px;
+}
+
+#output{
+    border-top:2px solid grey;
+    border-bottom:2px solid grey;
+    height: 100px;
+    margin-top:100px;
+    padding-top:20px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
