@@ -49,6 +49,7 @@
     transition: 0.3s ease-in;
     color: rgb(255, 255, 255);
     background-color: rgb(28, 162, 99);
+    border-radius: 25px;
 }
 
 
