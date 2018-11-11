@@ -1,10 +1,7 @@
 * {
     box-sizing: border-box;
-}
-
-html {
     scroll-behavior: smooth;
-  }
+}
 
 body {
     background-color: #FEFAEE;
@@ -23,6 +20,12 @@ ul {
     background-image: url(../image/florence-min.jpg);
     background-size: cover;
     background-position: center;
+}
+
+nav {
+    position: fixed;
+    background-color: rgba(254, 250, 238, 0.295);
+    padding: 0 0 5px 0;
 }
 
 nav li {
@@ -413,7 +416,7 @@ p {
         border-left: none;
     }
     nav a {
-        font-size: 11px;
+        font-size: 10px;
     }
     nav li:hover a {
         color: #1D1D1B;

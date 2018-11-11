@@ -7,10 +7,10 @@
 var name = "Pepe's ";
 var ageIs = "age is ";
 var birthYear = 1996;
-var year = 2018;
-var age = year - birthYear;
+var age = new Date().getFullYear() - birthYear;
 
-name + ageIs + age
+console.log(name + ageIs + age);
+
 
 /**
  * WTF (wow, that's fun). Vypište teplotu v Fahrenheiht, pokud znáte
@@ -25,8 +25,8 @@ var equalsTo = " = ";
 var Celsius = "°C";
 var Fahrenheiht = "°F";
 
-c + Celsius + equalsTo + (c * 9 / 5 + 32) + Fahrenheiht
-f + Fahrenheiht + equalsTo + (f - 32) * 5 / 9 + Celsius
+console.log(c + Celsius + equalsTo + (c * 9 / 5 + 32) + Fahrenheiht);
+console.log(f + Fahrenheiht + equalsTo + (f - 32) * 5 / 9 + Celsius);
 
 /**
  * Funkce function fonction funktio. Vemte předchozí úlohy a udělejte
@@ -46,8 +46,8 @@ var fahrenheihtToCelsius = function (f) {
     return f + Fahrenheiht + equalsTo + C + Celsius;
 };
 
-var getAge = function (year, birthYear) {
-    var age = year - birthYear;
+var getAge = function (birthYear) {
+    var age = new Date().getFullYear() - birthYear;
     return name + ageIs + age;
 };
 
@@ -60,7 +60,7 @@ var getAge = function (year, birthYear) {
  */
 
 var getPercentage = function (a, b) {
-    if (b == 0) {
+    if (b === 0) {
         return "You can't divide by zero!";
     } else {
         var percentage = a * 100 / b;
@@ -99,10 +99,8 @@ var result3 = getMax(0.28941, 0.285486);
 
 var getMultiples = function () {
     var i;
-    for (i = 1; i <= 730; i++) {
-        if (i % 13 == 0) {
-            alert(i);
-        }
+    for (i = 1; i <= 730; i += 13) {
+        console.log(i);
     }
 };
 
@@ -112,8 +110,7 @@ var getMultiples = function () {
  */
 
 var getCircleArea = function (r) {
-    var Pi = 3.14;
-    return Math.pow(r, 2) * Pi;
+    return Math.pow(r, 2) * Math.PI;
 };
 
 /**
@@ -122,8 +119,7 @@ var getCircleArea = function (r) {
  */
 
 var getConeVolume = function (r, h) {
-    var Pi = 3.14;
-    return 1 / 3 * h * Math.pow(r, 2) * Pi;
+    return 1 / 3 * h * Math.pow(r, 2) * Math.PI;
 };
 
 /**
@@ -133,11 +129,7 @@ var getConeVolume = function (r, h) {
  */
 
 var isTriangle = function (a, b, c) {
-    if (a + b <= c) {
-        return false;
-    } else if (a + c <= b) {
-        return false;
-    } else if (b + c <= a) {
+    if (a + b <= c || a + c <= b || b + c <= a) {
         return false;
     } else {
         return true;
