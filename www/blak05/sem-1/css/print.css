@@ -1,6 +1,6 @@
 /* PRINT */
 @media print {
-    nav, aside, footer, .yt-vid {display: none;}
+    nav, aside, footer, .yt-vid, article a, .more a {display: none;}
     img {max-height: 400px; max-width: 300px;}
     .poster {background-color: white;}
 }

@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Merriweather', serif;
   margin: 0;
   padding: 0;
 }
@@ -81,7 +81,8 @@ article{
 }
 article h2{font-size: 20px;}
 article p{font-size: 15px; padding: 1px 20px; margin-top: 15px; margin-bottom: 5px;}
-article button{background-color: black; color:#e78788; padding: 5px; margin-left: 85%;}
+article a{background-color: black; color:#e78788; padding: 5px; margin-left: 85%; font-size: 15px; text-decoration: none;}
+article a:hover{border: 1px solid white; color: white;}
 article img {float: left; height: 120px; width: 200px;margin: 10px; border: 3px solid black;}
 .more{padding-bottom: 50px; margin-top: 10px; float: right;}
 .more a{font-size: 25px; text-decoration: none; color:#e87877; font-weight: bold;}
@@ -107,8 +108,10 @@ article img {float: left; height: 120px; width: 200px;margin: 10px; border: 3px 
     width: 100%;
 }
 .whole-music p{
-    font-size: 25px;
+    font-size: 20px;
     padding: 30px;
+    background-color: rgba(0,0,0);
+    color: #e78788;
 }
 
 /* LIVE (REPORTS) PAGE */
@@ -181,14 +184,16 @@ article.report .yt-vid{
     margin-bottom: 50px;
 }
 .whole-promoters h1{text-align: center;}
-.whole-promoters h2{padding-left: 20px; margin:0; font-size: 35px;}
+.whole-promoters h2{margin:0; font-size: 35px; padding: 10px 20px;}
 .whole-promoters p{padding-left: 20px; font-size: 20px;margin-top:10px;line-height: 1.3em;}
 .whole-promoters a{text-decoration: none; color:white;}
 .whole-promoters a:hover{color:black;}
+.whole-promoters .f-p-black {background-color: black; color: #e78788; padding: 5px 0px 1px 0px;}
 .whole-promoters .yt-vid {
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 20px;
+    padding-top: 20px;
     width: 100%;
 }
 .youtube{ 
@@ -236,7 +241,7 @@ footer{
     border-top:  3px solid black;
 }
 
-.social img {height: 50px; width: 50px; margin-top: 20px;}
+.social img {height: 40px; width: 40px; margin-top: 20px;}
 .social a {text-decoration: none;}
 
 
@@ -251,7 +256,7 @@ footer{
 }
 @media only screen and (max-width: 1000px) {
     nav {padding-left: 12%;}
-    article button{ margin-left: 75%;}
+    article a{ margin-left: 75%;}
 }
 @media only screen and (max-width: 900px) {
     nav {padding-left: 7%;}
@@ -287,7 +292,7 @@ footer{
     p.date {text-align: center;}
     article img {display: none;}
     article h2 {text-align: center;}
-    article button {width: 80%; margin-left: 10%;}
+    article a {margin-left: 40%;}
     nav {float: none; height: 100%;background-color: #e78788;}
     nav li , nav ul{float: none; padding-left: 0px;padding-top:3px; text-align: center; margin: 0;}
     nav li a {color:black;}
