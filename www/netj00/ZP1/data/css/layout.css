@@ -111,23 +111,43 @@ main article img{
     margin: 50px;
 }
 
-@media print {
-    nav {
-        display: none;
-    }
+main header h2{
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
 
-    img {
+main header p{
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+main footer{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+main footer p{
+    font-style: italic;
+    padding: 8px;
+    margin: 0;
+    width: 30%;
+}
+
+
+@media print {
+    nav, main img, main article img {
         display: none;
-        height: 0;
     }
 }
 
 @media screen and (max-width: 600px) {
     body {
-        font-size: 22px;
-    }
-
-    section {
+        font-size: 18px;
         flex-direction: column;
     }
 
@@ -135,6 +155,7 @@ main article img{
         width: 100%;
         padding: 0;
         margin: 0;
+        font-size: 18px;
     }
 
     .nav-separator {
@@ -142,6 +163,7 @@ main article img{
     }
 
     .logo {
+        display: none;
         margin: auto;
     }
 }
