@@ -269,6 +269,11 @@ footer{
     nav {padding: 0;}
     nav li {padding-left: 15px;}
 }
+@media only screen and (max-width: 768px){
+    main {width: 100%;}
+    .singl {width:100%;}
+    .gigs {width:100%; margin-bottom: 20px;}
+}
 @media only screen and (max-width: 700px) {
     .logo{ width: 30%;}
     nav{width: 70%;}
