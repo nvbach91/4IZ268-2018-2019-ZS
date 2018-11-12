@@ -1,5 +1,8 @@
 body{
-    font-family: 'Cinzel', serif;
+    font-family : 'Cinzel';
+    font-style : normal;
+    font-weight : 400;
+    src : local('Cinzel Regular'), local('Cinzel-Regular'), url(https://fonts.gstatic.com/s/cinzel/v7/8vIJ7ww63mVu7gt79mT-.ttf) format('truetype');
     margin: 0;
     padding:0;
     font-size:18px;
@@ -12,22 +15,41 @@ h1 {
     letter-spacing: 2px;
 }
 nav {
-    position: fixed;
     top: 0;
     left: 35%;
     z-index: 10;
 }
 nav ul {
     list-style: none;
+    margin: 0;
+    padding:0;
+    overflow: hidden;
+    background-color:white;
+
 }
 nav ul li {
-    display: inline-block;
-    margin-right: 20px;
+    display: inline;
+    float: left;
+    
 }
-.right{
+nav ul li a{
+    display: block;
+    padding:8px;
+    background-color:white;
+    text-align: center;
+    text-decoration: none;
+
+}
+nav ul li a:hover:not(.active){
+   background-color:rgb(194, 197, 199);
+   color: #000;
+   font-weight: bold;
+}
+
+/*.right{
     background-color: #fff;
     width:50%;
-}
+}*/
 .left {
     background-color: darkgreen;
     width: 50%;
@@ -70,12 +92,12 @@ p {
 .info-1 {
     width: 90%;
     padding: 100px 0;
-    position: right;
+    position: absolute;
     float: left;
     padding: 100px;
 }
 .second:hover{
-    background-color: darkgreen;
+    background-color: rgb(18, 48, 18);
 }
 .third {
     display: flex;
@@ -87,13 +109,6 @@ p {
     background-repeat: no-repeat;
     background-position: right;
     float: right;
-}
-.info-2 {
-    width: 90%;
-    padding: 100px 0;
-    position: relative;
-    float: left;
-    padding: 100px;
 }
 .third:hover{
     background-color: rgb(133, 21, 21);
@@ -109,19 +124,13 @@ p {
     background-position: right;
     float:left;
 }
-.info-3 {
-    width: 90%;
-    padding: 100px 0;
-    position: right;
-    float: top right;
-    padding: 100px;
-}
+
 .fourth:hover{
     background-color:royalblue;
 }
 .fifth {
     display: flex;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
     width: 50%;
     height: 621px;
     background-color: #fff;
@@ -129,13 +138,6 @@ p {
     background-repeat: no-repeat;
     background-position: right;
     float: right;
-}
-.info-4 {
-    width: 90%;
-    padding: 100px 0;
-    position: relative;
-    float: top left;
-    padding: 100px;
 }
 .fifth:hover{
     background-color:grey;
@@ -145,31 +147,74 @@ p {
     border-bottom: 2px solid;
     display: inline-block;
 }
-.author-1 {
-    top: 100px;
-    position: relative;
-    left: 10%;
-    width: 50%;
+#about {
+    background-image: url('../images/CPAI4.jpg');
+    background-size: cover;
+    font-weight: bold;
 }
 .author-2 {
     position: relative;
-    top: -20px;
+    width: 50%;
     left: 200px;
     color: #000;
+    background-color:white;
+    opacity: 0.8;
 }
 img.author-image{
-    width: 200px;
-    position: relative;
+    width: 20%;
+    height: auto;
     margin-left: 200px;
+    margin-top: 100px;
 }
-
+img.erenJPEG{
+    width: 20%;
+    height: auto;
+    margin-left: 200px;
+    margin-top: 100px;
+}
+img.leviJPEG{
+    width: 20%;
+    height: auto;
+    margin-left: 200px;
+    margin-top: 100px;
+}
+img.mikasaJPEG{
+    width: 20%;
+    height: auto;
+    margin-left: 200px;
+    margin-top: 100px;
+}
+img.arminJPEG{
+    width: 20%;
+    height: auto;
+    margin-left: 200px;
+    margin-top: 100px;
+}
+section.about .author-2 h1 {
+    font-size:25px;
+    position: relative;
+    text-align: center;
+}
 footer {
     width: 100%;
+    background-color: white;
 }
 
 footer p {
     text-align: center;
-    margin: 30px 0;
+    margin: 1px 0;
+}
+.inf{
+    position: relative;
+    width: 75%;
+    left: 200px;
+    color: #000;
+    background-color:white;
+    opacity: 0.8;
+}
+.inf h1{
+    font-size:25px;
+    text-align: center
 }
 .eren-1 {
     top: 100px;
@@ -251,7 +296,7 @@ img.levi-image{
     list-style: none;
 }
 
-/*@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1600px) {
     section.first {
         top: 50px;
     }
