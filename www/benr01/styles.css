@@ -22,7 +22,6 @@ h2 {
 
 .layout {
   max-width: 1320px;
-	//overflow: hidden;
   min-height: 100%;
   margin: 0 auto;
   padding: 0 50px;
@@ -33,21 +32,21 @@ footer {
   padding-bottom:1px;
 }
 
-.header {
+header {
   background-color: #303030;
   margin: 0 auto;
   overflow:auto; 
   z-index: 1000;
 }
 
-.header .logo {
+header .logo {
   position:relative;
   float: left;
   overflow: visible;
-  margin: 8px 0;
+  margin: 8.5px 0;
 }
 
-.header ul {
+header ul {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   display: block;
   list-style: none;
@@ -58,21 +57,21 @@ footer {
   height: 100%;
 }
 
-.header ul li{
+header ul li{
   float:left;
   transition : border 200ms ease-out;
 }
 
-.header ul li:hover{
+header ul li:hover{
   background-color: #0c0c0c;
-  //transition: border-color 1s ease;  
+  /* transition: border-color 1s ease;  */
 }
 
-.header ul li.active {
+header ul li.active {
   background-color: #009700;
 }
 
-.header ul li a {
+header ul li a {
   color: rgb(255, 255, 255);
   display: block;
   font-size: 1.2em;
@@ -88,11 +87,11 @@ footer {
   float: right;
 }
 
-.header .icon {
+header .icon {
   display: none;
 }
 
-.content {
+main {
   background-color: rgb(248, 248, 248);
   padding-top: 50px;
 }
@@ -102,6 +101,10 @@ footer {
   clear: both;
   overflow: hidden;
   font-size: 1.0em;
+}
+
+.full_width p {
+  max-width: 900px;
 }
 
 .video-container {
@@ -136,6 +139,10 @@ footer .internal {
   width: 960px;
   border-top: 1px solid #dbdbdb;
   margin: 0 auto;
+}
+
+footer a {
+  color: rgb(0, 0, 0);
 }
 
 .full_width img{
@@ -183,7 +190,7 @@ footer .internal {
 .one_half, .one_third, .two_third, .one_quarter,
 .two_quarter, .three_quarter {
     display: inline;
-    float: left;
+    float: left; 
     margin: 0 0 0 3.125%;
     list-style: none;
 }
@@ -268,10 +275,10 @@ a:hover .image-box-description {
 }
 
 @media screen and (max-width: 1010px) {
-    .header ul li {
+    header ul li {
       float:none;
     }
-    .header {
+    header {
       width: 100%;
       position: fixed;
     }
@@ -373,7 +380,7 @@ a:hover .image-box-description {
 }
 
 @media print {
-  .header, footer {
+  header, footer {
     display:none;
   }
   .layout{
@@ -385,17 +392,27 @@ a:hover .image-box-description {
     width: 30%;
   }
   a .image-box-description {
-    top: 70%;
+    color: #000000;
+    top: 75%;
     opacity:1;
     font-size: 0.8em;
   }
   a .image-box-text {
+    color: #000000;
     top: 45%;
     opacity:1;
     font-size: 1.2em;
   }
   a .image-box-icon {
-    top: 20%;
-    font-size: 1em;
+    color: #000000;
+    top: 15%;
+    font-size: 0.7em;
+  }
+  .one_quarter a img, .one_third a img {
+    opacity: 0.0;
+    filter: alpha(opacity=0);
+  }
+  .video-container {
+    display: none;
   }
 }
