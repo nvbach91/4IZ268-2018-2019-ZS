@@ -1,3 +1,14 @@
+var navButton = document.getElementById("mobile-nav-button");
+        navButton.addEventListener("click", openMobileNav);
+
+        var scrollUp = document.getElementById("scroll-up");
+        scrollUp.addEventListener("click", function (element) {
+            window.scrollTo(0, 0);
+        });
+
+        var nav = document.getElementById("navigation");
+        nav.classList.add("mobile-navigation");
+
 function closeMobileNav(element) {
   var navButton = document.getElementById("mobile-nav-button");
   var nav = document.getElementById("navigation");
