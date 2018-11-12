@@ -71,6 +71,11 @@ header nav .active {
         display: none;
         visibility: collapse;
     }
+
+    .print-hide {
+        display: none;
+        visibility: collapse;
+    }
 }
 
 
@@ -404,7 +409,7 @@ header nav .active {
     main {
         width: 50vw;
         margin-left: 25vw;
-        padding-top: 1em;
+        padding-top: 1em;     
     }
 
     main li {
