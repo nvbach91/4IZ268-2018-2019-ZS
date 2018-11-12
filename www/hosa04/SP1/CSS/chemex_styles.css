@@ -36,6 +36,7 @@
     padding-top: 60px;
     font-size: 150%;
     font-weight: bolder;
+    border-radius: 25px;
 }
 
 .homelink{
@@ -50,6 +51,7 @@
     transition: 0.3s ease-in;
     color: rgb(255, 255, 255);
     background-color: rgb(0, 17, 255);
+    border-radius: 25px;
 }
 
 
@@ -57,3 +59,10 @@ footer{
     text-align: center;
     padding-top: 100px;
 }
+
+
+@media print {
+    .home, .homelink{
+        display: none;
+    }
+ }

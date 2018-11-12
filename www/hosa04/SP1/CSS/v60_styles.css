@@ -36,6 +36,7 @@
     padding-top: 60px;
     font-size: 150%;
     font-weight: bolder;
+    border-radius: 25px;
 }
 
 .homelink{
@@ -43,6 +44,7 @@
     text-align: center;
     text-decoration: none;
     color: grey;
+    border-radius: 25px;
 }
 
 .homelink:hover{
