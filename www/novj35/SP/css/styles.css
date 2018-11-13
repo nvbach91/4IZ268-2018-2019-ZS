@@ -7,7 +7,7 @@ body {
     font: normal 13px Verdana, Arial, lucida, sans-serif;
     margin: 0 auto;
     padding: 20px;
-    max-width: 1280px;
+    max-width: 960px;
     list-style-type: none;
 }
 /* HEADER */
@@ -74,14 +74,21 @@ nav ol li {
     padding-top: 80px;
 }
 /** Sloupce v kontaktech **/
-.columns1{
+.columns1 {
     column-count: 2;
 }
 /** Sloupce v treneri **/
-.columns2{
+.columns2 {
     width: 60%;
     column-count: 2;
 }
+
+/** Sloupce v cenik **/
+.columns3 {
+    columns: 3;
+
+}
+
 /* FOOTER */
 footer {
     margin-top: 25px;
