@@ -143,6 +143,10 @@ section.menu {
     margin: 15px 0;
 }
 
+section.menu section {
+    overflow: auto;
+}
+
 .menu h1, .gallery h1, .map h1 {
     font-size: 28pt;
     margin: 0 0 15px 0;
@@ -206,10 +210,6 @@ section.menu {
 .gallery {
     overflow: auto;
 }
-
-
-/* rezervace */
-
 
 /* kontakt */
 
@@ -396,6 +396,10 @@ footer .copyright {
     .jumbotron .text {
         color: #000;
         padding: 0;
+    }
+
+    img.menu-pic {
+        display: none;
     }
 
     .menu .menu-item, .gallery .gallery-item {
