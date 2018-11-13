@@ -412,7 +412,7 @@ a:hover .image-box-description {
     opacity: 0.0;
     filter: alpha(opacity=0);
   }
-  .video-container {
+  .video-container, .video-title {
     display: none;
   }
 }
