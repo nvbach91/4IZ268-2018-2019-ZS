@@ -36,10 +36,7 @@ footer{
 }
 
 .list_nav{
-list-style: none;
-max-width: 1024px;
-margin-right:auto;
-margin-left:auto;
+display: none;
 }
 
 .paige_nav{
@@ -81,12 +78,12 @@ margin-left:auto;
 }
 
 .band_logo_img{
-    padding: 10px;
-    width:80%
+    display:none;
 }
 .concert{
     border-top: 2px solid black;
     width: 100%;
+    font-size: 80%;
 }
 
 .c_place{
@@ -116,6 +113,13 @@ h2{
     margin:auto;
 }
 
+.m_content{
+    margin-top: -30px;
+}
+
+nav{
+    display:none;
+}
 
 .Album_img{
     width: 200px;
@@ -158,25 +162,23 @@ h2{
 }
 .person{
     float: left;
-    width:50%;
-    height:400px;
+    width:100%;
+    height:350px;
 }
 
 .c_photo{
-    height: 150px;
+    height: 130px;
     float: left;
     margin:10px;
     object-position: center;
 }
 
 .tour_img{
-    float: left;
-    width:50%;
-    padding: 5px;
+    display:none;
 }
 
 .tour{
     float: left;
-    width:50%;
+    width:100%;
 }
 
