@@ -169,3 +169,9 @@ button {
     }
 } 
 
+@media print {
+    .right img {
+        max-width: 200px;
+        display: none;
+    }
+}
