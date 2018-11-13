@@ -523,7 +523,7 @@ nav a {
     }
 
     nav {
-        visibility: hidden;
+        display: none;
     }
 
     .poster {
@@ -561,6 +561,11 @@ nav a {
         border-radius: 0;
         box-shadow: none;
     } 
+
+    .worker {
+        margin:0px 50px;
+        padding: 5px;
+    }
 
     .workers_pictures {
         margin-top: 15px;
