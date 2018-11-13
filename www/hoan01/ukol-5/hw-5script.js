@@ -2,8 +2,9 @@
 ohledně věku Pepy, pokud znáte jeho rok narození. Použijte 
 proměnné a pro výpis použijte zřetězení stringů. 
 Jako názvy proměnných používejte anglické pojmy.*/
+var currentYear = new Date().getFullYear();
 var pepeYear = 1996;
-var pepeAge = 2018 - pepeYear;
+var pepeAge = currentYear - pepeYear;
 console.log("Ahoj, Pepe age is " + pepeAge + ".");
 
 /* WTF (wow, that's fun). Vypište teplotu v Fahrenheiht, 
@@ -24,16 +25,16 @@ a udělejte z nich funkce. Tj. vytvořte funkce, které přijímají
 argumenty, a na základě argumentů po zavolání vypíše výsledek 
 na konzoli. Párkrát zavolejte tyto funkce s různými argumenty. 
 V konzoli také vyzkoušejte, zda fungují vaše funkce.*/
-function myFun1(a,b) {
+function myFunction_1(a,b) {
 	var resF = a * 9 / 5 + 32;
 	console.log("Ahoj, " + a + "°C in Fahrenheiht is " + resF + "°F.");
 	var resC = (b - 32) * 5 / 9;
 	console.log("Ahoj, " + b + "°F in Celsius is " + resC + "°C.");
 }
 
-myFun1(22,100);
-myFun1(50,200);
-myFun1(77,222);
+myFunction_1(22,100);
+myFunction_1(50,200);
+myFunction_1(77,222);
 
 /*%CENSORED%. Vytvořte funkci, která vezme 2 číselné argumenty 
 a vrátí podíl prvního čísla a druhého čísla v procentech. 
@@ -41,19 +42,23 @@ Výsledek vypište do konzole, např. 21 je 50% z 42. Pro
 zkrácení / zaokrouhlování desetinných míst použijte 
 funkci .toFixed(n). Např. var pi = 3.1415926535; pi.toFixed(2); 
 Pozor na dělení nulou!*/
-function myFun2(c,d) {
+function myFunction_2(c,d) {
+	if(d != 0) {
 	var res2 = c/d*100;
 	console.log("Ahoj, " + c + " je " + res2.toFixed(2) + "% z " + d + ".");
+} else {
+	console.log("Ahoj, do not divide by 0!");
+}
 }
 
-myFun2(21,41);
+myFunction_2(21,0);
 
 /*Kdo s koho. Vytvořte funkci, která vezme 2 číselné argumenty 
 a vrátí ten větší z nich. Pokud se čísla rovnají, vypište, že 
 se rovnají. Vyzkoušejte funkčnost pro celá čísla, desetinná čísla, 
 zlomky. Zkuste je párkrát zavolat v kódu a výsledky uložit do 
 proměnných.*/
-function myFun3(e,f) {
+function myFunction_3(e,f) {
 	if (e > f) {
 		console.log("Ahoj, " + e + " is bigger than" + f + ".");
 	} else if (e < f) {
@@ -63,26 +68,25 @@ function myFun3(e,f) {
 	}
 }
 
-myFun3(22.02,22.22);
-myFun3(5,10);
-myFun3(8,7);
+myFunction_3(22.02,22.22);
+myFunction_3(5,10);
+myFunction_3(8,7);
 
 /*I can cleary see the pattern. Vytvořte funkci, která vypíše 
 popořadě všechny násobky 13, které jsou menší nebo rovno 730. 
 Použijte for loop.*/
-function myFun4() {
-	for (var i = 1; i <= 56; i++) {
-		var g = 13*i;
-		console.log("Ahoj, " + g + ".");
+function myFunction_4() {
+	for (var i = 0; i <= 730; i+=13) {
+		console.log(i);
 	}
 }
 
-myFun4();
+myFunction_4();
 
 /*Around and about. Vytvořte funkci, která vypočte obsah 
 kružnice podle dodaného poloměru.*/
 function myFun5(h) {
-	var pi = 3.1415926535;
+	var pi = Math.PI;
 	var res3 = pi*Math.pow(h,2);
 	console.log("Ahoj, obsah kruhu je " + res3 + "sth square.");
 }
@@ -92,7 +96,7 @@ myFun5(4);
 /*Another dimension. Vytvořte funkci, která vypočte objem
 kuželu, pokud znáte jeho výšku a poloměr.*/
 function myFun6(j,k) {
-	var pi = 3.1415926535;
+	var pi = Math.PI;
 	var res4 = (pi*Math.pow(k,2)*j)/3;
 	console.log("Ahoj, objem kužele je " + res4 + "sth round.");
 }

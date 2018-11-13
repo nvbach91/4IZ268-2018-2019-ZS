@@ -8,10 +8,12 @@ html {
 	background-image: linear-gradient(#b3d1ff 75%,green,green);
 	font-family: "Roboto", sans-serif;
 	text-align: center;
+
 }
 
 body {
-	background: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/0kjHIH6/animated-cartoon-blue-sky-with-white-clouds_vj92cw5je__F0000.png');
+	background: url('../images/background.png');
+	background-size: cover;
 	border: 5px solid #0059b3;
 	margin: 22px;
 	box-shadow: 10px 10px 20px #888888;
@@ -60,22 +62,22 @@ div button:hover {
 }
 
 .btn-1 {
-	background: url('https://i.ytimg.com/vi/lGkczKwP6QA/maxresdefault.jpg');
+	background: url('../images/circle1.png');
 	background-size: cover;
 }
 
 .btn-2 {
-	background: url('https://cdn1.iconfinder.com/data/icons/world-flags-circular/1000/Flag_of_United_Kingdom_-_Circle-512.png');
+	background: url('../images/circle2.png');
 	background-size: cover;
 }
 
 .btn-3 {
-	background: url('https://i1.wp.com/kiddyhouse.com/wp-content/uploads/2017/05/hands3.png?resize=300%2C292');
+	background: url('../images/circle3.png');
 	background-size: cover;
 }
 
 .btn-4 {
-	background: url('https://is5-ssl.mzstatic.com/image/thumb/Purple5/v4/bb/56/77/bb56771c-63a5-54d3-b133-651fffa1f07e/mzl.pmvjtums.jpg/1080x800bb.jpg');
+	background: url('../images/circle4.png');
 	background-size: cover;
 }
 
@@ -171,6 +173,7 @@ footer {
 	float: right;
 	width: 50%;
 	height: 200px;
+	color: #fff;
 }
 
 .txt {
@@ -218,8 +221,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* ---Styling English--- */
 
-
-.content-3 div {
+.content-3 div:not(.colName) {
 	float: left;
 	width: 50%;
 	font-size: 28px;
@@ -231,10 +233,26 @@ input[type=number]::-webkit-outer-spin-button {
 	text-align: center;
 }
 
+.colName {
+	border: 5px solid #0059b3;
+	float: left;
+	width: 50%;
+	font-size: 33px;
+	background-color: white;
+	text-decoration: underline;
+}
+
 /* ---End styling English--- */
 
 /* ---Responsive web---*/
 @media screen and (max-width:1280px){
+
+	.main {
+		padding: 20px;
+		column-count: 2;
+		column-rule: 0.3em double silver;
+	}
+
 	.content-1 div {
 		height: 200px;
 		width: 100%;
@@ -260,3 +278,60 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
+@media screen and (max-width:640px){
+
+	.main {
+		padding: 20px;
+		column-count: 1;
+		column-rule: 0.3em double silver;
+	}
+
+}
+
+@media print {
+
+	body {
+		border: none;
+		box-shadow: none;
+	}
+
+	h1,h2 {
+		color: black;
+		text-shadow: none;
+	}
+
+	.main button {
+		box-shadow: none;
+		text-shadow: none;
+		color: black;
+	}
+
+
+	.main {
+		column-count: 2;
+		column-rule: none;
+	}
+
+	.content-1 div {
+		height: 100px;
+		width: 50%;
+		padding: 0px;
+	}
+
+	.txt {
+		padding-left: 20px;
+	}
+
+	.colBlack {
+		color: #000;
+	}
+
+	.colName {
+		border: none;
+	}
+
+	a,.txt-1 {
+		visibility: hidden;
+	}
+
+}
