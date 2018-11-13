@@ -11,7 +11,6 @@ html, body{
 
 .poster {
   color: white;
-  
   font-size: 30px;
   padding: 60px 30px 60px 30px;
   text-align: center;
@@ -103,6 +102,7 @@ footer{
   background-color: #212121;
   color: #aaa;
   margin-top: 15px;
+  
 }
 
 @media(min-width: 800px){
@@ -204,6 +204,9 @@ section {
   .details p{
   font-size: 14.5px;
 }
+.details h3 {
+  font-size: 21px;
+}
 }
 @media(max-width: 699px) and (min-width:600px){
   .shape, .details{
@@ -213,29 +216,40 @@ section {
 .details p{
   font-size: 14.5px;
 }
+.details h3 {
+  font-size: 21px;
+}
 section{
   margin-left: 110px;
-  
   }}
 @media(max-width: 599px) and (min-width: 400px){
   .shape, .details{
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 }
 .details p{
-  font-size: 7px;
+  font-size: 11px;
 }
+.details h3 {
+  font-size: 15px;
+}
+section{
+  margin-left: 100px;
+  }
 }
 @media(max-width: 399px) and (min-width: 350px){
   .shape, .details{
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
 }
 .details p{
-  font-size: 7px;
+  font-size: 10px;
+}
+.details h3 {
+  font-size: 15px;
 }
   section{
-  margin-left: 75px;
+  margin-left: 60px;
   }
 }
 
@@ -245,7 +259,10 @@ section{
   height: 150px;
 }
 .details p{
-  font-size: 7px;
+  font-size: 8.5px;
+}
+.details h3 {
+  font-size: 10px;
 }
   section{
   left: auto;
@@ -313,7 +330,6 @@ section{
 
 .details h3 {
   padding-bottom: 10px;
-  font-size: 21px;
   text-transform: uppercase;
   border-bottom: 1px solid #cccccc;
   text-align: center;

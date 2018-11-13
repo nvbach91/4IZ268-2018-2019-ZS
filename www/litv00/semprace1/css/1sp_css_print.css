@@ -2,11 +2,23 @@
 	display: none;
 }
 .details {
-  display: inline-block;
+  display: block;
   color: black;
 }
+.shape, .details{
+  width: 500px;
+  height: 100px;
+}
+.details p{
+  margin: 0px;
+}
+.details h3{
+  border-bottom: none;
+  text-align: left;
+}
 section{
-  margin-left: 85px;
+  margin-left: 0px;
+
   }
 .photo-tree{
   display: none;
@@ -15,7 +27,7 @@ section{
   margin-bottom: -120px;
 }
 .beginning_text{
-	margin-bottom: 650px;
+	margin-bottom: 750px;
   margin-right: 20px;
   font-size: 17px;
 }
@@ -31,4 +43,8 @@ section{
 }
 .slider-controls label{
   display: none;
+}
+.poster {
+  font-size: 15px;
+  padding-bottom: 10px;
 }
