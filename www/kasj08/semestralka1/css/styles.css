@@ -444,11 +444,15 @@ main {
 }
 
 @media print {
-    *, a {
+    * {
       background: white !important;
       color: black !important;
+      padding: 0 !important;
     }
-    header, footer, .foot-copy, .head, .navi, nav {
+    header, .head, .navi, nav, footer {
         display: none !important;
-    } 
-}   
+    }
+    .image {
+        height: auto !important;
+    }
+}
