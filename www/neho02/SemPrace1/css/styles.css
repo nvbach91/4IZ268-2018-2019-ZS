@@ -3,10 +3,15 @@ html {
    background-image: url(https://images5.alphacoders.com/647/thumb-1920-647596.jpg);
    background-size: cover;
    background-repeat: no-repeat;
+   position:relative; 
+   min-height:100%;
 }
 body{
   margin: 0;
+  font-family:'Open Sans', sans-serif;
+  height: 100%;
 }
+
 /*Header*/
 .topnav {
    background-color: #333;
@@ -15,7 +20,6 @@ body{
 
 /* Style the links inside the navigation bar */
 .topnav a {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
    float: left;
    color: #f2f2f2;
    text-align: center;
@@ -44,66 +48,72 @@ body{
 }
 /*Home page*/
 .H1Home {
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    padding: 10px;
    text-align: center;
-   font-size: 80px;
+   font-size: 70px;
    font-weight: normal;
-   cursor: pointer;
    overflow: hidden;
-   text-shadow: 0 0 rgb(0, 255, 21), 0 0 rgb(130, 97, 247), 0 0 rgb(1, 153, 255);
-   color: transparent;
-   transition: all 2s;
+   color: #00f85f;
+   min-height: 237px;
 }
-.H1Home:hover {
-   text-shadow: -450px 0 rgb(68, 0, 255), 450px 0 rgb(5, 154, 199), 0 0 rgb(6, 247, 174);
-}
+
 /*H1 at all pages*/
 h1 {
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    text-align: center;
    font-size: 50px;
    font-weight: inherit;
-   cursor: pointer;
-   text-shadow: -1px -1px rgba(0, 0, 0, 0.637), 0 1px 0 rgb(76, 0, 255);
    color: rgb(210, 206, 252);
    transition: all 1s;
 }
 h1:hover {
    color: rgb(126, 218, 241);
 }
+
+.home-headline { 
+  font-size:3.6vw; 
+}
+
+.home-text{
+  text-align: center;
+  font-size: 30px;
+  color: #4CAF50;
+}
+
 /*CV page*/
 .CV H2 {
    text-align: center;
-   color: #251357;
+   color: #afc2e6;
 }
 .CV H2:hover {
    color: rgba(6, 226, 255, 0.747);
 }
 .CVmain {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    font-size: 22px;
    text-align: center;
    color: rgba(255, 255, 255, 0.904);
+   padding-left: 10px;
+   padding-right: 10px; 
 }
 
 .rightimg {
-  float:right; 
+  text-align: center;
   margin: 0 7px 7px 7px;
   opacity: 0.8;
  }
-
+ .rightimg-2 {
+  max-width: 20%;
+  height: auto;
+ }
 
 /*Timetable page*/
 .table_dark {
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    font-size: 20px;
    width: 1310px;
    text-align: center;
    border-collapse: collapse;
    background: #252F48;
-   margin: 10px;
-   box-shadow: 0 0 15px #0267ff;
+   margin: auto;
+   position: relative;
 }
 
 .table_dark th {
@@ -133,7 +143,6 @@ h1:hover {
    position: center;
    z-index: 1;
    margin: 80px auto;
-   box-shadow: 0 0 15px #0267ff;
 }
 #navigation {
    list-style: none;
@@ -160,8 +169,16 @@ h1:hover {
    overflow: hidden;
    float: left;
 }
+
+.contact-text {
+  font-size:1.7vw;
+}
+
 /*Footer*/
 footer {
+   height: 80px;
+   bottom: 0;
+   position: absolute;
    opacity: 0.7;
    text-align: center;
    border-top: 5px solid;
@@ -196,13 +213,13 @@ footer {
    flex-direction: column;  
 }
 
-
 .box{
-  width:70%;
-  background-color: rgba(182, 188, 212, 0.527);
+  background-color: rgba(7, 25, 99, 0.527);
   margin-left: auto;
   margin-right: auto;
-  box-shadow:0 0 15px #331fe0;
+  position: relative;
+  width: 70%;
+  height: 100%;
 }
 
 .Empty-box1{
@@ -227,4 +244,22 @@ footer {
  .rightt {
   float:right;
   width:400px;
+ }
+
+ .copyright{
+   float: right;
+   color: rgb(141, 148, 170);
+   max-height: 53px;
+ }
+
+ .emptySocial{
+   float: left;
+   height: 53px;
+   width: 280px;
+ }
+
+ .content {
+  padding-bottom: 160px; 
+  width:100%;
+  height: 100%;
  }
