@@ -23,15 +23,16 @@ ul {
 }
 
 nav {
+    width: 100%;
     position: fixed;
-    background-color: rgba(254, 250, 238, 0.295);
+    background-color: rgba(254, 250, 238, 0.801);
     padding: 0 0 5px 0;
 }
 
 nav li {
     display: block;
     float: left;
-    border-left: solid 1.5px #2E2B26;
+    border-left: solid 1.5px #95803D;
     padding: 15px;
     margin-top: 5px;
 }
@@ -41,7 +42,7 @@ nav li:first-child {
 }
 
 nav li:hover a {
-    color: #FEFAEE;
+    color: #2E2B26;
     transition-duration: 0.6s;
 }
 
@@ -51,7 +52,7 @@ nav a {
     font-weight: 350;
     font-size: 16px;
     text-decoration: none;
-    color:#2E2B26;
+    color:rgb(150, 128, 55);
 }
 
 h1, h2 {
@@ -119,6 +120,10 @@ p {
     background-image: url(../image/pic2.jpg);
     background-size: cover;
     background-position: center;
+}
+
+.strip2 h1 {
+    padding-top: 100px;
 }
 
 .disc {
@@ -257,7 +262,10 @@ p {
         margin-bottom: 40px;
     }
     h1 {
-        padding: 30px 0;
+        padding: 50px 0 30px 0;
+    }
+    .strip2 h1 {
+        padding-top: 80px;
     }
 }
 @media screen and (max-width: 1280px) {
@@ -300,7 +308,10 @@ p {
     }
     h1 {
         font-size: 40px;
-        padding: 20px 0;
+        padding: 40px 0 20px 0;
+    }
+    .strip2 h1 {
+        padding-top: 60px;
     }
     .album {
         margin: 10px 20px 40px 20px;
@@ -320,25 +331,6 @@ p {
 }
 
 @media screen and (max-width: 960px) {
-    .pic {
-        min-height: 400px;
-    }
-    ul {
-        width: 120px;
-    }
-    nav li {
-        float: none;
-        padding: 8px;
-        border-left: none;
-        border-bottom: solid 1.5px #95803D; 
-        margin-top: 0;
-    }
-    nav li:last-child {
-        border-bottom: none;
-    }
-    nav a {
-        font-size: 14px;
-    }
     .history {
         font-size: 16px;
     }
@@ -363,6 +355,12 @@ p {
 }
 
 @media screen and (max-width: 800px) {
+    h1 {
+        padding-top: 60px;
+    }
+    .pic {
+        min-height: 450px;
+    }
     .history {
         width: 70%;
         margin: 0 25px; 
@@ -382,7 +380,7 @@ p {
 
 @media screen and (max-width: 640px) {
     .pic {
-        min-height: 300px;
+        min-height: 400px;
     }
     .logo {
         height: 100px;
@@ -402,28 +400,11 @@ p {
         min-height: 50px;
         background-image: none;
     }
-    ul {
-        width: 100%;
-    }
-    nav li {
-        margin-top: 5px;
-        float: left;
-        padding: 6px;
-        border-left: solid 1.5px #95803D;
-        border-bottom: none;
-    }
-    nav li:first-child {
-        border-left: none;
-    }
     nav a {
         font-size: 10px;
     }
-    nav li:hover a {
-        color: #1D1D1B;
-    }
     h1 {
         font-size: 25px;
-        padding: 15px;
     }
     h2 {
         font-size: 18px;
@@ -433,6 +414,9 @@ p {
         min-height: 400px;
         flex-direction: column;
         margin-bottom: 10px;
+    }
+    #H {
+        padding-top: 15px;
     }
     .logo {
         width: 100%;
