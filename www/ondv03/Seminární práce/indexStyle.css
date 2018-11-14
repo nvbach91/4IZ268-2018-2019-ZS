@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pavanam';
+}
+.upperPart {
+    width:  100%;
+    height: 100%;
+}
+.leftSideMenu {
+    background-image: url("leftSideMenuBackground.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    font-size: 1vw;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.nameBoxAndList {
+    width: 100%;
+    height: 100%;
+    padding-top: 10%;
+    text-align: center;
+    color: white;
+}
+.nameBoxAndList ul {
+    list-style-type: none;
+    margin-top: 35%;
+    padding: 0;
+}
+.nameBoxAndList ul li {
+    padding: 10px;
+}
+.logo {
+    width: 40%;
+    height: 20%;
+}
+a:link {
+    text-decoration: none;
+    color: white;
+}
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+a:hover {
+    font-size: 2vw;
+    color: white;
+}   
+.upperRightSide {
+    max-width: 80%;
+    height: auto;
+    margin-left: 20%;
+    background: url("uvodImage.jpg");
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+.container {
+    width: fit-content;
+    position: relative;
+    left: 50%;
+}
+.container .mandatory-01 {
+    height: 81%;
+}
+.nameBox {
+    max-width: fit-content;
+    height: auto;
+    opacity: 0.89;
+    font-size: 3vw;
+    padding: 10px;
+    color: white;
+}
+.professionBox {
+    max-width: fit-content;
+    height: auto;
+    font-size: 2vw;
+    color: white;
+    padding: 10px;
+}
+.smallImage {
+    max-width: 100%;
+    height: 200px;
+    background: url("uvodImageSmall.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+@media screen and (min-width: 601px){
+.bottomDescription {
+    width: 80%;
+    margin-left: 20%;
+}
+.leftSideTextBox {
+    width: 40%;
+    margin-left: 30%;
+}
+.rightSideTextBox {
+    flex: 5;
+}
+}
+@media screen and (max-width: 600px){
+    .bottomDescription {
+    width: 72%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25%;
+}
+.mandatory-02 {
+    flex: 1;
+}
+.leftSideTextBox {
+    flex: auto;
+}
+.rightSideTextBox {
+    flex: auto;
+}
+.smallImage {
+    display: none;
+}
+}
+.upper{
+    margin-left: 20%;
+    width: 50%;
+    height: 40%;
+    display: inline-block;
+}
+.lower {
+    margin-left: 20%;
+    display: inline-block;
+    vertical-align: top;
+}
+.lower p {
+    padding: 0;
+}
+.upper p {
+    padding: 0;
+}
+.leftSideTextBox {
+    text-align: justify;
+}
+.bottomDescription h1 {
+    color: #382926;
+}

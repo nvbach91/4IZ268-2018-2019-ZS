@@ -1,0 +1,254 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pavanam';
+}
+.upperPart {
+    width:  100%;
+    height: 100%;
+}
+.leftSideMenu {
+    width: 20%;
+    height: 100%;
+    background-image: url("leftSideMenuBackground.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    font-size: 1vw;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.nameBoxAndList {
+    width: 100%;
+    height: 100%;
+    padding-top: 10%;
+    text-align: center;
+    color: white;
+}
+.nameBoxAndList ul {
+    list-style-type: none;
+    margin-top: 35%;
+    padding: 0;
+}
+.nameBoxAndList ul li {
+    padding: 10px;
+}
+.logo {
+    width: 40%;
+    height: 20%;
+}
+a:link {
+    text-decoration: none;
+    color: white;
+}
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+a:hover {
+    font-size: 20px;
+}   
+.upperRightSide {
+    width: 80%;
+    height: 100%;
+    margin-left: 20%;
+}
+.contactBox {
+    width: 65%;
+    position: relative;
+    left: 18%;
+    top: 5%;
+    margin-right: 18%;
+    display: flex;
+    flex-direction: column;
+}
+.line-01 {
+    width: 100%;
+    margin-left: 0;
+}
+.contacts h2 {
+    text-align: end;
+    margin-bottom: 10%;
+    font-size: 2.6vw;
+    opacity: 0.5;
+    color: #382926;
+    font-style: italic;
+}
+.bottomPart {
+    width: 80%;
+    height: 100%;
+    margin-left: 20%;
+}
+.contactBox h1{
+    padding: 0;
+    margin: 0;
+    font-size: 3vw;
+}
+@media screen and (min-width: 601px){
+.phoneAndMail {
+    display: flex;
+    text-align: center;
+}
+.mandatory-01, .mandatory-02{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.phone, .mail {
+    flex: 5;
+    font-size: 2.5vw;
+    font-weight: bold;
+    color: #382926;
+}
+.phone p, .mail p {
+    font-size: 1.5vw;
+    font-weight: normal;
+    color: 5b3a56;
+}
+}
+@media screen and (max-width: 600px){
+.phoneAndMail {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.mandatory-01, .mandatory-02 {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mandatory-03 {
+    flex: 1;
+}
+.phone, .mail {
+    flex: 5;
+    font-size: 2.5vw;
+    font-weight: bold;
+    color: #382926;
+}
+.phone p, .mail p {
+    flex: 5;
+    font-size: 1.5vw;
+    font-weight: normal;
+    color: 5b3a56;
+}
+}
+@media screen and (min-width: 601px){
+.addressAndMap {
+    display: flex;
+    text-align: center;
+    margin-top: 10%;
+    color: #382926;
+}
+.addressAndMap .mandatory-01{
+    flex: 1;
+    margin-left: 20%;
+}
+.address {
+    flex: 1;
+    margin-right: 20%;
+    font-size: 2.5vw;
+    font-weight: bold;
+    text-align: center;
+}
+.address p {
+    font-weight: normal;
+    font-size: 1.5vw;
+    color: 5b3a56;
+}
+
+}
+@media screen and (max-width: 600px){
+.contacts h2 {
+    margin-top: 20%;
+}
+.addressAndMap {
+    display: flex;
+    flex-direction: column;
+    color: #382926;
+}
+.address {
+    font-size: 2.5vw;
+    font-weight: bold;
+    text-align: center;
+}
+.address p {
+    font-weight: normal;
+    font-size: 1.5vw;
+    color: 5b3a56;
+}
+.emailImage {
+    display: none;
+}
+.phoneImage {
+    display: none;
+}
+.addressImage {
+    display: none;
+}
+}
+.emailImage {
+    width: 5vw;
+    height: 5vw;
+    margin: 0;
+    background: url("black-back-closed-envelope-shape.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.phoneImage {
+    width: 5vw;
+    height: 5vw;
+    margin: 0;
+    background: url("mobile-phone.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.addressImage {
+    width: 5vw;
+    height: 5vw;
+    margin: 0;
+    background: url("map\ \(1\).png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.openHours {
+    width: 65%;
+    position: relative;
+    left: 18%;
+    top: 5%;
+    margin-right: 18%;
+    font-size: 1.5vw;
+}
+.openHours h1 {
+    padding: 0;
+    margin: 0;
+}
+.openingHoursFlexbox {
+    margin-top: 5%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.forColor {
+    color: #382926;
+}
+.openingHoursFlexbox p {
+    color: #382926;
+}
+.openingHoursList {
+    padding: 0;
+    margin: 0;
+    flex: 5;
+    list-style-type: none;
+}
+.openingHoursList li {
+    font-size: 1vw;
+}
+.openingHoursList li div {
+    display: flex;
+}
+.openingHoursList li div .mandatoryP {
+    flex: 5;
+}
