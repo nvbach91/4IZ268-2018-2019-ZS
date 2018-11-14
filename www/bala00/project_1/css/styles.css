@@ -40,6 +40,21 @@ nav li a.active {
     font-weight: 600;
 }
 
+nav .bottom {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+nav .bottom li {
+    border: 1px solid #C1403D;
+    border-radius: 3px;
+    margin: 10px;
+}
+
 nav a:link,
 a:link {
     color: #C1403D;
@@ -71,8 +86,6 @@ footer {
     margin: 30px;
 }
 
-/* nepodarilo se mi posunout vyhledavaci tlacitko uplne vpravo, 
-   bez inputu to fungovalo dobre)) */
 .search input[type=text] {
     width: 20px;
     border: none;
@@ -103,21 +116,38 @@ footer {
     height: 40px;
 }
 
+.content>p {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    margin-top: 60px;
+    line-height: 30px;
+    margin-bottom: -20px;
+}
+
 /* index.html */
 .intro {
+    display: flex;
+    flex-wrap: wrap;
     height: 90vh;
     width: 100%;
     margin: 0;
     padding: 0;
     display: table;
-    background: url(../images/prague1.jpg) center center;
+    background: url(../images/prague.jpg) center center;
     background-size: cover;
+
 }
 
 .intro .inner {
     display: table-cell;
     vertical-align: middle;
     width: 100%;
+    background-color: white;
+    opacity: .9;
 }
 
 .content {
@@ -269,7 +299,6 @@ footer {
 
 .flex-container>div {
     background-color: #C1403D;
-    /* opacity: .9; */
     width: 100%;
     height: 30vh;
     margin: 1px;
@@ -284,7 +313,7 @@ footer {
     margin: 0;
     padding: 0;
     display: table;
-    background: url(../images/prague1.jpg) center center;
+    background: url(../images/prague.jpg) center center;
     background-size: cover;
 }
 
@@ -292,6 +321,8 @@ footer {
     display: table-cell;
     vertical-align: middle;
     width: 100%;
+    background-color: white;
+    opacity: .9;
 }
 
 .content-contact h1 {
@@ -345,13 +376,6 @@ footer {
     outline: none;
 }
 
-#about-p {
-    width: 90vw;
-    margin: 0;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, -50%)
-}
 
 /* about.html */
 .about {
@@ -359,17 +383,117 @@ footer {
     font-weight: 100;
 }
 
-/* Media Queries */
+.about p {
+    line-height: 40px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.about>div:nth-child(1):hover {
+    background: url(../images/first.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: transparent;
+    transition: 0.4s;
+}
+
+.about>div:nth-child(2):hover {
+    background: url(../images/second.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: transparent;
+    transition: 0.4s;
+}
+
+.about>div:nth-child(3):hover {
+    background: url(../images/third.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: transparent;
+    transition: 0.4s;
+}
+
+.about>div:nth-child(4):hover {
+    background: url(../images/forth.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: transparent;
+    transition: 0.4s;
+}
+
+.content-p {
+    margin: 50px 10px 0 0;
+}
+
+/* map.html */
+#map {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 90vh;
+}
+
+iframe {
+    height: 80vh;
+    width: 85vw;
+    border-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#map p {
+    font-size: 10px;
+}
+
+/* Prague parts */
+.prague-parts>div {
+    background: white;
+    border-top: 1px solid #C1403D;
+    margin: 0;
+}
+
+.prague-parts>div:nth-child(3), .prague-parts>div:nth-child(4) {
+    border-bottom: 1px solid #C1403D;
+}
+
+.prague-parts p {
+    margin-top: 0;
+    line-height: 25px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+.prague-parts>div a {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+/* MEDIA QUERIES */
 @media only screen and (max-width: 480px) {
     body .content-contact {
         margin-bottom: 80%;
     }
 
-    body #about-p {
-        width: 90vw;
-        margin-top: 80px;
-        line-height: 30px;
-        margin-bottom: -40px;
+    body ul .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    body ul .sidenav li a {
+        text-align: center;
+        float: none;
     }
 }
 
@@ -395,11 +519,20 @@ footer {
         line-height: 35vh;
     }
 
-    body #about-p {
+    body .content>p {
         width: 90vw;
-        margin-top: 60px;
-        line-height: 30px;
-        margin-bottom: -20px;
+
+    }
+
+    body ul.sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    body ul.sidenav li a {
+        text-align: center;
+        float: none;
     }
 }
 
@@ -429,16 +562,31 @@ footer {
         line-height: 40vh;
     }
 
-    body #about-p {
+    body .content>p {
         width: 70vw;
-        margin-top: 70px;
+        margin-top: 50px;
         line-height: 30px;
-        margin-bottom: -20px;
+        margin-bottom: -10px;
     }
 
     body footer {
         font-size: 70%;
         margin: 40px;
+    }
+
+    body nav>ul {
+        display: flex;
+    }
+
+    body nav ul {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    body nav ul li a {
+        text-align: center;
+        float: none;
     }
 }
 
@@ -468,9 +616,9 @@ footer {
         line-height: 45vh;
     }
 
-    body #about-p {
+    body .content>p {
         width: 80vw;
-        margin-top: 50px;
+        margin-top: 30px;
         margin-bottom: 0;
         line-height: 30px;
     }
@@ -478,6 +626,14 @@ footer {
     body footer {
         font-size: 80%;
         margin: 50px;
+    }
+
+    body .content-p {
+        margin-bottom: 10px;
+    }
+
+    body #map p {
+        font-size: 80%;
     }
 }
 
@@ -517,16 +673,24 @@ footer {
         margin: 2px;
     }
 
-    body #about-p {
-        width: 60vw;
-        margin-top: 50px;
+    body .content>p {
+        width: 70vw;
+        margin-top: 30px;
         line-height: 30px;
-        margin-bottom: -10px;
+        margin-bottom: 10px;
     }
 
     body footer {
         font-size: 80%;
         margin: 50px;
+    }
+
+    body .content-p {
+        margin-bottom: 20px;
+    }
+
+    body #map p {
+        font-size: 80%;
     }
 }
 
@@ -568,16 +732,30 @@ footer {
         margin: 2px;
     }
 
-    body #about-p {
+    body .content>p {
         width: 60vw;
         margin-top: 20px;
         line-height: 30px;
-        margin-bottom: -5px;
+        margin-bottom: 15px;
         font-size: 110%;
     }
 
     body footer {
         font-size: 90%;
         margin: 60px;
+    }
+
+    body .content-p {
+        margin-bottom: 30px;
+    }
+
+    body #map p {
+        font-size: 90%;
+    }
+}
+
+@media print {
+    body {
+        background-color: white;
     }
 }

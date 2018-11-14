@@ -84,7 +84,7 @@ var num5 = isGreater(1 / 3, 2 / 3);
  */
 
 var thirteen = function () {
-    for (var i = 0; i < 730; i += 13) {
+    for (var i = 0; i <= 730; i += 13) {
         console.log(i);
     }
 }
