@@ -45,10 +45,10 @@ nav ul li a:hover:not(.active){
    color: #000;
    font-weight: bold;
 }
-/*.right{
+.right{
     background-color: #fff;
     width:50%;
-}*/
+}
 .left {
     background-color: darkgreen;
     width: 50%;
@@ -90,7 +90,7 @@ p {
 .info-1 {
     width: 90%;
     padding: 100px 0;
-    position: absolute;
+    position: right;
     float: left;
     padding: 100px;
 }
