@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.form-layout {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #eee;
+    padding: 10px 30px;
+}
+.form-row input, textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    border: none;
+}
+#text-input {
+    min-height: 150px;
+    text-align: left;
+}
+.form-row button {
+    border: none;
+    padding: 15px 20px;
+    background-color: cadetblue;
+    margin: 6px 0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.form-row button:hover{
+    background-color: rgb(74, 123, 124);
+}
+hr {
+    border-style: none;
+    border: 2px solid #eee;
+}
+#result {
+    text-align: center;
+    max-width: 600px;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 10px 30px;
+    margin: 0 auto;
+}
