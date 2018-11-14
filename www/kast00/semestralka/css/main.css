@@ -1,0 +1,171 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    color: black;
+}
+body {
+    margin: 0;
+}
+header {
+    padding: 20px 0px 20px 0px;
+}
+header img {
+    float: left;
+    height: 60px;
+}
+header nav {
+    float: right;
+    line-height: 60px;
+    color: black;
+}
+header nav a {
+    color: black;
+    text-decoration: none;
+}
+header .logoText h1 {
+    color: black;
+    height: 60px;
+    line-height: 60px;
+}
+.logoText {
+    float: left;
+    font-family: 'Oswald';
+}
+.logoText h1 {
+    color: white;
+    font-size: 40px;
+    font-weight: normal;
+    text-decoration: none;
+    letter-spacing: 0em;
+    line-height: 1em;
+    margin: 0;
+    padding-left: 15px;
+}
+.logoText p {
+    padding: 0px;
+    color: white;
+    margin: 0;
+}
+
+footer {
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 20px 0px;
+}
+.clear {
+    clear: both;
+}
+.left  {
+    float: left;
+    width: 60%;
+    padding: 0px 18px;
+    text-align: justify;
+}
+.right {
+    float: left;
+    width: 40%;
+}
+.right img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+#wrapper {
+    color: white;
+    text-align: center;
+}
+.container {
+padding: 20px 20px;
+max-width: 1024px;
+margin-right: auto;
+margin-left: auto;
+
+}
+.imgDesc {
+    font-size: 12px;
+    font-style: italic;
+}
+#hero {
+    background-image: url(../img/hero.jpg);
+    height: 400px;
+    margin: 0;
+    max-width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.heroTitle {
+    background-color: black;
+    color: white;
+    padding: 40px 0px;
+    height: 140px;
+    width: 280px;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    max-width: 1024px;
+}
+
+button {
+    background-color: #e7e7e7;
+    border: none;
+    color: black;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0px 0px 0px;
+    cursor: pointer;
+}
+.activeTab {
+    color: white;
+    background-color: black;
+}
+.placeholder {
+    text-align: center;
+    padding: 200px 10px;
+    border: 1px solid black;
+}
+.restaurant {
+    padding: 20px;
+}
+#author img {
+    width: 120px;
+    border-radius: 120px;
+}
+.scrollToTop {
+    display: none;
+    position: fixed;
+    /* width: 50px; */
+    /* height: 50px; */
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 80px;
+    bottom: 0px;
+    right: 0px;
+    padding: 0px 17px;
+    color: white;
+    margin: 20px;
+    font-size: 46px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#res2, #res3 {display: none;}
+
+@media screen and (max-width: 960px) {
+    nav {
+        float: left!important;}
+} 
+
+@media screen and (max-width: 768px) {
+    .left {
+        width: 100%;
+    }
+    .right {
+        width: 100%;
+    }
+} 
+
