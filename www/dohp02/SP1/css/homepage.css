@@ -349,12 +349,53 @@
   }
 
   .gallery {
-    width: auto;
-    height: 200px;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
   }
 
   .work {
-    width: auto;
-    height: 350px;
-    margin-left: 150px;
+    width: 80%;
+    height: auto;
+    margin-left: 100px;
+    float: left;
+  }
+
+  @media print {
+    h1 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 18px;
+      background: none;
+    }
+    h2 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 14px;
+      background: none;
+      page-break-after: avoid;
+    }
+    h3 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 12px;
+      background: none;
+      page-break-after: avoid;
+    }
+    p {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 10px;
+    }
+    body, article {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    @page {
+      margin: 2cm;
+    }
+    img {
+      max-width: 100%;
+      page-break-inside: avoid;
+    }
+    article {
+      page-break-before: always;
+    }
   }
