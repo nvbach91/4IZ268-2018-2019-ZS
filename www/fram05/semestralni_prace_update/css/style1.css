@@ -1,4 +1,4 @@
-@charset "utf-8";
+    @charset "utf-8";
 /* CSS Document */
 *{
 	padding: 0;
@@ -19,7 +19,6 @@ body{
     flex-direction: column;
     height: 100%;
     position: relative;
-    
 }
 .logo_index{
     margin: auto;
@@ -285,6 +284,9 @@ footer{
     .spa_wallpaper{
         display: none;
     }
+    .spa_article{
+        width: 100%;
+    }
     .img_footer{
         display: none;
     }
@@ -302,5 +304,10 @@ footer{
     }
     .video{
         display: none;
+    }
+    .div_contact{
+        width:100%;
+        margin: left;
+        font-size: 20px;
     }
 }
