@@ -1,0 +1,238 @@
+@media print {
+    nav {
+        display: none;
+    }
+
+}
+
+* {
+    font-size: 0.8rem;
+}
+
+#stats {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.Heading {
+    padding: 14px 16px;
+}
+
+.stats {
+    width:100%;
+    border: #DDD solid 3px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+
+
+.playerTable {
+    flex: 9;
+}
+
+#bestGoals, #bestAssist, #bestPasses, #bestSaves {
+    flex: 3;
+    padding-left: 16px;
+}
+
+.best {
+    min-height: 100px;
+    background: #eaeaea;
+    background-image: url(https://www.premierleague.com/resources/ver/i/bg-elements/stats-card.png);
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    position: relative;
+    border-bottom: 1px solid #e8e8e8;
+    float: left;
+}
+
+.best p {
+    padding: 1rem 1rem 5rem;
+    display: inline-block
+}
+
+.footballerImg {
+    height: 18vw;
+    position: absolute;
+    float: right;
+    bottom: 0;
+    right: 15px;
+}
+
+.playerTeam {
+    font-size: 0.75rem;
+}
+
+.playerNo {
+    color: #e90052;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.player {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: solid #DDD 1px;
+}
+
+.playerOrder {
+    color: #e90052;
+    padding: 0 8px;
+}
+
+.nameTeam {
+    flex: 4;
+}
+
+.playerPoints {
+    padding: 0 8px;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+/* PRESTUPY */
+
+#transfers {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+    margin: 0px auto;
+}
+
+
+.transferFromTo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 14px 0;
+}
+
+.transfer {
+    margin: 200px 0px;
+    min-height: 100px;
+    display: inline-block;
+    border: solid #DDD 1px;
+    text-align: center;
+    width: 20vw;
+}
+
+.mostExpensive {
+    display: inline-block;
+    text-align: center;
+    border: solid #DDD 1px;
+    height: 100%;
+    width: 20vw;
+}
+
+.playerImg {
+    height: 18vw;
+    display: inline-block;
+    bottom: 0;
+    right: 15px;
+    margin-bottom: 0px;
+}
+
+.transferInfo {
+    background-color: #eaeaea;
+}
+
+.teamFrom, .teamTo {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.teamFrom h4, .teamTo h4 {
+    margin-top: 0;
+}
+
+
+.transferInfo h4 {
+    font-size: 1.21rem;
+    margin-bottom: 0px;
+}
+
+.price h4 {
+    margin-top: 0px;
+}
+
+.logo {
+    background-color: #FFF;
+    height: 120px;
+    width: 120px;
+    border-radius: 300px;
+}
+
+.juventus {
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/juventus.png);
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.manutd{
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/manutd.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.liverpool{
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/liverpool.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.barcelona{
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/barcelona.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tottenham{
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/tottenham.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.real{
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/real.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.transfer .teamLogo, .mostExpensive .teamLogo {
+    max-width: 30px;
+}
