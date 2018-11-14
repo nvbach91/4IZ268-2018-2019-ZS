@@ -44,7 +44,6 @@ body{
     font-weight: 2900;
     font-size: 1.5em;
     font-weight: bold;
-    
 }
 li {
     padding: 10px;
@@ -98,5 +97,10 @@ footer{
     ul li a:hover{
         border-bottom: none;
         text-decoration: none;
+    }
+}
+@media print{
+    .menu{
+        display: none;
     }
 }
