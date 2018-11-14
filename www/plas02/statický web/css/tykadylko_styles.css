@@ -1,0 +1,834 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-wrap: break-word;
+}
+
+a.button {
+    border: none;
+    padding: 10px;
+    width: 180px;
+    margin: 0 auto;
+    background-color: #4bcabf;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;
+
+}
+
+a.button:hover {
+    background-color: #246466;
+}
+a.button:active {
+    background-color: #58949e;
+}
+
+.active, .nav:hover {
+    text-decoration: underline;
+  }
+
+.application{
+    font-size: 20px;
+    text-transform: uppercase;
+	max-width: 600px;
+	margin: 10px auto;
+	padding: 16px;
+	background: rgba(253, 253, 253, 0.671); ;
+}
+
+.application input[type="text"],
+.application input[type="email"],
+.application input[type="number"],
+.application textarea,
+
+.application select {
+    font-size: 20px;
+    text-transform: uppercase;
+	width: 100%;
+	background: #fff;
+	margin-bottom: 4%;
+	border: 1px solid #ccc;
+	padding: 3%;
+	color: #555;
+}
+
+.application input[type="text"]:focus,
+.application input[type="email"]:focus,
+.application input[type="number"]:focus,
+.application textarea:focus,
+.application select:focus
+{
+	box-shadow: 0 0 5px #43D1AF;
+	padding: 3%;
+	border: 1px solid #43D1AF;
+}
+
+.application input[type="submit"],
+.application input[type="button"]{
+
+	width: 100%;
+	padding: 3%;
+	background: #43D1AF;
+	border-bottom: 2px solid #30C29E;
+	color: #fff;
+}
+.application input[type="submit"]:hover,
+.application input[type="button"]:hover{
+	background: #2EBC99;
+}
+
+#as {
+    background-color:rgba(253, 253, 253, 0.671);  
+    width:70%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    padding:0px 20px 15px 20px;
+    border: 5px solid rgb(22, 212, 165);
+    color:black;
+    font-size: 24px;
+}
+
+.block {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+body {
+    background-image: url(../obr/background.jpg);
+    
+    background-size: cover;
+}
+
+#comp {
+    background-color:rgba(253, 253, 253, 0.671);  
+    width:70%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    padding:0px 20px 15px 20px;
+    border: 5px solid rgb(22, 212, 165);
+    color:black;
+    font-size: 24px;
+}
+
+#email {
+    width: 30px;
+    height: 30px;
+}
+
+.emails {
+    padding: 20px;
+    margin: 50px;
+    margin-left: 25px;
+    width: 40%;
+}
+
+.emails a {
+
+    color: rgb(11, 133, 102);
+}
+
+.events {
+    display: inline-flex;
+}
+
+.facebook {
+
+    width: 50%;
+    height: 500px;
+    border: none;
+    overflow:hidden;
+
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    padding: 20px 20px;
+    background-color: rgba(253, 253, 253, 0.767);
+    font-size: 16px;
+    text-align: center;
+}
+
+#hs {
+    background-color:rgba(253, 253, 253, 0.671);  
+    width:70%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    padding:0px 20px 15px 20px;
+    border: 5px solid rgb(22, 212, 165);
+    color:black;
+    font-size: 24px;
+}
+
+img {
+    height: 450px;
+    width: 85%; 
+}
+
+.imgpr {
+    height: 400px;
+    width: 100%; 
+    margin: 5px 0px;
+
+}
+
+#ind {
+    background-color:rgba(253, 253, 253, 0.671);  
+    width:70%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    padding:0px 20px 15px 20px;
+    border: 5px solid rgb(22, 212, 165);
+    color:black;
+    font-size: 24px;
+}
+
+.intext {
+    color: white;
+    margin-top: 70px;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.intext p {
+    font-size: 20px;
+}
+
+#list {
+    text-align: left;
+    color: black;
+}
+
+.logo {
+    width: 45px;
+    height: 50px;
+    padding: 10px;
+    margin: 15px 0 10px 10px;
+    background-image: url(../obr/logo.jpg);
+    background-position: center;
+    background-size: cover;
+    float: left;
+}
+
+.main_body {
+    background-color:rgba(253, 253, 253, 0.671);  
+    width:70%;
+    height: auto;
+    margin: 0 auto;
+    padding:15px 20px 15px 20px;
+    border: 5px solid rgb(22, 212, 165);
+    color:black;
+    font-size: 24px;
+    text-align: center;
+}
+
+.main_body h2 {
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.main_body h3 {
+    font-size: 30px;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.main_body li {
+    margin-bottom: 5px; 
+}
+
+#main_page {
+    float: left;
+}
+
+.map {
+    width: 90%;
+    height: 150px;
+    overflow:hidden;
+    resize: both;
+}
+
+#mec {
+    background-color:rgba(253, 253, 253, 0.671);  
+    width:70%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    padding:0px 20px 15px 20px;
+    border: 5px solid rgb(22, 212, 165);
+    color:black;
+    font-size: 24px;
+}
+
+.mini_nav {
+    display: flex;
+    margin: 0 5px 10px 5px;
+}
+
+nav {
+    overflow: hidden;
+    text-align: center; 
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-size: 25px;
+    background-color: rgba(253, 253, 253, 0.767);  
+    
+}
+
+nav li{
+    display: block;
+    float: right;
+    padding: 0 10px 15px 15px;
+    color: black;
+    margin: 5px 0 10px 0;
+}
+
+nav li:hover a {
+    color: rgb(22, 212, 165);
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+#phone {
+    width: 30px;
+    height: 30px;
+}
+
+.phones {
+    padding: 20px;
+    margin: 50px;
+    margin-right: 25px;
+    width: 40%;
+}
+
+.poster {
+    color: black;
+    margin: 50px 150px;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    background-color: rgba(146, 146, 146, 0.288);
+    font-family: serif;
+    font-size: 32px;
+    border: 5px solid black; 
+}
+
+.products {
+    padding: 50px 0;
+    list-style: none;
+}
+.product1 {
+    float: left;
+    width: 20%;
+    height: 250px;
+    padding: 15px;
+    margin: 10px;
+    margin-left: 250px;
+    text-align: center;
+    background-color: rgba(253, 253, 253, 0.671);  
+}
+.product2 {
+    float: left;
+    width: 20%;
+    height: 250px;
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    background-color: rgba(253, 253, 253, 0.671);  
+}
+
+.product3 {
+    float: left;
+    width: 20%;
+    height: 250px;
+    padding: 10px;
+    margin: 15px;
+    margin-right: 200px;
+    text-align: center;
+    background-color: rgba(253, 253, 253, 0.671);  
+}
+
+.product4 {
+    float: left;
+    width: 20%;
+    height:250px;
+    padding: 15px;
+    margin: 15px;
+    margin-left: 400px;
+    text-align: center;
+    background-color: rgba(253, 253, 253, 0.671);  
+}
+
+.product5 {
+    float: left;
+    width: 20%;
+    height: 250px;
+    padding: 15px;
+    margin: 15px;
+    margin-right: 350px;
+    text-align: center;
+    background-color: rgba(253, 253, 253, 0.671);  
+}
+
+.product h2 {
+    padding: 10px;
+}
+
+.resume {
+    float: right;
+    width: 70%;
+    height: auto;
+    padding: 5px;
+    border: 5px solid black;
+    background-color: rgba(253, 253, 253, 0.671);  
+    text-align: left;
+    font-size: 20px;
+}
+
+.sleepover {
+    background-image: url(../obr/christmas.jpg);
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    border: 5px dotted black;
+    box-shadow: 0 0 10px #000;
+    background-position: center;
+    background-size: cover;
+    margin: 0 100px 50px 50px;
+    
+}
+
+.weekend {
+    background-image: url(../obr/week.jpg);
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    border: 5px dotted black;
+    box-shadow: 0 0 10px #000;
+    background-position: center;
+    background-size: cover;
+    margin: 0 50px 50px 150px;
+    
+}
+
+.worker {
+    width:80%;
+    height:500px;
+    margin: 10px auto 20px auto;
+    padding:15px 20px 15px 20px;
+    display: table;
+}
+
+.workers_pictures {
+    width: 200px;
+    height: 250px;
+    float: left;
+    margin-left: 5%;
+    margin-top: 70px;
+    border: 3px solid black;
+}
+
+.who {
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: left;
+    margin: 5px 0 5px 2%;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 5px;
+}
+
+@media print {
+    * {
+        font-size: 12px;
+    }
+    
+    #as {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+        border: none;
+    }
+    
+    a.button {
+        visibility: hidden;
+    }
+
+    #comp {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+        border: none;
+    }
+
+    .facebook {
+        width: 0;
+        height: 0;
+    }
+
+    #hs {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+        border: none;
+    }
+    
+    .intext {
+        color:black;
+    }
+    img {
+        width: 45%;
+        height: 45%;
+    }
+
+    .imgpr {
+        width: 40%;
+        height: 40%;
+        margin: 0 30%;
+    }
+
+    #ind {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+        border: none;
+    }
+
+    .main_body {
+        width: auto;
+        padding: unset;
+        margin: auto;
+        height: auto;
+        border: none;
+    }
+
+    #mec {
+        padding: unset;
+        margin: auto;
+        height: auto;
+        width: auto;
+        border: none;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .poster {
+        margin: 0;
+        padding: unset;
+        border: none;
+    }
+
+    .poster h1 {
+        font-size: 40px;
+    }
+
+    .products {
+        display: none;
+        height: 400px;
+
+    }
+
+    .resume {
+        width: 80%;
+    }
+
+    .sleepover {
+        background-color: white;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .weekend {
+        background-color: white;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    } 
+
+    .worker {
+        margin:0px 50px;
+        padding: 5px;
+    }
+
+    .workers_pictures {
+        margin-top: 15px;
+        margin: 0;
+        width: 100px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 1450px)
+{
+    .events {
+        display: block;
+    }
+
+    .photo {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .products {
+        display: block;
+    }
+
+    .product1 {
+
+        width:40%;
+        height:200px;
+        margin:50px;
+        margin: 0px 30% 10px 30%;
+       
+    }
+    .product2 {
+
+        width:40%;
+        height:200px;
+        margin:50px;
+        margin: 0px 30% 10px 30%;
+    }
+    .product3 {
+
+        width:40%;
+        height:200px;
+        margin:50px;
+        margin: 0px 30% 10px 30%;
+    }
+    .product4 {
+        
+        width:40%;
+        height:200px;
+        margin:50px;
+        margin: 0px 30% 10px 30%;
+    }
+    .product5 {
+        
+        width:40%;
+        height:200px;
+        margin:50px;
+        margin: 0px 30% 10px 30%;
+    }
+
+    .resume {
+        width: 100%;
+        height: auto;
+        float: none;
+    } 
+
+    .sleepover {
+        margin: 0 25%;
+    }
+
+    .weekend {
+        margin: 0 25% 50px 25%;
+    }
+
+    .who {
+        border-top: none;
+        border-bottom: none;
+        text-align: center;
+        margin-left: unset;
+        margin-bottom: unset;
+    }
+
+    .worker {
+        width: 85%;
+        height: auto;
+    }
+   
+    .workers_pictures {
+        float: none;
+        margin: unset;
+        display: unset;
+        text-align: center;
+        padding: unset;
+    }
+}
+
+@media screen and (max-width: 1026px)
+{
+    #as {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+    }
+
+    .block {
+        display: block;
+        flex-direction: unset;
+        align-items: unset;
+        
+    }
+
+    #comp {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+    }
+
+    .emails{
+        width: 70%;
+        margin: 0 15%;
+        text-align: center;
+        overflow-wrap: break-word;
+    }
+
+    #hs {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+    }
+
+    img {
+        width: 45%;
+        height: 45%;
+    }
+
+    .imgpr {
+        width: 100%;
+        height: 80%;
+    }
+
+    #ind {
+        padding: unset;
+        margin: 15px auto;
+        height: auto;
+        width: auto;
+    }
+
+    .intext {
+        color: white;
+        margin-top: 70px;
+        text-align: center;
+    
+    }
+
+    .intext h2{
+        font-size: 14px;
+    }
+    
+    .intext p {
+        font-size: 12px;
+    }
+
+    .logo {
+        margin: 10px 47%;
+    }
+
+    .main_body {
+        padding: unset;
+        margin: auto;
+        height: auto;
+        width: auto;
+    } 
+
+    #main_page {
+        padding: 2px;
+        text-align: center;
+        width: 100%;
+        margin: 5px;
+    }
+
+    #mec {
+        padding: unset;
+        margin: auto;
+        height: auto;
+        width: auto;
+    }
+
+    nav {
+        padding: 0;
+        width: 100%;
+    }
+
+    nav li {
+        float: none;
+        padding: 5px;
+        width: 100%;
+        margin: 5px;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .phones{
+        width: 70%;
+        margin: 0 15%;
+        text-align: center;
+    }
+
+    .poster {
+        margin: auto;
+    }
+
+    .products {
+        margin: 0;
+        padding: unset;
+        width: 100%;
+    }
+
+    .product1 {
+        width: 80%;
+        margin: 5px 10%;
+        
+    }
+
+    .product2 {
+        width: 80%;
+        margin: 5px 10%;
+    }
+
+    .product3 {
+        width: 80%;
+        margin: 5px 10%;
+    }
+
+    .product4 {
+        width: 80%;
+        margin: 5px 10%;
+    }
+
+    .product5 {
+        width: 80%;
+        margin: 5px 10%;
+    }
+
+    .sleepover {
+        width: 350px;
+        height: 450px;
+        font-size: 12px;
+        margin: auto;
+    }
+
+    .weekend {
+        width: 350px;
+        height: 450px;
+        font-size: 12px;
+        margin: 10px auto;
+    }    
+}
