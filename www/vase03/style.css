@@ -1,0 +1,479 @@
+/** {
+	 outline: 1px solid red;
+}*/
+
+a {
+	text-decoration: none;
+	color: #374659;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+header {
+	background: url(img/top.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	height: 38vw;
+}
+
+.menu {
+	background: #ffffff;
+	width: 100%;
+	height: 210px;
+	background-size: cover;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	box-shadow: 0px 0px 56px -25px rgba(0,0,0,1);
+}
+
+.menu h1 {
+	color: #374659;
+	font-size: 4em;
+	font-weight: 900;
+	letter-spacing: 10px;
+	margin-bottom: 20px;
+}
+
+.redO {
+	color: red;
+}
+
+.Umenu { /*PICTURE UNDER MENU*/
+	background: url(img/UM.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	width: auto;
+	height: 30vw;
+}
+
+.divider { /*FAT LINE BETWEEN ARTICLES*/
+	background: url(img/arches.png);
+	width: 100%;
+	height: 125px;
+	text-align: center;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	-webkit-animation: move-divider 25s infinite linear;
+}
+
+.divider h2 { /*FAT LINES TEXT STYLE*/
+	color: #374659;
+	font-size: 2.5em;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding-top: 5px;
+}
+
+.about { /*BLOCK ABOUT US*/
+	position: relative;
+	background-color: #f9fafc;
+	padding-bottom: 50px;
+	overflow: auto;
+}
+
+.about img { /*BACKGROUND PICTURES FOR NICE BLURE EFFECT*/
+	vertical-align: top;
+	width: 100%;
+	transition: .5s;
+}
+
+.about:hover img{ /*DO BLUR WHEN CURSOR IS ON BLOCK*/
+	filter: blur(15px);
+}
+
+.text { /*TEXT-BLOCK INTO “ABOUT US”*/
+	position: absolute;
+	box-sizing: content-box;
+	text-align: justify;
+	margin-left: 50px;
+	margin-right: 50px;
+	top: 5%;
+}
+
+.text h3 {
+	text-align: center;
+	color: #374659;
+	font-size: 3em;
+	font-weight: lighter;
+}
+
+.text p { /*TEXT-BLOCK TEXT STYLE*/
+	color: #374659;
+	font-size: 1.7em;
+	font-weight: normal;
+	letter-spacing: 3px;
+	transition: .5s;
+	line-height: 1.5;
+	transform: scale(0);
+	opacity: 0;
+}
+
+.about:hover .text p { /*DO TEXT ANIMATION WHEN CURSOR IS ON BLOCK*/
+	transform: scale(1);
+	opacity: 1;
+} 
+
+.GGizmo { /*GREY SHOP BLOCK*/
+	background-color: #eaeaea;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 50px;
+}
+
+.GGizmo img { /*DRONE PICTURE IN GREY BLOCK*/
+	padding-top: 20px;
+	max-width: 100%;
+}
+
+.WGizmo { /*WHITE SHOP BLOCK*/
+	background-color: white;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 50px;
+}
+
+.WGizmo img { /*DRONE PICTURE IN WHITE BLOCK*/
+	padding-top: 20px;
+	max-width: 100%;
+}
+
+.dName { /*DRONE NAME STYLE*/
+	color: #374659;
+	font-size: 5em;
+	font-weight: normal;
+	letter-spacing: 10px;
+	margin-bottom: -10px;
+}
+
+.dDesc { /*DRONE DESCRIPTION STYLE*/
+	color: #374659;
+	font-size: 2em;
+	font-weight: normal;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	margin-bottom: 50px;
+}
+
+.dRef { /*REFURBISHED OFFER STYLE*/
+	color: #374659;
+	font-size: 1.5em;
+	font-weight: bold;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	margin-top: 50px;
+	margin-bottom: -10px;
+}
+
+.oldPrice {
+	text-decoration: line-through;
+}
+
+.newPrice {
+	font-weight: lighter;
+	font-size: 150%;
+	color: red;
+}
+
+.SUP { /*SUPPORT BLOCK*/
+	position: relative;
+	box-sizing: content-box;
+	background: url(img/dolphin.jpg);
+	text-align: center;
+	width: 100%;
+	height: 721px;
+	background-size: cover;
+}
+
+.boxSupp { /*ADDITIONAL BLOCK FOR DARK EFFECT*/
+	color: #eaeaea;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .5);
+	overflow: auto;
+}
+
+.topSupp { /*TOP STRING*/
+	margin: 0;
+	padding-top: 80px;
+	font-size: 3em;
+	font-weight: normal;
+	letter-spacing: 3px;
+	padding-bottom: 100px;
+}
+
+.bottomSupp { /*TEXT STYLING IN SUPPORT BLOCK*/
+	font-size: 1.5em;
+	letter-spacing: 2px;
+	font-weight: normal;
+}
+
+.Contacts { /*BLOCK FOR PHONE NUMBERS*/
+	background-color: #eaeaea;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.boxContacts { /*ADDITIONAL BLOCK FOR NICE ALIGN*/
+	box-sizing: border-box;
+	padding-left: 37%;
+	padding-right: 30%;
+	width: 100%;
+	height: 100%;
+	text-align: left;
+	margin-top: 100px;
+}
+
+.boxContacts img { /*FLAG PICTURE SIZE */
+	width: 81px;
+}
+
+.CCountry { /*STYLING FOR COUNTRY NAME*/
+	color: #374659;
+	font-weight: bold;
+	font-size: 4em;
+	font-weight: normal;
+	letter-spacing: 2px;
+	margin-bottom: -50px;
+}
+
+.CNumber { /*STYLING FOR PHONE NUMBER*/
+	color: #374659;
+	font-weight: 100;
+	font-size: 3em;
+	font-weight: normal;
+	letter-spacing: 5px;
+	margin-bottom: 100px;
+}
+
+footer {
+	background-color: #374659;
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+footer p {
+	color: white;
+	font-size: 0.9em;
+	text-transform: uppercase;
+	font-weight: 100;
+	letter-spacing: 5px;
+}
+
+a.button { /*SHOP BUTTON*/
+	color: white;
+	text-align: justify;
+	user-select: none;
+	background: rgb(55, 70, 89);
+	padding: .7em 1.5em;
+	outline: none;
+	transition: 1s;
+}
+
+a.button:hover { /*ANIMATION WHEN PRESS*/
+	background: red;
+}
+
+a.button:active {
+	background: rgb(0, 100, 150);
+}
+
+nav {
+	z-index:9999;
+	background-color: white;
+}
+	
+nav ul {
+    /*margin-left: -13px;*/
+    padding: 0;
+    text-transform: uppercase;
+    color: #374659;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    padding-right: 3px;
+}
+
+nav li:not(:first-child):before {
+    content: " | ";
+}
+
+@-webkit-keyframes move-divider {
+	0% {background-position: 0 0}
+	100% {background-position: 0 -200px}
+}
+
+.sticky { /*STICKY MENU*/
+	position: fixed;
+	top: 0;
+	width: 100%;
+	transition: 10s;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+							/*VERSION FOR SMARTPHONES*/
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 765px) {
+	
+	header, .Umenu, .divider {
+		display: none;
+	}
+
+	.divider {
+		opacity: 0;
+	}
+
+	.text {
+		top: 5%;
+	}
+
+	.boxContacts {
+		padding-left: 27%;
+		padding-right: 10%;
+	}
+
+	.about {
+		height: 1800px;
+	}
+
+	.text p {
+		font-size: 2.7em;
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	.about img {
+		filter: blur(15px);
+	}
+
+
+	.menu {
+		height: 300px;
+	}
+
+	.menu h1 {
+		font-size: 6em;
+	}
+
+	nav ul {
+		font-size: 2em;
+	}
+}
+
+							/*VERSION FOR TABLETS*/
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+	.about {
+		height: 900px;
+	}
+
+	.boxContacts {
+		padding-left: 27%;
+		padding-right: 10%;
+	}
+
+	header {
+		background-size: 100%;
+		background-attachment: scroll;
+	}
+
+	.Umenu {
+		background-size: 100%;
+		background-attachment: scroll;
+	}
+	
+	.text p {
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	.about img {
+		filter: blur(15px);
+	}
+}
+
+							/*VERSION FOR PRINTERS*/
+
+@media print {
+	header, footer, .Umenu, .divider, .about img, nav ul, .text h3, a.button, .boxContacts img  {
+		display: none;
+	}
+
+	.about {
+		background-color: #ffffff;
+	}
+
+	.GGizmo, .WGizmo {
+		height: 976px;
+	}
+
+	.SUP {
+		background-image: none;
+		height: 450px;
+	}
+
+	.boxSupp {
+		background-color: #ffffff;
+		color: #000000;
+	}
+
+	.text {
+		top: 0%;
+	}
+
+	.Contacts {
+		background-color: #ffffff;
+	}
+
+	.boxContacts {
+		padding-left: 37%;
+		padding-right: 10%;
+		margin-top: 0px;
+	}
+
+	.CCountry {
+		font-size: 1.5em;
+		letter-spacing: 2px;
+		margin-bottom: -20px;
+		margin-top: 10px;
+	}
+
+	.CNumber {
+		font-size: 1em;
+		margin-bottom: 1px;
+		letter-spacing: 2px;
+	}
+
+	.about {
+		height: 800px;
+	}
+
+	.text p {
+		font-size: 1.5em;
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	.menu {
+		height: auto;
+	}
+
+	.menu h1 {
+		font-size: 5em;
+	}
+}
