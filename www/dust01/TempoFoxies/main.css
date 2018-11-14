@@ -446,7 +446,7 @@ div.teams-list img {
 }
 
 @media screen and (max-width: 1280px) {
-    .news-contentdiv {
+    .news-content div {
         width: 300px;
     }
 
@@ -506,7 +506,7 @@ div.teams-list img {
 
 @media screen and (max-width: 1024px) {
     .news-content div {
-        width: 300px;
+        width: 250px;
     }
 
     #news img {
@@ -859,14 +859,14 @@ div.teams-list img {
     h1 {
         text-align: center;
         color: black;
-        text-shadow: 2px 2px black;
+        text-shadow: 2px 2px white;
         font-size: 2.5em;
     }
     
     h2 {
         text-align: center;
         color: black;
-        text-shadow: 2px 2px black;
+        text-shadow: 2px 2px white;
         font-size: 2em;
     }
 
@@ -923,6 +923,41 @@ div.teams-list img {
 
     #contacts div {
         width: auto;
+    }
+    /*tymy*/
+    .img-teams{
+        filter:grayscale();
+    }
+    #containerT h3 {
+        color: black;
+        text-shadow: 2px 2px white;
+    }
+    .boxTrains{
+        border: 5px solid black;
+    }
+/*historie*/
+    .h2-history {
+        color: black;
+        text-shadow: 2px 2px white;
+    }
+/*soutez*/
+    .tableTitle {
+        color: black;
+        text-shadow: 2px 2px white;
+    }
+    .tempo-row {
+        background-color: white;
+        color: black;
+    }
+/*kontakty*/
+    #contacts h3 {
+        color: black;
+        text-shadow: 1px 1px white;
+        text-align: center;
+    }
+    #contact-table th {
+        background-color: white;
+        color: black;
     }
 
 
