@@ -18,6 +18,11 @@
 */
 
 /* common CSS */
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
 nav {
     display: flex;
     color: #C1403D;
@@ -377,7 +382,7 @@ footer {
 }
 
 
-/* about.html */
+/* about.html 
 .about {
     color: white;
     font-weight: 100;
@@ -391,14 +396,14 @@ footer {
     margin-right: -50%;
     transform: translate(-50%, -50%)
 }
-
+*/
 .about>div:nth-child(1):hover {
     background: url(../images/first.png);
     background-size: auto 100%;
     background-position: center;
     background-repeat: no-repeat;
     color: transparent;
-    transition: 0.4s;
+    transition: 0.2s;
 }
 
 .about>div:nth-child(2):hover {
@@ -407,7 +412,7 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
     color: transparent;
-    transition: 0.4s;
+    transition: 0.2s;
 }
 
 .about>div:nth-child(3):hover {
@@ -416,7 +421,7 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
     color: transparent;
-    transition: 0.4s;
+    transition: 0.2s;
 }
 
 .about>div:nth-child(4):hover {
@@ -425,7 +430,7 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
     color: transparent;
-    transition: 0.4s;
+    transition: 0.2s;
 }
 
 .content-p {
@@ -459,7 +464,8 @@ iframe {
     margin: 0;
 }
 
-.prague-parts>div:nth-child(3), .prague-parts>div:nth-child(4) {
+.prague-parts>div:nth-child(3),
+.prague-parts>div:nth-child(4) {
     border-bottom: 1px solid #C1403D;
 }
 
@@ -755,7 +761,10 @@ iframe {
 }
 
 @media print {
-    body {
+    * {
         background-color: white;
+    }
+    nav, footer {
+        display: none;
     }
 }
