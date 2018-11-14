@@ -447,7 +447,7 @@ footer {
 
 iframe {
     height: 80vh;
-    width: 85vw;
+    width: 90vw;
     border-style: none;
     margin: 0;
     padding: 0;
@@ -764,7 +764,9 @@ iframe {
     * {
         background-color: white;
     }
-    nav, footer {
+
+    nav,
+    footer {
         display: none;
     }
 }
