@@ -67,7 +67,6 @@ h3 {
 .menu-item a {
     font-family: "coco", sans-serif;
     padding: 20px;
-    background-color: none;
     color:white;
     text-transform: uppercase;
     transition: 0.3s;
@@ -75,7 +74,13 @@ h3 {
 }
 
 .menu-item li a:hover{
-    color:black;
+    color:lightgray;
+}
+
+.menu-item  li a#current {
+    color:lightpink;
+    border: 2px solid white;
+    padding:15px;
 }
 
 .slider {
@@ -211,6 +216,10 @@ h3 {
     transition: 0.3s;
     background-color: #d1842c;
     color: white;
+}
+
+.button:hover {
+    background-color: #a56823;
 }
 
 .button-box {
@@ -404,6 +413,28 @@ i:hover {
     background-size: cover;
 }
 
+.price-container-provence {
+    display: flex;
+    background-image:  url("https://oskintravel.com/wp-content/uploads/2018/10/provence-00009.jpg");
+    margin: 0;
+    padding: 0;
+    height: 600px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.price-container-tuscany {
+    display: flex;
+    background-image:  url("https://oskintravel.com/wp-content/uploads/Tuscany/tuscany-00013.jpg");
+    margin: 0;
+    padding: 0;
+    height: 600px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .price-box {
     display: block; 
     margin-left: 10%;
@@ -508,3 +539,105 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color:darkgreen;
 }
+
+#contact-header {
+    color: black !important;
+}
+
+@media screen and (max-width: 600px) {
+    .slider-text-date {
+        font-size: 20px;
+    }
+
+    .slider-iceland .slider-head-first {
+        font-size: 25px;
+        padding-bottom: 15px;
+    }
+
+    .slider-iceland .slider-head-second {
+        font-size: 25px;
+        padding-bottom: 15px;
+    }
+    
+    .slider-tuscany .slider-head-first {
+        font-size: 25px;
+        padding-bottom: 15px;
+    }
+
+    .slider-tuscany .slider-head-second {
+        font-size: 25px;
+        padding-bottom: 15px;
+    }
+
+    .slider-provence .slider-head-first {
+        font-size: 25px;
+        padding-bottom: 15px;
+    }
+
+    .slider-provence .slider-head-second {
+        font-size: 25px;
+        padding-bottom: 15px;
+    }
+
+    .menu-item {
+        top:5%;
+        left:9%;
+    }
+    .menu-item a {
+        font-size: 10px;
+        line-height: 1px;
+        padding:5px;
+        margin:10px;
+    }
+    .logo {
+        margin-top: 0px;
+        margin-left: 40%;
+    }
+    .logo img {
+        max-width: 150px;
+        left: 50%;
+    }    
+    .space {
+        margin:70px;
+    }
+
+    .slider-head-first, .slider-head-second {
+        font-size:15px;
+    }
+    .box-left img, .box-right img{
+        display: block;
+        width:90%;
+    }
+    .text-right, .text-left {
+        display: block;
+    }
+    input[type=text], select, textarea {
+        width:100px;
+    }
+
+    .info-box {
+        margin-top: 40px;
+        display: block;
+    }
+    .row {
+        display: block;
+        width:50%;
+    }
+    .column {
+        display: block;
+        text-align: center;
+    }
+
+    .button-box {
+        display: block;
+        margin-top:20px;
+    }
+    .button-2 {
+    left: 75%;
+    }
+  }
+
+@media print {
+    p {font-family:georgia, times, serif;}
+}
+
