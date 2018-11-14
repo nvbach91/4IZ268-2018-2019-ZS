@@ -33,13 +33,13 @@ main {
     list-style: none;
     padding-right: 10px;
     padding-left: 10px;
+    text-align: center;
 }
 
 nav li {
     display: block;
     float: right;
-    margin-right: 30px;
-    padding: 20px 5px;
+    padding: 20px 20px;
     text-transform: uppercase;
     margin-left: auto;
 }
@@ -86,7 +86,7 @@ h2 {
     float: left;
     width: 50%;
     padding: 20px;
-    text-align: justify;
+    text-align: left;
     padding-right: 25px;
 }
 
@@ -106,16 +106,23 @@ h2 {
     text-align: left;
 }
 
-.column-2 img {
-    width: 300px;
-    height: 300px;
+.column-3 {
+    float: right;
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+}
+
+.column-3 img {
+    width: 150px;
+    height: 150px;
     margin-bottom: 20px;
     margin-top: 10px;
     padding-bottom: 5px;
     border-bottom: 1px dotted black;
 }
 
-.column-2 img:last-child {
+.column-3 img:last-child {
     border-bottom: 0px;
 }
 
@@ -127,23 +134,26 @@ h2 {
 .blog-post {
     padding-bottom: 15px;
     border-bottom: 1px dotted black;
+    text-align: center;
 }
 
 .social {
-    width: 30%;
+    width: 90%;
     margin: 0 auto;
     margin-top: 30px;
-    margin-bottom: 40px;
     text-align: center;
 }
 
 .social-item {
-    padding: 5px;
+    float: left;
+    width: 25%;
+    margin-top: 10px;
+    height: 280px;
 }
 
 .social .s-img {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
 }
 
 .s-img:hover {
@@ -163,9 +173,11 @@ h2 {
 }
 
 .mail-sentence {
+    padding-top: 30px;
     text-align: center;
     font-size: 20px;
     font-style: italic;
+    clear: both;
 }
 
 p {
@@ -177,8 +189,8 @@ p::first-letter {
 }
 
 .avatar {
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     margin: 10px;
 }
@@ -215,20 +227,32 @@ footer>p {
 }
 
 @media screen and (min-width: 1024px) {
-    .column-2 img {
-        height: 120%;
-        width: 120%;
+
+    .navbar li {
+        padding-left: 40px;
     }
-    .social .s-img {
-        width: 70%;
-        height: 70%;
+    .column-3 img {
+        height: 50%;
+        width: 50%;
     }
+    .text {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    .social-item {
+        width: 33%;
+        height: 33%;
+    }
+    
+.blog-post {
+    column-count: 2;
+    text-align: justify;
+}
 }
 
 @media screen and (max-width: 840px) {
-    .social .s-img {
-        width: 70%;
-        height: 70%;
+    .navbar li {
+        padding-left: 30px;
     }
     .column-1 {
         clear: both;
@@ -236,21 +260,49 @@ footer>p {
     h1 {
         text-align: center;
     }
+    .blog-post {
+        column-count: 2;
+        text-align: justify;
+    }
 }
 
 @media screen and (max-width: 640px) {
+    .navbar li {
+        display: inline-block;
+        padding: 32px;
+    }
+    .navigation {
+        position: static;
+        display: block;
+        height: 130px;
+    }
+    .logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        clear: both;
+    }
     .welcome-logo {
         width: 33.33%;
         height: 33.33%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     .social .s-img {
-        width: 33.33%;
-        height: 33.33%;
+        width: 50%;
+        height: 50%;
     }
     .social-item {
-        width: 100%
+        width: 33%;
+        height: 33%;
     }
     .column-2 {
+        width: 100%;
+    }
+
+    .column-3 {
         width: 100%;
     }
     .column-1 {
@@ -259,8 +311,62 @@ footer>p {
     }
     h1 {
         width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
     }
     h2 {
+        width: 100%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .navigation {
+        position: static;
+        text-align: center;
+        padding: 10px 10px;
+        height: 120px;
+    }
+    h1 {
+        width: 100%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        clear: both;
+    }
+    h2 {
+        width: 100%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        clear: both;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .navbar li {
+        display: block;
+        float: none;
+        padding: 15px;
+    }
+    .navigation {
+        position: static;
+        display: block;
+        height: 330px;
+    }
+    li a {
+        text-align: center;
+    }
+    .social .s-img {
+        width: 30%;
+        height: 30%;
+    }
+    .social-item {
+        clear: both;
         width: 100%;
     }
 }
@@ -279,10 +385,16 @@ footer>p {
     .avatar {
         display: none;
     }
-    .column-2 {
+    .column-3 {
         display: none;
     }
     .column-1 {
         width: 100%;
+    }
+    footer {
+        display: none;
+    }
+    .navbar {
+        display: none;
     }
 }
