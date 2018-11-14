@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box
+}
+body {font-family: Arial, Helvetica;
+}
+.text-01 {color: red
+}
+.text-02 {color: rgb(0,255,0)
+}
+.text-03 {color: #0000FF;
+font-weight: bold
+}
+.text-04 {size: 18px
+}
+.text-05 {size: 24px;
+font-style: italic
+}
+.text-06 {color: white; 
+    background-color: brown
+}
+.paragraph-01 {line-height: 32px;
+text-align: center
+}
+.paragraph-02 {text-align: justify;
+text-transform: uppercase
+}
+.box-01 {width: 400px;
+height: 300px;
+border: 1px solid purple;
+padding: 30px
+}
+.box-02 {width: 500px;
+height: 200px;
+background-color: red;
+margin: 100px
+}
+.box-03 {display: none
+}
+.box-04 {width: 100%;
+height: 150px;
+background-color: blue;
+padding: 50px;
+border: 10px solid yellow
+}
+.box-05 {visibility: hidden
+}
+.box-06 {height: 500px;
+width: 200px;
+background-color:rgba(0, 255, 0, .5);
+}
+.box-07 {height: 300px;
+width: 400px;
+position: relative;
+background-color: lightblue
+}
+.box-08 {height: 50px;
+width: 50px;
+position: absolute;
+top: 50px;
+right: 10px;
+background-color: pink
+}
+.button-01{width: 300px;
+height: 100px;
+}
+.button-01:active {color: blue
+}
+.button-02{width: 200px;
+height: 50px
+}
+.button-02:hover{background-color: brown
+}
+.box-09{height: 500px;
+width: 200px;
+background-color: rgb(59, 157, 160);
+margin-top: 200px;
+cursor: pointer
+}

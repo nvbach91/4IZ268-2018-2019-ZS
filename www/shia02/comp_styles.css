@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+nav ul li {
+    float: none;
+}
+
+.clear {
+    clear: none;
+    float: none;
+}
+
+.poster {
+    padding: 50px;
+    background-image: url();
+    text-align: center;
+}
+
+.poster h1, .poster h3 {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 5);
+    color: white;
+}
+
+.intro, .slideshow, .products {
+    width: 80%;
+    margin: 0 auto; /* automaticky nahore a dole margin neexistuje */
+}
+
+.slideshow {
+    padding: 50px 0;  /* zprava a zleva padding neexistuje */
+    text-align: center;
+    background-image: url();
+}
+
+.slideshow h2 {
+    background-color: rgba(255, 255, 255, 0.63);
+    margin-top: auto;
+}
+
+.products {
+    float: left;  /* produktz vedle sebe, ale kazdy produkt ma jinou velkost , pridelime vysku a sirku */
+    width: 25%;
+    height: 320px;
+    padding: 5px;
+}
+ .products h2{
+     border-bottom: 5px solid red;   /* pruh pod nayvem produktu */
+ }
+
+ /* kazdy pruh ma jinou barvu */
+ .products:nth-child(1) h2 { border-color: blue; }
+ .products:nth-child(2) h2 { border-color: aqua; }
+ .products:nth-child(3) h2 { border-color: purple; }
+ .products:nth-child(4) h2 { border-color: olivedrab; }
+ .products:nth-child(5) h2 { border-color: mediumvioletred; }
+ .products:nth-child(6) h2 { border-color: orange; }
+ .products:nth-child(7) h2 { border-color: palegreen; }
+ .products:nth-child(8) h2 { border-color: pink; }
+
+  /* kazde tlacitko bz melo byt ve stejne vysce */
+  .product p {
+      height: 200px;
+  }
+
+  .products button {
+      border: none;
+      background-color: crimson;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 3px;
+        /* barva se zmeni za 0.2 sek*/
+      transition: background-color 0.2 linear;
+  }
+
+  .products button:hove {
+      background-color: firebrick;
+  }
+
+  footer {
+      background-color: darkslategray;
+      color: white;
+      text-align: center;
+  }
+  .copyright {
+      padding: 20px 0;
+  }
+  footer p {
+    background-color: black;
+    padding: 20px 0;
+    color: darkslategray;
+    margin: 0;
+  }
+  /* ikony uprostred */
+  .social {
+      margin: 0 auto;
+      width: 200px;
+      height: 50px;
+  }
+
+  .social-ikon {
+    width: 30px;
+    height: 30;
+    background-size: 30px;
+    float: left;
+  }
+
+  .social-twitter   {background-image: url();}
+  .social-facebook  {background-image: url();}
+  .social-instagram {background-image: url();}
+
+   /* kdyd obrayovka je mensi nez 640px pouziva se nasledujici kod, kdyz je vetsi pouz to, co je nahore */ 
+
+   @media screen and (max-width: 1400px) {
+    .poster h1 {
+        font-size: 30px;
+    }
+}
+   @media screen and (max-width: 1366px) {
+    .poster h1 {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    .poster h1 {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .poster h1 {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 960px) {
+    .poster {
+        padding: 5px;
+    }
+    .poster h1 {
+        font-size: 20px;
+    }
+}
+
+   /* Pro mobily 
+h1 {
+    font-size: 12px;
+}
+@media screen and (max-width: 320px) {
+    .poster h1 {
+        font-size: 14px;
+    }
+} */
+ /* Je potreba upravit stranku */
+/* @media print {
+    .poster {
+        background-image: none;
+        padding: 0;
+    }
+
+    .poster h1, .poster h3 {
+        background-image: none;
+        color: black;
+    }
+} */
+
+@media print {
+    * {
+        background-image: none !important;
+    }
+}

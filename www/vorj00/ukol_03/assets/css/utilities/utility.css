@@ -1,0 +1,31 @@
+.bold {
+    font-weight: bold;
+}
+
+.display-none {
+    display: none;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.opacity-half {
+    opacity: 0.5;
+}
+
+.pointer-hover:hover {
+    cursor: pointer;
+}
+
+.sans-serif {
+    font-family: sans-serif;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}

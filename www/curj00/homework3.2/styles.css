@@ -1,0 +1,14 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: beige;
+}
+.odkaz{
+    text-align: center;
+}
+.autor{
+    text-align: right;
+    color: slategray;
+}
+.intro{
+    text-align: center;
+}

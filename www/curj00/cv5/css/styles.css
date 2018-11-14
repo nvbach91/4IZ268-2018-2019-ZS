@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+}
+p {
+    font-size: 50px;
+    color: aqua;
+    font-family: monospace;
+    font-weight: bold;
+    background-color: gray;
+    background-color: #e68484;
+    font-style: italic;
+    font-family: Arial;
+    text-align: center;
+    text-align: justify; /*do bloku*/
+ }
+ input[placeholder="TEL"]{
+     height: 50px;
+ }
+ p.intro, div.intro {
+     width: 2000px;
+ }
+ .container > .intro {
+     width: 100px;
+ }
+
+ body {
+     background-image: url(http://i.iinfo.cz/blg/r/old/5/files/2013/06/Tux.jpg);
+     background-repeat: repeat;
+     background-size: cover;
+     background-position: left; 
+ }
+ .box {
+    height: 300px;
+    width: 300px;
+    background-color: red;
+    padding: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin: 80px;
+    border: 10px solid black;
+    opacity: 0.1;
+ }
+ .box-2 {
+    opacity: 0.9;
+    position: fixed;
+    top: 200px;
+    right: 500px;
+    position: absolute;
+
+ }
+ .box-3 {
+    height: 200px;
+    width: 200px;
+    background-color: green;
+    padding: 10px;
+ }

@@ -1,0 +1,53 @@
+#title{
+font-family: sans-serif;
+font-size: xx-large;
+
+
+}
+
+body{
+   font-family:sans-serif;
+}
+
+#title{
+padding:20px;
+margin:0;
+text-align:center;
+
+}
+
+nav{
+   margin-top: 20px;
+   text-align:center;
+}
+
+nav a{
+   align-content: center;
+   padding: 10px;
+   border:2px solid navy
+
+}
+
+
+
+.spinner{
+width:200px;
+height:200px;
+border-radius:50%;
+border: 40px solid grey;
+border-top: 40px solid crimson;
+animation: spin 10s linear infinite;
+
+}
+
+@keyframes spin{
+   0% {
+     transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(360deg);
+    }
+
+}
+

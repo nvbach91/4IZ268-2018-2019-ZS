@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Grid-like layout using Float + Clear</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles-grid.css" />
+</head>
+
+<body>
+    <div class="instructions">
+        <h1>Grid-like Layout using Float + Clear</h1>
+        <h2>Create the following layouts using Float + Clear</h2>
+        <p>Use <strong>padding</strong> and <strong>text-align</strong> to center text inside boxes</p>
+        <p>Use <strong>%</strong> for box width</p>
+        <p>Use <strong>nth-child()</strong> to define colors of each box</p>
+        <p>Colors used are:</p>
+        <div class="colors">
+            <input value="rgb(255, 125,  78)" style="background-color: rgb(255, 125,  78)">
+            <input value="rgb(168,  89,  60)" style="background-color: rgb(168,  89,  60)">
+            <input value="rgb( 33, 165, 121)" style="background-color: rgb( 33, 165, 121)">
+            <input value="rgb( 47,  83, 160)" style="background-color: rgb( 47,  83, 160)">
+            <input value="rgb(197,  56,  56)" style="background-color: rgb(197,  56,  56)">
+            <input value="rgb(112, 158,  94)" style="background-color: rgb(112, 158,  94)">
+            <input value="rgb(182, 109, 197)" style="background-color: rgb(182, 109, 197)">
+            <input value="rgb(167,  35,  79)" style="background-color: rgb(167,  35,  79)">
+            <input value="rgb( 38, 189, 189)" style="background-color: rgb( 38, 189, 189)">
+            <div class="clear"></div>
+        </div>
+    </div>
+    
+    <!-- HTML to be styled -->
+    <div class="wrapper">
+        <h2>Container 1 (1-column layout)</h2>
+        <div class="container container-01">
+            <div class="float-box">1</div>
+            <div class="float-box">2</div>
+            <div class="float-box">3</div>
+            <div class="clear"></div>
+        </div>
+        <h2>Container 2 (2-column layout)</h2>
+        <div class="container container-02">
+            <div class="float-box">1</div>
+            <div class="float-box">2</div>
+            <div class="float-box">3</div>
+            <div class="float-box">4</div>
+            <div class="float-box">5</div>
+            <div class="float-box">6</div>
+            <div class="clear"></div>
+        </div>
+        <h2>Container 3 (3-column layout)</h2>
+        <div class="container container-03">
+            <div class="float-box">1</div>
+            <div class="float-box">2</div>
+            <div class="float-box">3</div>
+            <div class="float-box">4</div>
+            <div class="float-box">5</div>
+            <div class="float-box">6</div>
+            <div class="float-box">7</div>
+            <div class="float-box">8</div>
+            <div class="clear"></div>
+        </div>
+        <h2>Container 4 (4-column layout)</h2>
+        <div class="container container-04">
+            <div class="float-box">1</div>
+            <div class="float-box">2</div>
+            <div class="float-box">3</div>
+            <div class="float-box">4</div>
+            <div class="float-box">5</div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family:'Courier New', Courier, monospace;
+}
+.text_1 {
+    color:red;
+}
+.text_2 {
+    color:rgb(0, 110, 10);
+}
+.text_3 {
+    color: 	#0000FF;
+    font-weight: bold;
+}
+.text_4 {
+    font-size: 18px;
+}
+.text_5 {
+    font-family: italic;
+    font-size:24px;
+}
+.text_6 {
+    color: white;
+    background-color: brown;
+}
+.paragraph_1 {
+    text-align: center;
+    line-height: 32px;
+}
+.paragraph_2 {
+    text-align: justify;
+    text-justify: inter-word;
+    text-transform: uppercase;
+}
+.box_1 {
+    width: 400px;
+    height: 300px;
+    border: 1px solid purple;
+    padding: 30px;
+}
+.box_2 {
+    width: 500px;
+    height: 200px;
+    background-color: tomato;
+    margin: 100px;
+}
+.text_7 {
+    display: none;
+}
+.box_3 {
+    width: 100%;
+    height: 150px;
+    background-color: royalblue;
+    padding: 50px;
+    border:10px solid rgb(214, 214, 39);
+}
+.text_8 {
+    visibility: hidden;
+}
+.box_4 {
+    width: 200px;
+    height: 500px;
+    background-color: limegreen;
+    opacity: 0.5;
+}
+.box_5 {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    background-color: lightblue;
+}
+ .box_6 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    top: 50px;
+    right: 10px;
+}
+.p{
+    margin-top: 250px;
+}
+.button_1{
+    width: 300px;
+    height: 100px;
+    cursor: pointer;
+}
+.button_1:active {
+   color:blue;    
+}
+.button_2{
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+}
+.button_2:hover {
+   background-color: brown;    
+}
+.box_7 {
+    width:200px;
+    height:500px;
+    background-color: aquamarine;
+    margin-top: 200px;
+    cursor: pointer;
+
+}

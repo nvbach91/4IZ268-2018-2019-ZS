@@ -1,0 +1,110 @@
+@import "settings.variables";
+@import "tools.mixins";
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    height: $headerHeight;
+    color: $brandColor;
+    padding: $defaultPadding;
+    z-index: 2;
+
+    @include mq("tablet-small") {
+        flex-direction: row;
+        padding: 0 $defaultPadding;
+    }
+
+    @media print {
+        position: static;
+    }
+}
+
+.nav {
+    @media print {
+        display: none;
+    }
+}
+
+.nav__item {
+    transition: opacity 0.2s;
+}
+
+.nav__item--active {
+    text-decoration: underline;
+}
+
+.nav:hover .nav__item:not(:hover) {
+    opacity: 0.5;
+}
+
+.nav__item:not(:last-child) {
+    margin-right: 0.5em;
+}
+
+.main {
+    padding: 0 $defaultPadding;
+
+    @media print {
+        padding: 0;
+    }
+}
+
+.footer {
+    padding: $defaultPadding/2 $defaultPadding;
+    border-top: 1px solid $gray;
+    background-color: $gray;
+}
+
+.footer__more {
+    display: flex;
+    flex-direction: column;
+
+    @include mq("tablet-wide") {
+        flex-direction: row;
+    }
+
+    @media print {
+        display: none
+    }
+
+    &>* {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+}
+
+.footer__link {
+    color: $grayDarkest;
+
+    &:hover {
+        color: $almostBlack;
+    }
+}
+
+.footer__link {
+    margin-bottom: 0.5em;
+}
+
+.button {
+    size: 1.1rem;
+    padding: 1em;
+    background-color: $contraColor;
+    color: $gray;
+    cursor: pointer;
+
+    @include box-shadow;
+
+    @media print {
+        display: none;
+    }
+}
+
+.button:hover {
+    background-color: $contraColorDark;
+}

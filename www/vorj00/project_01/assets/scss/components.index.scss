@@ -1,0 +1,166 @@
+@import "settings.global";
+@import "settings.variables";
+
+@import "tools.mixins";
+
+@import "generic.normalize";
+
+@import "elements.headings";
+
+@import "components.default";
+
+.hero {
+    background: url(../img/background.jpg);
+    background: linear-gradient(rgba(#000, 0.25), rgba(#000, 0.25)),
+        url(../img/background.jpg);
+    height: calc(100vh - #{$headerHeight});
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+
+    @media print {
+        height: auto;
+        background: none;
+        display: block;
+        color: #000;
+    }
+}
+
+.hero h1,
+.hero h3 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.hero h1,
+.hero h2,
+.hero h3 {
+    margin: 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+
+    @include mq("tablet-wide") {
+        font-size: 4.5rem;
+    }
+
+    @include mq("desktop") {
+        font-size: 6rem;
+    }
+}
+
+.hero h3 {
+    font-size: 2rem;
+
+    @include mq("tablet-wide") {
+        font-size: 3.5rem;
+    }
+
+    @include mq("desktop") {
+        font-size: 5rem;
+    }
+}
+
+.hero__cont {
+    width: 100%;
+    padding: 5em;
+
+    @include mq("tablet-wide") {
+        width: 48rem;
+    }
+
+    @include mq("desktop") {
+        width: 64em;
+    }
+
+    @media print {
+        padding: 0;
+    }
+}
+
+.hero__desc {
+    font-size: 2rem;
+
+    @include mq("tablet-wide") {
+        width: 50%;
+    }
+}
+
+.letter {
+    display: flex;
+    background-color: $gray;
+    margin: $defaultPadding 0;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+
+    @include mq("tablet-wide") {
+        flex-direction: row;
+    }
+
+    @media print {
+        padding: 0;
+    }
+}
+
+.letter h2 {
+    text-align: center;
+
+    @include mq("tablet-wide") {
+        text-align: left;
+    }
+}
+
+.letter--invert {
+    @include mq("tablet-wide") {
+        flex-direction: row-reverse;
+    }
+}
+
+.letter__imgCont {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media print {
+        display: none
+    }
+}
+
+.letter__imgCont img {
+    border-radius: 50%;
+    width: 75%;
+}
+
+.letter__imgCont--square img {
+    border-radius: 0;
+}
+
+.letter__text {
+    @include mq("tablet-wide") {
+        width: 75%;
+    }
+}
+
+.letter__part {
+    margin: 0;
+    text-align: justify;
+    font-style: italic;
+}
+
+.letter__more {
+    text-align: center;
+    margin-top: 2em;
+
+    @include mq("tablet-wide") {
+        text-align: right;
+    }
+}
+
+.letter__more--left {
+    @include mq("tablet-wide") {
+        text-align: left;
+    }
+}

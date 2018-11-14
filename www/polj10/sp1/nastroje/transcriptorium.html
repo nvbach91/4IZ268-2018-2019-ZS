@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Transcriptorium pro automatickou transkripci transliterovaných textů a její kontrolu">
+    <meta name="keywords" content="Transcriptorium, výzkum, infrastruktura, diachronní, bohemistika, ústav pro jazyk český, akademie věd">
+    <meta name="title" content="Transcriptorium - Výzkumná infrastruktura pro diachronní bohemistiku">
+    <title>Transcriptorium - Výzkumná infrastruktura pro diachronní bohemistiku</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/icons/favicon-16x16.png">
+    <link rel="manifest" href="../img/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../img/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header id="header">
+            <button id="mobile-nav-button">
+                <svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+                    <g>
+                        <path id="top-menu-bar" d="M256,56c0,-4.415 -3.585,-8 -8,-8l-240,0c-4.415,0 -8,3.585 -8,8l0,16c0,4.415 3.585,8 8,8l240,0c4.415,0 8,-3.585 8,-8l0,-16Z"
+                            style="fill:#fff;" />
+                        <path id="bottom-menu-bar" d="M256,184c0,-4.415 -3.585,-8 -8,-8l-240,0c-4.415,0 -8,3.585 -8,8l0,16c0,4.415 3.585,8 8,8l240,0c4.415,0 8,-3.585 8,-8l0,-16Z"
+                            style="fill:#fff;" />
+                        <path id="mid-menu-bar1" d="M256,120c0,-4.415 -3.585,-8 -8,-8l-240,0c-4.415,0 -8,3.585 -8,8l0,16c0,4.415 3.585,8 8,8l240,0c4.415,0 8,-3.585 8,-8l0,-16Z"
+                            style="fill:#fff;" />
+                        <path id="mid-menu-bar2" d="M256,120c0,-4.415 -3.585,-8 -8,-8l-240,0c-4.415,0 -8,3.585 -8,8l0,16c0,4.415 3.585,8 8,8l240,0c4.415,0 8,-3.585 8,-8l0,-16Z"
+                            style="fill:#fff;" />
+                    </g>
+                </svg>
+            </button>
+            <a href="../index.html" class="logo-link">
+                <img class="logo" src="../img/Ridics_Full_Pack.svg" alt="RIDICS">
+            </a>
+            <div id="navigation">
+                <div class="navigation-ridics-logo">
+                    <img src="../img/Ridics_Full_Pack_Dark.svg" alt="RIDICS logo">
+                </div>
+                <nav id="main-nav" aria-label="Hlavní navigace">
+                    <ul>
+                        <li>
+                            <a href="../index.html">Úvod</a>
+                        </li>
+                        <li><a href="../nastroje.html">Nástroje</a></li>
+                        <li><a href="../kontakt.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+        <main>
+            <!-- Zdroj - http://vokabular.ujc.cas.cz/moduly/nastroje/transcriptorium/napoveda -->
+            <div class="poster">
+                <ul class="breadcrumbs print-hide">
+                    <li><a href="../nastroje.html">Nástroje</a></li>
+                    <li>&gt; <a href="transcriptorium.html">Transcriptorium (Nápověda)</a></li>
+                </ul>
+                <div class="clear"></div>
+                <h1>Transcriptorium</h1>
+            </div>
+            <p>
+                Programové prostředí pro automatickou transkripci transliterovaných textů a její kontrolu.
+            </p>
+            <h2>Stažení a spuštění programu</h2>
+            <p>
+                Program ke svému běhu potřebuje .NET Framework 4.0 Client Profile, který bývá na počítačích s Windows nainstalován. V případě potřeby je možné tento balík stáhnout zde: <a href="http://www.microsoft.com/cs-cz/download/details.aspx?id=24872">http://www.microsoft.com/cs-cz/download/details.aspx?id=24872</a>  
+            </p>
+            <p>
+                Zipový balíček obsahující Transcriptorium je k dispozici ke stažení na webové adrese <a href="http://vokabular.ujc.cas.cz/moduly/nastroje/transcriptorium/ke-stazeni">http://vokabular.ujc.cas.cz/moduly/nastroje/transcriptorium/ke-stazeni</a>.
+            </p>
+            <p>
+                Po stažení soubor rozzipujte do libovolné složky na svém počítači (je možné jej umístit také na flešku).
+            </p>
+
+            <h2>Soubory Transcriptoria</h2>
+            <p>
+                    Transcriptorium pracuje s tzv. projekty, tj. soubory s příponou .trsc, které obsahují potřebné součásti (obvykle sloužící pro transkripci jednoho pramene).   
+            </p>
+            <p>
+                    Vedle souboru s projektem je možné mít na počítači samostatnou složku s digitálními obrázky předlohy, získané nezávisle na souboru s projektem. (Obrázky bývají objemné, proto by jejich začlenění do souboru s projektem nebylo vhodné.) Složka s obrázky předlohy se vybírá až po otevření projektu, k samotnému běhu programu ovšem nejsou obrázky potřeba.
+            </p>
+            <h2>Ovládání programu</h2>
+            <p>
+                Po prvním spuštění programu je potřeba vybrat soubor s projektem, a to pomocí tlačítka z karty Transcriptorium &gt; Projekt &gt; Otevřít. Při dalším spuštění programu se automaticky otevře naposledy otevřený projekt.       
+            </p>
+            <p>
+                Po prvním načtení projektu je vhodné vybrat složku s digitálními obrázky originálu, a to tlačítkem z karty Transcriptorium  &gt; Obrázky  &gt; Otevřít. V zobrazeném dialogovém okně vyberte libovolný obrázek ze složky, v níž jsou obrázky umístěny.
+            </p>
+            <p>
+                (Po prvním výběru složky s obrázky je vhodné změny uložit, program zavřít a znovu spustit, jinak nebude zobrazování obrázků fungovat u prvních dokladů.)     
+            </p>
+            <h2>Uložení</h2>
+            <p>
+                    Jakékoli změny je potřeba uložit, k čemuž slouží tlačítko z karty Transcriptorium > Projekt > Uložit. Jednotlivé kroky není v této verzi programu možné vrátit zpět (musejí se opravit „ručně“ na původní podobu). Program se před uzavřením zeptá, jestli chcete provedené změny uložit.
+            </p>
+            <p>
+                    Upozornění: program se ptá na uložení změn i v případě, že jste žádnou změnu neprovedli.  
+            </p>
+            <h2>
+                    Transkripční pravidla
+            </h2>
+            <p>
+                    Po otevření projektu se v levé části zobrazí seznam transkripčních pravidel. Transkripční pravidla lze upravovat, přidávat a mazat. V současné verzi programu ale transkripční pravidla nenabízejí všechny vymoženostmi, s nimiž se počítá (např. definování výjimek obecných i pro konkrétní pravidla, vhodnější zobrazení a editace pravidel).  
+            </p>
+            <h2>Transkribovaný text</h2>
+            <p>
+                    V pravé části se zobrazí seznam výrazů určených k transkripci. Transkribovaný text je rozčleněn podle jednotlivých znakových stylů použitých při přepisu pramene ve Wordu. Výběrem odlišného názvu stylu se v pravém seznamu zobrazí jedinečná slova zapsaná tímto stylem.
+            </p>
+            <p>
+                    Slova jsou seřazena abecedně, a pokud se na ně již aplikovala transkripční pravidla, obsahují v horním řádku transliterovanou podobu, ve spodním řádku podobu transkribovanou.   
+            </p>
+            <p>
+                    Nalevo je v horní části uvedeno pořadí slova v seznamu. Pokud je číslo v zeleném poli, znamená to, že transkribovaný text je stejný jako původní transliterovaný text.
+            </p>
+            <p>
+                    Pod pořadovým číslem je uveden počet výskytů slova textu (resp. v textu používajícím stejný znakový styl).
+            </p>
+            <p>
+                    Pod počtem výskytů jsou zaznamenány výsledky (novočeské) kontroly pravopisu. Zelené kolečko = transkribovaný výraz existuje i v současné češtině. Červené kolečko = kontrola pravopisu transkribovaný výraz nerozpoznala.   
+            </p>
+            <p>
+                    Mezi jednotlivými dvojicemi (transliterace–transkripce) lze přecházet pomocí šipek nahoru a dolů, případně pomocí kláves PageDown, PageUp. 
+            </p>
+
+
+            
+
+        </main>
+        <button class="box-effect" id="scroll-up">Nahoru</button>
+        <footer>
+            <div class="credits">Copyright &copy; 2018 oddělení vývoje jazyka, Ústav pro jazyk český AV ČR, v. v. i.</div>
+            <div>Web je podpořen projektem Ministerstva školství, mládeže a tělovýchovy č. LM2015081 „Výzkumná
+                infrastruktura pro diachronní bohemistiku“ (akronym RIDICS) v rámci Projektu velkých infrastruktur pro
+                VaVaI.</div>
+        </footer>
+    </div>
+    <script src="../js/scripts.js"></script>
+</body>
+
+</html>

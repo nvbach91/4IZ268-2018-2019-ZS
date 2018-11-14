@@ -1,0 +1,15 @@
+.desc {
+    /* margin and padding is not necessary, but I want something to be here (and use BEM) */
+    margin: 0;
+    padding: 0;
+}
+
+.desc__centered {
+    text-align: center;
+    line-height: 32px;
+}
+
+.desc__justified {
+    text-align: justify;
+    text-transform: uppercase;
+}

@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.clear {
+  clear: both;
+}
+
+/* .page > * {
+  height: 100px;
+}
+header {background-color: aquamarine;}
+.row-1 {background-color: gold;}
+.row-2 {background-color: orange;}
+.row-1, .row-2{
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+}
+.main-content {
+  width: 70%;
+  background-color: crimson;
+}
+
+.side-bar {
+  width: 30%;
+  background-color: chocolate;
+}
+.twin {
+  width: 50%;
+  background-color: greenyellow;
+}
+footer {background-color: darkblue; color: white;} */

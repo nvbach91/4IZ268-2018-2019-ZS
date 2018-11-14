@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.clear {
+  clear: both;
+}
+h1 {
+  text-align: center;
+  padding: 50px 10px;
+  color: white;
+  background-color: rgb(78, 146, 179);
+}
+.colors > input {
+  padding: 20px;
+  border: none;
+  font-size: 18px;
+  margin: 0;
+  float: left;
+  width: 25%;
+  color: white;
+}
+.instructions {
+  max-width: 1280px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.wrapper {
+  max-width: 1280px;
+  padding: 20px;
+  margin: auto;
+}
+
+.float-box{
+  text-align: center;
+  height: 25%;
+  font-size: 60px;
+  color: white;
+  padding-top: 178px;
+  height: 414px;
+}
+
+.container-01 :nth-child(1) {
+  background-color: rgb(255, 125, 78);
+}
+
+.container-01 :nth-child(2) {
+  background-color: rgb(168, 89, 60);
+}
+
+.container-01 :nth-child(3) {
+  background-color: rgb(33, 165, 121);
+}
+
+.container-02 {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.container-02 :nth-child(1) {
+  background-color: rgb(255, 125, 78);
+  width: 50%;
+}
+
+.container-02 :nth-child(2) {
+  background-color: rgb(168, 89, 60);
+  width: 50%;
+}
+
+.container-02 :nth-child(3) {
+  background-color: rgb(33, 165, 121);
+  width: 50%;
+}
+
+.container-02 :nth-child(4) {
+  background-color: rgb(47, 83, 160);
+  width: 50%;
+}
+
+.container-02 :nth-child(5) {
+  background-color: rgb(197, 56, 56);
+  width: 50%;
+}
+
+.container-02 :nth-child(6) {
+  background-color: rgb(112, 158, 94);
+  width: 50%;
+}
+
+.container-03 {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: gray;
+}
+
+.container-03 :nth-child(1) {
+  background-color: rgb(255, 125, 78);
+  width: 33.33%;
+}
+
+.container-03 :nth-child(2) {
+  background-color: rgb(168, 89, 60);
+  width: 33.33%;
+}
+
+.container-03 :nth-child(3) {
+  background-color: rgb(33, 165, 121);
+  width: 33.33%;
+}
+
+.container-03 :nth-child(4) {
+  background-color: rgb(47, 83, 160);
+  width: 33.33%;
+}
+
+.container-03 :nth-child(5) {
+  background-color: rgb(197, 56, 56);
+  width: 33.33%;
+}
+
+.container-03 :nth-child(6) {
+  background-color: rgb(112, 158, 94);
+  width: 33.33%;
+}
+
+.container-03 :nth-child(7) {
+  background-color: rgb(167, 35, 79);
+  width: 33.33%;
+}
+
+.container-03 :nth-child(8) {
+  background-color: rgb(38, 189, 189);
+  width: 33.33%;
+}
+
+.container-04 {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: gray;
+}
+
+.container-04 :nth-child(1) {
+  background-color: rgb(255, 125, 78);
+  width: 25%;
+}
+
+.container-04 :nth-child(2) {
+  background-color: rgb(168, 89, 60);
+  width: 25%;
+}
+
+.container-04 :nth-child(3) {
+  background-color: rgb(33, 165, 121);
+  width: 25%;
+}
+
+.container-04 :nth-child(4) {
+  background-color: rgb(47, 83, 160);
+  width: 25%;
+}
+
+.container-04 :nth-child(5) {
+  background-color: rgb(197, 56, 56);
+  width: 25%;
+}

@@ -1,0 +1,32 @@
+/* color */
+.c-red {
+    color: red;
+}
+
+.c-green {
+    color: #0f0;
+}
+
+.c-blue {
+    color: #00f;
+}
+
+.c-white {
+    color: #fff;
+}
+
+/* end of color */
+
+/* hover */
+.c-blue-hover:hover {
+    color: #00f;
+}
+
+.c-brown-hover:hover {
+    color: brown;
+}
+
+/* click */
+.c-blue-active:active {
+    color: #00f
+}

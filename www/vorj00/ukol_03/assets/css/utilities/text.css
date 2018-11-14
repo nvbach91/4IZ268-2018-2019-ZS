@@ -1,0 +1,10 @@
+/* text-align */
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+/* end of text-align*/

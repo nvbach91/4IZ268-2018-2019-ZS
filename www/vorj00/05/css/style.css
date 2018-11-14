@@ -1,0 +1,15 @@
+p {
+    font-size: 125%;
+    font-family: arial;
+    color: steelblue;
+    font-weight: bold;
+    background-color: grey;
+}
+
+input[placeholder="TEL"] {
+    height: 5rem;
+}
+
+.neco {
+    font-size: 100%
+}

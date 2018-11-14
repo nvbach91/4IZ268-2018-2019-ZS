@@ -1,0 +1,288 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #312c32;
+}
+
+.infobox {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.infobox p {
+    font-weight: bold;
+    color: grey;
+}
+
+.infobox_01 {
+    list-style: none;
+    text-align: justify;
+    padding-top: 10px;
+}
+
+.infobox_02 {
+    text-align: center;
+    float: left;
+    width: 33.33333%;
+    list-style: none;
+    font-weight: bold;
+    padding-bottom: 25px;
+}
+
+.infobox_02 p {
+    color: rgb(92, 92, 92);
+    font-weight: bold;
+}
+
+.openinghours {
+    max-width: 25px;
+    max-height: 25px;
+    padding-top: 0;
+}
+
+.nav {
+    background-color: rgb(92, 92, 92);
+    color: #feffff;
+    text-align: center;
+    font-size: 25px;
+    margin: 0 auto;
+}
+
+.activepage {
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    background-color: grey;
+}
+
+.nav a {
+    display: inline-table;
+    color: #feffff;
+    padding: 25px;
+    text-decoration: unset;
+}
+
+.nav a:hover {
+    background-color: white;
+    color: rgb(92, 92, 92);
+}
+
+h1 {
+    text-align: center;
+    color: rgb(92, 92, 92);
+}
+
+.poster {
+    text-align: center;
+}
+
+.img_1 {
+    width: 100%;
+    border: 5px solid rgb(92, 92, 92);
+}
+
+.infobox {
+    text-align: center;
+}
+
+.news, .review, .articles_02 {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
+
+footer {
+    text-align: center;
+    border-top: 5px solid;
+    border-image: linear-gradient(to right, rgb(56, 56, 56) 25%, rgb(59, 59, 59) 25%, rgb(94, 94, 94) 50%, rgb(94, 94, 94) 50%, rgb(175, 175, 175) 75%, rgb(207, 207, 207) 75%) 5;
+}
+
+.social {
+    padding: 25px 0;
+}
+
+footer p {
+    text-align: center;
+    border-top: 5px solid grey;
+}
+
+.social>div {
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    height: 30px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.credits {
+    color: white;
+    padding: 40px 0;
+    background-color: rgb(87, 87, 87);
+}
+
+.social-facebook {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.social-youtube {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.social-instagram {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.articles, .mapinfo, .zoomaps_01 {
+    margin: 0 auto;
+    text-align: center;
+    width: 50%;
+}
+
+.articles p, .mapinfo p {
+    color: grey;
+    font-weight: bold;
+}
+
+.infoimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.googlemap {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.zoomaps_02 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.tariff_01 {
+    list-style: none;
+    text-align: justify;
+}
+
+.tariff_02 {
+    text-align: center;
+    float: left;
+    width: 33.3333%;
+    padding-bottom: 50px;
+}
+
+.tariff_02 p {
+    color: grey;
+    font-weight: bold;
+}
+
+.ticket {
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.contact {
+    width: 200px;
+}
+
+.contacts_01 {
+    list-style: none;
+    text-align: justify;
+    padding-top: 10px;
+}
+
+.contacts_02 {
+    text-align: center;
+    float: left;
+    width: 50%;
+    list-style: none;
+    padding-bottom: 25px;
+}
+
+.handicap {
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+    .nav {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .nav {
+        font-size: 15px;
+    }
+    .nav {
+        font-size: 15px;
+        text-align: center;
+    }
+    .nav a {
+        display: block;
+        text-align: center;
+    }
+    .tariff_02 {
+        width: 50%;
+    }
+    .contacts_02 {
+        width: 100%;
+    }
+    .infobox_02 {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tariff_02 {
+        width: 100%;
+    }
+    .infobox_02 {
+        width: 100%;
+    }
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 5px;
+    }
+    nav {
+        display: none
+    }
+    footer {
+        display: none
+    }
+    img, .infoimg, .googlemap, .zoomaps_01, .moreinfo {
+        display: none;
+    }
+    .news, .infobox, .review, .articles_02, .articles, .mapinfo, .ticket {
+        width: 90%;
+    }
+    .tariff_02 {
+        width: 25%;
+    }
+    .tariff_02 h3 {
+        font-size: 12px;
+    }
+    .infobox p, .infobox_02, .infobox_02 p, .articles p, .mapinfo p, .tariff_02 p {
+        font-weight: normal;
+    }

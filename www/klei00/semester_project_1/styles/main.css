@@ -1,0 +1,358 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial;
+}
+body {
+    background-color: #393185;
+    line-height: 26px;
+}
+.content {
+    background-color: white;
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 40px 60px;
+}
+h1 {
+    font-size: 26px;
+    color: #393185;
+    padding: 0 5px;
+    border-left: solid 5px #EF7F1A;
+    margin: 30px 0;
+}
+h2 {
+    font-size: 22px;
+}
+p {
+    margin: 20px 0;
+}
+/* ------------------- Header ------------------ */
+.logo {
+    padding: 10px;
+    width: 100%;
+    max-width: 900px;
+    height: 50px;
+    margin: 12px auto;
+    background: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+}
+.logo span {
+    text-align: center;
+    padding: 20px 50px;
+    color: transparent;
+}
+.logo a {
+    text-decoration: none;
+}
+nav {
+    padding: 0;
+    border-bottom: solid 3px white;
+    font-size: 16px;
+    width: 100%;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+nav li {
+    display: inline-block;
+}
+nav a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+nav a:hover {
+    background-color: #ffffff;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color: black;
+}
+#current_page {
+    padding: 10px 20px;
+    color: black;
+    background-color: #ffffff;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.breadcrumb_nav ul{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+}
+.breadcrumb_nav li {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+}
+.breadcrumb_nav li::after {
+    content: " >> ";
+}
+.breadcrumb_nav li:last-of-type::after {
+    content: none;
+}
+
+/* ----------------- Homepage ------------------ */
+.intro {
+    margin: 0 auto;
+    max-width: 900px;
+    min-height: 260px;
+    padding: 30px;
+    background-image: url("../images/intro.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.intro h1 {
+    border: 0;
+    padding: 30px;
+    font-weight: 900;
+    border-radius: 8px;
+    background-color: rgba(256,256,256,0.9);
+}
+.main_offer ul {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.product_group {
+    float: left;
+    width: calc(100%/3);
+    height: 320px;
+    padding: 10px;
+    margin: 30px 0;
+    list-style: none;
+    position: relative;
+}
+.product_group h2 {
+    border-bottom: solid 5px #EF7F1A;
+    padding: 5px 0;
+    margin: 0;
+}
+.button {
+   position: absolute;
+   bottom: 0;
+   left: 10%;
+   width: 80%;
+   border: none;
+   padding: 1px 6px;
+   background-color: #393185;
+   color: white;
+   border-radius: 6px;
+   text-align: center;
+   text-decoration: none;
+   font-size: 13px;
+}
+.button:hover {
+    background-color: #2e2769;
+}
+
+/* -------------------- News ---------------------- */
+.articles article {
+    margin: 50px 0;
+}
+.articles article p:nth-child(2) {
+    font-style: italic;
+    color: rgb(48, 48, 48);
+    font-size: 14px;
+}
+/* -------------------- About us ---------------------- */
+
+/* -------------------- Price list ---------------------- */
+.group_of_products {
+    margin: 50px 0;
+}
+.price_list table {
+    border-collapse: collapse;
+}
+.price_list table, td, th {
+    border: 1px solid black;
+    padding: 10px;
+}
+.price_list table, thead, th {
+    border: 2px solid black;
+}
+.price_list thead {
+    background-color: #393185;
+    color: white;
+}
+/* -------------------- Contacts ---------------------- */
+.contacts h2 {
+    margin: 50px 0 0 0;
+}
+/* -------------------- Footer ---------------------- */
+footer {
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+    font-size: 14px;
+    text-align: right;
+}
+/* -------------------- Responsive web ---------------------- */
+@media screen and (max-width: 784px) {
+    .product_group {
+        width: 50%;
+        height: 265px;
+    }
+    .content {
+        padding: 20px 40px;
+    }
+    .intro {
+        min-height: 240px;
+    }
+    .intro h1 {
+        padding: 20px;
+    }
+    h1 {
+        margin: 20px 0;
+    }
+}
+@media screen and (max-width: 639px) {
+    .product_group {
+        width: 50%;
+        height: 320px;
+        margin: 20px 0;
+    }
+}
+@media screen and (max-width: 532px) {
+    .logo {
+        height: 35px;
+    }
+    .content {
+        padding: 10px 20px;
+    }
+    .product_group {
+        width: 100%;
+        height: 190px;
+        margin: 10px;
+    }
+    .intro {
+        min-height: 200px;
+    }
+    .intro h1 {
+        padding: 15px;
+        line-height: 25px;
+    }
+    .button {
+        left: 20%;
+        width: 60%;
+    }
+    body {
+        line-height: 22px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .articles article {
+        margin: 30px 0;
+    }
+    p {
+        margin: 10px 0;
+    }
+    div.group_of_products {
+        margin: 30px 0;
+    }
+    .price_list table, td, th {
+        padding: 6px;
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 432px) {
+    .product_group {
+        height: 210px;
+    }
+}
+@media screen and (max-width: 412px) {
+    .product_group {
+        height: 215px;
+    }
+    body {
+        line-height: 20px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    #current_page {
+        border-radius: 0;
+    }
+    nav a:hover {
+        border-radius: 0;
+    }
+}
+@media screen and (max-width: 325px) {
+    .price_list th {
+        font-size: 14px;
+        font-weight: normal;
+    }
+    .product_group {
+        height: 265px;
+    }
+}
+@media screen and (max-width: 283px) {
+    .product_group {
+        height: 300px;
+    }
+    .intro {
+        min-height: 120px;
+        padding: 12px;
+    }
+    .intro h1 {
+        padding: 6px;
+        font-size: 20px;
+    }
+}
+/* -------------------------- Print ------------------------------- */
+@media print {
+    body {
+        background-color: white;
+    }
+    .content {
+        padding: 10px;
+        max-width: 1000px;
+    }
+    p {
+        margin: 10px 0;
+    }
+    .logo {
+        max-width: 1000px;
+        background: url(../images/logo_print.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left;
+    }
+    nav {
+        border-bottom: solid 3px #cccccc;
+    }
+    nav a {
+        color: black;
+    }
+    #current_page {
+        color: black;
+        background-color: #cccccc;
+    }
+    .intro {
+        max-width: 1000px;
+        min-height: 80px;
+        padding: 0;
+        background: none;
+    }
+    .intro h1 {
+        padding: 10px;
+    }
+    .price_list thead {
+        background-color: white;
+        color: black;
+    }
+    footer {
+        color: black;
+        border-top: solid 2px #cccccc;
+    }
+}
