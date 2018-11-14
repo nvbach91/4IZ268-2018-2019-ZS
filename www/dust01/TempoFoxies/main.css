@@ -1,5 +1,5 @@
 /* OBECNE */
-ul{
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -7,70 +7,78 @@ ul{
     background-color: #1A421C;
     text-align: center;
 }
-li{
-     /*float: left;*/
-     display: inline;
+
+li {
+    /*float: left;*/
+    display: inline;
 }
+
 nav a {
     display: inline-block;
 }
+
 li a {
     color: white;
     font-size: 25px;
-   /* border-right: 2px solid antiquewhite;*/
+    /* border-right: 2px solid antiquewhite;*/
     padding: 6px;
     margin: 10px 0;
     text-shadow: 2px 1px black;
 }
-li a:hover{
+
+li a:hover {
     background-color: #F1C40F;
     color: white;
     transition: 0.5s;
 }
-.active{
-color:#F1C40F;
+
+.active {
+    color: #F1C40F;
 }
-#li-end{
+
+#li-end {
     border: 0;
 }
 
-body{
+body {
     margin: 0;
     background-color: #FEF9E7;
 }
-html{
+
+html {
     font-family: Arial, Helvetica, sans-serif
 }
 
-footer{
+footer {
     background-color: #1A421C;
     padding: 3px 0;
     text-align: center;
-   /* position: fixed;*/
+    /* position: fixed;*/
     width: 100%;
     bottom: 0;
     color: white;
 }
 
-a{
-  
+a {
+
     color: white;
     padding: 14px 16px;
-    text-decoration: none; 
+    text-decoration: none;
 }
-h1{
+
+h1 {
     text-align: center;
-     color: #F1C40F;
-     text-shadow: 2px 2px black;
-     font-size: 2.5em;
+    color: #F1C40F;
+    text-shadow: 2px 2px black;
+    font-size: 2.5em;
 }
-h2{
+
+h2 {
     text-align: center;
     color: #F1C40F;
     text-shadow: 2px 2px black;
     font-size: 2em;
 }
-
 
 /* KONEC OBECNE */
 
@@ -86,15 +94,20 @@ h2{
     margin-top: 20px;
     margin-bottom: 40px;
 }
+.title-img{
+    font-size:50px
+        }
+
 #intro-section img {
-    width:500px;
+    width: 500px;
 }
 
 #intro-section div:first-child {
     flex: 2;
-    
+
 }
-#intro-section p{
+
+#intro-section p {
     text-align: justify;
 }
 
@@ -102,31 +115,38 @@ h2{
     padding-left: 30px;
     flex: 1;
 }
+.intro-paragraph{
+    margin-top:50px;
+}
+
 
 /*#uvod-obrazek img {
     width: 100%;
     height: 300px;
 }*/
-#intro-section h2{
+#intro-section h2 {
     color: black;
     text-shadow: 2px 2px #F1C40F;
 }
 
-header>p {
+header > p {
     text-align: center;
     font-size: 2em;
 }
-/*NOVINKY*/
-#news h3{
-    color:  #1A421C;
-    text-shadow: 1px 2px #F1C40F;
+.news-img-div {
+    height: 200px;
+}
 
+/*NOVINKY*/
+#news h3 {
+    color: #1A421C;
+    text-shadow: 1px 2px #F1C40F;
 
 }
 
 #news img {
     width: 350px;
-    height: 233.3px;
+    /*height: 233.3px;*/
     border: 1px solid black;
 }
 
@@ -137,20 +157,22 @@ header>p {
 
 .news-content {
     margin-right: 30px;
-    
+
 }
 
 #news {
     display: flex;
     justify-content: space-around;
 }
+
 /**/
-nav img{
+nav img {
     width: 125px;
     float: left;
     margin-left: 30px;
 }
-header > p{
+
+header > p {
     margin-bottom: 15px;
 }
 
@@ -178,10 +200,11 @@ header > p{
     left: 50%;
     transform: translate(-50%, -50%);
     /*   color: #FFED40;*/
-    color:  #F1C40F;
+    color: #F1C40F;
     text-shadow: 3px 2px black;
     font: status-bar;
 }
+
 /**/
 
 /*KONEC INDEX*/
@@ -206,11 +229,11 @@ table.competition-table {
 td {
     padding: 9px;
 }
-.tableWM{
+
+.tableWM {
 
     margin-bottom: 20px;
 }
-
 
 .tableTitle {
     color: #1A421C;
@@ -233,25 +256,27 @@ td {
     flex-direction: column;
     align-items: center;
 }
-#tableOneTwo{
+
+#tableOneTwo {
     align-items: flex-end;
     margin-right: 35px;
 }
-#tableThreeFour{
+
+#tableThreeFour {
     align-items: flex-start;
     margin-left: 35px;
 }
-.tempo-row{
+
+.tempo-row {
     background-color: #244c35;
     color: #F1C40F;
 }
-
 
 /*KONEC SOUTEZ*/
 
 /* KONTAKTY */
 
-#contact-section div{
+#contact-section div {
     padding: 0 50px;
 }
 
@@ -267,35 +292,47 @@ td {
     display: block;
 }
 
-table#contact-table, th, td{
+table#contact-table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
     margin: 30px 0;
-    margin-left: 420px;
+
 }
 
-#contact-table th td{
+#contact-table th td {
     padding: 5px;
     text-align: left;
 }
 
-#contact-table th{
+#contact-table th {
     background-color: #1A421C;
     color: white;
 
 }
+
 #contacts h3 {
     color: #1A421C;
     text-shadow: 1px 1px #F1C40F;
     text-align: center;
 }
-#contacts{
+
+#contacts {
     display: flex;
-     justify-content: space-around;
+    justify-content: space-around;
 }
-#contacts div{
+
+#contacts div {
     width: 600px;
- text-align: justify;
+    text-align: justify;
+}
+#contact-table a {
+    color: black;
+    padding: 0;
+}
+
+#contact-table-div {
+    display: flex;
+    justify-content: center;
 }
 /* KONEC KONTAKTY */
 
@@ -307,195 +344,245 @@ table#contact-table, th, td{
 }
 
 img#history-img {
-    margin-left: 300px;
-    height: 400px;
+    width: 75%;
 }
-.h2-history{
+
+
+#history-img-div{
+    text-align: center;
+}
+
+.h2-history {
     color: black;
     text-shadow: 2px 2px #F1C40F;
 }
+
 /* KONEC HISTORIE */
 
 /*TYMY*/
-.boxTrains{
+.boxTrains {
     background-color: #FEF9E7;
     width: 225px;
     border: 5px solid #1A421C;
     padding: 25px;
     margin: 25px;
-    }
-    #containerT{
-        padding: 0 100px;
-    }
-    
-   #containerT h3{
-            color: black;
-            text-shadow: 2px 2px #F1C40F;
-        }
-    
-    #Info{
-        display: flex;
-     justify-content: space-around;
-    }
-    #Info h3{
-        text-align:center;
-    }
-    .TeamsInfo {
-      margin-right: 30px;
-    }
-    .li-Teams {
+}
+
+#containerT {
+    padding: 0 100px;
+}
+
+#containerT h3 {
+    color: black;
+    text-shadow: 2px 2px #F1C40F;
+}
+
+#Info {
+    display: flex;
+    justify-content: space-around;
+}
+
+#Info h3 {
+    text-align: center;
+}
+
+.TeamsInfo {
+    margin-right: 30px;
+}
+
+.li-Teams {
     display: block;
 }
-    .img-teams{
+
+.img-teams {
     height: 400px;
     float: right;
     border: 1px solid black;
 }
-.ol-teams{
-    padding:0px;
+
+.ol-teams {
+    padding: 0px;
 }
 
 /* SOUPISKA */
 div.teams-list {
-            display: flex;
-        }
+    display: flex;
+}
 
-        div.teams-list div:first-child {
-            flex: 1;
-        }
+div.teams-list div:first-child {
+    flex: 1;
+}
 
-        div.teams-list h3 {
-            margin: 19px 0;
-        }
+div.teams-list h3 {
+    margin: 19px 0;
+}
 
-        div.teams-list img {
-            margin-top: 19px;
-        }
+div.teams-list img {
+    margin-top: 19px;
+}
+
 /*KONEC TYMY*/
 
-@media screen and (max-width:1360px) {
- /*kontakty*/
-    table#contact-table,
-    th,
-    td {
-        margin-left: 350px;
-    }
-    img#history-img{
-        margin-left: 325px; 
+@media screen and (max-width: 1360px) {
+    /*kontakty*/
+
+    img#history-img {
+       width: 75%;
     }
 
-img#history-img {
-    margin-left: 300px;
-    height: 400px;
+
+    #history-img-div{
+        text-align: center;
+    }
+
+    .container2 {
+        text-align: justify;
+        padding: 0 100px;
+    }
+    .intro-paragraph {
+      margin-top: 50px;
+    }
+
 }
-.container2 {
-    text-align: justify;
-    padding: 0 100px;
-}
 
-    }
-    
-
-
-@media screen and (max-width:1280px) {
+@media screen and (max-width: 1280px) {
     .news-contentdiv {
         width: 300px;
     }
 
     #news img {
         width: 300px;
-        height: 200px;
+        /*height: 200px;*/
         border: 1px solid black;
 
+    }
+    #intro-section {
+        flex-direction: column;
+    }
+    #intro-section div:last-child{
+    text-align: center;
     }
 
     #intro-section img {
         margin-top: 100px;
     }
+    .intro-paragraph {
+        margin-top: 5px;
+      }
+
     /*kontakty*/
-   /* table#contact-table,
-    th,
-    td {
-        margin-left: 250px;
-    }*/
-/*tymy*/
-    .img-teams{
-        height:300px;
+    /* table#contact-table,
+     th,
+     td {
+         margin-left: 250px;
+     }*/
+     #contacts {
+        flex-direction: column;
     }
-    img#history-img{
-        margin-left: 250px;
+
+    #contact-section div {
+        padding: auto;
     }
+
+    #contacts div {
+        width: auto;
+    }
+    /*tymy*/
+    .img-teams {
+        height: 300px;
+    }
+
+    img#history-img {
+        width: 75%;
+    }
+
+
+    #history-img-div{
+        text-align: center;
+    }
+
 
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width: 1024px) {
     .news-content div {
-        width: 250px;
+        width: 300px;
     }
 
     #news img {
         width: 250px;
-        height: 133.3px;
+        /*height: 133.3px;*/
         border: 1px solid black;
     }
 
     #intro-section {
-        flex-direction:column;
+        flex-direction: column;
     }
 
     #intro-section img {
         width: 500px;
         margin-left: 100px;
     }
+    .news-content {
+        margin-right: 15px;
+    }
+
     /*kontakty*/
-   /* table#contact-table,
-    th,
-    td {
-        margin-left: 150px;
-    }*/
-    #contacts{
+    /* table#contact-table,
+     th,
+     td {
+         margin-left: 150px;
+     }*/
+    #contacts {
         flex-direction: column;
     }
-    #contact-section div{
+
+    #contact-section div {
         padding: auto;
     }
-    #contacts div{
-        width:auto;
+
+    #contacts div {
+        width: auto;
     }
-/*tymy*/
-.TeamsInfo{
-    width:250px;
+
+    /*tymy*/
+    .TeamsInfo {
+        width: 250px;
+    }
+
+    .img-teams {
+        height: 250px;
+        width: 350px
+    }
+
+    /*historie*/
+    img#history-img {
+        height: auto;
+        width: 100%;
+    }
 }
 
- .img-teams{
-     height:250px;
-     width:350px
- }
+@media screen and (max-width: 800px) {
+    #news {
+        flex-direction: column;
+    }
 
-/*historie*/
-img#history-img{
-    margin-left: 125px;
-}
-}
-
-@media screen and (max-width:800px) {
-   #news{
-    flex-direction: column;
-   }
     .news-content div {
-        width: 600px;
+        width: 350px;
         text-align: justify;
-       
+
     }
 
     #news img {
-        width: 600px;
-        height: 400px;
+        width: 350px;
+        /*height: 400px;*/
         border: 1px solid black;
+        height: 200px;
+    width: auto;
     }
 
     #intro-section {
-       flex-direction: column;
+        flex-direction: column;
     }
 
     #intro-section img {
@@ -505,219 +592,340 @@ img#history-img{
 
     #intro-section div:last-child {
         padding-left: 50px;
-        
+
     }
-/*Soutěže*/
+
+    /*Soutěže*/
     #competition-tables {
         display: block;
     }
 
     #tableOneTwo {
-        margin-right:40px;
-        padding: 0 60px;
+        align-items: center;
+        margin: 0;
     }
 
     #tableThreeFour {
-        margin-right: 35px;
-        padding-left: 60px;
         align-items: center;
+        margin: 0;
     }
-/*kontakty*/
-   /* table#contact-table,
-            th,
-            td {
-                margin: 30px;
-            }*/
-            #contacts{
-                flex-direction: column;
-             
-            }
-            #contact-section div{
-                padding: auto;
-            }
-            #contacts div{
-                padding: 0px;
-            }
-/*tymy*/
-.img-teams{
-    height:200px;
-    width:250px
+  /*  #competition-tables {
+        display: block;
+    }
+
+    #tableOneTwo {
+        margin-right: 35px;
+    }
+
+    #tableThreeFour {
+        margin-left: 35px;
+    }*/
+
+    /*kontakty*/
+
+    /* table#contact-table,
+             th,
+             td {
+                 margin: 30px;
+             }*/
+    #contacts {
+        flex-direction: column;
+
+    }
+
+    #contact-section div {
+        padding: auto;
+    }
+
+    #contacts div {
+        padding: 0px;
+    }
+
+    /*tymy*/
+    .img-teams {
+        height: 200px;
+        width: 250px
+    }
+
+    #Info {
+        flex-direction: column;
+    }
+
+    div.teams-list div:first-child {
+        width: 300px;
+    }
+
+    .TeamsInfo {
+        margin-left: 150px;
+    }
+
+    /*historie*/
+    img#history-img {
+        height: auto;
+        width: 100%;
+    }
+
 }
 
-#Info{
-flex-direction: column;
- }
- div.teams-list div:first-child{
-    width: 300px;
- }
- .TeamsInfo{
-    margin-left: 150px;
- }
- /*historie*/
-img#history-img{
-    height: 300px;
-    margin-left: 90px;
-}
-   
-}
-@media screen and (max-width:600px){
+@media screen and (max-width: 600px) {
     #intro-section div:last-child {
-        padding-left: 0px;     
+        padding-left: 0px;
     }
-    #news h3{
-        text-align:center;
+
+    #news h3 {
+        text-align: center;
     }
-    #news img{
-        width:400px;
-        height: 300px;
+
+    #news img {
+        width: 400px;
+        height: 200px;
     }
-    .news-content div{
-        width:400px;
+
+    .news-content div {
+        width: 400px;
     }
-    #intro-section img{
+
+    #intro-section img {
         margin-top: 10px;
         width: 400px;
     }
 
-/*soutez*/
-#tableThreeFour {
-    margin-right: 100px;
-}
-#tableOneTwo{
-padding: 0px;
+    /*soutez*/
+
+
+    /*tymy*/
+    .img-teams {
+        display: none;
+    }
+
+    .ol-teams {
+        padding-left: 100px;
+        font-size: larger;
+    }
+
+    #containerT h3 {
+        text-align: center;
+    }
+
+    .boxTrains {
+        margin-left: auto;
+    }
+
+    #Info {
+        margin-left: 55px;
+    }
+
+    .TeamsInfo {
+        margin-left: 0px;
+    }
+
+    /*historie*/
+    img#history-img {
+        height: auto;
+        width: 100%;
+    }
+
+    /*kontakty*/
 }
 
- /*tymy*/
- .img-teams{
-    display:none;
- }
- .ol-teams{
-     padding-left: 100px;
-     font-size: larger;
- }
- #containerT h3{
-    text-align: center;
- }
- .boxTrains{
-    margin-left: auto;
- }
- #Info{
-    margin-left: 55px;
- }
- .TeamsInfo{
-    margin-left: 0px;
- }
-
- /*historie*/
- img#history-img{
-    margin-left: 0;
-    height: 275px;
-}
-/*kontakty*/
-table#contact-table, th, td{
-margin-left: 30px;
-}
-}
-
-@media screen and (max-width:400px) {
+@media screen and (max-width: 400px) {
     #news {
         flex-direction: column;
         margin-left: 50px;
 
     }
+
     #news img {
         width: 300px;
-        height: 233.3px;
+        /*height: 233.3px;*/
+        height: auto;
     }
+
     .news-content div {
         width: 350px;
         text-align: justify;
     }
+
     #intro-section div:last-child {
         padding-left: 0px;
-        
+
     }
-   
-    .intro-img{
+
+    .intro-img {
         display: none;
     }
-    .container{
+
+    .container {
         padding: 0;
     }
-    .news-content div{
-        width:300px;
+
+    .news-content div {
+        width: 300px;
     }
-    #intro-section p{
-    width: 300px;
-    margin-left: 20px;
+
+    #intro-section p {
+        width: 300px;
+        margin-left: 20px;
     }
+
     #intro-section img {
         display: none;
     }
-    #containerT{
+
+    #containerT {
         padding: 0 35px;
     }
-    #containerT h3{
-     text-align: center;
+
+    #containerT h3 {
+        text-align: center;
     }
-    .ol-teams{
+
+    .ol-teams {
         padding-left: 100px;
-    }  
-    #intro-section{
+    }
+
+    #intro-section {
         margin-left: 30px;
     }
- /*tymy*/
-    .img-teams{
-        display:none;
-     }
-     .TeamsInfo{
-         margin-right:0px;
-         width:auto;
-     }
-     #Info{
-         margin-left:0px;
-     }
-/*historie*/
-img#history-img{
-    display: none;
-}
-.container2{
-    padding: 0 20px;
-}
-/*navigace*/
-li{
-    display: block;
-}
-/*souteze*/
-#tableThreeFour {
-    margin-right: 100px;
-}
-#tableOneTwo{
-    padding: 0px;
-    width: 300px;
-}
-.tableWM{
-    margin-right: 15px;
-}
-/*kontakty*/
-#contact-table{
-    font-size:12px;
-}
-#contact-section div{
-   padding:0px;   
-}
 
-#contacts{
-    margin-left: 30px;
-    margin-right:30px;
-}
-table#contact-table, th, td{
-    width:40px;
-    margin-left: 50px;
-}
+    /*tymy*/
+    .img-teams {
+        display: none;
+    }
+
+    .TeamsInfo {
+        margin-right: 0px;
+        width: auto;
+    }
+
+    #Info {
+        margin-left: 0px;
+    }
+
+    /*historie*/
+    img#history-img {
+        display: none;
+    }
+
+    .container2 {
+        padding: 0 20px;
+    }
+
+    /*navigace*/
+    li {
+        display: block;
+    }
+
+    /*souteze*/
+    #tableThreeFour {
+        margin-right: 100px;
+    }
+
+    #tableOneTwo {
+        padding: 0px;
+        width: 300px;
+    }
+
+    .tableWM {
+        margin-right: 15px;
+    }
+
+    /*kontakty*/
+    #contact-table {
+        font-size: 12px;
+    }
+
+    #contact-section div {
+        padding: 0px;
+    }
+
+    #contacts {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
 
 }
+/*TISK*/
+@media print{
+    footer{
+        display: none;
+    }
+    ul{
+        display: none;
+    }
+    body {
+        background-color:white;
+    }
+    h1 {
+        text-align: center;
+        color: black;
+        text-shadow: 2px 2px black;
+        font-size: 2.5em;
+    }
+    
+    h2 {
+        text-align: center;
+        color: black;
+        text-shadow: 2px 2px black;
+        font-size: 2em;
+    }
+
+    /*uvod*/
+    .intro-img {
+        display: none;
+    }
+    #intro-section {
+        flex-direction: column;
+    }
+
+    #intro-section img {
+        display: none;
+        width: 500px;
+        margin-left: 100px;
+    }
+    #news {
+        flex-direction: column;
+    }
+
+    .news-content div {
+        width: 600px;
+        text-align: justify;
+
+    }
+    #news img {
+        width: 600px;
+        /*height: 400px;*/
+        border: 1px solid white;
+        height: 200px;
+    width: auto;
+    }
+    #news h3 {
+        color: black;
+        text-shadow: 1px 2px white;
+    
+    }
+    
+    #news img {
+        filter: grayscale();
+    }
+    #intro-section h2 {
+        color: black;
+        text-shadow: 2px 2px white;
+    }
+/*KONTAKTY*/
+    #contacts {
+        flex-direction: column;
+    }
+
+    #contact-section div {
+        padding: auto;
+    }
+
+    #contacts div {
+        width: auto;
+    }
 
 
+}
 
    
