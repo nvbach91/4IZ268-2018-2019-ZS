@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="description" content="Restaurace se specializací na hamburgery">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <title>Kontakt | Burger House</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+</head>
+<body>
+    <header>
+        <div class="header-wrap">
+            <img src="assets/logo.png" alt="logo" class="logo"/>
+            <img src="assets/navbar.svg" alt="navbar icon" class="navbar-icon"/>
+            <nav>
+                <a href="index.html" class="nav-item">Domů</a>
+                <a href="menu.html" class="nav-item">Menu</a>
+                <a href="galerie.html" class="nav-item">Galerie</a>
+                <a href="kontakt.html" class="nav-item active">Kontakt a rezervace</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="map">
+            <h1>Kontakt</h1>
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.525125052655!2d14.44803541567787!3d50.07645442212306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94832783621f%3A0x4723b9bb2c2d1342!2sNitransk%C3%A1+985%2F13%2C+130+00+Praha+3-Vinohrady!5e0!3m2!1scs!2scz!4v1541345494620" height="450" style="border:0" allowfullscreen></iframe>
+        </section>
+        <section class="adress contact-col">
+            <h3>Otevírací doba</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Úterý – Sobota:</th>
+                        <td>18:00 - 23:00</td>
+                    </tr>
+                    <tr>
+                        <th>Neděle - Pondělí:</th>
+                        <td>Zavřeno</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Adresa</h3>
+            <p>
+                Burger House <br/>
+                Nitranská 13, Praha 3, 130 00<br/>
+                (+420) 888 888 888, (+420) 777 777 777<br/>
+                <a href="mailto:info@burgerhouse.cz">info@burgerhouse.cz</a>
+            </p>
+        </section>
+        <section class="reservation contact-col contact-col-right">
+            <h3>Rezervace</h3>
+            <p class="note">
+                Rezervaci můžete provést pomocí následujícího formuláře, nebo na telefonu 777 777 777.
+            </p>
+            <form action="#">
+                <label for="name">Jméno a příjmení</label>
+                <input type="text" name="name" id="name"/>
+                <label for="phone">Telefon</label>
+                <input type="text" name="phone" id="phone" value="+420 "/>
+                <label for="mail">E-mail</label>
+                <input type="email" name="mail" id="mail"/>
+                <label for="count">Počet osob</label>
+                <input type="number" name="count" id="count" min="1" max="12" value="2"/>
+                <label for="message">Poznámka</label>
+                <textarea name="message" rows="2" id="message"></textarea>
+                <input type="submit" value="Odeslat"/>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-wrap">
+            <div class="copyright">
+                © 2018 Burger house
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
