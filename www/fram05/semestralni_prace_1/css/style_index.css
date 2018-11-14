@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding: 0;
+} 
+@font-face {
+	font-family: Myriad;
+	src:url(../MYRIADAT.TTF)
+}
+body{
+    background-image: url(../03.jpg);
+    background-size: cover;
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+}
+/* BEGIN INDEX.HTML*/
+.container-menu{
+    padding-top: 50px;
+    display: flex;
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+;
+    
+}
+.logo_index{
+    margin: auto;
+    min-width: 300px;
+}
+.gold_line_top{
+    height: 1px;
+    background-color: white;
+    margin-top: 50px;
+    width: 100%;
+}
+.gold_line_bottom{
+    height: 1px;
+    background-color: white;
+    width: 100%;
+}
+.menu{
+    margin: auto;
+    font-family: Myriad;
+    font-weight: 2900;
+    font-size: 1.5em;
+    font-weight: bold;
+    
+}
+li {
+    padding: 10px;
+    display: inline;
+    padding-right: 1.5em;
+    margin-bottom: 10px;
+}
+.menu_link{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+}
+.menu_link::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background:white;
+    transition: width .3s;
+}
+.menu_link:hover::after {
+    width: 100%;
+}
+footer{
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-family: Myriad;
+    padding-top: 120px;
+    padding-bottom: 20px;
+}
+.img_footer{
+    width: 3%;
+}
+@media only screen and (max-width: 75em) {
+    .logo{
+        margin: auto;
+        min-width: 200px;
+    }
+    .logo-img{
+        width: 40%;
+    }
+    .menu{
+        width: 90%;
+        padding-left: 10%;
+    }
+    li{
+        display: block;
+        padding: 0.5em;
+    }
+    ul li a:hover{
+        border-bottom: none;
+        text-decoration: none;
+    }
+}
