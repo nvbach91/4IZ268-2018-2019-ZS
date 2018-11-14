@@ -45,6 +45,10 @@ nav ul li a:hover:not(.active){
    color: #000;
    font-weight: bold;
 }
+a.active {
+    background-color:  darkgreen;
+    color: white;
+}
 .right{
     background-color: #fff;
     width:50%;
