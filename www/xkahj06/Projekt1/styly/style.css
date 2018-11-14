@@ -1,0 +1,89 @@
+   
+body, body a {
+    font-family: Open Sans, Arial, Helvetica;
+    color: rgb(24, 26, 34);
+}
+.menu {
+    list-style: none;
+    overflow: hidden;
+    margin-top: 0em;
+    background-color:rgba(116, 20, 20, 0.800);
+}
+    .menu li {
+        display: inline, left;
+    }
+
+    .menu a {
+        text-decoration: none;
+        border-bottom: 2;
+        padding: .2em;
+        float: right;
+        width: 180px;
+        line-height: 40px;
+        text-align: center;
+        color: whitesmoke;
+        font-size: 17px;
+            }
+    .menu a:hover {
+        background-color:rgb(69, 120, 148);
+    }
+.poster{
+    margin: 0%;
+    font-size: 50px;
+    color: whitesmoke;
+    max-height: 130px;
+    max-height: 5%;
+    line-height: 2.0em;
+    text-align: center;
+    background-image: url("../fotky/top-min.jpg");
+    background-size: cover;
+    background-position: center;
+} 
+    .poster h1{
+        background-color: rgba(255, 255, 255, 0.7);
+        text-align: center;
+    }
+.articles {
+    font-size: 20px;
+    padding-left: 15%;
+    margin: auto;
+    width: 80%;
+    border: 3px solid green;
+    padding: 10px;
+    column-count:2;
+   
+}
+.article{
+    width: 35%;
+    padding-left:15px;
+    text-align: center;
+    position: relative;
+}
+    .article h2 { 
+        background-color:rgba(116, 20, 20, 0.800);
+        color: whitesmoke;
+    }
+.hmain{ 
+    font-size: 30px;
+    text-align: center;
+}
+.tmain{
+    font-size: 20px;
+    text-align: center;
+}
+.personalFoto{
+    style="float:"right";
+    height:400px;
+    max-height: 230PX;
+}
+.left{float:left; }
+.right{float: right; }
+
+.foter{
+    background-color: #333;
+    width: 100%;
+    bottom: 0;
+    position: relative;
+    background:rgba(116, 20, 20, 0.800);
+}
+

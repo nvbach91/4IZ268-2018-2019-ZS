@@ -1,0 +1,69 @@
+body{
+
+}
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 0px;
+}
+.menu li {
+        display: inline;
+    }
+
+    .menu a {
+        text-decoration: none;
+        border-bottom: 0;
+        background: #fff;
+        padding: .0em;
+        float: left;
+        width: 0px;
+        line-height: 00px;
+        text-align: center;
+        background-color:(236, 147, 248);
+        font-size: 30px;
+            }
+    .menu a:hover {
+        background-color:white;
+    }
+.poster{
+    font-size: 50px;
+    color: black;
+    max-height: 60PX;
+    max-height: 45%;
+    line-height: 2.0em;
+    padding: 00px 00px 00px 00px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 2px;
+} 
+    .poster h1{
+        background-color: rgba(255, 255, 255, 0.7);
+        margin: 0 auto;
+        text-align: center;
+    }
+articles {
+    padding: 20px 0;
+    font-size: 25px;
+    border: 0px solid rgba(255, 255, 255, 0.0);
+}
+.article{
+    font-size: 25px;
+    float: left;
+    width: 100%;
+    padding: 30px;
+    float: left;
+    border: 0px solid rgba(255, 255, 255, 0.0);
+    
+}
+ .article:nth-child(1) h2 { 
+        background-color: white;
+     }
+    .article:nth-child(2) h2 {  background-color: white;}
+    .article:nth-child(3) h2 { background-color: white; }
+    .article:nth-child(1){border: 0px solid rgba(255, 199, 255, 0.7);}
+    .article:nth-child(2){border: 0px solid bisque;}
+    .article:nth-child(3){border: 0px solid cornflowerblue;}
