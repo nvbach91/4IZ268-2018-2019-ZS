@@ -5,12 +5,12 @@
 } 
 @font-face {
 	font-family: Myriad;
-	src:url(../MYRIADAT.TTF)
+	src: url(../MYRIADAT.TTF);
 }
 body{
-    background-image: url(../03.jpg);
+    background-image: url(../photo/04.jpg);
     background-size: cover;
-    background-color: #cccccc;
+    position: relative;
     background-repeat: no-repeat;
 }
 /* BEGIN INDEX.HTML*/
@@ -22,8 +22,6 @@ body{
     flex-direction: column;
     height: 100%;
     position: relative;
-;
-    
 }
 .logo_index{
     margin: auto;
@@ -42,11 +40,10 @@ body{
 }
 .menu{
     margin: auto;
-    font-family: Myriad;
+    font-family: Myriad, sans-serif;
     font-weight: 2900;
     font-size: 1.5em;
     font-weight: bold;
-    
 }
 li {
     padding: 10px;
@@ -74,7 +71,7 @@ footer{
     margin: auto;
     color: white;
     text-align: center;
-    font-family: Myriad;
+    font-family: Myriad, sans-serif;
     padding-top: 120px;
     padding-bottom: 20px;
 }
@@ -100,5 +97,10 @@ footer{
     ul li a:hover{
         border-bottom: none;
         text-decoration: none;
+    }
+}
+@media print{
+    .menu{
+        display: none;
     }
 }
