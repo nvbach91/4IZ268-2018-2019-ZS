@@ -437,6 +437,10 @@ footer {
     margin: 50px 10px 0 0;
 }
 
+.intro-p {
+    padding-bottom: 30px;
+}
+
 /* map.html */
 #map {
     display: flex;
@@ -540,6 +544,15 @@ iframe {
         text-align: center;
         float: none;
     }
+
+    body #map {
+        width: 60%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 /* Small devices (600px and up) */
@@ -594,6 +607,15 @@ iframe {
         text-align: center;
         float: none;
     }
+
+    body #map {
+        width: 80%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 /* Medium devices (768px and up) */
@@ -640,6 +662,19 @@ iframe {
 
     body #map p {
         font-size: 80%;
+    }
+
+    body .intro-p {
+        padding-bottom: 15px;
+    }
+
+    body #map {
+        width: 70%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -697,6 +732,19 @@ iframe {
 
     body #map p {
         font-size: 80%;
+    }
+
+    body .intro-p {
+        padding-bottom: 10px;
+    }
+
+    body #map {
+        width: 60%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -757,6 +805,19 @@ iframe {
 
     body #map p {
         font-size: 90%;
+    }
+
+    body .intro-p {
+        padding-bottom: 10px;
+    }
+
+    body #map {
+        width: 50%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
     }
 }
 
