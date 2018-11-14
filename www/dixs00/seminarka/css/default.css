@@ -18,6 +18,14 @@ background-color:whitesmoke;
 }
 
 
+.container{
+  /*s p tagem mi to fungovalo*/
+  /*ale pochopit flex a <ul>, ...*/
+
+
+}
+
+
 body{
    margin:0 auto;
    font-family: sans-serif;
@@ -105,7 +113,6 @@ p{
 
 }
 
-
 li{
   padding-bottom:10px;
 }
@@ -143,12 +150,7 @@ footer{
 } 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  img{
-    float: none;
-    height: auto;
-    margin:auto;
-    margin-top:15px;
-  }
+ 
 
   h1{
     font-size:xx-large;
@@ -159,7 +161,23 @@ footer{
     margin:auto;
 
   }
-} 
+  ul{
+      clear: both;
+
+  }
+  
+  .imageLeftFloat{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:10px;
+    margin-bottom: 10px;
+    float: none;
+  }
+}
+
+
+
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
