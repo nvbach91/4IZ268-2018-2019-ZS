@@ -1,84 +1,76 @@
    
+body, body a {
+    font-family: Open Sans, Arial, Helvetica;
+    color: rgb(24, 26, 34);
+}
 .menu {
     list-style: none;
-    padding: 0;
-    margin: 0;
     overflow: hidden;
-    background-color:rgb(236, 147, 248);
+    margin-top: 0em;
+    background-color:rgba(116, 20, 20, 0.800);
 }
-
     .menu li {
-        display: inline;
+        display: inline, left;
     }
 
     .menu a {
         text-decoration: none;
-        border-bottom: 3;
-        background: #fff;
+        border-bottom: 2;
         padding: .2em;
-        float: left;
-        width: 325px;
-        line-height: 70px;
+        float: right;
+        width: 180px;
+        line-height: 40px;
         text-align: center;
-        background-color:rgb(236, 147, 248);
-        font-size: 30px;
+        color: whitesmoke;
+        font-size: 17px;
             }
     .menu a:hover {
-        background-color:rgb(202, 255, 116);
+        background-color:rgb(69, 120, 148);
     }
 .poster{
-    font-size: 120px;
+    margin: 0%;
+    font-size: 50px;
     color: whitesmoke;
-    max-height: 230PX;
-    max-height: 45%;
+    max-height: 130px;
+    max-height: 5%;
     line-height: 2.0em;
-    padding: 00px 00px 00px 00px;
     text-align: center;
     background-image: url("../fotky/top-min.jpg");
-    /*tady kdyz jsem dal nejaky obrazek od sebe, tak to nefungovalo z nejakeho duvodu*/
     background-size: cover;
     background-position: center;
-    margin-bottom: 2px;
 } 
     .poster h1{
         background-color: rgba(255, 255, 255, 0.7);
-        margin: 0 auto;
         text-align: center;
     }
 .articles {
-    padding: 50px 0;
-    font-size: 34px;
+    font-size: 20px;
+    padding-left: 15%;
+    margin: auto;
+    width: 80%;
+    border: 3px solid green;
+    padding: 10px;
+    column-count:2;
+   
 }
 .article{
-    float: left;
-    width: 45%;
-    padding: 30px;
-    float: left;
-    
+    width: 35%;
+    padding-left:15px;
+    text-align: center;
+    position: relative;
 }
-    .article:nth-child(1) h2 { 
-        background-color: rgba(255, 199, 255, 0.7);
-     }
-    .article:nth-child(2) h2 {  background-color: bisque;}
-    .article:nth-child(3) h2 { background-color: cornflowerblue; }
-    .article:nth-child(1){border: 4px solid rgba(255, 199, 255, 0.7);}
-    .article:nth-child(2){border: 4px solid bisque;}
-    .article:nth-child(3){border: 4px solid cornflowerblue;}
-    .hmain{ 
-        font-size: 45px;
-        text-align: center;
+    .article h2 { 
+        background-color:rgba(116, 20, 20, 0.800);
+        color: whitesmoke;
     }
-    .tmain{
-        font-size: 35px;
-        text-align: center;
-    }
-    .article:nth-child(3) h2 { background-color: cornflowerblue; }
-    .article:nth-child(4) h2 { border-bottom: 5px solid darkgoldenrod; }
-    .article:nth-child(5) h2 { border-bottom: 5px solid lightcoral; }
-    .article:nth-child(6) h2 { border-bottom: 5px solid lightpink; }
-    .article:nth-child(7) h2 { border-bottom: 5px solid mediumaquamarine; }
-    .article:nth-child(8) h2 { border-bottom: 5px solid palegreen; }
-
+.hmain{ 
+    font-size: 30px;
+    text-align: center;
+}
+.tmain{
+    font-size: 20px;
+    text-align: center;
+}
 .personalFoto{
     style="float:"right";
     height:400px;
@@ -86,3 +78,12 @@
 }
 .left{float:left; }
 .right{float: right; }
+
+.foter{
+    background-color: #333;
+    width: 100%;
+    bottom: 0;
+    position: relative;
+    background:rgba(116, 20, 20, 0.800);
+}
+
