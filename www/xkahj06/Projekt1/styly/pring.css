@@ -62,3 +62,7 @@ articles {
     
 }
     .article h2{color:black;}
+
+.menu, footer{
+display: none;
+}
