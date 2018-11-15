@@ -20,10 +20,28 @@ var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var shiftChar = function (c, shift) {
     // a helper function to shift one character inside the 
     // alphabet based on the shift value and return the result
+    // console.log(alphabet.indexOf(c));
+    // console.log((alphabet.indexOf(c) + shift) % alphabet.length);
+    if ((alphabet.indexOf(c) - shift) < 0) {
+
+        return alphabet.charAt((alphabet.indexOf(c) - shift) + 26);
+    } else {
+        return alphabet.charAt((alphabet.indexOf(c) - shift));
+    }
+
 };
 var shiftString = function (str, shift) {
     // a helper function to shift one entire string inside the 
     // alphabet based on the shift value and return the result
+    var shifted = "";
+    for (var i = 0; i < str.length; i++) {
+        if (alphabet.includes(str.charAt(i))) {
+            shifted += shiftChar(str.charAt(i), shift);
+        } else {
+            shifted += str.charAt(i);
+        } 
+    }
+    return shifted;
 };
 var caesarDecipher = function (cipherText, usedKey) {
     // your implementation goes here
@@ -31,6 +49,8 @@ var caesarDecipher = function (cipherText, usedKey) {
     //    str.indexOf(c) - returns the index of the specified character in the string
     //    str.charAt(i) - returns the character at the specified index in the string
     //    when the shifted character is out of bound, it goes back to the beginning and count on from there
+    console.log(shiftString(cipherText, usedKey));
+    return shiftString("d");
 };
 
 // albert einstein
