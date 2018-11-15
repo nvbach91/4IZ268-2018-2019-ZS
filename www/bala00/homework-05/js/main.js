@@ -31,17 +31,17 @@ console.log(celsius + '°C = ' + (celsius * 9 / 5 + 32) + '°F');
  * V konzoli také vyzkoušejte, zda fungují vaše funkce. 
  */
 
-var age = function (birthYear) {
+var getAge = function (birthYear) {
     let ageString = 'Pepe\'s age is ';
     let currentYear = (new Date()).getFullYear();
-    return (ageString + (currentYear - birthYear));
-}
+    return ageString + (currentYear - birthYear);
+};
 var toCelsius = function (fahrenheiht) {
     return fahrenheiht + '°F is ' + (fahrenheiht - 32) * 5 / 9 + '°C';
-}
+};
 var toFahrenheiht = function (celsius) {
     return celsius + '°C is ' + (celsius * 9 / 5 + 32) + '°F';
-}
+};
 
 /** 
  * 4. %CENSORED%. 
@@ -52,13 +52,13 @@ var toFahrenheiht = function (celsius) {
  */
 
 var censored = function (num1, num2) {
-    if (num2 == 0) {
+    if (num2 === 0) {
         return false;
     } else {
         let result = (num1 / num2 * 100);
-        return (num1 + ' je ' + result + '% z ' + num2);
+        return num1 + ' je ' + result + '% z ' + num2;
     }
-}
+};
 
 /** 
  * 5. Kdo s koho. 
@@ -67,15 +67,15 @@ var censored = function (num1, num2) {
  * desetinná čísla, zlomky. Zkuste je párkrát zavolat v kódu a výsledky uložit do proměnných. 
  */
 
-var isGreater = function (num1, num2) {
-    if (num1 == num2) {
+var getGreater = function (num1, num2) {
+    if (num1 === num2) {
         return 'Čísla se rovnají.';
     } else
         return Math.max(num1, num2) + ' is greater';
-}
-var num3 = isGreater(1, 2);
-var num4 = isGreater(3.8, 5.8);
-var num5 = isGreater(1 / 3, 2 / 3);
+};
+var num3 = getGreater(1, 2);
+var num4 = getGreater(3.8, 5.8);
+var num5 = getGreater(1 / 3, 2 / 3);
 
 /** 
  * 6. I can cleary see the pattern. 
@@ -87,7 +87,7 @@ var thirteen = function () {
     for (var i = 0; i <= 730; i += 13) {
         console.log(i);
     }
-}
+};
 
 /** 
  * 7. Around and about. 
@@ -100,20 +100,20 @@ var aroundAbout = function (r) {
     } else {
         return (r * r * Math.PI);
     }
-}
+};
 
 /** 
  * 8. Another dimension. 
  * Vytvořte funkci, která vypočte objem kuželu, pokud znáte jeho výšku a poloměr.
  */
 
-var anotherDimension = function (h, r) {
+var areaOfCircle = function (h, r) {
     if (h <= 0 || r <= 0) {
         return false;
     } else {
         return (aroundAbout(r) * h * 1 / 3);
     }
-}
+};
 
 /** 
  * 9. Not sure if triangle, or just some random values. 
@@ -122,11 +122,11 @@ var anotherDimension = function (h, r) {
  */
 
 var isTriangle = function (a, b, c) {
-    if (a <= 0 || b <= 0 || c <= 0) {
+    if (a <= 0 || b <= 0 || c <= 0 || (a + b) > c || (a + c) > b || (c + b) > a) {
         return false;
     } else
         return true;
-}
+};
 
 /** 
  * 10. Heroic performance. 
@@ -139,7 +139,7 @@ var heroicPerformance = function (a, b, c) {
     if (!isTriangle(a, b, c)) {
         return false;
     } else {
-        let y = (a + b + c) / 2;
-        return (Math.sqrt(y * (y - a) * (y - b) * (y - c)));
+        let s = (a + b + c) / 2;
+        return (Math.sqrt(s * (s - a) * (s - b) * (s - c)));
     }
-}
+};
