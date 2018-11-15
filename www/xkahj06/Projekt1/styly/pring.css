@@ -1,5 +1,5 @@
-body{
-
+body,body a{
+    text-align: left;
 }
 .menu {
     list-style: none;
@@ -9,10 +9,9 @@ body{
     text-decoration: none;
     font-size: 0px;
 }
-.menu li {
+    .menu li {
         display: inline;
-    }
-
+    }   
     .menu a {
         text-decoration: none;
         border-bottom: 0;
@@ -42,28 +41,28 @@ body{
 } 
     .poster h1{
         background-color: rgba(255, 255, 255, 0.7);
+        font-size:23px;
         margin: 0 auto;
         text-align: center;
     }
 articles {
-    padding: 20px 0;
+   
+    padding: 0px 0;
     font-size: 25px;
     border: 0px solid rgba(255, 255, 255, 0.0);
 }
 .article{
-    font-size: 25px;
+    text-align: left;
+    font-size: 14px;
     float: left;
     width: 100%;
-    padding: 30px;
-    float: left;
+    padding: 0px;
+    margin 0px;
     border: 0px solid rgba(255, 255, 255, 0.0);
     
 }
- .article:nth-child(1) h2 { 
-        background-color: white;
-     }
-    .article:nth-child(2) h2 {  background-color: white;}
-    .article:nth-child(3) h2 { background-color: white; }
-    .article:nth-child(1){border: 0px solid rgba(255, 199, 255, 0.7);}
-    .article:nth-child(2){border: 0px solid bisque;}
-    .article:nth-child(3){border: 0px solid cornflowerblue;}
+    .article h2{color:black;}
+
+.menu, footer{
+display: none;
+}
