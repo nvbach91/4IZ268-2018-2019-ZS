@@ -17,11 +17,24 @@ color: #C30011;
 background-color:whitesmoke;
 }
 
+.imageInFlex{
+  margin:15px; 
+   max-width: 100%;
+   display: block;
+ }
 
-.flexcontainer{
+.flexContainer{
 display:flex;
+flex-flow: row nowrap;
 }
-
+@media screen and (max-width: 700px) {
+  .flexContainer {
+    flex-flow:row-reverse wrap; 
+  }
+  .imageInFlex{
+    margin:20px auto;
+  }
+}
 
 body{
    margin:0 auto;
@@ -34,7 +47,7 @@ header{
   flex-direction:column;  
   justify-content: center;
   justify-items: center;
- 
+  margin:0 auto;
 }
 
 h1{
@@ -42,7 +55,6 @@ font-size: xx-large;
 color:whitesmoke;
 text-align: center;
 margin: 20px 10px 20px 10px;
-
 }
 
 
@@ -50,7 +62,6 @@ nav{
   display:flex;
   flex-flow: row wrap;
   justify-content: center;
-
 }
 
 nav a{
@@ -61,6 +72,7 @@ nav a{
   border: solid whitesmoke 1px;
   /*border-image: url(flagbig.svg) 60 stretch;*/
   padding: 10px;
+  
   
   height: 30px;
   width:  130px;
@@ -86,44 +98,29 @@ nav a:active {
 }
 
 a.inline{
-  color: #002868;
-
-  
+  color: #002868;  
 }
-
-
 
 .containmiddle{
   align-self: center;
   max-width: 860px;
+  
   }
-
-
 
 p{
   padding: 15px 0px;
   text-align: justify;
   font-size:  16px;
- 
 }
 
-.imageInFlex{
- margin:15px; 
-  max-width: 100%;
-  display: block;
 
-
-}
 
 li{
   padding-bottom:10px;
-  
-  
 }
 
 ul{
   padding-right: 40px;
-  
 }
 
 .noBullet{
@@ -148,11 +145,18 @@ ul h2{
   margin: auto 20px auto 20px;
 }
 
+ul li.star{
+  margin-left:20px;
+  margin-right:20px;
+  text-align: justify;
+}
+
+
 
 ul li.star::before {
-  content: "★";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: navy; /* Change the color */
-  display: inline-block; /* Needed to add space between the bullet and the text */ 
+  content: "★";
+  color: navy; 
+  display: inline-block;
   width: 1.2em;
   margin-left: -1.2em; 
   
@@ -167,36 +171,40 @@ ul li.star::before {
   transition: 1s;
 }
 
-ul.sidenav li{
+ol.sidenav{
+  padding:0px;
+  margin:0px;
+  width:auto;
+}
+ol.sidenav li{
   padding:10px;
   height:20px;
   color:white;
-  list-style-type: decimal;
-  font-weight: bold;
+  list-style-type: decimal; 
   margin:5px;
   border-radius: 5px;
-  margin-left:15px;
-  min-width:300px;
-  max-width:500px;
   
+  min-width:300px;
+  max-width:inherit;  
 }
 
-ul.sidenav li:nth-child(1){
-  background-color:crimson;;
+ol.sidenav li:nth-child(1){
+  background-color:crimson;
+  margin-top: 0;
 }
-ul.sidenav li:nth-child(2){
+ol.sidenav li:nth-child(2){
   background-color:orange;
 }
-ul.sidenav li:nth-child(3){
+ol.sidenav li:nth-child(3){
   background-color:green;
 }
-ul.sidenav li:nth-child(4){
+ol.sidenav li:nth-child(4){
   background-color:cornflowerblue;
 }
-ul.sidenav li:nth-child(5){
+ol.sidenav li:nth-child(5){
   background-color:purple;
 }
-ul.sidenav li:nth-child(6){
+ol.sidenav li:nth-child(6){
   background-color:grey;
 }
 
@@ -211,31 +219,39 @@ footer{
   background-color:navy;
 }
 
+
 .forYourMoney div{
   height:auto;
   color:white;
   font-size: 20px;
- 
   padding: 10px 10px;
   margin: auto 15px;
   border-radius: 5px;
   margin:15px;
+ 
 }
 
 .forYourMoney div:nth-of-type(1){
-  background-color:navy;
-  margin-bottom:0;
+  color:navy;
+text-align:center;
+  border:2px solid navy;
 
 }
 .forYourMoney div:nth-of-type(2){
-  background-color:#C30011;
-  margin-top:15px;
+  color:#C30011;
+  border:2px solid #C30011;
+  text-align: center;
+  margin-top:0px; 
 }
 .forYourMoney div:nth-of-type(3){
-  background-color:navy;
+  color:navy;
+  border:2px solid navy;
+  text-align:center;
 }
 .forYourMoney div:nth-of-type(4){
-  background-color:#C30011;
+  color:#C30011;
+  border:2px solid #C30011;
+  text-align: center;
 }
 .sidenav {
   height: 0px;
@@ -246,68 +262,104 @@ footer{
   left: 0;
   background-color:white;
   overflow-y: hidden;
-  transition-duration: 1s;
   margin:0 auto;
   font-size: 20px;
+  transition-duration: 1s;
+  transition-property:height;
 }
 
-/* ************************************************************************************;
-/*ultra small devices - iPhone SE and similarly tiny phones - 360 and lower*/
-@media only screen and (max-width: 360px) {
-  img{
-    float: none;
-    height: auto;
-    margin: auto;
-  }
-
-  h1{
-    font-size:x-large;
-  }
-
-  nav a{
-    font-size:large;
-    height: 20px;
-    width:  80px;
-
-  }
-} 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+footer{
+  margin-top:50px;
+  color:white;
+  font-size: 20px;
+  padding:20px;
  
+}
 
-  h1{
-    font-size:xx-large;
-  }
+.footerContainer{
+  max-width: 810px;
+  margin:20px auto;
+  display:flex;
+  flex-flow:row wrap;
+  align-items: baseline;
+  justify-content: space-between;
+}
 
-  p{
-    max-width: 90%;
-    margin:auto;
+.footerLeft{
+margin:20px;
+}
 
-  }
-  ul{
-      clear: both;
+.footerRight{
+  margin:20px;  
+}
 
-  }
-  
-  .imageLeftFloat{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top:10px;
-    margin-bottom: 10px;
-    float: none;
-  }
+.individualStudents{
+  padding:20px;
+margin:auto;
+
+}
+
+.corporateClients{
+  padding:20px;
+margin:auto;
 }
 
 
-
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-nav a{
-width: 117px;
-font-size: x-large;
+.reference{
+  padding:20px;
+  margin:20px;;
+  border-radius:5px;
+  border: 2px solid navy;
 
 }
-} 
 
+.reference h3{
+  margin-top:0px;
+  display:block;
+}
+
+.flexContainerWrap{
+  display:flex;
+  flex-flow: row wrap;
+}
+
+div.reference img{
+  height:auto;
+  max-width:100%;
+  width:100px;
+  float:right;
+}
+
+.contact{
+  padding:20px;
+  margin:auto;
+  display:flex;
+  flex-flow: column wrap;
+  font-style: normal;
+}
+
+.columnWrap{
+  display:flex;
+  flex-flow: row nowrap;
+  font-style: normal;
+
+}
+
+.label{
+  color:red;
+}
+
+
+.mapouter{
+  text-align:right;
+  max-height:400px;
+  max-width:400px;
+  margin:20px;
+}
+
+.gmap_canvas {
+  overflow:hidden;
+  background:none;
+  max-height:100%;
+  max-width:100%;
+}
