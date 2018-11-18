@@ -118,3 +118,15 @@ footer p {
         border-bottom: 10px solid white;
     }
 }
+
+@media print {
+   ul {
+       display: none;
+   }
+    .navigation {
+        height: 150px;
+    }
+    main {
+        height: 820px;
+    }
+}
