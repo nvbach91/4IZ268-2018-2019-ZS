@@ -143,3 +143,24 @@ p {
     }
 }
 
+@media print {
+    .navigation ul {
+        display: none;
+    }
+    nav {
+        height: 150px;
+        background-color: rgb(117,116,115);
+    }
+
+    img {
+        width: 230px;
+    }
+
+    h2 {
+        page-break-after: revert;
+    }
+
+    .page-break {
+        page-break-after: always;
+    }
+}
