@@ -15,9 +15,9 @@
  * nastylujte.
  */
 
-var Deciphertext_part = document.querySelector('#to_decipher');
-var deci_index_part = document.querySelector('#deci_index');
-var output_part = document.querySelector('#output');
+var DecipherTextPart = document.querySelector('#to_decipher');
+var DeciIndexPart = document.querySelector('#deci_index');
+var OutputPart = document.querySelector('#output');
 var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var shiftChar = function (c, shift) {
     var position = alphabet.indexOf(c.toUpperCase());
@@ -33,17 +33,21 @@ var shiftChar = function (c, shift) {
 };
 
 var shiftString = function (str, shift) {
-    var arr = str.split("")
+    var arr = [];
+    for (var i = 0; i < str.length; i++) {
+        arr[i] = shiftChar(str.charAt(i), shift);
+    };
+    return arr.join("");
+    /*var arr = str.split("")
     var i;
     for (var i = 0; i < arr.length; i++) {
         arr[i] = shiftChar(arr[i], shift);
     };
-    return arr.join("");
+    return arr.join("");*/
 }
 
 var caesarDecipher = function (cipherText, usedKey) {
-    var arr = cipherText.split(" ")
-    var i;
+    var arr = cipherText.split()
     for (var i = 0; i < arr.length; i++) {
         arr[i] = shiftString(arr[i], usedKey);
     };
@@ -52,10 +56,10 @@ var caesarDecipher = function (cipherText, usedKey) {
 
 deci_form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var Deciphertext = Deciphertext_part.value;
-    var deci_index = deci_index_part.value;
-    var deciphered = caesarDecipher(Deciphertext, deci_index)
-    output_part.innerHTML = deciphered;
+    var DecipherText = DecipherTextPart.value;
+    var DeciIndex = DeciIndexPart.value;
+    var Deciphered = caesarDecipher(DecipherText, DeciIndex)
+    OutputPart.innerHTML = Deciphered;
 });
 
 

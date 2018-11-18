@@ -4,7 +4,7 @@
 //pokud znáte jeho rok narození. Použijte proměnné a pro výpis použijte zřetězení
 stringů. Jako názvy proměnných používejte anglické pojmy.*/
 var year_born = 1957;
-var age = 2018 - year_born;
+var age = new Date().getFullYear() - year_born;
 
 console.log('Pepe je ještě mladý je mu jen ' + age + ' let.');
 
@@ -26,19 +26,19 @@ Tj. vytvořte funkce, které přijímají argumenty, a na základě argumentů p
 Párkrát zavolejte tyto funkce s různými argumenty. V konzoli také vyzkoušejte, zda fungují vaše funkce.*/
 
 var year_bornf;
-var age = function (year_bornf) {
-    var agen = 2018 - year_bornf;
+var calculateAge = function (year_bornf) {
+    var agen = new Date().getFullYear() - year_bornf;
     return 'Pepe je ještě mladý je mu jen ' + agen + ' let.';
 };
 
 var tempC;
-var fonction = function (tempC) {
+var func_tempCF = function (tempC) {
     var temp = ((tempC * 9) / 5) + 32;
     return temp + '°C = ' + tempF + '°F';
 };
 
 var tempF;
-var funktio = function (tempF) {
+var func_tempFC = function (tempF) {
     var temp = ((tempF - 32) * 5) / 9;
     return temp + '°F = ' + tempF + '°C';
 };
@@ -60,31 +60,24 @@ var divide = function (a, b) {
 Vyzkoušejte funkčnost pro celá čísla, desetinná čísla, zlomky. Zkuste je párkrát zavolat v kódu a výsledky uložit do proměnných.*/
 
 var compare = function (a, b) {
-    if (a > b) {
-        return a;
-    } else {
-        if (a === b) {
-            return 'čísla se rovnají!';
-        } else {
-            return b;
-        }
-    }
+    if (a > b) return a;
+    if (b > a) return b;
+    console.log('cisla se rovnaji');
 };
 
 /*6. I can cleary see the pattern. Vytvořte funkci, která vypíše popořadě všechny násobky 13, které jsou menší nebo rovno 730. Použijte for loop.*/
 
 var multiple = function () {
     var i;
-    for (i = 0; i <= 730; i++) {
+    for (i = 0; i <= 730; i += 13) {
         console.log(i);
-        i += 13;
     }
 };
 
 /*7. Around and about. Vytvořte funkci, která vypočte obsah kružnice podle dodaného poloměru.*/
 
 var circumference = function (radius) {
-    return radius * 2 * Math.PI;
+    return radius * radius * Math.PI;
 };
 
 /*8. Another dimension. Vytvořte funkci, která vypočte objem kuželu, pokud znáte jeho výšku a poloměr.*/
@@ -98,37 +91,19 @@ var volume = function (radius, height) {
 /*9. Not sure if triangle, or just some random values. Vytvořte funkci, která rozhodne,
 zda se z dodaných 3 délek dá postavit trojúhelník, tj. vypíše buď true/yes nebo false/no.*/
 
-var triangle = function (a, b, c) {
-    var higher;
-    var highest;
-    var lower;
-    if (a > b) {
-        higher = a;
-        lower = b;
-    } else {
-        higher = b;
-        lower = a;
-    }
-    if (higher > c) {
-        highest = higher;
-        higher = c;
-    } else {
-        highest = c;
-    }
-    if ((highest - higher - lower) > 0) {
-        /*console.log(highest + ',' + higher + ',' + lower);*/
-        return false;
-    } else {
+var isTriangle = function (a, b, c) {
+    if (a + b > c && a + c > b && b + c > a) {
         return true;
     }
+    return false;
 }
 
 /*10. Heroic performance. Vytvořte funkci, která vypočte obsah trojúhelníka podle Heronova vzorce,
 tj. funkce dostane délky všech 3 stran. Použijte přitom předchozí validaci, tj. počítejte pouze,
 když to má smysl. Hint: funkce pro odmocninu je Math.sqrt()*/
 
-var hero = function (a, b, c) {
-    if (triangle(a, b, c) === true) {
+var area = function (a, b, c) {
+    if (triangle(a, b, c)) {
         var s = (a + b + c) / 2
         var trio = Math.sqrt(s * (s - a) * (s - b) * (s - c));
         return trio;
