@@ -304,6 +304,10 @@ margin:auto;
 margin:auto;
 }
 
+.reference p{
+margin:0;
+padding:0;
+}
 
 .reference{
   padding:20px;
