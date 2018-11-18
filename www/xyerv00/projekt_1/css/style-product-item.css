@@ -5,14 +5,14 @@
 }
 
 body {
-    background-color: rgb(117,116,115);
+    background-color: rgb(117, 116, 115);
     max-width: 900px;
     margin: auto;
 }
 
 main {
     background-color: white;
-    color: rgba(58,58,58,0.83);
+    color: rgba(58, 58, 58, 0.83);
 }
 
 .clear {
@@ -69,7 +69,7 @@ h1 {
     left: calc(50% - 150px);
     text-align: center;
     padding: 30px 0;
-    border-bottom: 3px solid rgba(117,116,115,1);
+    border-bottom: 3px solid rgba(117, 116, 115, 1);
 }
 
 h2 {
@@ -93,7 +93,6 @@ footer {
     padding: 20px;
 }
 
-
 main ul {
     padding: 0;
 }
@@ -113,7 +112,7 @@ p {
     margin: auto;
 }
 
-@media screen and (min-width: 720px){
+@media screen and (min-width: 720px) {
     .navigation {
         height: 200px;
     }
@@ -123,6 +122,7 @@ p {
         max-width: 900px;
         left: calc(50% - 450px);
     }
+
     .nav_li {
         float: left;
         width: 25%;
@@ -147,9 +147,10 @@ p {
     .navigation ul {
         display: none;
     }
+
     nav {
         height: 150px;
-        background-color: rgb(117,116,115);
+        background-color: rgb(117, 116, 115);
     }
 
     img {
