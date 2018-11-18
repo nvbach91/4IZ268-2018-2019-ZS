@@ -158,9 +158,16 @@ footer {
         float: left;
         margin-top: 40px;
     }
-
-    .product img {
-
-    }
 }
 
+
+@media print {
+    .navigation ul {
+        display: none;
+    }
+
+    nav {
+        background-color: rgb(117, 116, 115);
+        height: 150px;
+    }
+}
