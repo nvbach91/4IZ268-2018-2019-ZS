@@ -1,7 +1,7 @@
 *{
 font-family: sans-serif;
-color:rgba(0,0,0,0.7)
-}
+color:black
+ }
 
 nav{
    display: none;
@@ -14,3 +14,12 @@ img{
 iframe{
    display:none;
 }
+
+.footerLeft{
+   display:none;
+}
+
+.footerRight{
+   margin-top:20px;
+}
+
