@@ -131,9 +131,11 @@ ul{
   padding-left:20px;
 }
 
-ul h2{
+.flexContainer div.headerAndList h2{
   margin-bottom: 15px;
   margin-top:15px;
+  margin-left:30px;
+  margin-right:30px;
 
 }
 
@@ -341,6 +343,10 @@ div.reference img{
   font-style: normal;
 } 
 
+th span{
+font-size: 30px;
+}
+
 .contactContainer{
   display: flex;
   flex-flow: row wrap;
@@ -362,6 +368,11 @@ th{
 iframe{
   max-height: 400px;
   min-height: 200px;
+  border:0;
+}
+
+.flexContainer h2{
+  
 }
 
 .mapouter{
