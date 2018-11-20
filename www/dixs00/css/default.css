@@ -17,18 +17,29 @@ color: #C30011;
 background-color:whitesmoke;
 }
 
+.imageInFlex{
+  margin:15px; 
+   max-width: 100%;
+   display: block;
+ }
 
-.container{
-  /*s p tagem mi to fungovalo*/
-  /*ale pochopit flex a <ul>, ...*/
-
-
+.flexContainer{
+display:flex;
+flex-flow: row nowrap;
 }
-
+@media screen and (max-width: 700px) {
+  .flexContainer {
+    flex-flow:row-reverse wrap; 
+  }
+  .imageInFlex{
+    margin:20px auto;
+  }
+}  
 
 body{
    margin:0 auto;
    font-family: sans-serif;
+  
 }
 header{
   background-color:#C30011;
@@ -36,7 +47,7 @@ header{
   flex-direction:column;  
   justify-content: center;
   justify-items: center;
- 
+  margin:0 auto;
 }
 
 h1{
@@ -44,7 +55,6 @@ font-size: xx-large;
 color:whitesmoke;
 text-align: center;
 margin: 20px 10px 20px 10px;
-
 }
 
 
@@ -52,7 +62,6 @@ nav{
   display:flex;
   flex-flow: row wrap;
   justify-content: center;
-
 }
 
 nav a{
@@ -63,6 +72,7 @@ nav a{
   border: solid whitesmoke 1px;
   /*border-image: url(flagbig.svg) 60 stretch;*/
   padding: 10px;
+  
   
   height: 30px;
   width:  130px;
@@ -87,35 +97,119 @@ nav a:active {
     background-color: rgba(250,100,100,0.5)
 }
 
-
+a.inline{
+  color: #002868;  
+}
 
 .containmiddle{
   align-self: center;
   max-width: 860px;
+  
   }
 
-
-
 p{
-  padding:15px;
+  padding: 15px 0px;
   text-align: justify;
   font-size:  16px;
- 
 }
 
-.imageLeftFloat{
-  float:left;
-  margin-right: 4%;
-  margin-left:15px; 
-  max-width: 100%;
-  display: block;
 
-
-}
 
 li{
   padding-bottom:10px;
 }
+
+ul{
+  padding-right: 40px;
+}
+
+.noBullet{
+  list-style-type: none;
+}
+.flexList{
+  margin:0;
+  padding-left:20px;
+}
+
+.flexContainer div.headerAndList h2{
+  margin-bottom: 15px;
+  margin-top:15px;
+  margin-left:30px;
+  margin-right:30px;
+
+}
+
+.reasons{
+  margin-top:15px;
+}
+
+.reasons p, .reasons h2{
+  margin: auto 20px auto 20px;
+}
+
+ul li.star{
+  margin-left:20px;
+  margin-right:20px;
+  text-align: justify;
+}
+
+
+
+ul li.star::before {
+  content: "★";
+  color: navy; 
+  display: inline-block;
+  width: 1.2em;
+  margin-left: -1.2em; 
+  
+}
+
+#toggleHamburger{
+  display:inline-block;
+  padding:0;
+  margin:0;
+  border:0;
+  color:red;
+  transition: 1s;
+}
+
+ol.sidenav{
+  padding:0px;
+  margin:0px;
+  width:auto;
+}
+ol.sidenav li{
+  padding:10px;
+  height:20px;
+  color:white;
+  list-style-type: decimal; 
+  margin:5px;
+  border-radius: 5px;
+  
+  min-width:300px;
+  max-width:inherit;  
+}
+
+ol.sidenav li:nth-child(1){
+  background-color:crimson;
+  margin-top: 0;
+}
+ol.sidenav li:nth-child(2){
+  background-color:orange;
+}
+ol.sidenav li:nth-child(3){
+  background-color:green;
+}
+ol.sidenav li:nth-child(4){
+  background-color:cornflowerblue;
+}
+ol.sidenav li:nth-child(5){
+  background-color:purple;
+}
+ol.sidenav li:nth-child(6){
+  background-color:grey;
+}
+
 
 main{
   max-width: 810px;
@@ -128,63 +222,170 @@ footer{
 }
 
 
-
-/*ultra small devices - iPhone SE and similarly tiny phones - 360 and lower*/
-@media only screen and (max-width: 360px) {
-  img{
-    float: none;
-    height: auto;
-    margin: auto;
-  }
-
-  h1{
-    font-size:x-large;
-  }
-
-  nav a{
-    font-size:large;
-    height: 20px;
-    width:  80px;
-
-  }
-} 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+.forYourMoney div{
+  height:auto;
+  color:white;
+  font-size: 20px;
+  padding: 10px 10px;
+  margin: auto 15px;
+  border-radius: 5px;
+  margin:15px;
  
-
-  h1{
-    font-size:xx-large;
-  }
-
-  p{
-    max-width: 90%;
-    margin:auto;
-
-  }
-  ul{
-      clear: both;
-
-  }
-  
-  .imageLeftFloat{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top:10px;
-    margin-bottom: 10px;
-    float: none;
-  }
 }
 
-
-
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-nav a{
-width: 117px;
-font-size: x-large;
+.forYourMoney div:nth-of-type(1){
+  color:navy;
+text-align:center;
+  border:2px solid navy;
 
 }
+.forYourMoney div:nth-of-type(2){
+  color:#C30011;
+  border:2px solid #C30011;
+  text-align: center;
+  margin-top:0px; 
+}
+.forYourMoney div:nth-of-type(3){
+  color:navy;
+  border:2px solid navy;
+  text-align:center;
+}
+.forYourMoney div:nth-of-type(4){
+  color:#C30011;
+  border:2px solid #C30011;
+  text-align: center;
+}
+.sidenav {
+  height: 0px;
+  width: 100%;
+  position: relative;
+  /*z-index: 1;*/
+  top: 0;
+  left: 0;
+  background-color:white;
+  overflow-y: hidden;
+  margin:0 auto;
+  font-size: 20px;
+  transition-duration: 1s;
+  transition-property:height;
+}
+
+footer{
+  margin-top:50px;
+  color:white;
+  font-size: 20px;
+  padding:20px;
+ 
+}
+
+.footerContainer{
+  max-width: 810px;
+  margin:20px auto;
+  display:flex;
+  flex-flow:row wrap;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.footerLeft{
+margin:20px;
+}
+
+.footerRight{
+  margin:20px;  
+}
+
+.individualStudents{
+  padding:20px;
+margin:auto;
+
+}
+
+.corporateClients{
+  padding:20px;
+margin:auto;
+}
+
+.reference p{
+margin:0;
+padding:0;
+}
+
+.reference{
+  padding:20px;
+  margin:20px;;
+  border-radius:5px;
+  border: 2px solid navy;
+
+}
+
+.reference h3{
+  margin-top:0px;
+  display:block;
+}
+
+.flexContainerWrap{
+  display:flex;
+  flex-flow: row wrap;
+}
+
+div.reference img{
+  height:auto;
+  max-width:100%;
+  width:100px;
+  float:right;
+}
+
+.contact{
+
+  display:flex;
+  flex-flow: column wrap;
+  font-style: normal;
 } 
 
+th span{
+font-size: 30px;
+}
+
+.contactContainer{
+  display: flex;
+  flex-flow: row wrap;
+  align-items:initial;
+  padding:20px;
+}
+
+table{
+    font-size:20px;
+    margin:auto;
+    
+}
+
+th{
+  text-align: left;
+  padding-right:15px; 
+}
+
+iframe{
+  max-height: 400px;
+  min-height: 200px;
+  border:0;
+}
+
+.flexContainer h2{
+  
+}
+
+.mapouter{
+  text-align:right;
+  max-width: 100%;
+margin-top:20px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.gmap_canvas {
+  overflow:hidden;
+  background:none;
+  max-height:100%;
+  max-width:100%;
+}
