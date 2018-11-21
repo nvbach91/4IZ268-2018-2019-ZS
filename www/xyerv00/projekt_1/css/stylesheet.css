@@ -145,7 +145,6 @@ main p {
     text-align: center;
 }
 
-
 img {
     width: 280px;
     margin: 10px;
@@ -163,10 +162,10 @@ footer p {
 }
 
 .email {
-     color: black;
+    color: black;
     font-weight: bold;
     font-family: "Palatino Linotype";
- }
+}
 
 .phone {
     font-size: 200%;
@@ -176,7 +175,8 @@ body.cover {
     background-color: #efedee;
     margin: initial;
 }
-footer.cover, img.cover, header.cover{
+
+footer.cover, img.cover, header.cover {
     display: none;
 }
 
@@ -271,10 +271,10 @@ footer.cover, img.cover, header.cover{
     }
 
     .cover main {
-         background-position: 0 -300px;
-     }
+        background-position: 0 -300px;
+    }
 
-    header.cover, footer.cover, img.cover{
+    header.cover, footer.cover, img.cover {
         display: none;
     }
 
@@ -307,12 +307,17 @@ footer.cover, img.cover, header.cover{
 }
 
 @media print {
+
     .navigation ul {
         display: none;
     }
 
+    .navigation {
+        height: 100px;
+    }
+
     nav {
-        height: 150px;
+        height: 100px;
         background-color: rgb(117, 116, 115);
     }
 
@@ -328,7 +333,7 @@ footer.cover, img.cover, header.cover{
         page-break-after: always;
     }
 
-    .navigation-cover nav{
+    .navigation-cover nav {
         height: 300px;
         background-color: transparent;
     }
