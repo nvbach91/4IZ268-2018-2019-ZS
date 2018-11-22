@@ -8,6 +8,9 @@ var shiftChar = function (c, shift) {
     // alphabet based on the shift value and return the result
 
     var char = alphabet.indexOf(c);
+    if (char === -1) {
+        return c;
+    };
 
 
     char -= shift;
@@ -23,15 +26,15 @@ var shiftChar = function (c, shift) {
 var shiftString = function (str, shift) {
     // a helper function to shift one entire string inside the 
     // alphabet based on the shift value and return the result
-    var output = [];
+    var output = "";
 
 
 
     for (var i = 0; i < str.length; i++) {
-        output[i] = shiftChar(str.charAt(i), shift);
+        output += shiftChar(str.charAt(i), shift);
     };
 
-    return output.join("");
+    return output;
 }
 
 var caesarDecipher = function (cipherText, usedKey) {
@@ -41,11 +44,8 @@ var caesarDecipher = function (cipherText, usedKey) {
     //    str.charAt(i) - returns the character at the specified index in the string
     //    when the shifted character is out of bound, it goes back to the beginning and count on from there
 
-    var split = cipherText.split();
-    for (var i = 0; i < split.length; i++) {
-        split[i] = shiftString(split[i], usedKey);
-    };
-    return split.join(" ");
+    var output = shiftString(cipherText, usedKey);
+    return output;
 };
 
 
@@ -57,7 +57,7 @@ var cipher = document.querySelector(".cipher-input");
 var key = document.querySelector(".key-input");
 var outputText = document.querySelector(".output");
 
-var cesar = function cesar() {
+var cesar = function () {
 
     var c = cipher.value;
     var k = key.value;
