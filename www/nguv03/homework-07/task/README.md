@@ -14,13 +14,13 @@ Používejte pouze Vanilla JavaScript, případně ES6, ES7. Pokud někdo chce p
 
 
 
-### Nazávazný návod (pokud nevíte kde začít):
+### Nezávazný návod (pokud nevíte kde začít):
 
 - Vytvořte potřebné CSS třídy pro **hrací plochu**, **karty ve výchozím stavu**, **karty v otočeném stavu** apod.
 - Vyberte DOM element hrací plochu a element pro výpis počtu bodů.
 - Nadefinujte **seznam měst** do pole.
 - **Naduplikujte tento seznam**, aby každé město tam bylo dvakrát, pomocí metody `array.concat(array)`. 
-- Aby hra byla zajímavější, **zamíchejte pořadí měst** pomocí metody `array.sort()` následovně:
+- Aby hra byla zajímavější, **zamíchejte pořadí měst** pomocí array metody `array.sort()` následovně:
 ```js
 var cities = ['Barcelona', 'Dortmund', 'Madrid', 'Turin', '...'];
 cities = cities.concat(cities);
@@ -39,7 +39,7 @@ cities.sort(function() { return .5 - Math.random(); });
     - pomocí vnořeného elementu, který by měl display none, atd.
   - Pro **porovnání obsahu karet** můžete použít **dvě globální proměnné**, které se budou měnit dle stavu hry v závislosti na právě otevřených kartách. Např. když kliknete na první kartu tak se přiřadí do první proměnné. Když kliknete na druhou kartu, tak se přiřadí do druhé proměnné a pak budete porovnávat jejich obsahy. **Po skončení tahu** se obě proměnné **resetují** a začne nový tah.
   - Uživatel může **otočit maximálně dvě karty najednou**.
-- Pomocí této funkce budete vytvářet 20+ karet v cyklu podle seznamu měst a přitom je budete vkládat do kontejneru karet
+- Pomocí této funkce budete vytvářet 20+ karet v cyklu podle seznamu měst a přitom je budete vkládat do hrací plochy
 
 Rozhraní také **vhodně nastylujte**.
 ![image](https://user-images.githubusercontent.com/20724910/48949139-3e2a4f00-ef37-11e8-8b8e-138c87e47704.png)
