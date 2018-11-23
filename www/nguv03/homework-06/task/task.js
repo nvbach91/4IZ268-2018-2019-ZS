@@ -1,3 +1,18 @@
+/*A  B
+
+
+Ahoj - Bipk
+
+Fm
+
+5
+
+ABCDEFHIJKLMNOPQRSTUVWXYZ
+
+*/
+
+
+
 /**
  * Long live Sparta! Vytvořte funkci, která vyřeší Caesarovu širfu. Funkce dostane 
  * na vstup zašifrovaný text a také hodnotu, která byla použita při šifrování, a pak 
@@ -14,16 +29,33 @@
  * "Decipher!" se na určeném místě zobrazí dešifrovaný text. Rozhraní také vhodně
  * nastylujte.
  */
-
+//              0123456789...
 var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 var shiftChar = function (c, shift) {
     // a helper function to shift one character inside the 
     // alphabet based on the shift value and return the result
+    var charIndex = alphabet.indexOf(c);
+    if (charIndex === -1) {
+        return c;
+    }
+    var shiftedCharIndex = charIndex + shift;
+    if (shiftedCharIndex > 25) {
+        shiftedCharIndex = shiftedCharIndex - alphabet.length;
+    }
+    var result = alphabet.charAt(shiftedCharIndex);
+    return result;
 };
 var shiftString = function (str, shift) {
     // a helper function to shift one entire string inside the 
     // alphabet based on the shift value and return the result
+    var result = '';
+    for (var i = 0; i < str.length; i++) {
+        var character = str.charAt(i);
+        var shiftedChar = shiftChar(character, shift);
+        result += shiftedChar;
+    }
+    return result;
 };
 var caesarDecipher = function (cipherText, usedKey) {
     // your implementation goes here
@@ -31,6 +63,8 @@ var caesarDecipher = function (cipherText, usedKey) {
     //    str.indexOf(c) - returns the index of the specified character in the string
     //    str.charAt(i) - returns the character at the specified index in the string
     //    when the shifted character is out of bound, it goes back to the beginning and count on from there
+    var shift = alphabet.length - usedKey;
+    return shiftString(cipherText, shift);
 };
 
 // albert einstein
