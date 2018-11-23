@@ -1,0 +1,44 @@
+/* ITCSS, více: https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/ */
+
+@import "settings.global";
+@import "settings.variables";
+
+@import "tools.mixins";
+
+@import "generic.normalize";
+
+@import "elements.headings";
+
+@import "components.default";
+
+.reports {
+    padding: 0;
+    list-style: none;
+}
+
+.report {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid $grayDark;
+    padding: 1em;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: $grayDark;
+    }
+}
+
+.report picture {
+    margin-right: 1rem;
+}
+
+.report picture,
+.report picture * {
+    height: 40px;
+}
+
+.report__path {
+    color: $grayDarkest;
+    margin-left: auto;
+}

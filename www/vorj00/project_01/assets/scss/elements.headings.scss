@@ -1,0 +1,19 @@
+@import "settings.variables";
+
+@import "tools.mixins";
+
+h1 {
+    font-size: 1.5rem;
+
+    @include mq("tablet") {
+        font-size: 2rem;
+    }
+
+    @include mq("tablet-wide") {
+        font-size: 2.5rem;
+    }
+
+    @include mq("desktop") {
+        font-size: 2rem;
+    }
+}

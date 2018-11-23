@@ -1,0 +1,37 @@
+* {
+   margin:0;
+   padding:0;
+   font-family:"Indie Flower"
+}
+
+nav{
+   float:left;
+   background:darkgray;
+   
+}
+
+main{
+background: lightgray;
+}
+
+footer {
+   background: gray;
+   clear:left;
+}
+
+p.content{
+   margin:auto;
+}
+
+/*nav p {
+margin:0;
+padding:0;
+}
+
+p.content{
+margin: 0;
+padding: 10px;
+float: left;
+width: 380px;
+}*/
+

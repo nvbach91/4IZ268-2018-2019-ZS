@@ -1,0 +1,525 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+}
+
+nav {
+    background: #38003c;
+}
+
+nav span {
+    display: inline-block;
+    color: white;
+    padding: 14px 16px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.div-center {
+    margin: auto auto;
+}
+
+.default-margin {
+    margin-top: 50px;
+}
+
+ul {
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #fff;
+    color: #111;
+}
+
+
+/* HEADER */
+
+header {
+    height: 250px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    background-image: url('https://mediacdn.mancity.com/-/media/wallpapers/champions18/champions%20banner%20201718');
+    background-size: cover;
+    background-position: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
+header h1{
+    width: 100%;
+    clear: both;
+}
+
+header div {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+}
+body {
+    background: white;
+}
+
+
+/* OBSAH */
+.ultimate-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: 20px auto;
+}
+    /* LEVA CAST OBSAHU */
+    .leftpart {
+        flex: 1;
+        margin: 10px;
+    }
+
+    .leftpart > div {
+        margin-bottom: 10px;
+    }
+
+    .leftpart h2 {
+        background-color: #e90052;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        margin: 0px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow: hidden;
+        font-weight: normal;
+    }
+
+    .matches div:nth-child(even) {
+        background-color: #DDD;
+    }
+
+    .matches {
+        border: #DDD solid 5px;
+        border-top: 0;
+    }
+
+    .match {
+        text-align: center;
+        padding: 5px 5px;
+    }
+
+    /* PRAVA CAST OBSAHU */
+    .rightpart {
+        flex:2;
+        margin: 10px;
+    }
+
+    .rightpart article {
+        margin-top: 10px;
+        border-bottom: #DDD solid 2px;
+    }
+
+    .rightpart h2 {
+        padding: 14px 16px;
+        margin: 0;
+    }
+
+    .rightpart h3 {
+        /* border-top-left-radius: 10px;
+        border-top-right-radius: 10px; */
+        font-weight: normal;
+        margin: 0;
+        display: block;
+        padding: 10px;
+        background-color: #38003c;
+        color: white;
+    }
+
+    .rightpart article p {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    article p a, article p a:visited, article p a:hover {
+        text-decoration: none;
+        color: #38003c;
+        font-weight: bold;
+    }
+
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: #38003c;
+    color: white;
+    text-align: right;
+    margin: 0;
+    margin-top: 50px;
+
+}
+
+footer p {
+    margin: 0;
+    padding: 14px 16px;
+}
+
+/* Rozpis*/
+
+
+
+.header-page2 {
+    background-image: url("/img/PremierLeague_2.jpeg");
+}
+
+.content {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    justify-content: space-between;
+}
+
+.round {
+    width: 45%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    font-size: 1.10rem;
+}
+
+.upcoming {
+    display: block;
+    text-align: center;
+    padding: 16px 14px;
+}
+
+.round-content {
+    margin: 0;
+    border: solid black .5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.round h3 {
+    padding: 0px 20px;
+}
+
+.upcoming:nth-child(even) {
+    background-color: #DDD;
+}
+
+.upcoming:hover {
+    background-color: #e90052;
+    color: white;
+}
+
+/* Tabulka */
+.table {
+    display: flex;
+    margin: 40px auto;
+    justify-content: center;
+    
+}
+
+table {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table .team {
+    text-align: left;
+    padding: 5px 10px;
+    padding-right: 40px;
+}
+
+table th {
+    padding: 14px 16px;
+    border-bottom: solid #DDD 3px;
+}
+
+table tr {
+    padding: 5px 10px;
+    border-bottom: solid #DDD 2px;
+}
+
+
+
+/* STATISTIKY */
+#stats {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.Heading {
+    padding: 14px 16px;
+}
+
+.stats {
+    width:100%;
+    border: #DDD solid 3px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+
+
+.playerTable {
+    flex: 9;
+}
+
+#bestGoals, #bestAssist, #bestPasses, #bestSaves {
+    flex: 3;
+    padding-left: 16px;
+}
+
+.best {
+    min-height: 100px;
+    background: #eaeaea;
+    background-image: url(https://www.premierleague.com/resources/ver/i/bg-elements/stats-card.png);
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    position: relative;
+    border-bottom: 1px solid #e8e8e8;
+    float: left;
+}
+
+.best p {
+    padding: 1rem 1rem 5rem;
+    display: inline-block
+}
+
+.footballerImg {
+    height: 18vw;
+    position: absolute;
+    float: right;
+    bottom: 0;
+    right: 15px;
+}
+
+.playerTeam {
+    font-size: 0.75rem;
+}
+
+.playerNo {
+    color: #e90052;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.player {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: solid #DDD 1px;
+}
+
+.playerOrder {
+    color: #e90052;
+    padding: 0 8px;
+}
+
+.nameTeam {
+    flex: 4;
+}
+
+.playerPoints {
+    padding: 0 8px;
+} 
+
+
+
+@media screen and (max-width: 745px) {
+    #stats {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    .footballerImg {
+        height: 85%;
+        position: absolute;
+        float: right;
+        bottom: 0;
+        right: 15px;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .footballerImg {
+        height: 95%;
+        position: absolute;
+        float: right;
+        bottom: 0;
+        right: 15px;
+    }
+}
+
+
+
+
+/* PRESTUPY */
+
+#transfers {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+    margin: 0px auto;
+}
+
+
+.transferFromTo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 14px 0;
+}
+
+.transfer {
+    margin: 200px 0px;
+    min-height: 100px;
+    display: inline-block;
+    border: solid #DDD 1px;
+    text-align: center;
+    width: 20vw;
+}
+
+.mostExpensive {
+    display: inline-block;
+    text-align: center;
+    border: solid #DDD 1px;
+    height: 100%;
+    width: 20vw;
+}
+
+.playerImg {
+    height: 18vw;
+    display: inline-block;
+    bottom: 0;
+    right: 15px;
+    margin-bottom: 0px;
+}
+
+.transferInfo {
+    background-color: #eaeaea;
+}
+
+.teamFrom, .teamTo {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.teamFrom h4, .teamTo h4 {
+    margin-top: 0;
+}
+
+
+.transferInfo h4 {
+    font-size: 1.21rem;
+    margin-bottom: 0px;
+}
+
+.price h4 {
+    margin-top: 0px;
+}
+
+.logo {
+    background-color: #FFF;
+    height: 120px;
+    width: 120px;
+    border-radius: 300px;
+}
+
+.juventus {
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/juventus.png);
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.manutd{
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/manutd.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.liverpool{
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/liverpool.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.barcelona{
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/barcelona.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tottenham{
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/tottenham.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.real{
+    width: 8vw;
+    height: 8vw;
+    background-image: url(/img/real.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.transfer .teamLogo, .mostExpensive .teamLogo {
+    display: none;
+}

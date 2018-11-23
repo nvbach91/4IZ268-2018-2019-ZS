@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+.tiles {
+    width: 500px;
+    height: 600px;
+    display: flex;
+}
+.tile-column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.tile {
+    border: 5px solid white;
+    background-color: grey;
+    height: 25%;
+    flex-grow: 1;
+    background-size: cover;
+    background-position: center;
+}
+.tile-earth    { height: 10%; background-color: lightcoral; }
+.tile-jupiter  { height: 27%; background-color: aquamarine; }
+.tile-mars     { height: 45%; background-color: brown; }
+.tile-mercury  { height: 18%; background-color: cornflowerblue; }
+
+.tile-venus    { height: 20%; background-color: darkolivegreen; }
+.tile-saturn   { height: 40%; background-color: darkslategray; }
+.tile-uranus   { height: 10%; background-color: dodgerblue; }
+.tile-neptune  { height: 30%; background-color: hotpink; }

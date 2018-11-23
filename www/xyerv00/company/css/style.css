@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    border-top: 5px solid cadetblue;
+}
+header > * {
+    display: flex;
+}
+
+.poster{
+    background-image: url(https://www.gannett-cdn.com/presto/2018/08/06/USAT/d7e9198a-b2fa-4ca6-b947-31c3751cc248-GettyImages-898660948.jpg?crop=5369,3020,x0,y0&width=3200&height=1680&fit=bounds);
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+main > * {
+    padding: 0 20px 0 20px;
+}
+
+
+.intro {
+    padding: 0 20px 0 20px;
+}
+
+.slideshow{
+    background-image: url(https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-1920x1200.jpg);
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+li{
+    list-style: none;
+}
+
+.product {
+    float: left;
+    width: 25%;
+    height: 300%;
+}
+
+.clear {
+    clear: both;
+}
+
+.product p {
+    height: 200px;
+}
+
+.product button {
+    border: none;
+    background-color: tomato;
+    padding: 20px 10px 20px 10px;
+    color: white;
+    width: 80%;
+    border-radius: 2px;
+}
+
+.product h2 {
+    border-bottom: 5px solid red;
+}
+
+.product:nth-child(1) h2 { border-color: red;}
+.product:nth-child(2) h2 { border-color: blue;}
+.product:nth-child(3) h2 { border-color: yellow;}
+.product:nth-child(4) h2 { border-color: gray;}
+.product:nth-child(5) h2 { border-color: green;}
+.product:nth-child(6) h2 { border-color: greenyellow;}
+.product:nth-child(7) h2 { border-color: purple;}
+.product:nth-child(8) h2 { border-color: deeppink;}

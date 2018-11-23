@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+hr {
+    border-style: solid;
+    border-color: #eee;
+}
+button {
+    border: 1px solid transparent;
+    height: 42px;
+    padding: 0 20px;
+    cursor: pointer;
+    background-color: cadetblue;
+    color: white;
+}
+input, textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid transparent;
+}
+textarea {
+    height: 100px;
+    font-family: inherit;
+}
+form {
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: #eee;
+    padding: 20px;
+}
+form > * {
+    margin-bottom: 10px;
+}
+button:hover {
+    background-color: rgb(46, 93, 95);
+}
+button {
+    transition: background-color .2s ease;
+}
+#deciphered-text {
+    text-align: center;
+    padding: 0 20px;
+}

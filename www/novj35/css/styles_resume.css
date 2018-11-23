@@ -1,0 +1,21 @@
+body {
+    font-family: calibri;
+    background-color:lightcyan;
+}
+
+header {
+    text-align: center;
+    color: blue;
+}
+
+h2 {
+    width: 350px;
+    height: 10x;
+    border: green solid 1px;
+    padding: 10px;
+    color: blue;
+}
+
+h2:hover {
+    background-color: blanchedalmond;
+}

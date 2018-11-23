@@ -1,0 +1,64 @@
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+ <defs>
+  <symbol height="538.42108" id="svg_59" viewBox="0 0 759.9999 538.42107" width="759.99994" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+   <g id="svg_9" transform="translate(-2.15e-5,0)">
+    <rect fill="#002868" height="538.42108" id="svg_58" width="759.99994" x="0" y="0"/>
+    <polygon fill="#ffffff" id="svg_50" points="144.008,91.491 140.364,94.139 141.755,98.424 138.111,95.775 134.467,98.424 135.859,94.139 132.215,91.491 136.719,91.491 138.111,87.207 139.503,91.491 " transform="matrix(5.4911952,0,0,5.4911952,-710.91309,-23.09698)"/>
+    <use height="102.3" id="svg_57" transform="translate(94.736825,-0.52631557)" width="144.39999" x="0" xlink:href="#svg_50" y="0"/>
+    <use height="102.3" id="svg_56" transform="translate(189.47366,-0.52631557)" width="144.39999" x="0" xlink:href="#svg_50" y="0"/>
+    <use height="102.3" id="svg_55" transform="translate(284.2105,-0.52631557)" width="144.39999" x="0" xlink:href="#svg_50" y="0"/>
+    <use height="102.3" id="svg_54" transform="translate(378.94734,-0.52631557)" width="144.39999" x="0" xlink:href="#svg_50" y="0"/>
+    <use height="102.3" id="svg_53" transform="translate(473.68418,-0.52631557)" width="144.39999" x="0" xlink:href="#svg_50" y="0"/>
+    <use height="102.3" id="svg_52" transform="translate(568.42099,-0.52631557)" width="144.39999" x="0" xlink:href="#svg_50" y="0"/>
+    <use height="102.3" id="svg_51" transform="translate(663.15783,-0.52631557)" width="144.39999" x="0" xlink:href="#svg_50" y="0"/>
+    <use height="102.3" id="svg_43" transform="translate(0,-87.105262)" width="144.39999" x="0" xlink:href="#svg_50" y="0"/>
+    <use height="102.3" id="svg_41" transform="translate(0,-174.21052)" width="144.39999" x="0" xlink:href="#svg_50" y="0"/>
+    <use height="102.3" id="svg_33" transform="translate(0,-261.31578)" width="144.39999" x="0" xlink:href="#svg_50" y="0"/>
+    <use height="102.3" id="svg_22" transform="translate(0,-348.42104)" width="144.39999" x="0" xlink:href="#svg_50" y="0"/>
+    <use height="102.3" id="svg_17" transform="translate(0,-435.5263)" width="144.39999" x="0" xlink:href="#svg_50" y="0"/>
+    <use height="102.3" id="svg_49" transform="translate(568.42099,0)" width="144.39999" x="0" xlink:href="#svg_43" y="0"/>
+    <use height="102.3" id="svg_48" transform="translate(-94.736814,0)" width="144.39999" x="0" xlink:href="#svg_49" y="0"/>
+    <use height="102.3" id="svg_47" transform="translate(-94.73684,0)" width="144.39999" x="0" xlink:href="#svg_48" y="0"/>
+    <use height="102.3" id="svg_46" transform="translate(-94.736835,0)" width="144.39999" x="0" xlink:href="#svg_47" y="0"/>
+    <use height="102.3" id="svg_45" transform="translate(-94.73684,0)" width="144.39999" x="0" xlink:href="#svg_46" y="0"/>
+    <use height="102.3" id="svg_44" transform="translate(-94.736835,0)" width="144.39999" x="0" xlink:href="#svg_45" y="0"/>
+    <use height="102.3" id="svg_42" transform="translate(663.15783,0)" width="144.39999" x="0" xlink:href="#svg_43" y="0"/>
+    <use height="102.3" id="svg_40" transform="translate(663.15783,0)" width="144.39999" x="0" xlink:href="#svg_41" y="0"/>
+    <use height="102.3" id="svg_39" transform="translate(-94.73684,0)" width="144.39999" x="0" xlink:href="#svg_40" y="0"/>
+    <use height="102.3" id="svg_38" transform="translate(-94.736814,0)" width="144.39999" x="0" xlink:href="#svg_39" y="0"/>
+    <use height="102.3" id="svg_37" transform="translate(-94.73684,0)" width="144.39999" x="0" xlink:href="#svg_38" y="0"/>
+    <use height="102.3" id="svg_36" transform="translate(-94.736835,0)" width="144.39999" x="0" xlink:href="#svg_37" y="0"/>
+    <use height="102.3" id="svg_35" transform="translate(-94.73684,0)" width="144.39999" x="0" xlink:href="#svg_36" y="0"/>
+    <use height="102.3" id="svg_34" transform="translate(-94.736835,0)" width="144.39999" x="0" xlink:href="#svg_35" y="0"/>
+    <use height="102.3" id="svg_32" transform="translate(663.15783,0)" width="144.39999" x="0" xlink:href="#svg_33" y="0"/>
+    <use height="102.3" id="svg_31" transform="translate(-94.73684,0)" width="144.39999" x="0" xlink:href="#svg_32" y="0"/>
+    <use height="102.3" id="svg_30" transform="translate(-94.736814,0)" width="144.39999" x="0" xlink:href="#svg_31" y="0"/>
+    <use height="102.3" id="svg_29" transform="translate(-94.73684,0)" width="144.39999" x="0" xlink:href="#svg_30" y="0"/>
+    <use height="102.3" id="svg_28" transform="translate(-94.736835,0)" width="144.39999" x="0" xlink:href="#svg_29" y="0"/>
+    <use height="102.3" id="svg_27" transform="translate(-94.73684,0)" width="144.39999" x="0" xlink:href="#svg_28" y="0"/>
+    <use height="102.3" id="svg_26" transform="translate(-94.736835,0)" width="144.39999" x="0" xlink:href="#svg_27" y="0"/>
+    <use height="102.3" id="svg_25" transform="translate(284.2105,0)" width="144.39999" x="0" xlink:href="#svg_22" y="0"/>
+    <use height="102.3" id="svg_24" transform="translate(-94.73684,0)" width="144.39999" x="0" xlink:href="#svg_25" y="0"/>
+    <use height="102.3" id="svg_23" transform="translate(-94.736835,0)" width="144.39999" x="0" xlink:href="#svg_24" y="0"/>
+    <use height="102.3" id="svg_21" transform="translate(663.15783,0)" width="144.39999" x="0" xlink:href="#svg_22" y="0"/>
+    <use height="102.3" id="svg_20" transform="translate(-94.73684,0)" width="144.39999" x="0" xlink:href="#svg_21" y="0"/>
+    <use height="102.3" id="svg_19" transform="translate(-94.736814,0)" width="144.39999" x="0" xlink:href="#svg_20" y="0"/>
+    <use height="102.3" id="svg_18" transform="translate(-94.73684,0)" width="144.39999" x="0" xlink:href="#svg_19" y="0"/>
+    <use height="102.3" id="svg_16" transform="translate(663.15783,0)" width="144.39999" x="0" xlink:href="#svg_17" y="0"/>
+    <use height="102.3" id="svg_15" transform="translate(-94.73684,0)" width="144.39999" x="0" xlink:href="#svg_16" y="0"/>
+    <use height="102.3" id="svg_14" transform="translate(-94.736814,0)" width="144.39999" x="0" xlink:href="#svg_15" y="0"/>
+    <use height="102.3" id="svg_13" transform="translate(-94.73684,0)" width="144.39999" x="0" xlink:href="#svg_14" y="0"/>
+    <use height="102.3" id="svg_12" transform="translate(-94.736835,0)" width="144.39999" x="0" xlink:href="#svg_13" y="0"/>
+    <use height="102.3" id="svg_11" transform="translate(-94.73684,0)" width="144.39999" x="0" xlink:href="#svg_12" y="0"/>
+    <use height="102.3" id="svg_10" transform="translate(-94.736835,0)" width="144.39999" x="0" xlink:href="#svg_11" y="0"/>
+   </g>
+  </symbol>
+ </defs>
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="svg_4"/>
+  <use id="svg_60" transform="matrix(0.210526 0 0 0.210526 0 0)" x="4.75" xlink:href="#svg_59" y="-9.5"/>
+ </g>
+</svg>

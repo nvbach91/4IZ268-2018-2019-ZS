@@ -1,0 +1,416 @@
+body{
+    font-family : 'Cinzel';
+    font-style : normal;
+    font-weight : 400;
+    src : local('Cinzel Regular'), local('Cinzel-Regular'), url(https://fonts.gstatic.com/s/cinzel/v7/8vIJ7ww63mVu7gt79mT-.ttf) format('truetype');
+    margin: 0;
+    padding:0;
+    font-size:20px;
+}
+a {
+    color: #000;
+}
+h1 {
+    letter-spacing: 2px;
+    font-size: 22px;
+}
+nav {
+    position: fixed;
+    top: 0;
+    width:100%;
+    z-index: 10;
+    overflow: hidden;
+    background-color:white;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding:0;
+   
+}
+nav ul li {
+    float:left;
+}
+nav ul li a{
+    display: block;
+    padding:8px;
+    background-color:white;
+    text-align: center;
+    text-decoration: none;
+    float:left;
+
+}
+nav ul li a:hover:not(.active){
+   background-color:rgb(194, 197, 199);
+   color: #000;
+   font-weight: bold;
+}
+a.active {
+    background-color:  darkgreen;
+    color: white;
+}
+.right{
+    background-color: #fff;
+    width:50%;
+}
+.left {
+    background-color: darkgreen;
+    width: 50%;
+}
+#main .left {
+    height: 100vh;
+}
+section.first {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.first h3 {
+    font-size: 20px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+section.first h1 {
+    font-size:25px;
+    position: relative;
+}
+p {
+    line-height: 150%;
+}
+.second {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    height:621px;
+    background-color:#fff;
+    background-image: url('../images/Eren_jaeger.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    float:left;
+}
+.info-1 {
+    width: 90%;
+    padding: 100px 0;
+    position: right;
+    float: left;
+    padding: 100px;
+}
+.second:hover{
+    background-color: rgb(18, 48, 18);
+}
+.third {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 621px;
+    background-color: #fff;
+    background-image: url('../images/mikasa.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    float: right;
+}
+.third:hover{
+    background-color: rgb(133, 21, 21);
+}
+.fourth {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    height:621px;
+    background-color:#fff;
+    background-image: url('../images/armin.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    float:left;
+}
+.fourth:hover{
+    background-color:royalblue;
+}
+.fifth {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 621px;
+    background-color: #fff;
+    background-image: url('../images/levi.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    float: right;
+}
+.fifth:hover{
+    background-color:grey;
+}
+.underline {
+    padding-bottom: 2px;
+    border-bottom: 2px solid;
+    display: inline-block;
+}
+#about {
+    background-image: url('../images/CPAI4.jpg');
+    background-size: cover;
+    font-weight: bolder;
+}
+#about .about .author-2 h1{
+    font-size:250%;
+}
+.author-2 {
+    position: relative;
+    width: 50%;
+    left: 10%;
+    right: 10%;
+    color: #000;
+    background-color:white;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+img.author-image{
+    width: 25%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 100px;
+}
+img.erenJPEG{
+    width: 25%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 100px;
+}
+img.leviJPEG{
+    width: 25%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 100px;
+}
+img.mikasaJPEG{
+    width: 25%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 100px;
+}
+img.arminJPEG{
+    width: 25%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 100px;
+}
+section.about .author-2 h1 {
+    font-size:25px;
+    position: relative;
+    text-align: center;
+}
+footer {
+    width: 100%;
+    background-color: rgb(15, 13, 13);
+}
+footer p {
+    padding-top: 1%;
+    text-align: center;
+    margin: 1px 0;
+    color: white;
+    padding-bottom: 1%;
+}
+.inf{
+    position: relative;
+    width: 75%;
+    left: 100px;
+    color: #000;
+    background-color:white;
+    padding-bottom: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+}
+.inf h1{
+    font-size:40px;
+    text-align: center
+}
+.eren-1 {
+    top: 100px;
+    position: relative;
+    left: 10%;
+    width: 50%;
+}
+.eren-2 {
+    position: relative;
+    top: -5px;
+    left: 200px;
+    color: #000;
+}
+img.eren-image{
+    width: 400px;
+    position: relative;
+}
+.eren-BI {
+    list-style: none;
+}
+.mikasa-1 {
+    top: 100px;
+    position: relative;
+    left: 10%;
+    width: 50%;
+}
+.mikasa-2 {
+    position: relative;
+    top: -5px;
+    left: 200px;
+    color: #000;
+}
+img.mikasa-image{
+    width: 300px;
+    position: relative;
+}
+.mikasa-BI {
+    list-style: none;
+}
+.armin-1 {
+    top: 100px;
+    position: relative;
+    left: 10%;
+    width: 50%;
+}
+.armin-2 {
+    position: relative;
+    top: -5px;
+    left: 200px;
+    color: #000;
+}
+img.armin-image{
+    width: 300px;
+    position: relative;
+}
+.armin-BI {
+    list-style: none;
+}
+.levi-1 {
+    top: 100px;
+    position: relative;
+    left: 10%;
+    width: 50%;
+}
+.levi-2 {
+    position: relative;
+    top: -5px;
+    left: 200px;
+    color: #000;
+}
+img.levi-image{
+    width: 300px;
+    position: relative;
+}
+.levi-BI {
+    list-style: none;
+}
+.author-links{
+    list-style: none;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    p {
+        font-size: 70%;
+
+    }
+    img.author-image,img.erenJPEG,img.arminJPEG,img.mikasaJPEG,img.leviJPEG{
+        width: 60%;
+    }
+    .mikasa-BI,.eren-BI,.levi-BI,.armin-BI {
+        text-align: left;
+        font-size: 16px;
+    }
+    #about section.about .author-2 h1{
+        font-size: 25px;
+    }
+    #about section.about .author-2 h2{
+        font-size: 18px;
+    }
+    #about section.about .inf h1{
+        font-size: 25px;
+    }
+    #about section.about .inf{
+        padding-top: 20%;
+
+    }
+}
+@media only screen and (min-width: 600px) {
+    p {
+        font-size:80%;
+    }
+
+    img.author-image,img.erenJPEG,img.arminJPEG,img.mikasaJPEG,img.leviJPEG{
+            width: 60%;
+    }
+    .mikasa-BI,.eren-BI,.levi-BI,.armin-BI {
+            text-align: left;
+            font-size: 18px;
+    }
+    #about section.about .author-2 h1{
+            font-size: 30px;
+    }
+    #about section.about .author-2 h2{
+            font-size: 20px;
+    }
+    #about section.about .inf h1{
+        font-size: 30px;
+    }
+    #about section.about .inf{
+        padding-top: 2%;
+
+    }
+}
+@media only screen and (min-width: 768px) {
+    p {
+        font-size: 90%;
+    }
+    img.author-image,img.erenJPEG,img.arminJPEG,img.mikasaJPEG,img.leviJPEG{
+        width: 25%;
+    }
+    #about section.about .author-2 h1{
+        font-size: 150%;
+    }
+    #about section.about .author-2 h2{
+        font-size: 120%;
+    }
+    #about section.about .inf h1{
+        font-size: 30px;
+    }
+} 
+@media only screen and (min-width: 992px) { 
+   p {
+       font-size: 100%;
+    } 
+   img.author-image,img.erenJPEG,img.arminJPEG,img.mikasaJPEG,img.leviJPEG{
+       width: 25%;
+    }
+    #about section.about .author-2 h1{
+        font-size: 150%;
+    }
+    #about section.about .author-2 h2{
+        font-size: 120%;
+    }
+    #about section.about .inf h1{
+        font-size: 30px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    p {
+        font-size: 100%;
+    }
+    img.author-image,img.erenJPEG,img.arminJPEG,img.mikasaJPEG,img.leviJPEG{
+        width: 25%;
+    }
+    #about section.about .author-2 h1{
+        font-size: 250%;
+    }
+    #about section.about .author-2 h2{
+        font-size: 220%;
+    }
+    #about section.about .inf h1{
+        font-size: 40px;
+    }
+} 

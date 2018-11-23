@@ -1,0 +1,399 @@
+* {
+    box-sizing: border-box;
+  
+}
+
+body {
+    background-color: ghostwhite;
+    font-family: Open Sans, Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+header {
+    display: flex;
+    padding-top: 5px;
+}
+
+header > * {
+    height: 50px;
+    line-height: 50px;
+}
+
+.logo {
+    width: 10%;
+    background-image: url(../img/logo.svg);
+    background-position: 10px center;
+    background-size: contain;
+    text-indent: 80px;
+    background-repeat: no-repeat;
+}
+
+nav {
+    margin-top: -16px;
+    vertical-align: center;
+    margin-left: auto;
+    text-transform: uppercase;
+    list-style-type: none;
+}
+
+nav li {
+    font-size: 15px;
+    display: flex;
+    float: left;
+    margin-right: 12px;
+    margin-top: 0px;
+    padding: 0px 15px 0px 15px;
+    background-color: rgb(61, 61, 61);
+}
+
+.sel-page {
+    background-color: rgb(44, 44, 44);
+    text-decoration: underline; 
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav :hover {
+    background-color: rgb(102, 102, 102);
+    cursor: pointer;
+}
+
+.intro {
+    background-image: url(../img/intro.jpg);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding: 10% 0 10% 0;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    text-align: center;
+    line-height: 90%;
+}
+
+h1 {
+    font-weight: 700;
+    color: white;
+}
+
+h2 {
+    font-weight: 400;
+    color: #ff6003;
+    text-decoration-line: underline;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 150%;
+}
+
+.btn, .btn-submit {
+    background-color: #ff600300;
+    border: #ff6003 1px solid;
+    color: #ff6003;
+    padding: 16px 32px;
+    text-align: center;
+    margin: 4px 10px;
+    transition-duration: 0.7s;
+    cursor: pointer;
+}
+
+.btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #ff6003;
+}
+
+.basic-info {
+    display: inline;
+    text-align: center;
+}
+
+.basic-info-container {
+    margin-left: 19%;
+}
+.basic-info-child {
+    display: flex;
+    width: 75%;
+}
+
+.basic-info-entry {
+    background-color: rgb(61, 61, 61);
+    color: white;
+    margin: 0 1% 0 1%;
+    padding: 0% 3% 0% 3%;
+    text-align: center;
+}
+
+.basic-info-entry img {
+    width: 30%;
+    height: auto;
+}
+
+.basic-info-entry h4 {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.basic-info-entry p {
+    padding: 0 20% 0 20%;
+}
+
+footer {
+    background-color: #ff6003;
+    color: white;
+    text-align: center;
+    padding: 1% 0 1% 0;
+    margin-top: 3%;
+}
+
+.footer-list {
+    display: inline;
+    margin: 0 1% 0 1%;
+}
+
+.footer-list a {
+    text-decoration: none;
+    color: white;
+    transition-duration: 0.3s;
+}
+
+.footer-list a:hover {
+    color: lightgray;
+}
+
+.page-name {
+    text-align: center;
+}
+
+.page-subname {
+    text-align: center;
+    line-height: 5%;
+    font-weight: 500;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    text-align: center;
+
+}
+
+.project-list li {
+    padding: 10%;
+    margin: 2%;
+    width: 30%;
+}
+.project-list li a {
+    text-decoration: none;    
+    color: white;
+    font-weight: 700;
+    font-size: 30px;
+    background-color: black;
+    padding: 10px;
+
+}
+
+.project-list li a:hover {
+    color: #ff6003;
+    background-color: #0000009d;
+    transition-duration: 0.3s;
+}
+
+.project-list li:hover {
+    cursor: pointer;
+}
+
+.project-list-czechteam {
+    background-image: url(../img/czechteam.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.project-list-skv {
+    background-image: url(../img/skv.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.project-list-srdcervaci {
+    background-image: url(../img/srdcervaci.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.project-list-ymca {
+    background-image: url(../img/ymca.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.project-wrap-skv, .project-wrap-czechteam,.project-wrap-srdcervaci,.project-wrap-ymca{
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 10% 0 15% 0;    
+    margin-top: 1%;
+}
+.project-wrap-skv {
+    background-image: url(../img/skv_bg.jpg);
+}
+
+.project-wrap-czechteam {
+    background-image: url(../img/czechteam_bg.jpg);
+}
+
+.project-wrap-srdcervaci {
+    background-image: url(../img/srdcervaci_bg.jpg);
+}
+
+.project-wrap-ymca {
+    background-image: url(../img/ymca_bg.jpg);
+}
+
+.project-name, .page-name {
+    font-size: 60px;
+}
+
+.project-text, .about-text {
+    width: 45%;
+    margin-left: 28%;
+}
+
+.project-subtext {
+    color: lightgray;
+    width: 45%;
+    margin-left: 28%;
+}
+
+.project-wrap button {
+    margin-top: 2%;
+}
+
+.about-wrap {
+    background-image: url(../img/about_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 5% 0 15% 0;    
+    margin-top: 1%; 
+}
+
+.test-wrap {
+    background-image: url(../img/test_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 5% 0 15% 0;    
+    margin-top: 1%; 
+}
+
+.about-picture {
+    width: 15%;
+    height: 15%;
+    padding-bottom: 1%;
+}
+
+.btn-facebook {
+    background-color: #3b5998;
+    border: white 1px solid;
+    padding: 16px 32px;
+    text-align: center;
+    margin: 4px 10px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.btn-facebook a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-facebook:hover {
+    background-color: #8b9dc3;
+}
+
+.btn-instagram {
+    background-color: #e95950;
+    border: white 1px solid;
+    padding: 16px 32px;
+    text-align: center;
+    margin: 4px 10px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.btn-instagram a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-instagram:hover {
+    background-color: #4c68d7;
+}
+
+.test-testemonial {
+    background-color: black;
+    width: 45%;
+    margin-left: 28%;
+}
+
+.test-testemonial h5 {
+    font-size: 25px;
+    line-height: 0px;
+}
+
+.test-testemonial h6 {
+    font-size: 18px;
+    line-height: 0px;
+}
+
+.testemonial-container {
+    padding: 1% 2% 1% 2%;
+    margin: 2% 0 2% 0;
+}
+
+form {
+    text-align: center;
+
+}
+
+.form-wrap {
+    width: 50%;    
+    margin-left: 25%;
+}
+
+.form-wrap input, textarea {
+    width: 100%
+}
+
+.field {
+    background-color: rgb(233, 233, 233);
+    border: #ff6003 solid 1px;
+    padding: 1% 1% 1% 1%;
+}
+
+.btn-submit:hover {
+    background-color: #ff6003;
+    color: white;
+}

@@ -1,0 +1,643 @@
+
+@font-face {
+    font-family: 'Coco';
+    src:  url('mont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Coco-thin';
+    src:  url('mont-thin.woff') format('woff');
+}
+
+body, html {
+    height: 100%;
+    margin:0;
+    font-family: "coco", Fallback, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "coco", Fallback, sans-serif;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.light-text {
+    font-family: "coco-thin";
+}
+
+.space {
+    margin: 30px;
+}
+
+.logo {
+    position: static;
+    float: left;
+    margin-top:10px;
+}
+
+.logo img {
+    max-width: 250px;
+}
+
+.menu-item li {
+    display:inline;
+    float: left;
+    list-style-type: none;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+.menu-item {
+    position: absolute;
+    font-size:16px; 
+    left: 50%;
+}
+
+.menu-item a {
+    font-family: "coco", sans-serif;
+    padding: 20px;
+    color:white;
+    text-transform: uppercase;
+    transition: 0.3s;
+    letter-spacing: 0.6px;
+}
+
+.menu-item li a:hover{
+    color:lightgray;
+}
+
+.menu-item  li a#current {
+    color:lightpink;
+    border: 2px solid white;
+    padding:15px;
+}
+
+.slider {
+    background-image:  url("https://oskintravel.com/wp-content/uploads/2018/10/lofoten-00003.jpg");
+    margin: 0;
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider-iceland {
+    background-image:  url("https://oskintravel.com/wp-content/uploads/Iceland/iceland-00007.jpg");
+    margin: 0;
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider-tuscany {
+    background-image:  url("https://oskintravel.com/wp-content/uploads/Tuscany/tuscany-00012.jpg");
+    margin: 0;
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider-iceland .slider-head-first {
+    font-size: 125px;
+    padding-bottom: 85px;
+}
+
+.slider-iceland .slider-head-second {
+    font-size: 81px;
+    padding-bottom: 30px;
+}
+
+.slider-provence .slider-head-first {
+    font-size: 105px;
+    padding-bottom: 60px;
+}
+
+.slider-provence .slider-head-second {
+    font-size: 88px;
+    padding-bottom: 20px;
+}
+
+.slider-tuscany .slider-head-first {
+    padding-bottom: 100px;
+    font-size: 128px;
+}
+
+.slider-tuscany .slider-head-second {
+    font-size: 89px;
+    padding-bottom: 30px;
+}
+
+.slider-provence {
+    background-image:  url("https://oskintravel.com/wp-content/uploads/2018/10/provence-00015.jpg");
+    margin: 0;
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider  .slider-head-first {
+    top:47%;
+}
+
+.slider  .slider-head-second {
+    top:56%;
+}
+
+.slider-head-first {
+    position: absolute;
+    font-size:80px;
+    text-align: center;
+    color: white;
+    font-family: "coco", Fallback, sans-serif;
+    font-weight: 400;
+    transform: translate(-50%, -50%);
+    top: 40%;
+    left: 30%;
+    letter-spacing: 2px;
+}
+
+.slider-head-second {
+    position: absolute;
+    font-size:52px;
+    text-align: center;
+    color: white;
+    font-family: "coco", sans-serif;
+    font-weight: 500;
+    transform: translate(-50%, -50%);
+    top: 49%;
+    left: 30%;
+    letter-spacing: 2px;
+}
+
+.slider-text {
+    position: absolute;
+    font-size:20px;
+    color: white;
+    font-family: "coco-thin", sans-serif;
+    font-weight: 500;
+    max-width: 505px;
+    transform: translate(-50%, -50%);
+    top: 58%;
+    left: 30%;
+    letter-spacing: 2px;
+}
+
+.slider-text-date {
+    position: absolute;
+    font-size:40px;
+    color: white;
+    font-family: "coco-thin", sans-serif;
+    font-weight: 500;
+    max-width: 505px;
+    transform: translate(-50%, -50%);
+    top: 58%;
+    left: 30%;
+    letter-spacing: 2px;
+}
+
+.button {
+    min-width: 100px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+    background-color: #d1842c;
+    color: white;
+}
+
+.button:hover {
+    background-color: #a56823;
+}
+
+.button-box {
+    margin-top: 4%;
+    width:30%;
+    padding: 15px 0px;
+    font-size: 15px;
+}
+
+.button-right {
+    margin-left: auto;
+}
+
+.button-1 {
+    display:inline;
+    position: absolute;
+    background-color: #d1842c;
+    color: white;
+    transform: translate(-50%, -50%);
+    top: 68%;
+    left: 20%;
+    padding: 15px 30px;
+}
+
+.button-1:hover {
+    background-color: #ee9937;
+}
+
+.button-2 {
+    display:inline;
+    position: absolute;
+    background-color: black;
+    color: white;
+    transform: translate(-50%, -50%);
+    top: 68%;
+    left: 40%;
+    padding: 15px 30px;
+}
+
+.button-2:hover {
+    background-color: #25113b;
+}
+
+.container{
+    font-size:30px;
+    color:blue;
+}
+
+.intro-title {
+    display: inline-block;
+}
+
+.intro {
+    color:red;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.title {
+   text-align: center;
+    padding-top: 30px;
+    padding-bottom: 25px;
+    text-transform: uppercase;
+    font-size: 40px;
+
+}
+
+.box-left {
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    margin-left: 3%;
+}
+
+.box-right {
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    margin-right: 3%;
+}
+
+.text-right {
+    padding-left: 40px;
+    padding-right: 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+
+}
+
+.text-left {
+    position: relative;
+    text-align: right;
+    padding-left: 60px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+
+}
+
+.intro-title {
+    padding-bottom: 10px;
+}
+
+.box-left img {
+    display: block;
+    float: left;
+    width:47%;
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box-right img {
+    display: block;
+    float: right;
+    width:47%;
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.info-box {
+    margin-top: 3%;
+    text-align: center;
+}
+
+.info-box ul, h3 {
+    text-align: center;
+}
+
+footer {   
+    padding:3% 7%;
+    background-color: darkslategray;
+    color: white;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+    padding: 30px 270px;
+}
+
+.column-1 {
+    margin-right: -35%;
+}
+
+#im-info {
+    display:block;
+    margin:0 auto;
+    padding:20px 10px;
+    border: 2px solid black;
+    width:50%;
+    margin-bottom: 20px;
+}
+
+i {
+    font-size: 70px;
+    padding-bottom: 20px;
+    transition: 0.3s;
+}
+
+i:hover {
+    color: darkolivegreen;
+}
+
+.price-container-iceland {
+    display: flex;
+    background-image:  url("https://oskintravel.com/wp-content/uploads/Iceland/iceland-00011.jpg");
+    margin: 0;
+    padding: 0;
+    height: 600px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.price-container-provence {
+    display: flex;
+    background-image:  url("https://oskintravel.com/wp-content/uploads/2018/10/provence-00009.jpg");
+    margin: 0;
+    padding: 0;
+    height: 600px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.price-container-tuscany {
+    display: flex;
+    background-image:  url("https://oskintravel.com/wp-content/uploads/Tuscany/tuscany-00013.jpg");
+    margin: 0;
+    padding: 0;
+    height: 600px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.price-box {
+    display: block; 
+    margin-left: 10%;
+    width: 40%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 600px;
+}
+
+.price-name {
+    text-align: center;
+    background-color: white;
+    text-transform: uppercase;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.price-header {
+    text-align: center;
+    font-family: "Coco-thin";
+    padding:15px;
+    background-color: darkgreen;
+    color:white;
+}
+
+.tour-price {
+    font-size: 50px;
+}
+
+.price-main {
+    padding: 20px;
+    text-align: center;
+    background-color: white;    
+}
+
+.price-main p{
+    padding: 8px;
+    background-color: white;    
+}
+
+.crossed {
+    text-decoration: line-through;
+}
+
+.contact-form {
+    padding: 0 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 600px;
+}
+ 
+.contact-form p {
+    font-size: 40px;
+    color:white;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+
+label {
+    color: white;
+}
+
+input[type=text], select, textarea {
+    display: inline;
+    background-color: white;
+    margin:20px;
+    width: 39%;
+    height: 50px;
+    padding: 12px; 
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px;
+}
+
+.input-field {
+    display: block;
+    margin-left: 5%;
+    padding: 50px;
+}
+
+input[type=submit] {
+    margin-top: 20px !important;
+    display: block;
+    margin:0 auto;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 70px;
+    cursor: pointer;
+    font-size: 22px;
+    font-family: 'Coco';
+    text-transform: uppercase;
+    border-radius: 5px; 
+    transition: 0.3s;
+}
+
+input[type=submit]:hover {
+    background-color:darkgreen;
+}
+
+#contact-header {
+    color: black !important;
+}
+
+@media screen and (max-width: 600px) {
+    .slider-text-date {
+        font-size: 20px;
+    }
+
+    .slider-iceland .slider-head-first {
+        font-size: 25px;
+        padding-bottom: 15px;
+    }
+
+    .slider-iceland .slider-head-second {
+        font-size: 25px;
+        padding-bottom: 15px;
+    }
+    
+    .slider-tuscany .slider-head-first {
+        font-size: 25px;
+        padding-bottom: 15px;
+    }
+
+    .slider-tuscany .slider-head-second {
+        font-size: 25px;
+        padding-bottom: 15px;
+    }
+
+    .slider-provence .slider-head-first {
+        font-size: 25px;
+        padding-bottom: 15px;
+    }
+
+    .slider-provence .slider-head-second {
+        font-size: 25px;
+        padding-bottom: 15px;
+    }
+
+    .menu-item {
+        top:5%;
+        left:9%;
+    }
+    .menu-item a {
+        font-size: 10px;
+        line-height: 1px;
+        padding:5px;
+        margin:10px;
+    }
+    .logo {
+        margin-top: 0px;
+        margin-left: 40%;
+    }
+    .logo img {
+        max-width: 150px;
+        left: 50%;
+    }    
+    .space {
+        margin:70px;
+    }
+
+    .slider-head-first, .slider-head-second {
+        font-size:15px;
+    }
+    .box-left img, .box-right img{
+        display: block;
+        width:90%;
+    }
+    .text-right, .text-left {
+        display: block;
+    }
+    input[type=text], select, textarea {
+        width:100px;
+    }
+
+    .info-box {
+        margin-top: 40px;
+        display: block;
+    }
+    .row {
+        display: block;
+        width:50%;
+    }
+    .column {
+        display: block;
+        text-align: center;
+    }
+
+    .button-box {
+        display: block;
+        margin-top:20px;
+    }
+    .button-2 {
+    left: 75%;
+    }
+  }
+
+@media print {
+    p {font-family:georgia, times, serif;}
+}
+

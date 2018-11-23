@@ -1,0 +1,356 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Italianno', cursive;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(117, 116, 115);
+    max-width: 900px;
+    margin: auto;
+}
+
+main {
+    background-color: white;
+    color: rgba(58, 58, 58, 0.83);
+    min-height: 600px;
+    font-size: 120%;
+}
+
+.clear {
+    clear: both;
+}
+
+.navigation {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    background-color: rgba(117, 116, 115, 0.83);
+}
+
+.label {
+    position: absolute;
+    text-align: center;
+    width: 95px;
+    height: 80px;
+    border: 3px solid white;
+    border-top-width: 0;
+    left: 15%;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 100px;
+    width: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.nav_li {
+    width: inherit;
+    height: 40px;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    border-bottom: 3px solid white;
+    padding: 8px 0;
+    letter-spacing: 2px;
+}
+
+.active {
+    padding: 8px 0;
+    border-bottom: 7px solid white;
+}
+
+h1 {
+    position: relative;
+    width: 300px;
+    height: 80px;
+    left: calc(50% - 150px);
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 3px solid rgba(117, 116, 115, 1);
+}
+
+.heading-one {
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+
+h2 {
+    width: 400px;
+    height: 60px;
+    text-align: center;
+    padding: 25px;
+    margin: auto;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+footer {
+    height: 200%;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main ul {
+    padding: 0;
+}
+
+main p {
+    text-align: center;
+    padding: 10px 100px;
+    color: black;
+    font-family: "Palatino Linotype";
+}
+
+.product {
+    width: 100%;
+    margin: 40px 0;
+}
+
+.product h2 {
+    width: 400px;
+    height: 60px;
+    text-align: center;
+    padding: 25px;
+    margin: auto;
+}
+
+.product img {
+    width: 400px;
+    position: relative;
+    left: calc(50% - 200px);
+}
+
+.product p {
+    margin: auto;
+    width: 400px;
+    height: 100%;
+    padding: 7px 0;
+    text-align: center;
+}
+
+img {
+    width: 280px;
+    margin: 10px;
+}
+
+.pics-position {
+    text-align: center;
+}
+
+footer p {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    font-family: "Palatino Linotype";
+}
+
+.email {
+    color: black;
+    font-weight: bold;
+    font-family: "Palatino Linotype";
+}
+
+.phone {
+    font-size: 200%;
+}
+
+body.cover {
+    background-color: #efedee;
+    margin: initial;
+}
+
+footer.cover, img.cover, header.cover {
+    display: none;
+}
+
+.cover main {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("pics/Mika_brokard.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.navigation-cover {
+    position: fixed;
+    bottom: 40px;
+    width: 100%;
+    animation-name: runnav;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes runnav {
+    0% {
+        bottom: 0;
+        opacity: 0;
+    }
+    100% {
+        bottom: 40px;
+        opacity: 1.0;
+    }
+}
+
+.nav_li-cover {
+    border-bottom: 3px solid white;
+    font-size: 200%;
+    height: 60px;
+    width: inherit;
+    padding: 35px 0;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.nav_li-cover:hover {
+    font-size: 35px;
+    border-bottom: 10px solid white;
+}
+
+.label-cover {
+    position: absolute;
+    text-align: center;
+    width: 115px;
+    height: 100px;
+    border: 4px solid white;
+    border-top-width: 0;
+    left: 15%;
+    font-size: 200%;
+    padding: 0;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 720px) {
+    .navigation {
+        height: 200px;
+    }
+
+    .navigation ul {
+        top: 120px;
+        max-width: 900px;
+        left: calc(50% - 450px);
+    }
+
+    .nav_li {
+        float: left;
+        width: 25%;
+        height: 60px;
+    }
+
+    .active {
+        font-size: 40px;
+        padding: 5px 20px 20px 20px;
+        border-bottom: 10px solid white;
+    }
+
+    .product {
+        width: 50%;
+        margin: 0;
+        padding: 0;
+        float: left;
+        margin-top: 40px;
+    }
+
+    .cover main {
+        background-position: 0 -300px;
+    }
+
+    header.cover, footer.cover, img.cover {
+        display: none;
+    }
+
+    .label-cover {
+        width: 180px;
+        height: 160px;
+        left: calc(50% - 360);
+        font-size: 60px;
+    }
+
+    .cover h1 {
+        font-size: 60px;
+        letter-spacing: -6px;
+    }
+
+    .navigation-cover {
+        max-width: 800px;
+        left: calc(50% - 400px);
+    }
+
+    .nav_li-cover {
+        float: left;
+        width: 25%;
+        height: 60px;
+    }
+
+    .clear {
+        clear: both;
+    }
+}
+
+@media print {
+
+    .navigation ul {
+        display: none;
+    }
+
+    .navigation {
+        height: 100px;
+    }
+
+    nav {
+        height: 100px;
+        background-color: rgb(117, 116, 115);
+    }
+
+    img {
+        width: 230px;
+    }
+
+    h2 {
+        page-break-after: revert;
+    }
+
+    .page-break {
+        page-break-after: always;
+    }
+
+    .navigation-cover nav {
+        height: 300px;
+        background-color: transparent;
+    }
+
+    main {
+        min-height: 820px;
+    }
+
+    img.cover {
+        display: block;
+    }
+
+    .cover-pic {
+        display: block;
+        margin: auto;
+        width: auto;
+        height: 100%;
+        z-index: -1;
+    }
+}

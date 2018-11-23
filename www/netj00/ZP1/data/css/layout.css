@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding-top: 0;
+    background-color: #d6d6d6;
+}
+
+header {
+    padding: 30px;
+    font-size: 35px;
+    text-align: center;
+}
+
+body {
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    background: #ccc;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+nav li:first-child {
+    position: center;
+}
+
+.logo {
+    display: block;
+    margin-left: 15%;
+    margin-right: auto;
+    margin-top: 1em;
+    width: 100px;
+}
+
+nav li:nth-child(2) {
+    margin-top: 15px;
+}
+
+nav li:last-child {
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav li a {
+    color: black;
+    padding: 4px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+nav li a.active {
+    background-color: #4b4b4b;
+    color: #dbdbdb;
+}
+
+nav li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+.nav-separator {
+    background: url("../images/separator.png") no-repeat center;
+    height: 1em;
+    max-width: 85%;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px 0;
+    max-width: 900px;
+    height: 100%;
+    float: left;
+}
+
+main p{
+    text-align: justify;
+    text-indent: 1em;
+}
+
+main article img{
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.blankBox{
+    margin: 50px;
+}
+
+main header h2{
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+main header p{
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+main footer{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+main footer p{
+    font-style: italic;
+    padding: 8px;
+    margin: 0;
+    width: 30%;
+}
+
+
+@media print {
+    nav, main img, main article img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 18px;
+        flex-direction: column;
+    }
+
+    nav ul {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .nav-separator {
+        width: 100%;
+    }
+
+    .logo {
+        display: none;
+        margin: auto;
+    }
+}
+

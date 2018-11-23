@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.box-02 {
+    color: red
+}
+
+.box-03 {
+    color: rgb(0, 255, 0)
+}
+
+.box-04 {
+    color: #0000FF;
+    font-weight: bold
+}
+
+.box-05 {
+    size: 18px
+}
+
+.box-06 {
+    size: 24px;
+    font-style: italic
+}
+
+.box-07 {
+    color: white;
+    background-color: brown
+}
+
+.paragraph-01 {
+    line-height: 32px;
+    text-align: center
+}
+
+.paragraph-02 {
+    text-align: justify;
+    text-transform: uppercase
+}
+
+.box-08 {
+    width: 400px;
+    height: 300px;
+    border: 1px solid purple;
+    padding: 30px
+}
+
+.box-09 {
+    width: 500px;
+    height: 200px;
+    background-color: red;
+    margin: 100px
+}
+
+.box-10 {
+    visibility: hidden
+}
+
+.box-11 {
+    width: 100%;
+    height: 150px;
+    background-color: blue;
+    padding: 50px;
+    border: 10px solid yellow
+}
+
+.box-12 {
+    visibility: hidden
+}
+
+.box-13 {
+    height: 200px;
+    width: 500px;
+    background-color: green;
+    opacity: 0.5
+}
+
+.box-14 {
+    height: 400px;
+    width: 300px;
+    position: relative;
+    background-color: lightblue
+}
+
+.box-15 {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: pink
+}
+
+.button-01 {
+    width: 300px;
+    height: 100px;
+}
+
+.button-01:active {
+    color: blue
+}
+
+.button-02 {
+    width: 200px;
+    height: 50px
+}
+
+.button-02:hover {
+    background-color: brown
+}
+
+.box-16 {
+    height: 200px;
+    width: 500px;
+    background-color: cadetblue;
+    margin-top: 200px;
+    cursor: pointer
+}
