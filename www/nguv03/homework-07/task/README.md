@@ -4,7 +4,7 @@ Vytvořte zjednodušenou hru **Pexeso** pro jednoho hráče čistě pomocí Java
 
 Hra bude spočívat v **postupném otáčení karet**. V každém tahu hráč otočí postupně dvě karty a **pokud se shodují, přičte si jeden bod a karty zůstanou odhalené**. **Pokud se neshodují, tak se karty vrátí do původního neodhaleného stavu a hráči se odečte jeden bod**. Počet bodů nesmí být záporný. 
 
-Karty budou obsahovat **anglické názvy měst po celém světě**: třeba Prague, London, Paris, Moscow, California, Vancouver, Sydney... a **podle nich** také budete **porovnávat shody**. 
+Karty budou obsahovat **anglické názvy měst po celém světě**: třeba Prague, London, Paris, Moscow, California, Vancouver, Sydney... a **podle nich** také budete **porovnávat shody**. Alternativně můžete tam dát třeba názvy států, názvy rostlin, názvy vlaků, názvy ulic, názvy zvířat, názvy firem, jména fotbalistů, jména pokémonů, ... prostě cokoliv, ale musí to být jedno téma.
 
 Na herní plochu umístěte **alespoň 20 karet** (tj. do 5 sloupců a 4 řádky, a to vždy sudý počet) v náhodném pořadí. 
 
