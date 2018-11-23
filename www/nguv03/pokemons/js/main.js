@@ -4,21 +4,63 @@ var pokemonInput = document.querySelector('#pokemon-name');
 var pokemonList = document.querySelector('#pokemon-list');
 var selectedPokemon = document.querySelector('#selected-pokemon');
 
+var fetchPokemonStats = function (pokemonName, statsContainer, loader) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://pokeapi.co/api/v2/pokemon/' + pokemonName.toLowerCase() + '/');
+  xhr.addEventListener('load', function () {
+    var data = JSON.parse(xhr.responseText);
+    //console.log(data);
+    var id = document.createElement('p');
+    id.innerHTML = 'ID: <strong>' + data.id + '</strong>';
+    var height = document.createElement('p');
+    height.innerHTML = 'Height: <strong>' + data.height + '</strong>';
+    var weight = document.createElement('p');
+    weight.innerHTML = 'Height: <strong>' + data.weight + '</strong>';
+    var type = document.createElement('p');
+    var pokemonTypes = data.types.map(function (type) {
+      return type.type.name;
+    }).join(', ')
+    type.innerHTML = 'Type(s): <strong>' + pokemonTypes + '</strong>';
+    
+    statsContainer.appendChild(id);
+    statsContainer.appendChild(type);
+    statsContainer.appendChild(height);
+    statsContainer.appendChild(weight);
+
+    statsContainer.removeChild(loader);
+  });
+  xhr.addEventListener('error', function (e) {
+    console.error('XHR error', e);
+  });
+  xhr.send();
+};
+
 var createNewPokemon = function(name) {
-  /*
-    <li class="pokemon">
-      <div class="pokemon-name">newPokemonName</div>
-      <button class="pokemon-delete">Delete</div>
-    </li>
-  */
   var pokemon = document.createElement('li');
   pokemon.classList.add('pokemon');
+  
+  var pokemonImage = document.createElement('div');
+  pokemonImage.classList.add('pokemon-image');
+  pokemonImage.style.backgroundImage = 'url(https://img.pokemondb.net/artwork/' + name.toLowerCase() + '.jpg)'
+
+  var loader = document.createElement('div');
+  loader.classList.add('loader');
+
+  var pokemonStats = document.createElement('div');
+  pokemonStats.classList.add('pokemon-stats');
+  pokemonStats.appendChild(loader);
+  fetchPokemonStats(name, pokemonStats, loader);
+
+  var pokemonRow1 = document.createElement('div');
+  pokemonRow1.classList.add('pokemon-row');
+  var pokemonRow2 = document.createElement('div');
+  pokemonRow2.classList.add('pokemon-row');
 
   var pokemonName = document.createElement('div');
   pokemonName.classList.add('pokemon-name');
   pokemonName.innerText = name;
   pokemonName.addEventListener('click', function() {
-    var existingPokemons = document.querySelectorAll('.pokemon');
+    var existingPokemons = document.querySelectorAll('.pokemon-name');
     existingPokemons.forEach(function(existingPokemon) {
       existingPokemon.classList.remove('selected');
     });
@@ -30,12 +72,16 @@ var createNewPokemon = function(name) {
   deleteButton.classList.add('pokemon-delete');
   deleteButton.innerText = 'Bye';
   deleteButton.addEventListener('click', function() {
-    this.parentNode.parentNode.removeChild(pokemon);
+    this.parentNode.parentNode.parentNode.removeChild(pokemon);
     selectedPokemon.innerText = 'Bye bye, ' + name + ' :\'(';
   });
 
-  pokemon.appendChild(pokemonName);
-  pokemon.appendChild(deleteButton);
+  pokemonRow1.appendChild(pokemonStats);
+  pokemonRow1.appendChild(pokemonImage);
+  pokemonRow2.appendChild(pokemonName);
+  pokemonRow2.appendChild(deleteButton);
+  pokemon.appendChild(pokemonRow1);
+  pokemon.appendChild(pokemonRow2);
 
   return pokemon;
 };
