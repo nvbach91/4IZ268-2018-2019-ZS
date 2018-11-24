@@ -1,6 +1,6 @@
 ## Memorama, Match Match, Match Up, Memory, Pelmanism, Shinkei-suijaku, Pexeso or simply Pairs.
 
-Vytvořte zjednodušenou hru **Pexeso** pro jednoho hráče čistě pomocí JavaScriptu a CSS pro stylování (tj. **nebudete šahat do výchozího HTML souboru**). 
+Vytvořte zjednodušenou hru **Pexeso** pro jednoho hráče čistě pomocí JavaScriptu a CSS pro stylování (tj. **nebudete šahat na výchozí HTML soubor**). 
 
 Hra bude spočívat v **postupném otáčení karet**. V každém tahu hráč otočí postupně dvě karty a **pokud se shodují, přičte si jeden bod a karty zůstanou odhalené**. **Pokud se neshodují, tak se karty vrátí do původního neodhaleného stavu a hráči se odečte jeden bod**. Počet bodů nesmí být záporný. 
 
