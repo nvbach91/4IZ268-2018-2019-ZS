@@ -38,7 +38,7 @@ cities.sort(function() { return .5 - Math.random(); });
     - pomocí barvy písmena a pozadí, pak jenom změníte barvu jednoho z nich
     - pomocí vnořeného elementu, který by měl display none, atd.
   - Pro **porovnání obsahu karet** můžete použít **dvě globální proměnné**, které se budou měnit dle stavu hry v závislosti na právě otevřených kartách. Např. když kliknete na první kartu tak se přiřadí do první proměnné. Když kliknete na druhou kartu, tak se přiřadí do druhé proměnné a pak budete porovnávat jejich obsahy. **Po skončení tahu** se obě proměnné **resetují** a začne nový tah.
-  - Uživatel může **otočit maximálně dvě karty najednou**.
+  - Uživatel může při jednom tahu **otočit maximálně dvě karty**.
 - Pomocí této funkce budete vytvářet 20+ karet v cyklu podle seznamu měst a přitom je budete vkládat do hrací plochy
 
 Rozhraní také **vhodně nastylujte**.
