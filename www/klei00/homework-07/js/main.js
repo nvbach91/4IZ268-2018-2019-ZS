@@ -68,13 +68,13 @@ var createCard = function (animal) {
         if (!newCard.classList.contains('revealed') && nextMove) {
             move(newCard);
         }
-    })
+    });
     gameField.appendChild(newCard);
 }
 
 var move = function (card) {
     card.classList.add('revealed');
-    if (firstCard != null) {
+    if (firstCard !== null) {
         secondCard = card;
         if (firstCard.innerText === secondCard.innerText) {
             points++;
@@ -86,13 +86,14 @@ var move = function (card) {
                 points--;
             }
             nextMove = false;
-            window.setTimeout(reset, 1000);
+            setTimeout(reset, 1000);
         }
+        pointField.innerText = points;
     } else {
         firstCard = card;
     }
     if (revealedCards === 20) {
-        end();
+        setTimeout(end, 1000);
     }
 }
 var start = function () {
@@ -108,8 +109,7 @@ var reset = function () {
     nextMove = true;
 }
 var end = function () {
-    pointField.innerText = points;
-    pointField.classList.add('uncovered');
+    alert('Congratulations! Your score is ' + points + ' points.');
 }
 
 start();
