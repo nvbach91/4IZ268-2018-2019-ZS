@@ -21,14 +21,17 @@ $(document).ready(function(){
     $(pexesoPoints).text(points);
 
     $.each(cities, function(index, value){
-        $(pexesoBoard).append(`<div class="pexeso__card pexeso__card--playing js-playable">${value}</div>`)
+        $(pexesoBoard).append(`<div data-id="${index}" class="pexeso__card pexeso__card--playing js-playable"></div>`)
     });
 
     $(pexesoCard).on("click", function(){
-        $(this).addClass('pexeso__card--selected').removeClass('pexeso__card--playing').removeClass('js-playable');
-
         let currentCard = $(this);
+        let currentCardId = currentCard.data("id");
 
+        currentCard.addClass('pexeso__card--selected').removeClass('pexeso__card--playing');
+        currentCard.text(cities[currentCardId]);
+
+        setTimeout(function(){
         if(firstSelect === null){
             firstSelect = currentCard;
         } else {
@@ -38,8 +41,8 @@ $(document).ready(function(){
 
                 editPoints(1);
             } else {
-                firstSelect.addClass('pexeso__card--playing');
-                currentCard.addClass('pexeso__card--playing');
+                firstSelect.addClass('pexeso__card--playing').text('');
+                currentCard.addClass('pexeso__card--playing').text('');
 
                 editPoints(-1);
             }
@@ -49,7 +52,8 @@ $(document).ready(function(){
 
             firstSelect = null;
         }
-
         $(pexesoPoints).text(points);
+    }, 1000);
+
     });
 });
