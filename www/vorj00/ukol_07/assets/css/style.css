@@ -58,7 +58,7 @@ h2 {
     background-color: #1E88E5
 }
 
-.pexeso__card--selected {
+.pexeso__card--selected:hover {
     background-color: #1976D2
 }
 
