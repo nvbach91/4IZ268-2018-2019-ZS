@@ -61,6 +61,10 @@ var pointsContainer = document.querySelector('#points');
 
 var bindCard = function(card) {
   card.addEventListener('click', function() {
+    // if this card is already opened, do nothing
+    if (card.classList.contains('revealed')) {
+      return false;
+    }
     // if we have two opened cards, do nothing
     if (firstCard && secondCard) {
       return false;
