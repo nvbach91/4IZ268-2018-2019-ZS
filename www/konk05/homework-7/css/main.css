@@ -15,7 +15,6 @@ h1,h2 {
 }
 .card {
     background-color: salmon;
-    color: transparent;
     width: 20%;
     height: 150px;
     display: flex;
@@ -27,7 +26,6 @@ h1,h2 {
 }
 .card:hover {
     background-color: rgba(250, 128, 114, 0.712);
-    color: transparent;
     cursor: pointer;  
 }
 .card.revealed {

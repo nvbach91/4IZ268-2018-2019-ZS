@@ -41,25 +41,34 @@ var bindCard = function (card) {
             }
         }
         else {
-            points--;
-            if (points < 0) {
-                points = 0;
+            if (points > 0) {
+                points--;
             }
             setTimeout(function () {
+                secondCard.innerText = null;
+                firstCard.innerText = null;
                 firstCard.classList.remove('revealed');
                 secondCard.classList.remove('revealed');
                 firstCard = null;
                 secondCard = null;
-            }, 500);
+            }, 1000);
         }
         pointsCounter.innerText = points;
     });
 };
 
 var addCard = function (name) {
-    var card = document.createElement('div');
+    var card = document.createElement('button');
     card.classList.add('card');
-    card.innerText = name;
+    card.onclick = function () {
+        if (card.classList.contains('revealed')) {
+            return false;
+        }
+        if (firstCard && secondCard) {
+            return false;
+        }
+        card.innerText = name;
+    }
     bindCard(card);
     gameField.appendChild(card);
 };
