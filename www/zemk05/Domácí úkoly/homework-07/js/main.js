@@ -112,7 +112,7 @@ var turnOver = function (card) {
             if (points < 0) {
                 points = 0;
             }
-            nextMove = false;
+            nextMoving = false;
             setTimeout(reset, 1000);
         }
         //zobrazení počtu bodů na obrazovce
