@@ -65,14 +65,14 @@ var eGame = document.getElementById("game-field");
 var ePoints = document.getElementById("points");
 var flippedCard1;
 var flippedCard2;
-var score = 0;
+var score = 50;
 
 // --------------------------------------------------------------------------------------------------------------------
 
 
 function populateCards() {
     let tempChampions = champions.slice(0);
-    for (let n = 0; n <= 9; n++) {
+    for (let n = 0; n < 10; n++) {
         let random = Math.floor(Math.random() * tempChampions.length);
         cards.push(tempChampions[random]);
         cards.push(tempChampions[random]);
@@ -91,7 +91,6 @@ function createCardElement(id) {
     elementGame.classList.add("card");
     elementGame.id = id;
     elementGame.addEventListener("click", cardsClick);
-    elementGame.addEventListener("dblclick", cardsClick);
     eGame.appendChild(elementGame);
 }
 
@@ -122,11 +121,12 @@ function compareCards() {
         flippedCard2.innerText = "";
         flippedCard1.classList.remove("revealed");
         flippedCard2.classList.remove("revealed");
+        score--;
     }
     else {
         score++;
-        ePoints.innerText = score;
     }
+    ePoints.innerText = score;
     flippedCard1 = null;
     flippedCard2 = null;
 }
@@ -140,12 +140,14 @@ function hadWon() {
     }
 }
 
+function init(){
+    champions = shuffleArray(champions);
+    populateCards();
+    cards = shuffleArray(cards);
+    populateGameField();
+}
+
 
 // -------------------------------------------main---------------------------------------------------------------------
 
-champions = shuffleArray(champions);
-populateCards();
-cards = shuffleArray(cards);
-cards = shuffleArray(cards);
-cards = shuffleArray(cards);
-populateGameField();
+init();
