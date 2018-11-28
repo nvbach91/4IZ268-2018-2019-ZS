@@ -1,0 +1,50 @@
+.noprint {
+	display: none;
+}
+.details {
+  display: block;
+  color: black;
+}
+.shape, .details{
+  width: 500px;
+  height: 100px;
+}
+.details p{
+  margin: 0px;
+}
+.details h3{
+  border-bottom: none;
+  text-align: left;
+}
+section{
+  margin-left: 0px;
+
+  }
+.photo-tree{
+  display: none;
+}
+.part-1{
+  margin-bottom: -120px;
+}
+.beginning_text{
+	margin-bottom: 750px;
+  margin-right: 20px;
+  font-size: 17px;
+}
+.beginning_text_print{
+	padding-top: 130px;
+}
+.slider-slides {
+  width: 100%;
+  transition: transform 0.6s ease;
+}
+.slider-slides img {
+  padding-bottom: 50px;
+}
+.slider-controls label{
+  display: none;
+}
+.poster {
+  font-size: 15px;
+  padding-bottom: 10px;
+}

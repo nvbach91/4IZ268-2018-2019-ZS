@@ -62,7 +62,7 @@ body {
 .box_4 {
     width: 200px;
     height: 500px;
-    background-color: limegreen;
+    background-color: rgb(68, 116, 68);
     opacity: 0.5;
 }
 .box_5 {
@@ -104,5 +104,4 @@ body {
     background-color: aquamarine;
     margin-top: 200px;
     cursor: pointer;
-
 }

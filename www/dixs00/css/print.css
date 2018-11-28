@@ -1,0 +1,25 @@
+*{
+font-family: sans-serif;
+color:black
+ }
+
+nav{
+   display: none;
+}
+
+img{
+   display:none;
+}
+
+iframe{
+   display:none;
+}
+
+.footerLeft{
+   display:none;
+}
+
+.footerRight{
+   margin-top:20px;
+}
+

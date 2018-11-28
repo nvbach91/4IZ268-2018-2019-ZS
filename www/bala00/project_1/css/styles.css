@@ -1,0 +1,833 @@
+* {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+
+/* 
+#C1403D красный
+#90AFC5 нежно-голубой
+#336B87 голубой
+#2D4262 индиго
+#2A3132 серо-синий
+#363237 серый
+#763626 коричневый
+#73605B бежево-коричневый
+#D09683 персик
+*/
+
+/* common CSS */
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+nav {
+    display: flex;
+    color: #C1403D;
+    margin: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    padding: 0 14px;
+    line-height: 40px;
+}
+
+nav li a.active {
+    font-weight: 600;
+}
+
+nav .bottom {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+nav .bottom li {
+    border: 1px solid #C1403D;
+    border-radius: 3px;
+    margin: 10px;
+}
+
+nav a:link,
+a:link {
+    color: #C1403D;
+    text-decoration: none;
+}
+
+nav a:visited,
+a:visited {
+    color: #C1403D;
+    text-decoration: none;
+}
+
+nav a:hover,
+a:hover {
+    color: #C1403D;
+    text-decoration: none;
+}
+
+nav a:active,
+a:active {
+    color: #C1403D;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    font-size: 50%;
+    line-height: 100%;
+    margin: 30px;
+}
+
+.search input[type=text] {
+    width: 20px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    background-color: white;
+    background-image: url(../images/search.png);
+    background-position: 10px;
+    background-size: 20px;
+    padding: 10px 20px 10px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    /* margin-left: auto;
+    margin-inline-end: 5px; */
+    cursor: pointer;
+}
+
+.search input[type=text]:focus {
+    width: 100%;
+    outline: none;
+    font-weight: 700;
+}
+
+.logo-navbar img {
+    width: 40px;
+    height: 40px;
+}
+
+.content>p {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    margin-top: 60px;
+    line-height: 30px;
+    margin-bottom: -20px;
+}
+
+/* index.html */
+.intro {
+    display: flex;
+    flex-wrap: wrap;
+    height: 90vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: table;
+    background: url(../images/prague.jpg) center center;
+    background-size: cover;
+
+}
+
+.intro .inner {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    background-color: white;
+    opacity: .9;
+}
+
+.content {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20%;
+}
+
+.content-contact {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 55%;
+}
+
+.content h1,
+.content-contact h1 {
+    font-family: 'Yantramanav', sans-serif;
+    font-size: 300%;
+    font-weight: 100;
+    color: black;
+    line-height: 100%;
+    padding-bottom: 10px;
+}
+
+.intro .btn {
+    border-color: #C1403D;
+}
+
+.btn {
+    font-size: 100%;
+    font-weight: 300;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 10px 20px;
+}
+
+.flex-container .btn {
+    border: 1px solid white;
+    color: white;
+}
+
+.intro a:hover,
+.content-contact .btn:hover {
+    border-color: white;
+    animation-name: flash_button;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: flash_button;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: flash_button;
+    -moz-animation-duration: 3s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+}
+
+@keyframes flash_button {
+    0% {
+        border-color: #C1403D;
+        color: #C1403D;
+    }
+
+    25% {
+        border-color: #D09683;
+        color: #D09683;
+    }
+
+    50% {
+        border-color: #90AFC5;
+        color: #90AFC5;
+    }
+
+    75% {
+        border-color: #2D4262;
+        color: #2D4262;
+    }
+
+    100% {
+        border-color: #C1403D;
+        color: #C1403D;
+    }
+}
+
+@-webkit-keyframes flash_button {
+    0% {
+        border-color: #C1403D;
+        color: #C1403D;
+    }
+
+    25% {
+        border-color: #D09683;
+        color: #D09683;
+    }
+
+    50% {
+        border-color: #90AFC5;
+        color: #90AFC5;
+    }
+
+    75% {
+        border-color: #2D4262;
+        color: #2D4262;
+    }
+
+    100% {
+        border-color: #C1403D;
+        color: #C1403D;
+    }
+}
+
+@-moz-keyframes flash_button {
+    0% {
+        border-color: #C1403D;
+        color: #C1403D;
+    }
+
+    25% {
+        border-color: #D09683;
+        color: #D09683;
+    }
+
+    50% {
+        border-color: #90AFC5;
+        color: #90AFC5;
+    }
+
+    75% {
+        border-color: #2D4262;
+        color: #2D4262;
+    }
+
+    100% {
+        border-color: #C1403D;
+        color: #C1403D;
+    }
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.flex-container>div {
+    background-color: #C1403D;
+    width: 100%;
+    height: 30vh;
+    margin: 1px;
+    text-align: center;
+    line-height: 30vh;
+}
+
+/* Contact.html */
+.intro-contact {
+    height: 90vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: table;
+    background: url(../images/prague.jpg) center center;
+    background-size: cover;
+}
+
+.intro-contact .inner-contact {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    background-color: white;
+    opacity: .9;
+}
+
+.content-contact h1 {
+    padding-bottom: 0;
+}
+
+.form {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+}
+
+.form input {
+    width: 100%;
+    margin: 10px 10px 0 0;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #C1403D;
+    background: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.form input:focus {
+    outline: none;
+    font-weight: 700;
+}
+
+#msg {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+::-webkit-input-placeholder {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: black;
+    font-weight: 300;
+}
+
+.content-contact .btn {
+    color: #C1403D;
+    border-color: #C1403D;
+    margin-bottom: 20px;
+    background: none;
+}
+
+.content-contact button:focus {
+    outline: none;
+}
+
+
+/* about.html 
+.about {
+    color: white;
+    font-weight: 100;
+}
+
+.about p {
+    line-height: 40px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+*/
+.about>div:nth-child(1):hover {
+    background: url(../images/first.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: transparent;
+    transition: 0.2s;
+}
+
+.about>div:nth-child(2):hover {
+    background: url(../images/second.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: transparent;
+    transition: 0.2s;
+}
+
+.about>div:nth-child(3):hover {
+    background: url(../images/third.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: transparent;
+    transition: 0.2s;
+}
+
+.about>div:nth-child(4):hover {
+    background: url(../images/forth.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: transparent;
+    transition: 0.2s;
+}
+
+.content-p {
+    margin: 50px 10px 0 0;
+}
+
+.intro-p {
+    padding-bottom: 30px;
+}
+
+/* map.html */
+#map {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 90vh;
+}
+
+iframe {
+    height: 80vh;
+    width: 90vw;
+    border-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#map p {
+    font-size: 10px;
+}
+
+/* Prague parts */
+.prague-parts>div {
+    background: white;
+    border-top: 1px solid #C1403D;
+    margin: 0;
+}
+
+.prague-parts>div:nth-child(3),
+.prague-parts>div:nth-child(4) {
+    border-bottom: 1px solid #C1403D;
+}
+
+.prague-parts p {
+    margin-top: 0;
+    line-height: 25px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+.prague-parts>div a {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 480px) {
+    body .content-contact {
+        margin-bottom: 80%;
+    }
+
+    body ul .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    body ul .sidenav li a {
+        text-align: center;
+        float: none;
+    }
+}
+
+/* Extra small devices (480px and up) */
+@media only screen and (min-width: 480px) {
+
+    body .intro h1,
+    .intro-contact h1 {
+        font-size: 300%;
+    }
+
+    body .content-contact {
+        margin-bottom: 60%;
+    }
+
+    body .intro .btn {
+        font-size: 100%;
+    }
+
+    body .flex-container>div {
+        width: 49%;
+        height: 35vh;
+        line-height: 35vh;
+    }
+
+    body .content>p {
+        width: 90vw;
+
+    }
+
+    body ul.sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    body ul.sidenav li a {
+        text-align: center;
+        float: none;
+    }
+
+    body #map {
+        width: 60%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Small devices (600px and up) */
+@media only screen and (min-width: 600px) {
+
+    body .intro h1,
+    .intro-contact h1 {
+        font-size: 300%;
+    }
+
+    body .content-contact {
+        margin-bottom: 50%;
+    }
+
+    body .form {
+        width: 70%;
+    }
+
+    body .intro .btn {
+        font-size: 100%;
+    }
+
+    body .flex-container>div {
+        width: 49%;
+        height: 40vh;
+        line-height: 40vh;
+    }
+
+    body .content>p {
+        width: 70vw;
+        margin-top: 50px;
+        line-height: 30px;
+        margin-bottom: -10px;
+    }
+
+    body footer {
+        font-size: 70%;
+        margin: 40px;
+    }
+
+    body nav>ul {
+        display: flex;
+    }
+
+    body nav ul {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    body nav ul li a {
+        text-align: center;
+        float: none;
+    }
+
+    body #map {
+        width: 80%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Medium devices (768px and up) */
+@media only screen and (min-width: 768px) {
+
+    body .intro h1,
+    .intro-contact h1 {
+        font-size: 350%;
+    }
+
+    body .content-contact {
+        margin-bottom: 40%;
+    }
+
+    body .form {
+        width: 60%;
+    }
+
+    body .intro .btn {
+        font-size: 90%;
+    }
+
+    body .flex-container>div {
+        width: 49%;
+        height: 45vh;
+        line-height: 45vh;
+    }
+
+    body .content>p {
+        width: 80vw;
+        margin-top: 30px;
+        margin-bottom: 0;
+        line-height: 30px;
+    }
+
+    body footer {
+        font-size: 80%;
+        margin: 50px;
+    }
+
+    body .content-p {
+        margin-bottom: 10px;
+    }
+
+    body #map p {
+        font-size: 80%;
+    }
+
+    body .intro-p {
+        padding-bottom: 15px;
+    }
+
+    body #map {
+        width: 70%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+    body .intro h1,
+    .intro-contact h1 {
+        font-size: 400%;
+    }
+
+    body .intro .btn {
+        font-size: 100%;
+    }
+
+    body .content {
+        margin-bottom: 17%;
+    }
+
+    body .content-contact {
+        margin-bottom: 35%;
+    }
+
+    body .form {
+        width: 55%;
+    }
+
+    body ::-webkit-input-placeholder,
+    .form input {
+        font-size: 14px;
+    }
+
+    body .flex-container>div {
+        width: 49%;
+        height: 50vh;
+        line-height: 50vh;
+        margin: 2px;
+    }
+
+    body .content>p {
+        width: 70vw;
+        margin-top: 30px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+
+    body footer {
+        font-size: 80%;
+        margin: 50px;
+    }
+
+    body .content-p {
+        margin-bottom: 20px;
+    }
+
+    body #map p {
+        font-size: 80%;
+    }
+
+    body .intro-p {
+        padding-bottom: 10px;
+    }
+
+    body #map {
+        width: 60%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Extra large devices (1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+    body .intro h1,
+    .intro-contact h1 {
+        font-size: 500%;
+    }
+
+    body .intro .btn,
+    .content-contact .btn {
+        font-size: 100%;
+        font-weight: 400;
+    }
+
+    body .content {
+        margin-bottom: 15%;
+    }
+
+    body .content-contact {
+        margin-bottom: 33%;
+    }
+
+    body .form {
+        width: 50%;
+    }
+
+    body ::-webkit-input-placeholder,
+    .form input {
+        font-size: 15px;
+    }
+
+    body .flex-container>div {
+        width: 49%;
+        height: 50vh;
+        line-height: 50vh;
+        margin: 2px;
+    }
+
+    body .content>p {
+        width: 60vw;
+        margin-top: 20px;
+        line-height: 30px;
+        margin-bottom: 15px;
+        font-size: 110%;
+    }
+
+    body footer {
+        font-size: 90%;
+        margin: 60px;
+    }
+
+    body .content-p {
+        margin-bottom: 30px;
+    }
+
+    body #map p {
+        font-size: 90%;
+    }
+
+    body .intro-p {
+        padding-bottom: 10px;
+    }
+
+    body #map {
+        width: 50%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media print {
+    * {
+        background-color: white;
+    }
+
+    nav,
+    footer {
+        display: none;
+    }
+}

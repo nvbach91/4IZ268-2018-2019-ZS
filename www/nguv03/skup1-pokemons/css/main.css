@@ -45,3 +45,8 @@ ul {
     background-color: #ccc;
     padding: 10px;
 }
+.pokemon-image {
+    height: 100px;
+    width: 100px;
+    background-size: contain;
+}

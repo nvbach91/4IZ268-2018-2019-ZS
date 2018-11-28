@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web for language school">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Plas02">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="120" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="css/tykadylko_styles.css">
+    <link rel="shortcut icon" type="image/png" href="obr/logo.jpg">
+    <title>Jazykové centrum Club Tykadýlko</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <div class="logo"></div>
+            </a>
+            <ul>
+                <li id="main_page"><a href="index.html">Hlavní strana</a></li>
+                <li><a href="contacts.html">Kontakty</a></li>
+                <li><a href="workers.html">Naši pracovníci</a></li>
+                <li><a href="events.html">Akce</a></li>
+                <li><a href="teaching.html">Výuka</a></li>
+                <li><a href="aboutus.html">O nás</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="poster">
+        <h1>Přihláška</h1>
+    </div>
+
+    <div class="application">
+        <form>
+            Jméno a příjmení:<br>
+            <input type="text" name="name"><br>
+            Email:<br>
+            <input type="email" name="email"><br>
+            Telefon:<br>
+            <input type="number" name="phone"><br>
+            Věk:<br>
+            <input type="number" name="age"><br>
+            Vyberte kurz nebo akci:<br>
+            <select name="event">
+                <option value="Kurzy Mortimer">Kurzy Mortimer</option>
+                <option value="After school">After school</option>
+                <option value="Dopolední program">Dopolední program</option>
+                <option value="Individuální kurz">Individuální kurz</option>
+                <option value="Firemní kurz">Firemní kurz</option>
+                <option value="Víkendový kurz">Víkendový kurz</option>
+                <option value="Sleepover">Sleepover</option>
+            </select><br>
+            Úroveň angličtiny:<br>
+            <input type="text" name="level"><br>
+            Místo pro případné dotazy:<br>
+            <textarea name="message" placeholder="Type your Message"></textarea><br>
+            <input type="submit" value="Send" />
+            <br><br>
+        </form>
+    </div>
+</body>
+
+</html>
