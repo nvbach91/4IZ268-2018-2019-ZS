@@ -64,7 +64,7 @@ var pointsField = document.querySelector('#points');
 /*Vytvoření funkce timeru na úspěšný konec hry. */
 var ending = function () {
     alert('Congratulations! Your score is ' + points + ' points.');
-}
+};
 /*Vytvoření funkce timeru na resetování tahu. */
 var reset = function () {
     firstCard.classList.remove('revealed');
@@ -80,10 +80,10 @@ var beginning = function (){
     }
 }
 /*Přidání karet s městy na hrací pole*/
-var createCard = function (cities) {
-    var newCard = document.createElement('div');
+var createCard = function (city) {
+    var newCard = document.createElement('button');
     newCard.classList.add('card');
-    newCard.innerText = cities;
+    newCard.innerText = city;
     newCard.addEventListener('click', function (e) {
         e.preventDefault();
         //pokud nová karta obsahuje třídu revealed a zároveň se může otočit (nemáme dosud dvě karty otočené)
@@ -108,7 +108,9 @@ var turnOver = function (card) {
             secondCard = null;
         } else {
             //prohrává tah
-            points--;
+            if (points > 0) {
+                points--;
+            }
             if (points < 0) {
                 points = 0;
             }
@@ -116,7 +118,7 @@ var turnOver = function (card) {
             setTimeout(reset, 1000);
         }
         //zobrazení počtu bodů na obrazovce
-        pointField.innerText = points;
+        pointsField.innerText = points;
     } else {
         firstCard = card;
     }
