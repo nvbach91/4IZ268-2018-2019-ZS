@@ -6,7 +6,7 @@ cities.sort(function() {
 
 var firstCard = null;
 var secondCard = null;
-var revealedCards = 0;
+var flippedCards = 0;
 var points = 0;
 
 var gameField = document.querySelector('#game-field');
