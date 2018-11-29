@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+#game-field {
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    justify-content: space-around;
+}
+
+/* dumb way of 'not displaying' the text on card */
+.card {
+    background-color: crimson;
+    color: crimson;
+    width: 17%;
+    height: 125px;
+    margin: 10px 0;
+    border: solid #ddd 3px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card:hover {
+    border: solid black 5px;
+
+}
+.card.revealed {
+    background-color: cadetblue;
+    color: white;
+}
