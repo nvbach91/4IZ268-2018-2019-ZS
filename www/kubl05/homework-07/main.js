@@ -97,7 +97,7 @@ var getPoints = function () {
             secondCard.classList.remove('revealed');
             firstCard = "";
             secondCard = "";
-        }, 3000);
+        }, 1000);
     }
 
     pointsContainer.innerText = points;
