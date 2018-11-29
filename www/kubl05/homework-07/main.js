@@ -55,66 +55,62 @@ cities.sort(function () {
     return 0.5 - Math.random();
 });
 
+var points = 0;
 var firstCard = "";
 var secondCard = "";
-var chosenCards = 0;
-var numOfCards = cities.length;
-var revealedCards = 0;
+var nCards = cities.length;
+var nRevealedCards = 0;
 
 var chooseCard = function (card) {
     card.addEventListener('click', function () {
-        if (chosenCards === 2 || card.classList.contains('revealed')) {
+        if ((secondCard && firstCard) || card.classList.contains('revealed')) {
             return false;
         }
 
         card.classList.add('revealed');
 
-        if (chosenCards === 0) {
+        if (firstCard === "") {
             firstCard = card;
-            chosenCards++;
             return false;
         }
+
         secondCard = card;
-        chosenCards++;
         getPoints();
         isEnd();
-        chosenCards = 0;
     });
 };
-
-var points = 0;
 
 var getPoints = function () {
     if (firstCard.innerText === secondCard.innerText) {
         points++;
-        revealedCards += 2;
+        nRevealedCards += 2;
         firstCard = "";
         secondCard = "";
     }
 
     else {
-        if (points === 0) {
+        if (points > 0) {
+            points--
         }
-        else points--;
         setTimeout(function () {
             firstCard.classList.remove('revealed');
             secondCard.classList.remove('revealed');
             firstCard = "";
             secondCard = "";
-        }, 1000);
+        }, 3000);
     }
 
     pointsContainer.innerText = points;
 };
 
 var isEnd = function () {
-    if (revealedCards === numOfCards && points <= 5) {
-        alert('Nic moc, získal jsi: ' + points + ' bodů');
-    }
+    if (nRevealedCards === nCards) {
+        if (points <= 5) {
+            alert('Nic moc, získal jsi: ' + points + '/' + nCards / 2 + ' bodů');
+        }
 
-    else if (revealedCards === numOfCards && points > 5) {
-        alert('Dobrá práce, získal jsi: ' + points + ' bodů');
-    };
+        else alert('Dobrá práce, získal jsi: ' + points + '/' + nCards / 2 + ' bodů');
+    }
 };
 
 ///////////////////////
