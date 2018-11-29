@@ -1,24 +1,26 @@
 //1.    Pepe's age
 
-var PepeYearOfBirth = 1989;
-if (PepeYearOfBirth != null) {
-    var pepeAge = 2018 - PepeYearOfBirth;
+var pepeYearOfBirth = 1989;
+if (typeof pepeYearOfBirth === 'number') {
+
+    var pepeAge = new Date().getFullYear() - pepeYearOfBirth;
     console.log("Věk Pepy je " + pepeAge + " let.");
 }
 else {
-    console.log("Věk Pepy je neznámý")
+    console.log("Věk Pepy je neznámý");
 }
 
 
 //2.    WTF
 
-var tempCelsius;
+var tempCelsius = 15;
 var tempFahrenheit;
 
-if (tempCelsius != null) {
+if (tempCelsius !== null) {
 
     tempFahrenheit = tempCelsius * 9 / 5 + 32;
     console.log(tempCelsius + "°C = " + tempFahrenheit + "°F");
+
 } else {
 
     if (tempFahrenheit != null) {
@@ -28,12 +30,11 @@ if (tempCelsius != null) {
 
     } else {
 
-        console.log("Vstupní hodnoty nejsou zadané")
+        console.log("Vstupní hodnoty nejsou zadané");
 
     }
 
 }
-
 
 
 //4.    Funkce function fonction funktio
@@ -44,36 +45,30 @@ function celsiusToFahrenheit(tempCelsius) {
 }
 
 function fahrenheitToCelsius(tempFahrenheit) {
-    tempCelsius = (tempFahrenheit - 32) / 9 *5;
+    tempCelsius = (tempFahrenheit - 32) / 9 * 5;
     return tempFahrenheit + "°F = " + tempCelsius + "°C";
 }
 
 //4.    %CENSORED%.
 
-var a = 0, b = 0;
+
 function percents(a, b) {
 
-    if (b != 0) {
+    if (b !== 0) {
 
         var percentage = a / b * 100;
         percentage.toFixed(2);
         return a + " je " + percentage + "% z " + b;
 
     }
-    else {
-
         return "Nulou nelze dělit!";
-
-    }
-
-
 }
 
 //5.	Kdo s koho
 
 function compareNumbers(w, z) {
 
-    if (w == z) {
+    if (w === z) {
         return "Čísla se rovnají";
     } else if (w > z) {
         return w;
@@ -84,7 +79,7 @@ function compareNumbers(w, z) {
 
 var numbers1 = compareNumbers(5, 3);
 var numbers2 = compareNumbers(5.2, 3);
-var numbers3 = compareNumbers(5/2, 3/9);
+var numbers3 = compareNumbers(5 / 2, 3 / 9);
 var numbers4 = compareNumbers(4, 4);
 var numbers5 = compareNumbers(4.0, 4);
 
@@ -92,30 +87,24 @@ var numbers5 = compareNumbers(4.0, 4);
 //6.	I can cleary see the pattern
 
 function multipleThirteen() {
-    var j = 1;
-    var i = 0;
-    for ( ; i < 728; ) {
-        i = j * 13;
-        j++;
+    for(var i = 0; i <= 730; i+=13) {
         console.log(i);
     }
 }
+
 //7.    Around and about
 
-const PI = 3.14;
 
-function circleContent(r) {
+function circleArea(r) {
 
-    var content = PI * r * r;
-    return "Obsah kruhu je " + content + "cm";
+    return Math.PI * r * r;
 }
 
 //8.    Another dimension
 
-function objemKuzele(r, v) {
+function coneVolume(r, v) {
 
-    var volume = (PI * r * r * v) / 3;
-    return "Objem kuželu je " + volume + "cm krychlových";
+    return (Math.PI * r * r * v) / 3;
 
 }
 
@@ -123,16 +112,7 @@ function objemKuzele(r, v) {
 
 function isTriangle(a, b, c) {
 
-    if (a != 0 && b != 0 && c != 0 && (a + b > c)) {
-
-        return true;
-
-    }
-    else {
-
-        return false;
-
-    }
+    return a + b > c && a + c > b && b + c > a;
 }
 
 //10.	Heroic performance
@@ -141,16 +121,13 @@ function triangleArea(a, b, c) {
 
     var rightTriangle = isTriangle(a, b, c);
 
-    if (rightTriangle == true) {
+    if (rightTriangle) {
 
         var s = (a + b + c) / 2;
         return Math.sqrt(s * (s - a) * (s - b) * (s - c));
 
-    } else {
-
-       return "Není trojúhelník";
-
     }
+        return "Není trojúhelník";
 
 }
 
