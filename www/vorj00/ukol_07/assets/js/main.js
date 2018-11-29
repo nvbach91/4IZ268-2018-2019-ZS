@@ -2,6 +2,12 @@ var points = 0;
 var cities = ['Barcelona', 'Dortmund', 'Madrid', 'Turin', 'Prague', 'New York', 'Paris', 'London', 'Beijing', 'Moscow'];
 var firstSelect = null;
 
+async function wait() {
+    return new Promise(function(resolve) {
+      setTimeout(resolve, 1000);
+  });
+}
+
 cities = cities.concat(cities);
 cities.sort(function() { return .5 - Math.random(); });
 
@@ -14,24 +20,23 @@ function editPoints(change){
 }
 
 $(document).ready(function(){
-    const pexesoPoints = '#js-points';
-    const pexesoBoard = '#js-pexeso';
+    const pexesoPoints = $('#js-points');
+    const pexesoBoard = $('#js-pexeso');
     const pexesoCard = '.js-playable';
 
-    $(pexesoPoints).text(points);
+    pexesoPoints.text(points);
 
     $.each(cities, function(index, value){
-        $(pexesoBoard).append(`<div data-id="${index}" class="pexeso__card pexeso__card--playing js-playable"></div>`)
+        pexesoBoard.append(`<div data-id="${index}" class="pexeso__card pexeso__card--playing js-playable"></div>`)
     });
 
-    $(pexesoCard).on("click", function(){
+    $(pexesoCard).on("click", async function(){
         let currentCard = $(this);
         let currentCardId = currentCard.data("id");
 
         currentCard.addClass('pexeso__card--selected').removeClass('pexeso__card--playing');
         currentCard.text(cities[currentCardId]);
-
-        setTimeout(function(){
+        
         if(firstSelect === null){
             firstSelect = currentCard;
         } else {
@@ -41,8 +46,10 @@ $(document).ready(function(){
 
                 editPoints(1);
             } else {
+                await wait();
                 firstSelect.addClass('pexeso__card--playing').text('');
                 currentCard.addClass('pexeso__card--playing').text('');
+
 
                 editPoints(-1);
             }
@@ -52,8 +59,7 @@ $(document).ready(function(){
 
             firstSelect = null;
         }
-        $(pexesoPoints).text(points);
-    }, 1000);
+        pexesoPoints.text(points);
 
     });
 });
