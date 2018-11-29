@@ -1,6 +1,7 @@
 var points = 0;
 var cities = ['Barcelona', 'Dortmund', 'Madrid', 'Turin', 'Prague', 'New York', 'Paris', 'London', 'Beijing', 'Moscow'];
 var firstSelect = null;
+var moves = 0;
 
 async function wait() {
     return new Promise(function(resolve) {
@@ -31,6 +32,9 @@ $(document).ready(function(){
     });
 
     $(pexesoCard).on("click", async function(){
+        moves++;
+        if(moves<=2){
+
         let currentCard = $(this);
         let currentCardId = currentCard.data("id");
 
@@ -57,9 +61,10 @@ $(document).ready(function(){
             firstSelect.removeClass('pexeso__card--selected');
             currentCard.removeClass('pexeso__card--selected');
 
+            moves = 0;
             firstSelect = null;
         }
         pexesoPoints.text(points);
-
+    }
     });
 });
