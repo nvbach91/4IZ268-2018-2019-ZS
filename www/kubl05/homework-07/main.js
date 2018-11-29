@@ -49,7 +49,7 @@
 var gameField = document.querySelector('#game-field');
 var pointsContainer = document.querySelector('#points');
 
-var cities = ['Trnava', 'Petržalka', 'Bratislava', 'Trenčín', 'Košice', 'Prešov', 'Koločava', 'Ružomberok', 'Gottwaldov', 'Romská osada'];
+var cities = ['London', 'Berlin', 'Prague', 'Vienna', 'Florence', 'Rome', 'Manchester', 'Paris', 'Barcelona', 'Oslo'];
 cities = cities.concat(cities);
 cities.sort(function () {
     return 0.5 - Math.random();
@@ -57,29 +57,28 @@ cities.sort(function () {
 
 var firstCard = "";
 var secondCard = "";
-var chosen = 0;
+var chosenCards = 0;
+var numOfCards = cities.length;
+var revealedCards = 0;
 
 var chooseCard = function (card) {
     card.addEventListener('click', function () {
-        if (chosen === 2) {
-            return false;
-        }
-
-        else if (card.classList.contains('revealed')) {
+        if (chosenCards === 2 || card.classList.contains('revealed')) {
             return false;
         }
 
         card.classList.add('revealed');
 
-        if (chosen === 0) {
+        if (chosenCards === 0) {
             firstCard = card;
-            chosen++;
+            chosenCards++;
             return false;
         }
         secondCard = card;
-        chosen++;
+        chosenCards++;
         getPoints();
-        chosen = 0;
+        isEnd();
+        chosenCards = 0;
     });
 };
 
@@ -87,13 +86,16 @@ var points = 0;
 
 var getPoints = function () {
     if (firstCard.innerText === secondCard.innerText) {
-        points += 10;
+        points++;
+        revealedCards += 2;
         firstCard = "";
         secondCard = "";
     }
 
     else {
-        points--;
+        if (points === 0) {
+        }
+        else points--;
         setTimeout(function () {
             firstCard.classList.remove('revealed');
             secondCard.classList.remove('revealed');
@@ -101,7 +103,18 @@ var getPoints = function () {
             secondCard = "";
         }, 1000);
     }
+
     pointsContainer.innerText = points;
+};
+
+var isEnd = function () {
+    if (revealedCards === numOfCards && points <= 5) {
+        alert('Nic moc, získal jsi: ' + points + ' bodů');
+    }
+
+    else if (revealedCards === numOfCards && points > 5) {
+        alert('Dobrá práce, získal jsi: ' + points + ' bodů');
+    };
 };
 
 ///////////////////////
