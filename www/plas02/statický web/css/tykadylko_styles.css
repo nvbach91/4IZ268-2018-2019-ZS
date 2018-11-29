@@ -406,6 +406,14 @@ nav a {
     
 }
 
+.search {
+    background-image: url('https://cdn3.iconfinder.com/data/icons/eightyshades/512/11_Search-512.png');
+    background-size: 20px;
+    background-position: center;
+    width: 100px;
+    cursor: pointer;
+}
+
 .weekend {
     background-image: url(../obr/week.jpg);
     width: 550px;
