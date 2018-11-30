@@ -63,7 +63,7 @@ App.fetchRepositories = function(login) {
       html += `
         <li class="repository">
           <div class="repo-name">${repository.name}</div>
-          <div class="repo-url"><a href="${repository.url}">${repository.url}</a></div>
+          <div class="repo-url"><a href="${repository.html_url}">${repository.html_url}</a></div>
         </li>
       `;
     });
