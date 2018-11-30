@@ -1,10 +1,10 @@
 # Git The Hub
 
-Vytvořte aplikaci, která bude umět zobrazit informace ohledně uživatelů na GitHubu. Použijte `jQuery` pro manupulaci s DOM a AJAX. 
+Vytvořte aplikaci, která bude umět zobrazit informace ohledně uživatelů na GitHubu. Použijte **jQuery** pro manupulaci s DOM a AJAX. 
 
-Aplikace nejprve vyzve uživatele k `zadání` uživatelského jména `GitHub uživatele`. Po každém submitnutí pošle `GET požadavek` na `GitHub API` a v případě nalezení uživatele zobrazí jeho informace v HTML podle obrázku dole. V případě nenalezení uživatele aplikace vypíše příslušnou hlášku do HTML stránky. 
+Aplikace nejprve vyzve uživatele k **zadání** uživatelského jména **GitHub uživatele**. Po každém submitnutí pošle **GET požadavek** na **GitHub API** a v případě nalezení uživatele zobrazí jeho informace v HTML podle obrázku dole. V případě nenalezení uživatele aplikace vypíše příslušnou hlášku do HTML stránky. 
 
-Po zobrazení základních informací aplikace pošle další `GET požadavek` na GitHub API a načte `seznam repozitářů` daného uživatele a zobrazí je na stránce pod uživatelem.
+Po zobrazení základních informací aplikace pošle další **GET požadavek** na GitHub API a načte **seznam repozitářů** daného uživatele a zobrazí je na stránce pod uživatelem.
 
 GitHub API: [https://developer.github.com/v3/](https://developer.github.com/v3/)
 - Autentizace k API [https://developer.github.com/v3/#authentication](https://developer.github.com/v3/#authentication)
@@ -12,11 +12,11 @@ GitHub API: [https://developer.github.com/v3/](https://developer.github.com/v3/)
 - Načtení seznamu repozitářů [https://developer.github.com/v3/repos/#list-user-repositories](https://developer.github.com/v3/repos/#list-user-repositories)
 
 FYI:
-- Abyste mohli libovolně používat `GitHub API`, je potřeba si zaregistrovat tzv. `OAuth účet` na GitHubu následovně
-    - Přihlašte se na GitHub a otevřete `Settings` [https://github.com/settings/](https://github.com/settings/)
-    - Vyberte `Developer settings`
-    - Vytvořte novou `OAuth aplikaci` dle obrázku
-    - Poznamenejte si `Client ID` a `Client Secret` a uložte je do proměnných ve vašem JavaScriptu
+- Abyste mohli libovolně používat **GitHub API**, je potřeba si zaregistrovat tzv. **OAuth účet** na GitHubu následovně
+    - Přihlašte se na GitHub a otevřete **Settings** [https://github.com/settings/](https://github.com/settings/)
+    - Vyberte **Developer settings**
+    - Vytvořte novou **OAuth aplikaci** dle obrázku
+    - Poznamenejte si **Client ID** a **Client Secret** a uložte je do proměnných ve vašem JavaScriptu
 ![image](https://user-images.githubusercontent.com/20724910/49305160-c035ed00-f4ce-11e8-89a9-be86f4d95bf4.png)
 
 ```js
