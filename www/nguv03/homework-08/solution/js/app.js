@@ -1,5 +1,5 @@
 /**
- * Inspirovat v tomto kódu můžeš, ale nesmíš ho opisovat, protože by to nemělo smysl -- Master Yoda
+ * Inspirovat se v tomto kódu můžeš, ale opisovat ho nesmíš, protože by to smysl nemělo -- Master Yoda
  */
 
 var App = App || {};
