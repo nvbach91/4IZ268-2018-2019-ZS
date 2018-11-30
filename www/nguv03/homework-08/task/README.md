@@ -7,10 +7,6 @@ Aplikace nejprve vyzve uživatele k **zadání** uživatelského jména **GitHub
 
 Po zobrazení základních informací aplikace pošle další **GET požadavek** na GitHub API a načte **seznam repozitářů** vyhledaného uživatele a zobrazí je na stránce pod uživatelem.
 
-### Testování
-Funkčnost aplikace otestujte použitím následujících GitHub uživatelských jmen:
-- [https://gist.github.com/paulmillr/2657075](https://gist.github.com/paulmillr/2657075)
-
 ### GitHub API
 Dokumentace: [https://developer.github.com/v3/](https://developer.github.com/v3/)
 - Autentizace k API [https://developer.github.com/v3/#authentication](https://developer.github.com/v3/#authentication)
@@ -43,6 +39,10 @@ $.getJSON(url).done(function(user) {
     $('#user-profile').html('<p>User not found</p>');
 });
 ```
+
+### Testování
+Funkčnost aplikace otestujte použitím několika z následujících GitHub uživatelských jmen:
+- [https://gist.github.com/paulmillr/2657075](https://gist.github.com/paulmillr/2657075)
 
 ### Demo
 ![image](https://user-images.githubusercontent.com/20724910/49305585-f031c000-f4cf-11e8-962c-77b231916b7e.png)
