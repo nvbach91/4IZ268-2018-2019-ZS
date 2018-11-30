@@ -27,6 +27,7 @@ FYI:
 var client_id = '...';     // client_id získáte po registraci OAuth účtu
 var client_secret = '...'; // client_secret získáte po registraci OAuth účtu
 var baseApiUrl = 'https://api.github.com';
+// sestavujeme URL, který obsahuje parametry client_id a client_secret
 var url = baseApiUrl + '/users/' + searchValue + '?client_id=' + client_id + '&client_secret=' + client_secret;
 $.getJSON(url).done(function(user) {
     renderUser(user);
