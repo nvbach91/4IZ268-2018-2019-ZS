@@ -17,7 +17,8 @@ FYI:
     - Vyberte **Developer settings**
     - Vytvořte novou **OAuth aplikaci** dle obrázku
     - Poznamenejte si **Client ID** a **Client Secret** a uložte je do proměnných ve vašem JavaScriptu
-![image](https://user-images.githubusercontent.com/20724910/49305160-c035ed00-f4ce-11e8-89a9-be86f4d95bf4.png)
+![image](https://user-images.githubusercontent.com/20724910/49305911-f3797b80-f4d0-11e8-97f8-ba00205b8f4b.png)
+
 
 ```js
 var App = App || {};
