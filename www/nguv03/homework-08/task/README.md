@@ -21,18 +21,15 @@ FYI:
 
 
 ```js
-var App = App || {};
-// příklad volání na GitHub API
-App.client_id = '...';     // client_id získáte po registraci OAuth účtu
-App.client_secret = '...'; // client_secret získáte po registraci OAuth účtu
-App.baseApiUrl = 'https://api.github.com';
-var url = App.baseApiUrl + '/users/' + searchValue + 
-    '?client_id=' + App.client_id + '&client_secret=' + App.client_secret;
+var client_id = '...';     // client_id získáte po registraci OAuth účtu
+var client_secret = '...'; // client_secret získáte po registraci OAuth účtu
+var baseApiUrl = 'https://api.github.com';
+var url = baseApiUrl + '/users/' + searchValue + '?client_id=' + client_id + '&client_secret=' + client_secret;
 $.getJSON(url).done(function(user) {
-    App.renderUser(user);
-    App.fetchRepositories(user.login);
+    renderUser(user);
+    fetchRepositories(user.login);
 }).fail(function() {
-    App.jUserProfile.html('<p>User not found</p>');
+    $('#user-profile').html('<p>User not found</p>');
 });
 ```
 
