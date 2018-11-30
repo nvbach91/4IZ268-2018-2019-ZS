@@ -6,6 +6,9 @@ Aplikace nejprve vyzve uživatele k **zadání** uživatelského jména **GitHub
 
 Po zobrazení základních informací aplikace pošle další **GET požadavek** na GitHub API a načte **seznam repozitářů** daného uživatele a zobrazí je na stránce pod uživatelem.
 
+Funkčnost aplikace otestujte pomocí následujících GitHub uživatelů:
+- [https://gist.github.com/paulmillr/2657075](https://gist.github.com/paulmillr/2657075)
+
 GitHub API: [https://developer.github.com/v3/](https://developer.github.com/v3/)
 - Autentizace k API [https://developer.github.com/v3/#authentication](https://developer.github.com/v3/#authentication)
 - Načtení uživatele [https://developer.github.com/v3/users/#get-a-single-user](https://developer.github.com/v3/users/#get-a-single-user)
