@@ -12,7 +12,7 @@ var points = 0;
 var gameField = document.querySelector('#game-field');
 var pointsCounter = document.querySelector('#points');
 
-var flipCard = function(card) {
+var bindCardFlip = function(card) {
   card.addEventListener('click', function() {
     if (card.classList.contains('flipped')) {
       return false;
@@ -33,7 +33,7 @@ var flipCard = function(card) {
       flippedCards += 2;
       if (flippedCards === cities.length)
       setTimeout(function() {
-        alert('Vyhrál jsi');}, 500);
+        alert('Vyhrál jsi! A dosáhl jsi '+ points + ' bodů');}, 1000);
     }
     else {
       setTimeout(function() {
@@ -41,16 +41,16 @@ var flipCard = function(card) {
         secondCard.classList.remove('flipped');
         firstCard = null;
         secondCard = null;
-      }, 500);
+      }, 1000);
     }
     pointsCounter.innerText = points;
   });
 };
 var addCard = function(name) {
-  var card = document.createElement('div');
+  var card = document.createElement('button');
   card.classList.add('card');
   card.innerText = name;
-  flipCard(card);
+  bindCardFlip(card);
   gameField.appendChild(card);
 };
 
