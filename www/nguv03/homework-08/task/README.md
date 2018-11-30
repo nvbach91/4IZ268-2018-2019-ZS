@@ -24,10 +24,14 @@ FYI:
 
 
 ```js
+// Příklad volání na GitHub API
 var client_id = '...';     // client_id získáte po registraci OAuth účtu
 var client_secret = '...'; // client_secret získáte po registraci OAuth účtu
 var baseApiUrl = 'https://api.github.com';
 // sestavujeme URL, který obsahuje parametry client_id a client_secret
+// každý parametr se určuje v podobě klíč=hodnota, více parametry se oddělují ampersandem, 
+// na začátku všech parametrů přidáme otazník
+// např. ?client_id=abcdef&client_secret=fedcba
 var url = baseApiUrl + '/users/' + searchValue + '?client_id=' + client_id + '&client_secret=' + client_secret;
 $.getJSON(url).done(function(user) {
     renderUser(user);
