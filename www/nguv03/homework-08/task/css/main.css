@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+hr {
+    border-style: solid;
+    border-color: #eee;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.loader {
+    border: 5px solid cadetblue;
+    border-top: 5px solid #ccc;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+footer {
+    background-color: cadetblue;
+    padding: 20px 0;
+}
