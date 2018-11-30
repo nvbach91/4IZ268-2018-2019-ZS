@@ -72,7 +72,7 @@ App.fetchRepositories = function(login) {
 };
 App.init = function() {
   App.jUserProfile = $('#user-profile');
-  App.jSearchInput = $('#search-input').val('nvbach91');
+  App.jSearchInput = $('#search-input');
   App.jSearchForm = $('#search-form');
   App.jRepositories = $('#repositories');
   App.loader = $('<div class="loader"></div>');
