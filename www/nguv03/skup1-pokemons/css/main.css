@@ -27,9 +27,11 @@ hr {
 ul {
     padding: 0;
     list-style-type: none;
+    max-width: 1024px;
+    display: flex;
 }
 .pokeball {
-    width: 100%;
+    width: 25%;
     height: 100px;
     background-image: url(../img/pokeball.png);
     background-position: center;
@@ -37,7 +39,17 @@ ul {
     background-repeat: no-repeat;
 }
 .pokemon {
+    display: grid;
+    margin-bottom: 5px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 50px;
+    width: 25%;
+}
+
+.pokemon > * {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .pokemon-name {
     flex-grow: 1;
