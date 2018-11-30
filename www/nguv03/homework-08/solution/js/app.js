@@ -1,5 +1,5 @@
 /**
- *
+ * Inspirovat v tomto kódu můžeš, ale nesmíš ho opisovat, protože by to nemělo smysl -- Master Yoda
  */
 
 var App = App || {};
