@@ -8,7 +8,7 @@ App.client_secret = 'dc13c3526b797f32dcaeec2af9572d05d1808dd7';
 App.baseApiUrl = 'https://api.github.com';
 App.renderUser = function(user) {
   var createdDate = new Date(user.created_at).toLocaleDateString('cs-CZ');
-  var html = `
+  var html = /*html*/`
     <div class="basic-info">
       <div class="bi-name">${user.name || ''}</div>
       <div class="bi-avatar" style="background-image: url(${user.avatar_url})"></div>
@@ -60,7 +60,7 @@ App.fetchRepositories = function(login) {
     App.loader.remove();
     var html = `<p>This user has ${repositories.length} repositories</p>`;
     repositories.forEach(function(repository) {
-      html += `
+      html += /*html*/`
         <li class="repository">
           <div class="repo-name">${repository.name}</div>
           <div class="repo-url"><a href="${repository.html_url}">${repository.html_url}</a></div>
