@@ -1,6 +1,11 @@
 const shareButton = document.querySelector('#share');
 
 var tweet = function () {
+
+    if (!resultsContainer.innerHTML) {
+        return false;
+    }
+
     var url = "https://twitter.com/intent/tweet";
     var text = $('#results').text();
     var via = "lukazko";
