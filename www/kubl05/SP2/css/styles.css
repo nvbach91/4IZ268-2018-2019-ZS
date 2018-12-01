@@ -91,3 +91,19 @@ button {
 button:hover {
     background-color: #074a88;
 }
+
+.question {
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    text-align: left;
+}
+
+.answers {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.answers label {
+  display: block;
+}
