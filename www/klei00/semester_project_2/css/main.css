@@ -1,0 +1,240 @@
+@font-face {
+    font-family: oranienbaum;
+    src: url(../fonts/oranienbaum.ttf);
+}
+* {
+    box-sizing: border-box;
+    font-family: oranienbaum;
+}
+h1{
+    font-size: 50px;
+    text-align: center;
+}
+h2{
+    font-size: 22px;
+    font-weight: normal;
+    margin: 10px 0;
+}
+body {
+    font-size: 1.1em;
+    background-color: #AA3939;
+    margin: 0;
+    padding: 10px;
+}
+#search {
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+    padding: 0;
+    background-color: #801616;
+    color: white;
+    border-radius: 10px;
+}
+/* ---------- form header ------------*/
+#form-header {
+    background-color: #550000;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0 30px;
+}
+#form-header.closed {
+    border-radius:10px;
+}
+#form-header > *{
+    display: inline-block;   
+}
+#open-form {
+    float: right;
+    border: #801616 1px solid;
+    border-radius: 4px;
+    margin: 10px 0;
+    background-color: #801616;
+    color: white;
+    font-size: 14px;
+    padding: 4px 6px;
+    cursor: pointer;
+}
+#open-form:focus{
+    outline: none;
+}
+#open-form:hover{
+    border: white 1px solid;
+}
+/*------------- form --------------*/
+#form {
+clear: both;
+padding: 14px 30px;
+}
+#form.closed, #table-head.closed {
+    display: none;
+}
+input{
+    margin: 10px 10px 10px 0;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+#searched-text {
+    width: 100%;
+    margin: 12px 0;
+}
+.radio {
+    margin: 6px;
+}
+/* -------------- results ----------------*/
+hr {
+    border: none;
+    border-top: 1px solid;
+    margin: 0 0 10px 0;
+    clear: both;
+}
+#results-field {
+    overflow: auto;
+    padding: 0 30px 14px 30px;
+    width: 100%;
+}
+.result-row {
+    padding: 6px 0;
+    width: 100%;
+    margin: 10px 0;
+    overflow: auto;
+}
+.add-button {
+    float: right;
+    background-color: #550000;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: #550000 1px solid;
+}
+.add-button:hover{
+    border: white 1px solid;
+}
+.add-existing {
+    background-color: grey;
+    border: grey 1px solid;
+}
+.add-existing:hover{
+    border: grey 1px solid;
+}
+.result {
+    display:inline-block;
+    width: 70%;
+    margin: 10px 20px;
+}
+.image {
+    float: left;
+    max-width: 57px;    
+    margin-top: 10px;
+}
+#open-form-2 {
+    float: right;
+    border: #550000 1px solid;
+    border-radius: 4px;
+    margin: 10px 0;
+    background-color: #550000;
+    color: white;
+    font-size: 14px;
+    padding: 4px 6px;
+    cursor: pointer;
+}
+#open-form-2:focus{
+    outline: none;
+}
+#open-form-2:hover{
+    border: white 1px solid;
+}
+/*-------------- library table -----------*/
+#my-library {
+    margin: 30px auto;
+    max-width: 1000px;
+    text-align: center;
+}
+.id{
+    display: none;
+}
+table {
+    width: 100%;
+    background-color: #FFAAAA;
+    border-radius: 10px;
+    border-collapse: collapse;
+}
+th, td {
+    border: solid 2px #AA3939;
+    padding: 10px;
+    margin: 0;
+    outline: 0;
+    overflow: auto;
+}
+td.delete{
+    cursor: pointer;
+}
+td.delete:hover{
+    background-color: white;
+}
+/*-------------- footer ---------------*/
+footer{
+    max-width: 1000px;
+    margin: 10px auto;
+    text-align: center;
+}
+/*-------------- loader ---------------*/
+.whole-page {
+    background-color: #801616cc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.loader{
+    background-image: url(../images/page.png);
+    background-size: contain;
+    background-repeat:  repeat-x;
+    border: solid 3px #550000;
+    display: block;
+    width: 100px;
+    min-height: 70px;
+    margin: 100px auto;
+    position: relative;
+    perspective: 150px;
+}
+.page {
+    display: block;
+    height:70px;
+    width: 50px;
+    border: solid 3px #550000;
+    border-left: solid 1px #550000;
+    margin: 0;
+    position: absolute;
+    right: -3px;
+    top: -3px;
+    overflow: hidden;
+    background-image: url(../images/page.png);
+    background-size: contain;
+    transform-style: preserve-3d;
+    transform-origin: left center;
+    animation: pageTurn 1s infinite;    
+}
+@keyframes pageTurn {
+    from {
+        background-image: url(../images/page.png);
+        background-size: contain;
+    }
+    to {
+        background-image: url(../images/page.png);
+        background-size: contain;
+        transform: rotateY( -180deg);
+    }
+}
+/*-------------- smaller screen -----------*/
+@media only screen and (max-width: 680px) {
+    th, td {
+        padding: 6px 5px;
+    }
+    .result {
+        width: 60%;
+        margin: 10px;
+    }
+}
