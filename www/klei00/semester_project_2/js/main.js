@@ -146,16 +146,16 @@ var addToLibrary = function (book, author, url) {
     var deleteCell = $('<td>').addClass('delete').text('Odebrat');
     var idCell = $('<td>').addClass('id').text(book.id);
     var newRow = $('<tr>').append(imageCell).append(nameCell).append(authorCell).append(categoryCell).append(yearCell).append(deleteCell).append(idCell);
-    var myLibrary = $('#table-head');
-    if (myLibrary.hasClass('closed')) {
-        myLibrary.removeClass('closed');
+    var tableHead = $('#table-head');
+    if (tableHead.hasClass('closed')) {
+        tableHead.removeClass('closed');
     }
     $('#table-body').append(newRow);
 
     deleteCell.click(function () {
         newRow.remove();
         if ($('.id').length === 1) {
-            myLibrary.addClass('closed');
+            tableHead.addClass('closed');
         }
         form.submit();
     });
