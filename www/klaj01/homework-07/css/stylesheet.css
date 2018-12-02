@@ -31,6 +31,7 @@ body {
 
 .card:hover {
     border: 5px solid rgb(107, 107, 107);
+    cursor: pointer;
 }
 
 .card.revealed {
