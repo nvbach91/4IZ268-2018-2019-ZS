@@ -2,6 +2,10 @@ const quizContainer = document.querySelector('#quiz');
 const resultsContainer = document.querySelector('#results');
 const newButton = document.querySelector('#new');
 const submitButton = document.querySelector('#submit');
+const shareButton = document.querySelector('#share');
+var alertWindow = document.querySelector('.alert-window');
+var closeWindow = document.querySelectorAll('.close')[0];
+var message = document.querySelector('.alert-window-text');
 
 const listOfQuestions = [
     {
@@ -116,7 +120,7 @@ var buildQuiz = function () {
         for (letter in currentQuestion.answers) {
             answers.push(
                 `<label>
-              <input type="radio" id="question${questionNumber}" class="disableMe" value="${letter}">
+              <input type="radio" id="question${questionNumber}" name="question${questionNumber}" class="disableMe" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
             </label>`
@@ -133,7 +137,6 @@ var buildQuiz = function () {
 }
 
 var getResults = function () {
-
     if (resultsContainer.innerHTML) {
         return false;
     }
@@ -156,10 +159,12 @@ var getResults = function () {
     });
 
     if (nCorrect >= 5) {
-        alert("Dobrá práce!\nTvůj vysledek je: " + nCorrect + " správných odpovědí z " + listOfQuestions.length);
+        message.innerHTML = '<h2>Dobrá práce!</h2><br> Tvůj výsledek je: <strong>' + nCorrect + ' správných odpovědí z ' + listOfQuestions.length + '</strong>';
+        alertWindow.style.display = "block";
     }
     else {
-        alert("Nic moc kámo...\nTvůj vysledek je: " + nCorrect + " správných odpovědí z " + listOfQuestions.length);
+        message.innerHTML = '<h2>Nic moc kámo...</h2><br> Tvůj výsledek je: <strong>' + nCorrect + ' správných odpovědí z ' + listOfQuestions.length + '</strong>';
+        alertWindow.style.display = "block";
     }
 
     resultsContainer.innerHTML = 'Tvůj výsledek je: <strong>' + nCorrect + ' správných odpovědí z ' + listOfQuestions.length + '</strong>';
@@ -174,6 +179,26 @@ var disableInputs = function () {
     }
 };
 
+var share = function () {
+    if (!resultsContainer.innerHTML) {
+        return false;
+    }
+
+    var url = "https://twitter.com/intent/tweet";
+    var text = $('#results').text();
+    var via = "lukazko";
+    message.innerHTML = url + '?text=' + text + '; via = ' + via;
+
+    window.open();
+    alertWindow.style.display = "block";
+}
+
+closeWindow.onclick = function () {
+    alertWindow.style.display = "none";
+    message.innerHTML = "";
+}
+
 buildQuiz();
 submitButton.addEventListener("click", getResults);
 newButton.addEventListener("click", buildQuiz);
+shareButton.addEventListener("click", share);
