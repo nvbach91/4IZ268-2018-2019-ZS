@@ -422,6 +422,14 @@ div.teams-list img {
 }
 
 /*KONEC TYMY*/
+/*registrace*/
+#registr{
+    text-align: center;
+}
+#registrpar{
+text-align: center;
+}
+
 
 @media screen and (max-width: 1360px) {
     /*kontakty*/
