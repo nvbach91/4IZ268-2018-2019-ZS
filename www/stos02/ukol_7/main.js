@@ -16,8 +16,9 @@ var pointsBox = document.querySelector('#points');
 
 var compareCard = function (card) {
     card.addEventListener('click', function () {
-        if (firstCard && secondCard) {      //pokud je první i druhá otočená- nic se nestane (return false), karty mají jinak hodnotu null
-            return false;
+
+        if (card.classList.contains('showed') || (firstCard && secondCard)) {   // pokud je karta v seznamu odkrytých karet, nedělej nic
+            return false;                              //pokud je první i druhá otočená- nic se nestane (return false), karty mají jinak hodnotu null
         }
 
         card.classList.add('showed');    // přidej do seznamu odkrytých karet
