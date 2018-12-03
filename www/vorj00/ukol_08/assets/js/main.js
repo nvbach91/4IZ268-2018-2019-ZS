@@ -7,6 +7,10 @@ const baseApiUrl = 'https://api.github.com';
 // na začátek přidáme otazník
 // např. ?client_id=abcdef&client_secret=fedcba
 
+/*
+ * TENTOKRÁT JSEM SI OBČAS VYPOMOHL Z ŘEŠENÍ NA GH #LENOST
+ */
+
 function renderUser(user){
 
     Object.keys(user).forEach(function(key) {
@@ -14,43 +18,43 @@ function renderUser(user){
     });
 
     const userHTML = `
-    <div id="js-user" class="profile">
+    <div class="profile">
     <div class="profile__photo">
         <img src="${user.avatar_url}" alt="" class="img">
     </div>
     <div class="profile__name">
-        <h2 id="js-name">${user.name}</h2>
+        <h2>${user.name}</h2>
         <a href="${user.html_url}" class="button button--text">Show profile</a>
     </div>
     <div class="profile__info">
 
         <div class="profile__detail">
             <div class="profile__detailName">Login</div>
-            <div id="js-user-login" class="profile__detailValue">${user.login}</div>
+            <div class="profile__detailValue">${user.login}</div>
         </div>
         <div class="profile__detail">
             <div class="profile__detailName">Company</div>
-            <div id="js-user-bio" class="profile__detailValue">${user.company}</div>
+            <div class="profile__detailValue">${user.company}</div>
         </div>
         <div class="profile__detail">
             <div class="profile__detailName">Location</div>
-            <div id="js-user-location" class="profile__detailValue">${user.location}</div>
+            <div class="profile__detailValue">${user.location}</div>
         </div>
         <div class="profile__detail">
             <div class="profile__detailName">Bio</div>
-            <div id="js-user-desc" class="profile__detailValue">${user.bio}</div>
+            <div class="profile__detailValue">${user.bio}</div>
         </div>
         <div class="profile__detail">
             <div class="profile__detailName">Email</div>
-            <div id="js-user-emails" class="profile__detailValue">${user.email}</div>
+            <div class="profile__detailValue">${user.email}</div>
         </div>
         <div class="profile__detail">
             <div class="profile__detailName">Followers</div>
-            <div id="js-user-followers" class="profile__detailValue">${user.followers}</div>
+            <div class="profile__detailValue">${user.followers}</div>
         </div>
         <div class="profile__detail">
             <div class="profile__detailName">Registered</div>
-            <div id="js-user-registered" class="profile__detailValue">${new Date(user.created_at).toLocaleDateString('cs-CZ')}</div>
+            <div class="profile__detailValue">${new Date(user.created_at).toLocaleDateString('cs-CZ')}</div>
         </div>
     </div>
 
@@ -71,8 +75,6 @@ $(document).ready(function() {
     const search = $('#js-search');
     const output = $('#js-output');
 
-    const user = $('#js-user');
-
     form.submit(function(e) {
       e.preventDefault();
       const searchValue = search.val();
@@ -88,9 +90,11 @@ $(document).ready(function() {
           client_secret: client_secret,
         },
       }).done(function(user) {
+
+
         output.html(renderUser(user));
       }).fail(function() {
-        output.html('<p>User not found</p>');
+        output.html('<h2>User not found</h2>');
       });
   });
 });
