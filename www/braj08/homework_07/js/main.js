@@ -1,8 +1,8 @@
 var points = 0;
-var RevealedCards = 0;
-var Field = document.querySelector('#game-field');
-var TextPoints = document.querySelector('#points');
-var Background = document.body;
+var revealedCards = 0;
+var field = document.querySelector('#game-field');
+var textPoints = document.querySelector('#points');
+var background = document.body;
 var cardOne = null;
 var cardTwo = null;
 var audioCorrect = new Audio('src/audio_correct.mp3');
@@ -29,18 +29,18 @@ var pexeso = function(card) {
     if (cardOne === null) {
       cardOne = card;
       return false;
-    };
+    }
     cardTwo = card;
     if (cardOne.innerText === cardTwo.innerText) {
       points++;
-      RevealedCards +=2;
+      revealedCards +=2;
       cardOne = null;
       cardTwo = null;
       changeBG('correct');
       audioCorrect.currentTime = 2;
       audioCorrect.volume = 0.3;
       audioCorrect.play();
-      if (RevealedCards === cities.length) {
+      if (revealedCards === cities.length) {
         alert('YOU WON! Total number of points: ' + points + '!');
 
       }
@@ -66,27 +66,26 @@ var pexeso = function(card) {
         audioWrong.pause();
       }, 2000);
     }
-    TextPoints.innerText = points;
+    textPoints.innerText = points;
   })
 }; 
 
-var createCard = function (CardName) {
+var createCard = function (cardName) {
   var newCard = document.createElement('div');
   newCard.classList.add('card');
-  newCard.innerText = CardName;
-  newCard.i
+  newCard.innerText = cardName;
   pexeso(newCard);
-  Field.appendChild(newCard);
+  field.appendChild(newCard);
 }
 
 cities.forEach(function(city) {
   createCard(city);
 });
 
-var changeBG = function(string) {
-  Background.classList.add(string);
+var changeBG = function(changeTo) {
+  background.classList.add(changeTo);
   setTimeout(function() {
-    Background.classList.remove(string);
+    background.classList.remove(changeTo);
   }, 2000);
 };
 
