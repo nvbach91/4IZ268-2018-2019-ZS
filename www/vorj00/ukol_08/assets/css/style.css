@@ -1,0 +1,71 @@
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #ECEFF1;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none
+}
+
+.button {
+    color: #388E3C;
+    padding: 0 0.5em;
+    text-transform: uppercase
+}
+
+.img {
+    height: 100%;
+    border-radius: 50%;
+}
+
+.input--search {
+    margin: 0 auto;
+}
+
+.profile {
+    border-radius: 4px;
+    background-color: #FAFAFA;
+    width: 40%;
+    min-width: 30rem;
+    margin: 0 auto;
+    padding: 1rem;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__photo {
+    height: 5rem;
+    text-align: center
+}
+
+.profile__details {
+    display: flex;
+    flex-direction: column
+}
+
+.profile__button {
+    margin: 0 auto;
+}
+
+.profile__detail {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile__detailName {
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    color: #9E9E9E;
+    width: 30%;
+}
+
+.profile__detailValue {
+    margin-left: auto;
+}
