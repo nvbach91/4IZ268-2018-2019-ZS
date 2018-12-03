@@ -23,8 +23,8 @@ html, body {
 main {
     padding-bottom: 70px;
     padding-top: 30px;
-    width: 50%;
-    margin: auto;
+    /*width: 50%;
+    margin: auto;*/
     text-align: center;
 }
 
@@ -128,9 +128,10 @@ button:hover {
 }
 
 .close {
+
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -138,4 +139,13 @@ button:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 40px;
+    padding-top: 0px;
+    /*padding-right: 0px;*/
+    text-align: center;
 }
