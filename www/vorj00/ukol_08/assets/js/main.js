@@ -11,20 +11,56 @@ const baseApiUrl = 'https://api.github.com';
  * TENTOKRÁT JSEM SI OBČAS VYPOMOHL Z ŘEŠENÍ NA GH #LENOST
  */
 
+function clearObject(obj){
+    Object.keys(obj).forEach(function(key) {
+        if(!obj[key]) {obj[key] = ''};
+    });
+}
+
+function repos(urlRepo){
+    return $.ajax({
+        url: urlRepo,
+        data: {
+          client_id: client_id,
+          client_secret: client_secret,
+        },
+      })
+}
+
+function renderRepos(repoData){
+    var repos = '';
+
+    console.log(repoData);
+
+        repoData.forEach(function(repo){
+            repos+= `
+            <div class="profile__detail">
+                <div class="profile__detailName">${repo.name}</div>
+                <div class="profile__detailValue"><a href="${repo.html_url}" target="_blank">${repo.html_url}</a></div>
+            </div>
+            `;
+        });
+
+        const reposHTML = `
+        <h3>Repos</h3>  
+        <div class="profile__repos">
+            ${repos}
+        </div>`;
+
+        return reposHTML;
+}
+
 function renderUser(user){
 
-    Object.keys(user).forEach(function(key) {
-        if(!user[key]) {user[key] = ''};
-    });
+    clearObject(user);
 
     const userHTML = `
-    <div class="profile">
     <div class="profile__photo">
         <img src="${user.avatar_url}" alt="" class="img">
     </div>
     <div class="profile__name">
         <h2>${user.name}</h2>
-        <a href="${user.html_url}" class="button button--text">Show profile</a>
+        <a href="${user.html_url}" target="_blank" class="button button--text">Show profile</a>
     </div>
     <div class="profile__info">
 
@@ -57,16 +93,8 @@ function renderUser(user){
             <div class="profile__detailValue">${new Date(user.created_at).toLocaleDateString('cs-CZ')}</div>
         </div>
     </div>
-
-    <div class="profile__repos">
-        <h3>Repos</h3>
-        <div class="profile__detail">
-            <div class="profile__detailName">Registered</div>
-            <div class="profile__detailValue"></div>
-        </div>
-    </div>
-</div>
     `;
+
     return userHTML;
 }
 
@@ -82,7 +110,8 @@ $(document).ready(function() {
         return false;
       }
       const url = baseApiUrl + '/users/' + searchValue + '?client_id=' + client_id + '&client_secret=' + client_secret;
-      output.empty();
+      output.empty();      
+
       $.ajax({
         url: url,
         data: {
@@ -90,9 +119,16 @@ $(document).ready(function() {
           client_secret: client_secret,
         },
       }).done(function(user) {
+            const urlRepo = baseApiUrl + '/users/' + user.login + '/repos';
 
-
-        output.html(renderUser(user));
+            $.when(repos(urlRepo)).done(function(repoData){
+                output.html(`
+                <div id="js-output" class="profile">
+                ${renderUser(user)}
+                ${renderRepos(repoData)}
+                </div>
+                `);
+            })
       }).fail(function() {
         output.html('<h2>User not found</h2>');
       });
