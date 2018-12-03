@@ -187,10 +187,10 @@ var share = function () {
     var url = "https://twitter.com/intent/tweet";
     var text = $('#results').text();
     var via = "lukazko";
-    message.innerHTML = url + '?text=' + text + '; via = ' + via;
+    var hashtag = "lukazko_quiz";
+    url = url + "?text=" + text + ";hashtags=" + hashtag + ";via=" + via;
 
-    window.open();
-    alertWindow.style.display = "block";
+    window.open(url, "Sdílet výsledek na Twitter", "width=500,height=300");
 }
 
 closeWindow.onclick = function () {
