@@ -30,6 +30,7 @@ hr {
     justify-content: center;
     cursor: pointer;
     border-radius: 25px;
+    user-select: none;
 }
 
 .card:hover {
