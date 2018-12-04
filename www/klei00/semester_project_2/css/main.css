@@ -60,7 +60,7 @@ body {
 clear: both;
 padding: 14px 30px;
 }
-#form.closed, #table-head.closed {
+#form.closed {
     display: none;
 }
 input{
@@ -148,28 +148,38 @@ hr {
     margin: 30px auto;
     max-width: 1000px;
     text-align: center;
-}
-.id{
-    display: none;
-}
-table {
-    width: 100%;
     background-color: #FFAAAA;
     border-radius: 10px;
-    border-collapse: collapse;
+    display: table;
 }
-th, td {
-    border: solid 2px #AA3939;
+.id{
+    display: none !important;
+}
+#table-head.closed {
+    display: none;
+}
+#table-head {
+    font-weight: bold;
+}
+.table-row {
+display: table-row;
+}
+.table-cell {
+    display: table-cell;
+    border: solid 1px #AA3939;
     padding: 10px;
     margin: 0;
     outline: 0;
-    overflow: auto;
+    vertical-align: middle;
 }
-td.delete{
+.delete{
     cursor: pointer;
 }
-td.delete:hover{
+.delete:hover{
     background-color: white;
+}
+.table-row:nth-last-child(1) > .table-cell:nth-last-child(2) {
+    border-bottom-right-radius: 10px;
 }
 /*-------------- footer ---------------*/
 footer{
@@ -228,7 +238,7 @@ footer{
 }
 /*-------------- smaller screen -----------*/
 @media only screen and (max-width: 680px) {
-    th, td {
+    .table-cell {
         padding: 6px 5px;
     }
     .result {

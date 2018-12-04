@@ -120,9 +120,9 @@ var addToResults = function (item) {
 }
 /*--------------------- add a book to my library -----------------------------------------*/
 var addToLibrary = function (book, author, url) {
-    var imageCell = $('<td>').addClass('preview').append($('<img>').addClass('image').attr('src', url));
-    var nameCell = $('<td>').text(book.volumeInfo.title);
-    var authorCell = $('<td>').text(author);
+    var imageCell = $('<div>').addClass('table-cell').append($('<img>').addClass('image').attr('src', url));
+    var nameCell = $('<div>').addClass('table-cell').text(book.volumeInfo.title);
+    var authorCell = $('<div>').addClass('table-cell').text(author);
 
     var year;
     if (book.volumeInfo.publishedDate === undefined) {
@@ -130,7 +130,7 @@ var addToLibrary = function (book, author, url) {
     } else {
         year = book.volumeInfo.publishedDate;
     }
-    var yearCell = $('<td>').text(year);
+    var yearCell = $('<div>').addClass('table-cell').text(year);
 
     var category;
     var categories = book.volumeInfo.categories;
@@ -142,15 +142,15 @@ var addToLibrary = function (book, author, url) {
             category += ', ' + categories[i];
         }
     }
-    var categoryCell = $('<td>').text(category);
-    var deleteCell = $('<td>').addClass('delete').text('Odebrat');
-    var idCell = $('<td>').addClass('id').text(book.id);
-    var newRow = $('<tr>').append(imageCell).append(nameCell).append(authorCell).append(categoryCell).append(yearCell).append(deleteCell).append(idCell);
+    var categoryCell = $('<div>').addClass('table-cell').text(category);
+    var deleteCell = $('<div>').addClass('table-cell').addClass('delete').text('Odebrat');
+    var idCell = $('<div>').addClass('table-cell').addClass('id').text(book.id);
+    var newRow = $('<div>').addClass('table-row').append(imageCell).append(nameCell).append(authorCell).append(categoryCell).append(yearCell).append(deleteCell).append(idCell);
     var tableHead = $('#table-head');
     if (tableHead.hasClass('closed')) {
         tableHead.removeClass('closed');
     }
-    $('#table-body').append(newRow);
+    $('#my-library').append(newRow);
 
     deleteCell.click(function () {
         newRow.remove();
