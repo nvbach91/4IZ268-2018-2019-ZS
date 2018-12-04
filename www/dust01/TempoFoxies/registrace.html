@@ -11,15 +11,16 @@
     <link rel="stylesheet" href="main.css">
     <link rel="icon" href="img/tempotrans.png">
 </head>
+
 <body>
     <nav>
         <ul>
             <li><a href="index.html">Úvod</a></li>
             <li><a href="teams.html">Týmy</a></li>
             <li><a href="historie.html">Historie</a></li>
-            <li><a href="soutez.html">Soutěže</a></li>
-            <li><a class="active" href="registrace.html">Registrace</a></li>
+            <li><a href="soutez.html">Soutěže</a></li>  
             <li><a href="kontakty.html">Kontakty</a></li>
+            <li><a class="active" href="registrace.html">Registrace</a></li>
         </ul>
     </nav>
     <h1>Registrace nových hráčů</h1>
@@ -27,18 +28,56 @@
 
     <form id="registr">
         jméno:<br>
-        <input type="text" name="firstname">
+        <input type="text" name="firstname" id="fname">
         <br>
         příjmení:<br>
-        <input type="text" name="lastname">
+        <input type="text" name="lastname" id="lname">
         <br>
         datum narození:<br>
-        <input type="date" name="birthdate">
+        <input type="date" name="birthdate" id="bdate">
         <br>
         telefon<br>
-        <input type="text" name="contact">
+        <input type="text" name="contact" id="tel">
         <br>
-        <input type="submit" value="odeslat formular">       
+        <input type="submit" value="odeslat formular">
     </form>
+
+
 </body>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        if ($('#registr').length > 0) {
+            registrationScript('forcontact');
+        }
+    });
+    function registrationScript(value) {
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBRfCZklFkOBqNFqsqHF22dlZbkwfYHhe0",
+            authDomain: "tempotitans-a6ee0.firebaseapp.com",
+            databaseURL: "https://tempotitans-a6ee0.firebaseio.com",
+            projectId: "tempotitans-a6ee0",
+            storageBucket: "tempotitans-a6ee0.appspot.com",
+            messagingSenderId: "69362409933"
+        };
+        firebase.initializeApp(config);
+
+        var db = firebase.database().ref("users");
+        $("#registr").submit(function (config) {
+            $(this), alert('Registrace proběhla úspěšně');
+            var c = $("#fname").val(),
+                d = $("#lname").val(),
+                e = $("#bdate").val(),
+                f = $("#tel").val(),
+                g = { fname: c, lname: d, bdate: e, tel: f };
+            return db.push(g).then(function (config) {
+                $(".sucess").css("display", "block"),
+                    $(".sucess-none").css("display", "none")
+            }), !1
+        })
+    }
+</script>
+
 </html>
