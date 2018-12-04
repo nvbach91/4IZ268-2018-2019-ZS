@@ -39,7 +39,7 @@ form.submit(function (e) {
     createLoader();
 
     var query = $('#searched-text').val().replace(/ /g, '+');
-    var mode = $("input:checked", '#form').val();
+    var mode = $('input:checked', '#form').val();
     var maxBooks = $('#number-input').val();
     var dataUrl = 'https://www.googleapis.com/books/v1/volumes?q=' + mode + ':"' + query + '"&langRestrict=cs&printType=books&maxResults=' + maxBooks;
 
@@ -96,12 +96,12 @@ var addToResults = function (item) {
     var resultRow = $('<div>').addClass('result-row');
     var imageUrl;
     if (item.volumeInfo.imageLinks === undefined) {
-        imageUrl = "https://books.google.cz/googlebooks/images/no_cover_thumb.gif";
+        imageUrl = 'https://books.google.cz/googlebooks/images/no_cover_thumb.gif';
     } else {
         imageUrl = item.volumeInfo.imageLinks.smallThumbnail;
     }
     var image = $('<img>').addClass('image').attr('src', imageUrl);
-    var result = $('<div>').addClass('result').html(author.toUpperCase() + ":<br>" + item.volumeInfo.title);
+    var result = $('<div>').addClass('result').html(author.toUpperCase() + ':<br>' + item.volumeInfo.title);
 
     var addButton = $('<div>').addClass('add-button').text('Přidat');
     if (bookExists(item.id)) {

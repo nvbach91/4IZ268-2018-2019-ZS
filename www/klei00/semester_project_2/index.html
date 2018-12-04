@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='cs'>
+<html lang="cs">
 
 <head>
     <meta charset="utf-8" />
@@ -10,50 +10,50 @@
     <meta name="author" content="Iveta Kleníková">
     <link rel="icon" href="images/icon.png" type="image/png">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 </head>
 
 <body>
     <h1>Moje knihovna</h1>
-    <div id='search'>
-        <div id='form-header' class='closed'>
+    <div id="search">
+        <div id="form-header" class="closed">
             <h2>Přidat knihu</h2>
-            <button id='open-form'>Rozbalit formulář</button>
+            <button id="open-form">Rozbalit formulář</button>
         </div>
 
-        <form id='form' class='closed'>
+        <form id="form" class="closed">
             Zadej klíčové slovo nebo celý název/jméno:<br>
-            <input id='searched-text' type="text" name="searchedBook" autofocus><br>
-            <input class='radio' type="radio" name='mode' value="intitle" checked>Hledat v názvech knih<br>
-            <input class='radio' type="radio" name='mode' value="inauthor">Hledat v autorech<br>
-            <input class='radio' type="radio" name='mode' value="subject">Hledat v kategoriích<br>
+            <input id="searched-text" type="text" name="searchedBook" autofocus><br>
+            <input class="radio" type="radio" name="mode" value="intitle" checked>Hledat v názvech knih<br>
+            <input class="radio" type="radio" name="mode" value="inauthor">Hledat v autorech<br>
+            <input class="radio" type="radio" name="mode" value="subject">Hledat v kategoriích<br>
             Zobrazit maximálně
-            <input id='number-input' type="number" min="1" max="30" value="10">
+            <input id="number-input" type="number" min="1" max="30" value="10">
             výskytů.<br>
-            <input id='submit' type="submit" value="Najít knihy">
+            <input id="submit" type="submit" value="Najít knihy">
             <input type="reset" value="Reset">
         </form>
     </div>
-    <div id='my-library'>
+    <div id="my-library">
         <table>
-            <thead id='table-head' class='closed'>
+            <thead id="table-head" class="closed">
                 <tr>
-                    <th class='preview'>Náhled</th>
+                    <th class="preview">Náhled</th>
                     <th>Název knihy</th>
                     <th>Autor</th>
                     <th>Kategorie</th>
                     <th>Rok vydání</th>
-                    <th class='delete'>Odebrat z knihovny</th>
+                    <th class="delete">Odebrat z knihovny</th>
                     <th class="id"></th>
                 </tr>
             </thead>
-            <tbody id='table-body'>
+            <tbody id="table-body">
             </tbody>
         </table>
     </div>
     <footer>2018 &copy; Iveta Kleníková</footer>
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src='js/main.js'></script>
-
+    <script src="js/main.js"></script>
 </body>
 
 </html>

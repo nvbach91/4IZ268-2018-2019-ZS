@@ -1,10 +1,5 @@
-@font-face {
-    font-family: oranienbaum;
-    src: url(../fonts/oranienbaum.ttf);
-}
 * {
     box-sizing: border-box;
-    font-family: oranienbaum;
 }
 h1{
     font-size: 50px;
@@ -16,7 +11,7 @@ h2{
     margin: 10px 0;
 }
 body {
-    font-size: 1.1em;
+    font-family: 'Varela Round', sans-serif, 'Arial', sans-serif;
     background-color: #AA3939;
     margin: 0;
     padding: 10px;
@@ -73,6 +68,9 @@ input{
     padding: 5px;
     font-size: 16px;
     font-weight: bold;
+}
+#number-input {
+    margin: 10px;
 }
 #searched-text {
     width: 100%;
