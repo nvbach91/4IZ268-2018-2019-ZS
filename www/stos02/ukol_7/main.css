@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+hr {
+    border-style: solid;
+    border-color: #eee;
+}
+
+#game-field {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #41cc9e;
+    color: transparent;
+    border: 15px solid white;
+    width: 20%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.card:hover {
+    background-color: #19b984;
+}
+
+.card.showed {
+    background: rgb(7, 49, 59);
+    color: white;
+}

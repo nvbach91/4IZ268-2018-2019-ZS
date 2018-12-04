@@ -90,14 +90,14 @@ multiple();
 /*7. Around and about.Vytvořte funkci, která vypočte obsah kružnice podle dodaného poloměru.*/
 
 function circleArea(r) {
-    return (Math.PI * r ** 2);
+    return Math.PI * r ** 2;
 }
 console.log(circleArea(7));
 
 /*8. Another dimension.Vytvořte funkci, která vypočte objem kuželu, pokud znáte jeho výšku a poloměr.*/
 
 function coneVolume(height, radius) {
-    return (1 / 3 * pi * Math.pow(radius, 2) * height);
+    return 1 / 3 * pi * Math.pow(radius, 2) * height;
 }
 
 
@@ -105,7 +105,7 @@ function coneVolume(height, radius) {
 zda se z dodaných 3 délek dá postavit trojúhelník, tj.vypíše buď true / yes nebo false / no. */
 
 function isTriangle(a, b, c) {
-    if (a + b <= c || a + c <= b || b + c <= a || a * b * c === 0) {
+    if (a + b <= c || a + c <= b || b + c <= a) {
         return false;
     }
     return true;
@@ -120,7 +120,7 @@ console.log(isTriangle(2, 7, 8));
 function AreaTriangle(a, b, c) {
     if (isTriangle(a, b, c)) {
         var s = (a + b + c) / 2;
-        return (Math.sqrt(s * (s - a) * (s - b) * (s - c)));
+        return Math.sqrt(s * (s - a) * (s - b) * (s - c));
     }
 }
 console.log(AreaTriangle(2, 7, 8));
