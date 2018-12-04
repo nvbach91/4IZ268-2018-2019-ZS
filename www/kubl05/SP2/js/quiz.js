@@ -190,7 +190,7 @@ var share = function () {
     var hashtag = "lukazko_quiz";
     url = url + "?text=" + text + ";hashtags=" + hashtag + ";via=" + via;
 
-    window.open(url, "Sdílet výsledek na Twitter", "width=500,height=300");
+    window.open(url, "Sdílet výsledek na Twitter", "width=650,height=250");
 }
 
 closeWindow.onclick = function () {
