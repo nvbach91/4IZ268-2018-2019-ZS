@@ -10,23 +10,17 @@ hr {
     border-style: solid;
     border-color: #eee;
 }
-@keyframes spin {
-    from {
-        transform: rotate(0deg)
-    }
-    to {
-        transform: rotate(360deg);
-    }
+
+.avatar {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin:1em;
+    min-width: 8em;
+    min-height: 8em;
 }
-.loader {
-    border: 5px solid cadetblue;
-    border-top: 5px solid #ccc;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: auto;
-}
+
 
 footer {
     background-color: cadetblue;

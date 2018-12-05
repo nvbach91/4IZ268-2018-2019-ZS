@@ -8,7 +8,8 @@ App.client_secret = 'dc13c3526b797f32dcaeec2af9572d05d1808dd7';
 App.baseApiUrl = 'https://api.github.com';
 App.renderUser = function (user) {
     var createdDate = new Date(user.created_at).toLocaleDateString('cs-CZ');
-    var html = /*html*/`
+    var html = /*html*/
+        `
     <div class="basic-info">
       <div class="bi-name">${user.name || ''}</div>
       <div class="bi-avatar" style="background-image: url(${user.avatar_url})"></div>
@@ -46,6 +47,8 @@ App.renderUser = function (user) {
   `;
     App.jUserProfile.html(html);
 };
+
+
 App.fetchRepositories = function (login) {
     App.jRepositories.empty();
     App.jRepositories.append(App.loader);
@@ -70,6 +73,8 @@ App.fetchRepositories = function (login) {
         App.jRepositories.empty().append(html);
     });
 };
+
+
 App.init = function () {
     App.jUserProfile = $('#user-profile');
     App.jSearchInput = $('#search-input');
