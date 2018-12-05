@@ -1,0 +1,51 @@
+body {
+    background-image: url("../img/wall.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+.randomText {
+    font-family: 'MedievalSharp', 'Arial Narrow', Arial, sans-serif;
+    width: 100%;
+    margin: auto auto;
+    text-align: center;
+    position: absolute;
+    top: 0px;
+    right: 50%-width;
+}
+
+#lion {
+    background-image: url("../img/lion.png");
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin: 0 20%;
+}
+
+
+
+#map {
+    height: 500px;
+    width: 70%;
+    margin: auto auto;
+    border: 1px black solid;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+}
+
+.card-header {
+    font-family: 'MedievalSharp', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card-body {
+    background-image: url("../img/icon.png");
+    background-color: red;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: transparent;
+    width: 40px;
+    height: 40px;
+}
