@@ -6,8 +6,7 @@ App.baseApiUrl = 'https://api.github.com';
 
 
 App.renderUser = function(user) {
-    $("#user-profile").append(`<div>${user.name}</div><div>${user.company}</div>`);
-
+    $("#user-profile").append(`<img src="${user.avatar_url}" alt=""><div>${user.name}</div><div>${user.company}</div>`);
     };
 App.renderRepos = function(repos) {
     for (var i=0; i < repos.length; i++){
