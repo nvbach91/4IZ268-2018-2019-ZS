@@ -26,3 +26,23 @@ footer {
     background-color: cadetblue;
     padding: 20px 0;
 }
+
+.repositories {
+    list-style: none;
+    padding: 0;
+    
+    margin: 0 auto;
+}
+
+.repo {
+    
+    
+    background-color: #e1e1e1;
+    margin-bottom: 1em;
+    padding: 1em;
+    list-style: none;
+
+    padding-inline-start: 40px;
+    text-align: center;
+}
+
