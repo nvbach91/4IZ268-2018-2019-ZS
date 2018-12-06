@@ -39,6 +39,9 @@
         telefon<br>
         <input type="text" name="contact" id="tel">
         <br>
+        email<br>
+        <input type="text" name="email" id="email">
+        <br>
         <input type="submit" value="odeslat formular">
     </form>
 
@@ -46,38 +49,8 @@
 </body>
 <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function () {
-        if ($('#registr').length > 0) {
-            registrationScript('forcontact');
-        }
-    });
-    function registrationScript(value) {
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyBRfCZklFkOBqNFqsqHF22dlZbkwfYHhe0",
-            authDomain: "tempotitans-a6ee0.firebaseapp.com",
-            databaseURL: "https://tempotitans-a6ee0.firebaseio.com",
-            projectId: "tempotitans-a6ee0",
-            storageBucket: "tempotitans-a6ee0.appspot.com",
-            messagingSenderId: "69362409933"
-        };
-        firebase.initializeApp(config);
+<script src="main.js"> </script>
+    
 
-        var db = firebase.database().ref("users");
-        $("#registr").submit(function (config) {
-            $(this), alert('Registrace proběhla úspěšně');
-            var c = $("#fname").val(),
-                d = $("#lname").val(),
-                e = $("#bdate").val(),
-                f = $("#tel").val(),
-                g = { fname: c, lname: d, bdate: e, tel: f };
-            return db.push(g).then(function (config) {
-                $(".sucess").css("display", "block"),
-                    $(".sucess-none").css("display", "none")
-            }), !1
-        })
-    }
-</script>
 
 </html>
