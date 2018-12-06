@@ -7,9 +7,8 @@ body {
 .randomText {
     font-family: 'MedievalSharp', 'Arial Narrow', Arial, sans-serif;
     width: 100%;
-    margin: auto auto;
+    margin: 20px auto;
     text-align: center;
-    position: absolute;
     top: 0px;
     right: 50%-width;
 }
@@ -22,13 +21,24 @@ body {
     margin: 0 20%;
 }
 
-
+.textBox {
+    float: right;
+    height: 500px;
+    width: 20%;
+    margin: 20px auto;
+    border: 1px black solid;
+    padding: 20px;
+    float: left;
+    background-color: rgb(255, 255, 255);
+}
 
 #map {
     height: 500px;
     width: 70%;
-    margin: auto auto;
+    margin: 20px auto;
     border: 1px black solid;
+    padding: 20px;
+    float: left;
 }
 
 .card {
@@ -42,7 +52,6 @@ body {
 
 .card-body {
     background-image: url("../img/icon.png");
-    background-color: red;
     background-size: contain;
     background-repeat: no-repeat;
     color: transparent;
