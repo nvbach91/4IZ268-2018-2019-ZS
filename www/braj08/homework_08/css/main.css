@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+
+form {
+    background-color: lightgray;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+form > * {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    border: none;
+}
+
+button {
+    margin-top: 10px;
+    background-color: indianred;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    font-weight: bold;
+    background-color: rgb(194, 54, 54);
+}
+
+input {
+    border: none;
+    padding: 10px;
+    background-color: whitesmoke;
+    color: indianred;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.loader {
+    border: 5px solid cadetblue;
+    border-top: 5px solid #ccc;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+footer {
+    background-color: cadetblue;
+    padding: 20px 0;
+}
+
+#user-profile {
+    max-width: 800px;
+    margin: 2px auto;
+}
+.info {
+    display: grid;
+    grid-template-columns: 50%;
+    grid-template-rows: repeat(9, 50px);
+    grid-gap: 2px;
+}
+
+.info > .right-side {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    background-color: #bbb3b3;
+}
+.right-side > div:first-child {
+    width: 100px;
+    text-align: left;
+}
+.right-side > div:nth-child(2) {
+    font-weight: bold;
+}
+.info > .name {
+    padding-left: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: white;
+    grid-column: 1/ span 2;
+    grid-row: 1/ span 1;
+    background-color: rgb(0, 207, 214);
+
+}
+.image {
+    grid-column: 1/ span 1;
+    grid-row: 2/ span 8;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.loader {
+    border: 5px solid cadetblue;
+    border-top: 5px solid #ccc;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+#repositories {
+    list-style: none;
+    padding: 5px 0px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.repository-item {
+    display: flex;
+    padding: 5px 0px;
+    background-color: #bbb3b3;
+    color: white;
+    margin-bottom: 2px;
+}
+.repository-name {
+    width: 250px;
+    padding: 0px 5px;
+    font-weight: bolder;
+    text-align: right;
+    
+}
+.repository-url, .repository-url > a {
+    text-align: left;
+    color: indianred;
+    text-decoration: none;
+}
+
+
+footer {
+    background-color: rgb(0, 207, 214);
+    padding: 50px 0;
+    color: white;
+}
