@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+</head>
+
+<body>
+    <h1>Aplikace na hledání turistických tras</h1>
+    <div class="content">
+        <div id="map"></div>
+        <div class="markers">
+            <h2>Výběr bodů pro vyhledávání</h2>
+            <div class="sections">
+                <button id="start-buttom">Start</button>
+                <div class="section">
+                    <div class="column">Zeměpisná délka:</div>
+                    <div class="column">Zeměpisná šířka:</div>
+                </div>
+                <div class="section">
+                    <div class="column" id="start-longitude"></div>
+                    <div class="column" id="start-latitude"></div>
+                </div>
+            </div>
+            <div class="sections">
+                <button id="end-buttom">End</button>
+                <div class="section">
+                    <div class="column">Zeměpisná délka:</div>
+                    <div class="column">Zeměpisná šířka:</div>
+                </div>
+                <div class="section">
+                    <div class="column" id="end-longitude"></div>
+                    <div class="column" id="end-latitude"></div>
+                </div>
+                <button id="track-route">Search</button>
+            </div>
+        </div>
+        <div class="output">
+            <div class="data">
+                <h2>Výsledek vyhledávání</h2>
+                <div class="sections">
+                    <div class="section">
+                        <div class="column">Vzdálenost:</div>
+                        <div class="column">Čas:</div>
+                        <div class="column">Stoupání:</div>
+                        <div class="column">Klesání:</div>
+                    </div>
+                    <div class="section">
+                        <div class="column" id="length"></div>
+                        <div class="column" id="time"></div>
+                        <div class="column" id="ascent"></div>
+                        <div class="column" id="descent"></div>
+                    </div>
+                </div>
+            </div>
+            <canvas id="canvas-draw"></canvas>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://api.mapy.cz/loader.js"></script>
+    <script type="text/javascript">Loader.load();</script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
