@@ -6,7 +6,7 @@ const baseApiUrl = 'https://api.github.com';
 // každý parametr se určuje v podobě klíč=hodnota, více parametry se oddělují ampersandem, 
 // na začátek přidáme otazník
 // např. ?client_id=abcdef&client_secret=fedcba
-
+var repoCount = 0
 function repos(urlRepo) {
     return $.ajax({
         url: urlRepo,
@@ -23,6 +23,7 @@ function renderRepos(repoData) {
     console.log(repoData);
 
     repoData.forEach(function (repo) {
+        repoCount = repoCount + 1;
         repos += `
             <div class="profile__detail">
                 <div class="profile__detailName">${repo.name}</div>
@@ -33,10 +34,11 @@ function renderRepos(repoData) {
 
     const reposHTML = `
         <h3>Repos</h3>  
+        <div>this user has total ${repoCount} repositories.<div>
         <div class="profile_repos">
             ${repos}
         </div>`;
-
+    repoCount = 0
     return reposHTML;
 }
 
@@ -87,7 +89,6 @@ function renderUser(user) {
         </div>
        
         </div>
-        
     </div>
 
         </div>
