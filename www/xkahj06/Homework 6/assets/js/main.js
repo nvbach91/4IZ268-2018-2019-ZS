@@ -35,7 +35,7 @@ function renderRepos(repoData) {
     const reposHTML = `
         <h3>Repos</h3>  
         <div>this user has total ${repoCount} repositories.<div>
-        <div class="profile_repos">
+        <div class="profile">
             ${repos}
         </div>`;
     repoCount = 0
