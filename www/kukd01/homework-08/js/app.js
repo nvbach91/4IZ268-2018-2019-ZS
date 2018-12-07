@@ -37,7 +37,7 @@ App.fetchRepositories = function (a) {
   App.repositories.empty();
 
   $.getJSON(urlrep).done(function (repositories) {
-    var repos = `<p>This user has ${repositories.lenght || " "} repositories</p>`;
+    var repos = `<p>This user has ${repositories.length || " "} repositories</p>`;
 
     repositories.forEach(function (repository) {
       repos +=
