@@ -2,31 +2,97 @@ var App = App || {}
 App.client_id = 'bbf8f12db564bbc95ab5'
 App.client_secret = '978698cd1686d48068f705e012d97bcc848774fc'
 App.baseApiUrl = 'https://api.github.com'
-App.createUser = function (user) {
-  var infoboxDet = `<div class="infobox">
-        <div class="infobox-name">${user.name || ''}</div>
-        <div class="infobox-main">
-          <div class="avatar" style="background-image: url(${
-  user.avatar_url
-})"></div>
-          <div class="infobox-figure">
-            <div class="infobox-login">Login:${user.login}</strong></div>
-            <div class="infobox-company">Company:${user.company ||
-              ''}</strong></div>
-            <div class="infobox-location">Location:${user.location ||
-              ''}</strong></div>
-            <div class="infobox-bio">Bio:${user.bio || ''}</strong></div>
-            <div class="infobox-email">Email:${user.email || ''}</strong></div>
-            <div class="infobox-followers">Followers:${user.followers ||
-              ''}</strong></div>
-            <div class="infobox-created">Created:${user.created_at ||
-              ''}</strong></div>
-            <div class="infobox-profile"><a href="${user.html_url ||
-              ''}">${user.html_url || ''}</a></div>
-          </div>
-        </div>
-        <div class="info-odkaz"><a href="${user.html_url ||
-          ''}" target="_blank">View profile</a></div>
-      </div>`
-  App.userProfile.html(infoboxDet)
+App.renderUser = function (user) {
+  var html = `
+  <div class="main">
+    <div class="name">${user.name || ''}</div>
+    <div class="avatar" style="background-image: url(${user.avatar_url})"></div>
+  </div>
+    <div class="info">
+    <div class="login">
+      <div id="title">Login</div>
+      <div>${user.login}</div>
+    </div>
+    <div class="email">
+      <div id="title">Email</div>
+      <div>${user.email || ''}</div>
+    </div>
+    <div class="company">
+      <div id="title">Company</div>
+      <div>${user.company || ''}</div>
+    </div>
+    <div class="location">
+      <div id="title">Location</div>
+      <div>${user.location || ''}</div>
+    </div>
+    <div class="description">
+      <div id="title">Description</div>
+      <div>${user.bio || ''}</div>
+    </div>
+    <div class="followers">
+      <div id="title">Followers</div>
+      <div>${user.followers || ''}</div>
+    </div>
+    <div class="regday">
+      <div id="title">Registered</div>
+      <div>${new Date(user.created_at).toLocaleDateString('cs-CZ')}</div>
+    </div>
+    <a class="viewprofile" href="${user.html_url || ''}">View profile</a>  
+    </div>
+`
+  $('#profile').html(html)
 }
+App.fetchRepositories = function (username) {
+  var url = App.baseApiUrl + '/users/' + username + '/repos'
+  $('#repos').empty()
+  $('#repos').append($('<div class="loader"></div>'))
+  $.ajax({
+    url: url,
+    data: {
+      client_id: App.client_id,
+      client_secret: App.client_secret
+    }
+  }).done(function (repositories) {
+    $('<div class="loader"></div>').remove()
+    repositories.forEach(function (repository) {
+      html = /* html */ `
+            <li class="repository">
+              <div class="repo-url"><a href="${repository.html_url}">${
+  repository.html_url
+}</a></div>
+            </li>
+          `
+    })
+    $('#repos')
+      .empty()
+      .append(html)
+  })
+}
+App.init = function () {
+  $('#search-form').submit(function (e) {
+    e.preventDefault()
+    if (!$('#search-input').val()) {
+      return false
+    }
+    var url = App.baseApiUrl + '/users/' + $('#search-input').val()
+    $('#profile').empty()
+    $('#profile').append($('<div class="loader"></div>'))
+    $.ajax({
+      url: url,
+      data: {
+        client_id: App.client_id,
+        client_secret: App.client_secret
+      }
+    })
+      .done(function (user) {
+        App.renderUser(user)
+        App.fetchRepositories(user.username)
+      })
+      .fail(function () {
+        $('#profile').html('<p>User not found</p>')
+      })
+  })
+}
+$(document).ready(function () {
+  App.init()
+})
