@@ -26,6 +26,7 @@ justify-content: center;
 margin:10px;
 border-radius: 10px;
 color:aquamarine;
+user-select: none;
 }
 
 .card:hover {
