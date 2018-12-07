@@ -74,6 +74,11 @@ hr {
     border-color: #eee;
 }
 
+footer {
+    background-color: cadetblue;
+    padding: 20px 0;
+}
+
 @keyframes spin {
     from {
         transform: rotate(0deg)
@@ -84,8 +89,8 @@ hr {
 }
 
 .loader {
-    border: 5px solid cadetblue;
-    border-top: 5px solid #ccc;
+    border: 5px solid rgb(233, 91, 35);
+    border-top: 5px solid gray;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -93,18 +98,41 @@ hr {
     margin: auto;
 }
 
-footer {
-    background-color: cadetblue;
-    padding: 20px 0;
-}
-
 .repository {
     display: flex;
     padding: 5px 10px;
+    margin: 0 auto;
 }
 
 #repos {
     list-style: none;
     max-width: 65%;
     margin: 2px;
+}
+
+.main {
+    width: 100%;
+    height: 500px;
+}
+
+.avatar {
+    width: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 10px solid white;
+    height: 440px;
+    flex: content;
+}
+
+.info {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.repo-url {
+    margin: 0 auto;
 }
