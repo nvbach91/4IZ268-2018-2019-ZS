@@ -19,11 +19,18 @@ a {
     text-decoration: none
 }
 
+
 .button {
     color: rgb(255, 255, 255);
     background-color: rgb(3, 8, 83);
     padding: 1em;
-    text-transform: uppercase
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0 7px 7  px 0;
+    border: none;
+    padding: 1em 2em;
+    margin: 0;
 }
 
 .button:hover {
@@ -32,25 +39,12 @@ a {
     color: rgb(255, 255, 255);
 }
 
-.button--text {
-    background-color: initial;
-    padding: 0 0.5em;
-}
 
 .button--text:hover {
     background-color: initial;
     box-shadow: initial;
 }
 
-.button--submitSearch {
-    cursor: pointer;
-    border-radius: 0 4px 4px 0;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-    border: none;
-    padding: 1em 2em;
-    margin: 0;
-    ;
-}
 
 .form {
     display: flex;
@@ -61,7 +55,6 @@ a {
 .photo {
     height: 13rem;
     width:1rem;
-    float: left;
 }
 
 .input {
@@ -92,7 +85,16 @@ a {
 
 .profile {
     border-radius: 4px;
-    background-color: rgb(172, 221, 223);
+    background-color: rgb(192, 253, 255);
+    padding: 1rem;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_repos{
+    border-radius: 4px;
+    background-color: rgb(160, 240, 209);
     padding: 1rem;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
     display: flex;
@@ -101,31 +103,40 @@ a {
 
 .profile__photo {
     height: 15rem;
+    float: left;
 }
 
 .profile__name {
-    text-align: center;
-    color: black;
+    text-align: left;
+    float: left;
+    color: red ;
     background-color: rgb(95, 159, 255);
+    padding: 5rem;
 }
 
 .profile__detail {
     margin: 0.9rem;
     display: flex;
     flex-direction: row;
+    background-color: rgb(160, 240, 209);
+}
+.profile__button{
+
 }
 
 .main_name{
     text-transform: uppercase;
+    text-align: center;
     font-size: 0.875rem;
     color: #240000;
     width: 40%;
 }
-
+.profile__detailName{
+    padding-right: 10rem;
+    float: left;
+}
 .informations{
-    margin: 0.5em;
-    padding: 1em;
-    float: right;
+float: right;
 }
 
 .profile__detailValue {
