@@ -7,9 +7,6 @@ const baseApiUrl = 'https://api.github.com';
 // na začátek přidáme otazník
 // např. ?client_id=abcdef&client_secret=fedcba
 
-
-
-
 function repos(urlRepo) {
     return $.ajax({
         url: urlRepo,
@@ -48,13 +45,12 @@ function renderUser(user) {
     clearObject(user);
 
     const userHTML = `
-    <div class="main_name">
-         <h1>${user.login}</h1>
+    <div class="profile_mainname">
+         <h2>${user.login}</h2>
     </div>
-
     <div>
     <div class="profile__photo">
-        <img src="${user.avatar_url}" alt="" class="foto">
+        <img src="${user.avatar_url}" alt="" class="photo">
     </div>
 
     <div class="informations">

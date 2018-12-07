@@ -54,7 +54,6 @@ a {
 
 .photo {
     height: 13rem;
-    width:1rem;
 }
 
 .input {
@@ -124,10 +123,10 @@ a {
 
 }
 
-.main_name{
+.profile_mainname{
     text-transform: uppercase;
-    text-align: center;
-    font-size: 0.875rem;
+    text-align: right;
+    font-size: 1.609rem;
     color: #240000;
     width: 40%;
 }
