@@ -1,6 +1,6 @@
 // Příklad volání na GitHub API
 const client_id = '4a8be22d552d2d4421ba'     // client_id získáte po registraci OAuth účtu
-const client_secret = 'e909045c8334401336964b448d26a5144a4608cd'; // client_secret získáte po registraci OAuth účtu
+const client_secret = 'e909045c8334401336964b448d26a5144a4608cd'; // client_secret získáte po registraci OAuth účtu, Tohle bezny uzivatel uvidi? OMG lol
 const baseApiUrl = 'https://api.github.com';
 // sestavujeme URL, který obsahuje parametry client_id a client_secret
 // každý parametr se určuje v podobě klíč=hodnota, více parametry se oddělují ampersandem, 
@@ -21,7 +21,7 @@ function renderRepos(repoData) {
     var repos = '';
 
     console.log(repoData);
-
+    // Ano, s tím pocítáním ropozitařů je to trošku neohrabané já vím....
     repoData.forEach(function (repo) {
         repoCount = repoCount + 1;
         repos += `
@@ -33,7 +33,7 @@ function renderRepos(repoData) {
     });
 
     const reposHTML = `
-        <h3>Repos</h3>  
+        <h3>Repositories</h3>  
         <div>this user has total ${repoCount} repositories.<div>
         <div class="profile">
             ${repos}
@@ -100,8 +100,8 @@ function renderUser(user) {
 
 $(document).ready(function () {
     const form = $('#js-form');
-    const search = $('#js-search');
     const output = $('#js-output');
+    const search = $('#js-search');
 
     form.submit(function (e) {
         e.preventDefault();
@@ -130,11 +130,11 @@ $(document).ready(function () {
                 `);
             })
         }).fail(function () {
-            output.html('<h2>User not found</h2>');
+            output.html('<h2>User was not found</h2>');
         });
     });
 });
-
+// při nenalezení data, napíše do hodnoty not public
 function clearObject(obj) {
     Object.keys(obj).forEach(function (key) {
         if (!obj[key]) {
