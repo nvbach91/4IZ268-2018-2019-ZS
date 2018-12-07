@@ -138,7 +138,7 @@ $(document).ready(function () {
 function clearObject(obj) {
     Object.keys(obj).forEach(function (key) {
         if (!obj[key]) {
-            obj[key] = 'Not puclic'
+            obj[key] = 'not public'
         };
     });
 }
