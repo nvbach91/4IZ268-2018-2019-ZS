@@ -1,0 +1,1942 @@
+{
+    "gpx": {
+        "-xmlns": "http://www.topografix.com/GPX/1/1",
+        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "-xsi:schemaLocation": "http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd",
+        "-version": "1.1",
+        "-creator": "http://online.poi.cz",
+        "wpt": [
+            {
+                "-lat": "50.914994",
+                "-lon": "15.083756",
+                "name": "Hrad a zamek Frydlant",
+                "desc": "architektonicky komplex puvodne gotickeho hradu a renesancniho zamku",
+                "link": {
+                    "-href": "http://www.zamek-frydlant.cz/",
+                    "text": "http://www.zamek-frydlant.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Zamecka",
+                            "gpxx:City": "Frydlant",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "464 01"
+                        },
+                        "gpxx:PhoneNumber": "+420482312130"
+                    }
+                }
+            },
+            {
+                "-lat": "50.086184",
+                "-lon": "12.839724",
+                "name": "Hrad Becov nad Teplou",
+                "desc": "IV,X so-ne 10-12 13-17, V,VI,IX ut-ne 10-12 13-17, VII-VIII ut-ne 10-12 13-18",
+                "link": {
+                    "-href": "http://www.zamek-becov.cz",
+                    "text": "http://www.zamek-becov.cz"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Zamek 10",
+                            "gpxx:City": "Becov nad Teplou",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "364 64"
+                        },
+                        "gpxx:PhoneNumber": "+420606659637"
+                    }
+                }
+            },
+            {
+                "-lat": "50.539034",
+                "-lon": "14.720065",
+                "name": "Hrad Bezdez",
+                "desc": "IV: so,ne 10-16:30; V-IX: ut-ne 9-16:30; X: so,ne 9-15:30",
+                "link": {
+                    "-href": "http://www.hrad-bezdez.cz",
+                    "text": "http://www.hrad-bezdez.cz"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Bezdez",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "472 01"
+                        },
+                        "gpxx:PhoneNumber": "+420723774904"
+                    }
+                }
+            },
+            {
+                "-lat": "48.943552",
+                "-lon": "15.700922",
+                "name": "Hrad Bitov Bitov 1",
+                "desc": "IV,X so-ne 9-16, V,VI,IX denne 9-17, VII-VIII denne 9-18",
+                "link": {
+                    "-href": "http://www.hradbitov.cz/",
+                    "text": "http://www.hradbitov.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Bitov 1",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "671 10"
+                        },
+                        "gpxx:PhoneNumber": "+420515294736"
+                    }
+                }
+            },
+            {
+                "-lat": "49.481269",
+                "-lon": "16.661485",
+                "name": "Hrad Boskovice",
+                "desc": "IV,X so-ne 10-16, V,VI,IX ut-pa 10-16, so-ne 10-18, VII-VIII denne 9-18",
+                "link": {
+                    "-href": "http://www.hradboskovice.cz/",
+                    "text": "http://www.hradboskovice.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Podhradi",
+                            "gpxx:City": "Boskovice",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "680 01"
+                        },
+                        "gpxx:PhoneNumber": "+420516452043"
+                    }
+                }
+            },
+            {
+                "-lat": "49.704847",
+                "-lon": "16.889409",
+                "name": "Hrad Bouzov Bouzov 8",
+                "desc": "(duben, rijen).. so-ne 9-16, (kveten, zari).. ut-ne 9-17, (cerven).. ut-ne 9-18, (cervenec-srpen).. ut-ne 10-19",
+                "link": {
+                    "-href": "http://www.hrad-bouzov.cz/",
+                    "text": "http://www.hrad-bouzov.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Bouzov 8",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "783 25"
+                        },
+                        "gpxx:PhoneNumber": "+420585346202"
+                    }
+                }
+            },
+            {
+                "-lat": "49.107443",
+                "-lon": "17.311020",
+                "name": "Hrad Buchlov Buchlovice",
+                "desc": "IV,X so-ne 9-16, V,VI ut-ne 9-16, VII ut-ne 9-17, VIII denne 9-17",
+                "link": {
+                    "-href": "http://www.hrad-buchlov.cz/",
+                    "text": "http://www.hrad-buchlov.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Polesi 418",
+                            "gpxx:City": "Buchlovice",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "687 08"
+                        },
+                        "gpxx:PhoneNumber": "+420572595161"
+                    }
+                }
+            },
+            {
+                "-lat": "49.809261",
+                "-lon": "14.926504",
+                "name": "Hrad Cesky Sternberk Cesky Sternberk 1",
+                "desc": "IV-X:9-17(so,ne,sv.),V-IX:9-17(ut-ne),VI-VIII:9-18(ut-ne)",
+                "link": {
+                    "-href": "http://www.hradceskysternberk.cz/",
+                    "text": "http://www.hradceskysternberk.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Cesky Sternberk 1",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "257 27"
+                        },
+                        "gpxx:PhoneNumber": "+420317855101"
+                    }
+                }
+            },
+            {
+                "-lat": "50.072153",
+                "-lon": "14.165277",
+                "name": "Hrad Cerveny Ujezd Cerveny Ujezd 280",
+                "desc": "po-ne 9-17 (nejmladsi hrad v CR, postaveny v r. 2002)",
+                "link": {
+                    "-href": "http://www.hrad-cervenyujezd.cz/",
+                    "text": "http://www.hrad-cervenyujezd.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Cerveny Ujezd 280",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "273 51"
+                        },
+                        "gpxx:PhoneNumber": "+420312698924"
+                    }
+                }
+            },
+            {
+                "-lat": "49.439076",
+                "-lon": "12.927840",
+                "name": "Hrad Domazlice",
+                "desc": "Muzeum Chodska IV-X denne 9-12 13-17, XI-III po-pa 9-12 13-16",
+                "link": {
+                    "-href": "http://www.muzeum-chodska.com/cz/chodsky-hrad/o-hradu",
+                    "text": "http://www.muzeum-chodska.com/cz/chodsky-hrad/o-hradu"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Chodske namesti 96",
+                            "gpxx:City": "Domazlice",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "344 01"
+                        },
+                        "gpxx:PhoneNumber": "+420379776009"
+                    }
+                }
+            },
+            {
+                "-lat": "50.648631",
+                "-lon": "15.168664",
+                "name": "Hrad Frydstejn Frydstejn 80",
+                "desc": "V-X ut-ne 10-17",
+                "link": {
+                    "-href": "http://www.frydstejn.cz/",
+                    "text": "http://www.frydstejn.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Frydstejn 80",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "463 42"
+                        },
+                        "gpxx:PhoneNumber": "+420483393060"
+                    }
+                }
+            },
+            {
+                "-lat": "50.846221",
+                "-lon": "14.876298",
+                "name": "Hrad Grabstejn Grabstejn 21",
+                "desc": "IV-X ut-ne 9-16 (VII-VIII do 17)",
+                "link": {
+                    "-href": "http://www.hrad-grabstejn.cz/",
+                    "text": "http://www.hrad-grabstejn.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Grabstejn 21",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "463 34"
+                        },
+                        "gpxx:PhoneNumber": "+420482724301"
+                    }
+                }
+            },
+            {
+                "-lat": "50.445276",
+                "-lon": "13.256912",
+                "name": "Hrad Hasistejn Misto",
+                "desc": "IV-X: denne 10-18",
+                "link": {
+                    "-href": "http://hasistejn.cz/",
+                    "text": "http://hasistejn.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Misto",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "431 58"
+                        },
+                        "gpxx:PhoneNumber": "+420474651275"
+                    }
+                }
+            },
+            {
+                "-lat": "50.346210",
+                "-lon": "13.017844",
+                "name": "Hrad Hauenstejn Horni Hrad 1",
+                "desc": "I-V so-ne 10-17, VI-VIII denne 9-19, IX-XI denne 10-17, XII so-ne 10-17",
+                "link": {
+                    "-href": "http://hornihrad.sweb.cz/",
+                    "text": "http://hornihrad.sweb.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Horni Hrad 1",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "363 01"
+                        },
+                        "gpxx:PhoneNumber": "+420777028820"
+                    }
+                }
+            },
+            {
+                "-lat": "50.579296",
+                "-lon": "14.383941",
+                "name": "Hrad Helfenburk Ustek",
+                "desc": "pristupny, vez pouze o vikendech. tel.cislo je do info.cenra",
+                "link": {
+                    "-href": "http://www.mesto-ustek.com/helfenburk.php",
+                    "text": "http://www.mesto-ustek.com/helfenburk.php"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Ustek",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "411 45"
+                        },
+                        "gpxx:PhoneNumber": "+420416795368"
+                    }
+                }
+            },
+            {
+                "-lat": "49.517470",
+                "-lon": "17.627285",
+                "name": "Hrad Helfstyn Tyn nad Becvou",
+                "desc": "III,XI so-ne 9-16, IV,IX,X ut-ne 9-17, V-VII ut-ne 9-18",
+                "link": {
+                    "-href": "http://www.helfstyn.cz/",
+                    "text": "http://www.helfstyn.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Tyn nad Becvou",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "751 32"
+                        },
+                        "gpxx:PhoneNumber": "+420581797093"
+                    }
+                }
+            },
+            {
+                "-lat": "50.520583",
+                "-lon": "13.633347",
+                "name": "Hrad Hnevin Most",
+                "desc": "Hrad slouzi jako hotel a restaurace.",
+                "link": {
+                    "-href": "http://www.hradhnevin.cz/",
+                    "text": "http://www.hradhnevin.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Hradni 577/2",
+                            "gpxx:City": "Most",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "435 02"
+                        },
+                        "gpxx:PhoneNumber": "+420777938754"
+                    }
+                }
+            },
+            {
+                "-lat": "49.529637",
+                "-lon": "12.942592",
+                "name": "Hrad Horsovsky Tyn",
+                "desc": "IV,X so-ne 9-16, V,IX ut-ne 9-16, VI-VIII ut-ne 9-17",
+                "link": {
+                    "-href": "http://www.horsovsky-tyn.cz/",
+                    "text": "http://www.horsovsky-tyn.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Namesti Republiky 1",
+                            "gpxx:City": "Horsovsky Tyn",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "346 01"
+                        },
+                        "gpxx:PhoneNumber": "+420379423111"
+                    }
+                }
+            },
+            {
+                "-lat": "50.490900",
+                "-lon": "14.624053",
+                "name": "Hrad Houska Houska 1",
+                "desc": "IV,X so-ne 10-17, V-IX ut-ne 10-17",
+                "link": {
+                    "-href": "http://www.hradhouska.cz/",
+                    "text": "http://www.hradhouska.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Houska 1",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "472 01"
+                        },
+                        "gpxx:PhoneNumber": "+420728351101"
+                    }
+                }
+            },
+            {
+                "-lat": "49.865229",
+                "-lon": "17.874421",
+                "name": "Hrad Hradec nad Moravici",
+                "desc": "hrad prestaveny na zamek",
+                "link": {
+                    "-href": "http://www.zamek-hradec.cz/",
+                    "text": "http://www.zamek-hradec.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Mestecko 2",
+                            "gpxx:City": "Hradec nad Moravici",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "747 41"
+                        },
+                        "gpxx:PhoneNumber": "+420553783444"
+                    }
+                }
+            },
+            {
+                "-lat": "49.620581",
+                "-lon": "18.227692",
+                "name": "Hrad Hukvaldy",
+                "desc": "IV,X so-ne 9-16, V-VIII ut-ne 9-18, IX ut-ne 9-17",
+                "link": {
+                    "-href": "http://www.janackovyhukvaldy.cz/",
+                    "text": "http://www.janackovyhukvaldy.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Hukvaldy",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "739 46"
+                        },
+                        "gpxx:PhoneNumber": "+420604618144"
+                    }
+                }
+            },
+            {
+                "-lat": "50.080990",
+                "-lon": "12.366201",
+                "name": "Hrad Cheb",
+                "desc": "XI-III so-ne 10-15, IV,V,IX,X ut-ne 9-17, VI ut-ne 9-18, VII-VIII denne 9-18",
+                "link": {
+                    "-href": "http://www.hrad-cheb.cz/",
+                    "text": "http://www.hrad-cheb.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Dobrovskeho 21",
+                            "gpxx:City": "Cheb",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "350 02"
+                        },
+                        "gpxx:PhoneNumber": "+420602169298"
+                    }
+                }
+            },
+            {
+                "-lat": "50.374769",
+                "-lon": "13.269682",
+                "name": "Hrad Kadan",
+                "desc": "po-pa 9-16, so-ne 10-15",
+                "link": {
+                    "-href": "http://www.kultura-kadan.cz/muzeum/vystavy_detail_pripravovane.php?ID_akce=192.",
+                    "text": "http://www.kultura-kadan.cz/muzeum/vystavy_detail_pripravovane.php?ID_akce=192."
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Tyrsova 134",
+                            "gpxx:City": "Kadan",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "432 01"
+                        }
+                    }
+                }
+            },
+            {
+                "-lat": "49.424356",
+                "-lon": "15.014078",
+                "name": "Hrad Kamen Kamen 1",
+                "desc": "IV,X so-ne 10-17, V,VI,IX ut-ne 10-17, VII-VIII ut-ne 10-18",
+                "link": {
+                    "-href": "http://www.hradkamen.cz/",
+                    "text": "http://www.hradkamen.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Kamen 1",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "394 13"
+                        },
+                        "gpxx:PhoneNumber": "+420565323184"
+                    }
+                }
+            },
+            {
+                "-lat": "49.939241",
+                "-lon": "14.188371",
+                "name": "Hrad Karlstejn Karlstejn 172",
+                "desc": "ut-ne (1.3.-11.11.); brezen 9:30-16; duben 9:30-17; kveten,cerven,zari 9:30-17:30; cervenec-srpen... denne 9:00-18:30; rijen 9:30-16:30; listopad-unor nektere vikendy podle web.stranek hradu",
+                "link": {
+                    "-href": "http://www.hradkarlstejn.cz/",
+                    "text": "http://www.hradkarlstejn.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Karlstejn 172",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "267 18"
+                        },
+                        "gpxx:PhoneNumber": "+420311681617"
+                    }
+                }
+            },
+            {
+                "-lat": "49.166132",
+                "-lon": "13.564028",
+                "name": "Hrad Kasperk Zlibek",
+                "desc": "IV so-ne 10-17, V,VI,IX ut-ne 10-17, VII-VIII denne 10-17, X ut-pa 10:30-15, so-ne 10-17",
+                "link": {
+                    "-href": "http://www.kasperk.cz/",
+                    "text": "http://www.kasperk.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Zlibek",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "341 92"
+                        },
+                        "gpxx:PhoneNumber": "+420376582324"
+                    }
+                }
+            },
+            {
+                "-lat": "50.440360",
+                "-lon": "14.576409",
+                "name": "Hrad Kokorin Kokorinsky Dul",
+                "desc": "IV,X so-ne 9-16, V,IX denne 9-16, VI-VIII denne 9-17",
+                "link": {
+                    "-href": "http://www.hrad-kokorin.cz/",
+                    "text": "http://www.hrad-kokorin.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Kokorinsky Dul",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "277 23"
+                        },
+                        "gpxx:PhoneNumber": "+420315695064"
+                    }
+                }
+            },
+            {
+                "-lat": "50.151126",
+                "-lon": "17.011650",
+                "name": "Hrad Kolstejn (hrad prestaveny na zamek) Branna",
+                "desc": "IV-VI so-ne 9-17, VII-VIII ut-ne 9-17, IX-X so-ne 9-17",
+                "link": {
+                    "-href": "http://www.hrady.cz/?OID=111",
+                    "text": "http://www.hrady.cz/?OID=111"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Branna",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "788 25"
+                        },
+                        "gpxx:PhoneNumber": "+420603326508"
+                    }
+                }
+            },
+            {
+                "-lat": "50.490190",
+                "-lon": "15.134949",
+                "name": "Hrad Kost Libosovice",
+                "desc": "IV,X: st-ne 9-16, V,VI,IX: ut-ne 9-17, VII-VIII: denne 9-18",
+                "link": {
+                    "-href": "http://www.hrad-kost.cz/",
+                    "text": "http://www.hrad-kost.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Podkost 1",
+                            "gpxx:City": "Libosovice",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "506 01"
+                        },
+                        "gpxx:PhoneNumber": "+420607106324"
+                    }
+                }
+            },
+            {
+                "-lat": "50.037603",
+                "-lon": "13.872358",
+                "name": "Hrad Krivoklat Krivoklat 47",
+                "desc": "(I-III) po-so 10-15, (IV-X) ut-ne 10-17(do 16:00 v IV a X), (XI-XII) so-ne 10-15",
+                "link": {
+                    "-href": "http://www.krivoklat.cz/",
+                    "text": "http://www.krivoklat.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Krivoklat 47",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "270 23"
+                        },
+                        "gpxx:PhoneNumber": "+420313558440"
+                    }
+                }
+            },
+            {
+                "-lat": "50.080116",
+                "-lon": "15.812867",
+                "name": "Hrad Kuneticka hora Stare Hradiste",
+                "desc": "ut-ne 9:30-17:30 (duben,zari,rijen pouze so-ne)",
+                "link": {
+                    "-href": "http://www.hrad-kunetickahora.cz/",
+                    "text": "http://www.hrad-kunetickahora.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Kunetice",
+                            "gpxx:City": "Stare Hradiste",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "533 52"
+                        },
+                        "gpxx:PhoneNumber": "+420466415428"
+                    }
+                }
+            },
+            {
+                "-lat": "49.696756",
+                "-lon": "15.280727",
+                "name": "Hrad Ledec nad Sazavou",
+                "desc": "duben-rijen... ut-ne 9-12 13-16",
+                "link": {
+                    "-href": "http://hrad.ledecns.cz/",
+                    "text": "http://hrad.ledecns.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Hradni 701",
+                            "gpxx:City": "Ledec nad Sazavou",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "584 01"
+                        },
+                        "gpxx:PhoneNumber": "+420731612460"
+                    }
+                }
+            },
+            {
+                "-lat": "49.614231",
+                "-lon": "15.413282",
+                "name": "Hrad Lipnice nad Sazavou Lipnice nad sazavou 1",
+                "desc": "IV,IX,X so-ne 10-16, V-VI ut-ne 10-16(so-ne -17), VII-VIII ut-ne 9-18",
+                "link": {
+                    "-href": "http://www.hrad-lipnice.eu/",
+                    "text": "http://www.hrad-lipnice.eu/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Lipnice nad sazavou 1",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "582 32"
+                        },
+                        "gpxx:PhoneNumber": "+420724961945"
+                    }
+                }
+            },
+            {
+                "-lat": "50.085808",
+                "-lon": "16.351449",
+                "name": "Hrad Litice Zachlumi-Litice nad Orlici",
+                "desc": "ut-ne 9-17, (duben,zari,rijen)so-ne sv. 9-16",
+                "link": {
+                    "-href": "http://www.litice-nad-orlici.cz/",
+                    "text": "http://www.litice-nad-orlici.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Zachlumi-Litice nad Orlici",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "564 01"
+                        },
+                        "gpxx:PhoneNumber": "+420603232212"
+                    }
+                }
+            },
+            {
+                "-lat": "50.187001",
+                "-lon": "12.753877",
+                "name": "Hrad Loket",
+                "desc": "XI-III: denne 9-15:30, IV-X: denne 9-16:30",
+                "link": {
+                    "-href": "http://www.hradloket.cz/",
+                    "text": "http://www.hradloket.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Zamecka 67",
+                            "gpxx:City": "Loket",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "357 33"
+                        },
+                        "gpxx:PhoneNumber": "+420352684648"
+                    }
+                }
+            },
+            {
+                "-lat": "49.203730",
+                "-lon": "17.599540",
+                "name": "Hrad Malenovice Zlin-Malenovice",
+                "desc": "IV-X so-ne 10-16, V,IX ut-ne 10-17, VII-VIII denne 10-17",
+                "link": {
+                    "-href": "http://www.muzeum-zlin.cz/",
+                    "text": "http://www.muzeum-zlin.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Svermova 448",
+                            "gpxx:City": "Zlin-Malenovice",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "763 02"
+                        },
+                        "gpxx:PhoneNumber": "+420577103379"
+                    }
+                }
+            },
+            {
+                "-lat": "49.795859",
+                "-lon": "16.845667",
+                "name": "Hrad Mirov (veznice)",
+                "desc": "nepristupno",
+                "link": {
+                    "-href": "http://www.hrady.cz/?OID=215",
+                    "text": "http://www.hrady.cz/?OID=215"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Mirov",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "789 01"
+                        }
+                    }
+                }
+            },
+            {
+                "-lat": "50.408494",
+                "-lon": "14.900883",
+                "name": "Hrad Mlada Boleslav Mlada Boleslav I",
+                "desc": "muzeum",
+                "link": {
+                    "-href": "http://www.hrady.cz/wnd_web_page.php?OID=412",
+                    "text": "http://www.hrady.cz/wnd_web_page.php?OID=412"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Staromestske namesti 1",
+                            "gpxx:City": "Mlada Boleslav I",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "293 01"
+                        },
+                        "gpxx:PhoneNumber": "+420326325616"
+                    }
+                }
+            },
+            {
+                "-lat": "48.789316",
+                "-lon": "14.775141",
+                "name": "Hrad Nove hrady Nove Hrady",
+                "desc": "IV,IX,X ut-ne 9:30-15:30, VI ut-ne 9-16:30, VII-VIII denne 9-17",
+                "link": {
+                    "-href": "http://www.hrad-novehrady.eu/",
+                    "text": "http://www.hrad-novehrady.eu/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Komenskeho 33",
+                            "gpxx:City": "Nove Hrady",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "373 33"
+                        },
+                        "gpxx:PhoneNumber": "+420386361313"
+                    }
+                }
+            },
+            {
+                "-lat": "49.324199",
+                "-lon": "16.641712",
+                "name": "Hrad Novy Hrad u Adamova",
+                "desc": "VII-VIII ut-ne 10-17",
+                "link": {
+                    "-href": "http://www.novyhradublanska.info/",
+                    "text": "http://www.novyhradublanska.info/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Olomucany 59",
+                            "gpxx:City": "Adamov",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "679 04"
+                        },
+                        "gpxx:PhoneNumber": "+420516446221"
+                    }
+                }
+            },
+            {
+                "-lat": "49.598375",
+                "-lon": "17.261732",
+                "name": "Hrad Olomouc",
+                "desc": "celorocne ut-ne 10-18",
+                "link": {
+                    "-href": "http://www.olomoucky-kraj.com/object.php?object=6",
+                    "text": "http://www.olomoucky-kraj.com/object.php?object=6"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Vaclavske namesti 3",
+                            "gpxx:City": "Olomouc",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "779 00"
+                        },
+                        "gpxx:PhoneNumber": "+420585513385"
+                    }
+                }
+            },
+            {
+                "-lat": "50.479060",
+                "-lon": "15.604282",
+                "name": "Hrad Pecka",
+                "desc": "IV,X: so-ne 9-16, V-IX ut-ne 9-17",
+                "link": {
+                    "-href": "http://www.hradpecka.cz/",
+                    "text": "http://www.hradpecka.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Pecka",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "507 82"
+                        },
+                        "gpxx:PhoneNumber": "+420493799129"
+                    }
+                }
+            },
+            {
+                "-lat": "49.451025",
+                "-lon": "16.318163",
+                "name": "Hrad Pernstejn Pernstejn 16",
+                "desc": "IV,X so-ne 9-15, V-IX ut-ne 9-16(VII-VIII -17)",
+                "link": {
+                    "-href": "http://www.hrad-pernstejn.eu/",
+                    "text": "http://www.hrad-pernstejn.eu/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Pernstejn 16",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "592 62"
+                        },
+                        "gpxx:PhoneNumber": "+420566566101"
+                    }
+                }
+            },
+            {
+                "-lat": "49.840999",
+                "-lon": "14.954737",
+                "name": "Hrad Pirkstejn Rataje nad Sazavou",
+                "desc": "nepristupny, objekt patri cirkvi a neni verejnosti volne pristupny",
+                "link": {
+                    "-href": "http://hrady.hyperlink.cz/hrad_pirkstejn.htm",
+                    "text": "http://hrady.hyperlink.cz/hrad_pirkstejn.htm"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Pod Branou",
+                            "gpxx:City": "Rataje nad Sazavou",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "285 07"
+                        }
+                    }
+                }
+            },
+            {
+                "-lat": "49.309201",
+                "-lon": "14.146459",
+                "name": "Hrad Pisek",
+                "desc": "pristupno, prohlidky",
+                "link": {
+                    "-href": "http://www.jihoceskykraj.info/tipy-na-vylet/hrady/pisecko-hrad-pisek.html",
+                    "text": "http://www.jihoceskykraj.info/tipy-na-vylet/hrady/pisecko-hrad-pisek.html"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Velke namesti 114",
+                            "gpxx:City": "Pisek",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "397 01"
+                        },
+                        "gpxx:PhoneNumber": "+420382201111"
+                    }
+                }
+            },
+            {
+                "-lat": "49.511153",
+                "-lon": "12.803444",
+                "name": "Hrad Pobezovice",
+                "desc": "Hrad/zamek prochazi rozsahlou rekonstrukci, neni proto verejnostii zpristupnen.",
+                "link": {
+                    "-href": "http://www.zamekpobezovice.cz/",
+                    "text": "http://www.zamekpobezovice.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Sandova 1",
+                            "gpxx:City": "Pobezovice",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "345 22"
+                        },
+                        "gpxx:PhoneNumber": "+420379497889"
+                    }
+                }
+            },
+            {
+                "-lat": "49.251777",
+                "-lon": "15.426280",
+                "name": "Hrad Rostejn Doupe 1",
+                "desc": "IV,X so-ne 10-17, V ut-ne 9-17, VI,VII,VIII denne 9-18, IX ut-ne 10-17",
+                "link": {
+                    "-href": "http://www.rostejn.wz.cz/",
+                    "text": "http://www.rostejn.wz.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Doupe 1",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "588 56"
+                        },
+                        "gpxx:PhoneNumber": "+420567243738"
+                    }
+                }
+            },
+            {
+                "-lat": "48.655944",
+                "-lon": "14.365053",
+                "name": "Hrad Rozmberk Rozmberk nad Vltavou",
+                "desc": "otevreno celorocne dle webu",
+                "link": {
+                    "-href": "http://www.hrad-rozmberk.eu/",
+                    "text": "http://www.hrad-rozmberk.eu/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Rozmberk nad Vltavou",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "382 18"
+                        },
+                        "gpxx:PhoneNumber": "+420380749838"
+                    }
+                }
+            },
+            {
+                "-lat": "49.835889",
+                "-lon": "16.042796",
+                "name": "Hrad Rychmburk Predhradi 17",
+                "desc": "pristupno prilezitostne, (domov pro osoby s chronickym dusevnim onemocnenim)",
+                "link": {
+                    "-href": "http://www.rychmburk.cz/historie",
+                    "text": "http://www.rychmburk.cz/historie"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Predhradi 17",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "539 74"
+                        }
+                    }
+                }
+            },
+            {
+                "-lat": "50.131810",
+                "-lon": "12.282377",
+                "name": "Hrad Seeberg Poustka-Ostroh 18",
+                "desc": "15.3.-15.11. od 10:00",
+                "link": {
+                    "-href": "http://www.hrad-seeberg.cz/cz/o-hradu",
+                    "text": "http://www.hrad-seeberg.cz/cz/o-hradu"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Poustka-Ostroh 18",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "350 02"
+                        },
+                        "gpxx:PhoneNumber": "+420354595360"
+                    }
+                }
+            },
+            {
+                "-lat": "50.169482",
+                "-lon": "12.360038",
+                "name": "Hrad Skalna",
+                "desc": "V-X denne 10-18",
+                "link": {
+                    "-href": "http://www.hrady.cz/wnd_web_page.php?OID=282",
+                    "text": "http://www.hrady.cz/wnd_web_page.php?OID=282"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Pod Hradem 81",
+                            "gpxx:City": "Skalna",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "351 34"
+                        },
+                        "gpxx:PhoneNumber": "+420354594930"
+                    }
+                }
+            },
+            {
+                "-lat": "49.830488",
+                "-lon": "18.300224",
+                "name": "Hrad Slezska Ostrava",
+                "desc": "III-V ut-ne 10-19, VI-VIII denne 9-20, IX-X ut-ne 10-18, XI ut-ne 10-16, XII denne 10-18",
+                "link": {
+                    "-href": "http://www.slezskoostravskyhrad.cz/ohradu/",
+                    "text": "http://www.slezskoostravskyhrad.cz/ohradu/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Hradni 1",
+                            "gpxx:City": "Slezska Ostrava",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "710 00"
+                        },
+                        "gpxx:PhoneNumber": "+420596115967"
+                    }
+                }
+            },
+            {
+                "-lat": "50.735895",
+                "-lon": "14.580982",
+                "name": "Hrad Sloup Sloup v Cechach",
+                "desc": "IV,X: so,ne 9-16, V-VIII: denne 9-17, IX: ut-ne 9-17",
+                "link": {
+                    "-href": "http://www.hradsloup.cz/",
+                    "text": "http://www.hradsloup.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Ke Hradu 125",
+                            "gpxx:City": "Sloup v Cechach",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "471 52"
+                        },
+                        "gpxx:PhoneNumber": "+420487753583"
+                    }
+                }
+            },
+            {
+                "-lat": "49.261440",
+                "-lon": "14.716358",
+                "name": "Hrad Sobeslav",
+                "link": {
+                    "-href": "http://www.hrady.cz/index.php?OID=286",
+                    "text": "http://www.hrady.cz/index.php?OID=286"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Horni prikopy 76/23",
+                            "gpxx:City": "Sobeslav",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "392 01"
+                        }
+                    }
+                }
+            },
+            {
+                "-lat": "49.837370",
+                "-lon": "17.246084",
+                "name": "Hrad Sovinec Jirikov-Sovinec 58",
+                "desc": "IV,X ut-ne 9-16, V-IX ut-ne 9-17",
+                "link": {
+                    "-href": "http://www.hradsovinec.cz/",
+                    "text": "http://www.hradsovinec.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Jirikov-Sovinec 58",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "793 51"
+                        },
+                        "gpxx:PhoneNumber": "+420554295113"
+                    }
+                }
+            },
+            {
+                "-lat": "49.194423",
+                "-lon": "16.599457",
+                "name": "Hrad Spilberk Brno",
+                "desc": "(I-IV) st-ne 9-17, (V-VI) ut-ne 9-17, (VII-IX) ut-ne 10-18, (X-XII) st-ne 9-17",
+                "link": {
+                    "-href": "http://www.spilberk.cz/",
+                    "text": "http://www.spilberk.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Spilberk 1",
+                            "gpxx:City": "Brno",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "662 24"
+                        },
+                        "gpxx:PhoneNumber": "+420542123611"
+                    }
+                }
+            },
+            {
+                "-lat": "49.258174",
+                "-lon": "13.901986",
+                "name": "Hrad Strakonice",
+                "desc": "IV-VI,IX,X ut-ne 8-16, VII-VIII denne 9-17",
+                "link": {
+                    "-href": "http://www.hradstrakonice.cz/hrad/",
+                    "text": "http://www.hradstrakonice.cz/hrad/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Zamek 1",
+                            "gpxx:City": "Strakonice",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "386 21"
+                        },
+                        "gpxx:PhoneNumber": "+420383321537"
+                    }
+                }
+            },
+            {
+                "-lat": "50.639766",
+                "-lon": "14.051149",
+                "name": "Hrad Strekov Usti nad Labem",
+                "desc": "III-X: ut-ne 9:30–16:30, XI: so-ne 9:30–16, 31.12. 9:30-15",
+                "link": {
+                    "-href": "http://www.hradstrekov.cz/",
+                    "text": "http://www.hradstrekov.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Na Zachazce",
+                            "gpxx:City": "Usti nad Labem",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "400 03"
+                        },
+                        "gpxx:PhoneNumber": "+420475530682"
+                    }
+                }
+            },
+            {
+                "-lat": "49.627340",
+                "-lon": "16.408333",
+                "name": "Hrad Svojanov Svojanov 1",
+                "desc": "XI,III: so-ne 10-17, IV,X: ut-ne 9-17, V,VI,IX: denne 9-17, VII-VIII: denne 9-18",
+                "link": {
+                    "-href": "http://www.svojanov.cz/",
+                    "text": "http://www.svojanov.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Svojanov 1",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "569 73"
+                        },
+                        "gpxx:PhoneNumber": "+420603810085"
+                    }
+                }
+            },
+            {
+                "-lat": "49.732975",
+                "-lon": "17.301911",
+                "name": "Hrad Sternberk",
+                "desc": "IV,X so-ne 10-17, V,VI,IX ut-ne 10-17, VII-VIII ut-ne 10-18",
+                "link": {
+                    "-href": "http://www.hrad-sternberk.cz/",
+                    "text": "http://www.hrad-sternberk.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Horni namesti 170/6",
+                            "gpxx:City": "Sternberk",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "785 01"
+                        },
+                        "gpxx:PhoneNumber": "+420585012935"
+                    }
+                }
+            },
+            {
+                "-lat": "49.478916",
+                "-lon": "13.285341",
+                "name": "Hrad Svihov",
+                "desc": "IV,X so-ne 10-15, V,VI,IX ut-ne 10-16, VII-VIII ut-ne 9:30-17:30",
+                "link": {
+                    "-href": "http://www.hradsvihov.cz/",
+                    "text": "http://www.hradsvihov.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Zizkova 1",
+                            "gpxx:City": "Svihov",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "340 12"
+                        },
+                        "gpxx:PhoneNumber": "+420606666419"
+                    }
+                }
+            },
+            {
+                "-lat": "49.890715",
+                "-lon": "13.887700",
+                "name": "Hrad Tocnik Tocnik 10",
+                "desc": "III,IV,X so-ne 10-12 13-16, V,IX ut-ne 10-12 13-17, VI-VIII ut-ne 9-12 13-18",
+                "link": {
+                    "-href": "http://www.tocnik.com/",
+                    "text": "http://www.tocnik.com/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Tocnik 10",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "267 51"
+                        },
+                        "gpxx:PhoneNumber": "+420311533202"
+                    }
+                }
+            },
+            {
+                "-lat": "49.830609",
+                "-lon": "14.592789",
+                "name": "Hrad Tynec nad Sazavou",
+                "desc": "muzeum",
+                "link": {
+                    "-href": "http://www.mestotynec.cz/muzeum/",
+                    "text": "http://www.mestotynec.cz/muzeum/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Nadvori Hodejovskeho 48",
+                            "gpxx:City": "Tynec nad Sazavou",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "257 41"
+                        },
+                        "gpxx:PhoneNumber": "+420775217230"
+                    }
+                }
+            },
+            {
+                "-lat": "49.798677",
+                "-lon": "17.014609",
+                "name": "Hrad Usov",
+                "desc": "muzeum",
+                "link": {
+                    "-href": "http://www.muzeum-sumperk.cz/",
+                    "text": "http://www.muzeum-sumperk.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Zamecka 1",
+                            "gpxx:City": "Usov",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "789 73"
+                        },
+                        "gpxx:PhoneNumber": "+420583435111"
+                    }
+                }
+            },
+            {
+                "-lat": "50.584190",
+                "-lon": "14.343209",
+                "name": "Hrad Ustek",
+                "desc": "pristupno prilezitostne",
+                "link": {
+                    "-href": "http://www.hrady.cz/index.php?OID=435",
+                    "text": "http://www.hrady.cz/index.php?OID=435"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Pansky dvur 803",
+                            "gpxx:City": "Ustek",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "411 45"
+                        },
+                        "gpxx:PhoneNumber": "+420416795609"
+                    }
+                }
+            },
+            {
+                "-lat": "50.562512",
+                "-lon": "15.166942",
+                "name": "Hrad Valdstejn Turnov",
+                "desc": "IV,X so-ne 9-17:30, V-IX denne 9-17:30",
+                "link": {
+                    "-href": "http://www.hrad-valdstejn.cz/",
+                    "text": "http://www.hrad-valdstejn.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Kaderavec 18",
+                            "gpxx:City": "Turnov",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "511 01"
+                        },
+                        "gpxx:PhoneNumber": "+420739014104"
+                    }
+                }
+            },
+            {
+                "-lat": "49.263201",
+                "-lon": "13.399517",
+                "name": "Hrad Velhartice",
+                "desc": "IV,X so-ne 10-16, V-IX denne 10-17(VII-VIII -18)",
+                "link": {
+                    "-href": "http://www.hrad-velhartice.cz/",
+                    "text": "http://www.hrad-velhartice.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Velhartice",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "341 42"
+                        },
+                        "gpxx:PhoneNumber": "+420376583315"
+                    }
+                }
+            },
+            {
+                "-lat": "49.256658",
+                "-lon": "16.461854",
+                "name": "Hrad Veveri Brno-Bystrc",
+                "desc": "IV,X so-ne 9-17, V-IX ut-ne 9-18",
+                "link": {
+                    "-href": "http://www.veveri.cz/",
+                    "text": "http://www.veveri.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Hrad Veveri 1239/1",
+                            "gpxx:City": "Brno-Bystrc",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "664 71"
+                        },
+                        "gpxx:PhoneNumber": "+420549420164"
+                    }
+                }
+            },
+            {
+                "-lat": "49.948490",
+                "-lon": "15.268738",
+                "name": "Hrad Vlassky dvur-Kutna Hora",
+                "desc": "XI-II denne 10-16, III,X denne 10-17, IV-IX denne 9-18",
+                "link": {
+                    "-href": "http://www.vlassky-dvur.cz/",
+                    "text": "http://www.vlassky-dvur.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Havlickovo namesti 552",
+                            "gpxx:City": "Kutna Hora",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "284 01"
+                        },
+                        "gpxx:PhoneNumber": "+420327512873"
+                    }
+                }
+            },
+            {
+                "-lat": "50.641844",
+                "-lon": "15.189328",
+                "name": "Hrad Vranov(Pantheon) Mala Skala",
+                "desc": "VI-VIII: denne 9-18",
+                "link": {
+                    "-href": "http://www.vranov-pantheon.org/",
+                    "text": "http://www.vranov-pantheon.org/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Mala Skala",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "468 31"
+                        },
+                        "gpxx:PhoneNumber": "+420739644401"
+                    }
+                }
+            },
+            {
+                "-lat": "49.616959",
+                "-lon": "14.392143",
+                "name": "Hrad Vysoky Chlumec Vysoky Chlumec 31",
+                "desc": "nepristupny",
+                "link": {
+                    "-href": "http://www.vysokychlumec.eu/vysoky-chlumec/hrad/",
+                    "text": "http://www.vysokychlumec.eu/vysoky-chlumec/hrad/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Vysoky Chlumec 31",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "262 52"
+                        }
+                    }
+                }
+            },
+            {
+                "-lat": "50.223725",
+                "-lon": "12.883189",
+                "name": "Hrad Zamecka vez Karlovy Vary",
+                "desc": "pristupno prilezitostne, (puvodne mensi goticky hrad)",
+                "link": {
+                    "-href": "http://www.hrady.cz/index.php?OID2566",
+                    "text": "http://www.hrady.cz/index.php?OID2566"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Zamecky vrch 431/2",
+                            "gpxx:City": "Karlovy Vary",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "360 01"
+                        }
+                    }
+                }
+            },
+            {
+                "-lat": "48.855574",
+                "-lon": "16.042775",
+                "name": "Hrad Znojmo",
+                "desc": "IV so-ne 9-17, V-IX ut-ne 9-17",
+                "link": {
+                    "-href": "http://www.znojmuz.cz/",
+                    "text": "http://www.znojmuz.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Hradni 84/10",
+                            "gpxx:City": "Znojmo",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "669 02"
+                        },
+                        "gpxx:PhoneNumber": "+420515222311"
+                    }
+                }
+            },
+            {
+                "-lat": "49.438940",
+                "-lon": "14.192319",
+                "name": "Hrad Zvikov Zvikovske Podhradi",
+                "desc": "(IV) so-ne 9:30-12 13-15:30, (V) ut-ne 9:30-12 13-16, (VI-VIII) ut-ne 9-17, (IX) ut-ne 9:30-12 13-16, (X) so-ne 9:30-12 13-15:30",
+                "link": {
+                    "-href": "http://www.hrad-zvikov.eu/",
+                    "text": "http://www.hrad-zvikov.eu/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Zvikovske Podhradi",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "397 01"
+                        },
+                        "gpxx:PhoneNumber": "+420382285676"
+                    }
+                }
+            },
+            {
+                "-lat": "49.529630",
+                "-lon": "15.213221",
+                "name": "Hrad Zeliv Trckuv hrad Zeliv 88",
+                "desc": "nepristupny",
+                "link": {
+                    "-href": "http://www.hrady.cz/?OID=8532",
+                    "text": "http://www.hrady.cz/?OID=8532"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:City": "Zeliv 88",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "394 44"
+                        }
+                    }
+                }
+            },
+            {
+                "-lat": "50.089836",
+                "-lon": "14.398273",
+                "name": "Prazsky hrad Praha 1-Hradcany",
+                "desc": "(XI-III) denne 9-16, (IV-X) denne 9-18, (Objekty, kde se plati vstupne.)",
+                "link": {
+                    "-href": "http://www.hrad.cz/",
+                    "text": "http://www.hrad.cz/"
+                },
+                "sym": "Waypoint",
+                "extensions": {
+                    "gpxx:WaypointExtension": {
+                        "-xmlns:gpxx": "http://www.garmin.com/xmlschemas/GpxExtensions/v3",
+                        "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "-xsi:schemaLocation": "http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd",
+                        "gpxx:DisplayMode": "SymbolAndName",
+                        "gpxx:Address": {
+                            "gpxx:StreetAddress": "Hradcanske namesti",
+                            "gpxx:City": "Praha 1-Hradcany",
+                            "gpxx:Country": "CZ",
+                            "gpxx:PostalCode": "119 00"
+                        },
+                        "gpxx:PhoneNumber": "+420224373584"
+                    }
+                }
+            }
+        ]
+    }
+}

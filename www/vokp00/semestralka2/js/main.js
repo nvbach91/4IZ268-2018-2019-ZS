@@ -1,54 +1,36 @@
 /* pozice uživatele na mapě dle IP */
-var latitude = null;
-var longitude = null;
+var latitude = 0;
+var longitude = 0;
 var city = "";
 
+/* Získání délky, šířky a města */
 fetch("http://ip-api.com/json/?fields=lat,lon,city").then(function (take) {
     return take.json();
 }).then(function (take) {
     latitude = take.lat;
     longitude = take.lon;
     city = take.city;
+    console.log(latitude);
 });
-
 
 var center = SMap.Coords.fromWGS84(latitude, longitude);
 var map = new SMap(JAK.gel("map"), center, 10);
 var cz = map.computeCenterZoom(center);
 
-/* vaše pozice */
+/* Vaše pozice dle IP adresy */
+var buttonclicked;
 
-var moreInfo = function () {
-
-    var buttonclicked;
-    $("#coors").click(function () {
-        if (buttonclicked != true) {
-            buttonclicked = true;
-            var para = document.createElement("P");
-            var t = document.createTextNode("You are somewhere near the coordinates " + latitude + ", " + longitude + " which means you are in " + city);
-            para.appendChild(t);
-            document.getElementById("coordinates").appendChild(para);
-        } else {
-            alert("Button was clicked before");
-        }
-    });
-}
-
-
-/* pozice uživatele v mapě
-var userPosition = new SMap.Layer.Marker();
-map.addLayer(userPosition);
-userPosition.enable();
-
-var picture = "https://img.icons8.com/nolan/2x/street-view.png";
-
-var options = {
-    url: picture,
-    anchor: { left: 10, bottom: 1 }  /* Ukotvení značky za bod uprostřed dole */
-/* } */
-
-/* var userMArker = new SMap.Marker(center, null, options);
-userPosition.addMarker(userMArker); */
+$("#coors").click(function () {
+    if (buttonclicked != true) {
+        buttonclicked = true;
+        var para = document.createElement("P");
+        var t = document.createTextNode("You are somewhere near the coordinates " + latitude + ", " + longitude + " which means you are in " + city);
+        para.appendChild(t);
+        document.getElementById("coordinates").appendChild(para);
+    } else {
+        alert("Hey, one time is enough!");
+    }
+});
 
 /* Aby mapa reagovala na změnu velikosti průhledu */
 map.addControl(new SMap.Control.Sync());
@@ -68,7 +50,44 @@ xhr.send("gpx/hrady.gpx");
 /* přidání vrstvy pro zobrazení bodů na mapě*/
 var response = function (xmlDoc) {
     var gpx = new SMap.Layer.GPX(xmlDoc, null, { maxPoints: 1000 });
+    /* Nejbližší místa */
+    var x = xmlDoc.getElementsByTagName("wpt");
     map.addLayer(gpx);
     gpx.enable();
     gpx.fit();
 }
+
+var latitudeCastle = 0;
+var longitudeCastle = 0;
+
+fetch("../gpx/hrady.json").then(function (make) {
+    return make.json();
+}).then(function (make) {
+    latitudeCastle = make.lat;
+    longitudeCastle = make.lon;
+});
+
+/* vzdálenost uživatele a hradů */
+var dist = 0;
+function distance(latitude, longitude, latitudeCastle, longitudeCastle, unit) {
+    if ((latitude == latitudeCastle) && (longitude == longitudeCastle)) {
+        return 0;
+    }
+    else {
+        var radlat1 = Math.PI * latitude / 180;
+        var radlat2 = Math.PI * latitudeCastle / 180;
+        var theta = longitude - longitudeCastle;
+        var radtheta = Math.PI * theta / 180;
+        var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+        if (dist > 1) {
+            dist = 1;
+        }
+        dist = Math.acos(dist);
+        dist = dist * 180 / Math.PI;
+        dist = dist * 60 * 1.1515;
+        if (unit == "K") { dist = dist * 1.609344 }
+        if (unit == "N") { dist = dist * 0.8684 }
+        return dist;
+    }
+}
+

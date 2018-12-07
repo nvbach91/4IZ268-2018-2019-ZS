@@ -1,5 +1,10 @@
+* {
+    font-family: 'MedievalSharp', 'Arial Narrow', Arial, sans-serif;
+}
+
 body {
-    background-image: url("../img/wall.jpg");
+    /* background-image: url("../img/wall.jpg");*/
+    background-color: grey;
     background-size: cover;
     background-repeat: repeat;
 }
@@ -39,6 +44,11 @@ body {
     border: 1px black solid;
     padding: 20px;
     float: left;
+}
+
+#coors {
+    padding: 10px;
+    border: 1px solid black;
 }
 
 .card {
