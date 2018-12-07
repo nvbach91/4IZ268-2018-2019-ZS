@@ -78,7 +78,7 @@ function countRevealed() {
       count++
     }
   }
-  console.log(count)
+  return count;
 }
 
 var firstCard;
@@ -91,15 +91,16 @@ for (var i = 0; i < words.length; i++) {
   div.addEventListener(
     "click", function () {
       if (this.className == "card") {
-        if (countRevealed()==1
-  this.className = "card revealed"
-} else if (this.className == "card revealed") {
-  console.log("card revealed")
+        if (countRevealed() < 2) {
+          this.className = "card revealed"
+        }
+      } else if (this.className == "card revealed") {
+        console.log("card revealed")
 
-}
+      }
     }
   )
-gameField.appendChild(div);
+  gameField.appendChild(div);
 }
 
 
