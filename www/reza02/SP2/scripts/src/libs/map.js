@@ -12,13 +12,10 @@
         popupTopOffset: -25,
       },
 
-      submitSel: '#submit',
-      errorClass: 'has-error',
       mapSel: '#map',
       mapContainerSel: '#mapContainer',
-      mapCloseSel: '#mapClose',
       mapZoom: 11,
-      mobileMapZoom: 6,
+      mobileMapZoom: 8,
 
     },
     settings: null,
@@ -32,7 +29,13 @@
     infowindows: [],
     infoWindow: null, //custom popup if marker
 
+    // store the start and final destinations
     coords: null,
+    actualCoords: null,
+
+    // services for navigation
+    directionsService: null,
+    directionsDisplay: null,
 
     init: function(options) {
 
@@ -43,6 +46,8 @@
 
       self.mapContainer = $(self.settings.mapContainerSel);
       self.mapClose = $(self.settings.mapCloseSel);
+
+      self.regOnNavigate();
 
       $.getJSON( self.settings.mapStyleJson, function(mapStyles) {
         if ( mapStyles ) {
@@ -65,23 +70,36 @@
 
       var self = map;
 
+      // Direction Services for Navigation
+      self.directionsService = new google.maps.DirectionsService();
+      self.directionsDisplay = new google.maps.DirectionsRenderer({
+        suppressMarkers: true,
+        polylineOptions: {
+          strokeColor: "#6990E8",
+          strokeOpacity: 0.75,
+          strokeWeight: 5,
+        },
+      });
+
       // show marker
-      var dataCoords = JSON.parse($(map.settings.mapSel).attr('data-coords'));
-      map.coords = new google.maps.LatLng(dataCoords.lat, dataCoords.lng);
+      var dataCoords = JSON.parse($(self.settings.mapSel).attr('data-coords'));
+      self.coords = new google.maps.LatLng(dataCoords.lat, dataCoords.lng);
 
       self.map = new google.maps.Map($(self.settings.mapSel)[0], {
-        center: map.coords,
+        center: self.coords,
         zoom: (self.mobileCheck()) ? self.settings.mobileMapZoom : self.settings.mapZoom,
         styles: self.mapStyles,
         // controls
         disableDefaultUI: true,
         zoomControl: true,
       });
+      self.directionsDisplay.setMap(self.map);
 
-      map.createMarker(map.coords);
+      // Create destination marker
+      self.createMarker(self.coords);
 
-      //show my position
-      map.showMyPosition();
+      // show my position
+      self.showMyPosition();
 
     },
 
@@ -112,11 +130,11 @@
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
+          self.actualCoords = new google.maps.LatLng(pos.lat, pos.lng);
 
           infoWindow.setPosition(pos);
           infoWindow.setContent('Tvá pozice');
           infoWindow.open(self.map);
-          self.map.setCenter({lat: pos.lat - 0.15, lng: pos.lng - 0.05});
 
         }, function() {
           self.handleLocationError(true, infoWindow, self.map.getCenter());
@@ -133,9 +151,38 @@
 
       infoWindow.setPosition(pos);
       infoWindow.setContent(browserHasGeolocation ?
-                            'Error: The Geolocation service failed.' :
-                            'Error: Your browser doesn\'t support geolocation.');
+                            'Chyba: Nastala chyba geolokace' :
+                            'Chyba: Váš prohlížeč nepodporuje geolokaci');
       infoWindow.open(self.map);
+    },
+
+    regOnNavigate: function() {
+
+      var self = map;
+
+      $('#navigateBtn').on('click', function(e) {
+        self.calculateAndDisplayRoute(self.directionsService, self.directionsDisplay);
+      });
+    },
+
+    calculateAndDisplayRoute: function(directionsService, directionsDisplay) {
+
+      var self = map;
+
+      directionsService.route({
+        origin: self.actualCoords,
+        destination: self.coords,
+        waypoints: null,
+        optimizeWaypoints: true,
+        travelMode: 'WALKING'
+      },
+      function(response, status) {
+        if (status === 'OK') {
+          directionsDisplay.setDirections(response);
+        } else {
+          window.alert('Navigování selhalo: ' + status);
+        }
+      });
     },
 
   };
