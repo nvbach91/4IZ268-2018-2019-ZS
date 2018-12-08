@@ -2,17 +2,29 @@
     box-sizing: border-box;
 }
 
+.MapPart {
+    display: flex;
+    width: 100%;
+}
+
 .content {
     display: flex;
     flex-wrap: wrap;
-    max-width: 100%;
-    margin: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+.save-content-conteiner {
+    max-width: 25%;
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: 25%;
 }
 
 .markers {
     display: flex; 
     flex-wrap: wrap;
-    max-width: 40%;
+    width: 40%;
 }
 
 .sections {
@@ -30,6 +42,9 @@
 .output {
     display: flex;
     width: 100%;
+    width: 40%;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .data{
@@ -37,11 +52,11 @@
 }
 
 #canvas-draw {
-    margin: 10px;
-    min-width: 40%;
+    padding: 10px;
     height: 300px;
     border: 1px;
     border-style: solid;
+    width: 35%;
 }
 
 .column {
@@ -50,9 +65,9 @@
     color: white;
     text-align: center;
     border-radius: 10px;
-    font-size: 20px;
-    margin-left: 20%;
-    margin-right: 20%;
+    font-size: 18px;
+    margin-left: 15%;
+    margin-right: 15%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -66,10 +81,61 @@ button {
     border-radius: 10px;
 }
 
+button:hover {
+    background-color: blue;
+}
+
+input {
+    width: 50%;
+    text-align: center;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#save-route {
+    width: 50%;
+    margin: 10px;
+}
+
+.save-name {
+    width: 70%;
+    padding-left: 20px;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+li {
+    display: flex;
+    width: 100%;
+    margin: 5px;
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 15px; 
+    background-color: blue;
+    border-radius: 10px;
+}
+
+.save-delete {
+    width: 30%;
+    margin: 0px;
+    text-align: center;
+    height: 40px;
+    margin: 10px;
+}
+
 #map {
     width: 60%;
     height: 500px;
     touch-action: none;
+}
+
+#save{
+    display: flex;
+    width: 100%;
 }
 
 h1 {

@@ -9,10 +9,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
 
-
 <body>
     <h1>Aplikace na hledání turistických tras</h1>
-    <div class="content">
+    <div class="MapPart">
         <div id="map"></div>
         <div class="markers">
             <h2>Výběr bodů pro vyhledávání</h2>
@@ -40,6 +39,12 @@
                 <button id="track-route">Search</button>
             </div>
         </div>
+    </div>
+    <div class="content">
+        <div class="save-content-conteiner">
+            <h2>Uložené položky</h2>
+            <ul id="save-contents"></ul>
+        </div>
         <div class="output">
             <div class="data">
                 <h2>Výsledek vyhledávání</h2>
@@ -55,11 +60,16 @@
                         <div class="column" id="time"></div>
                         <div class="column" id="ascent"></div>
                         <div class="column" id="descent"></div>
+
                     </div>
+                    <form id="save">
+                        <input id="name-input" placeholder="Save name">
+                        <button id="save-route">Save</button>
+                    </form>
                 </div>
             </div>
-            <canvas id="canvas-draw"></canvas>
         </div>
+        <canvas id="canvas-draw"></canvas>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="https://api.mapy.cz/loader.js"></script>

@@ -7,122 +7,115 @@ var length = $('#length');
 var time = $('#time');
 var ascent = $('#ascent');
 var descent = $('#descent');
+var save = $('#save');
+var nameInput = $('#name-input');
+var saveContents = $('#save-contents');
 
 var canvas = document.getElementById('canvas-draw');
-var draw = canvas.getContext('2d')
+var draw = canvas.getContext('2d');
 
-// záznam bodů, je to z důvodu jejich případného přepisu
 var startMarker = '';
 var endMarker = '';
-
-// záznam hledane trasy, je to z důvodu jejich případného přepisu
 var computeRoute = '';
-
-//ciselnik urcujici jakou znacku pridavame, 0 - nic, 1 - start, 2 - end
 var selectOption = 0;
 
-//vytvoření mapy
 var center = SMap.Coords.fromWGS84(14.41, 50.08);
 var map = new SMap(JAK.gel("map"), center, 10);
 map.addDefaultLayer(SMap.DEF_TURIST).enable();
 map.addDefaultControls();
 
-//přidání do mapy vrstvu pro značky
 var markerLayer = new SMap.Layer.Marker();
 map.addLayer(markerLayer);
 markerLayer.enable();
 
-//přidání do mapy vrstvu pro hledani cesty
 var routeLayer = new SMap.Layer.Geometry();
 map.addLayer(routeLayer).enable();
 
-//pridani povoleni pro znacku start
 $('#start-buttom').click(function () {
     selectOption = 1;
 });
 
-//pridani povoleni pro znacku end
 $('#end-buttom').click(function () {
     selectOption = 2;
 });
 
-//Vybrani bodu na mapě a vytvoreni znacky
 function click(e) {
     if (selectOption === 1) {
-        if (startMarker !== '') {
-            markerLayer.removeMarker(startMarker);
-        }
         var coordinates = SMap.Coords.fromEvent(e.data.event, map);
-        startMarker = new SMap.Marker(coordinates, "start");
-        coordinates = coordinates.toWGS84(2);
-        startLongitude.text(coordinates[0]);
-        startLatitude.text(coordinates[1]);
-        startMarker.decorate(SMap.Marker.Feature.Draggable);
-        markerLayer.addMarker(startMarker);
-        selectOption = 0;
-        if (computeRoute !== '') {
-            prepareSearch();
-        }
-    }
+        setMarkerStart(coordinates);
+    };
 
     if (selectOption === 2) {
-        if (endMarker !== '') {
-            markerLayer.removeMarker(endMarker);
-        }
         var coordinates = SMap.Coords.fromEvent(e.data.event, map);
-        endMarker = new SMap.Marker(coordinates, "end");
-        coordinates = coordinates.toWGS84(2);
-        endLongitude.text(coordinates[0]);
-        endLatitude.text(coordinates[1]);
-        endMarker.decorate(SMap.Marker.Feature.Draggable);
-        markerLayer.addMarker(endMarker);
-        selectOption = 0;
-        if (computeRoute !== '') {
-            prepareSearch();
-        }
-    }
+        setMarkerEnd(coordinates);
+    };
+};
+
+var setMarkerStart = function (coordinates) {
+    if (startMarker !== '') {
+        markerLayer.removeMarker(startMarker);
+    };
+    startMarker = new SMap.Marker(coordinates, 'start');
+    coordinates = coordinates.toWGS84(2);
+    startCoordinates(coordinates);
+    startMarker.decorate(SMap.Marker.Feature.Draggable);
+    markerLayer.addMarker(startMarker);
+    selectOption = 0;
 }
 
-/* přesouvání značky */
+var setMarkerEnd = function (coordinates) {
+    if (endMarker !== '') {
+        markerLayer.removeMarker(endMarker);
+    };
+    endMarker = new SMap.Marker(coordinates, 'end');
+    coordinates = coordinates.toWGS84(2);
+    endCoordinates(coordinates);
+    endMarker.decorate(SMap.Marker.Feature.Draggable);
+    markerLayer.addMarker(endMarker);
+    selectOption = 0;
+}
+
+var startCoordinates = function (coordinates) {
+    startLongitude.text(coordinates[0]);
+    startLatitude.text(coordinates[1]);
+    if (computeRoute !== '') {
+        prepareSearch();
+    };
+};
+
+var endCoordinates = function (coordinates) {
+    endLongitude.text(coordinates[0]);
+    endLatitude.text(coordinates[1]);
+    if (computeRoute !== '') {
+        prepareSearch();
+    };
+};
+
 function start(e) {
     var node = e.target.getContainer();
-}
+};
 
-/* přesouvání značky */
 function stop(e) {
     var node = e.target.getContainer();
     var coords = e.target.getCoords();
 
-    /* podminka pro aktualizaci souradnic */
     if (e.target._id === 'start') {
         var coordinates = SMap.Coords.fromEvent(e.data.event, map);
         coordinates = coordinates.toWGS84(2);
-        startLongitude.text(coordinates[0]);
-        startLatitude.text(coordinates[1]);
-        if (computeRoute !== '') {
-            prepareSearch();
-        }
-    }
+        startCoordinates(coordinates);
+    };
 
-    /* podminka pro aktualizaci souradnic */
     if (e.target._id === 'end') {
         var coordinates = SMap.Coords.fromEvent(e.data.event, map);
         coordinates = coordinates.toWGS84(2);
-        endLongitude.text(coordinates[0]);
-        endLatitude.text(coordinates[1]);
-        if (computeRoute !== '') {
-            prepareSearch();
-        }
-    }
-}
+        endCoordinates(coordinates);
+    };
+};
 
-// hledani trasy a vypocty vypsanych hodnot
 var search = function (route) {
-    console.log('a');
     if (computeRoute !== '') {
         routeLayer.removeGeometry(computeRoute);
-    }
-    console.log('a');
+    };
     var coords = route.getResults().geometry;
     length.text((route.getResults().length) / 1000 + ' km');
     var hour = Math.floor(route.getResults().time / 3600);
@@ -137,11 +130,10 @@ var search = function (route) {
     for (var i = 0; i < altitude.length; i++) {
         var localAltitude = (route.getResults().altitude[i]);
         draw.fillRect(22 + i * 2, 150 - (localAltitude / 11), 1, localAltitude / 11);
-    }
+    };
     drawCanvas();
-}
+};
 
-// priprava dat pro trackovani
 var prepareSearch = function () {
     if (startMarker !== '' && endMarker !== '') {
         var markers = [
@@ -150,30 +142,110 @@ var prepareSearch = function () {
         ];
         var parameter = { criterion: 'turist2' };
         var route = new SMap.Route(markers, search, parameter).ROUTE_TURIST_TYPES;
-    }
-}
+    };
+};
 
-// aktivace trackovani
 $('#track-route').click(function () {
     prepareSearch();
 });
 
-// vykreslení výšky
 var drawCanvas = function () {
     for (var i = 1; i < 20; i++) {
         draw.fillRect(0, i * 8.8, canvas.width, 0.3);
         draw.font = "8.8px Arial";
         draw.fillText(1700 - (i * 100), 0, i * 8.8);
+    };
+};
+
+var checkName = function (name) {
+    var nameInApp = $('.save-name');
+    if (name === '') {
+        return true;
+    }
+
+    for (var i = 0; i < nameInApp.length; i++) {
+        if (name.toLowerCase().trim() === nameInApp[i].innerText.toLowerCase().trim()) {
+            return true;
+        }
+    }
+    return false;
+};
+
+save.submit(function (e) {
+    e.preventDefault();
+    if (computeRoute !== '') {
+        if (checkName(nameInput.val()) === true) {
+            alert('Name is already used');
+        } else {
+            saveRoute();
+        };
+    };
+});
+
+var switchContent = function (name) {
+    var saveName = $('<div>').addClass('save-name').text(name).click(function () {
+        var startCoordinate = { x: parseFloat(localStorage.getItem($(this).text() + '.startLon')), y: parseFloat(localStorage.getItem($(this).text() + '.startLat')) };
+        var endCoordinate = { x: parseFloat(localStorage.getItem($(this).text() + '.endLon')), y: parseFloat(localStorage.getItem($(this).text() + '.endLat')) };
+        setMarkerStart(SMap.Coords.fromWGS84(startCoordinate.x, startCoordinate.y));
+        setMarkerEnd(SMap.Coords.fromWGS84(endCoordinate.x, endCoordinate.y));
+    });
+    return saveName;
+}
+
+var deleteComponent = function (saveContent) {
+    var deleteContent = $('<button>').addClass('save-delete').text('Delete').click(function () {
+        localStorage.removeItem($(this).siblings()[0].lastChild.data);
+        localStorage.removeItem($(this).siblings()[0].lastChild.data + '.startLon');
+        localStorage.removeItem($(this).siblings()[0].lastChild.data + '.startLat');
+        localStorage.removeItem($(this).siblings()[0].lastChild.data + '.endLon');
+        localStorage.removeItem($(this).siblings()[0].lastChild.data + '.endLat');
+        saveContent.remove();
+    });
+    return deleteContent;
+}
+
+var loadLocalData = function () {
+    for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        var value = localStorage.getItem(localStorage.key(i));
+        if (key === value) {
+            if (checkName(value) === false) {
+                var saveContent = $('<li>').addClass('save-content');
+                var saveName = switchContent(value);
+                var deleteContent = deleteComponent(saveContent);
+
+                saveContent.append(deleteContent);
+                saveContent.append(saveName);
+                saveContents.append(saveContent);
+            }
+        }
     }
 }
 
-// iniciace pri uvodnim nacteni
+var saveRoute = function () {
+    var saveContent = $('<li>').addClass('save-content');
+    var saveName = switchContent(nameInput.val());
+    var deleteContent = deleteComponent(saveContent);
+
+    saveContent.append(deleteContent);
+    saveContent.append(saveName);
+    saveContents.append(saveContent);
+
+    var storageStartLon = nameInput.val() + '.startLon'
+    var storageStartLat = nameInput.val() + '.startLat'
+    var storageEndLon = nameInput.val() + '.endLon'
+    var storageendLat = nameInput.val() + '.endLat'
+
+    localStorage.setItem(nameInput.val(), nameInput.val());
+    localStorage.setItem(storageStartLon, startMarker._coords.x);
+    localStorage.setItem(storageStartLat, startMarker._coords.y);
+    localStorage.setItem(storageEndLon, endMarker._coords.x);
+    localStorage.setItem(storageendLat, endMarker._coords.y);
+};
+
 drawCanvas();
+loadLocalData();
 
-// vytvoremo observer pro udalosti
-var observer = map.getSignals();
-
-//observer pro udalosti
 var signals = map.getSignals();
 signals.addListener(window, "marker-drag-stop", stop);
 signals.addListener(window, "marker-drag-start", start);
