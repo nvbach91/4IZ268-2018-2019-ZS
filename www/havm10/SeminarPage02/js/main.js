@@ -188,6 +188,7 @@ var switchContent = function (name) {
         var endCoordinate = { x: parseFloat(localStorage.getItem($(this).text() + '.endLon')), y: parseFloat(localStorage.getItem($(this).text() + '.endLat')) };
         setMarkerStart(SMap.Coords.fromWGS84(startCoordinate.x, startCoordinate.y));
         setMarkerEnd(SMap.Coords.fromWGS84(endCoordinate.x, endCoordinate.y));
+        prepareSearch();
     });
     return saveName;
 }
