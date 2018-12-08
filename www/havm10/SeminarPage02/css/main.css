@@ -82,7 +82,7 @@ button {
 }
 
 button:hover {
-    background-color: blue;
+    background-color: green;
 }
 
 input {
@@ -100,6 +100,7 @@ input {
 .save-name {
     width: 70%;
     padding-left: 20px;
+    color: white;
 }
 
 ul {
