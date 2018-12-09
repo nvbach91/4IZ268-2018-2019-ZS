@@ -155,19 +155,15 @@ button:hover {
 
 .headline {
     font-size: 30px;
-}
 
-/**/
-#search-form {
-    display: flex;
-    margin-top: 10px;
-    justify-content: center;
 }
 
 .weather {
     position: fixed;
     text-align: left;
     z-index: 1;
+    margin-top: 20px;
+    margin-bottom: 200px;
 }
   
 #search-box {
