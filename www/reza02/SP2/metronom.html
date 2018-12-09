@@ -111,6 +111,25 @@
                         </tbody>
                     </table>
 
+                    <!-- Mapa -->
+                    <div id="mapContainer" class="map-container space-m-b-20">
+                        <div id="map" class="map" data-title="Pražský metronom" data-coords='{"lat": 50.0947300, "lng": 14.4158800}'></div>
+                    </div>
+
+                    <div class="text-center space-m-b-100">
+                        <ul class="list list--no-style list--flex-inline">
+                        <li class="list__item space-m-right-15">
+                            <button class="btn btn--navigate" data-mode="DRIVING">Naviguj z aktuální pozice autem</button>
+                        </li>
+                        <li class="list__item space-m-right-15">
+                            <button class="btn btn--navigate" data-mode="WALKING">Naviguj z aktuální pozice pěšky</button>
+                        </li>
+                        <li class="list__item">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=50.0947300,14.4158800" class="link" target="_blank" title="Naviguj v Google Mapách">Google Maps</a>
+                        </li>
+                        </ul>
+                    </div>
+
                     <h3 class="h3">Historie</h3>
                     <p>Autorem je&nbsp;sochař a&nbsp;profesor Vysoké školy uměleckoprůmyslové Vratislav Karel Novák (1942–2014), který&nbsp;se&nbsp;kinetickým uměním zabýval od&nbsp;roku 1968. Během pobytu na&nbsp;Miami University v&nbsp;Ohio v&nbsp;letech 2001 až 2002 vytvořil spolu s&nbsp;americkou umělkyní Suzan Rae Ewingovou 27&nbsp;m vysoký kinetický objekt Krystalová věž, představující symbol svobody, který&nbsp;zvítězil v&nbsp;mezinárodní soutěži v&nbsp;Cincinnati.</p>
 
@@ -166,8 +185,17 @@
             </div>
         </footer>
 
+        <!-- Google Map Api -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_gAYwfbRhBmg4XRSVPCNvl-s8vJa4JBI&language=cs"></script>
+
+        <!-- JQuery -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Main -->
         <script src="./scripts/main.js?timestamp=1541246911185"></script>
+
+        <!-- Mapa -->
+        <script src="./scripts/src/libs/map.js?timestamp=1541246911185"></script>
 
     </body>
 

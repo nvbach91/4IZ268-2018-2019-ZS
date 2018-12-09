@@ -115,6 +115,25 @@
                         </tbody>
                     </table>
 
+                    <!-- Mapa -->
+                    <div id="mapContainer" class="map-container space-m-b-20">
+                        <div id="map" class="map" data-title="Rašínovo nábřeží" data-coords='{"lat": 50.0703142, "lng": 14.4144761}'></div>
+                    </div>
+
+                    <div class="text-center space-m-b-100">
+                        <ul class="list list--no-style list--flex-inline">
+                        <li class="list__item space-m-right-15">
+                            <button class="btn btn--navigate" data-mode="DRIVING">Naviguj z aktuální pozice autem</button>
+                        </li>
+                        <li class="list__item space-m-right-15">
+                            <button class="btn btn--navigate" data-mode="WALKING">Naviguj z aktuální pozice pěšky</button>
+                        </li>
+                        <li class="list__item">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=50.0703142,14.4144761" class="link" target="_blank" title="Naviguj v Google Mapách">Google Maps</a>
+                        </li>
+                        </ul>
+                    </div>
+
                     <h3 class="h3">Historie</h3>
                     <p>Dnešní Rašínovo nábřeží s&nbsp;náplavkou vzniklo ve&nbsp;dvou etapách. První část od&nbsp;Palackého náměstí k&nbsp;Jiráskovu náměstí byla postavena v&nbsp;letech 1870-1878 souběžně s&nbsp;mostem Palackého. Druhá část od&nbsp;Palackého náměstí k&nbsp;vyšehradské skále byla dokončena v&nbsp;roce 1905 spolu s&nbsp;vyšehradským tunelem. Výstavbě nábřeží padlo za&nbsp;oběť starobylé Podskalí, svérázná osada pražských plavců a&nbsp;vorařů. Jejich každodenní život, svázaný s&nbsp;řekou Vltavou, připomíná jediná dochovaná stavba, bývalá podskalská celnice na&nbsp;Výtoni. Široká náplavka Rašínova nábřeží sloužila v&nbsp;úseku mezi Palackého a&nbsp;Jiráskovým mostem jako hlavní přístaviště Pražské paroplavební společnosti a&nbsp;výchozí bod populárních výletů do&nbsp;Štěchovic. Část náplavky mezi Palackého a&nbsp;železničním mostem původně sloužila ke&nbsp;kotvení a&nbsp;rozebírání vorů, plavených po&nbsp;řece do&nbsp;Prahy ze&nbsp;šumavských lesů. Poslední vory připluly do&nbsp;Prahy v&nbsp;roce 1947.</p>
 
@@ -162,8 +181,17 @@
             </div>
         </footer>
 
+        <!-- Google Map Api -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_gAYwfbRhBmg4XRSVPCNvl-s8vJa4JBI&language=cs"></script>
+
+        <!-- JQuery -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Main -->
         <script src="./scripts/main.js?timestamp=1541246911185"></script>
+
+        <!-- Mapa -->
+        <script src="./scripts/src/libs/map.js?timestamp=1541246911185"></script>
 
     </body>
 

@@ -15,7 +15,7 @@
       mapSel: '#map',
       mapContainerSel: '#mapContainer',
       mapZoom: 11,
-      mobileMapZoom: 8,
+      mobileMapZoom: 7,
 
     },
     settings: null,
@@ -32,6 +32,11 @@
     // store the start and final destinations
     coords: null,
     actualCoords: null,
+    // geolocation
+    geolocationAllowed: false,
+    distance: null,
+    duration: null,
+    routeCalculated: false,
 
     // services for navigation
     directionsService: null,
@@ -86,7 +91,7 @@
       self.coords = new google.maps.LatLng(dataCoords.lat, dataCoords.lng);
 
       self.map = new google.maps.Map($(self.settings.mapSel)[0], {
-        center: self.coords,
+        center: {lat: 50.0835494 -0.1, lng: 14.4341414 + 0.03},
         zoom: (self.mobileCheck()) ? self.settings.mobileMapZoom : self.settings.mapZoom,
         styles: self.mapStyles,
         // controls
@@ -114,7 +119,52 @@
         icon: self.settings.markerOptions.url,
       });
 
+      // marker on click show popup
+      google.maps.event.addListener(marker, 'click', function(event) {
+
+        if (self.geolocationAllowed) {
+
+          // close all popups
+          if (self.infoWindow ) {
+            self.infoWindow.close();
+          }
+
+          // init popup with offset
+          self.infoWindow = new google.maps.InfoWindow({
+            pixelOffset: new google.maps.Size(0, self.settings.markerOptions.popupTopOffset)
+          });
+
+          // create popup html
+          var content = self.setContent();
+
+          self.infoWindow.setPosition(coordinates);
+          self.infoWindow.setContent(content);
+          self.infoWindow.setZIndex(100);
+          self.infoWindow.open(self.map);
+        }
+
+      });
+
       return marker;
+    },
+
+    // popup html
+    setContent: function(index) {
+
+      var self = map;
+
+      var html = '';
+      html +=  '<div class="popup">';
+        html += '<h3 class="popup__title">' + $(self.settings.mapSel).attr('data-title') + '</h3>';
+        if (self.routeCalculated) {
+          html += '<ul class="popup__list list list--no-style space-m-t-10">';
+            html += '<li class="list__item"><span class="text--medium">Vzdálenost:</span> ' + self.distance + '</li>';
+            html += '<li class="list__item"><span class="text--medium">Doba trvání:</span> ' + self.duration + '</li>';
+          html += '</ul>';
+        }
+      html += '</div>';
+
+      return html;
     },
 
     showMyPosition: function() {
@@ -122,7 +172,10 @@
 
       // Try HTML5 geolocation.
       if (navigator.geolocation) {
+
         navigator.geolocation.getCurrentPosition(function(position) {
+
+          self.geolocationAllowed = true;
 
           var infoWindow = new google.maps.InfoWindow;
 
@@ -137,35 +190,37 @@
           infoWindow.open(self.map);
 
         }, function() {
-          self.handleLocationError(true, infoWindow, self.map.getCenter());
+          self.handleLocationError(true);
         });
       }
       else {
         // Browser doesn't support Geolocation
-        self.handleLocationError(false, infoWindow, self.map.getCenter());
+        self.handleLocationError(false);
       }
     },
 
-    handleLocationError: function(browserHasGeolocation, infoWindow, pos) {
+    handleLocationError: function(browserHasGeolocation) {
       var self = map;
 
-      infoWindow.setPosition(pos);
-      infoWindow.setContent(browserHasGeolocation ?
-                            'Chyba: Nastala chyba geolokace' :
-                            'Chyba: Váš prohlížeč nepodporuje geolokaci');
-      infoWindow.open(self.map);
+      // hide button for navigation
+      $('.btn--navigate').addClass('disable');
+
+      self.geolocationAllowed = false;
+      console.log('Geolocation is not Allowed')
     },
 
     regOnNavigate: function() {
 
       var self = map;
 
-      $('#navigateBtn').on('click', function(e) {
-        self.calculateAndDisplayRoute(self.directionsService, self.directionsDisplay);
+      $('.btn--navigate').on('click', function(e) {
+        if (self.geolocationAllowed) {
+          self.calculateAndDisplayRoute(self.directionsService, self.directionsDisplay, $(this).attr('data-mode'));
+        }
       });
     },
 
-    calculateAndDisplayRoute: function(directionsService, directionsDisplay) {
+    calculateAndDisplayRoute: function(directionsService, directionsDisplay, mode) {
 
       var self = map;
 
@@ -174,11 +229,20 @@
         destination: self.coords,
         waypoints: null,
         optimizeWaypoints: true,
-        travelMode: 'WALKING'
+        travelMode: mode,
       },
       function(response, status) {
         if (status === 'OK') {
           directionsDisplay.setDirections(response);
+          // console.log(response);
+
+          self.distance = response.routes[0].legs[0].distance.text;
+          self.duration = response.routes[0].legs[0].duration.text
+
+          // console.log(self.distance);
+          // console.log(self.duration);
+
+          self.routeCalculated = true;
         } else {
           window.alert('Navigování selhalo: ' + status);
         }

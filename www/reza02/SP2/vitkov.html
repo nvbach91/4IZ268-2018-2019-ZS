@@ -121,11 +121,21 @@
 
                   <!-- Mapa -->
                   <div id="mapContainer" class="map-container space-m-b-20">
-                    <div id="map" class="map" data-coords='{"lat": 50.0884408, "lng": 14.4496864}'></div>
+                    <div id="map" class="map" data-title="Vítkov" data-coords='{"lat": 50.0884408, "lng": 14.4496864}'></div>
                   </div>
 
                   <div class="text-center space-m-b-100">
-                    <button id="navigateBtn" class="btn">Naviguj z aktuální pozice</button>
+                    <ul class="list list--no-style list--flex-inline">
+                    <li class="list__item space-m-right-15">
+                        <button class="btn btn--navigate" data-mode="DRIVING">Naviguj z aktuální pozice autem</button>
+                    </li>
+                    <li class="list__item space-m-right-15">
+                        <button class="btn btn--navigate" data-mode="WALKING">Naviguj z aktuální pozice pěšky</button>
+                    </li>
+                    <li class="list__item">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=50.0884408,14.4496864" class="link" target="_blank" title="Naviguj v Google Mapách">Google Maps</a>
+                    </li>
+                    </ul>
                   </div>
 
                   <h3 class="h3">Stavba památníku</h3>
@@ -183,7 +193,7 @@
       </footer>
 
       <!-- Google Map Api -->
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_gAYwfbRhBmg4XRSVPCNvl-s8vJa4JBI"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_gAYwfbRhBmg4XRSVPCNvl-s8vJa4JBI&language=cs"></script>
 
       <!-- JQuery -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
