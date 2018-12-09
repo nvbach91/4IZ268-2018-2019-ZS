@@ -149,3 +149,42 @@ button:hover {
     /*padding-right: 0px;*/
     text-align: center;
 }
+
+.headline {
+    font-size: 25px;
+}
+
+/**/
+.search-form {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.wiki {
+    position: fixed;
+}
+  
+#search-box {
+    border: none;
+    border-radius: 3px;;
+    height: 44px;
+    width: 400px;
+    margin-right: 5px;
+    padding: 5px 10px;
+    color:black;
+}
+  
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+}
+  
+.icon img {
+    width: 22px;
+    height: 22px;
+}
