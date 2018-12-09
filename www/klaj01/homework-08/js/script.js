@@ -44,8 +44,9 @@ App.renderUser = function (user) {
 }
 App.fetchRepositories = function (username) {
   var url = App.baseApiUrl + '/users/' + username + '/repos'
-  $('#repos').empty()
-  $('#repos').append($('<div class="loader"></div>'))
+  var repos = $('#repos')
+  repos.empty()
+  repos.append($('<div class="loader"></div>'))
   $.ajax({
     url: url,
     data: {
@@ -86,7 +87,7 @@ App.init = function () {
     })
       .done(function (user) {
         App.renderUser(user)
-        App.fetchRepositories(user.username)
+        App.fetchRepositories(user.login)
       })
       .fail(function () {
         $('#profile').html('<p>User not found</p>')
