@@ -88,6 +88,9 @@ $(document).ready(function () {
 });
 
 refreshButton.addEventListener('click', function () {
+    $("#summary").text("Povol přístup k poloze!");
+    $("#temp").text("");
+    $("#wind").text("");
     getPosition().then(position => {
         getWeather(position);
     });
