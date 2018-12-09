@@ -167,6 +167,7 @@ button:hover {
 .weather {
     position: fixed;
     text-align: left;
+    z-index: 1;
 }
   
 #search-box {
@@ -193,4 +194,71 @@ button:hover {
 .weather p {
     margin: 0;
     font-size: 25px;
+}
+
+@media screen and (max-width: 1214px) {
+    .headline {
+        font-size: 20px;
+    }
+
+    #weather-icon {
+        width: 128px;
+        padding-top: 20px;
+    }
+
+    .weather p {
+        margin: 0;
+        font-size: 15px;
+    }
+
+    button {
+        font-size: 15px;
+        background-color: #1367b6;
+        color: white;
+        border: 0px;
+        border-radius: 3px;
+        padding: 20px;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    #refresh {
+        width: 100px;
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 858px) {
+    .weather-info {
+        float: none;
+        padding-top: 0px;
+        padding-left: 20px;
+    }
+
+    #weather-icon {
+        width: 128px;
+        padding-top: 0px;
+    }
+
+    .alert-window-content {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .column {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .weather {
+        position: static;
+        text-align: center;
+    }
+
+    .alert-window-content {
+        width: 75%;
+    }
+        padding: 40px;
 }

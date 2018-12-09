@@ -1,8 +1,8 @@
 const refreshButton = document.querySelector('#refresh');
+$("#summary").text("Povol přístup k poloze!");
 
 var getPosition = function () {
     var positions = {}
-    $("#summary").text("Povol přístup k poloze!");
     $("#weather-icon").attr("src", "img/loader.svg");
     return new Promise((resolve) => {
         if (navigator.geolocation) {
