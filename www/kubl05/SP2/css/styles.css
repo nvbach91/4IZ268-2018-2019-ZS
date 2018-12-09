@@ -155,7 +155,6 @@ button:hover {
 
 .headline {
     font-size: 30px;
-
 }
 
 .weather {
@@ -256,5 +255,4 @@ button:hover {
     .alert-window-content {
         width: 75%;
     }
-        padding: 40px;
 }

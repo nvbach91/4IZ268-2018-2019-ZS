@@ -3,7 +3,7 @@ $("#summary").text("Povol přístup k poloze!");
 
 var getPosition = function () {
     var positions = {}
-    $("#weather-icon").attr("src", "img/loader.svg");
+    $("#weather-icon").attr("src", "../img/loader.svg");
     return new Promise((resolve) => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -24,37 +24,37 @@ function tempConvert(temp) {
 function setIcon(icon) {
     switch (icon) {
         case 'clear-day':
-            $("#weather-icon").attr("src", "img/weather/clear-day.png");
+            $("#weather-icon").attr("src", "../img/weather/clear-day.png");
             break;
         case 'clear-night':
-            $("#weather-icon").attr("src", "img/weather/clear-night.png");
+            $("#weather-icon").attr("src", "../img/weather/clear-night.png");
             break;
         case 'rain':
-            $("#weather-icon").attr("src", "img/weather/rain.png");
+            $("#weather-icon").attr("src", "../img/weather/rain.png");
             break;
         case 'snow':
-            $("#weather-icon").attr("src", "img/weather/snow.png");
+            $("#weather-icon").attr("src", "../img/weather/snow.png");
             break;
         case 'cloudy':
-            $("#weather-icon").attr("src", "img/weather/cloudy.png");
+            $("#weather-icon").attr("src", "../img/weather/cloudy.png");
             break;
         case 'thunderstorm':
-            $("#weather-icon").attr("src", "img/weather/cloudy.png");
+            $("#weather-icon").attr("src", "../img/weather/cloudy.png");
             break;
         case 'sleed':
-            $("#weather-icon").attr("src", "img/weather/cloudy.png");
+            $("#weather-icon").attr("src", "../img/weather/cloudy.png");
             break;
         case 'wind':
-            $("#weather-icon").attr("src", "img/weather/wind.png");
+            $("#weather-icon").attr("src", "../img/weather/wind.png");
             break;
         case 'fog':
-            $("#weather-icon").attr("src", "img/weather/fog.png");
+            $("#weather-icon").attr("src", "../img/weather/fog.png");
             break;
         case 'partly-cloudy-day':
-            $("#weather-icon").attr("src", "img/weather/partly-cloudy-day.png");
+            $("#weather-icon").attr("src", "../img/weather/partly-cloudy-day.png");
             break;
         case 'partly-cloudy-night':
-            $("#weather-icon").attr("src", "img/weather/partly-cloudy-night.png");
+            $("#weather-icon").attr("src", "../img/weather/partly-cloudy-night.png");
             break;
     }
 }
