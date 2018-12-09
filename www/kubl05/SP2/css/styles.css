@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -88,8 +87,13 @@ button {
     margin-bottom: 10px;
 }
 
+#refresh {
+    width: 150px;
+    padding: 10px;
+}
+
 button:hover {
-    background-color: #074a88;
+    background-color: rgb(7, 74, 136);
 }
 
 .question {
@@ -128,7 +132,6 @@ button:hover {
 }
 
 .close {
-
     color: #aaa;
     float: right;
     font-size: 30px;
@@ -151,18 +154,19 @@ button:hover {
 }
 
 .headline {
-    font-size: 25px;
+    font-size: 30px;
 }
 
 /**/
-.search-form {
+#search-form {
     display: flex;
     margin-top: 10px;
     justify-content: center;
 }
 
-.wiki {
+.weather {
     position: fixed;
+    text-align: left;
 }
   
 #search-box {
@@ -174,17 +178,19 @@ button:hover {
     padding: 5px 10px;
     color:black;
 }
-  
-.icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 44px;
-    height: 44px;
-    margin: 0;
+
+#weather-icon {
+    width: 166px;
+    padding-top: 20px;
 }
-  
-.icon img {
-    width: 22px;
-    height: 22px;
+
+.weather-info {
+    float: right;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.weather p {
+    margin: 0;
+    font-size: 25px;
 }
