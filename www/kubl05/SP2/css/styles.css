@@ -129,6 +129,7 @@ button:hover {
     padding: 20px;
     border: 1px solid #888;
     width: 40%;
+    text-align: center;
 }
 
 .close {
@@ -161,7 +162,7 @@ button:hover {
     position: fixed;
     text-align: left;
     z-index: 1;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 200px;
 }
   
