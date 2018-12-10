@@ -4,41 +4,39 @@ App.client_secret = '978698cd1686d48068f705e012d97bcc848774fc'
 App.baseApiUrl = 'https://api.github.com'
 App.renderUser = function (user) {
   var html = `
-  <div class="main">
     <div class="name">${user.name || ''}</div>
     <div class="avatar" style="background-image: url(${user.avatar_url})"></div>
-  </div>
-    <div class="info">
-    <div class="login">
-      <div id="title">Login</div>
-      <div>${user.login}</div>
+  <div class="info">
+    <div class="info_login">
+      <div id="title">Login:</div>
+      <div class="subtitle" >${user.login}</div>
     </div>
-    <div class="email">
-      <div id="title">Email</div>
-      <div>${user.email || ''}</div>
+    <div class="info_email">
+      <div id="title">Email:</div>
+      <div class="subtitle" >${user.email || ''}</div>
     </div>
-    <div class="company">
-      <div id="title">Company</div>
-      <div>${user.company || ''}</div>
+    <div class="info_company">
+      <div id="title">Company:</div>
+      <div class="subtitle">${user.company || ''}</div>
     </div>
-    <div class="location">
-      <div id="title">Location</div>
-      <div>${user.location || ''}</div>
+    <div class="info_location">
+      <div id="title">Location:</div>
+      <div class="subtitle">${user.location || ''}</div>
     </div>
-    <div class="description">
-      <div id="title">Description</div>
-      <div>${user.bio || ''}</div>
+    <div class="info_description">
+      <div id="title">Description:</div>
+      <div class="subtitle">${user.bio || ''}</div>
     </div>
-    <div class="followers">
-      <div id="title">Followers</div>
-      <div>${user.followers || ''}</div>
+    <div class="info_followers">
+      <div id="title">Followers:</div>
+      <div class="subtitle">${user.followers || ''}</div>
     </div>
-    <div class="regday">
-      <div id="title">Registered</div>
-      <div>${new Date(user.created_at).toLocaleDateString('cs-CZ')}</div>
+    <div class="info_regday">
+      <div id="title">Registered:</div>
+      <div class="subtitle">${new Date(user.created_at).toLocaleDateString('cs-CZ')}</div>
     </div>
     <a class="viewprofile" href="${user.html_url || ''}">View profile</a>  
-    </div>
+  </div>
 `;
   $('#profile').html(html);
 }
