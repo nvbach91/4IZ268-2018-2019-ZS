@@ -7,7 +7,7 @@ var alertWindow = document.querySelector('.alert-window');
 var closeWindow = document.querySelectorAll('.close')[0];
 var message = document.querySelector('.alert-window-text');
 
-const listOfQuestions = [
+var listOfQuestions = [
     {
         question: "Ahoj, vítej v mém kvízu, nebudeme otálet a jdeme rovnou na věc!",
         answers: {
