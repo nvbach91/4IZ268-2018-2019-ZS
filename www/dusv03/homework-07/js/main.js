@@ -3,7 +3,7 @@ var pointsCounter = document.querySelector('#points');
 
 var points = 0;
 var turnedCards = 0;
-var turnedCardsCount = 0;
+var revealedCards = 0;
 var firstCard = null;
 var secondCard = null;
 
@@ -21,23 +21,22 @@ var newgame = function () {
 };
 
 var addcard = function (city) {
-    var newCard = document.createElement('div');
+    var newCard = document.createElement('button');
     newCard.classList.add('card');
     newCard.innerHTML = city;
-    cardFunction(newCard);
+    bindCard(newCard);
     gameField.appendChild(newCard);
-}
+};
 
-var nullfunc = function () {
-    pointsCounter.innerHTML = points;
+var resetFlippedCards = function () {
     firstCard.classList.remove('revealed');
     secondCard.classList.remove('revealed');
     firstCard = null;
     secondCard = null;
     turnedCards = 0;
-}
+};
 
-var cardFunction = function (card) {
+var bindCard = function (card) {
     card.addEventListener('click', function () {
         //console.log(card.innerHTML);
         if (turnedCards === 0) {
@@ -60,7 +59,8 @@ var cardFunction = function (card) {
                 if (points > 0) {
                     points -= 1;
                 }
-                setTimeout(nullfunc, 3000);
+                setTimeout(resetFlippedCards, 3000);
+                pointsCounter.innerHTML = points;
                 return false;
             }
 
@@ -71,7 +71,7 @@ var cardFunction = function (card) {
         }
 
         if (turnedCardsCount === cities.length) {
-            alert('Gratulujeme, vyhrál jste hru s' + points + '-ti body!!! :)');
+            alert('Gratulujeme, vyhrál jste hru s ' + points + '-ti body!!! :)');
         }
     });
 };
