@@ -121,7 +121,6 @@ var buildQuiz = function () {
             answers.push(
                 `<label>
               <input type="radio" id="question${questionNumber}" name="question${questionNumber}" class="disableMe" value="${letter}">
-              ${letter} :
               ${currentQuestion.answers[letter]}
             </label>`
             );
