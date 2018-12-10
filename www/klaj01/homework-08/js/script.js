@@ -39,8 +39,8 @@ App.renderUser = function (user) {
     </div>
     <a class="viewprofile" href="${user.html_url || ''}">View profile</a>  
     </div>
-`
-  $('#profile').html(html)
+`;
+  $('#profile').html(html);
 }
 App.fetchRepositories = function (username) {
   var url = App.baseApiUrl + '/users/' + username + '/repos'
@@ -56,18 +56,18 @@ App.fetchRepositories = function (username) {
   }).done(function (repositories) {
     $('<div class="loader"></div>').remove()
     repositories.forEach(function (repository) {
-      html = /* html */ `
+      html += `
             <li class="repository">
               <div class="repo-url"><a href="${repository.html_url}">${
-  repository.html_url
-}</a></div>
+        repository.html_url
+        }</a></div>
             </li>
           `
     })
     $('#repos')
       .empty()
       .append(html)
-  })
+  });
 }
 App.init = function () {
   $('#search-form').submit(function (e) {
@@ -93,7 +93,7 @@ App.init = function () {
         $('#profile').html('<p>User not found</p>')
       })
   })
-}
+};
 $(document).ready(function () {
   App.init()
-})
+});
