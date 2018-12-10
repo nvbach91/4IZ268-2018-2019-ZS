@@ -13,13 +13,20 @@ header > .nadpis {
     color: white;
     min-height: 600px;
     width:100%;
-    padding-top: 60px;
     background-image: url('../img/pozadi.png');
     background-size: cover;
     background-position: center;
     margin-bottom: 20px;
 }
-
+.option{
+    height:60px;
+    width:100%;
+    display:flex;
+    justify-content: flex-end;
+}
+#btn{
+    
+}
 .logo {
     background-image: url('../img/czech_team.png');
     margin-left:190px;
@@ -922,4 +929,8 @@ footer {
     .o_nas .ukazka:nth-child(2) {
         display:none;
     }
+}
+#btn{
+    width:100px;
+    height:50px;
 }
