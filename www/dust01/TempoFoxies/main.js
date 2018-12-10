@@ -17,16 +17,28 @@ function registrationScript(value) {
 
     var db = firebase.database().ref("users");
     $("#registr").submit(function (config) {
-        $(this), alert('Registrace proběhla úspěšně');
+        $(this);
         var c = $("#fname").val(),
             d = $("#lname").val(),
             e = $("#bdate").val(),
             f = $("#tel").val(),
             g = $("#email").val(),
             z = { fname: c, lname: d, bdate: e, tel: f, email: g };
+            if(c =="" || d==""||e==""||f==""||g==""){
+                alert("Nevyplněny údaje, prosím vyplňte všechny informace")
+                return false;
+            }else{
         return db.push(z).then(function (config) {
+            alert("Registrace proběhla úspěšně")
             $(".sucess").css("display", "block"),
                 $(".sucess-none").css("display", "none")
+                c = $("#fname").val("")
+                d = $("#lname").val(""),
+                e = $("#bdate").val(""),
+                f = $("#tel").val(""),
+                g = $("#email").val(""),
+                z = { fname: c, lname: d, bdate: e, tel: f, email: g };
+
         }), !1
-    })
+    }})
 }
