@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+#user-profile {
+    width: 65%;
+    margin: 10px auto;
+}
+
+.main {
+    height: auto;
+    width: 80%;
+}
+
+.info {
+    width: 120px;
+    text-align: left;
+}
+
+#title {
+    font-weight: bold;
+}
+
+.name {
+    padding: 0 10px;
+    align-items: center;
+    background-color: rgb(116, 65, 117);
+    color: white;
+    text-align: center;
+}
+.avatar {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 300px;
+    float: right;
+}
+a {
+
+    text-decoration: none;
+}
+
+hr {
+    border-style: solid;
+    border-color: #eee;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.loader {
+    border: 5px solid cadetblue;
+    border-top: 5px solid #ccc;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+footer {
+    background-color: cadetblue;
+    padding: 20px 0;
+}
+.repository {
+    display: flex;
+    padding: 5px 10px;
+}
+#repositories {
+    list-style: none;
+    max-width: 65%;
+    margin: 2px;
+}
