@@ -1,1 +1,78 @@
-<svg width="200px"  height="200px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-rolling" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;"><circle cx="50" cy="50" fill="none" ng-attr-stroke="{{config.color}}" ng-attr-stroke-width="{{config.width}}" ng-attr-r="{{config.radius}}" ng-attr-stroke-dasharray="{{config.dasharray}}" stroke="#074a88" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="150px"
+   height="150px"
+   viewBox="0 0 100 100"
+   preserveAspectRatio="xMidYMid"
+   class="lds-rolling"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="loader.svg"
+   style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="745"
+     id="namedview6"
+     showgrid="true"
+     showguides="false"
+     inkscape:zoom="1.5733333"
+     inkscape:cx="-22.538133"
+     inkscape:cy="58.499977"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <circle
+     cx="50"
+     cy="50"
+     ng-attr-stroke="{{config.color}}"
+     ng-attr-stroke-width="{{config.width}}"
+     ng-attr-r="{{config.radius}}"
+     ng-attr-stroke-dasharray="{{config.dasharray}}"
+     r="35"
+     id="circle2"
+     stroke-dasharray="164.93361431346415 56.97787143782138"
+     stroke-width="8"
+     stroke="#1367b6"
+     fill="none">
+    <animateTransform
+       attributeName="transform"
+       type="rotate"
+       calcMode="linear"
+       values="0 50 50;360 50 50"
+       keyTimes="0;1"
+       dur="1.5s"
+       begin="0s"
+       repeatCount="indefinite" />
+  </circle>
+</svg>

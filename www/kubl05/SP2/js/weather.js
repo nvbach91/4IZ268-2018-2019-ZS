@@ -1,16 +1,15 @@
 const refreshButton = document.querySelector('#refresh');
-$("#summary").text("Povol přístup k poloze!");
 
 var getPosition = function () {
     var positions = {}
-    $("#weather-icon").attr("src", "img/loader.svg");
+    $('#weather-icon').attr("src", "img/loader.svg");
     return new Promise((resolve) => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
                 positions.lat = position.coords.latitude;
                 positions.lon = position.coords.longitude;
                 resolve(positions);
-                console.log(positions);
+                //console.log(positions);
             });
         }
     });
@@ -82,6 +81,7 @@ function getWeather(position) {
 }
 
 $(document).ready(function () {
+    $('#summary').text("Povol přístup k poloze!");
     getPosition().then(position => {
         getWeather(position);
     });
