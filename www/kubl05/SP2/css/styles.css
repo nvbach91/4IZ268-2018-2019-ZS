@@ -139,6 +139,11 @@ button:hover {
     font-weight: bold;
 }
 
+.headline-left {
+    width: 100%;
+    text-align: left;
+}
+
 .close:hover, .close:focus {
     color: black;
     text-decoration: none;

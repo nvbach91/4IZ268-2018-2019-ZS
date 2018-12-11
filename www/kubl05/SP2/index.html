@@ -24,7 +24,9 @@
 
         <main>
             <div class="column">
-                <span class="headline">Pár otázek pro odvážné:</span>
+                <div class="headline-left">
+                    <span class="headline">Pár otázek pro odvážné:</span>
+                </div>
                 <div id="quiz"></div>
                 <div id="results"></div>
                 <button id="submit">Vyhodnotit</button>
@@ -40,13 +42,13 @@
             <div class="column">
                 <div class="weather">
                     <span class="headline">Jak je venku, zatímco hádáš?</span>
-                    <br><img id="weather-icon">
-                    <span class="weather-info">
+                    <br><img id="weather-icon" src="#" alt="ikona počasí">
+                    <div class="weather-info">
                         <p id="summary"></p>
                         <p id="temp"></p>
                         <p id="wind"></p>
                         <button id="refresh">Aktualizovat</button>
-                    </span>
+                    </div>
                 </div>
             </div>
         </main>
@@ -61,8 +63,8 @@
     </div>
 
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="js/quiz.js"></script>
-    <script type="text/javascript" src="js/weather.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/weather.js"></script>
 
 </body>
 
