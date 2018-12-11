@@ -3,18 +3,18 @@ var latitude = 0;
 var longitude = 0;
 var city = "";
 
-/* Získání délky, šířky a města */
+/* Získání délky, šířky a města uživatele */
 fetch("http://ip-api.com/json/?fields=lat,lon,city").then(function (take) {
     return take.json();
 }).then(function (take) {
     latitude = take.lat;
     longitude = take.lon;
     city = take.city;
-    console.log(latitude);
 });
 
+/* NAstavení mapy */
 var center = SMap.Coords.fromWGS84(latitude, longitude);
-var map = new SMap(JAK.gel("map"), center, 10);
+var map = new SMap(JAK.gel("map"), center, 0, { minZoom: 0, maxZoom: 100 });
 var cz = map.computeCenterZoom(center);
 
 /* Vaše pozice dle IP adresy */
@@ -42,6 +42,9 @@ map.addDefaultLayer(SMap.DEF_TURIST).enable();
 var mouse = new SMap.Control.Mouse(SMap.MOUSE_PAN | SMap.MOUSE_WHEEL | SMap.MOUSE_ZOOM);
 map.addControl(mouse);
 
+/* Ovládací prvky */
+map.addDefaultControls();
+
 /* Získání XML do mapy */
 var xhr = new JAK.Request(JAK.Request.XML);
 xhr.setCallback(window, "response");
@@ -50,7 +53,7 @@ xhr.send("gpx/hrady.gpx");
 /* přidání vrstvy pro zobrazení bodů na mapě*/
 var response = function (xmlDoc) {
     var gpx = new SMap.Layer.GPX(xmlDoc, null, { maxPoints: 1000 });
-    /* Nejbližší místa */
+
     var x = xmlDoc.getElementsByTagName("wpt");
     map.addLayer(gpx);
     gpx.enable();
@@ -59,15 +62,28 @@ var response = function (xmlDoc) {
 
 var latitudeCastle = 0;
 var longitudeCastle = 0;
+var nameCastle = "";
 
-fetch("../gpx/hrady.json").then(function (make) {
-    return make.json();
-}).then(function (make) {
-    latitudeCastle = make.lat;
-    longitudeCastle = make.lon;
+
+$.getJSON("../gpx/hrady.json", function (json) {
+    var array = [];
+    for (var key in json) {
+        if (json.hasOwnProperty(key)) {
+            var item = json[key];
+            array.push({
+                latitudeCastle: item.lat,
+                longitudeCastle: item.lon,
+                nameCastle: item.name,
+
+            });
+            console.log(item.lat);
+        }
+    }
+    console.log(array);
 });
 
-/* vzdálenost uživatele a hradů */
+
+/* vzdálenost uživatele a hradu */
 var dist = 0;
 function distance(latitude, longitude, latitudeCastle, longitudeCastle, unit) {
     if ((latitude == latitudeCastle) && (longitude == longitudeCastle)) {
