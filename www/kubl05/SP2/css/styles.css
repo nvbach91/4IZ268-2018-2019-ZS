@@ -27,6 +27,17 @@ main {
     text-align: center;
 }
 
+label:hover, input:hover {
+    cursor: pointer;
+    /*border: 1px solid #26262a;*/
+    background-color: #1367b6;
+    color: white;
+}
+
+label {
+    width: 400px;
+}
+
 .logo {
     height: 50px;
     width: 94px;
