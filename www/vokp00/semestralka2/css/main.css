@@ -1,54 +1,63 @@
 * {
-    font-family: 'MedievalSharp', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Arial Narrow', Arial, sans-serif;
 }
 
 body {
-    /* background-image: url("../img/wall.jpg");*/
     background-color: grey;
-    background-size: cover;
-    background-repeat: repeat;
 }
 
-.randomText {
-    font-family: 'MedievalSharp', 'Arial Narrow', Arial, sans-serif;
+h1 {
+    font-family: 'MedievalSharp';
     width: 100%;
-    margin: 20px auto;
+    background-color: rgb(121, 32, 32);
+    margin-top: 0;
+}
+
+button {
+    border-radius: 10px;
+}
+.randomText {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    width: 100%;
     text-align: center;
     top: 0px;
     right: 50%-width;
-}
-
-#lion {
-    background-image: url("../img/lion.png");
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin: 0 20%;
 }
 
 .textBox {
     float: right;
     height: 500px;
     width: 20%;
-    margin: 20px auto;
+    margin: 10px auto;
     border: 1px black solid;
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
     float: left;
     background-color: rgb(255, 255, 255);
+    background-image: url("../img/lion.png");
+    background-position: bottom;
+    background-size: 50%;
+    background-repeat: no-repeat;
 }
 
 #map {
     height: 500px;
-    width: 70%;
-    margin: 20px auto;
+    width: 60%;
+    margin: 10px auto;
     border: 1px black solid;
-    padding: 20px;
+    padding: 10px;
     float: left;
+    margin-left: 8%;
 }
 
 #coors {
     padding: 10px;
     border: 1px solid black;
+    border-radius: 10px;
+}
+
+#coors:hover {
+    background-color: bisque;
 }
 
 .card {

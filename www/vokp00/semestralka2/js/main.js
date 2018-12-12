@@ -14,7 +14,11 @@ fetch("http://ip-api.com/json/?fields=lat,lon,city").then(function (take) {
 
 /* nastavení mapy */
 var center = SMap.Coords.fromWGS84(latitude, longitude);
-var map = new SMap(JAK.gel("map"), center, 10);
+var map = new SMap(JAK.gel("map"), center, 1);
+
+var layerTwo = new SMap.Layer.Marker();
+map.addLayer(layerTwo);
+layerTwo.enable();
 
 /* Aby mapa reagovala na změnu velikosti průhledu */
 map.addControl(new SMap.Control.Sync());
@@ -45,6 +49,7 @@ var response = function (xmlDoc) {
 var latitudeCastle = 0;
 var longitudeCastle = 0;
 var nameCastle = "";
+var descCastle = "";
 var dist = 0;
 var link = "";
 
@@ -55,12 +60,14 @@ $.getJSON("gpx/hrady.json", function (data) {
 
     for (var i = 0; i < JSONItems.features.length; i++) {
 
+
         latitudeCastle = JSONItems.features[i].geometry.coordinates[0];
         longitudeCastle = JSONItems.features[i].geometry.coordinates[1];
         nameCastle = JSONItems.features[i].properties.name;
+        descCastle = JSONItems.features[i].properties.desc;
         link = JSONItems.features[i].properties.links[0].href;
 
-        /* vzdálenost uživatele a hradu */
+        /* vzdálenost uživatele a hradu - haversine formula*/
         var radlat1 = Math.PI * latitude / 180;
         var radlat2 = Math.PI * latitudeCastle / 180;
         var theta = longitude - longitudeCastle;
@@ -89,7 +96,7 @@ $.getJSON("gpx/hrady.json", function (data) {
     }
 });
 
-/* Vaše pozice dle IP adresy */
+/* Vaše pozice dle IP adresy, informace o nejbližším hradu a jeho webu */
 var buttonclicked;
 
 $("#coors").click(function () {
@@ -97,7 +104,8 @@ $("#coors").click(function () {
         buttonclicked = true;
         var para = document.createElement("P");
         var t = document.createTextNode("You are somewhere near the coordinates " + latitude + ", " + longitude + " which means you are in " + city +
-            ". \n The closest castle is " + nameCastle + ".\n" + "You can get more info here: ");
+            ". \n The closest castle is " + nameCastle + ".\n" + "Basic info: " + descCastle +
+            " You can get more info here: \n");
         para.appendChild(t);
         var a = document.createElement('a');
         var linkText = document.createTextNode(link);
@@ -106,8 +114,6 @@ $("#coors").click(function () {
         para.appendChild(a);
 
         document.getElementById("coordinates").appendChild(para);
-
-
 
     } else {
         alert("Hey, one time is enough!");
