@@ -2,10 +2,13 @@ var App = App || {};
 //User token 
 App.token = "1150314422.93c52c9.a0e2f3b2a4fe4091a63d1455ed3b2958";
 App.baseApiUrl = "https://api.instagram.com/v1/users/self/media/recent/?access_token="
+App.loader = $('<div class="loader"></div>');
+App.carousel = $('.carousel-1');
 
 App.myJSON;
 App.init = function () {
 
+    App.carousel.append(App.loader);
     var url = App.baseApiUrl + App.token;
     console.log(url);
 
@@ -17,6 +20,7 @@ App.init = function () {
         .done(function () {
             console.log("JSON downloaded");
             App.carouselPhotos(url);
+            App.loader.remove();
         }).fail(function () {
             console.log("problem with getJSON");
         });
@@ -24,7 +28,7 @@ App.init = function () {
 };
 
 App.carouselPhotos = function () {
-    App.carousel = $('.carousel-1');
+
     var tag = "hockey";
     var content = `<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">`;
