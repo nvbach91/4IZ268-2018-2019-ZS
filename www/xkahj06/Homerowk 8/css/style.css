@@ -21,7 +21,7 @@ a {
 
 
 .button {
-    color: rgb(255, 255, 255);
+    color: rgb(244, 255, 255);
     background-color: rgb(3, 8, 83);
     padding: 1em;
     text-transform: uppercase;
@@ -84,7 +84,7 @@ a {
 
 .profile {
     border-radius: 4px;
-    background-color: rgb(207, 242, 243);
+   background-color: rgb(190, 224, 211);
     padding: 1rem;
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15);
     display: flex;
@@ -93,7 +93,7 @@ a {
 
 .profile_repos{
     border-radius: 4px;
-    background-color: rgb(160, 240, 209);
+    background-color: rgb(190, 224, 211);
     padding: 1rem;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
     display: flex;
@@ -117,7 +117,7 @@ a {
     margin: 0.9rem;
     display: flex;
     flex-direction: row;
-    background-color: rgb(160, 240, 209);
+    background-color: rgb(220, 247, 236);
 }
 .profile__button{
 

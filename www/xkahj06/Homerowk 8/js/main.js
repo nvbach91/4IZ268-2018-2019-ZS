@@ -6,24 +6,21 @@ const baseApiUrl = 'https://api.github.com';
 // každý parametr se určuje v podobě klíč=hodnota, více parametry se oddělují ampersandem, 
 // na začátek přidáme otazník
 // např. ?client_id=abcdef&client_secret=fedcba
-var repoCount = 0
-function repos(urlRepo) {
+function fetchRepos(urlRepo) {
     return $.ajax({
         url: urlRepo,
         data: {
             client_id: client_id,
             client_secret: client_secret,
         },
-    })
+    });
 }
 
 function renderRepos(repoData) {
     var repos = '';
 
-    console.log(repoData);
-    // Ano, s tím pocítáním ropozitařů je to trošku neohrabané já vím....
+    //console.log(repoData);.
     repoData.forEach(function (repo) {
-        repoCount = repoCount + 1;
         repos += `
             <div class="profile__detail">
                 <div class="profile__detailName">${repo.name}</div>
@@ -34,7 +31,7 @@ function renderRepos(repoData) {
 
     const reposHTML = `
         <h3>Repositories</h3>  
-        <div>this user has total ${repoCount} repositories.<div>
+        <div>this user has total ${repoData.length} repositories. <div>
         <div class="profile">
             ${repos}
         </div>`;
@@ -47,54 +44,50 @@ function renderUser(user) {
     clearObject(user);
 
     const userHTML = `
-    <div class="profile_mainname">
-         <h2>${user.login}</h2>
-    </div>
-    <div>
-    <div class="profile__photo">
-        <img src="${user.avatar_url}" alt="" class="photo">
-    </div>
+        <div class="profile_mainname">
+            <h2>${user.login}</h2>
+        </div>
+        <div>
+            <div class="profile__photo">
+                <img src="${user.avatar_url}" alt="" class="photo">
+                <div class="button a">
+                <a href="${user.html_url}" target="_blank" class="button a">View  profile</a> 
+                </div>
+            </div>
 
-    <div class="informations">
-        <div class="profile__detail">
-            <div class="profile__detailName">Login</div>
-            <div class="profile__detailValue">${user.login}</div>
+            <div class="informations">
+                <div class="profile__detail">
+                    <div class="profile__detailName">Login</div>
+                    <div class="profile__detailValue">${user.login}</div>
+                </div>
+                <div class="profile__detail">
+                    <div class="profile__detailName">Bio</div>
+                    <div class="profile__detailValue">${user.bio}</div>
+                </div>
+                <div class="profile__detail">
+                    <div class="profile__detailName">Location</div>
+                    <div class="profile__detailValue">${user.location}</div>
+                </div>
+                <div class="profile__detail">
+                    <div class="profile__detailName">Company</div>
+                    <div class="profile__detailValue">${user.company}</div>
+                </div>
+                <div class="profile__detail">
+                    <div class="profile__detailName">Email</div>
+                    <div class="profile__detailValue">${user.email}</div>
+                </div>
+                <div class="profile__detail">
+                    <div class="profile__detailName">Followers</div>
+                    <div class="profile__detailValue">${user.followers}</div>
+                </div>
+                <div class="profile__detail">
+                    <div class="profile__detailName">Registered</div>
+                    <div class="profile__detailValue">${new Date(user.created_at).toLocaleDateString('cs-CZ')}</div>
+                </div>
+            </div>
         </div>
-         <div class="profile__detail">
-            <div class="profile__detailName">Bio</div>
-            <div class="profile__detailValue">${user.bio}</div>
-        </div>
-        <div class="profile__detail">
-            <div class="profile__detailName">Location</div>
-            <div class="profile__detailValue">${user.location}</div>
-        </div>
-        <div class="profile__detail">
-            <div class="profile__detailName">Company</div>
-            <div class="profile__detailValue">${user.company}</div>
-        </div>
-        <div class="profile__detail">
-            <div class="profile__detailName">Email</div>
-            <div class="profile__detailValue">${user.email}</div>
-        </div>
-        <div class="profile__detail">
-            <div class="profile__detailName">Followers</div>
-            <div class="profile__detailValue">${user.followers}</div>
-        </div>
-        <div class="profile__detail">
-            <div class="profile__detailName">Registered</div>
-            <div class="profile__detailValue">${new Date(user.created_at).toLocaleDateString('cs-CZ')}</div>
-        </div>
-        <div class="button a">
-        <a href="${user.html_url}" target="_blank" class="button a">View  profile</a> 
-        </div>
-       
-        </div>
-    </div>
-
-        </div>
-             
-    `;
-
+    `
+        ;
     return userHTML;
 }
 
@@ -121,12 +114,12 @@ $(document).ready(function () {
         }).done(function (user) {
             const urlRepo = baseApiUrl + '/users/' + user.login + '/repos';
 
-            $.when(repos(urlRepo)).done(function (repoData) {
+            fetchRepos(urlRepo).done(function (repoData) {
                 output.html(`
                 <div id="js-output" class="profile">
-                ${renderUser(user)}
-                ${renderRepos(repoData)}
+                    ${renderUser(user)}
                 </div>
+                    ${renderRepos(repoData)}
                 `);
             })
         }).fail(function () {
@@ -134,11 +127,11 @@ $(document).ready(function () {
         });
     });
 });
-// při nenalezení data, napíše do hodnoty not public
+// při nenalezení data, napíše do hodnoty ------
 function clearObject(obj) {
     Object.keys(obj).forEach(function (key) {
         if (!obj[key]) {
-            obj[key] = 'not public'
+            obj[key] = '------'
         };
     });
 }
