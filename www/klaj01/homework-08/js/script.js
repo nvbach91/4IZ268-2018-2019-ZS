@@ -54,7 +54,7 @@ App.fetchRepositories = function (username) {
   }).done(function (repositories) {
     $('<div class="loader"></div>').remove()
     repositories.forEach(function (repository) {
-      html += `
+      html = `
             <li class="repository">
               <div class="repo-url"><a href="${repository.html_url}">${
         repository.html_url
