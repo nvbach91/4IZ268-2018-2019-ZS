@@ -40,7 +40,8 @@ App.carouselPhotos = function () {
             if (b == tag) {
                 content += `<div class="carousel-item">
                 <img class="d-block w-100" src="${a.images.standard_resolution.url}"
-                    alt="First slide">
+                    alt="First slide"> 
+                    <p>${a.caption.text}</p>
             </div>`;
                 console.log(a.images.standard_resolution.url);
             }
