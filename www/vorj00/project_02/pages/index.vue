@@ -1,25 +1,82 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        project_02
-      </h1>
-      <h2 class="subtitle">
-        My dandy Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+  <div>
+    <nav class="nav">
+      <input
+        v-model="searchQuery"
+        class="input input--search"
+        type="text"
+        placeholder="Najdi umělce"
+        @input="getSearch">
+      <a
+        class="button"
+        href="https://accounts.spotify.com/authorize?client_id=f254e3e7f8a74a1b9c5e3a683063f0dd&redirect_uri=http://localhost:3000/&response_type=token">
+        PŘIHLÁSIT SE</a>
+    </nav>
+
+    <main class="main">
+      <div
+        v-if="status"
+        class="status">
+        <strong>{{ status }}</strong>
       </div>
-    </div>
-  </section>
+
+      <div
+        v-if="tracks"
+        class="tracks">
+        <div
+          v-for="track in tracks"
+          :key="track.id"
+          class="track"
+        >
+          <div class="track__info">
+            <img
+              v-for="(value, key) in track.album.images[0]"
+              v-if="key === 'url'"
+              :key="key"
+              :src="value"
+              class="img track__img">
+            <div class="track__danceability">{{ Number(track.danceability*100).toFixed(0) }}%</div>
+          </div>
+          <div class="track__name">{{ track.name }}</div>
+          <div class="track__preview">
+            <audio controls>
+              <source
+                :src="track.preview_url"
+                type="audio/mpeg">
+              Tvůj prohlížeč nepodporuje hudbu :/
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <div class="results">
+        <a
+          v-for="result in artistsResults"
+          :key="result.id"
+          class="result"
+          @click="getTopTracks(result.id)">
+          <div
+            v-if="result.images[0]"
+            class="results__imgContainer">
+            <img
+              v-for="(value, key) in result.images[0]"
+              v-if="(key === 'url')"
+              :key="key"
+              :src="value"
+              class="img result__img">
+          </div>
+          <div
+            v-else
+            class="results__imgContainer">
+            <img
+              src="artist.png"
+              class="img result__img">
+          </div>
+          <div>{{ result.name }}</div>
+        </a>
+      </div>
+    </main>
+  </div>
 </template>
 
 <script>
@@ -28,39 +85,130 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
+  },
+
+  data() {
+    return {
+      searchQuery: '',
+      status: '',
+      artistsResults: {},
+      tracks: {}
+    }
+  },
+
+  mounted() {
+    if (this.$route.hash) {
+      this.status = 'Přihlášení bylo úspěšné, vyhledej nějakého umělce'
+      var pieces = this.$route.hash.replace('#', '').split('&')
+      var data = {}
+      var parts
+
+      for (var i = 0; i < pieces.length; i++) {
+        parts = pieces[i].split('=')
+        if (parts.length < 2) {
+          parts.push('')
+        }
+        data[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1])
+      }
+      localStorage.setItem(
+        'user_token',
+        data.token_type + ' ' + data.access_token
+      )
+    } else {
+      if (localStorage.getItem('user_token')) {
+        this.status = 'Zadej jméno nějakého umělce do vyhledávání a vyber ho'
+      } else {
+        this.status = 'Nejprve se přihlaš, prosím'
+      }
+    }
+  },
+
+  methods: {
+    getSearch() {
+      this.tracks = {}
+      this.status = ''
+
+      if (this.searchQuery.length !== 0) {
+        this.$axios
+          .get(
+            `https://api.spotify.com/v1/search?q=
+              ${this.searchQuery}&type=artist`,
+            {
+              headers: {
+                Authorization: localStorage.getItem('user_token')
+              }
+            }
+          )
+          .then(response => {
+            this.artistsResults = response.data.artists.items
+          })
+          .catch(error => {
+            console.log(error)
+            this.status = 'Nastala chyba, zkus se, prosím, znovu přihlásit'
+          })
+      } else {
+        this.artistsResults = {}
+      }
+    },
+
+    getTopTracks(id) {
+      this.artistsResults = {}
+
+      this.$axios
+        .get(`https://api.spotify.com/v1/artists/${id}/top-tracks?country=US`, {
+          headers: {
+            Authorization: localStorage.getItem('user_token')
+          }
+        })
+        .then(response => {
+          var tracksIdString
+          Object.keys(response.data.tracks).forEach(function(key) {
+            if (!tracksIdString) {
+              tracksIdString = response.data.tracks[key].id
+            } else {
+              tracksIdString += ',' + response.data.tracks[key].id
+            }
+          })
+          this.$axios
+            .get(
+              `https://api.spotify.com/v1/audio-features?ids=${tracksIdString}`,
+              {
+                headers: {
+                  Authorization: localStorage.getItem('user_token')
+                }
+              }
+            )
+            .then(tracksFeatures => {
+              for (var i = 0; i < response.data.tracks.length; i++) {
+                response.data.tracks[i] = {
+                  ...response.data.tracks[i],
+                  ...tracksFeatures.data.audio_features[i]
+                }
+                console.log(response.data.tracks)
+              }
+
+              this.tracks = response.data.tracks
+
+              response.data.tracks.sort(function(a, b) {
+                return b['danceability'] - a['danceability']
+              })
+
+              this.status = 'TOP 10 písniček seřazených podle danceability'
+            })
+        })
+        .catch(error => {
+          console.log(error)
+          this.status = 'Nastala chyba, zkus se, prosím, znovu přihlásit'
+        })
+    }
   }
 }
 </script>
 
-<style>
-
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+<style lang="scss">
+/**
+ * zde bych mohl psát (S)CSS, protože se nejedná o HTML soubor, ale o single file component,
+ * ale raději jsem do dal do assets/main.scss
+ * https://vuejs.org/v2/guide/single-file-components.html
+*/
 </style>
