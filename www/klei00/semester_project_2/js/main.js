@@ -38,7 +38,7 @@ form.submit(function (e) {
     e.preventDefault();
     createLoader();
 
-    var query = $('#searched-text').val().replace(/ /g, '+');
+    var query = $('#searched-text').val().trim().replace(/ /g, '+');
     var mode = $('input:checked', '#form').val();
     var maxBooks = $('#number-input').val();
     var dataUrl = 'https://www.googleapis.com/books/v1/volumes?q=' + mode + ':"' + query + '"&langRestrict=cs&printType=books&maxResults=' + maxBooks;
