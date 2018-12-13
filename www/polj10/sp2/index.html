@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+    <a href="https://jiripolacek.net" target="_blank" class="floatLeft">
+        <img src="img/jp.svg" alt="jp-logo" class="logo">
+    </a>
+    <div id="userName" class="floatLeft hidden"></div>
+    <div id="proBadge" class="floatLeft hidden">PRO</div>
+    <img id="userAvatar" alt="avatar" class="floatLeft hidden">
+    <button id="logoutButton" class="floatRight hidden">Odhlásit se</button>
+
+    <form id="loginForm" class="floatRight hidden">
+        Uživatelské jméno:<input id="loginName" title="Login" name="login" type="text">
+        Heslo:<input id="loginPassword" type="password">
+        <input id="loginButton" type="button" title="Přihlásit se" value="Přihlásit se">
+    </form>
+</header>
+<div class="clear"></div>
+<main>
+    <div id="statusBox" class="hidden">
+        <div id="statusLinkWrap" class="linkWrap">
+        </div>
+        <button id="closeStatusButton" class="floatRight">X</button>
+    </div>
+    <form class="settingsForm">
+        <label class="textAreaTitle" for="pasteTextArea">Nový text</label><textarea id="pasteTextArea" class="textArea"></textarea>
+        <div class="settingsTitle">Volitelné nastavení</div>
+        <div class="selectLine">
+            <label class="smallLabel" for="syntaxSelect">Syntaxe:</label><select id="syntaxSelect"></select>
+        </div>
+        <div class="selectLine">
+            <label class="smallLabel" for="expirationSelect">Expirace:</label><select id="expirationSelect"></select>
+        </div>
+        <div class="selectLine">
+            <label class="smallLabel" for="visibilitySelect">Viditelnost:</label><select id="visibilitySelect"></select>
+        </div>
+        <div class="selectLine">
+            <label class="smallLabel" for="pasteName">Název:</label><input placeholder="Zadejte název (volitelné)" id="pasteName" type="text">
+        </div>
+
+        <button id="createNewPasteButton" type="button">Vložit na Pastebin</button>
+    </form>
+</main>
+
+<script src="js/pastebin-rest.js"></script>
+</body>
+</html>
