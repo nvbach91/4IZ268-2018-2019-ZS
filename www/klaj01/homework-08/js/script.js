@@ -41,7 +41,7 @@ App.renderUser = function (user) {
   $('#profile').html(html);
 }
 App.fetchRepositories = function (username) {
-  var url = App.baseApiUrl + '/users/' + username + '/repos'
+  var url = App.baseApiUrl + '/users/' + username + '/repos/'
   var repos = $('#repos')
   repos.empty()
   repos.append($('<div class="loader"></div>'))
