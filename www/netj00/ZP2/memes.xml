@@ -1,0 +1,10 @@
+<memes>
+    <meme id="1">
+        <name>Batman</name>
+        <size>200,200</size>
+        <desc>Some Batman Action</desc>
+        <tags>MEME,FUN,SOME</tags>
+        <source>data/memes/Batman.jpg</source>
+        <type>jpg</type>
+    </meme>
+</memes>
