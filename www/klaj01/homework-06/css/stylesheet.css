@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.form-layout {
+    width: 50%;
+    margin: 0 auto;
+    background-color: rgb(217, 217, 217);
+    text-align: center;
+    margin-top: 100px;
+    padding-bottom: 75px;
+    padding-top: 75px;
+}
+
+.form-row input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    border: none;
+}
+
+#text-input {
+    min-height: 150px;
+    text-align: center;
+}
+
+#decode-key {
+    text-align: center;
+}
+
+.form-row button {
+    border: none;
+    padding: 15px 20px;
+    background-color: rgb(32, 138, 103);
+    margin: 6px 0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-row button:hover {
+    background-color: green;
+}
+
+hr {
+    border-style: none;
+    border: 2px solid #eee;
+}
+
+#decoded-text {
+    text-align: center;
+    max-width: 60%;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 auto;
+}

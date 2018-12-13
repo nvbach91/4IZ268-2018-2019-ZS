@@ -24,7 +24,7 @@ var shiftChar = function (c, shift) {
     if (index > -1) {
         index -= shift;
         while (index < 0) {
-            index += 26;
+            index += alphabet.length;
         }
         return alphabet.charAt(index);
     }

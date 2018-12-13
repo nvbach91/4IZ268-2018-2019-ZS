@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    background-color: rgb(245, 245, 245);
+}
+
+#game-field {
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    min-height: 125px;
+    height: 25%;
+    width: 20%;
+    background-color: rgb(221, 221, 221);
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    border-radius: 25px;
+    color: rgb(221, 221, 221);
+    border: 2px solid darkgrey;
+    user-select: none;
+}
+
+.card:hover {
+    border: 5px solid rgb(107, 107, 107);
+    cursor: pointer;
+}
+
+.card.revealed {
+    background-color: rgb(80, 190, 253);
+    color: black;
+}
+
+button {
+    float: right;
+    min-height: 125px;
+    height: 25%;
+    color: black;
+    width: 350px;
+    background-color: rgb(221, 221, 221);
+    border: 3px solid rgb(80, 190, 253);
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    border: 5px solid darkgrey;
+}

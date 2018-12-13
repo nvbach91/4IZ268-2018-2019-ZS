@@ -1,37 +1,5 @@
-/**
- * SPOILER ALERT! :)))
- */
-//                     /
-//                ,.. /
-//              ,'   ';
-//   ,,.__    _,' /';  .
-//  :','  ~~~~    '. '~
-// :' (   )         )::,
-// '. '. .=----=..-~  .;'
-//  '  ;'  ::   ':.  '"
-//    (:   ':    ;)
-//     \\   '"  ./
-//      '"      '"
-//                DR J
-//
 
-//             _            _.,----,
-//  __  _.-._ / '-.        -  ,._  \) 
-// |  `-)_   '-.   \       / < _ )/" }
-// /__    '-.   \   '-, ___(c-(6)=(6)
-//  , `'.    `._ '.  _,'   >\    "  )
-//  :;;,,'-._   '---' (  ( "/`. -='/
-// ;:;;:;;,  '..__    ,`-.`)'- '--'
-// ;';:;;;;;'-._ /'._|   Y/   _/' \
-//       '''"._ F    |  _/ _.'._   `\
-//              L    \   \/     '._  \
-//       .-,-,_ |     `.  `'---,  \_ _|
-//       //    'L    /  \,   ("--',=`)7
-//      | `._       : _,  \  /'`-._L,_'-._
-//      '--' '-.\__/ _L   .`'         './/
-//                  [ (  /
-//                   ) `{
-//        snd        \__)
+//jednoduchý posun písmen o jedno + vrátit hodnotu
 
 var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
@@ -40,6 +8,10 @@ var shiftChar = function (char, shift) {
     if (indexOfChar === -1) {
         return char;
     }
+
+
+//po XYZ začít znovu u ABC (asi pomocí odečtení zpátky na 0)
+
     var shiftedIndexOfChar = indexOfChar + shift;
     
     if (shiftedIndexOfChar >= alphabet.length) {
@@ -49,6 +21,10 @@ var shiftChar = function (char, shift) {
     }
     return alphabet.charAt(shiftedIndexOfChar);
 };
+
+
+//volá opakovaně funkci pro každé písmenko + vypisuje hodnotu
+
 var shiftString = function (string, shift) {
     var res = '';
     for (var i = 0; i < string.length; i++) {
@@ -56,6 +32,12 @@ var shiftString = function (string, shift) {
     }
     return res;
 };
+
+
+
+
+//přijímá šifrovaný text a používá klíč (klíč je kalkul posunu) (je to jakoby opak shiftu) na dešifraci
+
 var caesarDecipher = function (cipherText, usedKey) {
     var shift = alphabet.length - usedKey;
     var result = shiftString(cipherText, shift, alphabet);
@@ -63,12 +45,21 @@ var caesarDecipher = function (cipherText, usedKey) {
     return result;
 };
 
+
+
+
 // albert einstein
 //caesarDecipher("MPH MABGZL TKX BGYBGBMX: MAX NGBOXKLX TGW ANFTG LMNIBWBMR; TGW B'F GHM LNKX TUHNM MAX NGBOXKLX. - TEUXKM XBGLMXBG", 19);
 // john archibald wheeler
 //caesarDecipher("YMJWJ NX ST QFB JCHJUY YMJ QFB YMFY YMJWJ NX ST QFB. - OTMS FWHMNGFQI BMJJQJW", 5);
 // charles darwin
 //caesarDecipher("M YMZ ITA PMDQE FA IMEFQ AZQ TAGD AR FUYQ TME ZAF PUEOAHQDQP FTQ HMXGQ AR XURQ. ― OTMDXQE PMDIUZ", 12);
+
+
+
+
+//pro grafické rozhraní
+
 
 var caesarForm = document.querySelector('#caesar-form');
 var cipherTextInput = document.querySelector('#cipher-text');

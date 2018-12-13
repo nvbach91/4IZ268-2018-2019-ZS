@@ -14,7 +14,7 @@
  * "Decipher!" se na určeném místě zobrazí dešifrovaný text. Rozhraní také vhodně
  * nastylujte.
  */
-
+//              0123456789...
 var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 var shiftChar = function (c, shift) {

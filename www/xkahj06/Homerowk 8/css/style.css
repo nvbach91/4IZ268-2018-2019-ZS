@@ -1,0 +1,143 @@
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #ECEFF1;
+}
+
+input,
+textarea,fo
+select {
+    font-family: inherit;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none
+}
+
+
+.button {
+    color: rgb(244, 255, 255);
+    background-color: rgb(3, 8, 83);
+    padding: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0 7px 7  px 0;
+    border: none;
+    padding: 1em 2em;
+    margin: 0;
+}
+
+.button:hover {
+    background-color: rgb(72, 157, 255);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+    color: rgb(255, 255, 255);
+}
+
+
+.button--text:hover {
+    background-color: initial;
+    box-shadow: initial;
+}
+
+
+.form {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+}
+
+.photo {
+    height: 13rem;
+}
+
+.input {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: none;
+    padding: 1em;
+    transition: 0.2s;
+}
+
+.input:hover,
+.input:focus {
+    box-shadow: 0 1px 5px rgba(15, 5, 5, 0.35);
+}
+
+.input--search {
+    border-radius: 4px 0 0 4px;
+    flex-grow: 1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    min-width: 40rem;
+    margin: 0 auto;
+}
+
+.profile {
+    border-radius: 4px;
+   background-color: rgb(190, 224, 211);
+    padding: 1rem;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_repos{
+    border-radius: 4px;
+    background-color: rgb(190, 224, 211);
+    padding: 1rem;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__photo {
+    height: 15rem;
+    float: left;
+}
+
+.profile__name {
+    text-align: left;
+    float: left;
+    color: red ;
+    background-color: rgb(95, 159, 255);
+    padding: 5rem;
+}
+
+.profile__detail {
+    margin: 0.9rem;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(220, 247, 236);
+}
+.profile__button{
+
+}
+
+.profile_mainname{
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 1.609rem;
+    color: #240000;
+    width: 40%;
+}
+.profile__detailName{
+    padding-right: 10rem;
+    float: left;
+}
+.informations{
+float: right;
+}
+
+.profile__detailValue {
+    margin-left: auto;
+}

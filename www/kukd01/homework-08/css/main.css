@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+hr {
+    border-style: solid;
+    border-color: #eee;
+}
+
+.avatar {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin:1em;
+    min-width: 8em;
+    min-height: 8em;
+}
+
+
+footer {
+    background-color: cadetblue;
+    padding: 20px 0;
+}
+
+.repositories {
+    list-style: none;
+    padding: 0;
+    
+    margin: 0 auto;
+}
+
+.repo {
+    
+    
+    background-color: #e1e1e1;
+    margin-bottom: 1em;
+    padding: 1em;
+    list-style: none;
+
+    padding-inline-start: 40px;
+    text-align: center;
+}
+

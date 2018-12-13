@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: center;
+}
+#game-field {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin: 0 auto;
+}
+.card {
+    background-color: green;
+    color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid white;
+    width: 20%;
+    height: 180px;
+    cursor: pointer;
+    border-radius: 20px;
+    user-select: none;
+}
+.card:hover {
+    background-color: lightgreen;
+    color:lightgreen;
+}
+.card.flipped {
+    background: blue;
+    color: white;
+}
