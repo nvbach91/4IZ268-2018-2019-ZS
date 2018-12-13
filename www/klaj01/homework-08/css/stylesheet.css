@@ -1,0 +1,136 @@
+/* Základní stylování stránky */
+
+* {
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+#repos {
+    width: 60%;
+    margin: 5px auto;
+    list-style: none;
+    padding: 0;
+}
+
+.main {
+    height: auto;
+    width: 80%;
+}
+
+#profile {
+    width: 60%;
+    margin: 5px auto;
+}
+
+button {
+    background-color: gainsboro;
+    width: 60%;
+    height: 40px;
+}
+
+#search-input {
+    width: 60%;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+hr {
+    height: 40px;
+    background-color: rgb(95, 168, 202);
+    width: 60%;
+    margin-top: 100px;
+}
+
+/* Stylovani appky */
+
+.name {
+    padding: 0 10px;
+    align-items: center;
+    background-color: grey;
+    color: white;
+    text-align: center;
+    height: 40px;
+    font-size: 26px;
+}
+
+.avatar {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 400px;
+    float: right;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    border-style: solid;
+    border-color: #eee;
+}
+
+footer {
+    background-color: cadetblue;
+    padding: 20px 0;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    border: 5px solid rgb(233, 91, 35);
+    border-top: 5px solid gray;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+.repository {
+    display: flex;
+    padding: 5px 10px;
+    margin: 0 auto;
+}
+
+#repos {
+    list-style: none;
+    max-width: 65%;
+    margin: 2px;
+}
+
+.info {
+    margin-top: 100px;
+    width: 60%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 24px;
+}
+
+#title {
+    font-weight: bold;
+    font-size: 28px;
+    color: rgb(95, 168, 202);
+}
+
+.subtitle {
+    color: grey;
+}
+
+.repo-url {
+    margin: 0 auto;
+}
