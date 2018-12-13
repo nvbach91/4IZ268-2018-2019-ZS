@@ -1,10 +1,14 @@
 body {
     text-align: center;
-    background-color: rgb(199, 199, 199);
+    background-color: rgba(10, 94, 172, 0.5);
 }
 
-#pong {
+#gamefield {
     border: 2px solid rgb(241, 241, 241);
     position: absolute;
     margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }
