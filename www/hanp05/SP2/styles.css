@@ -1,0 +1,15 @@
+.form-share{
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#motto{
+    font-size: 12px;
+    margin-top: -10px;
+    color:rgb(131, 131, 131);
+
+}
+
+.form-check{
+    padding-bottom: 15px;
+}
