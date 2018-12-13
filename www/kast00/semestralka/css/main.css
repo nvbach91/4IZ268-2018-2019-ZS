@@ -154,6 +154,7 @@ button {
 }
 
 #res2, #res3 {display: none;}
+#floor2, #floor3 {display: none;}
 
 @media screen and (max-width: 960px) {
     nav {

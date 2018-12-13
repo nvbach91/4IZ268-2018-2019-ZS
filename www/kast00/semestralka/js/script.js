@@ -39,3 +39,25 @@ function openRestaurant(evt, restaurantName) {
 document.getElementById('btn1').onclick = function () { openRestaurant(event, 'res1'); }
 document.getElementById('btn2').onclick = function () { openRestaurant(event, 'res2'); }
 document.getElementById('btn3').onclick = function () { openRestaurant(event, 'res3'); }
+
+
+
+
+function openfloor(evt, floorName) {
+    var i, x, tabnavs;
+    x = document.getElementsByClassName("floor");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    tabnavs = document.getElementsByClassName("tabNav");
+    for (i = 0; i < x.length; i++) {
+        tabnavs[i].className = tabnavs[i].className.replace("activeTab", "");
+    }
+    document.getElementById(floorName).style.display = "block";
+    evt.currentTarget.className += " activeTab";
+}
+
+
+document.getElementById('btn3').onclick = function () { openfloor(event, 'floor1'); }
+document.getElementById('btn4').onclick = function () { openfloor(event, 'floor2'); }
+document.getElementById('btn5').onclick = function () { openfloor(event, 'floor3'); }
