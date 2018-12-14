@@ -123,3 +123,9 @@ addPokemon('Pikachu');
 addPokemon('Charmander');
 addPokemon('Bulbasaur');
 addPokemon('Squirtle');
+
+navigator.geolocation.getCurrentPosition(function(position) {
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+  console.log(position, latitude, longitude);
+});
