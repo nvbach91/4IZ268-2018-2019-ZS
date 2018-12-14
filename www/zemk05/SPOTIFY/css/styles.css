@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    font-family: 'Muli', sans-serif;
+}
+body {
+    background-color:#66d1a8;
+}
+ main {
+    background-color:#37b670;
+    max-width:800px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+header {
+    text-align: center;
+    height: 40px;
+    background-color:#2a6041;
+    color:white;
+    margin:0 auto;
+}
+.intro {
+    padding:10px;
+    text-align: center;
+}
+
+#hide-show {
+    display:none;
+}
+#login-btn {
+    width:24%;
+    border: none;
+    background-color:#2a6041;
+    color:white;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    display:block;
+    margin: 0 auto;
+    cursor:pointer;
+}
+/*--------Add a searched value--------*/
+#insert-row input {
+    border: none;
+    background-color:#2a6041;
+    width:95%;
+    color:white;
+    padding: 10px;
+    margin:10px;
+    text-decoration: none;
+    font-size: 14px; 
+}
+/*--------Submit the form--------*/
+#submit-row input {
+    margin-top:20px;
+    width:49%;
+    border: none;
+    background-color:#2a6041;
+    color:white;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor:pointer;
+}
+/*--------Loader--------*/
+/*DODĚLAT*/
+.loader {
+    border: 5px solid #f3f3f3; 
+    border-top: 5px solid #2a6041; 
+    border-radius: 50%;
+    width:30px;
+    display: block;
+    height: 30px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }
+ /*--------Result list--------*/
+ /*--------Playlist--------*/
+#playlist {
+    display: flex;
+    flex-direction: row;
+}
+.playlist-head {
+    width:40%;
+}
+ footer {
+    margin-top:30px;
+    text-align:center;
+    background-color:#2a6041;
+    color:white;
+    height:30px;
+}
+ /*--------Responsivity--------*/
