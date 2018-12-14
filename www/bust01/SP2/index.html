@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Movie database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+  <nav class="nav-main">
+    <a class="nav-inx" href="index.html">Movie database</a>
+  </nav>
+  </hr>
+
+  <div class="search-main">
+    <div class="search-cont">
+      <h3 class="search-head">Search For Any Movie</h3>
+      <form id="search-form">
+        <input type="text" class="search-inp" id="search-input" placeholder="Search Movie....">
+      </form>
+      <select id="sortMovies" onchange="selectionChange()">
+        <option id="sortDef">Vyberte řazení</option>
+        <option id="sortAsc">Seřadit od nejlépe hodnocených</option>
+        <option id="sortDesc">Seřadit od nejhůře hodnocených</option>
+      </select>
+    </div>
+  </div>
+  <div class="container-side"></div>
+<div class="movies-cont">
+  <div class="movies">
+    <div id="movie-field" class="movie-fld"></div>
+  </div>
+</div>
+
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
