@@ -73,7 +73,7 @@ submitButton.addEventListener("click",function() {
             searchSpotifyData(accessToken)
                 .then(function(response) {
                     loginButton.style.display = "none";
-                    var result = $('<div>').addClass('result').html(artists.toUpperCase() + ':<br>' + item.volumeInfo.title);
+                    var result = $('<div>').addClass('result');
                     resultRow.append($('<hr>')).append(result);
                     resultField.append(resultRow); 
                 });
@@ -88,41 +88,37 @@ submitButton.addEventListener("click",function() {
 
 /*----------------------Ověřování---------------------- */
 //EXISTENCE SKLADBY V PLAYLISTU
-var songExist = function (id) {
-    var existingSong = $('#id');
-    for (var s = 0; s < existingSong.length; s++) {
-        var song = existingSong.get(s);
-        if (id === song.innerHTML) {
-            return true;
-        }
-    }
-    return false;
-}
+
 //OVĚŘENÍ PODMÍNKY, PŘIDÁNÍ NOVÉ SKLADBY
-var addingButton = $('<div>').addClass('add-button').text('Přidat');
-var id;
-var name;
-var artist;
-var album;
 
-
-if (songExist(id)) {
-    addingButton.addClass("add-new");
-}
-addingButton.click(function () {
-    if (songExist(id)) {
-        alert('Tato skladba se již nachází ve tvém playlistu.');
-    } else {
-        addToPlaylist(id, artist, name, album);
-        addingButton.addClass("add-founded");
-    }
-});
 /*----------------------Add a song to my playlist---------------------- */
 
 /*----------------------Create a loader-------------------------------- */
 
-/*
-var result = $('<div>').addClass('result').html(artists.toUpperCase() + ':<br>' + item.volumeInfo.title);
-resultRow.append($('<hr>')).append(image).append(result).append(addButton);
-resultField.append(resultRow); 
-*/
+var CLIENT_ID = "9ed280f473334a61ad254a84e0ec0593";
+var REDIRECT_URI = "https://fcp.vse.cz/";
+$.ajax({
+    method: 'GET', 
+    url: "https://accounts.spotify.com/authorize?client_id=" + CLIENT_ID +
+    "&redirect_uri=" + encodeURIComponent(REDIRECT_URI) +
+    "&scope=" + encodeURIComponent(scopes.join(" ")) +
+    "&response_type=token",
+    success: function (resp) {
+        
+    },
+  });
+  $.ajax(
+  {
+    method: "POST",
+    url: "https://accounts.spotify.com/api/token",
+    data: {
+      "grant_type":    "authorization_code",
+      "code":          code,
+      "redirect_uri":  myurl,
+      "client_secret": mysecret,
+      "client_id":     myid,
+    },
+    success: function(result) {
+      // handle result...
+    },
+  });
