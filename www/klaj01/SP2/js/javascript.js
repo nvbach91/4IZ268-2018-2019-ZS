@@ -1,3 +1,4 @@
+const winscore = 2;
 /* vybrání elementu podle id */
 const canvas = document.getElementById("gamefield");
 /* "kreslení" v Canvasu */
@@ -110,6 +111,9 @@ function update() {
   } else if (ball.x + ball.radius > canvas.width) {
     user.score++;
     resetBall();
+  } else if (user.score >= winscore || com.score >= winscore) {
+    window.location.href = "gameend.html";
+    resetBall();
   }
 
   /* rychlost míčku*/
@@ -156,10 +160,12 @@ function render() {
 
   drawArc(ball.x, ball.y, ball.radius, ball.color);
 }
+
+let framePerSecond = 60;
+
+let loop = setInterval(game, 1200 / framePerSecond);
+
 function game() {
   update();
   render();
 }
-let framePerSecond = 60;
-
-let loop = setInterval(game, 1200 / framePerSecond);

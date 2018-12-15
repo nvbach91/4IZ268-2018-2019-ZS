@@ -12,3 +12,24 @@ body {
     left: 0;
     bottom: 0;
 }
+
+button {
+    min-height: 80px;
+    color: black;
+    width: 350px;
+    background-color: rgb(221, 221, 221);
+    border: 3px solid rgb(80, 190, 253);
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+button:hover {
+    border: 5px solid darkgrey;
+}
+
+console.log {
+    height: 100px;
+    width: 400px;
+}
