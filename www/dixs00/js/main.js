@@ -1,7 +1,3 @@
-var j = 'jjj'; //global
-let k = 'k'; //local
-const pi = 3.14; //neda se zmenit
-
 function toggleNav() {
    var burger = document.getElementById("toggleHamburger");
    var sidebar = document.getElementById("mySidenav");
@@ -21,5 +17,7 @@ function toggleNav() {
       document.getElementsByTagName("body").item(0).style.overflow = "auto";
    }
 }
+
+
 
 
