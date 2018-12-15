@@ -1,0 +1,36 @@
+  <!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Zobrazovač GPX</title>
+        <script type="text/javascript" src="https://api.mapy.cz/loader.js"></script>
+        <script type="text/javascript">Loader.load();</script>
+    </head>
+    <body style="text-align:center">
+        Vložte vaše GPX údaje:<br/>
+        <textarea style="width: 300px; height: 200px" id="gpx"></textarea><br>
+        <input type="button" value="Zobrazit" onclick="load()" />
+        <hr/>
+        <div id="m" style="height:400px"></div>
+    </body>
+</html>
+  <script type="text/javascript">
+
+var center = SMap.Coords.fromWGS84(14.400307, 50.071853);
+var m = new SMap(JAK.gel("m"), center, 5);
+m.addDefaultLayer(SMap.DEF_TURIST).enable();
+m.addDefaultControls();
+
+function load() { /* Funkce volaná po stisku tlačítka */
+    var value = JAK.gel("gpx").value.trim();
+    if (!value) { return alert("Vložte do textového pole obsah GPX souboru"); }
+    var xmlDoc = JAK.XML.createDocument(value);
+
+    var gpx = new SMap.Layer.GPX(xmlDoc, null, {maxPoints:500}); /* GPX vrstva */
+    m.addLayer(gpx); /* Přidáme ji do mapy */
+    gpx.enable();    /* Zapnout vrstvu */
+    gpx.fit();       /* Nastavit mapu tak, aby byla GPX trasa dobře vidět */
+}
+</script>
+</body>
+</html>
