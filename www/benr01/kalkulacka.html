@@ -49,8 +49,58 @@
             <div class="full_width">
                 <h1>Kalkulačka</h1>
                 <div class="kalkulacka">
-                    <img src="img/Under-construction.png" alt="logo for print">
-                    <div class="text">Kalkulačka je předmětem další části semestrálky</div>
+                    <label for="field1"><div class="full_width"><h2>Název akce</h2>
+                        <input type="text" name="field1" id="event_name" placeholder="Název akce" />
+                    </div></label>
+
+                    <label for="field2"><div class="full_width"><h2>Místo konání</h2>
+                    <input type="text" name="field2" id="event_address" placeholder="Adresa" />
+                    </div></label>
+
+                    <label for="field3"><div class="full_width"><h2>Kontakt na organizátora</h2>
+                    <input type="text" name="field3" id="organizer_contact" placeholder="+420 737 123 456 nebo jmeno@firma.cz" />
+                    </div></label>
+    
+
+                    <label for="field4"><div class="half_width"><h2>Začátek akce</h2>
+                    <input type="datetime-local" id="event_start" name="field4">
+                    </div></label>
+
+                    <label for="field5"><div class="half_width"><h2>Konec akce</h2>
+                    <input type="datetime-local" id="event_end" name="field5">
+                    </div></label>
+
+                    <h2>Očekávaný počet návštěvíků</h2>
+                    <div class="radio-group">
+                        <input type="radio" id="event_size_1" name="selector" checked="checked"><label for="event_size_1">méně než 20</label>
+                        <input type="radio" id="event_size_2" name="selector"><label for="event_size_2">21 - 500</label>
+                        <input type="radio" id="event_size_3" name="selector"><label for="event_size_3">více než 500</label>
+                    </div>
+
+                    <h2> Objednané služby</h2>
+                    <label class="checkbox_container"><div class="checkbox_title">Stream</div>
+                        <input type="checkbox" id="event_stream" name="field6">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="checkbox_container"><div class="checkbox_title">Projekce</div>
+                        <input type="checkbox" id="event_projekce" name="field6">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="checkbox_container"><div class="checkbox_title">Záznam</div>
+                        <input type="checkbox" id="event_zaznam" name="field6">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="checkbox_container"><div class="checkbox_title">Klip</div>
+                        <input type="checkbox" id="event_klip" name="field6">
+                        <span class="checkmark"></span>
+                    </label>
+                    
+
+                    <div id="result_price">Celkem: 0 Kč</div>
+                    <div id="hidden_id"></div>
                 </div>
 
             </div>
@@ -63,5 +113,6 @@
             </footer>
         </div>
     </main>
+<script src="js/calculator.js"></script>
 </body>
 </html>
