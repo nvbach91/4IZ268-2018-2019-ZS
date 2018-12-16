@@ -192,6 +192,10 @@ background-color: red;
 
 }
 
-.pin {position: relative;
+.pin {position: absolute;
     width: 15px;
     height: auto;}
+
+#floor1mapa {
+    position: relative;width:400px;height:421px;    
+}

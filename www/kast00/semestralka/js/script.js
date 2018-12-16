@@ -65,13 +65,13 @@ document.getElementById('btn6').onclick = function () { openfloor(event, 'floor3
 
 
 
-function makeApiCall(action="read") {
+function makeApiCall(action = "read") {
 
     var ssID = "1gjr8_KlM907EM06O_fOS92Qs9ns3lOwIVDjIXv0tNLc";
     var rng = "List 1";
 
     if (action == "write") {
-       
+
         vals = new Array(4);
         vals = [1, "automat 8", "11,11", "credit card accepted"]
 
@@ -79,64 +79,69 @@ function makeApiCall(action="read") {
         var params = {
             // The ID of the spreadsheet to update.
             spreadsheetId: ssID,  // TODO: Update placeholder value.
-    
+
             // The A1 notation of a range to search for a logical table of data.
             // Values will be appended after the last row of the table.
             range: rng,  // TODO: Update placeholder value.
-    
+
             // How the input data should be interpreted.
             valueInputOption: 'RAW',  // TODO: Update placeholder value.
-    
+
             // How the input data should be inserted.
             insertDataOption: 'INSERT_ROWS',  // TODO: Update placeholder value.
-          };
-    
-          var valueRangeBody = {
+        };
+
+        var nazev = document.getElementById("nazev").value;
+
+        var poloha = document.getElementById("poloha").value;
+
+
+        var valueRangeBody = {
             "values": [
-              [
-                1
-              ],
-              [
-                "automat 9"
-              ],
-              [
-                "11,11"
-              ],
-              [
-                "credit card accepted"
-              ]
+                [
+                    1
+                ],
+                [
+                    nazev
+                ],
+                [
+                    poloha
+                ],
+                [
+                    "credit card accepted"
+                ]
             ],
             "majorDimension": "COLUMNS"
-          };
-    
-          var request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
-          request.then(function(response) {
+        };
+
+        var request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
+        request.then(function (response) {
             // TODO: Change code below to process the `response` object:
             console.log(response.result);
-          }, function(reason) {
+        }, function (reason) {
             console.error('error: ' + reason.result.error.message);
-          });
-        
+        });
+
     } else {
 
         var params = {
             // The ID of the spreadsheet to retrieve data from.
             spreadsheetId: ssID,  // TODO: Update placeholder value.
-    
+
             // The A1 notation of the values to retrieve.
             range: rng,  // TODO: Update placeholder value.
-    
+
             // How values should be represented in the output.
             // The default render option is ValueRenderOption.FORMATTED_VALUE.
             // valueRenderOption: '',  // TODO: Update placeholder value.
-    
+
             // How dates, times, and durations should be represented in the output.
             // This is ignored if value_render_option is
             // FORMATTED_VALUE.
             // The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
             // dateTimeRenderOption: '',  // TODO: Update placeholder value.
         };
-    
+
         var request = gapi.client.sheets.spreadsheets.values.get(params);
         request.then(function (response) {
             // TODO: Change code below to process the `response` object:
@@ -146,7 +151,7 @@ function makeApiCall(action="read") {
             console.error('error: ' + reason.result.error.message);
         });
     }
-    
+
 }
 
 function initClient() {
@@ -193,27 +198,48 @@ function handleSignOutClick(event) {
 }
 
 function downloadData(result) {
-    for (var row = 0; row < 8; row++) {
+    for (var row = 0; row < result.values.length; row++) {
         var x = document.createElement("IMG");
         x.setAttribute("src", "img/location.png");
-      x.setAttribute("class", "pin");
+        x.setAttribute("class", "pin");
 
         for (var col = 0; col < 4; col++) {
             if (col = 2) {
-                var res = result.values[row][col].split(","); 
+                var res = result.values[row][col].split(",");
                 var style = "top: " + res[0] + "%; left: " + res[1] + "%;";
                 x.setAttribute("style", style)
-              console.log(style);
-              break;
-        } 
+                console.log(style);
+                break;
+            }
 
+        }
+
+        document.getElementById("floor1mapa").appendChild(x);
     }
-
-    document.getElementById("floor1mapa").appendChild(x);
-}
 }
 
 function refresh() {
     document.getElementById("floor1mapa").innerHTML = "";
     makeApiCall();
+}
+
+document.getElementById("floor1mapa").addEventListener("click", getClickPosition, false);
+
+function getClickPosition(e) {
+    var xPosition = e.pageX - $('#floor1mapa').offset().left;
+    var yPosition = e.pageY - $('#floor1mapa').offset().top;
+    document.getElementById("poloha").value = (Math.round((yPosition / document.getElementById('floor1mapa').offsetHeight) * 100)-6) + "," + (Math.round((xPosition / document.getElementById('floor1mapa').offsetWidth) * 100)-2);
+    if (document.getElementById("temporary")) {
+        document.getElementById("temporary").parentNode.removeChild(document.getElementById("temporary"));
+    }
+        var x = document.createElement("IMG");
+        x.setAttribute("src", "img/location_temporary.png");
+        x.setAttribute("class", "pin");
+        x.setAttribute("id", "temporary");
+        x.setAttribute("style", "top: " + (Math.round((yPosition / document.getElementById('floor1mapa').offsetHeight) * 100)- 6) + "%; left: " + (Math.round((xPosition / document.getElementById('floor1mapa').offsetWidth) * 100 - 2) + "%;"));
+        document.getElementById("floor1mapa").appendChild(x);
+
+ 
+
+   
 }
