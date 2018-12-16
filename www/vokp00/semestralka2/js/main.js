@@ -4,18 +4,19 @@ var longitude = 0;
 var city = "";
 
 /* Získání délky, šířky a města uživatele */
-fetch("http://ip-api.com/json/?fields=lat,lon,city").then(function (take) {
-    return take.json();
-}).then(function (take) {
-    latitude = take.lat;
-    longitude = take.lon;
-    city = take.city;
+
+fetch("http://ip-api.com/json/?fields=lat,lon,city").then(function (response) {
+    return response.json();
+}).then(function (response) {
+    latitude = response.lat;
+    longitude = response.lon;
+    city = response.city;
+    console.log(latitude, longitude, city);
 });
 
 /* nastavení mapy */
 var center = SMap.Coords.fromWGS84(latitude, longitude);
-var map = new SMap(JAK.gel("map"), center, 1);
-
+var map = new SMap(JAK.gel("map"), center, 9);
 var layerTwo = new SMap.Layer.Marker();
 map.addLayer(layerTwo);
 layerTwo.enable();
@@ -40,10 +41,10 @@ xhr.send("gpx/hrady.gpx");
 
 /* přidání vrstvy pro zobrazení bodů na mapě */
 var response = function (xmlDoc) {
-    var gpx = new SMap.Layer.GPX(xmlDoc, null, { maxPoints: 1000 });
+    var gpx = new SMap.Layer.GPX(xmlDoc, null, { maxPoints: 100 });
     map.addLayer(gpx);
     gpx.enable();
-    gpx.fit();
+    /*gpx.fit();*/
 }
 
 var latitudeCastle = 0;
@@ -57,7 +58,6 @@ $.getJSON("gpx/hrady.json", function (data) {
     var JSONItems = [];
     JSONItems = data;
     var array = [];
-
     for (var i = 0; i < JSONItems.features.length; i++) {
 
 
@@ -88,7 +88,7 @@ $.getJSON("gpx/hrady.json", function (data) {
         array.push(dist);
     }
 
-    /* hledání nejbližších hradů */
+    /* hledání nejbližšího hradu */
     min = Math.min.apply(Math, array)
 
     if (dist = min) {
@@ -104,8 +104,8 @@ $("#coors").click(function () {
         buttonclicked = true;
         var para = document.createElement("P");
         var t = document.createTextNode("You are somewhere near the coordinates " + latitude + ", " + longitude + " which means you are in " + city +
-            ". \n The closest castle is " + nameCastle + ".\n" + "Basic info: " + descCastle +
-            " You can get more info here: \n");
+            ". The closest castle you can visit is: " + nameCastle + ". " + " Basic info: " + descCastle +
+            " You can get more info here: ");
         para.appendChild(t);
         var a = document.createElement('a');
         var linkText = document.createTextNode(link);
@@ -116,7 +116,7 @@ $("#coors").click(function () {
         document.getElementById("coordinates").appendChild(para);
 
     } else {
-        alert("Hey, one time is enough!");
+        alert("Hey, you already know your location and the closest castle.");
     }
 });
 

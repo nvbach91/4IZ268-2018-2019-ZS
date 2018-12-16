@@ -1,15 +1,20 @@
 * {
     font-family: 'Arial Narrow', Arial, sans-serif;
+    text-align: justify;
+    size: 12px;
+    opacity: 1;
+    background-repeat: no-repeat;
 }
 
 body {
-    background-color: grey;
+    background-image: url("../img/wall.png");
+    background-size: cover;
 }
 
 h1 {
     font-family: 'MedievalSharp';
+    text-align: center;
     width: 100%;
-    background-color: rgb(121, 32, 32);
     margin-top: 0;
 }
 
@@ -19,46 +24,55 @@ button {
 .randomText {
     font-family: 'Arial Narrow', Arial, sans-serif;
     width: 100%;
-    text-align: center;
     top: 0px;
     right: 50%-width;
+    width: 100%;
+}
+
+
+.randomText p {
+    margin-left: 8%;
+    margin-right: 8%;
 }
 
 .textBox {
     float: right;
-    height: 500px;
-    width: 20%;
+    height: 400px;
+    width: 30%;
     margin: 10px auto;
-    border: 1px black solid;
     padding-top: 20px;
     padding-left: 20px;
     float: left;
-    background-color: rgb(255, 255, 255);
     background-image: url("../img/lion.png");
     background-position: bottom;
-    background-size: 50%;
+    background-size: 30%;
     background-repeat: no-repeat;
 }
 
 #map {
-    height: 500px;
-    width: 60%;
+    height: 450px;
+    width: 50%;
     margin: 10px auto;
-    border: 1px black solid;
+    border: 1px transparent solid;
     padding: 10px;
     float: left;
     margin-left: 8%;
+    box-shadow: 10px 15px 8px grey;
 }
 
 #coors {
     padding: 10px;
-    border: 1px solid black;
+    font-size: 20px;
+    border: 1px solid transparent;
     border-radius: 10px;
+    right: 50%-width;
+
 }
 
 #coors:hover {
-    background-color: bisque;
+    background-color: rgb(141, 40, 40);
 }
+
 
 .card {
     width: 100px;
