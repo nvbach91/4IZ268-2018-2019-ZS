@@ -425,9 +425,13 @@ div.teams-list img {
 /*registrace*/
 #registr{
     text-align: center;
+    text-shadow: 2px 2px #F1C40F;
 }
 #registrpar{
 text-align: center;
+}
+.inputR{
+    width: 200px;
 }
 
 
@@ -851,8 +855,10 @@ text-align: center;
         margin-left: 30px;
         margin-right: 30px;
     }
+    
 
 }
+
 /*TISK*/
 @media print{
     footer{
