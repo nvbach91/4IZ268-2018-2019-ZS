@@ -15,6 +15,7 @@ $duration = intval($_GET['duration']);
 $start = $_GET['start'];
 $name = $_GET['name'];
 $organizer = $_GET['organizer'];
+$address = $_GET['address'];
 $stream = ($_GET['stream'] == 'true');
 $projekce = ($_GET['projekce'] == 'true');
 $zaznam = ($_GET['zaznam'] == 'true');
@@ -23,7 +24,7 @@ $klip = ($_GET['klip'] == 'true');
 $sql2 = "";
 $service_count = 0;
 
-store_session($conn, $id, $name, $organizer, $start, $size, $stream, $projekce, $zaznam, $klip);
+store_session($conn, $id, $name, $address, $organizer, $start, $size, $stream, $projekce, $zaznam, $klip);
 
 if($stream){
     $service_count++;
@@ -143,8 +144,8 @@ function get_multi_service_price($conn, $size, $duration, $stream, $projekce, $z
     echo $toEcho . " Kč";
 }
 
-function store_session($conn, $id, $name, $organizer, $start, $size, $stream, $projekce, $zaznam, $klip){
-    $sql .= "INSERT INTO VSE_event_calculator_contacts (sess_id, event_name, organizer_contact, stream, projekce, zaznam, klip) VALUES ('".$id."', '".$name."', '".$organizer."', '".$stream."', '".$projekce."', '".$zaznam."', '".$klip."') ON DUPLICATE KEY UPDATE event_name='".$name."'";
+function store_session($conn, $id, $name, $address, $organizer, $start, $size, $stream, $projekce, $zaznam, $klip){
+    $sql .= "INSERT INTO VSE_event_calculator_contacts (sess_id, event_name, event_address, organizer_contact, stream, projekce, zaznam, klip) VALUES ('".$id."', '".$name."', '".$address."', '".$organizer."', '".$stream."', '".$projekce."', '".$zaznam."', '".$klip."') ON DUPLICATE KEY UPDATE event_name='".$name."', stream='".$stream."', projekce='".$projekce."', zaznam='".$zaznam."', klip='".$klip."'";
     if ($conn->query($sql) === TRUE) {
 
     } else {

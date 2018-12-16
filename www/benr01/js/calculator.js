@@ -162,7 +162,8 @@ function get_price(){
     
     $name = document.getElementById("event_name").value;
     $organizer = document.getElementById("organizer_contact").value;
-    $start = new Date(document.getElementById("organizer_contact").value);
+    $address = document.getElementById("event_address").value;
+    $start = new Date(document.getElementById("event_start").value);
     $paid_hours = count_paid_hours(get_duration());
     $size = get_event_size();
     $stream = get_event_stream();
@@ -184,7 +185,7 @@ function get_price(){
         }
     };
     //document.getElementById("result_price").innerHTML = "database/getData.php?duration="+ $paid_hours +"&size="+$size + "&stream="+$stream + "&projekce="+$projekce + "&zaznam="+$zaznam + "&klip="+$klip;
-    xmlhttp.open("GET","database/getData.php?id="+$id+"&name="+$name+"&organizer="+$organizer+"&start="+$start+"&duration="+ $paid_hours +"&size="+$size + "&stream="+$stream + "&projekce="+$projekce + "&zaznam="+$zaznam + "&klip="+$klip, true);
+    xmlhttp.open("GET","database/getData.php?id="+$id+"&name="+$name+"&address="+$address+"&organizer="+$organizer+"&start="+$start+"&duration="+ $paid_hours +"&size="+$size + "&stream="+$stream + "&projekce="+$projekce + "&zaznam="+$zaznam + "&klip="+$klip, true);
     xmlhttp.send();
 }
 
