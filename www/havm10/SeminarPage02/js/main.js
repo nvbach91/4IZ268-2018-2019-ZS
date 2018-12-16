@@ -18,6 +18,7 @@ var startMarker = '';
 var endMarker = '';
 var computeRoute = '';
 var selectOption = 0;
+var loadContent = 0;
 
 var center = SMap.Coords.fromWGS84(14.41, 50.08);
 var map = new SMap(JAK.gel("map"), center, 10);
@@ -78,7 +79,7 @@ var setMarkerEnd = function (coordinates) {
 var startCoordinates = function (coordinates) {
     startLongitude.text(coordinates[0]);
     startLatitude.text(coordinates[1]);
-    if (computeRoute !== '') {
+    if (computeRoute !== '' && loadContent === 0) {
         prepareSearch();
     };
 };
@@ -86,7 +87,7 @@ var startCoordinates = function (coordinates) {
 var endCoordinates = function (coordinates) {
     endLongitude.text(coordinates[0]);
     endLatitude.text(coordinates[1]);
-    if (computeRoute !== '') {
+    if (computeRoute !== '' && loadContent === 0) {
         prepareSearch();
     };
 };
@@ -184,11 +185,12 @@ save.submit(function (e) {
 
 var switchContent = function (name) {
     var saveName = $('<div>').addClass('save-name').text(name).click(function () {
-        var startCoordinate = { x: parseFloat(localStorage.getItem($(this).text() + '.startLon')), y: parseFloat(localStorage.getItem($(this).text() + '.startLat')) };
-        var endCoordinate = { x: parseFloat(localStorage.getItem($(this).text() + '.endLon')), y: parseFloat(localStorage.getItem($(this).text() + '.endLat')) };
-        setMarkerStart(SMap.Coords.fromWGS84(startCoordinate.x, startCoordinate.y));
-        setMarkerEnd(SMap.Coords.fromWGS84(endCoordinate.x, endCoordinate.y));
+        var object = JSON.parse(localStorage.getItem($(this).text()));
+        loadContent = 1;
+        setMarkerStart(SMap.Coords.fromWGS84(parseFloat(object.startLon), parseFloat(object.startLat)));
+        setMarkerEnd(SMap.Coords.fromWGS84(parseFloat(object.endLon), parseFloat(object.endLat)));
         prepareSearch();
+        loadContent = 0;
     });
     return saveName;
 }
@@ -196,10 +198,6 @@ var switchContent = function (name) {
 var deleteComponent = function (saveContent) {
     var deleteContent = $('<button>').addClass('save-delete').text('Delete').click(function () {
         localStorage.removeItem($(this).siblings()[0].lastChild.data);
-        localStorage.removeItem($(this).siblings()[0].lastChild.data + '.startLon');
-        localStorage.removeItem($(this).siblings()[0].lastChild.data + '.startLat');
-        localStorage.removeItem($(this).siblings()[0].lastChild.data + '.endLon');
-        localStorage.removeItem($(this).siblings()[0].lastChild.data + '.endLat');
         saveContent.remove();
     });
     return deleteContent;
@@ -207,41 +205,36 @@ var deleteComponent = function (saveContent) {
 
 var loadLocalData = function () {
     for (var i = 0; i < localStorage.length; i++) {
-        var key = localStorage.key(i);
-        var value = localStorage.getItem(localStorage.key(i));
-        if (key === value) {
-            if (checkName(value) === false) {
-                var saveContent = $('<li>').addClass('save-content');
-                var saveName = switchContent(value);
-                var deleteContent = deleteComponent(saveContent);
+        var value = localStorage.key(i);
+        var saveContent = $('<li>').addClass('save-content');
+        var saveName = switchContent(value);
+        var deleteContent = deleteComponent(saveContent);
 
-                saveContent.append(deleteContent);
-                saveContent.append(saveName);
-                saveContents.append(saveContent);
-            }
-        }
+        saveContent.append(deleteContent);
+        saveContent.append(saveName);
+        saveContents.append(saveContent);
     }
 }
 
 var saveRoute = function () {
+    var targetName = nameInput.val();
+
     var saveContent = $('<li>').addClass('save-content');
-    var saveName = switchContent(nameInput.val());
+    var saveName = switchContent(targetName);
     var deleteContent = deleteComponent(saveContent);
 
     saveContent.append(deleteContent);
     saveContent.append(saveName);
     saveContents.append(saveContent);
 
-    var storageStartLon = nameInput.val() + '.startLon'
-    var storageStartLat = nameInput.val() + '.startLat'
-    var storageEndLon = nameInput.val() + '.endLon'
-    var storageendLat = nameInput.val() + '.endLat'
+    var object = {
+        startLon: startMarker._coords.x,
+        startLat: startMarker._coords.y,
+        endLon: endMarker._coords.x,
+        endLat: endMarker._coords.y
+    };
 
-    localStorage.setItem(nameInput.val(), nameInput.val());
-    localStorage.setItem(storageStartLon, startMarker._coords.x);
-    localStorage.setItem(storageStartLat, startMarker._coords.y);
-    localStorage.setItem(storageEndLon, endMarker._coords.x);
-    localStorage.setItem(storageendLat, endMarker._coords.y);
+    localStorage.setItem(targetName, JSON.stringify(object));
 };
 
 drawCanvas();
@@ -250,4 +243,4 @@ loadLocalData();
 var signals = map.getSignals();
 signals.addListener(window, "marker-drag-stop", stop);
 signals.addListener(window, "marker-drag-start", start);
-map.getSignals().addListener(window, "map-click", click);
+signals.addListener(window, "map-click", click);
