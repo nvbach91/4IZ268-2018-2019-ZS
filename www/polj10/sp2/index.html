@@ -46,9 +46,16 @@
             <label class="smallLabel" for="pasteName">Název:</label><input placeholder="Zadejte název (volitelné)" id="pasteName" type="text">
         </div>
 
-        <button id="createNewPasteButton" type="button">Vložit na Pastebin</button>
+        <button id="createNewPasteButton" class="displayBlock" type="button">Vložit na Pastebin</button>
     </form>
+
+
+    <div class="clear"></div>
+    <div id="userPastes">
+        <div class="listTitle">Poslední vložený text</div>
+    </div>
 </main>
+
 
 <script src="js/pastebin-rest.js"></script>
 </body>

@@ -25,7 +25,9 @@ const globals = {
   login_user_url: "https://pastebin.jiripolacek.net/api/Login",
   get_paste_url: "https://pastebin.jiripolacek.net/api/api_raw.php",
   api_option_userdetails: "userdetails",
-  api_user_key_local_storage: "api_user_key"
+  api_option_show_paste: "show_paste",
+  api_option_list: "list",
+  api_user_key_local_storage: "api_user_key",
 };
 
 //HELPERS
@@ -126,6 +128,13 @@ function closeStatusPanel() {
     statusBox.className = "";
     statusBox.classList.add("hidden");
 }
+function showStatusPanel(color, message) {
+    const statusBox = document.getElementById("statusBox");
+    const statusLinkWrap = document.getElementById("statusLinkWrap");
+    statusLinkWrap.innerText = message;
+    statusBox.className = "";
+    statusBox.classList.add(color);
+}
 function assignEventListeners() {
     document.getElementById("loginButton").onclick = login;
     document.getElementById("logoutButton").onclick = logout;
@@ -178,11 +187,7 @@ function login() {
     const password = document.getElementById("loginPassword").value;
 
     createApiUserKey(userName, password);
-    document.getElementById("loginForm").classList.add("hidden");
-    document.getElementById("logoutButton").classList.remove("hidden");
-
-
-
+    closeStatusPanel();
 }
 function logout() {
     const localStorage = window.localStorage;
@@ -190,19 +195,136 @@ function logout() {
     showAnonymousUserId();
 }
 
-//API FUNCTIONS
-function listUserPastes() {}
-function deletePaste() {}
-function getPaste() {
+function createPasteElement(paste_key, paste_date, paste_title, paste_expire_date, paste_private, paste_format_long, paste_url) {
+    const pasteElement = document.createElement("li");
+    pasteElement.classList.add("pasteListElement");
+
+    const linkElement = document.createElement("a");
+    const dateElement = document.createElement("span");
+    const titleElement = document.createElement("span");
+    const expireElement = document.createElement("span");
+    const privateElement = document.createElement("em");
+    const formatElement = document.createElement("format");
+    const clearElement = document.createElement("div");
+    const clearElement2 = document.createElement("div");
+    const deleteButton = document.createElement("button");
+
+    linkElement.innerText = paste_url;
+    linkElement.href = paste_url;
+    linkElement.target = "_blank";
 
 
-    //api_dev_key
-    //api_user_key
-    //api_paste_key
-    //api_option
+    titleElement.classList.add("pasteListName");
+    expireElement.classList.add("pasteListDate");
+    dateElement.classList.add("pasteListDate");
+    clearElement.classList.add("clear");
+    clearElement2.classList.add("clear");
+    deleteButton.classList.add("deletePaste");
+    deleteButton.innerText = "Odstranit";
+    deleteButton.onclick = function () {
+        deletePaste(paste_key);
+        listUserPastes();
+    };
 
+    dateElement.innerText = "Vytvořeno" +new Date(paste_date * 1000).toLocaleString("cs-CZ");
+
+
+    titleElement.innerText = paste_title;
+    expireElement.innerText = "Expirace: " + new Date(paste_expire_date * 1000).toLocaleString("cs-CZ");
+    privateElement.innerText = " (" + globals.visibility_paste_code_names[paste_private] + ")";
+    formatElement.innerText = " - " + paste_format_long;
+
+    pasteElement.appendChild(titleElement);
+    pasteElement.appendChild(formatElement);
+    pasteElement.appendChild(privateElement);
+
+
+    pasteElement.appendChild(dateElement);
+    pasteElement.appendChild(clearElement);
+
+    pasteElement.appendChild(linkElement);
+
+    pasteElement.appendChild(expireElement);
+    pasteElement.appendChild(clearElement2);
+    pasteElement.appendChild(deleteButton);
+
+    return pasteElement;
 }
 
+//API FUNCTIONS
+function listUserPastes() {
+    const apiUserKey = localStorage.getItem("api_user_key");
+    const data = new URLSearchParams();
+    data.append("api_dev_key", globals.api_dev_key);
+    data.append("api_user_key", apiUserKey);
+    data.append("api_option", globals.api_option_list);
+    document.getElementById("userPastes").classList.remove("hidden");
+
+    postData(globals.create_paste_url, data,
+        function (responseText) {
+            if (responseText === "No pastes found."){
+                document.getElementById("userPastes").classList.add("hidden");
+                return;
+            }
+
+            if (responseText.includes("Bad API request")){
+                showStatusPanel("crimson", "Nepodařilo se načíst uložené texty.");
+                return;
+            }
+
+            let oParser = new DOMParser();
+            let oDOM = oParser.parseFromString(responseText, "application/xml");
+            let pastes = oDOM.childNodes;
+
+            const userPastesElement = document.getElementById("userPastes");
+            const pasteElementList = document.createElement("ul");
+            userPastesElement.appendChild(pasteElementList);
+
+            if(pastes.length === 0){
+                document.getElementById("userPastes").classList.add("hidden");
+            }
+
+            for (let i = 0; i < pastes.length; i++){
+                const paste = pastes[i];
+                const paste_key = paste.getElementsByTagName("paste_key")[0].innerHTML;
+                const paste_date = paste.getElementsByTagName("paste_date")[0].innerHTML;
+                const paste_title = paste.getElementsByTagName("paste_title")[0].innerHTML;
+                const paste_expire_date = paste.getElementsByTagName("paste_expire_date")[0].innerHTML;
+                const paste_private = paste.getElementsByTagName("paste_private")[0].innerHTML;
+                const paste_format_long = paste.getElementsByTagName("paste_format_long")[0].innerHTML;
+                const paste_url = paste.getElementsByTagName("paste_url")[0].innerHTML;
+
+                const pasteElement = createPasteElement(paste_key, paste_date, paste_title, paste_expire_date, paste_private, paste_format_long, paste_url);
+
+                pasteElementList.appendChild(pasteElement);
+            }
+        },
+        function (statusText) {
+            showStatusPanel("crimson", "Při komunikaci se serverem se vyskytla chyba.")
+        });
+}
+function deletePaste(paste_key) {
+    const apiUserKey = localStorage.getItem("api_user_key");
+    const data = new URLSearchParams();
+    data.append("api_dev_key", globals.api_dev_key);
+    data.append("api_user_key", apiUserKey);
+    data.append("api_paste_key", paste_key);
+    data.append("api_option", "delete");
+
+    postData(globals.create_paste_url, data,
+        function (responseText) {
+            if (responseText === "Paste Removed"){
+                showStatusPanel("green", "Text byl úspěšně odstraněn.")
+            } else {
+                showStatusPanel("crimson", "Text se nepodařilo odstranit.");
+            }
+        },
+        function (statusText) {
+            showStatusPanel("crimson", "Při komunikaci se serverem se vyskytla chyba.")
+        });
+
+
+}
 function getUserInfo() {
     const apiUserKey = localStorage.getItem("api_user_key");
     const data = new URLSearchParams();
@@ -215,9 +337,10 @@ function getUserInfo() {
             if(responseText.includes("Bad API request") || responseText.includes(" ")){
                 if(responseText.includes("api_user_key")){
                     logout();
-                    //TODO: AUTO LOGOUT
+                    showStatusPanel("crimson", "Při komunikaci se serverem se vyskytla chyba.")
                 } else {
-                    //TODO: GENERAL API ERROR
+                    logout();
+                    showStatusPanel("crimson", "Při komunikaci se serverem se vyskytla chyba.")
                 }
             } else {
                 let oParser = new DOMParser();
@@ -236,10 +359,11 @@ function getUserInfo() {
                 document.getElementById("userAvatar").setAttribute("src", user_avatar_url);
 
                 showLoggedUserUi(user_name, user_avatar_url, user_account_type);
+                listUserPastes("10");
             }
         },
         function (statusText) {
-            //TODO: GENERAL API ERROR
+            showStatusPanel("crimson", "Při komunikaci se serverem se vyskytla chyba.");
         });
 }
 function createNewPaste() {
@@ -292,45 +416,46 @@ function createNewPaste() {
 
                 document.getElementById("pasteName").value = "";
                 document.getElementById("pasteTextArea").value = "";
+                listUserPastes();
                 return;
             }
 
             if(responseText === "Post limit, maximum pastes per 24h reached"){
-                statusLinkWrap.innerText = "Dosáhl/a jste maximálního počtu vložených textů za 24 hodin.";
-                statusBox.className = "";
-                statusBox.classList.add("crimson");
+                showStatusPanel("crimson", "Dosáhl/a jste maximálního počtu vložených textů za 24 hodin.");
+                // statusLinkWrap.innerText = "Dosáhl/a jste maximálního počtu vložených textů za 24 hodin.";
+                // statusBox.className = "";
+                // statusBox.classList.add("crimson");
                 return;
             }
 
             if (responseText.includes("maximum")){
-                statusLinkWrap.innerText = responseText;
-                statusBox.className = "";
-                statusBox.classList.add("crimson");
+                showStatusPanel("crimson", responseText);
+                // statusLinkWrap.innerText = responseText;
+                // statusBox.className = "";
+                // statusBox.classList.add("crimson");
                 return;
             }
 
             if(responseText.includes("empty")){
-                statusLinkWrap.innerText = "Nebyl zadán žádný text.";
-                statusBox.className = "";
-                statusBox.classList.add("crimson");
+                showStatusPanel("crimson", "Nebyl zadán žádný text.");
+                // statusLinkWrap.innerText = "Nebyl zadán žádný text.";
+                // statusBox.className = "";
+                // statusBox.classList.add("crimson");
                 return;
             }
 
             if(responseText.includes("expired")){
                 logout();
-                statusLinkWrap.innerText = "Byl/a jste automaticky odhlášen/a";
-                statusBox.classList.add("crimson");
+                showStatusPanel("crimson", "Byl/a jste automaticky odhlášen/a");
+                // statusLinkWrap.innerText = "Byl/a jste automaticky odhlášen/a";
+                // statusBox.classList.add("crimson");
                 return;
             }
 
-            statusLinkWrap.innerText = "Při komunikaci se vyskytla chyba.";
-            statusBox.className = "";
-            statusBox.classList.add("crimson");
+            showStatusPanel("crimson", "Při komunikaci se vyskytla chyba.");
         },
         function (statusText) {
-            statusLinkWrap.innerText = "Při komunikaci se vyskytla chyba.";
-            statusBox.className = "";
-            statusBox.classList.add("crimson");
+            showStatusPanel("crimson","Při komunikaci se vyskytla chyba.");
         });
 }
 function createApiUserKey(userName, password) {
@@ -341,20 +466,42 @@ function createApiUserKey(userName, password) {
 
     postData(globals.login_user_url, data,
         function (responseText) {
-            if(responseText.includes("Bad API request") || responseText.includes(" ")){
-                if(responseText.includes("invalid login")){
-                    //TODO: INVALID LOGIN
-                } else {
-                    //TODO: GENERAL LOGIN ERROR
-                }
-            } else {
-                const localStorage = window.localStorage;
-                localStorage.setItem("api_user_key", responseText);
-                getUserInfo();
+            if (responseText === "Bad API request, invalid login"){
+                const statusBox = document.getElementById("statusBox");
+                const statusLinkWrap = document.getElementById("statusLinkWrap");
+
+                statusLinkWrap.innerText = "Špatné přihlašovací údaje.";
+                statusBox.className = "";
+                statusBox.classList.add("crimson");
+                return;
             }
+
+            if (responseText === "Bad API request, too many logins in 5 minutes. Blocked for 5 minutes."){
+                const statusBox = document.getElementById("statusBox");
+                const statusLinkWrap = document.getElementById("statusLinkWrap");
+
+                statusLinkWrap.innerText = "Příliš mnoho pokusů o přihlášení za posledních 5 minut. Blokace na 5 minut";
+                statusBox.className = "";
+                statusBox.classList.add("crimson");
+                return;
+            }
+
+            if(responseText.includes("Bad API request")){
+                const statusBox = document.getElementById("statusBox");
+                const statusLinkWrap = document.getElementById("statusLinkWrap");
+
+                statusLinkWrap.innerText = responseText;
+                statusBox.className = "";
+                statusBox.classList.add("crimson");
+                return;
+            }
+
+            const localStorage = window.localStorage;
+            localStorage.setItem("api_user_key", responseText);
+            getUserInfo();
         },
         function (statusText) {
-            //TODO: GENERAL LOGIN ERROR
+            showStatusPanel("crimson", "Při přihlašování se vyskytla chyba.");
         });
 }
 
