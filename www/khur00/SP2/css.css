@@ -1,0 +1,36 @@
+
+.map {
+    position: absolute;;
+}
+svg{
+    position: absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+}
+.diary,.Shiganshina,.Trost,.Forest,.Chlorba,.Karanase,.Nedlay,.Ragako,.Utgard,.Dauper,.Stohess,.Hermina,.Orvud,.Yalkell,.Capital,.Maria,.Rose,.Sina,.Paradis{
+    fill: aliceblue;
+    opacity: .2;
+}
+.Paradis:hover,.diary:hover,.Shiganshina:hover,.Trost:hover,.Forest:hover,.Chlorba:hover,.Karanase:hover,.Nedlay:hover,.Ragako:hover,.Utgard:hover,.Dauper:hover,.Stohess:hover,.Hermina:hover,.Orvud:hover,.Yalkell:hover,.Capital:hover,.Maria:hover,.Rose:hover,.Sina:hover{
+    transition: opacity .2s ease;
+	opacity: .5;
+    cursor: pointer;
+    fill:beige;
+}
+.description {
+   background-color: rgba(240, 248, 255, 0.596);
+	display: none;
+    position: absolute;
+    left:5%;
+    bottom:5%;
+    top:5%;
+	padding: 20px;
+	box-sizing: border-box;
+	width: 25%;
+    height: 90%;
+	box-shadow: 0 0 32px 10px #ccc;
+    font-family: sans-serif;
+    font-size: 40px;
+}
