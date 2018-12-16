@@ -1,0 +1,721 @@
+/*Udělal jsem jenom jeden CSS soubor - je to určitě přehlednější a v průbehu jsem měl čas vyházet zbytečné části kódu,
+  duplikáty apod.
+  Zdaleka to není dokonalý ani podle mých představ, ale doufám, že to dodrží alespoň ty minimální požadavky na splnění
+  seminárky a předmětu (druhou seminárku odevzdám toho 4.12.18., zkusím na tom ale pracovat průběžně)*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pavanam';
+}
+.upperPart {
+    width:  100%;
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pavanam';
+}
+.upperPart {
+    width:  100%;
+    height: 100%;
+}
+.leftSideMenu {
+    background-image: url("leftSideMenuBackground.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.dropdown {
+    display: none;
+}
+.nameBoxAndList {
+    width: 100%;
+    height: 100%;
+    padding-top: 10%;
+    text-align: center;
+    color: white;
+}
+.nameBoxAndList ul {
+    list-style-type: none;
+    margin-top: 35%;
+    padding: 0;
+}
+.nameBoxAndList ul li {
+    padding: 10px;
+}
+.logo {
+    width: 40%;
+    height: 20%;
+}
+a:link {
+    text-decoration: none;
+    color: white;
+}
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+a:hover {
+    color: white;
+}   
+.upperRightSide {
+    max-width: 100%;
+    height: auto;
+    margin-left: 20%;
+    background: url("uvodImage.jpg");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+/*Start index.html style*/
+.container {
+    width: fit-content;
+    position: relative;
+    left: 30%;
+}
+.container .mandatory-01 {
+    height: 81%;
+}
+.nameBox {
+    max-width: fit-content;
+    height: auto;
+    opacity: 0.89;
+    font-size: 3em;
+    padding: 10px;
+    color: white;
+}
+.professionBox {
+    max-width: fit-content;
+    height: auto;
+    font-size: 2em;
+    color: white;
+    padding: 10px;
+}
+.bottomDescription {
+    width: 80%;
+    height: 60%;
+    display: flex;
+    margin-top: 2%;
+    text-align: justify;
+}
+.leftSideTextBox {
+    font-size: 1.2em;
+    margin-left: 5%;
+    flex: 3;
+}
+.rightSideTextBox {
+    font-size: 1.2em;
+    margin-left: 5%;
+    flex: 3;
+}
+@media screen and (max-width: 1000px), screen and (max-height: 700px){
+    .leftSideMenu {
+        display: none;
+    }
+    .dropdown {
+        z-index: 1;
+        left: 80%;
+        top: 10%;
+        display: inline-block;
+        position: absolute;
+        position: fixed;
+    }
+    .dropbtn {
+        background-color: brown;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: rgb(145, 7, 7)
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdown a:hover {background-color: #ddd;}
+
+    .show {display: block;}
+    .container {
+        left: 20%;
+    }
+    .container .mandatory-01 {
+        height: 85%;
+    }
+    .nameBox {
+        font-size: 1.5em;
+    }
+    .professionBox {
+        font-size: 1em;
+    }
+    .upperRightSide {
+        z-index: -1;
+        max-width: 100%;
+        height: auto;
+        margin-left: 0%;
+        background: url("uvodImage.jpg");
+        background-size: cover;
+        background-position:center;
+        background-repeat: no-repeat;
+    }
+    .bottomDescription {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    padding-right: 5%;
+    }
+    .mandatory-02 {
+        flex: 1;
+    }
+    .leftSideTextBox {
+        flex: auto;
+    }
+    .rightSideTextBox {
+        flex: auto;
+    }
+}
+/*End index.html style*/
+
+
+
+
+
+
+
+
+/*Start stravaStranka.html style*/
+.upperRightSideStrava {
+    width: 80%;
+    height: 100%;
+    margin-left: 20%;
+}
+.aboutMeBoxStrava {
+    width: 65%;
+    height: 90%;
+    position: relative;
+    left: 18%;
+    top: 5%;
+    font-size: 1.2em;
+}
+.aboutMeBoxStrava p {
+    font-size: 1em;
+}
+.line-01 {
+    margin-left: 0;
+}
+.photoAndTextFlexbox {
+    display: flex;
+    position: relative;
+    top: 2%;
+}
+.photoAndTextFlexbox p {
+    margin-left: 15%;
+    text-align: justify;
+
+}
+.personalPhoto {
+    width: 50%;
+    height: 70%;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+.textFlexbox {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.textFlexbox ul {
+    padding: 0;
+    margin: 0;
+    margin-left: 22%;
+    margin-bottom: 5%;
+}
+.textFlexbox p {
+    font-size: 1em;
+    padding-top: 0;
+    margin-top: 0;
+    padding: 0.1%;
+}
+@media screen and (max-width: 1000px), screen and (max-height: 700px){
+.upperRightSideStrava{
+    width: 90%;
+    left: 0;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.personalPhoto{
+    width: 100%;
+}
+.photoAndTextFlexbox {
+    flex-direction: column;
+}
+.photoAndTextFlexbox p {
+    margin-left: 0;
+}
+.textFlexbox {
+    width: 100%;
+    margin-top: 10%;
+}
+.aboutMeBoxStrava {
+    width: 100%;
+    margin: 0;
+    left: 0;
+}
+}
+/*End stravaStranka.html style*/
+
+
+
+
+
+
+
+
+
+
+
+/*Start citatyStranka.html style*/
+/*Tady už moc nevidím smysl v tom vymýšlení obsahu - responzivitu jsem udělal dle mého názoru hezky a
+  obrázek už je umístěn normálně.*/
+.upperRightSideCitaty {
+    width: 76%;
+    margin-left: 23%;
+}
+.servicesBox {
+    width: 100%;
+    position: relative;
+    top: 5%;
+}
+.servicesBox h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 3em;
+}
+.line-01 {
+    width: 80%;
+    margin-left: 0;
+}
+.expertiseBox {
+    position: relative;
+    top: 5%;
+    width: 20%;
+    height: 25%;
+    display: inline-block;
+}
+.expertiseBox h2, .methodsBox h2, h3 {
+    color: #382926;
+}
+.servicesList {
+    padding: 0;
+    list-style-type: none;
+}
+.servicesList li{
+    padding: 3px;
+    font-size: 1.1em;
+}
+.methodsBox {
+    margin-top: 15%;
+    width: 90%;
+    height: 25%;
+    text-align: justify;
+}
+.methodsBox p {
+    text-align: justify;
+    padding-bottom: 5%;
+}
+.imageTopRight {
+    width: 50%;
+    height: 50%;
+    float: right;
+    margin-right: 10%;
+    background: url("sluzbyTopRight.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+}
+@media screen and (max-width: 1000px), screen and (max-height: 700px){
+    .upperRightSideCitaty {
+        width: 95%;
+        height: 100%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .servicesBox {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .expertiseBox {
+        width: 90%;
+    }
+    .methodsBox {
+        margin: 0;
+        margin-top: 10%;
+        width: 90%;
+    }
+    .mandatory-01 {
+        flex: 1;
+    }
+    .methodsBox {
+        flex: 5;
+    }
+    .servicesBox .line-01 {
+        width: 70%;
+        margin-left: 0;
+    }
+    .topPart {
+        display: flex;
+        flex-direction: column;
+    }
+    .imageTopRight {
+        margin-top: 25%;
+        margin-right: 0;
+        margin-bottom: 0;
+        float: none;
+        width: 90%;
+        height: 50%;
+    }
+    .bottomPartCitaty .mandatory-01 {
+        flex: 5;
+    }
+}
+/*End citatyStranka.html style*/
+
+
+
+
+
+
+
+
+/*Start FFMIStranka.html style*/
+.upperRightSideFFMI {
+    height: 100%;
+    width: 80%;
+    position: absolute;
+    left: 20%;
+}
+.switchBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2%;
+    margin-left: 10%;
+    font-size: 25px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  left: 3%;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: brown;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px brown;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.weight-input, .height-input, .bodyfat-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 15%;
+    margin-top: 5%;
+    font-size: 25px;
+}
+.weight-input p, .height-input p, .bodyfat-input p {
+    width: 125px;
+}
+.weight, .height, .bodyfat, .height-inches{
+    margin-left: 3%;
+}
+.height-input, .bodyfat-input {
+    margin-top: 0;
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    margin-left: 15%;
+    margin-top: 2%;
+}
+.reset {
+    margin-left: 2%;
+}
+@media screen and (max-width: 1000px), screen and (max-height: 700px){
+.upperRightSideFFMI {
+    width: 100%;
+    left: 0;
+}
+.switchBox {
+    flex-direction: column;
+    margin: 0;
+}
+.weight-input {
+    flex-direction: column;
+    margin: 0;
+    margin-top: 15%;
+}
+.height-input, .bodyfat-input {
+    flex-direction: column;
+    margin: 0;
+}
+}
+/*End FFMIStranka.html style*/
+
+
+
+
+/*Start kontaktyStranka.html style*/
+.upperRightSideContacts {
+    width: 80%;
+    margin-left: 10%;
+}
+.contactBox {
+    width: 80%;
+    position: relative;
+    left: 23%;
+    display: flex;
+    flex-direction: column;
+}
+.line-01 {
+    width: 100%;
+    margin-left: 0;
+}
+.contacts h2 {
+    text-align: end;
+    margin-bottom: 10%;
+    font-size: 2em;
+    opacity: 0.5;
+    color: #382926;
+    font-style: italic;
+}
+.bottomPart {
+    width: 80%;
+    height: 100%;
+    margin-left: 20%;
+}
+.contactBox h1{
+    padding: 0;
+    margin: 0;
+    font-size: 3em;
+}
+.phoneAndMail {
+    display: flex;
+    text-align: center;
+    margin-top: 12%;
+}
+.mandatory-01, .mandatory-02{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.phone, .mail {
+    flex: 5;
+    font-size: 2em;
+    font-weight: bold;
+    color: brown;
+}
+.phone p, .mail p, .address p {
+    font-size: 1em;
+    font-weight: normal;
+    color: brown;
+    opacity: 0.8;
+}
+.emailImage {
+    width: 5em;
+    height: 5em;
+    margin: 0;
+    background: url("black-back-closed-envelope-shape.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.phoneImage {
+    width: 5em;
+    height: 5em;
+    margin: 0;
+    background: url("mobile-phone.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.addressImage {
+    width: 5em;
+    height: 5em;
+    margin: 0;
+    background: url("map\ \(1\).png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.addressAndMap {
+    display: flex;
+    text-align: center;
+    margin-top: 10%;
+    color: #94618E;
+}
+.addressAndMap .mandatory-01{
+    flex: 1;
+    margin-left: 20%;
+}
+.address {
+    flex: 1;
+    margin-right: 20%;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: brown;
+}
+.openHours {
+    width: 80%;
+    position: relative;
+    left: 10%;
+    top: 15%;
+    margin-right: 18%;
+    font-size: 1.5em;
+}
+.openHours h1 {
+    padding: 0;
+    margin: 0;
+}
+.openingHoursFlexbox {
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.openingHoursFlexbox p {
+    color: brown;
+}
+.openingHoursList {
+    padding: 0;
+    margin: 0;
+    flex: 5;
+    list-style-type: none;
+}
+.openingHoursList p {
+    color: black;
+}
+.openingHoursList li {
+    font-size: 0.8em;
+}
+.openingHoursList li div {
+    display: flex;
+}
+.openingHoursList li div .mandatoryP {
+    flex: 5;
+}
+@media screen and (max-width: 1000px), screen and (max-height: 700px){
+.contactBox {
+    left: 10%;
+}
+.contacts h2 {
+    font-size: 1.75em;
+}
+.contactBox h1{
+    font-size: 2em;
+}
+.phone, .mail {
+    font-size: 1.75em;
+}
+.phone p, .mail p {
+    font-size: 1em;
+}
+.address {
+    font-size: 1.75em;
+    margin-right: 0;
+}
+.upperRightSideContacts{
+    width: 100%;
+    margin-left: 0;
+}
+
+.phoneAndMail {
+    flex-direction: column;
+}
+.addressAndMap {
+    flex-direction: column;
+}
+.phoneImage, .addressImage, .emailImage {
+    margin-top: 20%;
+    margin-bottom: 0;
+}
+.address, .phone, .mail {
+    margin-top: 30%;
+}
+.openHours {
+    margin-top: 20%;
+    width: 100%;
+}
+.addressAndMap .mandatory-01{
+    flex: 1;
+    margin-left: 0;
+}
+.bottomPart {
+    margin: 0;
+}
+}
+/*End kontaktyStranka.html style*/

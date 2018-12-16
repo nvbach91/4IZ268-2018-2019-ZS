@@ -48,12 +48,12 @@ a:visited {
 a:hover {
     font-size: 20px;
 }   
-.upperRightSide {
+.upperRightSideStrava {
     width: 80%;
     height: 100%;
     margin-left: 20%;
 }
-.aboutMeBox {
+.aboutMeBoxStrava {
     width: 65%;
     height: 90%;
     position: relative;
@@ -61,7 +61,7 @@ a:hover {
     top: 5%;
     font-size: 1.5vw;
 }
-.aboutMeBox p {
+.aboutMeBoxStrava p {
     font-size: 1.2vw;
 }
 .line-01 {

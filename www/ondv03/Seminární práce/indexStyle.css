@@ -14,7 +14,7 @@ body {
     width: 20%;
     height: 100%;
     position: fixed;
-    font-size: 1vw;
+    font-size: 0.9em;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -50,7 +50,7 @@ a:hover {
     color: white;
 }   
 .upperRightSide {
-    max-width: 80%;
+    max-width: auto;
     height: auto;
     margin-left: 20%;
     background: url("uvodImage.jpg");
@@ -89,7 +89,7 @@ a:hover {
     background-size: cover;
     background-position: center;
 }
-@media screen and (min-width: 601px){
+@media screen and (min-width: 751px){
 .bottomDescription {
     width: 80%;
     margin-left: 20%;
@@ -102,7 +102,10 @@ a:hover {
     flex: 5;
 }
 }
-@media screen and (max-width: 600px){
+@media screen and (max-width: 750px){
+    .leftSideMenu {
+        display: none;
+    }
     .bottomDescription {
     width: 72%;
     display: flex;
