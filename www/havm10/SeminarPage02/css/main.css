@@ -10,21 +10,29 @@
 .content {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    padding: 10px;
+    max-width: 100%;
+    margin: 10px;
 }
 
 .save-content-conteiner {
     max-width: 25%;
     padding-left: 5px;
-    padding-right: 5px;
+    padding-right: 20px;
     min-width: 25%;
+    border-width: 2px; 
+    border-style: solid; 
+    border-radius: 10px;
 }
 
 .markers {
     display: flex; 
     flex-wrap: wrap;
     width: 40%;
+    border-width: 2px; 
+    border-style: solid; 
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
 }
 
 .sections {
@@ -45,6 +53,9 @@
     width: 40%;
     padding-left: 5px;
     padding-right: 5px;
+    border-width: 2px; 
+    border-style: solid; 
+    border-radius: 10px;
 }
 
 .data{
@@ -57,6 +68,9 @@
     border: 1px;
     border-style: solid;
     width: 35%;
+    border-width: 2px; 
+    border-style: solid; 
+    border-radius: 10px;
 }
 
 .column {
@@ -79,10 +93,13 @@ button {
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 button:hover {
     background-color: green;
+    color: white;
 }
 
 input {
@@ -132,6 +149,10 @@ li {
     width: 60%;
     height: 500px;
     touch-action: none;
+    border-radius: 15px;
+    margin-left: 10px; 
+    border-width: 2px; 
+    border-style: solid; 
 }
 
 #save{
@@ -140,10 +161,23 @@ li {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
     text-align: center;
-    width: 100%;
+    margin-left: 80px;
+    margin-right: 80px;
+    line-height: 150px;
+}
+
+.heading {
+    background-image: url('../img/mapy.png');
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    max-width: 100%;
+    margin: 10px;
 }
 
 h2 {

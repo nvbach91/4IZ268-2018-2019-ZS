@@ -130,7 +130,7 @@ var search = function (route) {
     draw.clearRect(0, 0, canvas.width, canvas.height);
     for (var i = 0; i < altitude.length; i++) {
         var localAltitude = (route.getResults().altitude[i]);
-        draw.fillRect(22 + i * 2, 150 - (localAltitude / 11), 1, localAltitude / 11);
+        draw.fillRect(30 + i * 2, 150 - (localAltitude / 11), 1, localAltitude / 11);
     };
     drawCanvas();
 };
