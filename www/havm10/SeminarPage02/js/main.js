@@ -176,7 +176,7 @@ save.submit(function (e) {
     e.preventDefault();
     if (computeRoute !== '') {
         if (checkName(nameInput.val()) === true) {
-            alert('Name is already used');
+            alert('Výraz je prázdný, či je již použit');
         } else {
             saveRoute();
         };
@@ -185,7 +185,11 @@ save.submit(function (e) {
 
 var switchContent = function (name) {
     var saveName = $('<div>').addClass('save-name').text(name).click(function () {
-        var object = JSON.parse(localStorage.getItem($(this).text()));
+        try {
+            var object = JSON.parse(localStorage.getItem($(this).text()));
+        } catch (e) {
+            console.log('někdo upravil záznam v local storage');
+        };
         loadContent = 1;
         setMarkerStart(SMap.Coords.fromWGS84(parseFloat(object.startLon), parseFloat(object.startLat)));
         setMarkerEnd(SMap.Coords.fromWGS84(parseFloat(object.endLon), parseFloat(object.endLat)));
@@ -205,8 +209,8 @@ var deleteComponent = function (saveContent) {
 
 var loadLocalData = function () {
     for (var i = 0; i < localStorage.length; i++) {
-        var value = localStorage.key(i);
         var saveContent = $('<li>').addClass('save-content');
+        var value = localStorage.key(i);
         var saveName = switchContent(value);
         var deleteContent = deleteComponent(saveContent);
 
