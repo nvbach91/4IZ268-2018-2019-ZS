@@ -51,16 +51,7 @@ const parseResults = (responses, novelName) => {
     });
     //ted konecne zpracuju jednotliva data, tady to bude chtít jestě přepracovat
 
-    statsByUser = {};
 
-    allPosts.forEach(({ data: { author, score } }) => { //tímhle jsem si usetřil práci to dělat zvlást pro author a zvlášt pro score.
-        statsByUser[author] = !statsByUser[author]
-            ? { postCount: 1, score: score } //pokud neexistuje zalozíme nové
-            : {
-                postCount: statsByUser[author].postCount + 1,
-                score: statsByUser[author].score + score,
-            }
-    });
     var rawTitles = [];
     var index6 = 0
     var theHighestCHCount = 0
