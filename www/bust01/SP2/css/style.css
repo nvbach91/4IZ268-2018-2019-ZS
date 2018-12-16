@@ -6,8 +6,14 @@ body {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
 }
+.index-page {
+  margin:0;
+}
 .movie-page {
   background-color: lightgray;
+}
+#actors-page {
+  display: none;
 }
 
 @keyframes spin {
@@ -27,30 +33,33 @@ body {
   animation: spin 1s linear infinite;
   margin: auto;
 }
-.movies-cont {
+.movies-cont, .act-cont {
   background-color:black;
 }
-.movies {
+.movies, .actors {
   width:75%;
   margin:0px auto;
   background-color: black;
 }
-#movie-field {
+#movie-field, #actor-field {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.movie-item {
+.movie-item, .actor-item {
   width: 25%;
   border: 8px solid  black;
   margin-top: 15px;
   height: 500px;
   background-color: grey;
 }
-.movie-item:hover {
+.actor-item {
+  height: 400px;
+}
+.movie-item:hover .actor-item:hover {
   transform: scale(1.2);
 }
-.movie-poster {
+.movie-poster, .actor-poster {
   width: 80%;
   height: 300px;
   margin: 0 auto;
@@ -129,18 +138,22 @@ body {
   align-items: center;
   margin: 10px 0;
 }
-.nav-main {
+.main {
   height:40px;
   display:flex;
   justify-content: center;
   align-items: center;
   background-color: darkgray;
 }
+.nav-cont, .nav-main {
+  background-color: darkgray;
+  padding: 5px 0;
+}
 
 a, :link{
   color: black;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 img{
@@ -170,19 +183,24 @@ img{
   font-size:22px;
   padding-top: 15px;
 }
-.search-inp {
+.search-inp-mov, .search-inp-act {
   width: 80%;
   height:30px;
   margin: 0 auto;
 }
-#search-form {
+#search-form-mov {
   margin: 20px auto;
+}
+#search-form-act {
+  margin: 0;
+  padding-bottom: 40px;
+  padding-top: 20px;
 }
 #sortMovies {
   height: 30px;
   margin-bottom: 10px;
 }
-.container-side {
+.container-side-mov, .container-side-act {
   height:40px;
   background-color:darkgray;
 }
@@ -192,7 +210,7 @@ img{
   margin: 15px auto;
 }
 
-.movie-select, .link-back, .link-imdb {
+.movie-select, .actor-select, .link-back, .link-imdb, #btn-index-mov, #btn-index-act {
   display:inline-block;
   color:#444;
   border:1px solid #CCC;
@@ -203,6 +221,12 @@ img{
   text-align: center;
   margin-bottom: 10px;
 }
+#btn-index-mov, #btn-index-act {
+  width:150px;
+  height: 40px;
+  font-size: 20px;
+  margin: 5px auto;
+}
 .movie-select:active {
   color:red;
   box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
@@ -212,4 +236,7 @@ img{
   height:40px;
   font-size: 20px;
   padding-top:10px;
+}
+hr {
+  margin: 0;
 }

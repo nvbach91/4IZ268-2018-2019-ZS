@@ -26,7 +26,7 @@ App.getMovies = function (searchText) {
         return 1;
       return 0;
     });
-    $.each(movies, (index, movie) => {
+    $.each(sortedMovies, (index, movie) => {
       html += `
           <div class="movie-item">
             <div class="movie-poster">
@@ -38,7 +38,7 @@ App.getMovies = function (searchText) {
           </div>
         `;
     });
-    $('.container-side').html(message);
+    $('.container-side-mov').html(message);
     App.movieField.html(html);
   })
     .catch(function (error) {
@@ -92,10 +92,55 @@ App.getMovie = function () {
     });
 }
 
+App.getActors = function (searchText) {
+  App.actorField.empty();
+  App.actorField.append(App.loader);
+  var url = 'https://api.themoviedb.org/3/search/person?api_key=' + App.api_key + '&language=en-US&query=' + searchText;
+  fetch(url).then(function (response) {
+    return response.json();
+  }).then(function (response) {
+    console.log(response);
+    var actors = response.results;
+    var html = '';
+    var message = '<p class="message">Results of searching <strong> &bdquo;' + searchText + '&rdquo; <strong></p>';
+    if (actors.length == 0) {
+      var html = `<p class="no-records">No records</p>`;
+    }
+    $.each(actors, (index, actor) => {
+      html += `
+          <div class="actor-item">
+            <div class="actor-poster">
+              <img src="https://image.tmdb.org/t/p/w500${actor.profile_path}">
+            </div>
+              <h3>${actor.name}</h3>
+          </div>
+        `;
+    });
+    $('.container-side-act').html(message);
+    App.actorField.html(html);
+  })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+var showElement = function(elementID) {
+  var elem = document.getElementById(elementID);
+  if (!elem) {
+    alert("No elements");
+    return;
+  }
+  var pages = document.getElementsByClassName('page');
+  for (var i = 0; i < pages.length; i++) {
+    pages[i].style.display = 'none';
+  }
+  elem.style.display = 'block';
+}
+
 App.init = function () {
-  App.searchForm.submit(function (e) {
+  App.searchFormMov.submit(function (e) {
     e.preventDefault();
-    var searchText = App.searchInput.val();
+    var searchText = App.searchInputMov.val();
     if (!searchText) {
       App.moviesField.empty();
       alert("Nebyl zadán název filmu")
@@ -105,13 +150,29 @@ App.init = function () {
       App.getMovies(searchText);
     }
   });
+  App.searchFormAct.submit(function (e) {
+    e.preventDefault();
+    var searchText = App.searchInputAct.val();
+    if (!searchText) {
+      App.actorsField.empty();
+      alert("Nebylo zadáno jméno")
+      return false;
+    }
+    else {
+      App.getActors(searchText);
+    }
+  });
 }
 
 $(document).ready(function () {
-  App.searchInput = $('#search-input');
-  App.searchForm = $('#search-form');
+  App.searchInputMov = $('#search-input-mov');
+  App.searchInputAct = $('#search-input-act');
+  App.searchFormMov = $('#search-form-mov');
+  App.searchFormAct = $('#search-form-act');
   App.moviesField = $('#movies');
+  App.actorsField = $('#actors');
   App.movieField = $('#movie-field');
+  App.actorField = $('#actor-field');
   App.optionVal = $('#sortMovies');
   App.loader = $('<div class="loader"></div>');
   App.init();

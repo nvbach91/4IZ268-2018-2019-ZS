@@ -9,33 +9,55 @@
 </head>
 
 <body class="index-page">
-  <nav class="nav-main">
+  <div class="nav-main">
     <a class="nav-inx" href="index.html">Movie database</a>
-  </nav>
+  </div>
+  <hr>
+  <div class="nav-cont">
+  <div onclick="showElement('movies-page');" id="btn-index-mov">Movies</div>
+  <div onclick="showElement('actors-page');" id="btn-index-act">Actors</div>
+</div>
   </hr>
 
-  <div class="search-main">
-    <div class="search-cont">
-      <h3 class="search-head">Search For Any Movie</h3>
-      <form id="search-form">
-        <input type="text" class="search-inp" id="search-input" placeholder="Search Movie....">
-      </form>
-      <select id="sortMovies" onchange="selectionChange()">
-        <option id="sortDef">Vyberte řazení</option>
-        <option id="sortAsc">Seřadit od nejlépe hodnocených</option>
-        <option id="sortDesc">Seřadit od nejhůře hodnocených</option>
-      </select>
+  <div id="movies-page" class="page">
+    <div class="search-main">
+      <div class="search-cont">
+        <h3 class="search-head">Search For Any Movie</h3>
+        <form id="search-form-mov">
+          <input type="text" class="search-inp-mov" id="search-input-mov" placeholder="Search Movie....">
+        </form>
+        <select id="sortMovies" onchange="selectionChange()">
+          <option id="sortDef">Vyberte řazení</option>
+          <option id="sortAsc">Seřadit od nejlépe hodnocených</option>
+          <option id="sortDesc">Seřadit od nejhůře hodnocených</option>
+        </select>
+      </div>
+    </div>
+    <div class="container-side-mov"></div>
+    <div class="movies-cont">
+      <div class="movies">
+        <div id="movie-field" class="movie-fld"></div>
+      </div>
     </div>
   </div>
-  <div class="container-side"></div>
-<div class="movies-cont">
-  <div class="movies">
-    <div id="movie-field" class="movie-fld"></div>
+
+  <div id="actors-page" class="page">
+    <div class="search-main">
+      <div class="search-cont">
+        <h3 class="search-head">Search For Actors</h3>
+        <form id="search-form-act">
+          <input type="text" class="search-inp-act" id="search-input-act" placeholder="Search Act....">
+        </form>
+      </div>
+    </div>
+    <div class="container-side-act"></div>
+    <div class="act-cont">
+      <div class="actors">
+        <div id="actor-field" class="actor-fld"></div>
+      </div>
+    </div>
   </div>
-</div>
 
-
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/main.js"></script>
 </body>
