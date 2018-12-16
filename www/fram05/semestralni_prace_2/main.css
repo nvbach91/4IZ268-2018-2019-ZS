@@ -1,0 +1,27 @@
+body{
+    margin: auto;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+h1{
+    font-size: 40px;
+    width: 100%;
+}
+.odstavec1{
+    
+}
+#show{
+   
+}
+.generated_pswd{
+    font-size: 50px;
+}
+.form1{
+    width: 700px;
+    margin: auto;
+    text-align: left;
+}
