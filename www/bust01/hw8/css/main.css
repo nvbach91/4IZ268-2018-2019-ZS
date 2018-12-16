@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+hr {
+    border-style: solid;
+    border-color: #eee;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.loader {
+    border: 5px solid cadetblue;
+    border-top: 5px solid #ccc;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+footer {
+    background-color: cadetblue;
+    padding: 20px 0;
+}
+
+form {
+    background-color: lightblue;
+    width:60%;
+    margin:0 auto;
+    height:100px;
+}
+
+#search-input {
+    display:block;
+    width: 60%;
+    height:50px;
+    margin: 5px auto;
+    border: 5px solid lightblue;
+}
+
+form button {
+    display:block;
+    width:40%;
+    height:40px;
+    background-color:blue;
+    margin: 0 auto;
+    cursor: pointer;
+    color:white;
+    font-size: 20px;
+}
+
+#user-profile {
+    width:60%;
+    margin: 5px auto;
+}
+.info {
+    width:100%;
+    height:500px;
+}
+.info-name {
+    height:50px;
+    width:100%;
+    background-color:blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.info-main {
+    display:flex;
+    width: 100%;
+    flex-direction: row;
+}
+.avatar {
+    width:50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 10px solid white;
+    height:440px;
+    flex:content;
+}
+.info-figures {
+    width:50%;
+    display:flex;
+    align-items: center;
+    flex-direction:column;
+    justify-content: center;
+}
+.info-figures div{
+    width:100%;
+    background-color:lightgray;
+    border: 1px solid black;
+    margin:5px 0;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content: flex-start;
+}
+
+.info-odkaz {
+    background-color: blue;
+    cursor: pointer;
+    display:block;
+    width:40%;
+    height:40px;
+}
+.info-odkaz a {
+    color:white;
+    font-size: 20px;   
+}
+h2 {
+    border: 20px solid white;
+}
+#repositories {
+    width:60%;
+    margin: 5px auto;
+    list-style: none;
+    padding:0;
+}
+#repositories p {
+    margin:none;
+}
+
+.repository {
+    display:flex;
+    background-color:lightgray;
+    border:3px solid white;
+    padding: 3px 0;
+}
+.name{
+    width:30%;
+}
+.url{
+    width:70%;
+    display:flex;
+    align-items:flex-start;
+}
+
+

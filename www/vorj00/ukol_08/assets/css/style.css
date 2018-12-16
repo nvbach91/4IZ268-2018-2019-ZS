@@ -1,0 +1,124 @@
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #ECEFF1;
+}
+
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none
+}
+
+.button {
+    color: #388E3C;
+    background-color: #C8E6C9;
+    padding: 1em;
+    text-transform: uppercase
+}
+
+.button:hover {
+    background-color: #A5D6A7;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+}
+
+.button--text {
+    background-color: initial;
+    padding: 0 0.5em;
+}
+
+.button--text:hover {
+    background-color: initial;
+    box-shadow: initial;
+}
+
+.button--submitSearch {
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    border: none;
+    padding: 1em 2em;
+    margin: 0;
+    ;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+}
+
+.img {
+    height: 100%;
+    border-radius: 50%;
+}
+
+.input {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: none;
+    padding: 1em;
+    transition: 0.2s;
+}
+
+.input:hover,
+.input:focus {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+}
+
+.input--search {
+    border-radius: 4px 0 0 4px;
+    flex-grow: 1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    min-width: 30rem;
+    margin: 0 auto;
+}
+
+.profile {
+    border-radius: 4px;
+    background-color: #FAFAFA;
+    padding: 1rem;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__photo {
+    height: 5rem;
+    text-align: center
+}
+
+.profile__name {
+    text-align: center
+}
+
+.profile__detail {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile__detailName {
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    color: #9E9E9E;
+    width: 30%;
+}
+
+.profile__detailValue {
+    margin-left: auto;
+}

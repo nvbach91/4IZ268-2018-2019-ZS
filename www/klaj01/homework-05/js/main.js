@@ -72,12 +72,12 @@ for (var i = 0; i <= 730; i += 13) {
 /*7)Around and about. Vytvořte funkci, která vypočte obsah kružnice podle dodaného poloměru.*/
 
 var circleArea = function (radius) {
-    return (Math.Pi * Math.pow(radius * radius));
+    return (Math.PI * Math.pow(radius * radius));
 };
 
 /*8) Another dimension. Vytvořte funkci, která vypočte objem kuželu, pokud znáte jeho výšku a poloměr.*/
 var coneVolume = function (radius, height) {
-    return (1 / 3 * Math.Pi * Math.pow(radius * radius) * height);
+    return (1 / 3 * Math.PI * Math.pow(radius * radius) * height);
 }
 /*9)Not sure if triangle, or just some random values. Vytvořte funkci, která rozhodne, zda se z dodaných 3 délek dá postavit trojúhelník, tj. vypíše buď true/yes nebo false/no.*/
 var triangle = function (a, b, c) {

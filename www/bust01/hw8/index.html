@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Git The Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <header id="head">
+        <h1>Git The Hub</h1>
+        <p>Enter a username to search for an user on GitHub</p>
+      </header>
+      <main>
+        <form id="search-form">
+          <input id="search-input" name="search" placeholder="Search by name" /> 
+          <button>Find</button>
+        </form>
+
+        <div id="user-profile"></div>
+        
+        <h2>Repositories</h2>
+        <ul id="repositories"></ul>
+      </main>
+      <footer>2018 &copy; Master Yoda</footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

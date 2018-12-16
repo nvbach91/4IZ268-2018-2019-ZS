@@ -28,8 +28,6 @@ var shiftString = function (str, shift) {
     // alphabet based on the shift value and return the result
     var output = "";
 
-
-
     for (var i = 0; i < str.length; i++) {
         output += shiftChar(str.charAt(i), shift);
     };
