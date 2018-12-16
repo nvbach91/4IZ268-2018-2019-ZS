@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="YouTube research">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Simona Štokingerová">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box" class="box">
+      <header><h1>Videa z YouTube</h1></header>
+      <div>
+        <form id="form" class="form">
+            <input
+              type="search"
+              id="question"
+              class="search-field"
+              placeholder="Hledej video"
+            />
+            <input type="submit" id="button" class="button" value="hledej" />
+          </div>
+        </form>
+
+        <ul id="results" class="results"></ul>
+      </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

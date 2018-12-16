@@ -1,0 +1,51 @@
+body {
+  margin: auto;
+}
+a {
+  text-decoration: none;
+  font: bold 20px Tahoma;
+  color: black;
+}
+
+.box {
+  background-color: #f1f1f1;
+  height: 200px;
+}
+header {
+  padding: 20px 50px;
+  background-color: rgba(252, 0, 0, 0.829);
+}
+
+header h1 {
+  color: white;
+  font: bold 30px Tahoma;
+  text-align: center;
+}
+
+.form {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.search-field {
+  height: 50px;
+  width: 300px;
+  text-align: center;
+  font: normal 20px Tahoma;
+  border-color: rgba(0, 0, 0, 0.5);
+}
+.button {
+  border-radius: 15px;
+  padding: 10px 24px;
+  background-color: white;
+  font: bold 15px Tahoma;
+}
+.button:hover {
+  border-color: red;
+  color: red;
+}
+.results li {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
