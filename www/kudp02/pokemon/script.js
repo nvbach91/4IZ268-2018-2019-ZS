@@ -3,7 +3,7 @@ var PokemonForm = document.getElementById('pokemon-form');
 console.log(PokemonForm);
 
 var heading = document.getElementById('heading');
-heading.innerText = 'My best pokemons'; */
+heading.innerText = 'My best pokemons';
 
 var pokemonNameInput = document.querySelector('#pokemon-name-input');
 var pokemonForm = document.querySelector('#pokemon-form');
@@ -20,3 +20,16 @@ var pokemonName = pokemonNameInput.value;
         '</li>'
     pokemonList.innerHTML += newPokemon;
 });
+
+ */
+
+var i=0; 
+do { 
+    alert(i);
+    i++;
+ } while(i != 5);
+
+ do {
+    alert(i);
+     i--;
+ } while (i <=5)
