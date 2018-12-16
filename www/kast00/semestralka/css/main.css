@@ -181,4 +181,17 @@ button {
 
 input {margin: 10px 30px;}
 
-  .mapa {width: 100%;}
+  .mapa {  background-image: url('../img/mapa1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 421px;}
+
+.vendingPoint {
+background-color: red;
+
+}
+
+.pin {position: relative;
+    width: 15px;
+    height: auto;}

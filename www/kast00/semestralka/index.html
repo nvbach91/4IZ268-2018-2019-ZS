@@ -66,17 +66,26 @@
         <hr />
         <div id="vendingMachines" class="container">
             <h2>Cashless vending machines</h2>
+     
+        
+        
+
+
+
+
+
             <div>
-                    <button id="btn3" class="tabNav activeTab">Ground floor</button>
-                    <button id="btn4" class="tabNav">First floor</button>
-                    <button id="btn5" class="tabNav">Second floor</button>
+                    <button id="btn4" class="tabNav2 activeTab">Ground floor</button>
+                    <button id="btn5" class="tabNav2">First floor</button>
+                    <button id="btn6" class="tabNav2">Second floor</button>
                 </div>
 
             <div class="left">
 
                         <div id="floor1" class="floor">
-                                <img class="mapa" src="img/mapa1.png" />
+                                <div class="mapa" id="floor1mapa">
 
+                                </div>
                             </div>
 
                             <div id="floor2" class="floor">
@@ -95,6 +104,9 @@
                 <p>Type: Coca-cola <br /> Date of entry: 12. 12. 2018</p>
 
                 <h2>Enter new one:</h2>
+                <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
+                <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
+                
                 <form>
                     <label for="nazev">Name:</label>
                     <input type="nazev" id="nazev" placeholder="Enter name" name="nazev"><br />
@@ -102,8 +114,10 @@
                     <input type="poloha" id="poloha" placeholder="coordinates" name="poloha"><br />
                     <label for="typ">Type:</label>
                     <input type="typ" id="typ" placeholder="Enter type" name="typ"><br />
-                    <button type="submit">Submit</button>
+                    
                   </form>
+                  <button id="bbutton" onclick="makeApiCall(action = 'write')">Submit</button>
+                  <button id="bbbutton" onclick="refresh()">Refresh</button>
             </div>
             <div class="clear"></div>
             
@@ -230,6 +244,9 @@
     <div class="scrollToTop" id="scrollButton">&#8679;</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js"
+    onload="this.onload=function(){};handleClientLoad()"
+    onreadystatechange="if (this.readyState === 'complete') this.onload()">  </script>
 </body>
 
 </html>
