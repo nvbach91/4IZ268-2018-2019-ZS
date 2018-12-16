@@ -59,10 +59,9 @@ function guessWord(p) {
         $('#tip').val("");
     }
 
-    if (){
 
     }
-}
+
 
 $(function() {
     $('#tip').focus();
