@@ -1,11 +1,11 @@
 $(document).ready(function(){
-            $('again').hide();
+            $("#again").hide();
  
 submit.addEventListener('submit', function(e) {
  
     e.preventDefault();
-    var artist = $('#artist').val();
-    var song = $('#song').val();
+    var artist = $("#artist").val();
+    var song = $("#song").val();
  
     if(artist ==''){
         alertArtist();
@@ -14,18 +14,18 @@ submit.addEventListener('submit', function(e) {
     } else {
  
         $.ajax({
-        url: 'https://orion.apiseeds.com/api/music/lyric/'+ artist + '/' + song + '?apikey=cRomUgw9cay6obVEueVwhiNZTGQFlqBv9evFRe1Xx1frFDCqy7leXKmiEfEMfcID',
-        type: 'GET',
-        dataType: 'json',
+        url: 'https://orion.apiseeds.com/api/music/lyric/'+ artist + '/' + song + "?apikey=cRomUgw9cay6obVEueVwhiNZTGQFlqBv9evFRe1Xx1frFDCqy7leXKmiEfEMfcID",
+        type: "GET",
+        dataType: "json",
         error: function(data){
             var error404 = error(data);
             $('#error').hide();
-            $('#results').html(error404);
+            $("#results").html(error404);
         },
         success: function(data){
             var lyrics = results(data);
  
-            $('#results').html(lyrics);
+            $("#results").html(lyrics);
  
             $('#artist').val('');
             $('#song').val('');
