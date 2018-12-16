@@ -162,13 +162,13 @@ var checkName = function (name) {
     var nameInApp = $('.save-name');
     if (name === '') {
         return true;
-    }
+    };
 
     for (var i = 0; i < nameInApp.length; i++) {
         if (name.toLowerCase().trim() === nameInApp[i].innerText.toLowerCase().trim()) {
             return true;
-        }
-    }
+        };
+    };
     return false;
 };
 
