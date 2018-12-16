@@ -1,0 +1,52 @@
+.dummyClassColorPalette {
+    color: #E95241;
+    color: #066ACC;
+    color: #B4B8E5;
+    color: #C0DED2;
+    color: #0437B6;
+    color: #C30011;
+    color: #002868;
+}
+
+#appContainer {
+    flex-flow: row wrap;
+    padding: 15px;
+}
+
+label {
+    display: block;
+    padding: 15px;
+}
+
+#vocab {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    max-width: 100%;
+    list-style: none;
+}
+
+#vocab * {
+    border: solid 1px blue;
+    padding: 15px;
+    margin: 10px;
+}
+
+select {
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 20px;
+}
+
+#practiceButton {
+    background-color: #C30011;
+    border: none;
+    color: white;
+    padding: 0px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    max-width: 100%;
+}
+
+}
