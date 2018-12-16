@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Push </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/codebird.js"></script>
+</head>
+
+<body>
+    <div class="error-overlay">
+        <h1>Whooops!</h1>
+        <h2>An error occured :(</h2>
+        <p>Here is more info: </p>
+        <p class="error-text">No info provided</p>
+        <div class="error-ok-btn">OK</div>
+    </div>
+    <div class="loader-container hide">
+        <div class="loader">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+            <div class="bar bar4"></div>
+            <div class="bar bar5"></div>
+            <div class="bar bar6"></div>
+            <div class="bar bar7"></div>
+            <div class="bar bar8"></div>
+        </div>
+    </div>
+    <div class="pop-up">
+        Pop out
+    </div>
+
+    <div class="feature-coming hide">
+        <h1>Whooops!</h1>
+        <h2>This feature is not yet implemented.</h2>
+        <img src="https://media.giphy.com/media/bAplZhiLAsNnG/giphy.gif">
+        <h3>Currenty we suport these social media platforms:</p>
+            <hr width="300px">
+            <li>Twitter</li>
+            <hr width="300px">
+            <div class="feature-ok-btn">OK, take me back</div>
+    </div>
+
+    <div class="intro-container">
+        <div class="intro">
+            <h1>This is PUSH!</h1>
+            <h2>Your gateway to social media...</h2>
+            <p><strong>How to use:</strong> Select one of the platforms from the list bellow, login according to the
+                instructions and enjoy the POWEAAA of the dark side...</p>
+        </div>
+        <div class="platform-container">
+            <div class="platform">
+                <div class="twitter"><i class="fab fa-twitter"></i> Twitter</div>
+                <div class="facebook"><i class="fab fa-facebook-f"></i> Facebook</i></div>
+                <div class="instagram"><i class="fab fa-instagram"></i> Instagram</div>
+            </div>
+        </div>
+
+        <div class="tw-login">
+            <div class="tw-close"><i class="fas fa-times"></i></div>
+            <div class="tw-login-inner">
+                <h1>Log into Twitter</h1>
+                <p>Please request PIN (opens in new window - make sure that you have enabled pop up windows in your
+                    browser!) and sign into Twitter with your credentials
+                    than copy and paste the generated numbers into the <i>"Enter PIN"</i> area bellow and click <i>Confirm
+                        PIN</i>.</p>
+                <form class="tw-login-form">
+                    <input type="button" class="tw-auth" value="Request PIN">
+                    <input type="number" class="tw-pin" placeholder="Enter PIN" autocomplete="off">
+                    <input type="submit" class="tw-pin-submit" value="Confirm PIN" disabled="true">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tw-container hide">
+        <div class="tw-logout-container">
+            <div class="tw-user-profile"></div>
+            <span class="tw-logout"><i class="fas fa-sign-out-alt"></i> Log Out!</span>
+        </div>
+        <div class="tw-info-text">
+            <h1>Twitter PUSH!</h1>
+            <p>You can use the form bellow to send your tweet to Twitter. Just write it, PUSH it and pray to the
+                internet gods, it goes smoothly, but... I got a good feelin' about this.</p>
+        </div>
+        <div class="tw-container-inner">
+            <div class="tw-credentials">
+                <h2 class="tw-user-name">Sup, your name is IDK! (whoops!)</h2>
+                <p class="tw-about">About you...</p>
+                <h3 class="tw-registered">You registerd at: IDK! (whoops!)</h3>
+                <h3 class="tw-last-activity">Your last activity happened: IDK! (whoops!)</h3>
+            </div>
+            <form id="tw-post-form" class="tw-post-form">
+                <div class="tw-tweet">
+                    <textarea id="post-text" class="post-text" placeholder="Tweet here..." wrap="soft" draggable="false"
+                        autofocus="true"></textarea>
+                    <p class="tw-char-limit">0 / 280</p>
+                </div>
+                <input type="submit" class="tw-tweet-submit" id="tw-tweet-submit" value="PUNCH IT CHEWIE!">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+<footer>
+    <div class="logo" title="PUSH"></div>
+    <p>Semestrální práce #2 z předmětu 4iz268, VŠE, ZS 2018/2019.</p>
+    <p>Vypracoval: <a href="mailto: braj08@vse.cz"><strong>Jan Brandejs</strong></a></p>
+</footer>
+
+<script src="js/twitter_logic.js"></script>
+<script src="js/login_screen.js"></script>
+
+</html>
