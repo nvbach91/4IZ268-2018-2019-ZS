@@ -1,8 +1,8 @@
-var abeceda = "abcdefghijklmnopqrstuvwxyz";
+var alphabet = "abcdefghijklmnopqrstuvwxyz";
 var pole = [ [0], [1], [2], [3], [4], [5], [6],[7],[8],[9],[10],[11],[12],[13],[14],[15],[16],[17],[18],[19],[20],[21],[22],[23],[24],[25] ]
 
-var words = ['diamant','auto','lahev'];
-var pom = new Array;
+var words = ['lightsaber','solo','vader','republic','vader'];
+var unknown = new Array;
 var chosenWord = getRandomWord();
 
 var tabulka = new Array
@@ -10,7 +10,7 @@ var tabulka = new Array
 function createTajenka(secret) {
     var result = "";
     for (var i = 0; i < secret.length; i++) {
-        result += pom[i];
+        result += unknown[i];
     }
     $('#secret').text(result);
     $('#tip').val("");
@@ -18,9 +18,9 @@ function createTajenka(secret) {
 
 function fillTajenka() {
     for (var i = 0; i < chosenWord.length; i++) {
-        pom[i] = "-";
+        unknown[i] = "_ ";
     }
-    createTajenka(pom);
+    createTajenka(unknown);
 }
 
 function getRandomWord(){
@@ -30,9 +30,9 @@ function getRandomWord(){
 }
 
 function guessWord(p) {
-    $('#uhadol').text("");
+    $('#discovered').text("");
     if (chosenWord.match(p)) { //jake pismeno se nachazi v tejence
-        var x = abeceda.indexOf(p);
+        var x = alphabet.indexOf(p);
         for (var i = 0; i < pole.length; i++) {
             for (var j = 0; j < pole[i].length; j++) {
                 if (pole[i][j] == x) {
@@ -43,20 +43,24 @@ function guessWord(p) {
         }
         for (var i = 0; i < xy.length; i++) {
             for (var j = 0; j < chosenWord.length; j++){
-                if (chosenWord[j] == abeceda[xy[i]]) {
-                    pom[j] = abeceda[xy[i]];
+                if (chosenWord[j] == alphabet[xy[i]]) {
+                    unknown[j] = alphabet[xy[i]];
                 }
                 else {
                     if ([0][j] == p)
-                        pom[j] = p;
+                        unknown[j] = p;
                 }
             }
         }
-        createTajenka(pom);
+        createTajenka(unknown);
     }
     else {
-        $('#uhadol').text("Wrong");
+        $('#discovered').text("Wrong");
         $('#tip').val("");
+    }
+
+    if (){
+
     }
 }
 
