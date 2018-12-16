@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Get Reddit post</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Reddit posts searcher</h1>
+    <div class="container">
+        <form id="subreddit-select-form" class="form">
+            <div class="">
+                <input id="js-search" class="input input--search" type="search" placeholder="Enter subreddit here.">
+            </div>
+            <div class="">
+                <input id="novel-search" class="input input--search" type="search" placeholder="Enter novel here.">
+            </div>
+            <div>
+                <input class="button button--submitSearch" type="submit" value="Find">
+            </div>
+        </form>
+    </div>
+    <div id="js-output">
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js" defer></script>
+
+</body>
+
+</html>

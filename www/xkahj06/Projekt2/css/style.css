@@ -1,0 +1,23 @@
+body {
+  text-align: center;
+  color: #062741
+}
+
+.button {
+  background-color: #132e1d;
+  color: white;
+  border-radius: 2px;
+  border: none;
+}
+
+#js-output{
+  display: flex;
+  flex-direction: column;
+}
+
+.user-card {
+  text-decoration: none;
+  padding: 5px;
+  border: solid 1px #062741;
+  margin: 5px auto;
+}
