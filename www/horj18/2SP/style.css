@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contet {
+    width: 400px;
+    margin: 0 auto;
+}
