@@ -67,6 +67,8 @@ function showLoggedUserUi(userName, avatarUrl, userAccountType) {
     const userNameElement = document.getElementById("userName");
     const userAvatarImgElement = document.getElementById("userAvatar");
 
+    document.getElementById("userPastes").classList.add("remove");
+
     if(!loginFormElement.classList.contains("hidden")){
         loginFormElement.classList.add("hidden");
     }
@@ -96,6 +98,8 @@ function showAnonymousUserId() {
     const logoutButtonElement = document.getElementById("logoutButton");
     const userNameElement = document.getElementById("userName");
     const userAvatarImgElement = document.getElementById("userAvatar");
+
+    document.getElementById("userPastes").classList.add("hidden");
 
     if(loginFormElement.classList.contains("hidden")){
         loginFormElement.classList.remove("hidden");
