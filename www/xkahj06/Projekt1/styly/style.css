@@ -88,7 +88,10 @@ body, body a {
 }
 .left{float:left; }
 .right{float: right; }
-
+.center{
+    text-align: center;
+    margin: 0% 15% 0% 15%;
+}
 .foter{
     text-align: center;
     background-color: #333;
