@@ -1,0 +1,19 @@
+
+
+#game-field {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.cell {
+    text-align: center;
+    padding: 40px;
+    height: 20px;
+    width: 20px;
+    float: left;
+    border: 1px solid black;
+}
+
+.row {
+    clear: both;
+}
