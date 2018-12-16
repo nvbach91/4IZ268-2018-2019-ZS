@@ -1,0 +1,15 @@
+*{
+    text-align: center;
+    justify-content: center;
+}
+  
+  #secret {
+    font-size: 2em;
+    margin-left: 95px;
+  }
+
+  #tip {
+    width: 50px;
+    text-align: center;
+    font-size: 1.5em;
+  }
