@@ -4,7 +4,7 @@ var REDIRECT_URI = 'http://localhost:5500';
 var STATE_KEY = 'spotify_auth_state';
 
 var userAccess = null;
-var userID = null
+var userID = null;
 var userCountry = null;
 var userAlbums = [];
 
@@ -48,7 +48,7 @@ $(document).ready(function () {
                     headers: {
                         'Authorization': 'Bearer ' + userAccess
                     }
-                }
+                };
                 // získám informace o uživateli
                 $.ajax({
                     url: 'https://api.spotify.com/v1/me',
@@ -147,7 +147,7 @@ function GetUserArtists(fetchUrl) {
                     setTimeout(GetUserArtists(fetchUrl), 100);
                 }
                 else {
-                    $('.error').html($('.error').text() + '<br>Failed to get list of your followed artists: ' + json.error.message + '.');
+                    ShowError('API Error', 'Failed to get list of your followed artists: ' + json.error.message + '.');
                 }
                 return;
             }
@@ -220,7 +220,7 @@ function ShowAlbums() {
 /* získá z api json seznam alb jednotlivých umělců */
 function GetArtistAlbums(artist, lastCheck) {
     if (!artist) {
-        $('.error').html($('.error').text() + '<br>Failed to get artist albums.');
+        ShowError('Error', 'Failed to get artist albums.');
         return;
     }
 
@@ -237,7 +237,7 @@ function GetArtistAlbums(artist, lastCheck) {
                     setTimeout(GetArtistAlbums(artist, lastCheck), 100);
                 }
                 else {
-                    $('.error').html($('.error').text() + '<br>Failed to get albums from artist ' + artist.name + ': ' + json.error.message);
+                    ShowError('Please wait: Getting albums from artist ' + artist.name + '...', 'Failed to get albums from artist ' + artist.name + ': ' + json.error.message);
                 }
                 return;
             }
