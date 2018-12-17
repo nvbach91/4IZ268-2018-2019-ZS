@@ -1,11 +1,14 @@
 const refreshButton = document.querySelector("#refresh");
 var weatherIcon = document.querySelector("#weather-icon");
+var summaryText = document.querySelector("#summary");
+var tempText = document.querySelector("#temp");
+var windText = document.querySelector("#wind");
 
 var setLoader = function() {
   weatherIcon.src = "img/loader.svg";
-  $("#summary").text("Povol přístup k poloze!");
-  $("#temp").text("");
-  $("#wind").text("");
+  summaryText.innerHTML = "Povol přístup k poloze!";
+  tempText.innerHTML = "";
+  windText.innerHTML = "";
 };
 
 var getPosition = function() {
@@ -86,9 +89,9 @@ function getWeather(position) {
     var temp = "Teplota je " + tempConvert(currently.temperature) + " °C";
     var wind = "Vítr o rychlosti " + currently.windSpeed + " m/s";
     setIcon(currently.icon);
-    $("#summary").text(summary);
-    $("#temp").text(temp);
-    $("#wind").text(wind);
+    summaryText.innerHTML = summary;
+    tempText.innerHTML = temp;
+    windText.innerHTML = wind;
   });
 }
 
