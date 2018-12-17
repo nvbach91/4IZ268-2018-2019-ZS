@@ -1,7 +1,8 @@
 const refreshButton = document.querySelector("#refresh");
+var weatherIcon = document.querySelector("#weather-icon");
 
 var setLoader = function() {
-  $("#weather-icon").attr("src", "img/loader.svg");
+  weatherIcon.src = "img/loader.svg";
   $("#summary").text("Povol přístup k poloze!");
   $("#temp").text("");
   $("#wind").text("");
@@ -30,37 +31,37 @@ function tempConvert(temp) {
 function setIcon(icon) {
   switch (icon) {
     case "clear-day":
-      $("#weather-icon").attr("src", "img/weather/clear-day.png");
+      weatherIcon.src = "img/weather/clear-day.png";
       break;
     case "clear-night":
-      $("#weather-icon").attr("src", "img/weather/clear-night.png");
+      weatherIcon.src = "img/weather/clear-night.png";
       break;
     case "rain":
-      $("#weather-icon").attr("src", "img/weather/rain.png");
+      weatherIcon.src = "img/weather/rain.png";
       break;
     case "snow":
-      $("#weather-icon").attr("src", "img/weather/snow.png");
+      weatherIcon.src = "img/weather/snow.png";
       break;
     case "cloudy":
-      $("#weather-icon").attr("src", "img/weather/cloudy.png");
+      weatherIcon.src = "img/weather/cloudy.png";
       break;
     case "thunderstorm":
-      $("#weather-icon").attr("src", "img/weather/cloudy.png");
+      weatherIcon.src = "img/weather/cloudy.png";
       break;
     case "sleed":
-      $("#weather-icon").attr("src", "img/weather/cloudy.png");
+      weatherIcon.src = "img/weather/cloudy.png";
       break;
     case "wind":
-      $("#weather-icon").attr("src", "img/weather/wind.png");
+      weatherIcon.src = "img/weather/wind.png";
       break;
     case "fog":
-      $("#weather-icon").attr("src", "img/weather/fog.png");
+      weatherIcon.src = "img/weather/fog.png";
       break;
     case "partly-cloudy-day":
-      $("#weather-icon").attr("src", "img/weather/partly-cloudy-day.png");
+      weatherIcon.src = "img/weather/partly-cloudy-day.png";
       break;
     case "partly-cloudy-night":
-      $("#weather-icon").attr("src", "img/weather/partly-cloudy-night.png");
+      weatherIcon.src = "img/weather/partly-cloudy-night.png";
       break;
   }
 }
