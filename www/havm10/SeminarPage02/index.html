@@ -1,85 +1,88 @@
 <!DOCTYPE html>
 <html lang="cs">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Aplikace v javascriptu pro hledani turistickych tras" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Aplikace v javascriptu pro hledani turistickych tras"
+    />
     <meta name="author" content="Martin Havlík, havm10" />
     <meta name="keywords" content="mapy.cz, javascript, turisticky trasy" />
     <title>Aplikace pro hledani turistickych tras</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-</head>
+  </head>
 
-<body>
-    <div class="heading">
-        <h1>Aplikace na hledání turistických tras</h1>
-    </div>
+  <body>
+    <div class="heading"><h1>Aplikace na hledání turistických tras</h1></div>
     <div class="MapPart">
-        <div id="map"></div>
-        <div class="markers">
-            <h2>Výběr bodů pro vyhledávání</h2>
-            <div class="sections">
-                <button id="start-buttom">Start</button>
-                <div class="section">
-                    <div class="column">Zeměpisná délka:</div>
-                    <div class="column">Zeměpisná šířka:</div>
-                </div>
-                <div class="section">
-                    <div class="column" id="start-longitude"></div>
-                    <div class="column" id="start-latitude"></div>
-                </div>
-            </div>
-            <div class="sections">
-                <button id="end-buttom">End</button>
-                <div class="section">
-                    <div class="column">Zeměpisná délka:</div>
-                    <div class="column">Zeměpisná šířka:</div>
-                </div>
-                <div class="section">
-                    <div class="column" id="end-longitude"></div>
-                    <div class="column" id="end-latitude"></div>
-                </div>
-                <button id="track-route">Search</button>
-            </div>
+      <div class="markers">
+        <h2>Výběr bodů pro vyhledávání</h2>
+        <div class="sections">
+          <button id="start-buttom">Start</button>
+          <div class="section">
+            <div class="column">Zeměpisná délka:</div>
+            <div class="column">Zeměpisná šířka:</div>
+          </div>
+          <div class="section">
+            <div class="column" id="start-longitude"></div>
+            <div class="column" id="start-latitude"></div>
+          </div>
         </div>
+        <div class="sections">
+          <button id="end-buttom">End</button>
+          <div class="section">
+            <div class="column">Zeměpisná délka:</div>
+            <div class="column">Zeměpisná šířka:</div>
+          </div>
+          <div class="section">
+            <div class="column" id="end-longitude"></div>
+            <div class="column" id="end-latitude"></div>
+          </div>
+        </div>
+        <div class="sections"><button id="track-route">Search</button></div>
+      </div>
+      <div id="map"></div>
     </div>
     <div class="content">
-        <div class="save-content-conteiner">
-            <h2>Uložené položky</h2>
-            <ul id="save-contents"></ul>
-        </div>
-        <div class="output">
-            <div class="data">
-                <h2>Výsledek vyhledávání</h2>
-                <div class="sections">
-                    <div class="section">
-                        <div class="column">Vzdálenost:</div>
-                        <div class="column">Čas:</div>
-                        <div class="column">Stoupání:</div>
-                        <div class="column">Klesání:</div>
-                    </div>
-                    <div class="section">
-                        <div class="column" id="length"></div>
-                        <div class="column" id="time"></div>
-                        <div class="column" id="ascent"></div>
-                        <div class="column" id="descent"></div>
-
-                    </div>
-                    <form id="save">
-                        <input id="name-input" placeholder="Save name">
-                        <button id="save-route">Save</button>
-                    </form>
-                </div>
+      <div class="save-content-conteiner">
+        <h2>Uložené položky</h2>
+        <ul id="save-contents"></ul>
+      </div>
+      <div class="output">
+        <div class="data">
+          <h2>Výsledek vyhledávání</h2>
+          <div class="sections">
+            <div class="section">
+              <div class="column">Vzdálenost:</div>
+              <div class="column">Čas:</div>
+              <div class="column">Stoupání:</div>
+              <div class="column">Klesání:</div>
             </div>
+            <div class="section">
+              <div class="column" id="length"></div>
+              <div class="column" id="time"></div>
+              <div class="column" id="ascent"></div>
+              <div class="column" id="descent"></div>
+            </div>
+            <form id="save">
+              <input id="name-input" placeholder="Save name" />
+              <button id="save-route">Save</button>
+            </form>
+          </div>
         </div>
-        <canvas id="canvas-draw"></canvas>
+        <div class="canvas-conteiner">
+          <h2>Výškový profil</h2>
+          <canvas id="canvas-draw"></canvas>
+        </div>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://api.mapy.cz/loader.js"></script>
-    <script>Loader.load();</script>
+    <script>
+      Loader.load();
+    </script>
     <script src="js/main.js"></script>
-</body>
-
+  </body>
 </html>
