@@ -113,40 +113,39 @@ var message = document.querySelector(".alert-window-text");
 
 var listOfQuestions = [];
 
-var getQuestions = function() {
+var buildQuiz = function() {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "https://api.myjson.com/bins/re7z4");
   xhr.addEventListener("load", function() {
     var data = JSON.parse(xhr.responseText);
     //console.log(data);
     listOfQuestions = data;
-  });
-  xhr.send();
-};
+    resultsContainer.innerHTML = "";
+    var output = [];
 
-var buildQuiz = function() {
-  resultsContainer.innerHTML = "";
-  var output = [];
+    quizContainer.innerHTML = '<img src="img/loader.svg">';
 
-  listOfQuestions.forEach((currentQuestion, questionNumber) => {
-    var answers = [];
+    listOfQuestions.forEach((currentQuestion, questionNumber) => {
+      var answers = [];
 
-    for (letter in currentQuestion.answers) {
-      answers.push(
-        `<label>
+      for (letter in currentQuestion.answers) {
+        answers.push(
+          `<label>
               <input type="radio" id="question${questionNumber}" name="question${questionNumber}" class="disableMe" value="${letter}">
               ${currentQuestion.answers[letter]}
             </label>`
-      );
-    }
+        );
+      }
 
-    output.push(
-      `<div class="question"> ${currentQuestion.question} </div>
+      output.push(
+        `<div class="question"> ${currentQuestion.question} </div>
           <div class="answers"> ${answers.join("")} </div>`
-    );
-  });
+      );
+    });
 
-  quizContainer.innerHTML = output.join("");
+    quizContainer.innerHTML = output.join("");
+  });
+  xhr.send();
 };
 
 var getResults = function() {
@@ -213,7 +212,6 @@ var share = function() {
   var url = "https://twitter.com/intent/tweet";
   var text = $("#results").text();
   var via = "lukazko";
-  var hashtag = "lukazko_quiz";
   url = url + "?text=" + text + ";hashtags=" + hashtag + ";via=" + via;
 
   window.open(url, "Sdílet výsledek na Twitter", "width=650,height=250");
