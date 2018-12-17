@@ -212,7 +212,7 @@ var share = function() {
   var url = "https://twitter.com/intent/tweet";
   var text = $("#results").text();
   var via = "lukazko";
-  url = url + "?text=" + text + ";hashtags=" + hashtag + ";via=" + via;
+  url = url + "?text=" + text + ";via=" + via;
 
   window.open(url, "Sdílet výsledek na Twitter", "width=650,height=250");
 };
