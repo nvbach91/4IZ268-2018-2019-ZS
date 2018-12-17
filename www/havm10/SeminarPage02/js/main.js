@@ -11,8 +11,8 @@ var save = $('#save');
 var nameInput = $('#name-input');
 var saveContents = $('#save-contents');
 
-var canvas = document.getElementById('canvas-draw');
-var draw = canvas.getContext('2d');
+var canvasAltitude = document.getElementById('canvas-draw');
+var draw = canvasAltitude.getContext('2d');
 
 var startMarker = '';
 var endMarker = '';
@@ -123,7 +123,7 @@ var search = function(route) {
   computeRoute = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
   routeLayer.addGeometry(computeRoute);
   var altitude = route.getResults().altitude;
-  draw.clearRect(0, 0, canvas.width, canvas.height);
+  draw.clearRect(0, 0, canvasAltitude.width, canvasAltitude.height);
   for (var i = 0; i < altitude.length; i++) {
     var localAltitude = route.getResults().altitude[i];
     draw.fillRect(30 + i * 2, 150 - localAltitude / 11, 1, localAltitude / 11);
@@ -145,7 +145,7 @@ $('#track-route').click(function() {
 
 var drawCanvas = function() {
   for (var i = 1; i < 20; i++) {
-    draw.fillRect(0, i * 8.8, canvas.width, 0.3);
+    draw.fillRect(0, i * 8.8, canvasAltitude.width, 0.3);
     draw.font = '8.8px Arial';
     draw.fillText(1700 - i * 100, 0, i * 8.8);
   }
