@@ -7,7 +7,7 @@ var alertWindow = document.querySelector(".alert-window");
 var closeWindow = document.querySelectorAll(".close")[0];
 var message = document.querySelector(".alert-window-text");
 
-var listOfQuestions = [
+/*var listOfQuestions = [
   {
     question: "Ahoj, vítej v mém kvízu, nebudeme otálet a jdeme rovnou na věc!",
     answers: {
@@ -109,7 +109,20 @@ var listOfQuestions = [
     },
     correctAnswer: "c"
   }
-];
+];*/
+
+var listOfQuestions = [];
+
+var getQuestions = function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://api.myjson.com/bins/re7z4");
+  xhr.addEventListener("load", function() {
+    var data = JSON.parse(xhr.responseText);
+    //console.log(data);
+    listOfQuestions = data;
+  });
+  xhr.send();
+};
 
 var buildQuiz = function() {
   resultsContainer.innerHTML = "";

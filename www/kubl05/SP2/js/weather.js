@@ -1,8 +1,15 @@
 const refreshButton = document.querySelector("#refresh");
 
+var setLoader = function() {
+  $("#weather-icon").attr("src", "img/loader.svg");
+  $("#summary").text("Povol přístup k poloze!");
+  $("#temp").text("");
+  $("#wind").text("");
+};
+
 var getPosition = function() {
   var positions = {};
-  $("#weather-icon").attr("src", "img/loader.svg");
+  setLoader();
   return new Promise(resolve => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
@@ -78,7 +85,6 @@ function getWeather(position) {
     var temp = "Teplota je " + tempConvert(currently.temperature) + " °C";
     var wind = "Vítr o rychlosti " + currently.windSpeed + " m/s";
     setIcon(currently.icon);
-    //$("#weather-icon").attr("src", "img/weather/wind.png");
     $("#summary").text(summary);
     $("#temp").text(temp);
     $("#wind").text(wind);
@@ -86,16 +92,14 @@ function getWeather(position) {
 }
 
 $(document).ready(function() {
-  $("#summary").text("Povol přístup k poloze!");
+  setLoader();
   getPosition().then(position => {
     getWeather(position);
   });
 });
 
 refreshButton.addEventListener("click", function() {
-  $("#summary").text("Povol přístup k poloze!");
-  $("#temp").text("");
-  $("#wind").text("");
+  setLoader();
   getPosition().then(position => {
     getWeather(position);
   });
