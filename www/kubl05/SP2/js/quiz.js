@@ -146,6 +146,7 @@ var buildQuiz = function() {
     quizContainer.innerHTML = output.join("");
   });
   xhr.send();
+  $("html, body").animate({ scrollTop: 0 }, "slow");
 };
 
 var getResults = function() {
