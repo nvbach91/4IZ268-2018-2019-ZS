@@ -1,9 +1,8 @@
-# 4IZ268 Semestrální práce
+4IZ268 - semester work vol.2
+=============================
 
-Ostrý branch pro semestrální praci II.
-=========================================
-
-![Logo](https://pavelbarton.github.io/4IZ268/S1/images/logo_5.png)
-
-
-
+Things used to get this **** done:
+*- Bootstrap*
+*- United Theme from Bootswatch*
+*- Github API - Users*
+*- Google, StackOverFlow, SlackUnderBow, countless .onion sites..*
