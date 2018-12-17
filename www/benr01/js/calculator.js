@@ -62,7 +62,7 @@ function check_event_start(mark) {
         return false;
     } else {
         document.getElementById("event_start").className = "";
-
+        formatDate(new Date(document.getElementById("event_start").value));
         return true;
     }
 }
@@ -73,7 +73,6 @@ function check_event_end(mark) {
         return false;
     } else {
         document.getElementById("event_end").className = "";
-
         return true;
     }
 }
@@ -145,10 +144,6 @@ function get_event_klip(){
     }
 }
 
-function event_size_price(size) {
-    get_price();
-}
-
 function get_price_if_possible(){
     if(check_event_name(false) && check_event_address(false) && check_event_contact(false) && check_event_start(false) && check_event_end(false) && (get_event_stream() || get_event_projekce() || get_event_zaznam() || get_event_klip())){
         get_price();
@@ -164,6 +159,7 @@ function get_price(){
     $organizer = document.getElementById("organizer_contact").value;
     $address = document.getElementById("event_address").value;
     $start = new Date(document.getElementById("event_start").value);
+    $end = new Date(document.getElementById("event_end").value);
     $paid_hours = count_paid_hours(get_duration());
     $size = get_event_size();
     $stream = get_event_stream();
@@ -171,6 +167,7 @@ function get_price(){
     $zaznam = get_event_zaznam();
     $klip = get_event_klip();
     $id = document.getElementById("hidden_id").className;
+
 
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -184,9 +181,21 @@ function get_price(){
             document.getElementById("result_price").innerHTML = "Celkem: " + this.responseText;
         }
     };
-    //document.getElementById("result_price").innerHTML = "database/getData.php?duration="+ $paid_hours +"&size="+$size + "&stream="+$stream + "&projekce="+$projekce + "&zaznam="+$zaznam + "&klip="+$klip;
-    xmlhttp.open("GET","database/getData.php?id="+$id+"&name="+$name+"&address="+$address+"&organizer="+$organizer+"&start="+$start+"&duration="+ $paid_hours +"&size="+$size + "&stream="+$stream + "&projekce="+$projekce + "&zaznam="+$zaznam + "&klip="+$klip, true);
+    xmlhttp.open("GET","database/getData.php?id="+$id+"&name="+$name+"&address="+$address+"&organizer="+$organizer+"&start="+formatDate($start)+"&end="+formatDate($end)+"&duration="+ $paid_hours +"&size="+$size + "&stream="+$stream + "&projekce="+$projekce + "&zaznam="+$zaznam + "&klip="+$klip, true);
     xmlhttp.send();
+}
+
+function formatDate($toFormat){
+    var dd = $toFormat.getDate();
+    var mm = $toFormat.getMonth()+1; 
+    var yyyy = $toFormat.getFullYear();
+    var hh = $toFormat.getHours();
+    var mn = $toFormat.getMinutes();
+    if(dd<10){dd='0'+dd;} 
+    if(mm<10){mm='0'+mm;} 
+    if(hh<10){hh='0'+hh;} 
+    if(mn<10){mn='0'+mn;} 
+    return yyyy+'-'+mm+'-'+dd+' '+hh+':'+mn+':'+'00';
 }
 
 function guid() {

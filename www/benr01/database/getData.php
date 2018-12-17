@@ -13,6 +13,7 @@ $id = $_GET['id'];
 $size = intval($_GET['size']);
 $duration = intval($_GET['duration']);
 $start = $_GET['start'];
+$end = $_GET['end'];
 $name = $_GET['name'];
 $organizer = $_GET['organizer'];
 $address = $_GET['address'];
@@ -24,7 +25,7 @@ $klip = ($_GET['klip'] == 'true');
 $sql2 = "";
 $service_count = 0;
 
-store_session($conn, $id, $name, $address, $organizer, $start, $size, $stream, $projekce, $zaznam, $klip);
+store_session($conn, $id, $name, $address, $organizer, $start, $end, $size, $stream, $projekce, $zaznam, $klip);
 
 if($stream){
     $service_count++;
@@ -144,8 +145,8 @@ function get_multi_service_price($conn, $size, $duration, $stream, $projekce, $z
     echo $toEcho . " Kč";
 }
 
-function store_session($conn, $id, $name, $address, $organizer, $start, $size, $stream, $projekce, $zaznam, $klip){
-    $sql .= "INSERT INTO VSE_event_calculator_contacts (sess_id, event_name, event_address, organizer_contact, stream, projekce, zaznam, klip) VALUES ('".$id."', '".$name."', '".$address."', '".$organizer."', '".$stream."', '".$projekce."', '".$zaznam."', '".$klip."') ON DUPLICATE KEY UPDATE event_name='".$name."', stream='".$stream."', projekce='".$projekce."', zaznam='".$zaznam."', klip='".$klip."'";
+function store_session($conn, $id, $name, $address, $organizer, $start, $end, $size, $stream, $projekce, $zaznam, $klip){
+    $sql .= "INSERT INTO VSE_event_calculator_contacts (sess_id, event_name, event_address, organizer_contact, event_start, event_end, event_size, stream, projekce, zaznam, klip) VALUES ('".$id."', '".$name."', '".$address."', '".$organizer."', '".$start."', '".$end."', '".$size."', '".$stream."', '".$projekce."', '".$zaznam."', '".$klip."') ON DUPLICATE KEY UPDATE event_name='".$name."',event_address='".$address."',organizer_contact='".$organizer."', event_start='".$start."', event_end='".$end."', event_size='".$size."', stream='".$stream."', projekce='".$projekce."', zaznam='".$zaznam."', klip='".$klip."'";
     if ($conn->query($sql) === TRUE) {
 
     } else {

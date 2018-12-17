@@ -433,6 +433,19 @@ input.empty {
   margin: 12px 0;
 }
 
+tr:nth-child(even){background-color: #f2f2f2}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+table {
+  border-collapse: collapse;
+  margin: 30px
+}
+th {
+  background-color: #009700;
+  color: white;
+}
 
 @media screen and (max-width: 1010px) {
     header ul li {
