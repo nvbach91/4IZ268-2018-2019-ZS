@@ -191,7 +191,7 @@ footer p {
 
 
 .header-page2 {
-    background-image: url("/img/PremierLeague_2.jpeg");
+    background-image: url("../img/PremierLeague_2.jpeg");
 }
 
 .content {
@@ -268,6 +268,12 @@ table th {
 table tr {
     padding: 5px 10px;
     border-bottom: solid #DDD 2px;
+}
+
+@media screen and (max-width: 800px) {
+    .notImportant {
+        display: none;
+    }
 }
 
 
@@ -469,7 +475,7 @@ table tr {
 .juventus {
     width: 8vw;
     height: 8vw;
-    background-image: url(/img/juventus.png);
+    background-image: url("../img/juventus.png");
     background-size: 70%;
     background-position: center;
     background-repeat: no-repeat;
@@ -477,7 +483,7 @@ table tr {
 .manutd{
     width: 8vw;
     height: 8vw;
-    background-image: url(/img/manutd.png);
+    background-image: url("../img/manutd.png");
     background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
@@ -486,7 +492,7 @@ table tr {
 .liverpool{
     width: 8vw;
     height: 8vw;
-    background-image: url(/img/liverpool.png);
+    background-image: url("../img/liverpool.png");
     background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
@@ -495,7 +501,7 @@ table tr {
 .barcelona{
     width: 8vw;
     height: 8vw;
-    background-image: url(/img/barcelona.png);
+    background-image: url("../img/barcelona.png");
     background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
@@ -504,7 +510,7 @@ table tr {
 .tottenham{
     width: 8vw;
     height: 8vw;
-    background-image: url(/img/tottenham.png);
+    background-image: url("../img/tottenham.png");
     background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
@@ -513,7 +519,7 @@ table tr {
 .real{
     width: 8vw;
     height: 8vw;
-    background-image: url(/img/real.png);
+    background-image: url("../img/real.png");
     background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
@@ -522,4 +528,18 @@ table tr {
 
 .transfer .teamLogo, .mostExpensive .teamLogo {
     display: none;
+}
+
+@media screen and (max-width: 800px) {
+    #transfers {
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+}
+.transfer {
+    width: initial;
+}
+.mostExpensive {
+    width: initial;
+}
 }
