@@ -6,11 +6,12 @@
         class="input input--search"
         type="text"
         placeholder="Najdi umělce"
-        @input="getSearch">
+        @input="getSearch"
+      >
       <a
         class="button"
-        href="https://accounts.spotify.com/authorize?client_id=f254e3e7f8a74a1b9c5e3a683063f0dd&redirect_uri=http://localhost:3000/&response_type=token">
-        PŘIHLÁSIT SE</a>
+        href="https://accounts.spotify.com/authorize?client_id=f254e3e7f8a74a1b9c5e3a683063f0dd&redirect_uri=http://localhost:3000/&response_type=token"
+      >PŘIHLÁSIT SE</a>
     </nav>
 
     <main class="main">
@@ -26,15 +27,15 @@
         <div
           v-for="track in tracks"
           :key="track.id"
-          class="track"
-        >
+          class="track">
           <div class="track__info">
             <img
               v-for="(value, key) in track.album.images[0]"
               v-if="key === 'url'"
               :key="key"
               :src="value"
-              class="img track__img">
+              class="img track__img"
+            >
             <div class="track__danceability">{{ Number(track.danceability*100).toFixed(0) }}%</div>
           </div>
           <div class="track__name">{{ track.name }}</div>
@@ -42,8 +43,7 @@
             <audio controls>
               <source
                 :src="track.preview_url"
-                type="audio/mpeg">
-              Tvůj prohlížeč nepodporuje hudbu :/
+                type="audio/mpeg">Tvůj prohlížeč nepodporuje hudbu :/
             </audio>
           </div>
         </div>
@@ -54,7 +54,8 @@
           v-for="result in artistsResults"
           :key="result.id"
           class="result"
-          @click="getTopTracks(result.id)">
+          @click="getTopTracks(result.id)"
+        >
           <div
             v-if="result.images[0]"
             class="results__imgContainer">
@@ -63,7 +64,8 @@
               v-if="(key === 'url')"
               :key="key"
               :src="value"
-              class="img result__img">
+              class="img result__img"
+            >
           </div>
           <div
             v-else
@@ -126,78 +128,66 @@ export default {
   },
 
   methods: {
-    getSearch() {
+    async getSearch() {
       this.tracks = {}
       this.status = ''
 
-      if (this.searchQuery.length !== 0) {
-        this.$axios
-          .get(
-            `https://api.spotify.com/v1/search?q=
-              ${this.searchQuery}&type=artist`,
-            {
-              headers: {
-                Authorization: localStorage.getItem('user_token')
-              }
+      try {
+        this.artistsResults = await this.$axios.get(
+          `https://api.spotify.com/v1/search?q=
+            ${this.searchQuery}&type=artist`,
+          {
+            headers: {
+              Authorization: localStorage.getItem('user_token')
             }
-          )
-          .then(response => {
-            this.artistsResults = response.data.artists.items
-          })
-          .catch(error => {
-            console.log(error)
-            this.status = 'Nastala chyba, zkus se, prosím, znovu přihlásit'
-          })
-      } else {
-        this.artistsResults = {}
+          }
+        )
+
+        this.artistsResults = this.artistsResults.data.artists.items
+      } catch (error) {
+        this.status = 'Nastala chyba, zkus se, prosím, znovu přihlásit'
       }
     },
 
-    getTopTracks(id) {
+    async getTopTracks(id) {
       this.artistsResults = {}
 
-      this.$axios
-        .get(`https://api.spotify.com/v1/artists/${id}/top-tracks?country=US`, {
+      var topTracksData = await this.$axios.get(
+        `https://api.spotify.com/v1/artists/${id}/top-tracks?country=US`,
+        {
           headers: {
             Authorization: localStorage.getItem('user_token')
           }
-        })
-        .then(response => {
-          var tracksIdString = objectToString(response.data.tracks)
+        }
+      )
 
-          console.log(objectToString(response.data.tracks))
+      topTracksData = topTracksData.data.tracks
 
-          this.$axios
-            .get(
-              `https://api.spotify.com/v1/audio-features?ids=${tracksIdString}`,
-              {
-                headers: {
-                  Authorization: localStorage.getItem('user_token')
-                }
-              }
-            )
-            .then(tracksFeatures => {
-              for (var i = 0; i < response.data.tracks.length; i++) {
-                response.data.tracks[i] = {
-                  ...response.data.tracks[i],
-                  ...tracksFeatures.data.audio_features[i]
-                }
-                console.log(response.data.tracks)
-              }
+      const tracksIdString = objectToString(topTracksData)
 
-              this.tracks = response.data.tracks
+      const tracksFeaturesData = await this.$axios.get(
+        `https://api.spotify.com/v1/audio-features?ids=${tracksIdString}`,
+        {
+          headers: {
+            Authorization: localStorage.getItem('user_token')
+          }
+        }
+      )
 
-              response.data.tracks.sort(function(a, b) {
-                return b['danceability'] - a['danceability']
-              })
+      for (var i = 0; i < topTracksData.length; i++) {
+        topTracksData[i] = {
+          ...topTracksData[i],
+          ...tracksFeaturesData.data.audio_features[i]
+        }
+      }
 
-              this.status = 'TOP 10 písniček seřazených podle danceability'
-            })
-        })
-        .catch(error => {
-          console.log(error)
-          this.status = 'Nastala chyba, zkus se, prosím, znovu přihlásit'
-        })
+      this.tracks = topTracksData
+
+      topTracksData.sort(function(a, b) {
+        return b['danceability'] - a['danceability']
+      })
+
+      this.status = 'TOP 10 písniček seřazených podle danceability'
     }
   }
 }
