@@ -29,26 +29,30 @@
           v-for="track in tracks"
           :key="track.id"
           class="track">
+          <i
+            class="track__play material-icons"
+            @click="playTrack(track.id, track.name)">{{ track.id !== currentlyPlaying ? 'play_circle_outline' : 'play_arrow' }}</i>
+          <img
+            v-for="(value, key) in track.album.images[0]"
+            v-if="key === 'url'"
+            :key="key"
+            :src="value"
+            class="img track__img"
+          >
           <div class="track__info">
-            <img
-              v-for="(value, key) in track.album.images[0]"
-              v-if="key === 'url'"
-              :key="key"
-              :src="value"
-              class="img track__img"
-            >
-            <div class="track__danceability">{{ Number(track.danceability*100).toFixed(0) }}%</div>
+            <div class="track__name">{{ track.name }}</div>
+            <div class="track__authors">
+              <div
+                v-for="(artist, key) in track.artists"
+                :key="key"
+                class="track__authorName">
+                {{ artist.name }}<span v-if="key !== (track.artists.length-1)">,&thinsp;</span>
+              </div>
+            </div>
           </div>
-          <div class="track__name">{{ track.name }}</div>
-          <div
-            class="track__play"
-            @click="playTrack(track.id, track.name)">PLAY</div>
-          <div class="track__preview">
-            <audio controls>
-              <source
-                :src="track.preview_url"
-                type="audio/mpeg">Tvůj prohlížeč nepodporuje hudbu :/
-            </audio>
+          <div class="track__danceability">
+            <div class="track__danceabilityName">Danceability</div>
+            <h3 class="track__danceabilityNumber">{{ Number(track.danceability*100).toFixed(0) }}%</h3>
           </div>
         </div>
       </div>
@@ -78,7 +82,7 @@
               src="artist.png"
               class="img result__img">
           </div>
-          <div>{{ result.name }}</div>
+          <div class="result__name">{{ result.name }}</div>
         </a>
       </div>
     </main>
@@ -97,9 +101,10 @@ export default {
 
   data() {
     return {
+      artistsResults: {},
+      currentlyPlaying: '',
       searchQuery: '',
       status: '',
-      artistsResults: {},
       tracks: {},
       url: '',
       usersFavorites: {}
@@ -224,11 +229,13 @@ export default {
       topTracksData.sort(function(a, b) {
         return b['danceability'] - a['danceability']
       })
+
+      this.getCurrentlyPlaying()
     },
 
-    async playTrack(trackId, name) {
-      const device = await this.$axios.get(
-        `https://api.spotify.com/v1/me/player/devices`,
+    async getCurrentlyPlaying() {
+      const currentlyPlayingData = await this.$axios.get(
+        `https://api.spotify.com/v1/me/player/currently-playing`,
         {
           headers: {
             Authorization: localStorage.getItem('user_token')
@@ -236,14 +243,14 @@ export default {
         }
       )
 
-      if (device.data.devices.length !== 0) {
-        const deviceId = device.data.devices[0].id
+      console.log(currentlyPlayingData.data.item.id)
+      this.currentlyPlaying = currentlyPlayingData.data.item.id
+    },
 
-        await this.$axios.put(
-          `https://api.spotify.com/v1/me/player/play?device_id=${deviceId}`,
-          {
-            uris: ['spotify:track:' + trackId]
-          },
+    async playTrack(trackId, name) {
+      try {
+        const device = await this.$axios.get(
+          `https://api.spotify.com/v1/me/player/devices`,
           {
             headers: {
               Authorization: localStorage.getItem('user_token')
@@ -251,11 +258,31 @@ export default {
           }
         )
 
-        this.$toast.success(`${name}`, {
-          icon: 'play_arrow'
-        })
-      } else {
-        this.$toast.error('Otevři si nějaký zařízení')
+        if (device.data.devices.length !== 0) {
+          const deviceId = device.data.devices[0].id
+
+          await this.$axios.put(
+            `https://api.spotify.com/v1/me/player/play?device_id=${deviceId}`,
+            {
+              uris: ['spotify:track:' + trackId]
+            },
+            {
+              headers: {
+                Authorization: localStorage.getItem('user_token')
+              }
+            }
+          )
+
+          this.currentlyPlaying = trackId
+
+          this.$toast.success(`${name}`, {
+            icon: 'play_arrow'
+          })
+        } else {
+          this.$toast.error('Otevři si nějaký zařízení')
+        }
+      } catch (error) {
+        this.$toast.error('Nastala chyba, zkus se, prosím, znovu přihlásit')
       }
     }
   }
