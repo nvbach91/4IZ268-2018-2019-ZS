@@ -16,7 +16,7 @@
 
     <main class="main">
       <div
-        v-if="status"
+        v-if="status && Object.keys(artistsResults).length === 0 && Object.keys(tracks).length === 0"
         class="status">
         {{ status }}
       </div>
@@ -164,7 +164,6 @@ export default {
       }
 
       this.tracks = {}
-      this.status = ''
 
       if (this.searchQuery !== '') {
         try {
