@@ -82,6 +82,8 @@
 <script>
 import Logo from '~/components/Logo.vue'
 
+import { objectToString } from '@/assets/js/objectToString'
+
 export default {
   components: {
     Logo
@@ -161,14 +163,10 @@ export default {
           }
         })
         .then(response => {
-          var tracksIdString
-          Object.keys(response.data.tracks).forEach(function(key) {
-            if (!tracksIdString) {
-              tracksIdString = response.data.tracks[key].id
-            } else {
-              tracksIdString += ',' + response.data.tracks[key].id
-            }
-          })
+          var tracksIdString = objectToString(response.data.tracks)
+
+          console.log(objectToString(response.data.tracks))
+
           this.$axios
             .get(
               `https://api.spotify.com/v1/audio-features?ids=${tracksIdString}`,
