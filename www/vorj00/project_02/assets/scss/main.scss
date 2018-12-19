@@ -58,20 +58,28 @@ a {
 
 .tracks {
   background-color: $white;
-  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
   display: flex;
+  border-radius: 8px;
   flex-direction: column;
+
+  &>*:first-child{
+    border-radius: 8px 8px 0 0;
+  }
+
+  &>*:last-child{
+    border-radius: 0 0 8px 8px;
+  }
 }
 
 .tracks h2 {
   position: sticky;
-  top: 0;
+  top: 4rem;
   z-index: 1;
   margin: 0;
   padding: 1.25rem;
-  display: inline-block;
-  align-self: center;
+  background-color: #fff;
+  text-align: center;
 }
 
 .track {
