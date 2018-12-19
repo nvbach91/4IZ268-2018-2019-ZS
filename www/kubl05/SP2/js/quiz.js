@@ -6,19 +6,17 @@ const shareButton = document.querySelector("#share");
 var alertWindow = document.querySelector(".alert-window");
 var closeWindow = document.querySelectorAll(".close")[0];
 var message = document.querySelector(".alert-window-text");
-
 var listOfQuestions = [];
 
 var buildQuiz = function() {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://api.myjson.com/bins/re7z4");
+  xhr.open("GET", "https://api.myjson.com/bins/10e4gw");
   xhr.addEventListener("load", function() {
     var data = JSON.parse(xhr.responseText);
-    //console.log(data);
+
     listOfQuestions = data;
     resultsContainer.innerHTML = "";
     var output = [];
-
     quizContainer.innerHTML = '<img src="img/loader.svg">';
 
     listOfQuestions.forEach((currentQuestion, questionNumber) => {
@@ -27,11 +25,15 @@ var buildQuiz = function() {
       for (letter in currentQuestion.answers) {
         answers.push(
           `<label>
-              <input type="radio" id="question${questionNumber}" name="question${questionNumber}" class="disableMe" value="${letter}">
+              <input type="checkbox" name="question${questionNumber}" class="disableMe" value="${letter}">
               ${currentQuestion.answers[letter]}
             </label>`
         );
       }
+
+      answers.sort(function() {
+        return 0.5 - Math.random();
+      });
 
       output.push(
         `<div class="question"> ${currentQuestion.question} </div>
@@ -51,18 +53,21 @@ var getResults = function() {
   }
 
   var answerContainers = quizContainer.querySelectorAll(".answers");
-  var nCorrect = 0;
+  nCorrect = 0;
 
   listOfQuestions.forEach((currentQuestion, questionNumber) => {
     var answerContainer = answerContainers[questionNumber];
-    var selector = `input[id=question${questionNumber}]:checked`;
-    var userAnswer = (answerContainer.querySelector(selector) || {}).value;
+    var zk = [];
+    $(`input[name=question${questionNumber}]:checked`).each(function() {
+      zk.push($(this).val());
+    });
 
-    if (userAnswer === currentQuestion.correctAnswer) {
+    zk.sort();
+    if (zk.toString() === currentQuestion.correctAnswer.toString()) {
       nCorrect++;
-      answerContainers[questionNumber].style.color = "lightgreen";
+      answerContainer.style.color = "lightgreen";
     } else {
-      answerContainers[questionNumber].style.color = "red";
+      answerContainer.style.color = "red";
     }
   });
 
@@ -94,11 +99,7 @@ var getResults = function() {
 };
 
 var disableInputs = function() {
-  var radios = document.querySelectorAll(".disableMe");
-
-  for (var i = 0; i < radios.length; i++) {
-    radios[i].disabled = true;
-  }
+  $(".disableMe").prop("disabled", true);
 };
 
 var share = function() {

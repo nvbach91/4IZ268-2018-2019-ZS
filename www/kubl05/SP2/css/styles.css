@@ -29,7 +29,7 @@ main {
 }
 
 label:hover,
-input:hover {
+.column input:hover {
   cursor: pointer;
   /*border: 1px solid #26262a;*/
   background-color: #1367b6;
@@ -143,6 +143,16 @@ button:hover {
   border: 1px solid #888;
   width: 40%;
   text-align: center;
+}
+
+.alert-window button {
+  padding: 5px;
+  font-size: 20px;
+}
+
+.alert-window input {
+  padding: 4px;
+  font-size: 19px;
 }
 
 .close {
