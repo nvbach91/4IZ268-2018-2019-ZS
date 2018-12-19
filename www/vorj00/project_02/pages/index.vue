@@ -4,13 +4,13 @@
       <input
         v-model="searchQuery"
         class="input input--search"
-        type="text"
+        type="search"
         placeholder="Najdi umělce"
         @input="getSearch"
       >
       <a
         class="button"
-        href="https://accounts.spotify.com/authorize?client_id=f254e3e7f8a74a1b9c5e3a683063f0dd&redirect_uri=http://localhost:3000/&response_type=token"
+        href="https://accounts.spotify.com/authorize?client_id=f254e3e7f8a74a1b9c5e3a683063f0dd&redirect_uri=http://localhost:3000/&scope=user-read-playback-state%20user-modify-playback-state&response_type=token"
       >PŘIHLÁSIT SE</a>
     </nav>
 
@@ -18,7 +18,7 @@
       <div
         v-if="status"
         class="status">
-        <strong>{{ status }}</strong>
+        {{ status }}
       </div>
 
       <div
@@ -39,6 +39,9 @@
             <div class="track__danceability">{{ Number(track.danceability*100).toFixed(0) }}%</div>
           </div>
           <div class="track__name">{{ track.name }}</div>
+          <div
+            class="track__play"
+            @click="playTrack(track.id, track.name)">PLAY</div>
           <div class="track__preview">
             <audio controls>
               <source
@@ -58,7 +61,7 @@
         >
           <div
             v-if="result.images[0]"
-            class="results__imgContainer">
+            class="result__imgContainer">
             <img
               v-for="(value, key) in result.images[0]"
               v-if="(key === 'url')"
@@ -69,7 +72,7 @@
           </div>
           <div
             v-else
-            class="results__imgContainer">
+            class="result__imgContainer">
             <img
               src="artist.png"
               class="img result__img">
@@ -120,7 +123,8 @@ export default {
       )
     } else {
       if (localStorage.getItem('user_token')) {
-        this.status = 'Zadej jméno nějakého umělce do vyhledávání a vyber ho'
+        this.status =
+          'Chceš seřadit nejlepší písničky daného interpreta podle danceability? Stačí zadat nějakého umělce do vyhledávání a pak ho vybrat.'
       } else {
         this.status = 'Nejprve se přihlaš, prosím'
       }
@@ -132,20 +136,25 @@ export default {
       this.tracks = {}
       this.status = ''
 
-      try {
-        this.artistsResults = await this.$axios.get(
-          `https://api.spotify.com/v1/search?q=
-            ${this.searchQuery}&type=artist`,
-          {
-            headers: {
-              Authorization: localStorage.getItem('user_token')
+      if (this.searchQuery !== '') {
+        try {
+          this.artistsResults = await this.$axios.get(
+            `https://api.spotify.com/v1/search?q=
+              ${this.searchQuery}&type=artist`,
+            {
+              headers: {
+                Authorization: localStorage.getItem('user_token')
+              }
             }
-          }
-        )
+          )
 
-        this.artistsResults = this.artistsResults.data.artists.items
-      } catch (error) {
-        this.status = 'Nastala chyba, zkus se, prosím, znovu přihlásit'
+          this.artistsResults = this.artistsResults.data.artists.items
+        } catch (error) {
+          this.status = 'Nastala chyba, zkus se, prosím, znovu přihlásit'
+        }
+      } else {
+        this.artistsResults = null
+        this.status = 'Vyhledej nějakýho umělce'
       }
     },
 
@@ -188,6 +197,39 @@ export default {
       })
 
       this.status = 'TOP 10 písniček seřazených podle danceability'
+    },
+
+    async playTrack(trackId, name) {
+      const device = await this.$axios.get(
+        `https://api.spotify.com/v1/me/player/devices`,
+        {
+          headers: {
+            Authorization: localStorage.getItem('user_token')
+          }
+        }
+      )
+
+      if (device.data.devices.length !== 0) {
+        const deviceId = device.data.devices[0].id
+
+        await this.$axios.put(
+          `https://api.spotify.com/v1/me/player/play?device_id=${deviceId}`,
+          {
+            uris: ['spotify:track:' + trackId]
+          },
+          {
+            headers: {
+              Authorization: localStorage.getItem('user_token')
+            }
+          }
+        )
+
+        this.$toast.success(`${name}`, {
+          icon: 'play_arrow'
+        })
+      } else {
+        this.$toast.error('Otevři si nějaký zařízení')
+      }
     }
   }
 }
