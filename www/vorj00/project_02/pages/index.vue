@@ -22,8 +22,9 @@
       </div>
 
       <div
-        v-if="tracks"
+        v-if="tracks.length"
         class="tracks">
+        <h2>TOP 10 písniček seřazených podle danceability</h2>
         <div
           v-for="track in tracks"
           :key="track.id"
@@ -104,8 +105,10 @@ export default {
   },
 
   mounted() {
+    this.status =
+      'Chceš seřadit nejlepší písničky daného interpreta podle danceability? Stačí být přihlášen, zadat nějakého umělce do vyhledávání a pak ho vybrat.'
+
     if (this.$route.hash) {
-      this.status = 'Přihlášení bylo úspěšné, vyhledej nějakého umělce'
       var pieces = this.$route.hash.replace('#', '').split('&')
       var data = {}
       var parts
@@ -121,18 +124,18 @@ export default {
         'user_token',
         data.token_type + ' ' + data.access_token
       )
-    } else {
-      if (localStorage.getItem('user_token')) {
-        this.status =
-          'Chceš seřadit nejlepší písničky daného interpreta podle danceability? Stačí zadat nějakého umělce do vyhledávání a pak ho vybrat.'
-      } else {
-        this.status = 'Nejprve se přihlaš, prosím'
-      }
+
+      this.$toast.success('Přihlášení bylo úspěšné, vyhledej nějakého umělce')
     }
   },
 
   methods: {
     async getSearch() {
+      if (!localStorage.getItem('user_token')) {
+        this.$toast.show('Nejprve se, prosím, přihlaš')
+        return
+      }
+
       this.tracks = {}
       this.status = ''
 
@@ -150,7 +153,7 @@ export default {
 
           this.artistsResults = this.artistsResults.data.artists.items
         } catch (error) {
-          this.status = 'Nastala chyba, zkus se, prosím, znovu přihlásit'
+          this.$toast.error('Nastala chyba, zkus se, prosím, znovu přihlásit')
         }
       } else {
         this.artistsResults = null
@@ -195,8 +198,6 @@ export default {
       topTracksData.sort(function(a, b) {
         return b['danceability'] - a['danceability']
       })
-
-      this.status = 'TOP 10 písniček seřazených podle danceability'
     },
 
     async playTrack(trackId, name) {
