@@ -8,7 +8,7 @@ body {
   background-color: $background;
   color: $black;
   font-family: 'Montserrat', sans-serif;
-  padding: 1rem 2rem;
+  user-select: none;
 }
 
 a {
@@ -43,10 +43,11 @@ a {
   z-index: 1;
   height: 4rem;
   background-color: $background;
+  padding: 1rem 2rem;
 }
 
 .main {
-  text-align: center;
+  padding: 0 2rem 2rem 2rem;
 }
 
 .img {
@@ -55,49 +56,87 @@ a {
   width: 180px;
 }
 
-.tracks h2{
+.tracks {
+  background-color: $white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+}
+
+.tracks h2 {
   position: sticky;
   top: 0;
   z-index: 1;
   margin: 0;
   padding: 1.25rem;
-  display:inline-block;
+  display: inline-block;
+  align-self: center;
 }
 
 .track {
   position: relative;
   display: flex;
   align-items: center;
-  height: calc(100px + 2rem);
-  padding: 1rem;
+  padding: 0.5rem 0;
+
+  &:nth-child(odd) {
+    background-color: #FFF
+  }
 
   &:hover {
-    background-color: #616161
+    background-color: #CFD8DC
   }
+}
+
+.track__play {
+  cursor: pointer;
+  margin: 0 2rem;
+  font-size: 2rem;
 }
 
 .track__img {
   height: 100px;
   width: 100px;
+  border-radius: 0;
 }
 
 .track__info {
-  position: relative;
-  margin-right: 1rem
+  margin-left: 1rem;
+  align-self: stretch;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.track__danceability {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(#000, 0.5);
-  padding: 0.5rem;
-  color: $white
+.track__name {
+  font-size: 1.5rem
 }
 
-.track__preview {
+.track__authors {
+  display: flex;
+  bottom: 0.75rem;
+  color: grey;
+  font-size: 0.9rem
+}
+
+.track__danceability{
+  text-align: center;
   margin-left: auto;
+  margin-right: 2rem;
+}
+
+.track__danceabilityName{
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: grey;
+}
+
+.track__danceabilityNumber {
+  height: 100%;
+  color: $black;
 }
 
 .status {
@@ -108,7 +147,6 @@ a {
   line-height: 1.125;
   background: $white;
   border-radius: 2px;
-  text-align: left;
   border-left: 5px solid #1d7fb9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18)
 }
@@ -130,11 +168,16 @@ a {
   }
 }
 
+.result__name {
+  margin-top: 1rem;
+}
+
 .result__imgContainer {
   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.18);
   border-radius: 50%;
   height: 180px;
   width: 180px;
+  margin: 0 auto;
 
   &>img {
     z-index: -2;
