@@ -9,7 +9,7 @@
         @input="getSearch"
       >
       <a
-        :href="`https://accounts.spotify.com/authorize?client_id=f254e3e7f8a74a1b9c5e3a683063f0dd&redirect_uri=${url}/&scope=user-read-playback-state%20user-modify-playback-state&response_type=token`"
+        :href="`https://accounts.spotify.com/authorize?client_id=f254e3e7f8a74a1b9c5e3a683063f0dd&redirect_uri=${url}/&scope=user-read-playback-state%20user-modify-playback-state%20user-top-read&response_type=token`"
         class="button">
         PŘIHLÁSIT SE</a>
     </nav>
@@ -55,7 +55,7 @@
 
       <div class="results">
         <a
-          v-for="result in artistsResults"
+          v-for="result in (Object.keys(artistsResults).length !== 0 ? artistsResults : usersFavorites)"
           :key="result.id"
           class="result"
           @click="getTopTracks(result.id)"
@@ -101,7 +101,8 @@ export default {
       status: '',
       artistsResults: {},
       tracks: {},
-      url: ''
+      url: '',
+      usersFavorites: {}
     }
   },
 
@@ -111,28 +112,51 @@ export default {
     this.status =
       'Chceš seřadit nejlepší písničky daného interpreta podle danceability? Stačí být přihlášen, zadat nějakého umělce do vyhledávání a pak ho vybrat.'
 
-    if (this.$route.hash) {
-      var pieces = this.$route.hash.replace('#', '').split('&')
-      var data = {}
-      var parts
+    if (this.$route.hash || localStorage.getItem('user_token')) {
+      if (this.$route.hash) {
+        var pieces = this.$route.hash.replace('#', '').split('&')
+        var data = {}
+        var parts
 
-      for (var i = 0; i < pieces.length; i++) {
-        parts = pieces[i].split('=')
-        if (parts.length < 2) {
-          parts.push('')
+        for (var i = 0; i < pieces.length; i++) {
+          parts = pieces[i].split('=')
+          if (parts.length < 2) {
+            parts.push('')
+          }
+          data[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1])
         }
-        data[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1])
-      }
-      localStorage.setItem(
-        'user_token',
-        data.token_type + ' ' + data.access_token
-      )
+        localStorage.setItem(
+          'user_token',
+          data.token_type + ' ' + data.access_token
+        )
 
-      this.$toast.success('Přihlášení bylo úspěšné, vyhledej nějakého umělce')
+        this.$toast.success('Přihlášení bylo úspěšné, vyhledej nějakého umělce')
+      }
+
+      this.getUsersFavorites()
     }
   },
 
   methods: {
+    async getUsersFavorites() {
+      try {
+        this.usersFavorites = await this.$axios.get(
+          `https://api.spotify.com/v1/me/top/artists`,
+          {
+            headers: {
+              Authorization: localStorage.getItem('user_token')
+            }
+          }
+        )
+
+        this.usersFavorites = this.usersFavorites.data.items
+
+        console.log(this.usersFavorites)
+      } catch (error) {
+        this.$toast.error('Nastala chyba, zkus se, prosím, znovu přihlásit')
+      }
+    },
+
     async getSearch() {
       if (!localStorage.getItem('user_token')) {
         this.$toast.show('Nejprve se, prosím, přihlaš')
@@ -159,8 +183,8 @@ export default {
           this.$toast.error('Nastala chyba, zkus se, prosím, znovu přihlásit')
         }
       } else {
-        this.artistsResults = null
-        this.status = 'Vyhledej nějakýho umělce'
+        this.artistsResults = {}
+        this.status = 'Vyhledej nějakýho umělce, nebo vyber oblíbeného'
       }
     },
 
