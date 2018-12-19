@@ -49,6 +49,11 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/toast'
   ],
+
+  toast: {
+    position: 'bottom-right',
+    duration: 3000
+  },
   /*
   ** Axios module configuration
   */
