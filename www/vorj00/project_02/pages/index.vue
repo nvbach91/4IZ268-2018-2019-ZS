@@ -9,9 +9,9 @@
         @input="getSearch"
       >
       <a
-        class="button"
-        href="https://accounts.spotify.com/authorize?client_id=f254e3e7f8a74a1b9c5e3a683063f0dd&redirect_uri=http://localhost:3000/&scope=user-read-playback-state%20user-modify-playback-state&response_type=token"
-      >PŘIHLÁSIT SE</a>
+        :href="`https://accounts.spotify.com/authorize?client_id=f254e3e7f8a74a1b9c5e3a683063f0dd&redirect_uri=${url}/&scope=user-read-playback-state%20user-modify-playback-state&response_type=token`"
+        class="button">
+        PŘIHLÁSIT SE</a>
     </nav>
 
     <main class="main">
@@ -100,11 +100,14 @@ export default {
       searchQuery: '',
       status: '',
       artistsResults: {},
-      tracks: {}
+      tracks: {},
+      url: ''
     }
   },
 
   mounted() {
+    this.url = window.location.origin
+
     this.status =
       'Chceš seřadit nejlepší písničky daného interpreta podle danceability? Stačí být přihlášen, zadat nějakého umělce do vyhledávání a pak ho vybrat.'
 
