@@ -33,7 +33,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#1db954' },
 
   /*
   ** Global CSS
@@ -82,6 +82,14 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+    },
+
+    extend(config, { isDev }) {
+      if (!isDev) {
+        // relative links, please.
+        config.output.publicPath = './_nuxt/'
+      }
+      return config
     }
   }
 }
