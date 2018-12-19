@@ -2,9 +2,10 @@
 
 $black: #212121;
 $white: #FAFAFA;
+$background: #ECEFF1;
 
 body {
-  background-color: #ECEFF1;
+  background-color: $background;
   color: $black;
   font-family: 'Montserrat', sans-serif;
   padding: 1rem 2rem;
@@ -41,6 +42,7 @@ a {
   top: 0;
   z-index: 1;
   height: 4rem;
+  background-color: $background;
 }
 
 .main {
@@ -51,6 +53,15 @@ a {
   border-radius: 50%;
   height: 180px;
   width: 180px;
+}
+
+.tracks h2{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: 0;
+  padding: 1.25rem;
+  display:inline-block; 
 }
 
 .track {
@@ -93,9 +104,6 @@ a {
   margin: 1rem 0;
   font-size: 2rem;
   font-weight: 500;
-  position: sticky;
-  top: 0;
-  z-index: 1;
   padding: 1.5rem;
   line-height: 1.125;
   background: $white;
