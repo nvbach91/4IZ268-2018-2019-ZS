@@ -55,7 +55,7 @@
 
       <div class="results">
         <a
-          v-for="result in (Object.keys(artistsResults).length !== 0 ? artistsResults : usersFavorites)"
+          v-for="result in (Object.keys(artistsResults).length !== 0 ? artistsResults : Object.keys(tracks).length === 0 ? usersFavorites : '')"
           :key="result.id"
           class="result"
           @click="getTopTracks(result.id)"
