@@ -44,9 +44,7 @@ function click(e) {
   if (selectOption === 1) {
     var coordinates = SMap.Coords.fromEvent(e.data.event, map);
     setMarkerStart(coordinates);
-  }
-
-  if (selectOption === 2) {
+  } else if (selectOption === 2) {
     var coordinates = SMap.Coords.fromEvent(e.data.event, map);
     setMarkerEnd(coordinates);
   }
@@ -79,7 +77,7 @@ var setMarkerEnd = function(coordinates) {
 var startCoordinates = function(coordinates) {
   startLongitude.text(coordinates[0]);
   startLatitude.text(coordinates[1]);
-  if (computeRoute !== '' && loadContent === 0) {
+  if (loadContent === 0) {
     prepareSearch();
   }
 };
@@ -87,7 +85,7 @@ var startCoordinates = function(coordinates) {
 var endCoordinates = function(coordinates) {
   endLongitude.text(coordinates[0]);
   endLatitude.text(coordinates[1]);
-  if (computeRoute !== '' && loadContent === 0) {
+  if (loadContent === 0) {
     prepareSearch();
   }
 };
@@ -121,6 +119,7 @@ var search = function(route) {
   ascent.text(route.getResults().ascent + ' m');
   descent.text(route.getResults().descent + ' m');
   computeRoute = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
+  console.log('hkhk');
   routeLayer.addGeometry(computeRoute);
   var altitude = route.getResults().altitude;
   draw.clearRect(0, 0, canvasAltitude.width, canvasAltitude.height);
@@ -151,15 +150,31 @@ var drawCanvas = function() {
   }
 };
 
+var removeSpace = function(string) {
+  //  var stringName = '';
+  //  for (var k = 0; k < string.length; k++) {
+  //    var charName = string.charAt(k);
+  //    if (charName !== ' ') {
+  //      stringName = stringName + charName;
+  //    }
+  //  }
+
+  return string.replace(/\s/g, '');
+};
+
 var checkName = function(name) {
   var nameInApp = $('.save-name');
   if (name === '') {
     return true;
   }
 
+  var checkInputName = removeSpace(name);
+
   for (var i = 0; i < nameInApp.length; i++) {
+    var checkSaveName = removeSpace(nameInApp.get(0).innerText);
     if (
-      name.toLowerCase().trim() === nameInApp[i].innerText.toLowerCase().trim()
+      //      name.toLowerCase().trim() === nameInApp[i].innerText.toLowerCase().trim()
+      checkInputName.toLowerCase() === checkSaveName.toLowerCase()
     ) {
       return true;
     }
