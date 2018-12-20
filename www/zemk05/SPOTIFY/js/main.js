@@ -64,6 +64,12 @@ var REDIRECT_URI = "https://fcp.vse.cz/";
             }
         });
     }
+/*-----------Show results in the database template------------------- */
+//DEKLARACE VÝSLEDKŮ
+   /*
+   var addButton = $("<div>").addClass('add-button').text('Přidat');
+   var loginButton = document.querySelector("#login-btn");
+   */
 
     
     var resultField;
@@ -93,3 +99,33 @@ var REDIRECT_URI = "https://fcp.vse.cz/";
 
 /*----------------------Create a loader-------------------------------- */
 
+<<<<<<< HEAD
+=======
+var CLIENT_ID = "9ed280f473334a61ad254a84e0ec0593";
+var REDIRECT_URI = "https://fcp.vse.cz/";
+$.ajax({
+    method: 'GET', 
+    url: "https://accounts.spotify.com/authorize?client_id=" + CLIENT_ID +
+    "&redirect_uri=" + encodeURIComponent(REDIRECT_URI) +
+    "&scope=" + encodeURIComponent(scopes.join(" ")) +
+    "&response_type=token",
+    success: function (resp) {
+        
+    },
+  });
+  $.ajax(
+  {
+    method: "POST",
+    url: "https://accounts.spotify.com/api/token",
+    data: {
+      "grant_type":    "authorization_code",
+      "code":          code,
+      "redirect_uri":  myurl,
+      "client_secret": mysecret,
+      "client_id":     myid,
+    },
+    success: function(result) {
+      // handle result...
+    },
+  });
+>>>>>>> 4f61e3d4bb3468a6d660a8ad483cd0bbeeae21bf
