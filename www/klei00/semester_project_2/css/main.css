@@ -4,6 +4,7 @@
 h1{
     font-size: 50px;
     text-align: center;
+    margin: 10px auto;
 }
 h2{
     font-size: 22px;
@@ -18,7 +19,7 @@ body {
 }
 #search {
     margin: 0 auto;
-    max-width: 700px;
+    max-width: 1000px;
     width: 100%;
     padding: 0;
     background-color: #801616;
@@ -55,10 +56,17 @@ body {
 #open-form:hover{
     border: white 1px solid;
 }
+/*-------------- form body ----------------*/
+#form-body {
+    clear: both;
+    display: flex;
+    justify-content: center;
+    margin-right: 0;
+}
 /*------------- form --------------*/
 #form {
-clear: both;
 padding: 14px 30px;
+width: 500px;
 }
 #form.closed {
     display: none;
@@ -83,13 +91,31 @@ input{
 hr {
     border: none;
     border-top: 1px solid;
-    margin: 0 0 10px 0;
+    margin: 10px 0 0 0;
     clear: both;
 }
 #results-field {
     overflow: auto;
     padding: 0 30px 14px 30px;
+    margin: 15px 0;
     width: 100%;
+    height: 300px;
+}
+#results-field::-webkit-scrollbar {
+    width: 12px;
+}
+#results-field::-webkit-scrollbar-track {
+    background: #FFAAAA;
+    border: solid 1px #801616;
+    border-radius: 3px;
+}
+#results-field::-webkit-scrollbar-thumb {
+    background: #550000;
+    border-radius: 3px;
+}
+#results-field::-webkit-scrollbar-thumb:hover {
+    background: #550000; 
+    border: solid 1px white;
 }
 .result-row {
     padding: 6px 0;
@@ -102,7 +128,7 @@ hr {
     background-color: #550000;
     border-radius: 5px;
     padding: 3px 10px;
-    margin-top: 10px;
+    margin-bottom: 10px;
     cursor: pointer;
     border: #550000 1px solid;
 }
@@ -118,30 +144,13 @@ hr {
 }
 .result {
     display:inline-block;
-    width: 70%;
+    width: 60%;
     margin: 10px 20px;
 }
 .image {
     float: left;
     max-width: 57px;    
-    margin-top: 10px;
-}
-#open-form-2 {
-    float: right;
-    border: #550000 1px solid;
-    border-radius: 4px;
-    margin: 10px 0;
-    background-color: #550000;
-    color: white;
-    font-size: 14px;
-    padding: 4px 6px;
-    cursor: pointer;
-}
-#open-form-2:focus{
-    outline: none;
-}
-#open-form-2:hover{
-    border: white 1px solid;
+    margin-bottom: 10px;
 }
 /*-------------- library table -----------*/
 #my-library {
@@ -237,12 +246,63 @@ footer{
     }
 }
 /*-------------- smaller screen -----------*/
+@media only screen and (max-width: 1020px) {
+    .result {
+        width: 50%;
+        margin: 10px;
+    }
+}
+@media only screen and (max-width: 915px) {
+    #form {
+        width: 400px;
+    }
+    .result {
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 875px) {
+    .result {
+        width: 50%;
+    }
+    #results-field {
+        padding-left: 10px;
+    }
+}
+@media only screen and (max-width: 780px) {
+    .result {
+        width: 70%;
+    }
+    #form-body {
+        display: block;
+    }
+    .result-row:first-child{
+        border-top: 1px solid white;
+        padding-top: 20px;
+    }
+    #form {
+        width: 100%;
+    }
+    #results-field {
+        height: 250px;
+        margin: 0;
+    }
+}
 @media only screen and (max-width: 680px) {
     .table-cell {
         padding: 6px 5px;
     }
     .result {
         width: 60%;
-        margin: 10px;
+    }
+}
+@media only screen and (max-width: 525px) {
+    .table-cell {
+        font-size: 0.9em;
+    }
+    .result {
+        width: 50%;
+    }
+    h1 {
+        font-size: 30px;
     }
 }

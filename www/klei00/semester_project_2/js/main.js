@@ -1,7 +1,8 @@
-var searchField = $('#search');
 var openForm = $('#open-form');
 var formHeader = $('#form-header');
+var formBody = $('#form-body');
 var form = $('#form');
+var reset = $('#reset');
 var resultsField;
 
 var openedForm = false;
@@ -11,17 +12,18 @@ var createForm = function () {
     openForm.text('Skrýt formulář');
     formHeader.removeClass('closed');
     form.removeClass('closed');
-    resultsField = $('<div>').attr('id', 'results-field');
-    searchField.append(resultsField);
     openedForm = true;
-
 }
 /*--------------------- close form function ----------------------*/
 var hideForm = function () {
-    resultsField.remove();
+    if (resultsField !== undefined) {
+        resultsField.remove();
+        resultsField = undefined;
+    }
     openForm.text('Zobrazit formulář');
     formHeader.addClass('closed');
     form.addClass('closed');
+    reset.trigger('click');
     openedForm = false;
 }
 /*--------------------- open/close form ---------------------------*/
@@ -44,24 +46,22 @@ form.submit(function (e) {
     var dataUrl = 'https://www.googleapis.com/books/v1/volumes?q=' + mode + ':"' + query + '"&langRestrict=cs&printType=books&maxResults=' + maxBooks;
 
     $.getJSON(dataUrl).done(function (response) {
-        resultsField.empty();
-        if (response.totalItems === 0 || query === '') {
-            var result = $('<div>').addClass('result-row').text('Nebyla nalezena žádná kniha.');
-            resultsField.append(result);
-        } else {
-            for (var i = 0; i < response.items.length; i++) {
-                addToResults(response.items[i]);
+        if (openedForm === true) {
+            if (resultsField !== undefined) {
+                resultsField.empty();
+            } else {
+                resultsField = $('<div>').attr('id', 'results-field');
+                formBody.append(resultsField);
             }
-            var openForm2 = $('<button>').attr('id', 'open-form-2').text('Skrýt formulář');
-            $('#results-field').append($('<hr>')).append(openForm2);
-            openForm2.click(function (e) {
-                e.preventDefault();
-                if (openedForm) {
-                    hideForm();
-                } else {
-                    createForm();
+
+            if (response.totalItems === 0) {
+                var result = $('<div>').addClass('result-row').text('Nebyla nalezena žádná kniha.');
+                resultsField.append(result);
+            } else {
+                for (var i = 0; i < response.items.length; i++) {
+                    addToResults(response.items[i]);
                 }
-            });
+            }
         }
         $('.whole-page').remove();
     });
@@ -115,7 +115,7 @@ var addToResults = function (item) {
             addButton.addClass('add-existing');
         }
     });
-    resultRow.append($('<hr>')).append(image).append(result).append(addButton);
+    resultRow.append(image).append(result).append(addButton).append($('<hr>'));
     resultsField.append(resultRow);
 }
 /*--------------------- add a book to my library -----------------------------------------*/
