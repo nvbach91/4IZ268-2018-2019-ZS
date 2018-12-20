@@ -9,28 +9,23 @@
       >
       <a
         :href="`https://accounts.spotify.com/authorize?client_id=f254e3e7f8a74a1b9c5e3a683063f0dd&redirect_uri=${url}/&scope=user-read-playback-state%20user-modify-playback-state%20user-top-read&response_type=token`"
-        class="button">
-        PŘIHLÁSIT SE</a>
+        class="button"
+      >PŘIHLÁSIT SE</a>
     </nav>
 
     <main class="main">
       <div
         v-if="status && Object.keys(artistsResults).length === 0 && Object.keys(tracks).length === 0"
-        class="status">
-        {{ status }}
-      </div>
+        class="status"
+      >{{ status }}</div>
 
-      <div
-        v-if="tracks.length"
-        class="tracks">
+      <div v-if="tracks.length" class="tracks">
         <h2>TOP 10 písniček seřazených podle danceability</h2>
-        <div
-          v-for="track in tracks"
-          :key="track.id"
-          class="track">
+        <div v-for="track in tracks" :key="track.id" class="track">
           <i
             class="track__play material-icons"
-            @click="playTrack(track.id, track.name)">{{ track.id !== currentlyPlaying ? 'play_circle_outline' : 'play_arrow' }}</i>
+            @click="playTrack(track.id, track.name)"
+          >{{ track.id !== currentlyPlaying ? 'play_circle_outline' : 'play_arrow' }}</i>
           <img
             v-for="(value, key) in track.album.images[0]"
             v-if="key === 'url'"
@@ -41,11 +36,9 @@
           <div class="track__info">
             <div class="track__name">{{ track.name }}</div>
             <div class="track__authors">
-              <div
-                v-for="(artist, key) in track.artists"
-                :key="key"
-                class="track__authorName">
-                {{ artist.name }}<span v-if="key !== (track.artists.length-1)">,&thinsp;</span>
+              <div v-for="(artist, key) in track.artists" :key="key" class="track__authorName">
+                {{ artist.name }}
+                <span v-if="key !== (track.artists.length-1)">,&thinsp;</span>
               </div>
             </div>
           </div>
@@ -63,9 +56,7 @@
           class="result"
           @click="getTopTracks(result.id)"
         >
-          <div
-            v-if="result.images[0]"
-            class="result__imgContainer">
+          <div v-if="result.images[0]" class="result__imgContainer">
             <img
               v-for="(value, key) in result.images[0]"
               v-if="(key === 'url')"
@@ -74,12 +65,8 @@
               class="img result__img"
             >
           </div>
-          <div
-            v-else
-            class="result__imgContainer">
-            <img
-              src="artist.png"
-              class="img result__img">
+          <div v-else class="result__imgContainer">
+            <img src="artist.png" class="img result__img">
           </div>
           <div class="result__name">{{ result.name }}</div>
         </a>
@@ -143,7 +130,7 @@ export default {
   },
 
   watch: {
-    searchQuery: debounce(function (newVal) {
+    searchQuery: debounce(function(newVal) {
       this.getSearch()
     }, 500)
   },

@@ -18,7 +18,7 @@ module.exports = {
       }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/artist.png' },
+      { rel: 'icon', type: 'image/x-icon', href: 'artist.png' },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Montserrat'
