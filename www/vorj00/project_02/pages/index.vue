@@ -234,6 +234,8 @@ export default {
         }
       )
       this.currentlyPlaying = currentlyPlayingData.data.item.id
+        ? currentlyPlayingData.data.item.id
+        : ''
     },
 
     async playTrack(trackId, name) {
