@@ -39,6 +39,7 @@ header {
     margin: 0 auto;
     cursor:pointer;
 }
+
 /*--------Add a searched value--------*/
 #insert-row input {
     border: none;
