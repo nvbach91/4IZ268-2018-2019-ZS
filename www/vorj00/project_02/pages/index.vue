@@ -6,7 +6,6 @@
         class="input input--search"
         type="search"
         placeholder="Najdi umělce"
-        @input="getSearch"
       >
       <a
         :href="`https://accounts.spotify.com/authorize?client_id=f254e3e7f8a74a1b9c5e3a683063f0dd&redirect_uri=${url}/&scope=user-read-playback-state%20user-modify-playback-state%20user-top-read&response_type=token`"
@@ -93,6 +92,7 @@
 import Logo from '~/components/Logo.vue'
 
 import { objectToString } from '@/assets/js/objectToString'
+import { debounce } from '@/assets/js/debounce'
 
 export default {
   components: {
@@ -142,6 +142,12 @@ export default {
     }
   },
 
+  watch: {
+    searchQuery: debounce(function (newVal) {
+      this.getSearch()
+    }, 500)
+  },
+
   methods: {
     async getUsersFavorites() {
       try {
@@ -155,8 +161,6 @@ export default {
         )
 
         this.usersFavorites = this.usersFavorites.data.items
-
-        console.log(this.usersFavorites)
       } catch (error) {
         this.$toast.error('Nastala chyba, zkus se, prosím, znovu přihlásit')
       }
@@ -242,8 +246,6 @@ export default {
           }
         }
       )
-
-      console.log(currentlyPlayingData.data.item.id)
       this.currentlyPlaying = currentlyPlayingData.data.item.id
     },
 
