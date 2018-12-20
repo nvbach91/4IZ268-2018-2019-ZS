@@ -12,44 +12,66 @@ FUNKCIONALITY:
 
 /*----------------------Gain an access token---------------------- */
 
-var CLIENT_ID = "9ed280f473334a61ad254a84e0ec0593";
-var REDIRECT_URI = "https://fcp.vse.cz/";
 //var scopes="user-read-private user-read-email";
 
-(function() {
 
-    function gainAccess(callback) {
-        var CLIENT_ID = "9ed280f473334a61ad254a84e0ec0593";
-        var REDIRECT_URI = "https://fcp.vse.cz/";
-        function getLoginURL(scopes) {
-            return "https://accounts.spotify.com/authorize?client_id=" + CLIENT_ID +
-              "&redirect_uri=" + encodeURIComponent(REDIRECT_URI) +
-              "&scope=" + encodeURIComponent(scopes.join(" ")) +
-              "&response_type=token";
-        }
-
-        var url = getLoginURL([
-            "user-read-email"
-        ]);
-
-        var width = 450,
-            height = 730,
-            left = (screen.width / 2) - (width / 2),
-            top = (screen.height / 2) - (height / 2);
-
-        window.addEventListener("message", function(event) {
-            var hash = JSON.parse(event.data);
-            if (hash.type == "access_token") {
-                callback(hash.access_token);
+        (function() {
+    
+            function login(callback) {
+                var CLIENT_ID = "9ed280f473334a61ad254a84e0ec0593";
+                var REDIRECT_URI = "http://localhost:5500/";
+                function getLoginURL(scopes) {
+                    return 'https://accounts.spotify.com/authorize?client_id=' + CLIENT_ID +
+                      '&redirect_uri=' + encodeURIComponent(REDIRECT_URI) +
+                      '&scope=' + encodeURIComponent(scopes.join(' ')) +
+                      '&response_type=token';
+                }
+                
+                var url = getLoginURL([
+                    'user-read-email'
+                ]);
+                
+                var width = 450,
+                    height = 730,
+                    left = (screen.width / 2) - (width / 2),
+                    top = (screen.height / 2) - (height / 2);
+            
+                window.addEventListener("message", function(event) {
+                    var hash = JSON.parse(event.data);
+                    if (hash.type == 'access_token') {
+                        callback(hash.access_token);
+                    }
+                }, false);
+                
+                var w = window.open(url,
+                                    'Spotify',
+                                    'menubar=no,location=no,resizable=no,scrollbars=no,status=no, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left
+                                   );
+                
             }
-        }, false);
+            function getUserData(accessToken) {
+                return $.ajax({
+                    url: 'https://api.spotify.com/v1/me',
+                    headers: {
+                       'Authorization': 'Bearer ' + accessToken
+                    }
+                });
+            }
+        
 
-        var w = window.open(url,
-                            "Spotify",
-                            "menubar=no,location=no,resizable=no,scrollbars=no,status=no, width=" + width + ", height=" + height + ", top=" + top + ", left=" + left
-                           );
-    }
-
+                loginButton = document.getElementById('submit-btn');
+            
+            loginButton.addEventListener('click', function() {
+                login(function(accessToken) {
+                    getUserData(accessToken)
+                        .then(function(response) {
+                            loginButton.style.display = 'none';
+                        });
+                    });
+            });
+            
+        })();
+/*
     var query = $("#searched-text").val().replace(/ /g, '+');
     var type = $("input:checked", "#search-place").val();
     function searchData(accessToken) {
@@ -64,7 +86,6 @@ var REDIRECT_URI = "https://fcp.vse.cz/";
             }
         });
     }
-
     
     var resultField;
     var resultRow = $("<div>").addClass("result-row");
@@ -75,6 +96,13 @@ var REDIRECT_URI = "https://fcp.vse.cz/";
             searchData(function(accessToken) {});
         });
     })();
+*/
+/*-----------Show results in the database template------------------- */
+//DEKLARACE VÝSLEDKŮ
+   /*
+   var addButton = $("<div>").addClass('add-button').text('Přidat');
+   var loginButton = document.querySelector("#login-btn");
+   */
 
 /*-----------Show results in the database template------------------- *
 
