@@ -14,88 +14,55 @@ FUNKCIONALITY:
 
 //var scopes="user-read-private user-read-email";
 
-
-        (function() {
-    
-            function login(callback) {
-                var CLIENT_ID = "9ed280f473334a61ad254a84e0ec0593";
-                var REDIRECT_URI = "http://localhost:5500/";
-                function getLoginURL(scopes) {
-                    return 'https://accounts.spotify.com/authorize?client_id=' + CLIENT_ID +
-                      '&redirect_uri=' + encodeURIComponent(REDIRECT_URI) +
-                      '&scope=' + encodeURIComponent(scopes.join(' ')) +
-                      '&response_type=token';
-                }
-                
-                var url = getLoginURL([
-                    'user-read-email'
-                ]);
-                
-                var width = 450,
-                    height = 730,
-                    left = (screen.width / 2) - (width / 2),
-                    top = (screen.height / 2) - (height / 2);
-            
-                window.addEventListener("message", function(event) {
-                    var hash = JSON.parse(event.data);
-                    if (hash.type == 'access_token') {
-                        callback(hash.access_token);
-                    }
-                }, false);
-                
-                var w = window.open(url,
-                                    'Spotify',
-                                    'menubar=no,location=no,resizable=no,scrollbars=no,status=no, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left
-                                   );
-                
+function submit(callback) {
+    var CLIENT_ID = "9ed280f473334a61ad254a84e0ec0593";
+    var REDIRECT_URI = "http://localhost:5500/www/zemk05/SPOTIFY/";
+    function getLoginURL(scopes) {
+        return 'https://accounts.spotify.com/authorize?client_id=' + CLIENT_ID +
+                '&redirect_uri=' + encodeURIComponent(REDIRECT_URI) +
+                '&scope=' + encodeURIComponent(scopes.join(' ')) +
+                '&response_type=token';
             }
-            function getUserData(accessToken) {
-                return $.ajax({
-                    url: 'https://api.spotify.com/v1/me',
-                    headers: {
-                       'Authorization': 'Bearer ' + accessToken
-                    }
-                });
-            }
-        
+        var url = getLoginURL(['user-read-email']);
+        var w = window.open(url,"_self");
 
-                loginButton = document.getElementById('submit-btn');
-            
-            loginButton.addEventListener('click', function() {
-                login(function(accessToken) {
-                    getUserData(accessToken)
-                        .then(function(response) {
-                            loginButton.style.display = 'none';
-                        });
-                    });
-            });
-            
-        })();
-/*
-    var query = $("#searched-text").val().replace(/ /g, '+');
-    var type = $("input:checked", "#search-place").val();
-    function searchData(accessToken) {
+}
+submitButton = document.getElementById('submit-btn');
+var query = $("#searched-text").val().replace(/ /g, '+');
+var type = $("input:checked", "#search-place").val();
+//var accessToken=window.location.hash
+var hash = window.location.hash.substring(1);
+    var params = {}
+    hash.split('&').map(hk => { 
+      let temp = hk.split('='); 
+        params[temp[0]] = temp[1] 
+    });
+    console.log(params);
+    var accessToken=params.access_token;
+    //params.access_token
+submitButton.addEventListener('click', function() {
+     submit(function(accessToken) {});
+     function searchData(accessToken) {
         return $.ajax({
-            url: 'https://api.spotify.com/v1/me',
-            headers: {
-                'Authorization': 'Bearer ' + accessToken
+            url: "https://api.spotify.com/v1/search?q=" + query + "&type=" + type,
+            error: function (error) {
+                console.log(arguments);
+                alert(" Can't do because: " + error);
             },
-            success: function(response) { 
-                    return "https://api.spotify.com/v1/search?q=" + query +
-                      "&type=" + type;
+            success: function(response) {
+                console.log(response.data);
             }
         });
+        
     }
-    
+    submit();
+    searchData();
+});
+            
+/*  
     var resultField;
     var resultRow = $("<div>").addClass("result-row");
-    var submitButton = document.querySelector("#submit-btn");
     
-    submitButton.addEventListener("click",function() {
-            gainAccess(function(accessToken) {});
-            searchData(function(accessToken) {});
-        });
-    })();
 */
 /*-----------Show results in the database template------------------- */
 //DEKLARACE VÝSLEDKŮ
@@ -103,10 +70,6 @@ FUNKCIONALITY:
    var addButton = $("<div>").addClass('add-button').text('Přidat');
    var loginButton = document.querySelector("#login-btn");
    */
-
-/*-----------Show results in the database template------------------- *
-
-
 
 
 /*----------------------Funkce zobraz výsledky---------------------- */
