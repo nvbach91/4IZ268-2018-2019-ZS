@@ -1,3 +1,21 @@
+/*
+
+Plan for app:
+
+- it is basically like a presentation
+- I see the prompt, I click and then the application shows me the correct answer and I rate how well I knew it
+- the app then puts this word into another box, like another level of knowledge, into local storage
+- when I finish the first box, it prompts me for the translation again, but it only uses cards in the second box
+- the same can happen many times, I can let the user torture themselves with 8 boxes, it doesn't matter
+
+more sepcific plan
+
+so obviously a big "flashcard" which will be sourced from the API-imported list of words
+
+
+*/
+
+
 $(document).ready(function () {
     var topics = fetch('https://pure-chamber-44082.herokuapp.com/api/topics', {
         mode: 'cors',
