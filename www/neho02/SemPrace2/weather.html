@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather</title>
-    <link rel="stylesheet" href=css/weather.css>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href=css/weather.css> <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
- </head>
+</head>
+
 <body>
-        
-    <div class="jumbotron" style="margin-bottom:0px; color: rgb(0, 0, 0); background-color: rgb(24, 166, 231);">
-        <h2 class="text-center" style="font-size: 40px; font-weight: 400;">Weather</h2>
+
+    <div class="jumbotron" id="jumbo">
+        <h2 class="text-center" id="th2">Weather</h2>
     </div>
 
-    <div class="container" style="height: 374px;">
-    <div class="row">
-    <h2 class="text-center text-primary">Your City</h2>
-        <span id="error"></span>
+    <div class="container" id="cont">
+        <div class="row">
+            <h2 class="text-center text-primary">Your City</h2>
+            <span id="error"></span>
+        </div>
+
+        <div class="row form-group form-inline" id="rowDiv">
+            <input type="text" name="city" id="city" class="form-control" placeholder="City Name">
+            <button id="submitWeather" class="btn btn-primary">Search City</button>
+        </div>
+
+        <div id="show"></div>
+
     </div>
 
-    <div class="row form-group form-inline" id="rowDiv">
-        <input type="text" name="city" id="city" class="form-control" placeholder="City Name">
-        <button id="submitWeather" class="btn btn-primary">Search City</button>
-    </div>
-
-<div id="show"></div>
-
-</div>
-
-<div class="footer">
-    <div class="container">
-        <div class="row text-center" style="padding-top:30px;"> 
-           <p style="color:black">Copyright © Oleksii Nehoi 2018. All Rights Reserved. Made with <a href="http://www.openweathermap.org">openweathermap</a>.</p>
+    <div class="footer">
+        <div class="container">
+            <div class="row text-center">
+                <p>Copyright © Oleksii Nehoi 2018. All Rights Reserved. Made with <a href="http://www.openweathermap.org">openweathermap</a>.</p>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/weather.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/weather.js"></script>
 
 </body>
+
 </html>

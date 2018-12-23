@@ -5,13 +5,34 @@
    width: 30%;
  } 
 
+ #th2{
+  font-size: 40px;
+  font-weight: 400;
+ }
+
  #show{
    margin: auto;
    text-align: center;
  }
 
- .footer{
-   width: 100%;
-   height: 82px;
-   background-color: rgb(24, 166, 231);
+ #cont{
+  height: 650px;
  }
+
+ .row{
+  padding-top:30px;
+  color:black;
+ }
+
+#jumbo{
+  margin-bottom:0px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(24, 166, 231);
+}
+
+
+.footer{
+  width: 100%;
+  height: 82px;
+  background-color: rgb(24, 166, 231);
+}
