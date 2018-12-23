@@ -44,15 +44,16 @@
 
    <main>
       <label for="topics">Select a topic to practice</label>
+
       <div class="flexContainerWrap" id="appContainer">
+         <div class="flexContainerWrap">
+            <select name="topics" id="topicDropdown">
+            </select>
+            <button id="practiceButton">Practice</button>
+         </div>
 
-         <select name="topics" id="topicDropdown">
-         </select>
-
-         <button id="practiceButton">Practice</button>
-
-         <ul id="topics"></ul>
-         <ul id="vocab"></ul>
+         <div id="flashcard">
+         </div>
       </div>
 
    </main>

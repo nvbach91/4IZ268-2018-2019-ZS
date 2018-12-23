@@ -12,6 +12,32 @@ more sepcific plan
 
 so obviously a big "flashcard" which will be sourced from the API-imported list of words
 
+on click - it will show the correct answer and display three buttons - 
+ - Hard
+ - OK
+ - Too easy
+
+ if it ishard, it will go back to the preevious box
+ 
+ // flag "harded" bych asi tady nedelal, nejdriv proste predesly box a budouci box
+ Každé slovíčko je Object, ktery v sobe ma indikator úrovně procvičení.
+Taky má flag "harded". Tzn. Tlacitko hard jenom da "harded" = truea
+estw nepremisti do predesleho boxiku, pak kdyz da ok tak to presune
+do dalsiho boxu a pokud to bylo harded tak to vymaze na false.
+Pokud hardne student jiz jednoz hardnute slovo, putuje do predesleho boxu.
+
+Jakmile dosahne x+1. boxu, brainu, tak
+
+          Addneš event listener k jednotlivým kartičkám, které je otočí.
+                                Do nějakýho session storage si uložíš aktuálně procvičovanou kartičku, stačí index
+                                a pak z vocab listu vybíráš nth child a dáš display: něco
+                                a zbytek bude display: none
+
+                                navíc musíš z toho "append to" udělat spíš toggle funkci, že se to vypíše a pak zase schová
+
+                                musíš taky nastylovat ty kartičky
+                                
+
 
 */
 
@@ -37,6 +63,10 @@ $(document).ready(function () {
             /*Teprve na kliknuti se zavola dalsi pozadavek */
             $("#practiceButton").on("click", function () {
                 console.log("button clicked")
+
+                /*
+                    Display "Google Slides"-like presentation flashcard
+                */
                 var e = document.getElementById("topicDropdown");
                 var selectedOptionIndex = e.options.selectedIndex;
                 var selectedOptionText = e.options[selectedOptionIndex].text;
@@ -51,56 +81,84 @@ $(document).ready(function () {
                     .then(
                         data => {
                             data = JSON.parse(data);
-                            vocabList = $("#vocab");
+                            let flashcard = $("#flashcard");
 
-                            for (let i = 0; i < data.length; i++) {
-                                const pair = data[i];
-                                let word = pair[Object.keys(pair)[0]];
-                                var li = $(`<li>${ word }</li>`)
-                                    .addClass("vocab-item")
-                                    .appendTo(vocabList);
-
-                                /* Addneš event listener k jednotlivým kartičkám, které je otočí. 
-                                Do nějakýho session storage si uložíš aktuálně procvičovanou kartičku, stačí index
-                                a pak z vocab listu vybíráš nth child a dáš display: něco
-                                a zbytek bude display: none
-                                
-                                navíc musíš z toho "append to" udělat spíš toggle funkci, že se to vypíše a pak zase schová
-                                
-                                musíš taky nastylovat ty kartičky
-                                */
+                            function storageAvailable(type) {
+                                try {
+                                    var storage = window[type],
+                                        x = '__storage_test__';
+                                    storage.setItem(x, x);
+                                    storage.removeItem(x);
+                                    return true;
+                                }
+                                catch (e) {
+                                    return e instanceof DOMException && (
+                                        // everything except Firefox
+                                        e.code === 22 ||
+                                        // Firefox
+                                        e.code === 1014 ||
+                                        // test name field too, because code might not be present
+                                        // everything except Firefox
+                                        e.name === 'QuotaExceededError' ||
+                                        // Firefox
+                                        e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+                                        // acknowledge QuotaExceededError only if there's something already stored
+                                        storage.length !== 0;
+                                }
                             }
+                            let ls = window.localStorage;
+                            if (storageAvailable('localStorage')) {
+                                for (let i = 0; i < data.length; i++) {
+                                    let pair = data[i];
+                                    let term = pair[Object.keys(pair)[0]];
+                                    let definition = Object.keys(pair)[0];
+                                    ls.setItem(term, definition);
+                                }
+                                let storageKeys = Object.keys(ls);
+                                let indexToSplice = storageKeys.indexOf("practicedVocabulary")
+                                if (indexToSplice != -1) {storageKeys = storageKeys.splice(indexToSplice)}
+                                ls.setItem("practicedVocabulary", storageKeys);
+                                console.log("bubak")
+                                console.log(storageKeys.indexOf("practicedVocabulary"))
+
+                            } else {
+                                alert("Your vocabulary shall not be stored, you will have to wait until the database is active and register as a user. Database launch datre < March 2019")
+                            }
+
+
                         }
 
                     )
             })
 
+
+
+            //     $(".topic-item").on("click",function() {
+            //         console.log(document.querySelector(".topic-item").innerHTML);
+            //         console.log($(this).innerHTML);
+
+            //         var vocab = fetch('https://pure-chamber-44082.herokuapp.com/api/topics/work/vocab',{  mode: 'cors',
+            //         headers: {
+            //           'Access-Control-Allow-Origin':'*'
+            //         }})
+            //         .then(data => data.json())
+            //         .then(data => {
+            //             data = JSON.parse(data);
+            //             console.log(data)
+
+            //         var vocabEl = $('#vocab');
+
+            //         $.each(data, function(i){
+            //             var li = $(`<li>${data[i]}</li>`)
+            //                 .addClass('vocab-item')
+            //                 .appendTo(vocabEl);
+            //         });
+            //     })
+            //     })
+            //     )
+
+
         })
 })
-//     $(".topic-item").on("click",function() {
-//         console.log(document.querySelector(".topic-item").innerHTML);
-//         console.log($(this).innerHTML);
 
-//         var vocab = fetch('https://pure-chamber-44082.herokuapp.com/api/topics/work/vocab',{  mode: 'cors',
-//         headers: {
-//           'Access-Control-Allow-Origin':'*'
-//         }})
-//         .then(data => data.json())
-//         .then(data => {
-//             data = JSON.parse(data);
-//             console.log(data)
-
-//         var vocabEl = $('#vocab');
-
-//         $.each(data, function(i){
-//             var li = $(`<li>${data[i]}</li>`)
-//                 .addClass('vocab-item')
-//                 .appendTo(vocabEl);
-//         });
-//     })
-//     })
-//     )
-
-
-// })
 
