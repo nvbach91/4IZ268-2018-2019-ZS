@@ -8,16 +8,13 @@ App.getMovies = function (searchText) {
   fetch(url).then(function (response) {
     return response.json();
   }).then(function (response) {
-    console.log(response);
     var movies = response.results;
     var html = '';
-    var message = '<p class="message">Results of searching <strong> &bdquo;' + searchText + '&rdquo; <strong></p>';
-    if (movies.length == 0) {
+    var message = '<p class="message">Results of searching <strong> &bdquo;' + searchText + '&rdquo; </strong></p>';
+    if (movies.length === 0) {
       var html = `<p class="no-records">No records</p>`;
     }
-    //seřadí filmy podle hodnocení
-    //budu se však snažit o to, aby se filmy řadily na základě výběru řazení od uživatele
-    var sortedMovies = movies.sort(function (a, b) {
+    movies.sort(function (a, b) {
       var textA = a.vote_average;
       var textB = b.vote_average;
       if (textA > textB)
@@ -26,7 +23,7 @@ App.getMovies = function (searchText) {
         return 1;
       return 0;
     });
-    $.each(sortedMovies, (index, movie) => {
+    $.each(movies, (index, movie) => {
       html += `
           <div class="movie-item">
             <div class="movie-poster">
@@ -38,7 +35,7 @@ App.getMovies = function (searchText) {
           </div>
         `;
     });
-    $('.container-side-mov').html(message);
+    App.containerSideMov.html(message);
     App.movieField.html(html);
   })
     .catch(function (error) {
@@ -59,7 +56,6 @@ App.getMovie = function () {
     .then(function (response) {
       return response.json();
     }).then(function (response) {
-      console.log(response);
       var movie = response;
       var output = `<div class="info">
         <div class="info-title"><h2>${movie.title}</h2></div>
@@ -80,12 +76,12 @@ App.getMovie = function () {
         <div class="info-overview-header">
             <h3>Overview</h3>
             </div>
-            ${movie.overview}
+            <div class="info-overview-main">${movie.overview}</div>
           <hr>
             <a href="http://imdb.com/title/${movie.imdb_id}" target="_blank" class="link-imdb">View IMDB</a>
             <a href="index.html" class="link-back">Go Back To Search</a>
           </div>`;
-      $('#movie').html(output);
+      App.movieItm.html(output);
     })
     .catch(function (error) {
       console.log(error);
@@ -99,11 +95,10 @@ App.getActors = function (searchText) {
   fetch(url).then(function (response) {
     return response.json();
   }).then(function (response) {
-    console.log(response);
     var actors = response.results;
     var html = '';
     var message = '<p class="message">Results of searching <strong> &bdquo;' + searchText + '&rdquo; <strong></p>';
-    if (actors.length == 0) {
+    if (actors.length === 0) {
       var html = `<p class="no-records">No records</p>`;
     }
     $.each(actors, (index, actor) => {
@@ -116,7 +111,7 @@ App.getActors = function (searchText) {
           </div>
         `;
     });
-    $('.container-side-act').html(message);
+    App.containerSideAct.html(message);
     App.actorField.html(html);
   })
     .catch(function (error) {
@@ -124,26 +119,76 @@ App.getActors = function (searchText) {
     });
 }
 
-var showElement = function(elementID) {
-  var elem = document.getElementById(elementID);
+App.showElement = function (elem) {
   if (!elem) {
     alert("No elements");
     return;
   }
-  var pages = document.getElementsByClassName('page');
-  for (var i = 0; i < pages.length; i++) {
-    pages[i].style.display = 'none';
-  }
-  elem.style.display = 'block';
+  var pages = $('.page');
+  pages.each(function( i ) {
+    this.style.display = 'none';
+  });
+  elem.css("display","block");
 }
 
 App.init = function () {
+  var urlMov = 'https://api.themoviedb.org/3/trending/movie/day?api_key=' + App.api_key;
+  var urlAct = 'https://api.themoviedb.org/3/trending/person/day?api_key=' + App.api_key;
+  var ajxMovie = $.getJSON(urlMov);
+  ajxMovie.done(function (mov) {
+    var trendMovs = mov.results;
+    var html = '';
+    var message = '<p class="message"><strong>Trending movies</strong></p>';
+    trendMovs.sort(function (a, b) {
+      var textA = a.popularity;
+      var textB = b.popularity;
+      if (textA > textB)
+        return -1;
+      if (textA < textB)
+        return 1;
+      return 0;
+    });
+    $.each(trendMovs, (index, trendMov) => {
+      html += `
+            <div class="movie-item-trend">
+              <div class="movie-poster">
+                <img src="https://image.tmdb.org/t/p/w500${trendMov.poster_path}">
+              </div>
+                <h3>${trendMov.original_title}</h3>
+                <a onclick="App.movieSelected('${trendMov.id}')" class="movie-select" href="#">Movie Details</a>
+              <div class="popularity"><strong>Popularity: </strong>${trendMov.popularity}</div>
+            </div>
+          `;
+    });
+    App.movieField.html(html);
+    App.containerSideMov.html(message);
+  });
+
+  var ajxAct = $.getJSON(urlAct);
+  ajxAct.done(function (act) {
+    var trendActs = act.results;
+    var html = '';
+    var message = '<p class="message"><strong>Trending actors</strong></p>';
+    $.each(trendActs, (index, trendAct) => {
+      html += `
+        <div class="actor-item">
+        <div class="actor-poster">
+          <img src="https://image.tmdb.org/t/p/w500${trendAct.profile_path}">
+        </div>
+          <h3>${trendAct.name}</h3>
+      </div>
+    `;
+    });
+    App.actorField.html(html);
+    App.containerSideAct.html(message);
+  });
+
   App.searchFormMov.submit(function (e) {
     e.preventDefault();
     var searchText = App.searchInputMov.val();
     if (!searchText) {
       App.moviesField.empty();
-      alert("Nebyl zadán název filmu")
+      alert("Nebyl zadán název filmu");
       return false;
     }
     else {
@@ -155,12 +200,20 @@ App.init = function () {
     var searchText = App.searchInputAct.val();
     if (!searchText) {
       App.actorsField.empty();
-      alert("Nebylo zadáno jméno")
+      alert("Nebylo zadáno jméno");
       return false;
     }
     else {
       App.getActors(searchText);
     }
+  });
+  App.btnIndexMov.click(function (e) {
+    e.preventDefault();
+    App.showElement(App.moviesPage);
+  });
+  App.btnIndexAct.click(function (e) {
+    e.preventDefault();
+    App.showElement(App.actorsPage);
   });
 }
 
@@ -174,7 +227,15 @@ $(document).ready(function () {
   App.movieField = $('#movie-field');
   App.actorField = $('#actor-field');
   App.optionVal = $('#sortMovies');
+  App.moviesPage = $('#movies-page');
+  App.actorsPage = $('#actors-page');
   App.loader = $('<div class="loader"></div>');
+  App.containerSideMov = $('.container-side-mov');
+  App.containerSideAct = $('.container-side-act');
+  App.btnIndexMov = $('#btn-index-mov');
+  App.btnIndexAct = $('#btn-index-act');
+  App.movieItm = $('#movie');
   App.init();
+  App.getMovie();
 });
 
