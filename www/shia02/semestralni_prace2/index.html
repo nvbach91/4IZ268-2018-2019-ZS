@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
+
 <body>
+    <label>Pocet radku: </label><input type="number" min="3" max="15" id="sizeOfRow">
+    <label>Delka pro vyhru: </label><input type="number" min="3" max="5" id="winLength">
+    <button id="startGame" onclick="startGame()">Nova hra</button>
+    <div id="turnDiv"><label>Na tahu je: </label><div id="playerOnTurn"></div></div>
     <div id="game-field"></div>
+
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>
