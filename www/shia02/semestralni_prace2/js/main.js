@@ -21,6 +21,10 @@ function createArray(length) {
 
     for (var i = 0; i < length; i++) {
         arr[i] = new Array(length);
+
+        for (var j = 0; j < length; j++) {
+            arr[i][j] = null;
+        }
     }
     return arr;
 }
@@ -231,7 +235,7 @@ var startGame = function () {
                 var rowIndex = $(this.parentNode).index();
 
                 // error checking
-                if (gameArr[rowIndex][columnIndex] != null) {
+                if (gameArr[rowIndex][columnIndex] !== null) {
                     return;
                 }
 
