@@ -10,11 +10,17 @@
 </head>
 
 <body>
-    <label>Pocet radku: </label><input type="number" min="3" max="15" id="sizeOfRow">
-    <label>Delka pro vyhru: </label><input type="number" min="3" max="5" id="winLength">
-    <button id="startGame" onclick="startGame()">Nova hra</button>
-    <div id="turnDiv"><label>Na tahu je: </label><div id="playerOnTurn"></div></div>
-    <div id="game-field"></div>
+    <h1>Piškvorky</h1>
+    <div id="field">
+        <div class="box">
+            <div class="style"><label>Pocet radku: </label><input type="number" min="3" max="15" id="sizeOfRow"></div>
+            <div class="style"><label>Delka pro vyhru: </label><input type="number" min="3" max="5" id="winLength"></div>
+            <button id="startGame" onclick="startGame()">Nova hra</button>
+            <div id="turnDiv" class="style"><label>Na tahu je: </label><span id="playerOnTurn"></span>
+            </div>
+        </div>
+        <div class="box" id="game-field" class="style"></div>
+    </div>
 
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/main.js"></script>

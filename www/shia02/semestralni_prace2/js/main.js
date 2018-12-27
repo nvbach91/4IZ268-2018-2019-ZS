@@ -170,7 +170,7 @@ var playerSymbol = function(player) {
         return "X";
     }
     if (player === 2) {
-        return "O";
+        return  "O";
     }
     
     return null;
@@ -213,6 +213,7 @@ var startGame = function () {
     gameOver = false;
     playerOnTurn = 1;
     gameField.empty();
+    updatePlayerOnTurnDiv(playerOnTurn);
     turnDiv.show();
 
     for (var i = 0; i < size; i++) {
@@ -238,8 +239,10 @@ var startGame = function () {
                 gameArr[rowIndex][columnIndex] = playerOnTurn;
                 this.innerText = playerSymbol(playerOnTurn);
                 if (playerOnTurn === 1) {
+                    this.classList.add("red");
                     playerOnTurn = 2;
                 } else {
+                    this.classList.add("blue");
                     playerOnTurn = 1;
                 }
                 freeCellsCount--;

@@ -1,18 +1,59 @@
+body {
+    background-color: rgb(238, 255, 255);
+}
+
+#field {
+    max-width: 860px;
+    margin: 0 auto;
+}
 
 #game-field {
-    max-width: 680px;
-    margin: 0 auto;
+    float: left;
 }
 
 .cell {
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     height: 10px;
     width: 10px;
     float: left;
     border: 1px solid black;
+    font-weight: bold;
+    font-size: 15pt;
 }
 
 .row {
     clear: both;
+}
+
+h1 {
+    text-align: center;
+}
+
+.box {
+    float: left;
+}
+
+.style {
+    padding: 10px;
+    font-size: large;
+}
+
+button {
+    background-color: rgb(71, 91, 156);
+    color: rgb(238, 255, 255);
+    padding: 10px 25px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: rgb(40, 46, 124);
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
 }
