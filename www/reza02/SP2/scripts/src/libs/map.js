@@ -8,12 +8,12 @@
 
       mapStyleJson: "./datas/map-style.json",
       markerOptions: {
-        url: './images/marker.svg',
+        url: './images/marker.png',
         popupTopOffset: -25,
       },
 
       mapSel: '#map',
-      mapContainerSel: '#mapContainer',
+      showMapBtn: '#showMapBtn',
       mapZoom: 11,
       mobileMapZoom: 7,
 
@@ -22,11 +22,8 @@
 
     // map
     map: null,
-    mapContainer: null,
-    mapClose: null,
     mapStyles: null,
-    markers: [],
-    infowindows: [],
+    marker: null,
     infoWindow: null, //custom popup if marker
 
     // store the start and final destinations
@@ -37,10 +34,15 @@
     distance: null,
     duration: null,
     routeCalculated: false,
+    popupTitle: '',
 
     // services for navigation
     directionsService: null,
     directionsDisplay: null,
+
+    // search places service
+    placesService: null,
+    searchedCoords: null,
 
     init: function(options) {
 
@@ -49,10 +51,8 @@
       // set settings
       self.settings = $.extend(self.defaults, options);
 
-      self.mapContainer = $(self.settings.mapContainerSel);
-      self.mapClose = $(self.settings.mapCloseSel);
-
       self.regOnNavigate();
+      self.regOninput();
 
       $.getJSON( self.settings.mapStyleJson, function(mapStyles) {
         if ( mapStyles ) {
@@ -86,10 +86,6 @@
         },
       });
 
-      // show marker
-      var dataCoords = JSON.parse($(self.settings.mapSel).attr('data-coords'));
-      self.coords = new google.maps.LatLng(dataCoords.lat, dataCoords.lng);
-
       self.map = new google.maps.Map($(self.settings.mapSel)[0], {
         center: {lat: 50.0835494 -0.1, lng: 14.4341414 + 0.03},
         zoom: (self.mobileCheck()) ? self.settings.mobileMapZoom : self.settings.mapZoom,
@@ -98,19 +94,55 @@
         disableDefaultUI: true,
         zoomControl: true,
       });
-      self.directionsDisplay.setMap(self.map);
+
+      // for search
+      self.placesService = new google.maps.places.PlacesService(self.map);
 
       // Create destination marker
-      self.createMarker(self.coords);
+      self.showDefaultMarker();
+      $('#showDefaultMarker').on('click', function(e) {
+        self.showDefaultMarker();
+      });
 
       // show my position
       self.showMyPosition();
 
     },
 
+    showDefaultMarker: function() {
+      var self = map;
+
+      // show marker
+      var dataCoords = JSON.parse($(self.settings.showMapBtn).attr('data-coords'));
+      self.coords = new google.maps.LatLng(dataCoords.lat, dataCoords.lng);
+      self.searchedCoords = self.coords;
+
+      // popup title
+      self.popupTitle = $(self.settings.showMapBtn).attr('data-title');
+
+      self.marker = self.createMarker(self.coords);
+
+      self.updateGoogleMapsLink();
+    },
+
+    updateGoogleMapsLink: function() {
+
+      var self = map;
+
+      // update Google Maps link
+      $('#showInGoogleMaps').attr('href', 'https://www.google.com/maps/dir/?api=1&destination=' + self.searchedCoords.lat() + ',' + self.searchedCoords.lng());
+
+    },
+
     createMarker: function(coordinates) {
 
       var self = map;
+
+      // remove actual marker and route;
+      if (self.marker !== null) {
+        self.marker.setMap(null);
+        self.directionsDisplay.setMap(null);
+      }
 
       var marker = new google.maps.Marker({
         position: coordinates,
@@ -155,7 +187,7 @@
 
       var html = '';
       html +=  '<div class="popup">';
-        html += '<h3 class="popup__title">' + $(self.settings.mapSel).attr('data-title') + '</h3>';
+        html += '<h3 class="popup__title">' + self.popupTitle + '</h3>';
         if (self.routeCalculated) {
           html += '<ul class="popup__list list list--no-style space-m-t-10">';
             html += '<li class="list__item"><span class="text--medium">Vzdálenost:</span> ' + self.distance + '</li>';
@@ -204,9 +236,8 @@
 
       // hide button for navigation
       $('.btn--navigate').addClass('disable');
-
       self.geolocationAllowed = false;
-      console.log('Geolocation is not Allowed')
+      alert('Geolokace není povolena, nelze navigovat z vaší pozice.');
     },
 
     regOnNavigate: function() {
@@ -215,6 +246,7 @@
 
       $('.btn--navigate').on('click', function(e) {
         if (self.geolocationAllowed) {
+          self.directionsDisplay.setMap(self.map);
           self.calculateAndDisplayRoute(self.directionsService, self.directionsDisplay, $(this).attr('data-mode'));
         }
       });
@@ -223,6 +255,9 @@
     calculateAndDisplayRoute: function(directionsService, directionsDisplay, mode) {
 
       var self = map;
+
+      // deafult searched coords
+      self.coords = (self.searchedCoords) ? self.searchedCoords : self.coords;
 
       directionsService.route({
         origin: self.actualCoords,
@@ -249,7 +284,71 @@
       });
     },
 
+    regOninput: function() {
+
+      var self = map;
+
+      $('#searchForm').on('submit', function(e) {
+
+        e.preventDefault();
+
+        var val = $('#searchInput').val();
+
+        if (val !== '') {
+          self.search(val);
+        }
+        else {
+          alert('Zadejte hledané místo');
+        }
+
+      });
+    },
+
+    // search
+    search: function(query) {
+      var self = map;
+
+      var request = {
+        query: query,
+        fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry', 'types'],
+      };
+
+      self.placesService.findPlaceFromQuery(request, self.showQueryResult);
+    },
+
+    // show query result
+    showQueryResult: function(results, status) {
+      var self = map;
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+          var place = results[i];
+          // console.log(place);
+          if (jQuery.inArray('point_of_interest', place.types) !== -1 || jQuery.inArray('establishment', place.types) !== -1 || jQuery.inArray('premise', place.types) !== -1) {
+            self.popupTitle = place.name;
+            self.searchedCoords = place.geometry.location;
+            self.marker = self.createMarker(self.searchedCoords);
+            self.updateGoogleMapsLink();
+          }
+          else {
+            alert('Nejedná se o bod zájmu, zkus to znovu.')
+          }
+        }
+      }
+      else {
+        alert('Hledané místo nenalezeno');
+      }
+    },
+
+
   };
-  map.init();
+  if ($('#map').length) {
+    map.init();
+  }
+
+  // Show map on button click
+  var $mapComponent = $('#mapComponent');
+  $('#showMapBtn, #closeMapBtn').on('click', function(e) {
+    $mapComponent.toggleClass('active');
+  });
 
 })(jQuery);

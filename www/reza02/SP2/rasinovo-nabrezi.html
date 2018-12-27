@@ -115,23 +115,49 @@
                         </tbody>
                     </table>
 
-                    <!-- Mapa -->
-                    <div id="mapContainer" class="map-container space-m-b-20">
-                        <div id="map" class="map" data-title="Rašínovo nábřeží" data-coords='{"lat": 50.0703142, "lng": 14.4144761}'></div>
-                    </div>
+                    <!-- Show Map -->
+                    <div class="text-center space-m-t-80 space-m-b-100">
 
-                    <div class="text-center space-m-b-100">
-                        <ul class="list list--no-style list--flex-inline">
-                        <li class="list__item space-m-right-15">
-                            <button class="btn btn--navigate" data-mode="DRIVING">Naviguj z aktuální pozice autem</button>
-                        </li>
-                        <li class="list__item space-m-right-15">
-                            <button class="btn btn--navigate" data-mode="WALKING">Naviguj z aktuální pozice pěšky</button>
-                        </li>
-                        <li class="list__item">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=50.0703142,14.4144761" class="link" target="_blank" title="Naviguj v Google Mapách">Google Maps</a>
-                        </li>
-                        </ul>
+                        <!-- Map -->
+                        <div id="mapComponent" class="map-component">
+
+                            <!-- Control Bar -->
+                            <div class="map-component__controls">
+
+                            <ul class="list list--no-style space-m-b-40">
+                                <li class="list__item space-m-b-15">
+                                <button id="showDefaultMarker" class="btn">Zobraz původní místo</button>
+                                </li>
+                                <li class="list__item space-m-b-15">
+                                <button class="btn btn--navigate" data-mode="DRIVING">Naviguj z aktuální pozice autem</button>
+                                </li>
+                                <li class="list__item space-m-b-15">
+                                <button class="btn btn--navigate" data-mode="WALKING">Naviguj z aktuální pozice pěšky</button>
+                                </li>
+                                <li class="list__item">
+                                <a id="showInGoogleMaps" href="#" class="link" target="_blank" title="Naviguj v Google Mapách">Otevři v Google Maps</a>
+                                </li>
+                            </ul>
+
+                            <!-- Search input -->
+                            <form id="searchForm" class="map-component__form" method="POST" action="">
+                                <input id="searchInput" class="space-m-right-15" type="text" placeholder="Zadej místo">
+                                <button class="btn btn--submit" type="submit">Hledej</button>
+                            </form>
+
+                            <!-- Close Map -->
+                            <button id="closeMapBtn" class="btn">Zavři mapu</button>
+
+                            </div>
+
+                            <!-- Google Maps -->
+                            <div class="map-component__map-container">
+                            <div id="map" class="map"></div>
+                            </div>
+
+                        </div>
+
+                        <button id="showMapBtn" class="btn" data-title="Rašínovo nábřeží" data-coords='{"lat": 50.0703142, "lng": 14.4144761}'>Zobraz místo na mapě</button>
                     </div>
 
                     <h3 class="h3">Historie</h3>
