@@ -104,29 +104,42 @@ $(document).ready(function () {
 
                             let ls = window.localStorage;
                             if (storageAvailable('localStorage')) {
-                                for (let i = 0; i < data.length; i++) {
+                                //TODO:remove clearing of local storages
+                                ls.clear();
+                                /*for (let i = 0; i < data.length; i++) {
                                     let pair = data[i];
                                     let term = pair[Object.keys(pair)[0]];
                                     let definition = Object.keys(pair)[0];
                                     ls.setItem(term, definition);
+                                }*/
+
+                                /*TODO: kontroluj co už uživatel má a přidávej*/
+                                if (ls.getItem("dix-application-data") === null) {
+                                    ls.setItem("dix-application-data", JSON.stringify(data));
                                 }
+
+                                function exists(id) {
+                                    return document.getElementById(id) !== null
+                                }
+                                /* obsolete code to be referred to later if necessary
                                 const wordsToPractice = Object.keys(ls);
                                 ls.setItem("wordsToPractice", wordsToPractice);
 
                                 var flashcard = document.getElementById("flashcard");
                                 flashcard.className = "";
 
-                                var questionText = ls.wordsToPractice.split(",")[0];
-                                var answerText = ls[questionText];
-                                console.log("bub");
+                               
+                                */
+                                var questionText = "question: tohle musis dodelat"
+                                var answerText = "answer: tohle taky musis dodelat"
 
-                                function exists(id) {
-                                    return document.getElementById(id) !== null
-                                }
+                                var flashcard = document.getElementById("flashcard");
+                                flashcard.className = "";
+
+
 
                                 if (!exists("question")) {
-                                    console.log("if fired");
-                                    var prd = $(`<div>${ questionText }</div > `)
+                                    $(`<div>${ questionText }</div > `)
                                         .attr('id', 'question')
                                         .appendTo(flashcard)
                                 }
@@ -151,38 +164,86 @@ $(document).ready(function () {
                                 */
                                 var showAnswerButton = $("#show-answer");
 
+
                                 function appendElement(tag, name, target, id) {
+                                    /*function appendElement = simplifies the appending of elements in jQuery to a single line*/
                                     var element = $(`<` + tag + `> ${ name }</` + tag + `>`)
                                         .attr('id', id)
                                         .appendTo(target)
-                                    return element
+                                    return document.getElementById(id)
                                 }
 
-                                function setDifficultyCardStack(number) {
-                                    /** Legend 
-                                    0 = Forgot = move to previous box
-                                    1 = Hard = stay in this box
-                                    2 = Good = move to next box
-                                    3 = Too easy = move 2 boxes forward 
-                                    */
-                                }
-                                showAnswerButton.on("click", function () {
-                                    if (!exists("answer")) {
-                                        var answer = appendElement("div", answerText, flashcard, "answer");
-                                        var forgot = appendElement("button", "Forgot", flashcard, "forgot");
-                                        var hard = appendElement("button", "Hard", flashcard, "hard");
-                                        var good = appendElement("button", "Good", flashcard, "good");
-                                        var easy = appendElement("button", "Too easy", flashcard, "easy");
-
-
-
-
-
+                                function vocab(newData) {
+                                    /*function vocab(newData) = this function either returns the value from local storage which matches
+                                    the key 'dix-application-data' OR, if a argument is passed, sets the data*/
+                                    if (newData == undefined) {
+                                        let applicationData = ls.getItem("dix-application-data");
+                                        if (applicationData != null) {
+                                            return applicationData;
+                                        } else {
+                                            alert("No 'dix-application-data' item in local storage");
+                                            throw "No 'dix-application-data' item in local storage"
+                                        }
+                                    } else {
+                                        ls.setItem("dix-application-data", newData)
                                     }
-                                })
-                            } else {
-                                alert("Your vocabulary shall not be stored, you will have to wait until the database is active and register as a user. Database launch date < March 2019")
+                                }
+
+                                function changeLevelOfPractice(termName, button) {
+                                    /*function changeLevelOfPractice: This function takes
+                                    the current word being practiced and moves it
+                                    up or down the practicing queue based on which button is pressed*/
+                                    var buttonMap = {
+                                        "forgot": -1,
+                                        "hard": 0,
+                                        "good": 1,
+                                        "easy": 2,
+                                    }
+                                    var voc = vocab();
+                                    //temporary variable
+                                    voc = [{"car": "auto"}, {"plane": "letadlo"}];
+                                    termName = "plane";
+
+                                    function matchesTerm(element) {
+                                        return Object.keys(element)[0] === termName;
+                                    }
+                                    const index = voc.findIndex(matchesTerm);
+
+                                    if (voc[index]["difficultyCardStackNumber"] === undefined) {
+                                        voc[index]["difficultyCardStackNumber"] = 0;
+                                    }
+
+                                    /* If there were only 5 boxes as originally intended, this code would make 5 levels of
+                                    the term "having been practiced",
+                                    but I am experimenting with the thought of having "unlimited" levels
+                                    if (dif + buttonMap[button] > 5) {
+                                        voc[index]["difficultyCardStackNumber"] = 5
+                                    }*/
+                                    voc[index]["difficultyCardStackNumber"] += buttonMap[button];
+                                    vocab(JSON.stringify(voc));
+                                }
+
                             }
+                            showAnswerButton.on("click", function () {
+                                if (!exists("answer")) {
+                                    var answer = appendElement("div", answerText, flashcard, "answer");
+                                    var forgot = appendElement("button", "Forgot", flashcard, "forgot");
+                                    var hard = appendElement("button", "Hard", flashcard, "hard");
+                                    var good = appendElement("button", "Good", flashcard, "good");
+                                    var easy = appendElement("button", "Too easy", flashcard, "easy");
+
+
+
+                                    [forgot, hard, good, easy].forEach(button => button.on("click", function () {
+                                        var practicedTerm = document.getElementById("question").innerText;
+                                        changeLevelOfPractice(practicedTerm, button.id)
+
+
+                                    }))
+
+                                }
+                            })
+
                         }
                     )
             }
