@@ -62,11 +62,6 @@ $(document).ready(function () {
 
             /*Teprve na kliknuti se zavola dalsi pozadavek */
             $("#practiceButton").on("click", function () {
-                console.log("button clicked")
-
-                /*
-                    Display "Google Slides"-like presentation flashcard
-                */
                 var e = document.getElementById("topicDropdown");
                 var selectedOptionIndex = e.options.selectedIndex;
                 var selectedOptionText = e.options[selectedOptionIndex].text;
@@ -81,7 +76,7 @@ $(document).ready(function () {
                     .then(
                         data => {
                             data = JSON.parse(data);
-                            let flashcard = $("#flashcard");
+
 
                             function storageAvailable(type) {
                                 try {
@@ -106,6 +101,7 @@ $(document).ready(function () {
                                         storage.length !== 0;
                                 }
                             }
+
                             let ls = window.localStorage;
                             if (storageAvailable('localStorage')) {
                                 for (let i = 0; i < data.length; i++) {
@@ -114,25 +110,95 @@ $(document).ready(function () {
                                     let definition = Object.keys(pair)[0];
                                     ls.setItem(term, definition);
                                 }
-                                let storageKeys = Object.keys(ls);
-                                let indexToSplice = storageKeys.indexOf("practicedVocabulary")
-                                if (indexToSplice != -1) {storageKeys = storageKeys.splice(indexToSplice)}
-                                ls.setItem("practicedVocabulary", storageKeys);
-                                console.log("bubak")
-                                console.log(storageKeys.indexOf("practicedVocabulary"))
+                                const wordsToPractice = Object.keys(ls);
+                                ls.setItem("wordsToPractice", wordsToPractice);
 
+                                var flashcard = document.getElementById("flashcard");
+                                flashcard.className = "";
+
+                                var questionText = ls.wordsToPractice.split(",")[0];
+                                var answerText = ls[questionText];
+                                console.log("bub");
+
+                                function exists(id) {
+                                    return document.getElementById(id) !== null
+                                }
+
+                                if (!exists("question")) {
+                                    console.log("if fired");
+                                    var prd = $(`<div>${ questionText }</div > `)
+                                        .attr('id', 'question')
+                                        .appendTo(flashcard)
+                                }
+
+                                if (!exists("show-answer")) {
+                                    $(`<button>${ "Show answer" }</button>`)
+                                        .attr('id', 'show-answer')
+                                        .appendTo(flashcard)
+                                }
+
+                                /*When the user chooses to display the answer, he will press
+                                "Show answer" and the answer will be displayed.
+                                Then 3 buttons will be displayed. 
+                                a) Forgot
+                                b) Hard
+                                c) OK
+                                And now for the gameplay mechanic:
+                                The user will have 3-5 "boxes". All the flashcards start in the first box.
+                                Being in thix box indicates that the flashcard hasn't been practiced yet or 
+                                has been forgotten. If the flashcard doesn't have this property yet, it will 
+                                get it. Which requires you to save the pair under the pair name.
+                                */
+                                var showAnswerButton = $("#show-answer");
+
+                                function appendElement(tag, name, target, id) {
+                                    var element = $(`<` + tag + `> ${ name }</` + tag + `>`)
+                                        .attr('id', id)
+                                        .appendTo(target)
+                                    return element
+                                }
+
+                                function setDifficultyCardStack(number) {
+                                    /** Legend 
+                                    0 = Forgot = move to previous box
+                                    1 = Hard = stay in this box
+                                    2 = Good = move to next box
+                                    3 = Too easy = move 2 boxes forward 
+                                    */
+                                }
+                                showAnswerButton.on("click", function () {
+                                    if (!exists("answer")) {
+                                        var answer = appendElement("div", answerText, flashcard, "answer");
+                                        var forgot = appendElement("button", "Forgot", flashcard, "forgot");
+                                        var hard = appendElement("button", "Hard", flashcard, "hard");
+                                        var good = appendElement("button", "Good", flashcard, "good");
+                                        var easy = appendElement("button", "Too easy", flashcard, "easy");
+
+
+
+
+
+                                    }
+                                })
                             } else {
-                                alert("Your vocabulary shall not be stored, you will have to wait until the database is active and register as a user. Database launch datre < March 2019")
+                                alert("Your vocabulary shall not be stored, you will have to wait until the database is active and register as a user. Database launch date < March 2019")
                             }
-
-
                         }
-
                     )
-            })
+            }
+            )
+        })
+})
 
 
 
+
+
+
+
+
+
+/*
             //     $(".topic-item").on("click",function() {
             //         console.log(document.querySelector(".topic-item").innerHTML);
             //         console.log($(this).innerHTML);
@@ -149,16 +215,17 @@ $(document).ready(function () {
             //         var vocabEl = $('#vocab');
 
             //         $.each(data, function(i){
-            //             var li = $(`<li>${data[i]}</li>`)
+            //             var li = $(`< li > ${data[i]}</li > `)
             //                 .addClass('vocab-item')
             //                 .appendTo(vocabEl);
             //         });
             //     })
             //     })
             //     )
+            */
 
 
-        })
-})
+
+
 
 

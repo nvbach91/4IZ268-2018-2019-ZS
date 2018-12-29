@@ -62,3 +62,23 @@ select {
     max-width: 100%;
     box-sizing: border-box;
 }
+
+.disabled {
+    display: none;
+}
+
+#forgot {
+    background-color: red;
+}
+
+#hard {
+    background-color: orange;
+}
+
+#good {
+    background-color: green;
+}
+
+#easy {
+    background-color: cornflowerblue;
+}
