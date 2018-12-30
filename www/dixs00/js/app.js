@@ -12,13 +12,13 @@ more sepcific plan
 
 so obviously a big "flashcard" which will be sourced from the API-imported list of words
 
-on click - it will show the correct answer and display three buttons - 
+on click - it will show the correct answer and display three buttons -
  - Hard
  - OK
  - Too easy
 
  if it ishard, it will go back to the preevious box
- 
+
  // flag "harded" bych asi tady nedelal, nejdriv proste predesly box a budouci box
  Každé slovíčko je Object, ktery v sobe ma indikator úrovně procvičení.
 Taky má flag "harded". Tzn. Tlacitko hard jenom da "harded" = truea
@@ -36,7 +36,7 @@ Jakmile dosahne x+1. boxu, brainu, tak
                                 navíc musíš z toho "append to" udělat spíš toggle funkci, že se to vypíše a pak zase schová
 
                                 musíš taky nastylovat ty kartičky
-                                
+
 
 
 */
@@ -54,6 +54,7 @@ $(document).ready(function () {
             data = JSON.parse(data);
             var topicDropdown = $('#topicDropdown');
 
+            //TODO:default value for dropdown
             $.each(data, function (i) {
                 var option = $(`<option>${ data[i] }</option>`)
                     .addClass("topic-item")
@@ -76,8 +77,6 @@ $(document).ready(function () {
                     .then(
                         data => {
                             data = JSON.parse(data);
-
-
                             function storageAvailable(type) {
                                 try {
                                     var storage = window[type],
@@ -101,18 +100,8 @@ $(document).ready(function () {
                                         storage.length !== 0;
                                 }
                             }
-
                             let ls = window.localStorage;
                             if (storageAvailable('localStorage')) {
-                                //TODO:remove clearing of local storages
-                                ls.clear();
-                                /*for (let i = 0; i < data.length; i++) {
-                                    let pair = data[i];
-                                    let term = pair[Object.keys(pair)[0]];
-                                    let definition = Object.keys(pair)[0];
-                                    ls.setItem(term, definition);
-                                }*/
-
                                 /*TODO: kontroluj co už uživatel má a přidávej*/
                                 if (ls.getItem("dix-application-data") === null) {
                                     ls.setItem("dix-application-data", JSON.stringify(data));
@@ -121,19 +110,33 @@ $(document).ready(function () {
                                 function exists(id) {
                                     return document.getElementById(id) !== null
                                 }
-                                /* obsolete code to be referred to later if necessary
-                                const wordsToPractice = Object.keys(ls);
-                                ls.setItem("wordsToPractice", wordsToPractice);
+                                var questionText = "Nothing to show."
+                                var answerText = "No answer."
+                                var words = JSON.parse(ls.getItem("dix-application-data"));
+                                var maximumLevel = 10;
+                                ls.setItem("dix-application-data", words.forEach(element => {
+                                    if (element["difficultyCardStackNumber"] == undefined) {
+                                        element["difficultyCardStackNumber"] = 0;
+                                        console.log("each word should have diffcsn according to this")
+                                    }
+                                }))
 
-                                var flashcard = document.getElementById("flashcard");
-                                flashcard.className = "";
+                                function chooseNextWord() {
+                                    for (var i = 0; i < maximumLevel; i++) {
+                                        var arrayOfWordsAtGivenLevel = words.filter(word => word["difficultyCardStackNumber"] == i)
 
-                               
-                                */
-                                var questionText = "question: tohle musis dodelat"
-                                var answerText = "answer: tohle taky musis dodelat"
+                                        if (arrayOfWordsAtGivenLevel.length > 0) {
+                                            const randomNumber = Math.floor(Math.random() * arrayOfWordsAtGivenLevel.length)
+                                            const chosenWordObject = arrayOfWordsAtGivenLevel[randomNumber];
+                                            questionText = Object.keys(chosenWordObject).filter(function (e) {return e != "difficultyCardStackNumber"})[0]
+                                            answerText = chosenWordObject[questionText]
+                                            break
+                                        }
+                                    }
+                                    console.log("chooseNextWord Function fired", questionText, answerText);
 
-                                var flashcard = document.getElementById("flashcard");
+                                }
+
                                 flashcard.className = "";
 
 
@@ -150,102 +153,101 @@ $(document).ready(function () {
                                         .appendTo(flashcard)
                                 }
 
-                                /*When the user chooses to display the answer, he will press
-                                "Show answer" and the answer will be displayed.
-                                Then 3 buttons will be displayed. 
-                                a) Forgot
-                                b) Hard
-                                c) OK
-                                And now for the gameplay mechanic:
-                                The user will have 3-5 "boxes". All the flashcards start in the first box.
-                                Being in thix box indicates that the flashcard hasn't been practiced yet or 
-                                has been forgotten. If the flashcard doesn't have this property yet, it will 
-                                get it. Which requires you to save the pair under the pair name.
-                                */
-                                var showAnswerButton = $("#show-answer");
 
-
-                                function appendElement(tag, name, target, id) {
-                                    /*function appendElement = simplifies the appending of elements in jQuery to a single line*/
-                                    var element = $(`<` + tag + `> ${ name }</` + tag + `>`)
-                                        .attr('id', id)
-                                        .appendTo(target)
-                                    return document.getElementById(id)
-                                }
-
-                                function vocab(newData) {
-                                    /*function vocab(newData) = this function either returns the value from local storage which matches
-                                    the key 'dix-application-data' OR, if a argument is passed, sets the data*/
-                                    if (newData == undefined) {
-                                        let applicationData = ls.getItem("dix-application-data");
-                                        if (applicationData != null) {
-                                            return applicationData;
-                                        } else {
-                                            alert("No 'dix-application-data' item in local storage");
-                                            throw "No 'dix-application-data' item in local storage"
-                                        }
-                                    } else {
-                                        ls.setItem("dix-application-data", newData)
-                                    }
-                                }
-
-                                function changeLevelOfPractice(termName, button) {
-                                    /*function changeLevelOfPractice: This function takes
-                                    the current word being practiced and moves it
-                                    up or down the practicing queue based on which button is pressed*/
-                                    var buttonMap = {
-                                        "forgot": -1,
-                                        "hard": 0,
-                                        "good": 1,
-                                        "easy": 2,
-                                    }
-                                    var voc = vocab();
-                                    //temporary variable
-                                    voc = [{"car": "auto"}, {"plane": "letadlo"}];
-                                    termName = "plane";
-
-                                    function matchesTerm(element) {
-                                        return Object.keys(element)[0] === termName;
-                                    }
-                                    const index = voc.findIndex(matchesTerm);
-
-                                    if (voc[index]["difficultyCardStackNumber"] === undefined) {
-                                        voc[index]["difficultyCardStackNumber"] = 0;
-                                    }
-
-                                    /* If there were only 5 boxes as originally intended, this code would make 5 levels of
-                                    the term "having been practiced",
-                                    but I am experimenting with the thought of having "unlimited" levels
-                                    if (dif + buttonMap[button] > 5) {
-                                        voc[index]["difficultyCardStackNumber"] = 5
-                                    }*/
-                                    voc[index]["difficultyCardStackNumber"] += buttonMap[button];
-                                    vocab(JSON.stringify(voc));
-                                }
 
                             }
-                            showAnswerButton.on("click", function () {
-                                if (!exists("answer")) {
-                                    var answer = appendElement("div", answerText, flashcard, "answer");
-                                    var forgot = appendElement("button", "Forgot", flashcard, "forgot");
-                                    var hard = appendElement("button", "Hard", flashcard, "hard");
-                                    var good = appendElement("button", "Good", flashcard, "good");
-                                    var easy = appendElement("button", "Too easy", flashcard, "easy");
 
-
-
-                                    [forgot, hard, good, easy].forEach(button => button.on("click", function () {
-                                        var practicedTerm = document.getElementById("question").innerText;
-                                        changeLevelOfPractice(practicedTerm, button.id)
-
-
-                                    }))
-
-                                }
-                            })
 
                         }
+
                     )
+
+                var showAnswerButton = $("#show-answer");
+                function insertUniqueElement(tag, name, target, id) {
+                    var element;
+                    if (!exists(id)) {
+                        /*function insertUniqueElement = simplifies the appending of elements in jQuery to a single line*/
+                        element = $(`<` + tag + `> ${ name }</` + tag + `>`)
+                            .attr('id', id)
+                            .appendTo(target)
+                        return element;
+                    } else {
+                        element = $('#' + id);
+                        if (element.hasClass("disabled")) {element.removeClass("disabled")};
+                        return element;
+                    }
+                }
+
+                function vocab(newData) {
+                    /*function vocab(newData) = this function either returns the value from local storage which matches
+                    the key 'dix-application-data' OR, if a argument is passed, sets the data*/
+                    if (newData == undefined) {
+                        let applicationData = JSON.parse(ls.getItem("dix-application-data"));
+                        if (applicationData != null) {
+                            return applicationData;
+                        } else {
+                            alert("No 'dix-application-data' item in local storage");
+                            throw "No 'dix-application-data' item in local storage"
+                        }
+                    } else {
+                        ls.setItem("dix-application-data", newData)
+                    }
+                }
+
+                function changeLevelOfPractice(termName, button) {
+                    /*function changeLevelOfPractice: This function takes
+                    the current word being practiced and moves it
+                    up or down the practicing queue based on which button is pressed*/
+                    var buttonMap = {
+                        "forgot": -1,
+                        "hard": 0,
+                        "good": 1,
+                        "easy": 2,
+                    }
+                    var voc = vocab();
+
+                    const index = voc.findIndex(function (element) {
+                        return Object.keys(element)[0] === termName;
+                    });
+
+                    if (voc[index]["difficultyCardStackNumber"] === undefined) {
+                        voc[index]["difficultyCardStackNumber"] = 0;
+                    }
+
+                    if (voc[index]["difficultyCardStackNumber"] < 0) {
+                        voc[index]["difficultyCardStackNumber"] = 0;
+                    }
+
+                    if (voc[index]["difficultyCardStackNumber"] > 10) {
+                        voc[index]["difficultyCardStackNumber"] = 10;
+                    }
+
+                    voc[index]["difficultyCardStackNumber"] = voc[index]["difficultyCardStackNumber"] + buttonMap[button];
+                    vocab(JSON.stringify(voc));
+                }
+
+                showAnswerButton.on("click", function () {
+                    if ((exists("answer") && $("#answer").hasClass("disabled")) || !exists("answer")) {
+                        if (exists("answer") && $("#answer").hasClass("disabled")) {
+                            $("#answer").removeClass("disabled");
+                        }
+                        var answer = insertUniqueElement("div", answerText, flashcard, "answer");
+                        var forgot = insertUniqueElement("button", "Forgot", flashcard, "forgot");
+                        var hard = insertUniqueElement("button", "Hard", flashcard, "hard");
+                        var good = insertUniqueElement("button", "Good", flashcard, "good");
+                        var easy = insertUniqueElement("button", "Too easy", flashcard, "easy");
+
+                        [forgot, hard, good, easy].forEach(button => button.on("click", function () {
+                            [forgot, hard, good, easy].forEach(button => button.addClass("disabled"));
+                            var practicedTerm = document.getElementById("question").innerText;
+                            changeLevelOfPractice(practicedTerm, button.attr('id'));
+                            chooseNextWord();
+                            document.getElementById("question").innerText = questionText;
+                            $("#answer").addClass("disabled");
+                        }))
+
+                    }
+                })
             }
             )
         })
