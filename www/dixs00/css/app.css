@@ -82,3 +82,42 @@ select {
 #easy {
     background-color: cornflowerblue;
 }
+
+.loader {
+    display: inline-block;
+    transform: translateZ(1px);
+}
+
+.loader>div {
+    display: inline-block;
+    background: transparent;
+    animation: loader 2.4s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    text-align: center;
+    color: #C30011;
+    font-size: x-large;
+    text-decoration: none;
+    /*border-image: url(flagbig.svg) 60 stretch;*/
+    padding: 10px;
+    height: 30px;
+    width: 130px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+@keyframes loader {
+    0%, 100% {
+        animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+        animation-timing-function: cubic-bezier(0, 0.2, 0.8, 1);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}

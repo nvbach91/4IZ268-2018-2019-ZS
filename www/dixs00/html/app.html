@@ -41,13 +41,16 @@
    </header>
 
    <main>
-      <label for="topics">Select a topic to practice</label>
+      <label class="disabled" for="topics">Select a topic to practice</label>
 
       <div class="flexContainerWrap" id="appContainer">
          <div class="flexContainerWrap">
-            <select name="topics" id="topicDropdown">
+            <div id="loader" class="loader">
+               <div>Loading...</div>
+            </div>
+            <select name="topics" class="disabled" id="topicDropdown">
             </select>
-            <button id="practiceButton">Practice</button>
+            <button class="disabled" id="practiceButton">Practice</button>
          </div>
 
          <div class="disabled" id="flashcard"></div>
@@ -73,6 +76,7 @@
    </footer>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script src="../js/main.js"></script>
+   <script src="../js/utilities.js"></script>
    <script src="../js/app.js"></script>
 
 </body>
