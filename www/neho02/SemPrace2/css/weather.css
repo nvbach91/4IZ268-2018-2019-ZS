@@ -1,37 +1,63 @@
+html, body {
+  width: 100%;
+  height: 100%;
+ }
 
- #rowDiv{
-   margin: auto;
-   text-align: center;
-   width: 30%;
+ #rowDiv {
+  margin: auto;
+  text-align: center;
+  width: 100%;
  } 
 
- #th2{
+ #th2 {
   font-size: 40px;
   font-weight: 400;
  }
 
- #show{
-   margin: auto;
-   text-align: center;
+ #show {
+  width: 100%;
+  margin: 1em auto;
+  text-align: center;
  }
 
- #cont{
-  height: 650px;
+ .row {
+  margin-bottom: 20px;
+  padding-top: 30px;
+  color: black;
  }
 
- .row{
-  padding-top:30px;
-  color:black;
- }
-
-#jumbo{
-  margin-bottom:0px;
+#jumbo {
+  margin-bottom: 0px;
   color: rgb(0, 0, 0);
   background-color: rgb(24, 166, 231);
 }
 
+#page-wrapper {
+  min-height: 100%;
+}
 
-.footer{
+#show {
+  overflow-x: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+#compareBtn {
+  display: none;
+}
+
+.weather-block {
+  display: inline-block;
+  width: 400px;
+  flex: 1 0 auto;
+  background-color: #eeeeeeee;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.footer {
+  flex: 1 0 auto;
   width: 100%;
   height: 82px;
   background-color: rgb(24, 166, 231);
