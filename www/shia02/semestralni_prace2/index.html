@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Piškvorky</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="icon" href="zdroje/piskvorky.jpg">
 </head>
 
 <body>
-    <h1>Piškvorky</h1>
+    <h1><span id="x" class="letter">X </span>Piškvorky<span id="o" class="letter"> O</span></h1>
     <div id="field">
         <div class="box">
-            <div class="style"><label>Pocet radku: </label><input type="number" min="3" max="15" id="sizeOfRow"></div>
-            <div class="style"><label>Delka pro vyhru: </label><input type="number" min="3" max="5" id="winLength"></div>
-            <button id="startGame" onclick="startGame()">Nova hra</button>
+            <div class="style"><label>Počet řádku: </label><input type="number" min="3" max="15" id="sizeOfRow"></div>
+            <div class="style"><label>Délka pro výhru: </label><input type="number" min="3" max="5" id="winLength"></div>
+            <button id="startGame" onclick="startGame()">Nová hra</button>
+            <button id="publishResult" onclick="publishOnFacebook()">Zveřejnit výsledek na Facebooku</button>
             <div id="turnDiv" class="style"><label>Na tahu je: </label><span id="playerOnTurn"></span>
             </div>
         </div>
-        <div class="box" id="game-field" class="style"></div>
+        <div id="game-field" class="style box"></div>
     </div>
 
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 

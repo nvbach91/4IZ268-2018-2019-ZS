@@ -30,6 +30,18 @@ h1 {
     text-align: center;
 }
 
+.letter {
+    font-weight: bold;
+}
+
+#x {
+    color: red;
+}
+
+#o {
+    color: blue;
+}
+
 .box {
     float: left;
 }
@@ -56,4 +68,17 @@ button:hover {
 
 .blue {
     color: blue;
+}
+
+#game-field {
+    clear: both;
+}
+
+.disabled {
+    background-color: rgb(235, 235, 228);
+    color: rgb(84, 84, 84);
+}
+
+#publishResult, #turnDiv {
+    visibility: hidden;
 }

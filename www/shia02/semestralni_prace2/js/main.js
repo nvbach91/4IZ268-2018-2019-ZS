@@ -72,36 +72,10 @@ var isWinner = function (gameArr, player) {
                 }
             }
 
-            //left
-            if (columnIndex - winSize >= 0) {
-                correctCount = 0;
-                for (var i = columnIndex; i > columnIndex - winSize; i--) {
-                    if (gameArr[rowIndex][i] === player) {
-                        correctCount++;
-                    }
-                }
-                if (correctCount === winSize) {
-                    return true;
-                }
-            }
-
             //down
             if (rowIndex + winSize <= size) {
                 correctCount = 0;
                 for (var i = rowIndex; i < rowIndex + winSize; i++) {
-                    if (gameArr[i][columnIndex] === player) {
-                        correctCount++;
-                    }
-                }
-                if (correctCount === winSize) {
-                    return true;
-                }
-            }
-
-            //up
-            if (rowIndex - winSize >= 0) {
-                correctCount = 0;
-                for (var i = rowIndex; i > rowIndex - winSize; i--) {
                     if (gameArr[i][columnIndex] === player) {
                         correctCount++;
                     }
@@ -124,34 +98,8 @@ var isWinner = function (gameArr, player) {
                 }
             }
 
-            if (rowIndex + winSize <= size && columnIndex - winSize >= 0) {
-                //diagonally left-down
-                correctCount = 0;
-                for (var i = rowIndex, j = columnIndex; i < rowIndex + winSize; i++ , j--) {
-                    if (gameArr[i][j] === player) {
-                        correctCount++;
-                    }
-                }
-                if (correctCount === winSize) {
-                    return true;
-                }
-            }
-
-            if (rowIndex - winSize >= 0 && columnIndex - winSize >= 0) {
-                //diagonally left-up
-                correctCount = 0;
-                for (var i = rowIndex, j = columnIndex; i > rowIndex - winSize; i-- , j--) {
-                    if (gameArr[i][j] === player) {
-                        correctCount++;
-                    }
-                }
-                if (correctCount === winSize) {
-                    return true;
-                }
-            }
-
+            //diagonally right-up
             if (rowIndex - winSize >= 0 && columnIndex + winSize <= size) {
-                //diagonally right-up
                 correctCount = 0;
                 for (var i = rowIndex, j = columnIndex; i > rowIndex - winSize; i-- , j++) {
                     if (gameArr[i][j] === player) {
@@ -169,14 +117,14 @@ var isWinner = function (gameArr, player) {
 
 };
 
-var playerSymbol = function(player) {
+var playerSymbol = function (player) {
     if (player === 1) {
         return "X";
     }
     if (player === 2) {
-        return  "O";
+        return "O";
     }
-    
+
     return null;
 }
 
@@ -191,23 +139,23 @@ var startGame = function () {
     var controlWinSize = winLength();
 
     if (controlSize === null || controlWinSize === null) {
-        alert("Je potreba vyplnit vsechna pole");
+        alert("Je potřeba vyplnit všechna pole");
         return;
     }
 
     if (controlWinSize > controlSize) {
-        alert("PROBLEM");
+        alert("Velikost délky výherní kombinace nemůže být větší než velikost herního pole.");
         return;
     }
 
     if (controlSize < 3 || controlSize > 15) {
-        alert("PROBLEM");
+        alert("Velikost herního pole musí být v rozmezí 3 a 15 políček.");
         return;
     }
     size = controlSize;
 
     if (controlWinSize < 3 || controlWinSize > 5) {
-        alert("PROBLEM");
+        alert("Délka výherni kombinace musí být minimálně 3 a maximálně 5 políček.");
         return;
     }
     winSize = controlWinSize;
@@ -218,7 +166,9 @@ var startGame = function () {
     playerOnTurn = 1;
     gameField.empty();
     updatePlayerOnTurnDiv(playerOnTurn);
-    turnDiv.show();
+    turnDiv.css('visibility', 'visible');
+    $('#publishResult').css('visibility', 'hidden');
+    $('.cell').removeClass("disabled");
 
     for (var i = 0; i < size; i++) {
         var row = createRow();
@@ -254,17 +204,18 @@ var startGame = function () {
 
                 if (isWinner(gameArr, previousPlayerOnTurn)) {
                     alert('Hráč ' + playerSymbol(previousPlayerOnTurn) + ' vyhrál');
-                    // TODO: zamkni hrací plochu
                     gameOver = true;
-                    turnDiv.hide();
                 }
                 else if (freeCellsCount === 0) {
                     alert('Pole je plné, hra skoncila remizou.');
                     gameOver = true;
-                    turnDiv.hide();
                 }
 
-
+                if (gameOver) {
+                    turnDiv.css("visibility", "hidden");
+                    $("#publishResult").css("visibility", "visible");
+                    $('.cell').addClass("disabled");
+                }
             });
 
             row.append(cell);
@@ -274,6 +225,48 @@ var startGame = function () {
 
 }
 
-//startGame();
+FB.init({
+    appId: '270556770302815',
+    xfbml: true,
+    version: 'v2.8'
+});
+
+// currently not working due to lack of permissions
+// function post() {
+//     // post message to facebook    
+//     FB.api(
+//         "/me/feed",
+//         "POST",
+//         {
+//             "message": "This is a test message"
+//         },
+//         function (response) {
+//             console.log(response);
+//             if (response && !response.error) {
+//                 /* handle the result */
+//             }
+//         }
+//     );
+// }
+
+var publishOnFacebook = function () {
+    alert('Tato funkce není v současné době dostupná.');
+
+    // FB.getLoginStatus(function (response) {
+    //     if (response.status === 'connected') {
+    //         post();
+    //     }
+    //     else {
+    //         FB.login(function (loginResponse) {
+    //             if (loginResponse.status === 'connected') {
+    //                 post();
+    //             } else {
+    //                 // user is not logged in
+    //                 console.log("User was not successfully logged in");
+    //             }
+    //         }, { perms: 'publish_pages,manage_pages' });
+    //     }
+    // });
+}
 
 
