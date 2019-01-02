@@ -181,7 +181,7 @@ button {
 
 input {margin: 10px 30px;}
 
-  .mapa {  background-image: url('../img/mapa1.png');
+.mapa {  background-image: url('../img/mapa1.png');
     background-size: contain;
     background-repeat: no-repeat;
     width: 400px;
@@ -191,6 +191,9 @@ input {margin: 10px 30px;}
 background-color: red;
 
 }
+#vendingMachines {
+    padding: 20px 150px;
+}
 
 .pin {position: absolute;
     width: 15px;
@@ -199,3 +202,9 @@ background-color: red;
 #floor1mapa {
     position: relative;width:400px;height:421px;    
 }
+
+#patro {margin: 10px 30px; width: 164px;}
+
+.floorButton {padding: 8px 20px; margin-left: 5px;}
+
+

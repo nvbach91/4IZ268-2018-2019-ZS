@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Cashless VŠE">
-    <meta name="keywords" content="Cashless, VŠE, university">
-    <meta name="author" content="Tomáš Kašpar">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Cashless VŠE" />
+    <meta name="keywords" content="Cashless, VŠE, university" />
+    <meta name="author" content="Tomáš Kašpar" />
     <title>Cashless VŠE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
@@ -18,7 +18,7 @@
 <body>
     <div id="wrapper">
 
-        <header class="container"> <a href="#wrapper"><img src="img/credit-card.png" alt="logo">
+        <header class="container"> <a href="#wrapper"><img src="img/credit-card.png" alt="logo" />
                 <div class="logoText">
                     <h1>Cashless VŠE</h1>
                 </div>
@@ -66,64 +66,39 @@
         <hr />
         <div id="vendingMachines" class="container">
             <h2>Cashless vending machines</h2>
-     
-        
-        
-
-
-
-
-
-            <div>
-                    <button id="btn4" class="tabNav2 activeTab">Ground floor</button>
-                    <button id="btn5" class="tabNav2">First floor</button>
-                    <button id="btn6" class="tabNav2">Second floor</button>
-                </div>
-
+            <p>To view and enter new machines please log in with your google account.</p>
+            <div><button id="signin-button">Sign in</button>
+                <button id="signout-button">Sign out</button></div>
             <div class="left">
-
-                        <div id="floor1" class="floor">
-                                <div class="mapa" id="floor1mapa">
-
-                                </div>
-                            </div>
-
-                            <div id="floor2" class="floor">
-                                    <h2>First floor</h2>
-                                   
-                                </div>
-                    
-                                <div id="floor3" class="floor">
-                                    <h2>Second floor</h2>
-                                </div>
-                
-
+                <div class="mapa" id="floor1mapa">
+                </div>
             </div>
             <div class="right">
-                <h3>Automat 23</h3>
-                <p>Type: Coca-cola <br /> Date of entry: 12. 12. 2018</p>
-
+                <h2>Choose floor to view:</h2>
+                <button id="1floorButton" class="floorButton">First</button><button id="2floorButton" class="floorButton">Second</button><button id="3floorButton" class="floorButton">Third</button>
                 <h2>Enter new one:</h2>
-                <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
-                <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
-                
                 <form>
-                    <label for="nazev">Name:</label>
-                    <input type="nazev" id="nazev" placeholder="Enter name" name="nazev"><br />
-                    <label for="poloha">Coordinates:</label>
-                    <input type="poloha" id="poloha" placeholder="coordinates" name="poloha"><br />
-                    
-                  </form>
-                  <button id="bbutton" onclick="makeApiCall(action = 'write')">Submit</button>
-                  <button id="bbbutton" onclick="refresh()">Refresh</button>
+                    <label for="patro">Floor:</label><br />
+                    <select name="patro" id="patro">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select><br />
+                    <label for="poloha">Coordinates:</label><br />
+                    <input type="poloha" id="poloha" placeholder="click to image" name="poloha" readonly /><br />
+
+
+                </form>
+                <button id="bbutton">Submit</button>
+                <p id="informative"></p>
             </div>
             <div class="clear"></div>
-            
 
-    
 
-    
-               
+
+
+
+
             <div class="clear"></div>
         </div>
 
@@ -242,9 +217,8 @@
     <div class="scrollToTop" id="scrollButton">&#8679;</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
-    <script async defer src="https://apis.google.com/js/api.js"
-    onload="this.onload=function(){};handleClientLoad()"
-    onreadystatechange="if (this.readyState === 'complete') this.onload()">  </script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">  </script>
 </body>
 
 </html>

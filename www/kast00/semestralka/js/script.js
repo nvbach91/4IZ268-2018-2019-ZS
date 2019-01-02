@@ -41,40 +41,12 @@ document.getElementById('btn2').onclick = function () { openRestaurant(event, 'r
 document.getElementById('btn3').onclick = function () { openRestaurant(event, 'res3'); }
 
 
-
-
-function openfloor(evt, floorName) {
-    var i, x, tabnavs2;
-    x = document.getElementsByClassName("floor");
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    tabnavs2 = document.getElementsByClassName("tabNav2");
-    for (i = 0; i < x.length; i++) {
-        tabnavs2[i].className = tabnavs2[i].className.replace("activeTab", "");
-    }
-    document.getElementById(floorName).style.display = "block";
-    evt.currentTarget.className += " activeTab";
-}
-
-
-document.getElementById('btn4').onclick = function () { openfloor(event, 'floor1'); }
-document.getElementById('btn5').onclick = function () { openfloor(event, 'floor2'); }
-document.getElementById('btn6').onclick = function () { openfloor(event, 'floor3'); }
-
-
-
-
 function makeApiCall(action = "read") {
 
     var ssID = "1gjr8_KlM907EM06O_fOS92Qs9ns3lOwIVDjIXv0tNLc";
     var rng = "List 1";
 
-    if (action == "write") {
-
-        vals = new Array(4);
-        vals = [1, "automat 8", "11,11", "credit card accepted"]
-
+    if (action === "write") {
 
         var params = {
             // The ID of the spreadsheet to update.
@@ -91,9 +63,10 @@ function makeApiCall(action = "read") {
             insertDataOption: 'INSERT_ROWS',  // TODO: Update placeholder value.
         };
 
-        var nazev = document.getElementById("nazev").value;
+        var nazev = "User";
 
         var poloha = document.getElementById("poloha").value;
+        var patro = document.getElementById("patro").value
 
 
         var valueRangeBody = {
@@ -108,7 +81,7 @@ function makeApiCall(action = "read") {
                     poloha
                 ],
                 [
-                    "credit card accepted"
+                    patro
                 ]
             ],
             "majorDimension": "COLUMNS"
@@ -165,8 +138,7 @@ function initClient() {
     //   'https://www.googleapis.com/auth/drive.readonly'
     //  'https://www.googleapis.com/auth/spreadsheets'
     //  'https://www.googleapis.com/auth/spreadsheets.readonly'
-    var SCOPE = 'https://www.googleapis.com/auth/spreadsheets'
-        ;
+    var SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
 
     gapi.client.init({
         'apiKey': API_KEY,
@@ -186,6 +158,11 @@ function handleClientLoad() {
 function updateSignInStatus(isSignedIn) {
     if (isSignedIn) {
         makeApiCall();
+        $("#signin-button").css({'background-color': '#e7e7e74f', 'color': 'grey'});
+        $("#signout-button").css({'background-color': '#e7e7e7;', 'color': 'black'});
+    } else {
+        $("#signin-button").css({'background-color': '#e7e7e7;', 'color': 'black'});
+        $("#signout-button").css({'background-color': '#e7e7e74f', 'color': 'grey'});
     }
 }
 
@@ -201,21 +178,21 @@ function downloadData(result) {
     for (var row = 0; row < result.values.length; row++) {
         var x = document.createElement("IMG");
         x.setAttribute("src", "img/location.png");
-        x.setAttribute("class", "pin");
-
         for (var col = 0; col < 4; col++) {
             if (col = 2) {
                 var res = result.values[row][col].split(",");
                 var style = "top: " + res[0] + "%; left: " + res[1] + "%;";
-                x.setAttribute("style", style)
+                var classa = result.values[row][col+1] + "floor" + " pin";
+                x.setAttribute("style", style);
+                x.setAttribute("class", classa);
                 console.log(style);
                 break;
             }
-
         }
 
         document.getElementById("floor1mapa").appendChild(x);
     }
+    floorView(1);
 }
 
 function refresh() {
@@ -242,4 +219,48 @@ function getClickPosition(e) {
  
 
    
+}
+
+
+document.getElementById('signin-button').onclick = function () {handleSignInClick(); }
+document.getElementById('signout-button').onclick = function () {handleSignOutClick(); }
+
+document.getElementById('bbutton').onclick = function () {submit();}
+
+
+function submit() {
+    var tester = document.getElementById('poloha').value.split(",");
+    if (tester[0] > 0 && tester[0] < 100 && tester[1] > 0 && tester[1] < 100) {
+        makeApiCall(action = 'write'); 
+        refresh(); 
+        document.getElementById("informative").innerHTML = "Succesfully added!";
+    } else {
+        alert("Enter valid coordinates!");
+    }
+    
+}
+
+
+document.getElementById('1floorButton').onclick = function () {floorView(1); }
+document.getElementById('2floorButton').onclick = function () {floorView(2); }
+document.getElementById('3floorButton').onclick = function () {floorView(3); }
+
+
+function floorView (number) {
+var pins = document.getElementsByClassName("pin");
+    for (var t = 0; t < pins.length; t++) {
+        pins[t].style.display = "none";
+    }
+    console.log(number + "floor");
+    var pins2 = document.getElementsByClassName(number + "floor");
+    for (var t = 0; t < pins2.length; t++) {
+        pins2[t].style.display = "block";
+    }
+
+    fbutton = document.getElementsByClassName("floorButton");
+    for (i = 0; i < fbutton.length; i++) {
+        fbutton[i].className = fbutton[i].className.replace("activeTab", "");
+    }
+    console.log(number + "floorButton");
+    document.getElementById(number + "floorButton").className += " activeTab";
 }
