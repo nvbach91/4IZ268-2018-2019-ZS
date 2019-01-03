@@ -44,6 +44,10 @@
     placesService: null,
     searchedCoords: null,
 
+    // searched places
+    places: [],
+    favoritePlaces: [],
+
     init: function(options) {
 
       var self = map;
@@ -53,6 +57,15 @@
 
       self.regOnNavigate();
       self.regOninput();
+
+      // get favorites places from localStorage
+      self.setFavoritesPlaces();
+
+      // reg add place into favorite
+      self.toggleSetPlaceAsAFavorite();
+
+      // reg set active place
+      self.regPlaceOnClick();
 
       $.getJSON( self.settings.mapStyleJson, function(mapStyles) {
         if ( mapStyles ) {
@@ -128,6 +141,10 @@
     updateGoogleMapsLink: function() {
 
       var self = map;
+
+      if (!isNaN(self.searchedCoords.lat)) {
+        self.searchedCoords = new google.maps.LatLng(self.searchedCoords.lat, self.searchedCoords.lng);
+      }
 
       // update Google Maps link
       $('#showInGoogleMaps').attr('href', 'https://www.google.com/maps/dir/?api=1&destination=' + self.searchedCoords.lat() + ',' + self.searchedCoords.lng());
@@ -324,10 +341,25 @@
           var place = results[i];
           // console.log(place);
           if (jQuery.inArray('point_of_interest', place.types) !== -1 || jQuery.inArray('establishment', place.types) !== -1 || jQuery.inArray('premise', place.types) !== -1) {
-            self.popupTitle = place.name;
-            self.searchedCoords = place.geometry.location;
-            self.marker = self.createMarker(self.searchedCoords);
-            self.updateGoogleMapsLink();
+
+            self.setActivePlace(place);
+
+            // save the place into array
+            var isUnique = true;
+            for (var i = 0; i < self.places.length; i++) {
+              if (self.places[i][0] == place.name) {
+                isUnique = false;
+              }
+            }
+
+            if (isUnique) {
+              var p = [place.name, place];
+              self.places.push(p);
+
+              // append place into results container
+              self.appendPlaceElementIntoResutlsContainer(place.name, false);
+            }
+
           }
           else {
             alert('Nejedná se o bod zájmu, zkus to znovu.')
@@ -339,8 +371,92 @@
       }
     },
 
+    appendPlaceElementIntoResutlsContainer: function(placeName, isActive) {
+
+      var html = '';
+      html += (isActive) ? '<div class="place active">' : '<div class="place">';
+        html += '<button class="place__favorite"></button>';
+        html += '<button class="place__title text--semi-small">' + placeName +'</button>';
+      html += '</div>';
+
+      $('#resultsContainer').append(html);
+    },
+
+    toggleSetPlaceAsAFavorite: function() {
+
+      var self = map;
+
+      $('#resultsContainer').on('click', '.place__favorite', function(e) {
+
+        var $places = $('#resultsContainer').find('.place');
+        var $place = $(this).closest('.place');
+        var index = $places.index($place);
+
+        if ($place.hasClass('active')) {
+
+          // remove
+          $place.removeClass('active');
+
+          // remove from localStorage
+          self.favoritePlaces.splice(index, 1);
+          localStorage.setItem('favorites', JSON.stringify(self.favoritePlaces));
+
+        }
+        else {
+
+          // add
+          $place.addClass('active');
+
+          // save into localStorage
+          var place = self.places[index];
+          self.favoritePlaces.push(place);
+          localStorage.setItem('favorites', JSON.stringify(self.favoritePlaces));
+
+        }
+      });
+    },
+
+    setFavoritesPlaces: function() {
+
+      var self = map;
+
+      var favorites = JSON.parse(localStorage.getItem('favorites'));
+      if (favorites !== null) {
+        self.favoritePlaces = favorites;
+        self.places = favorites;
+      }
+
+      for (var i = 0; i < self.favoritePlaces.length; i++) {
+        self.appendPlaceElementIntoResutlsContainer(self.favoritePlaces[i][0], true);
+      }
+
+    },
+
+    setActivePlace: function(place) {
+
+      var self = map;
+
+      self.popupTitle = place.name;
+      self.searchedCoords = place.geometry.location;
+      self.marker = self.createMarker(self.searchedCoords);
+      self.updateGoogleMapsLink();
+    },
+
+    regPlaceOnClick: function() {
+
+      var self = map;
+
+      $('#resultsContainer').on('click', '.place__title', function(e) {
+        var $places = $('#resultsContainer').find('.place');
+        var $place = $(this).closest('.place');
+        var index = $places.index($place);
+        var place = self.places[index][1];
+        self.setActivePlace(place);
+      });
+    },
 
   };
+
   if ($('#map').length) {
     map.init();
   }
