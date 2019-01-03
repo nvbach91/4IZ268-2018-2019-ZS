@@ -73,6 +73,7 @@ footer {
 #wrapper {
     color: white;
     text-align: center;
+    min-width: 315px;
 }
 .container {
 padding: 20px 20px;
@@ -161,14 +162,28 @@ button {
         float: left!important;}
 } 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 980px) {
     .left {
         width: 100%;
     }
     .right {
         width: 100%;
     }
+    #vendingMachines {
+        padding: 20px 20px!important;
+        
+    }
+    #floor1mapa {
+        margin: auto;
+    }
 } 
+
+@media screen and (max-width: 500px){
+#floor1mapa {
+    left: -63px;
+}
+
+}
 
 @media print {
     .right img {
