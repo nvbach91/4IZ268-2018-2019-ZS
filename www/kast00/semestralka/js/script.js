@@ -66,7 +66,7 @@ function makeApiCall(action = "read") {
         var nazev = "User";
 
         var poloha = document.getElementById("poloha").value;
-        var patro = document.getElementById("patro").value
+        var patro = document.getElementById("patro").value;
 
 
         var valueRangeBody = {
@@ -246,6 +246,7 @@ document.getElementById('2floorButton').onclick = function () {floorView(2); }
 document.getElementById('3floorButton').onclick = function () {floorView(3); }
 
 
+var activeFloor = 1;
 function floorView (number) {
 var pins = document.getElementsByClassName("pin");
     for (var t = 0; t < pins.length; t++) {
@@ -263,4 +264,7 @@ var pins = document.getElementsByClassName("pin");
     }
     console.log(number + "floorButton");
     document.getElementById(number + "floorButton").className += " activeTab";
+    activeFloor = number;
+    document.getElementById("patro").selectedIndex = activeFloor - 1;
+    console.log(document.getElementById("patro").value);
 }
