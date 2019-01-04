@@ -27,10 +27,8 @@
             @click="playTrack(track.id, track.name)"
           >{{ track.id !== currentlyPlaying ? 'play_circle_outline' : 'play_arrow' }}</i>
           <img
-            v-for="(value, key) in track.album.images[0]"
-            v-if="key === 'url'"
-            :key="key"
-            :src="value"
+            v-if="track.album.images[0]['url']"
+            :src="track.album.images[0]['url']"
             class="img track__img"
           >
           <div class="track__info">
@@ -58,10 +56,8 @@
         >
           <div v-if="result.images[0]" class="result__imgContainer">
             <img
-              v-for="(value, key) in result.images[0]"
-              v-if="(key === 'url')"
-              :key="key"
-              :src="value"
+              v-if="result.images[0]['url']"
+              :src="result.images[0]['url']"
               class="img result__img"
             >
           </div>
@@ -121,6 +117,13 @@ export default {
           'user_token',
           data.token_type + ' ' + data.access_token
         )
+
+        history.replaceState(null, null, window.location.href.split('#')[0])
+        //history.pushState(null, null, window.location.href.split('#')[0])
+
+        //window.location.hash = ''
+
+        //window.location = ''
 
         this.$toast.success('Přihlášení bylo úspěšné, vyhledej nějakého umělce')
       }
