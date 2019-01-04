@@ -5,36 +5,43 @@ var resetButton = document.querySelector('#reset-button');
 var speedScore = document.querySelector('#speed');
 var mistakesScore = document.querySelector('#mistakes');
 var accuracyScore = document.querySelector('#accuracy');
-var animatedText = document.querySelector('#intro');
+var interval;
+var loadingSpinner = document.querySelector('#loader');
+
 var timerStarted = false;
-var timer = htmlTimer.innerHTML;
+var timer = 10; // oprava, timer je ciselna promenna, ne string; globalni, protoze jinak kazdou nasledujici sekundu budeme zacinat od 10
 
 textArea.addEventListener('input', handleTextAreaInput);
 resetButton.addEventListener('click', resetAll, false);
 
 function countWords(str) {
+    var str = str.replace(/\W+/, ''); //vsechny znaky krome A-Z, 0-9 vyhodit
     return str.split(' ').length;
 }
 
 function countMistakes() {
     var mistakesDone = 0;
-    var typedText = textArea.value.split(' ');
-    var sample = textExample.innerHTML.split(' ');
+    var typedText = textArea.value;
+    var example = textExample.innerHTML;
+    typedText = typedText.replace(/  +/g, ' ');
+    typedText = typedText.trim().split(' '); //vyhodit whitespace pred a po stringu, rozdelit na jednotliva slova 
+    example = example.split(' ');
     for (var i = 0; i < typedText.length; i++) {
-        if (typedText[i] !== sample[i]) {
+        if (typedText[i] !== example[i]) {
             mistakesDone++;
         }
     }
     return mistakesDone;
 }
 
-var char = 0;
+var char = 0; //poradove cislo pismena, lokalni protoze jinak bude furt pridavat prvni pismeno a nikdy se nezastavi
 function typeWriter() {
+    var animatedText = document.querySelector('#intro'); // sem pismena se postupne ukladaji
     var welcomeText = 'Welcome to Typing Speed Test'; //text to animate
-    if (char < welcomeText.length) {
-        animatedText.innerHTML += welcomeText.charAt(char);
-        char++;
-        setTimeout(typeWriter, 100);
+    if (char < welcomeText.length) { // podminka, aby se napsal pouze welcomeText a nic navic
+        animatedText.innerHTML += welcomeText.charAt(char); // ulozi pismeno do animatedText, += aby se pismena pridavali, ne zobrazovali po jednom
+        char++; // zvetsim hodnotu poradove cisla pismena
+        setTimeout(typeWriter, 100); // aby funkce se opakovala (jinak bude pouze prvni pismeno) + s efektem typewritingu, ne najdenou. 
     }
 }
 
@@ -63,11 +70,13 @@ function handleTextAreaInput() {
 }
 
 function loadQuote() {
+    loadingSpinner.style.display = 'block';
     var request = new XMLHttpRequest();
     request.open('GET', 'http://api.icndb.com/jokes/random?exclude=[explicit]', true);
     request.onreadystatechange = function () {
         if (request.readyState == 4 && request.status == 200) {
             result = JSON.parse(request.responseText);
+            loadingSpinner.style.display = 'none'; // spinner zmizi kdyz joke se nacte
             textExample.innerHTML = result.value.joke;
         }
     };
@@ -91,6 +100,7 @@ function resetAll() {
     mistakesScore.innerHTML = 'Mistakes: 0';
     accuracyScore.innerHTML = 'Accuracy: 0%';
     textArea.value = '';
+    textExample.innerHTML = '';
     loadQuote();
 }
 
