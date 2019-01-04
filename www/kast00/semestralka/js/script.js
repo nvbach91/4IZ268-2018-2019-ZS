@@ -90,7 +90,7 @@ function makeApiCall(action = "read") {
         var request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
         request.then(function (response) {
             // TODO: Change code below to process the `response` object:
-            console.log(response.result);
+            refresh();
         }, function (reason) {
             console.error('error: ' + reason.result.error.message);
         });
@@ -118,7 +118,6 @@ function makeApiCall(action = "read") {
         var request = gapi.client.sheets.spreadsheets.values.get(params);
         request.then(function (response) {
             // TODO: Change code below to process the `response` object:
-            console.log(response.result);
             downloadData(response.result);
         }, function (reason) {
             console.error('error: ' + reason.result.error.message);
@@ -173,16 +172,17 @@ function handleSignInClick(event) {
 function handleSignOutClick(event) {
     gapi.auth2.getAuthInstance().signOut();
 }
-
+var points = [];
 function downloadData(result) {
     for (var row = 0; row < result.values.length; row++) {
         var x = document.createElement("IMG");
         x.setAttribute("src", "img/location.png");
         for (var col = 0; col < 4; col++) {
-            if (col = 2) {
+            if (col === 2) {
                 var res = result.values[row][col].split(",");
                 var style = "top: " + res[0] + "%; left: " + res[1] + "%;";
                 var classa = result.values[row][col+1] + "floor" + " pin";
+                points.push(res + "," + result.values[row][col+1]);
                 x.setAttribute("style", style);
                 x.setAttribute("class", classa);
                 console.log(style);
@@ -193,6 +193,7 @@ function downloadData(result) {
         document.getElementById("floor1mapa").appendChild(x);
     }
     floorView(1);
+    console.log(points);
 }
 
 function refresh() {
@@ -231,9 +232,23 @@ document.getElementById('bbutton').onclick = function () {submit();}
 function submit() {
     var tester = document.getElementById('poloha').value.split(",");
     if (tester[0] > 0 && tester[0] < 100 && tester[1] > 0 && tester[1] < 100) {
-        makeApiCall(action = 'write'); 
-        refresh(); 
-        document.getElementById("informative").innerHTML = "Succesfully added!";
+     var ok = false;
+        for (let i = 0; i < points.length; i++) {
+          var helper = points[i].split(",");
+          if (helper[0] != tester[0] && helper[1] != tester[1] && helper[2] != document.getElementById('patro').value) {
+              ok = true;
+              console.log(helper[0] + " " + tester[0] + " " + helper[1] + " " + tester[1] + " " + helper[2] + " " + document.getElementById('patro').value + " true" );
+          } else {
+            ok = false;
+          }
+        }
+        if (ok === true) {
+            makeApiCall(action = 'write');  
+            document.getElementById("informative").innerHTML = "Succesfully added!"; 
+        }  else {
+            alert("This vending machine already exists!");
+        }
+
     } else {
         alert("Enter valid coordinates!");
     }
@@ -252,19 +267,23 @@ var pins = document.getElementsByClassName("pin");
     for (var t = 0; t < pins.length; t++) {
         pins[t].style.display = "none";
     }
-    console.log(number + "floor");
     var pins2 = document.getElementsByClassName(number + "floor");
     for (var t = 0; t < pins2.length; t++) {
         pins2[t].style.display = "block";
     }
-
     fbutton = document.getElementsByClassName("floorButton");
     for (i = 0; i < fbutton.length; i++) {
         fbutton[i].className = fbutton[i].className.replace("activeTab", "");
     }
-    console.log(number + "floorButton");
     document.getElementById(number + "floorButton").className += " activeTab";
     activeFloor = number;
     document.getElementById("patro").selectedIndex = activeFloor - 1;
-    console.log(document.getElementById("patro").value);
+
+}
+
+function compare (record1, record2) {
+if (record1 !== record2) {
+    
+}
+
 }
