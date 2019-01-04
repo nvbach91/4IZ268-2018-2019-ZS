@@ -2,6 +2,7 @@ var gameField = $('#game-field');
 var playerOnTurnDiv = $('#playerOnTurn');
 var turnDiv = $('#turnDiv');
 var field = $('#field');
+var loginButton = $('#login');
 var gameOver = false;
 var playerOnTurn = 1;
 
@@ -262,6 +263,7 @@ var login = function () {
                 nameUser.innerText = resp.name + " " + resp.email;
                 field.append(nameUser);
             });
+            loginButton.remove();
         }
     }, {scope: 'email'});
 
@@ -269,25 +271,25 @@ var login = function () {
 
 
 var publishOnFacebook = function () {
-    // alert('Tato funkce není v současné době dostupná.');
+    alert('Tato funkce není v současné době dostupná.');
 
-    FB.getLoginStatus(function (response) {
-        if (response.status === 'connected') {
-            FB.api("/me");
-            // post();
-        }
-        else {
-            console.log(response)
-            FB.login(function (loginResponse) {
-                if (loginResponse.status === 'connected') {
-                    post();
-                } else {
-                    // user is not logged in
-                    console.log("User was not successfully logged in");
-                }
-            }, { perms: 'publish_pages,manage_pages' });
-        }
-    });
+    // FB.getLoginStatus(function (response) {
+    //     if (response.status === 'connected') {
+    //         FB.api("/me");
+    //         // post();
+    //     }
+    //     else {
+    //         console.log(response)
+    //         FB.login(function (loginResponse) {
+    //             if (loginResponse.status === 'connected') {
+    //                 post();
+    //             } else {
+    //                 // user is not logged in
+    //                 console.log("User was not successfully logged in");
+    //             }
+    //         }, { perms: 'publish_pages,manage_pages' });
+    //     }
+    // });
 }
 
 
