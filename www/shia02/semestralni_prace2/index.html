@@ -14,9 +14,10 @@
     <h1><span id="x" class="letter">X </span>Piškvorky<span id="o" class="letter"> O</span></h1>
     <div id="field">
         <div class="box">
-            <div class="style"><label>Počet řádku: </label><input type="number" min="3" max="15" id="sizeOfRow"></div>
-            <div class="style"><label>Délka pro výhru: </label><input type="number" min="3" max="5" id="winLength"></div>
+            <div class="style"><label>Počet řádku: </label><input type="number" min="3" max="15" id="sizeOfRow" value="3"></div>
+            <div class="style"><label>Délka pro výhru: </label><input type="number" min="3" max="5" id="winLength" value="3"></div>
             <button id="startGame" onclick="startGame()">Nová hra</button>
+            <button id="login" onclick="login()">log in</button>
             <button id="publishResult" onclick="publishOnFacebook()">Zveřejnit výsledek na Facebooku</button>
             <div id="turnDiv" class="style"><label>Na tahu je: </label><span id="playerOnTurn"></span>
             </div>

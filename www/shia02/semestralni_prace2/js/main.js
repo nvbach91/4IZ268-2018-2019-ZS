@@ -1,6 +1,7 @@
 var gameField = $('#game-field');
 var playerOnTurnDiv = $('#playerOnTurn');
 var turnDiv = $('#turnDiv');
+var field = $('#field');
 var gameOver = false;
 var playerOnTurn = 1;
 
@@ -202,20 +203,23 @@ var startGame = function () {
                 freeCellsCount--;
                 updatePlayerOnTurnDiv(playerOnTurn);
 
-                if (isWinner(gameArr, previousPlayerOnTurn)) {
-                    alert('Hráč ' + playerSymbol(previousPlayerOnTurn) + ' vyhrál');
-                    gameOver = true;
-                }
-                else if (freeCellsCount === 0) {
-                    alert('Pole je plné, hra skoncila remizou.');
-                    gameOver = true;
-                }
+                setTimeout(function () {
+                    if (isWinner(gameArr, previousPlayerOnTurn)) {
+                        alert('Hráč ' + playerSymbol(previousPlayerOnTurn) + ' vyhrál');
+                        gameOver = true;
+                    }
+                    else if (freeCellsCount === 0) {
+                        alert('Pole je plné, hra skoncila remizou.');
+                        gameOver = true;
+                    }
 
-                if (gameOver) {
-                    turnDiv.css("visibility", "hidden");
-                    $("#publishResult").css("visibility", "visible");
-                    $('.cell').addClass("disabled");
-                }
+                    if (gameOver) {
+                        turnDiv.css("visibility", "hidden");
+                        $("#publishResult").css("visibility", "visible");
+                        $('.cell').addClass("disabled");
+                    }
+                }, 100);
+
             });
 
             row.append(cell);
@@ -249,24 +253,41 @@ FB.init({
 //     );
 // }
 
-var publishOnFacebook = function () {
-    alert('Tato funkce není v současné době dostupná.');
+var login = function () {
+    FB.login(function (response) {
+        console.log(response);
+        if (response.status === 'connected') {
+            FB.api("/me?fields=email,name", function (resp) {
+                var nameUser = document.createElement('div');
+                nameUser.innerText = resp.name + " " + resp.email;
+                field.append(nameUser);
+            });
+        }
+    }, {scope: 'email'});
 
-    // FB.getLoginStatus(function (response) {
-    //     if (response.status === 'connected') {
-    //         post();
-    //     }
-    //     else {
-    //         FB.login(function (loginResponse) {
-    //             if (loginResponse.status === 'connected') {
-    //                 post();
-    //             } else {
-    //                 // user is not logged in
-    //                 console.log("User was not successfully logged in");
-    //             }
-    //         }, { perms: 'publish_pages,manage_pages' });
-    //     }
-    // });
+}
+
+
+var publishOnFacebook = function () {
+    // alert('Tato funkce není v současné době dostupná.');
+
+    FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+            FB.api("/me");
+            // post();
+        }
+        else {
+            console.log(response)
+            FB.login(function (loginResponse) {
+                if (loginResponse.status === 'connected') {
+                    post();
+                } else {
+                    // user is not logged in
+                    console.log("User was not successfully logged in");
+                }
+            }, { perms: 'publish_pages,manage_pages' });
+        }
+    });
 }
 
 
