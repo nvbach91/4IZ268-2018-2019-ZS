@@ -2,11 +2,10 @@
 var latitude = 0;
 var longitude = 0;
 var city = "";
-var center;
 
 /* Získání délky, šířky a města uživatele */
 
-
+/*
 fetch("http://extreme-ip-lookup.com/json/").then(function (response) {
     return response.json();
 }).then(function (response) {
@@ -19,27 +18,50 @@ fetch("http://extreme-ip-lookup.com/json/").then(function (response) {
     longitude = 50;
     city = "no info found";
 });
+*/
 
+const geoFindMe = () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(success, error, geoOptions);
+    } else {
+        console.log("Geolocation services are not supported by your web browser.");
+    }
+}
+
+const success = (position) => {
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+    console.log(latitude, longitude);
+}
+
+const error = (error) => {
+    latitude = 14;
+    longitude = 50;
+    console.log(`Unable to retrieve your location due to ${error.code}: ${error.message}`);
+}
+
+const geoOptions = {
+    enableHighAccuracy: true,
+    maximumAge: 30000,
+    timeout: 27000
+};
 
 /* nastavení mapy */
-console.log(latitude, longitude, city);
 
-var center = SMap.Coords.fromWGS84(longitude, latitude);
+var center = SMap.Coords.fromWGS84(14, 50);
 var map = new SMap(JAK.gel("map"), center, 9);
 /* Aby mapa reagovala na změnu velikosti průhledu */
 map.addControl(new SMap.Control.Sync());
-/* Turistický podklad*/
 map.addDefaultLayer(SMap.DEF_TURIST).enable();
-/* Ovládání myší*/
 var mouse = new SMap.Control.Mouse(SMap.MOUSE_PAN | SMap.MOUSE_WHEEL | SMap.MOUSE_ZOOM);
 map.addControl(mouse);
-/* Ovládací prvky */
 map.addDefaultControls();
 
+/*
 var layerTwo = new SMap.Layer.Marker();
 map.addLayer(layerTwo);
 layerTwo.enable();
-
+*/
 /* Získání souboru do mapy */
 var xhr = new JAK.Request(JAK.Request.XML);
 xhr.setCallback(window, "response");
@@ -50,7 +72,7 @@ var response = function (xmlDoc) {
     var gpx = new SMap.Layer.GPX(xmlDoc, null, { maxPoints: 100 });
     map.addLayer(gpx);
     gpx.enable();
-    /*gpx.fit();*/
+    gpx.fit();
 };
 
 var latitudeCastle = 0;
