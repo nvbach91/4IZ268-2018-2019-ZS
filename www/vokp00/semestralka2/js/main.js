@@ -5,7 +5,7 @@ var city = "";
 
 /* Získání délky, šířky a města uživatele */
 
-/*
+
 fetch("http://extreme-ip-lookup.com/json/").then(function (response) {
     return response.json();
 }).then(function (response) {
@@ -14,54 +14,39 @@ fetch("http://extreme-ip-lookup.com/json/").then(function (response) {
     city = response.city;
     console.log(latitude, longitude, city);
 });
-*/
-
-
 
 /* nastavení mapy */
-for (; latitude === 0;) {
+console.log(latitude, longitude, city);
 
-    $.getJSON("http://extreme-ip-lookup.com/json/", function (location) {
-        var locationInfo = [];
-        locationInfo = location;
-        latitude = locationInfo.lat;
-        longitude = locationInfo.lon;
-        city = locationInfo.city;
-        console.log(latitude, longitude, city);
+var center = SMap.Coords.fromWGS84(longitude, latitude);
+var map = new SMap(JAK.gel("map"), center, 9);
+/* Aby mapa reagovala na změnu velikosti průhledu */
+map.addControl(new SMap.Control.Sync());
+/* Turistický podklad*/
+map.addDefaultLayer(SMap.DEF_TURIST).enable();
+/* Ovládání myší*/
+var mouse = new SMap.Control.Mouse(SMap.MOUSE_PAN | SMap.MOUSE_WHEEL | SMap.MOUSE_ZOOM);
+map.addControl(mouse);
+/* Ovládací prvky */
+map.addDefaultControls();
 
-    });
+var layerTwo = new SMap.Layer.Marker();
+map.addLayer(layerTwo);
+layerTwo.enable();
 
-    console.log(latitude, longitude, city);
+/* Získání souboru do mapy */
+var xhr = new JAK.Request(JAK.Request.XML);
+xhr.setCallback(window, "response");
+xhr.send("gpx/hrady.gpx");
 
-    var center = SMap.Coords.fromWGS84(longitude, latitude);
-    var map = new SMap(JAK.gel("map"), center, 9);
-    /* Aby mapa reagovala na změnu velikosti průhledu */
-    map.addControl(new SMap.Control.Sync());
-    /* Turistický podklad*/
-    map.addDefaultLayer(SMap.DEF_TURIST).enable();
-    /* Ovládání myší*/
-    var mouse = new SMap.Control.Mouse(SMap.MOUSE_PAN | SMap.MOUSE_WHEEL | SMap.MOUSE_ZOOM);
-    map.addControl(mouse);
-    /* Ovládací prvky */
-    map.addDefaultControls();
+/* přidání vrstvy pro zobrazení bodů na mapě */
+var response = function (xmlDoc) {
+    var gpx = new SMap.Layer.GPX(xmlDoc, null, { maxPoints: 100 });
+    map.addLayer(gpx);
+    gpx.enable();
+    /*gpx.fit();*/
+};
 
-    var layerTwo = new SMap.Layer.Marker();
-    map.addLayer(layerTwo);
-    layerTwo.enable();
-
-    /* Získání souboru do mapy */
-    var xhr = new JAK.Request(JAK.Request.XML);
-    xhr.setCallback(window, "response");
-    xhr.send("gpx/hrady.gpx");
-
-    /* přidání vrstvy pro zobrazení bodů na mapě */
-    var response = function (xmlDoc) {
-        var gpx = new SMap.Layer.GPX(xmlDoc, null, { maxPoints: 100 });
-        map.addLayer(gpx);
-        gpx.enable();
-        /*gpx.fit();*/
-    };
-}
 var latitudeCastle = 0;
 var longitudeCastle = 0;
 var nameCastle = "";
@@ -109,6 +94,27 @@ $.getJSON("gpx/hrady.json", function (data) {
     }
 });
 
+var planRoute = function () {
+    var nalezeno = function (route) {
+        var vrstva = new SMap.Layer.Geometry();
+        map.addLayer(vrstva).enable();
+
+        var coords = route.getResults().geometry;
+        var cz = map.computeCenterZoom(coords);
+        map.setCenterZoom(cz[0], cz[1]);
+        var g = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
+        vrstva.addGeometry(g);
+    }
+
+    var coords = [
+        SMap.Coords.fromWGS84(longitude, latitude),
+        SMap.Coords.fromWGS84(longitudeCastle, latitudeCastle)
+    ];
+    var route = new SMap.Route(coords, nalezeno);
+
+
+}
+
 /* Vaše pozice dle IP adresy, informace o nejbližším hradu, trase a jeho webu */
 var buttonclicked;
 
@@ -141,23 +147,7 @@ $("#coors").click(function () {
                 document.getElementById("coordinates").appendChild(para);
         */
 
-        var nalezeno = function (route) {
-            var vrstva = new SMap.Layer.Geometry();
-            map.addLayer(vrstva).enable();
-
-            var coords = route.getResults().geometry;
-            var cz = map.computeCenterZoom(coords);
-            map.setCenterZoom(cz[0], cz[1]);
-            var g = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
-            vrstva.addGeometry(g);
-        }
-
-        var coords = [
-            SMap.Coords.fromWGS84(longitude, latitude),
-            SMap.Coords.fromWGS84(longitudeCastle, latitudeCastle)
-        ];
-        var route = new SMap.Route(coords, nalezeno);
-
+        planRoute();
 
     } else {
         alert("Hey, you already know your location and the way to the closest castle.");
