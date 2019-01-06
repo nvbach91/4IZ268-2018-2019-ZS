@@ -31,6 +31,38 @@
     padding: 30px;
 }
 /**ENDflexbox**/
+#instafeed{
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+flex-direction: row;
+align-items: center;
+}
+.photoBox{
+border: 1px solid red;
+width: 320px;
+height: 320px;
+overflow: hidden;
+background-color: darkgray;
+position: relative;
+}  
+.photoBox .fillHeight {
+    height: 100%;
+    width: auto;
+}
+.photoBox .fillWidth {
+    height: auto;
+    width: 100%; 
+}
+.photoBox img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+  }
+
 header{
     height: 10px;
     width: 100%;
