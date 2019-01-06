@@ -83,6 +83,7 @@ var descCastle = "";
 var dist = 0;
 var link = "";
 
+/*
 $.getJSON("gpx/hrady.json", function (data) {
     var JSONItems = [];
     JSONItems = data;
@@ -96,7 +97,7 @@ $.getJSON("gpx/hrady.json", function (data) {
         descCastle = JSONItems.features[i].properties.desc;
         link = JSONItems.features[i].properties.links[0].href;
 
-        /* vzdálenost uživatele a hradu - haversine formula*/
+        /* vzdálenost uživatele a hradu - haversine formula
         var radlat1 = Math.PI * latitude / 180;
         var radlat2 = Math.PI * latitudeCastle / 180;
         var theta = longitude - longitudeCastle;
@@ -111,17 +112,19 @@ $.getJSON("gpx/hrady.json", function (data) {
         dist = dist * 180 / Math.PI;
         dist = dist * 60 * 1.1515;
 
-        /* uložení vzdáleností do pole */
+        /* uložení vzdáleností do pole 
         array.push(dist);
     }
 
-    /* hledání nejbližšího hradu */
+    /* hledání nejbližšího hradu 
     min = Math.min.apply(Math, array)
 
     if (dist = min) {
         return nameCastle;
     }
 });
+*/
+var length;
 
 var planRoute = function () {
     var nalezeno = function (route) {
@@ -129,7 +132,7 @@ var planRoute = function () {
         map.addLayer(vrstva).enable();
 
         var coords = route.getResults().geometry;
-        var length = route.getResults().length;
+        length = route.getResults().length;
         length = length / 1000;
         var time = route.getResults().time;
         time = time / 60;
@@ -139,7 +142,7 @@ var planRoute = function () {
         map.setCenterZoom(cz[0], cz[1]);
         var g = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
         vrstva.addGeometry(g);
-        $('p').append("<br>" + length + " kilometres." + ". That is about " + time + " minutes.");
+        $('p').append("<br>This place is " + length + " kilometres away." + " That is about " + time + " minutes.");
     }
 
     var coords = [
@@ -147,9 +150,6 @@ var planRoute = function () {
         SMap.Coords.fromWGS84(longitudeCastle, latitudeCastle)
     ];
     var route = new SMap.Route(coords, nalezeno);
-
-
-
 
 }
 
