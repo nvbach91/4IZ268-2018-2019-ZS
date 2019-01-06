@@ -2,6 +2,7 @@
 var latitude = 0;
 var longitude = 0;
 var city = "";
+var center;
 
 /* Získání délky, šířky a města uživatele */
 
@@ -12,8 +13,13 @@ fetch("http://extreme-ip-lookup.com/json/").then(function (response) {
     latitude = response.lat;
     longitude = response.lon;
     city = response.city;
-    console.log(latitude, longitude, city);
+}).catch(function (error) {
+    console.log(JSON.stringify(error));
+    latitude = 14;
+    longitude = 50;
+    city = "no info found";
 });
+
 
 /* nastavení mapy */
 console.log(latitude, longitude, city);
@@ -95,6 +101,7 @@ $.getJSON("gpx/hrady.json", function (data) {
 });
 
 var planRoute = function () {
+
     var nalezeno = function (route) {
         var vrstva = new SMap.Layer.Geometry();
         map.addLayer(vrstva).enable();
@@ -111,9 +118,16 @@ var planRoute = function () {
         SMap.Coords.fromWGS84(longitudeCastle, latitudeCastle)
     ];
     var route = new SMap.Route(coords, nalezeno);
-
-
 }
+
+/* Po kliknutí na marker se zobrazí trasa k hradu */
+map.getSignals().addListener(this, "marker-click", function (e) {
+    var marker = e.target;
+    var coords = marker.getCoords();
+    latitudeCastle = coords.y;
+    longitudeCastle = coords.x;
+    planRoute();
+});
 
 /* Vaše pozice dle IP adresy, informace o nejbližším hradu, trase a jeho webu */
 var buttonclicked;
