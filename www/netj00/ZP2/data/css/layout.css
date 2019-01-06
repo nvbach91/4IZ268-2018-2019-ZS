@@ -15,8 +15,15 @@ header {
     text-align: center;
 }
 
-body {
+nav {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+nav *{
+    margin: 2px;
 }
 
 main {
@@ -28,3 +35,9 @@ main {
     float: left;
 }
 
+input[type=color]{
+    border: none;
+    width: 22px;
+    height: 22px;
+    background-color: unset;
+}

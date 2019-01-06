@@ -1,10 +1,24 @@
 <memes>
     <meme id="1">
         <name>Batman</name>
-        <size>200,200</size>
+        <size>
+            <width>1200</width>
+            <height>675</height>
+        </size>
         <desc>Some Batman Action</desc>
         <tags>MEME,FUN,SOME</tags>
         <source>data/memes/Batman.jpg</source>
+        <type>jpg</type>
+    </meme>
+    <meme id="2">
+        <name>Bojack</name>
+        <size>
+            <width>460</width>
+            <height>1045</height>
+        </size>
+        <desc>Some Bojack</desc>
+        <tags>MEME,FUN,SOME</tags>
+        <source>data/memes/Bojack.jpg</source>
         <type>jpg</type>
     </meme>
 </memes>
