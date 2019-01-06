@@ -6,7 +6,7 @@ $(function () {
 
         window.mishaProcessResult = function (data) {
             for (x in data.data) {
-                container.innerHTML += '<div class="photoBox"><img onload="fillByImage(this)" src="' + data.data[x].images.low_resolution.url + '"></div>';
+                container.innerHTML += '<div class="photoBox"><img onload="fillByImage(this)" src="' + data.data[x].images.low_resolution.url + '"><div class="midle"><div class="textOnHover"> <i class="fas fa-heart"></i> ' +data.data[x].likes.count + '</div></div></div>';
             }
         }
     apiScriptCreate(ptoken);
@@ -18,11 +18,11 @@ $(function () {
         if (this.innerHTML=='@makacenkoteam') {
             apiScriptCreate(mtoken);
             this.innerHTML='@lukashodbod';
-            $('h2').innerHTML='Instagram @makacenkoteam';
+            $('.profileName').innerHTML='Instagram @makacenkoteam';
         } else {
             apiScriptCreate(ptoken);
             this.innerHTML='@makacenkoteam';
-            $('h2').innerHTML='Instagram @lukashodbod';
+            $('.profileName').innerHTML='Instagram @lukashodbod';
         }
     });
    

@@ -37,13 +37,14 @@ flex-wrap: wrap;
 width: 100%;
 flex-direction: row;
 align-items: center;
+justify-content:center;
 }
 .photoBox{
-border: 1px solid red;
+border: 1px solid transparent;
 width: 320px;
 height: 320px;
 overflow: hidden;
-background-color: darkgray;
+background-color: black;
 position: relative;
 }  
 .photoBox .fillHeight {
@@ -55,12 +56,35 @@ position: relative;
     width: 100%; 
 }
 .photoBox img {
+    opacity: 1;
     position: absolute;
     left: 50%;
     top: 50%;
     -ms-transform: translateY(-50%) translateX(-50%);
     -webkit-transform: translateY(-50%) translateX(-50%);
     transform: translateY(-50%) translateX(-50%);
+  }
+.photoBox:hover img{
+    opacity: 0.3;  
+}
+.photoBox:hover .midle{
+    opacity: 1;  
+}
+.midle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+.textOnHover {
+    
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
   }
 
 header{
