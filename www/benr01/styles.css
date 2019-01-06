@@ -153,12 +153,18 @@ footer a {
 .kalkulacka{
   background-color: #ededed;
   max-width: 500px;
-  height: 990px;
+  height: 1100px;
   position: relative;
   border-radius: 10px;
   padding: 50px;
   margin: 0 auto;
   box-shadow: 0 0 25px #BBB;
+  font-size: 1.5em;
+}
+
+.kalkulacka label input{
+  font-size: 0.7em;
+  margin: 0;
 }
 
 .kalkulacka img {
@@ -178,6 +184,12 @@ footer a {
   font-size: 3em;
   font-weight: 900;
   text-align: center;
+}
+
+.input_error {
+  font-size: 0.7em;
+  color: #ff2525;
+  margin: 0 0 15px 0;
 }
 
 .contact-information {
@@ -347,6 +359,7 @@ input.empty {
   overflow: hidden;
   width: 100%;
   margin-bottom: 20px;
+  font-size: 0.7em;
 }
 
 .kalkulacka .full_width {
@@ -361,20 +374,19 @@ input.empty {
 }
 
 #result_price{
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 900;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 /* checkbox */
 .checkbox_container {
   display: block;
   position: relative;
-  padding-left: 65px;
+  padding: 13px 0 15px 65px;
   margin: 10px 0 10px 0;
-  height: 50px;
   cursor: pointer;
-  /*font-size: 22px;*/
+  font-size: 0.7em;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

@@ -18,45 +18,45 @@ $name = $_GET['name'];
 $organizer = $_GET['organizer'];
 $address = $_GET['address'];
 $stream = ($_GET['stream'] == 'true');
-$projekce = ($_GET['projekce'] == 'true');
-$zaznam = ($_GET['zaznam'] == 'true');
-$klip = ($_GET['klip'] == 'true');
+$projection = ($_GET['projection'] == 'true');
+$recording = ($_GET['recording'] == 'true');
+$clip = ($_GET['clip'] == 'true');
 
-$sql2 = "";
+$sql_query = "";
 $service_count = 0;
 
-store_session($conn, $id, $name, $address, $organizer, $start, $end, $size, $stream, $projekce, $zaznam, $klip);
+store_session($conn, $id, $name, $address, $organizer, $start, $end, $size, $stream, $projection, $recording, $clip);
 
 if($stream){
     $service_count++;
-    $sql2 .= "stream";
+    $sql_query .= "stream";
 }
-if($projekce){
+if($projection){
     $service_count++;
-    if($sql2 != ""){
-        $sql2 .= ", ";
+    if($sql_query != ""){
+        $sql_query .= ", ";
     }
-    $sql2 .= "projekce";
+    $sql_query .= "projekce";
 }
-if($zaznam){
+if($recording){
     $service_count++;
-    if($sql2 != ""){
-        $sql2 .= ", ";
+    if($sql_query != ""){
+        $sql_query .= ", ";
     }
-    $sql2 .= "zaznam";
+    $sql_query .= "zaznam";
 }
-if($klip){
+if($clip){
     $service_count++;
-    if($sql2 != ""){
-        $sql2 .= ", ";
+    if($sql_query != ""){
+        $sql_query .= ", ";
     }
-    $sql2 .= "klip";
+    $sql_query .= "klip";
 }
 
 if($service_count <= 1){
-    get_single_service_price($conn, $sql2, $size, $duration);
+    get_single_service_price($conn, $sql_query, $size, $duration);
 } else {
-    get_multi_service_price($conn, $size, $duration, $stream, $projekce, $zaznam, $klip);
+    get_multi_service_price($conn, $size, $duration, $stream, $projection, $recording, $clip);
 }
 
 mysqli_close($conn);
@@ -70,11 +70,11 @@ function get_multiplicator_from_duration($duration) {
     }
 }
 
-function get_single_service_price($conn, $sql2, $size, $duration){
-    $sql .= "SELECT ".$sql2." FROM VSE_event_base_prices WHERE id = '".$size."'";
-    $sqlB .= "SELECT ".$sql2." FROM VSE_event_single_prices WHERE id = '".$size."'";
+function get_single_service_price($conn, $sql_query, $size, $duration){
+    $sql_query_base_price .= "SELECT ".$sql_query." FROM VSE_event_base_prices WHERE id = '".$size."'";
+    $sql_query_single_price .= "SELECT ".$sql_query." FROM VSE_event_single_prices WHERE id = '".$size."'";
 
-    $result = mysqli_query($conn, $sql);
+    $result = mysqli_query($conn, $sql_query_base_price);
     
     $price_base = 0;
     $price_add = 0;
@@ -84,7 +84,7 @@ function get_single_service_price($conn, $sql2, $size, $duration){
         $price_base = $row[0];
     } 
     
-    $result = mysqli_query($conn, $sqlB);
+    $result = mysqli_query($conn, $sql_query_single_price);
     
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_array($result);
@@ -99,7 +99,7 @@ function get_single_service_price($conn, $sql2, $size, $duration){
     }
 }
 
-function get_multi_service_price($conn, $size, $duration, $stream, $projekce, $zaznam, $klip){
+function get_multi_service_price($conn, $size, $duration, $stream, $projection, $recording, $clip){
     $sql .= "SELECT * FROM VSE_event_combo_prices WHERE id = '".$size."'";
 
     $price_base_live = 0;
@@ -132,26 +132,26 @@ function get_multi_service_price($conn, $size, $duration, $stream, $projekce, $z
     if($stream){
         $toEcho += (get_multiplicator_from_duration($duration) * $price_stream_add);
     }
-    if($projekce){
+    if($projection){
         $toEcho += (get_multiplicator_from_duration($duration) * $price_projekce_add);
     }
-    if($zaznam){
+    if($recording){
         $toEcho += (get_multiplicator_from_duration($duration) * $price_zaznam_add);
     }
-    if($klip) {
+    if($clip) {
         $toEcho += $price_base_klip + (get_multiplicator_from_duration($duration) * $price_klip_add);
     }
     
     echo $toEcho . " Kč";
 }
 
-function store_session($conn, $id, $name, $address, $organizer, $start, $end, $size, $stream, $projekce, $zaznam, $klip){
-    $sql .= "INSERT INTO VSE_event_calculator_contacts (sess_id, event_name, event_address, organizer_contact, event_start, event_end, event_size, stream, projekce, zaznam, klip) VALUES ('".$id."', '".$name."', '".$address."', '".$organizer."', '".$start."', '".$end."', '".$size."', '".$stream."', '".$projekce."', '".$zaznam."', '".$klip."') ON DUPLICATE KEY UPDATE event_name='".$name."',event_address='".$address."',organizer_contact='".$organizer."', event_start='".$start."', event_end='".$end."', event_size='".$size."', stream='".$stream."', projekce='".$projekce."', zaznam='".$zaznam."', klip='".$klip."'";
+function store_session($conn, $id, $name, $address, $organizer, $start, $end, $size, $stream, $projection, $recording, $clip){
+    $sql .= "INSERT INTO VSE_event_calculator_contacts (sess_id, event_name, event_address, organizer_contact, event_start, event_end, event_size, stream, projekce, zaznam, klip) VALUES ('".$id."', '".$name."', '".$address."', '".$organizer."', '".$start."', '".$end."', '".$size."', '".$stream."', '".$projection."', '".$recording."', '".$clip."') ON DUPLICATE KEY UPDATE event_name='".$name."',event_address='".$address."',organizer_contact='".$organizer."', event_start='".$start."', event_end='".$end."', event_size='".$size."', stream='".$stream."', projekce='".$projection."', zaznam='".$recording."', klip='".$clip."'";
     if ($conn->query($sql) === TRUE) {
 
-    } else {
+    }/* else {
 
-    }
+    }*/
 }
 
 
