@@ -4,30 +4,31 @@ $(function () {
         mtoken = '6320184047.209a707.58363885aaa94bcdb68332026275b3f1',
         container = document.getElementById('instafeed');
 
-        window.mishaProcessResult = function (data) {
-            for (x in data.data) {
-                container.innerHTML += '<div class="photoBox"><img onload="fillByImage(this)" src="' + data.data[x].images.low_resolution.url + '"><div class="midle"><div class="textOnHover"> <i class="fas fa-heart"></i> ' +data.data[x].likes.count + '</div></div></div>';
-            }
+    window.mishaProcessResult = function (data) {
+        for (x in data.data) {
+            container.innerHTML += '<div class="photoBox"><img onload="fillByImage(this)" onclick="window.open(\''+ data.data[x].link +'\')" src="' + data.data[x].images.low_resolution.url + '"><div class="midle"><div class="textOnHover"> <i class="fas fa-heart"></i> ' + data.data[x].likes.count + '</div></div></div>';
         }
+    }
     apiScriptCreate(ptoken);
 
 
     $('button').click(function () {
-        $( '.apiScript' ).remove();
-        $( '.photoBox').remove();
-        if (this.innerHTML=='@makacenkoteam') {
+        $('.apiScript').remove();
+        $('.photoBox').remove();
+        if (this.innerHTML == '@makacenkoteam') {
             apiScriptCreate(mtoken);
-            this.innerHTML='@lukashodbod';
-            $('.profileName').innerHTML='Instagram @makacenkoteam';
+            this.innerHTML = '@lukashodbod';
+            $('.profileName').innerHTML = 'Instagram @makacenkoteam';
         } else {
             apiScriptCreate(ptoken);
-            this.innerHTML='@makacenkoteam';
-            $('.profileName').innerHTML='Instagram @lukashodbod';
+            this.innerHTML = '@makacenkoteam';
+            $('.profileName').innerHTML = 'Instagram @lukashodbod';
         }
     });
-   
+
 
 });
+
 function apiScriptCreate(token) {
     var num_photos = 18;
     var scrElement = document.createElement('script');
