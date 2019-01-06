@@ -62,6 +62,7 @@ var layerTwo = new SMap.Layer.Marker();
 map.addLayer(layerTwo);
 layerTwo.enable();
 */
+
 /* Získání souboru do mapy */
 var xhr = new JAK.Request(JAK.Request.XML);
 xhr.setCallback(window, "response");
@@ -123,16 +124,22 @@ $.getJSON("gpx/hrady.json", function (data) {
 });
 
 var planRoute = function () {
-
     var nalezeno = function (route) {
         var vrstva = new SMap.Layer.Geometry();
         map.addLayer(vrstva).enable();
 
         var coords = route.getResults().geometry;
+        var length = route.getResults().length;
+        length = length / 1000;
+        var time = route.getResults().time;
+        time = time / 60;
+        console.log(length);
+        console.log(route.getResults());
         var cz = map.computeCenterZoom(coords);
         map.setCenterZoom(cz[0], cz[1]);
         var g = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
         vrstva.addGeometry(g);
+        $('p').append("<br>" + length + " kilometres." + ". That is about " + time + " minutes.");
     }
 
     var coords = [
@@ -140,6 +147,10 @@ var planRoute = function () {
         SMap.Coords.fromWGS84(longitudeCastle, latitudeCastle)
     ];
     var route = new SMap.Route(coords, nalezeno);
+
+
+
+
 }
 
 /* Po kliknutí na marker se zobrazí trasa k hradu */
