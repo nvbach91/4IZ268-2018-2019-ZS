@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Speed Typing Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <meta name="description" content="speed typing game">
+    <meta name="author" content="Ksenia Konovalova">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+</head>
+
+<body>
+    <header>
+        <h1 id="intro"></h1>
+    </header>
+    <div class="container">
+        <div class="container-timer">
+            <h2 id="timer">10</h2>
+        </div>
+        <div class="container-text">
+            <div class="text-example">
+                <p id="example"></p>
+            </div>
+            <div class="typing-area">
+                <textarea id="text-area" rows="12" cols="50" placeholder="The timer starts as you start typing..."></textarea>
+            </div>
+        </div>
+        <div class="container-score">
+            <div id="speed">Speed: 0 WPM</div>
+            <div id="mistakes">Mistakes: 0</div>
+            <div id="accuracy">Accuracy: 0%</div>
+        </div>
+        <div class="container-buttons">
+            <button id="reset-button">Try again</button>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright &copy; 2018 Ksenia Konovalova</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
