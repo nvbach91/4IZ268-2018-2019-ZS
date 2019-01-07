@@ -181,6 +181,18 @@ display: table-row;
     outline: 0;
     vertical-align: middle;
 }
+.rating{
+    font-size: 30px;
+    color: #801616;
+}
+.star:hover, .star.checked:hover{
+    color: white;
+    cursor: pointer;
+}
+.star.checked {
+    color: black;
+    font-weight: bold;
+}
 .delete{
     cursor: pointer;
 }
