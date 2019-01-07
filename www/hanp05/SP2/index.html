@@ -16,6 +16,35 @@
 </head>
 
 <body>
+
+    <!-- FB JavaScript SDK -->
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '360643444726398',
+                xfbml: true,
+                version: 'v3.2'
+            });
+            FB.AppEvents.logPageView();
+            FB.getLoginStatus(function (response) {
+                if (response.status === 'connected') {
+                    document.querySelector('.fbStatus').innerHTML = "FB Connected";
+                } else if (response.status === 'not_authorized') {
+                    document.querySelector('.fbStatus').innerHTML = "FB NOT Connected";
+                }
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
     <form class="form-share">
         <div class="text-center mb-4">
             <img class="mb-4" src="https://image.flaticon.com/icons/svg/148/148800.svg" alt="" width="72" height="72">
@@ -25,7 +54,7 @@
                 a sdílíte!</p>
         </div>
         <div class="form-label-group">
-            <textarea class="form-control" id="textarea" rows="5"  class="form-control" placeholder="Napište příspěvek"></textarea>
+            <textarea class="form-control" id="textarea" rows="5" class="form-control" placeholder="Napište příspěvek"></textarea>
             <label for="textarea">Napište příspěvek</label>
         </div>
         <div class="form-label-group">
@@ -33,7 +62,7 @@
             <label for="inputPassword">Heslo k účtu</label>
         </div>
 
-
+        <div class="fbStatus"></div>
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" checked="checked" value="option1">
             <label class="form-check-label" for="inlineCheckbox1">Facebook</label>
@@ -45,8 +74,9 @@
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sdílej!</button>
         <p class="mt-5 mb-3 text-muted text-center">&copy; 2018-2019</p>
+        <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
+        </div>
     </form>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
