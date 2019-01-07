@@ -144,7 +144,7 @@ var planRoute = function () {
         map.setCenterZoom(cz[0], cz[1]);
         var g = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
         vrstva.addGeometry(g);
-        $('p').append("<br>This place is " + length + " kilometres away." + " That is about " + time + " minutes spent in a car.");
+        $('p').append("<br>" + name + " is " + length + " kilometres away." + " That is about " + time + " minutes spent in a car.");
     }
 
     var coords = [
@@ -155,10 +155,12 @@ var planRoute = function () {
 
 }
 
+var name;
 /* Po kliknutí na marker se zobrazí trasa k hradu */
 map.getSignals().addListener(this, "marker-click", function (e) {
     var marker = e.target;
     var coords = marker.getCoords();
+    name = marker.getTitle();
     latitudeCastle = coords.y;
     longitudeCastle = coords.x;
     planRoute();
