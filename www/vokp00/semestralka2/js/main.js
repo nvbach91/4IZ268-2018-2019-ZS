@@ -132,17 +132,19 @@ var planRoute = function () {
         map.addLayer(vrstva).enable();
 
         var coords = route.getResults().geometry;
+        console.log(route.getResults().length);
         length = route.getResults().length;
-        length = length / 1000;
+        console.log(length);
+        length = Math.round(length / 1000);
         var time = route.getResults().time;
-        time = time / 60;
+        time = Math.round(time / 60);
         console.log(length);
         console.log(route.getResults());
         var cz = map.computeCenterZoom(coords);
         map.setCenterZoom(cz[0], cz[1]);
         var g = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
         vrstva.addGeometry(g);
-        $('p').append("<br>This place is " + length + " kilometres away." + " That is about " + time + " minutes.");
+        $('p').append("<br>This place is " + length + " kilometres away." + " That is about " + time + " minutes spent in a car.");
     }
 
     var coords = [
@@ -166,7 +168,7 @@ map.getSignals().addListener(this, "marker-click", function (e) {
 var buttonclicked;
 
 $("#coors").click(function () {
-    if (buttonclicked != true) {
+    if (buttonclicked !== true) {
         buttonclicked = true;
 
         $('coordinates').append("<p id='p'></p>");
