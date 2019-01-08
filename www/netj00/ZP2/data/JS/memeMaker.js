@@ -42,17 +42,16 @@ function onLoad() {
     xhttp.send();
 
 
-    // TODO Separate
+    // TODO OPT Separate
     // load localStorage
     let memes = JSON.parse(localStorage.getItem("memes"));
     if (!memes) {
         memes = [];
     }
     // debugger;
-    console.log(memes); // TODO remove
     for (let i = 0; i < memes.length; i++) {
         let element = document.createElement("img");
-        element.src = memes[0].view;
+        element.src = memes[i].view;
         element.width = 150;
         element.height = 150;
         element.addEventListener("click", function () {
@@ -380,7 +379,6 @@ function save() {
     }
     object.view = canvas.toDataURL();
     object.texts = texts;
-    // debugger; // TODO BUG: ToDataURL - nahled je spatne
     if (memes.length >= 5) {
         memes.shift();
     }
