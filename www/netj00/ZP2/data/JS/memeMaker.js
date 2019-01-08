@@ -356,7 +356,8 @@ function redraw() {
 }
 
 function save() {
-    redraw();
+    _canvasState.selection = null;
+    _canvasState.valid = false;
     let memes = JSON.parse(localStorage.getItem("memes"));
     if (!memes) {
         memes = [];
