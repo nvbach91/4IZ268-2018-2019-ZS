@@ -30,7 +30,6 @@
             FB.AppEvents.logPageView();
             FB.getLoginStatus(function (response) {
                 statusChangeCallback(response);
-
             });
 
 
@@ -60,21 +59,9 @@
         }
 
         function loginFb() {
-            console.log("0");
+            console.log("Login přes custom tlačítko");
             FB.login(function (response) {
-                console.log("1");
-                if (response.status === 'connected') {
-                    console.log("2");
-                    document.querySelector('#fbStatus').innerHTML = "Povolen přístup na FB";
-                    document.querySelector('#fbLoginButton').style.display = 'none';
-                    console.log("3");
-                } else if (response.status === 'not_authorized') {
-                    document.querySelector('#fbStatus').innerHTML = "Nepovolen přístup na FB";
-                    console.log("4");
-                } else {
-                    document.querySelector('#fbStatus').innerHTML = "Nepřihlášen na FB";
-                    console.log("5");
-                }
+                statusChangeCallback(response)
             }, { scope: 'email,user_likes,publish_to_groups' });
         }
 
