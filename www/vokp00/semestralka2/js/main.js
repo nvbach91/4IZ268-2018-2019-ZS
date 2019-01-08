@@ -35,9 +35,10 @@ const success = (position) => {
 }
 
 const error = (error) => {
-    latitude = 14;
-    longitude = 50;
-    console.log(`Unable to retrieve your location due to ${error.code}: ${error.message}`);
+    /*latitude = 14;
+    longitude = 50;*/
+    city = "Prague - default coordinates";
+    alert(`Unable to retrieve your location due to ${error.code}: ${error.message}`);
 }
 
 const geoOptions = {
@@ -50,7 +51,7 @@ const geoOptions = {
 
 var center = SMap.Coords.fromWGS84(14, 50);
 var map = new SMap(JAK.gel("map"), center, 9);
-/* Aby mapa reagovala na změnu velikosti průhledu */
+/* Aby mapa byla ovladatelná */
 map.addControl(new SMap.Control.Sync());
 map.addDefaultLayer(SMap.DEF_TURIST).enable();
 var mouse = new SMap.Control.Mouse(SMap.MOUSE_PAN | SMap.MOUSE_WHEEL | SMap.MOUSE_ZOOM);
@@ -83,7 +84,7 @@ var descCastle = "";
 var dist = 0;
 var link = "";
 
-/*
+
 $.getJSON("gpx/hrady.json", function (data) {
     var JSONItems = [];
     JSONItems = data;
@@ -97,7 +98,7 @@ $.getJSON("gpx/hrady.json", function (data) {
         descCastle = JSONItems.features[i].properties.desc;
         link = JSONItems.features[i].properties.links[0].href;
 
-        /* vzdálenost uživatele a hradu - haversine formula
+        /* vzdálenost uživatele a hradu - haversine formula */
         var radlat1 = Math.PI * latitude / 180;
         var radlat2 = Math.PI * latitudeCastle / 180;
         var theta = longitude - longitudeCastle;
@@ -112,21 +113,24 @@ $.getJSON("gpx/hrady.json", function (data) {
         dist = dist * 180 / Math.PI;
         dist = dist * 60 * 1.1515;
 
-        /* uložení vzdáleností do pole 
+        /* uložení vzdáleností do pole */
         array.push(dist);
     }
 
-    /* hledání nejbližšího hradu 
+    /* hledání nejbližšího hradu */
     min = Math.min.apply(Math, array)
 
     if (dist = min) {
         return nameCastle;
     }
 });
-*/
+
 var length;
 
 var planRoute = function () {
+    if (routed === true) {
+        $('.textBox').empty();
+    }
     var nalezeno = function (route) {
         var vrstva = new SMap.Layer.Geometry();
         map.addLayer(vrstva).enable();
@@ -144,7 +148,7 @@ var planRoute = function () {
         map.setCenterZoom(cz[0], cz[1]);
         var g = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
         vrstva.addGeometry(g);
-        $('p').append("<br>" + name + " is " + length + " kilometres away." + " That is about " + time + " minutes spent in a car.");
+        $('.textBox').append("<br><br>" + name + " is " + length + " kilometres away. <br>" + " That is about " + time + " minutes spent in a car.");
     }
 
     var coords = [
@@ -152,10 +156,10 @@ var planRoute = function () {
         SMap.Coords.fromWGS84(longitudeCastle, latitudeCastle)
     ];
     var route = new SMap.Route(coords, nalezeno);
-
 }
 
 var name;
+var routed;
 /* Po kliknutí na marker se zobrazí trasa k hradu */
 map.getSignals().addListener(this, "marker-click", function (e) {
     var marker = e.target;
@@ -164,6 +168,7 @@ map.getSignals().addListener(this, "marker-click", function (e) {
     latitudeCastle = coords.y;
     longitudeCastle = coords.x;
     planRoute();
+    routed = true;
 });
 
 /* Vaše pozice dle IP adresy, informace o nejbližším hradu, trase a jeho webu */
@@ -173,15 +178,15 @@ $("#coors").click(function () {
     if (buttonclicked !== true) {
         buttonclicked = true;
 
-        $('coordinates').append("<p id='p'></p>");
-        $('p').append("<br>You are somewhere near the coordinates " + latitude + ", " + longitude + " which means you are in " + city +
-            ". The closest castle you can visit is: " + nameCastle + ". " + " Basic info: " + descCastle +
-            " You can get more info here: ");
+        /* $('coordinates').append("<p id='p'></p>");*/
+        $('.location').append("<br><br> Your coordinates are: " + latitude + ", " + longitude + city +
+            ".<br> The closest castle you can visit is according to haversine formula is: <br>" + nameCastle + ". " + " <br>Basic info: " + descCastle +
+            " <br>You can get more info here: ");
         var thelink = $('<a>', {
             text: link,
             title: 'Castle page',
             href: link
-        }).appendTo('p');
+        }).appendTo('.location');
 
         /*
                 var para = document.createElement("P");
@@ -198,10 +203,10 @@ $("#coors").click(function () {
                 document.getElementById("coordinates").appendChild(para);
         */
 
-        planRoute();
+        /*planRoute();*/
 
     } else {
-        alert("Hey, you already know your location and the way to the closest castle.");
+        alert("Hey, you already know your location and the way to the closest castle. Or atleast you know, that your defualt location is 14, 50 - Prague!");
     }
 
 

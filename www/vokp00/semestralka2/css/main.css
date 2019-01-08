@@ -2,81 +2,55 @@
     font-family: 'Arial Narrow', Arial, sans-serif;
     text-align: justify;
     size: 12px;
-    opacity: 1;
-    background-repeat: no-repeat;
 }
 
 body {
-    background-image: url("../img/wall.png");
-    background-size: cover;
+    background-color: whitesmoke;
+    padding: 20px;
 }
 
 h1 {
     font-family: 'MedievalSharp';
     text-align: center;
-    width: 100%;
-    margin-top: 0;
-}
-
-button {
-    border-radius: 10px;
-}
-.randomText {
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    width: 100%;
-    top: 0px;
-    right: 50%-width;
-    width: 100%;
-}
-
-
-.randomText p {
-    margin-left: 8%;
-    margin-right: 8%;
-}
-
-.textBox {
-    float: right;
-    height: 400px;
-    width: 30%;
-    margin: 10px auto;
-    padding-top: 20px;
-    padding-left: 20px;
-    float: left;
-    background-image: url("../img/lion.png");
-    background-position: bottom;
-    background-size: 30%;
-    background-repeat: no-repeat;
-}
-
-#map {
-    height: 450px;
-    width: 50%;
-    margin: 10px auto;
-    border: 1px transparent solid;
-    padding: 10px;
-    float: left;
-    margin-left: 8%;
-    box-shadow: 10px 15px 8px grey;
 }
 
 #coors {
-    padding: 10px;
-    font-size: 20px;
-    border: 1px solid transparent;
     border-radius: 10px;
-    right: 50%-width;
+    padding: 20px;
+    font-size: 18px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    position: static;
+}
 
+.randomText {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.textBox p {
+    padding-right: 15px;
+    padding-bottom: 30px;
+}
+
+#map {
+    height: 350px;
+    width: 50%;
+    margin: 10px 10px;
+    padding: 10px;
+    box-shadow: 7px 7px 20px grey;
+    float: left;
 }
 
 #coors:hover {
-    background-color: rgb(141, 40, 40);
+    background-color:white;
+    cursor: pointer;
 }
 
 
 .card {
     width: 100%;
-    height: 100%;
+    height: 100px;
 }
 
 .card-header {
@@ -89,5 +63,19 @@ button {
     background-repeat: no-repeat;
     color: transparent;
     width: 40px;
-    height: 40px;
+    height: 100px;
 }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(196, 196, 196);
+ }
+
+ .footer p {
+    text-align: center;
+ }
+
+
