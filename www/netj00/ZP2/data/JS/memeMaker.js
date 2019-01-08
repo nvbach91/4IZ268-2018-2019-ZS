@@ -10,7 +10,7 @@ const color4 = document.getElementById("textColor4");
 const color5 = document.getElementById("textColor5");
 const color6 = document.getElementById("textColor6");
 const downloadButton = document.getElementById("downloadButton");
-const saveButton = document.getElementById("saveForLaterButton");
+const saveButton = document.getElementById("saveForLaterButt?on");
 const history = document.getElementById("history");
 
 
@@ -95,8 +95,8 @@ function parser(xml) {
     for (let i = 0; i < x.length; i++) {
         let element = document.createElement("img");
         element.src = x[i].getElementsByTagName("source")[0].childNodes[0].nodeValue;
-        element.width = 100;
-        element.height = 100;
+        element.width = 150;
+        element.height = 150;
         element._width = x[i].getElementsByTagName("width")[0].childNodes[0].nodeValue;
         element._height = x[i].getElementsByTagName("height")[0].childNodes[0].nodeValue;
         element.addEventListener("click", function () {
@@ -165,12 +165,12 @@ BackgroundShape.prototype.draw = function (ctx) {
     let maxHeight = canvas._height;
     let ratio = 0;
 
-    if (this.width > maxWidth) {
+    if (this.width > this.height) {
         ratio = maxWidth / this.width;
         canvas.width = maxWidth;
         canvas.height = this.height * ratio;
     }
-    if (this.height > maxHeight) {
+    else {
         ratio = maxHeight / this.height;
         canvas.height = maxHeight;
         canvas.width = this.width * ratio;
@@ -387,5 +387,6 @@ function save() {
     memes.push(object);
     localStorage.setItem("memes", JSON.stringify(memes));
 }
+
 // Now go and make something amazing!
 onLoad();

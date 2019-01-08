@@ -43,4 +43,15 @@
         <source>data/memeTemplates/Two-Buttons.jpg</source>
         <type>jpg</type>
     </meme>
+    <meme id="5">
+        <name>Futurama-Fry</name>
+        <size>
+            <width>552</width>
+            <height>414</height>
+        </size>
+        <desc>Futurama-Fry</desc>
+        <tags>MEME,FUN,SOME</tags>
+        <source>data/memeTemplates/Futurama-Fry.jpg</source>
+        <type>jpg</type>
+    </meme>
 </memes>

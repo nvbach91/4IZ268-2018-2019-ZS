@@ -21,6 +21,7 @@ header {
 nav {
     display: flex;
     flex-direction: column;
+
 }
 
 nav * {
@@ -32,7 +33,7 @@ nav * {
     flex-direction: row;
     align-content: center;
     align-items: center;
-    margin-left: 5px;
+    margin-left: 20px;
     justify-content: center;
 }
 
@@ -41,7 +42,7 @@ nav * {
     flex-direction: row;
     align-content: center;
     align-items: center;
-    margin-left: 5px;
+    margin-left: 20px;
 }
 
 .textInputs {
@@ -63,7 +64,7 @@ div#history {
     display: flex;
     flex-direction: column;
     padding: 0;
-    margin: 0 0 0 5px;
+    margin: 0 0 0 20px;
 }
 
 input[type=color] {
@@ -81,4 +82,11 @@ button {
 
 canvas {
     border: solid black 1px;
+}
+
+img {
+    border: solid lightslategrey 2px;
+    margin: 3px;
+    padding: 2px;
+
 }
