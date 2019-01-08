@@ -11,18 +11,19 @@ const color5 = document.getElementById("textColor5");
 const color6 = document.getElementById("textColor6");
 const downloadButton = document.getElementById("downloadButton");
 const saveButton = document.getElementById("saveForLaterButton");
-const loadButton = document.getElementById("loadButton");
+const history = document.getElementById("history");
 
 
 let xmlDoc = null;
 let _canvasState = null;
 
 function onLoad() {
+    // init
     _canvasState = new CanvasState(canvas);
-
     downloadButton.addEventListener("click", saveButtonHandler);
     saveButton.addEventListener("click", save);
 
+    // events
     let elements = document.getElementsByClassName("refresh");
     for (let i = 0; i < elements.length; i++) {
         elements[i].addEventListener("change", redraw);
@@ -39,6 +40,54 @@ function onLoad() {
     };
     xhttp.open("GET", "memeTemplate.xml", true);
     xhttp.send();
+
+
+    // TODO Separate
+    // load localStorage
+    let memes = JSON.parse(localStorage.getItem("memes"));
+    if (!memes) {
+        memes = [];
+    }
+    // debugger;
+    console.log(memes); // TODO remove
+    for (let i = 0; i < memes.length; i++) {
+        let element = document.createElement("img");
+        element.src = memes[0].view;
+        element.width = 150;
+        element.height = 150;
+        element.addEventListener("click", function () {
+            let image = new Image();
+            image.src = memes[i].bgSrc;
+            let width = memes[i].bgWidth;
+            let height = memes[i].bgHeight;
+            text1.value = memes[i].texts[0].textvalue;
+            color1.value = memes[i].texts[0].textcolor1;
+            color2.value = memes[i].texts[0].textcolor2;
+            let x1 = memes[i].texts[0].textx;
+            let y1 = memes[i].texts[0].texty;
+
+            text2.value = memes[i].texts[1].textvalue;
+            color3.value = memes[i].texts[1].textcolor1;
+            color4.value = memes[i].texts[1].textcolor2;
+            let x2 = memes[i].texts[1].textx;
+            let y2 = memes[i].texts[1].texty;
+
+            text3.value = memes[i].texts[2].textvalue;
+            color5.value = memes[i].texts[2].textcolor1;
+            color6.value = memes[i].texts[2].textcolor2;
+            let x3 = memes[i].texts[2].textx;
+            let y3 = memes[i].texts[2].texty;
+
+            _canvasState.shapes = [];
+            _canvasState.clear();
+            _canvasState.addShape(new BackgroundShape(width, height, image));
+            _canvasState.addShape(new TextShape(x1, y1, 100, 30, text1, color1, color2));
+            _canvasState.addShape(new TextShape(x2, y2, 100, 30, text2, color3, color4));
+            _canvasState.addShape(new TextShape(x3, y3, 100, 30, text3, color5, color6));
+        });
+        history.appendChild(element);
+    }
+
 }
 
 function parser(xml) {
@@ -221,15 +270,6 @@ function CanvasState(canvas) {
         myState.dragging = false;
     }, true);
 
-    // OPT New
-    // double click for making new shapes
-    // canvas.addEventListener('dblclick', function(e) {
-    //     var mouse = myState.getMouse(e);
-    //     myState.addShape(new TextShape(mouse.x - 10, mouse.y - 10, 20, 20, 'rgba(0,255,0,.6)'));
-    // }, true);
-
-    // **** Options! ****
-
     this.selectionColor = '#CC0000';
     this.selectionWidth = 2;
     this.interval = 40;
@@ -317,9 +357,9 @@ function redraw() {
 }
 
 function save() {
-
+    redraw();
     let memes = JSON.parse(localStorage.getItem("memes"));
-    if (!memes.length) {
+    if (!memes) {
         memes = [];
     }
     let object = {};
@@ -338,9 +378,10 @@ function save() {
         textObject.texty = shapes[i].y;
         texts.push(textObject);
     }
-    debugger;
+    object.view = canvas.toDataURL();
     object.texts = texts;
-    if (memes.length >= 10) {
+    // debugger; // TODO BUG: ToDataURL - nahled je spatne
+    if (memes.length >= 5) {
         memes.shift();
     }
     memes.push(object);
