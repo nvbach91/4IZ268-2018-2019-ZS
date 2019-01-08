@@ -87,8 +87,8 @@ var addToResults = function (item) {
             author = authors[0];
         } else {
             author = authors[0];
-            for (var j = 0; j < authors.length; j++) {
-                author += ', ' + authors[j];
+            for (var i = 0; j < authors.length; i++) {
+                author += ', ' + authors[i];
             }
         }
     }
@@ -114,7 +114,7 @@ var addToResults = function (item) {
             addButton.addClass('add-existing');
         }
     });
-    resultRow.append(image).append(result).append(addButton).append($('<hr>'));
+    resultRow.append(image).append(result).append(addButton).append('<hr>');
     resultsField.append(resultRow);
 };
 /*--------------------- add a book to my library -----------------------------------------*/
