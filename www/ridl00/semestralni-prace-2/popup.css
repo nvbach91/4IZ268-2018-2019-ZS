@@ -1,0 +1,58 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    width: 600px;
+    margin: 0;
+}
+
+.header {
+    overflow: auto;
+    padding: 20px;
+}
+
+h1 {
+    float: left;
+    padding-left: 10px;
+    margin: 0;
+    line-height: 20px;
+    font-size: 11pt;
+    color: #3AAFA9;
+}
+
+.logo {
+    height: 20px;
+    float: left;
+}
+
+.logo path{
+    fill: #3AAFA9;
+}
+
+.go-to-timetables {
+    float: right;
+    padding: 4px 8px;
+    background: #fff;
+    border: 1px solid #3AAFA9;
+    border-radius: 5px;
+    color: #3AAFA9;
+    cursor: pointer;
+}
+
+.icon-mr {
+    margin-right: 5px;
+}
+
+.timetable {
+    padding: 20px;
+}
+
+.timetable table {
+    width: 100%;
+}
+
+.timetable th, td {
+    text-align: center;
+}
+
+.timetable td.name {
+    text-align: left;
+}
