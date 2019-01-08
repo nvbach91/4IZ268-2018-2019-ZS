@@ -24,6 +24,7 @@
         var checkBoxForm;
         var groups;
         var errorOccurred = false;
+        var atLeastOneChecked;
 
         window.fbAsyncInit = function () {
             FB.init({
@@ -73,23 +74,36 @@
                 statusChangeCallback(response)
             }, { scope: 'email,user_likes,publish_to_groups' });
         }
+        /*kontroluje, aby textarea nebyla prázdná*/
+        function checkIfEmpty() {
+            if (postTxt === "") {
+                window.alert("Nejdříve vyplň zprávu, která se má odeslat na Facebook.")
+                return true;
+            } else {
+                return false;
+            }
+        }
 
         /*zjistí jaké fb skupiny (checkboxy) uživatel zaškrtl a u nich spustí proces odesílání příspěvku*/
         function postFb() {
-            saveTextareaToVar()
+            atLeastOneChecked = false;
+            saveTextareaToVar();
+            if (checkIfEmpty()) { return };
             groups = document.forms['checkBoxForm'].elements['fbGroup'];
             for (var i = 0, len = groups.length; i < len; i++) {
                 if (groups[i].checked) {
                     // if checked ...
+                    atLeastOneChecked = true;
                     console.log(groups[i].value)
                     sendToGroup(groups[i].value);
-                } else {
-                    // if not checked ...
                 }
             }
 
-            if (!errorOccurred) {
+            if (!errorOccurred && atLeastOneChecked) {
                 window.alert("Úspěšně odesláno na zvolené Facebook skupiny.");
+            } else if (!atLeastOneChecked) {
+                window.alert("Vyber aspoň jednu Facebook skupinu, kterou spravuješ.");
+                return;
             } else {
                 window.alert("Něco se pokazilo. Zkus to znova.");
             }
@@ -161,7 +175,8 @@
             <img class="mb-4" src="https://image.flaticon.com/icons/svg/148/148800.svg" alt="" width="72" height="72">
             <h1 class="h1 mb-3 font-weight-normal">Sdíleč</h1>
             <h2 class="mb-3 font-weight-normal" id="motto">Tvůj jednoduchý sdíleč příspěvků na více FB skupin.</h2>
-            <p>Napište příspěvěk do textové oblasti, vyberte na jaké skupiny, kde jste administrátorem, chcete sdílet, klikněte na tlačítko
+            <p>Napište příspěvěk do textové oblasti, vyberte na jaké skupiny, kde jste administrátorem, chcete sdílet,
+                klikněte na tlačítko
                 "Sdílej!""
                 a sdílíte!</p>
         </div>
@@ -175,7 +190,7 @@
             <div class="btn btn-primary btn-block" id="fbLoginButton" onclick="loginFb()">Povolte nám přístup na
                 Facebook.</div>
         </div>
-        
+
         <div id="checkBoxContainer">
             <div id=formHeading>Vyberte vaše skupiny, na které chcete sdílet:</div>
             <form id="checkBoxForm" name="checkBoxForm"></form>
