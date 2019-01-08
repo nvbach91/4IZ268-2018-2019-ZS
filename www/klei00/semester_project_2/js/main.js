@@ -13,7 +13,7 @@ var createForm = function () {
     formHeader.removeClass('closed');
     form.removeClass('closed');
     openedForm = true;
-}
+};
 /*--------------------- close form function ----------------------*/
 var hideForm = function () {
     if (resultsField !== undefined) {
@@ -25,7 +25,7 @@ var hideForm = function () {
     form.addClass('closed');
     reset.trigger('click');
     openedForm = false;
-}
+};
 /*--------------------- open/close form ---------------------------*/
 openForm.click(function (e) {
     e.preventDefault();
@@ -75,11 +75,11 @@ var bookExists = function (id) {
         }
     }
     return false;
-}
+};
 /*--------------------- add found books to result list -------------------------*/
 var addToResults = function (item) {
     var author = '';
-    if (item.volumeInfo.authors === undefined) {
+    if (!item.volumeInfo.authors) {
         author = 'Neznámý autor';
     } else {
         var authors = item.volumeInfo.authors;
@@ -94,7 +94,7 @@ var addToResults = function (item) {
     }
     var resultRow = $('<div>').addClass('result-row');
     var imageUrl;
-    if (item.volumeInfo.imageLinks === undefined) {
+    if (!item.volumeInfo.imageLinks) {
         imageUrl = 'https://books.google.cz/googlebooks/images/no_cover_thumb.gif';
     } else {
         imageUrl = item.volumeInfo.imageLinks.smallThumbnail;
@@ -116,7 +116,7 @@ var addToResults = function (item) {
     });
     resultRow.append(image).append(result).append(addButton).append($('<hr>'));
     resultsField.append(resultRow);
-}
+};
 /*--------------------- add a book to my library -----------------------------------------*/
 var addToLibrary = function (book, author, url, rating) {
     var books = JSON.parse(localStorage.getItem('books'));
@@ -131,7 +131,7 @@ var addToLibrary = function (book, author, url, rating) {
     var authorCell = $('<div>').addClass('table-cell').text(author);
 
     var year;
-    if (book.volumeInfo.publishedDate === undefined) {
+    if (!book.volumeInfo.publishedDate) {
         year = 'Neznámý';
     } else {
         year = book.volumeInfo.publishedDate;
@@ -140,7 +140,7 @@ var addToLibrary = function (book, author, url, rating) {
 
     var category;
     var categories = book.volumeInfo.categories;
-    if (categories === undefined) {
+    if (!categories) {
         category = 'Neurčeno';
     } else {
         category = categories[0];
@@ -204,7 +204,7 @@ var addToLibrary = function (book, author, url, rating) {
             break;
         case 5: star5.trigger('click');
     }
-}
+};
 /* -------------- create loader --------------------------*/
 var createLoader = function () {
     var loader = $('<div>').addClass('loader').append($('<figure>').addClass('page'));
@@ -221,7 +221,7 @@ if (localStorage.length !== 0) {
         var rating = content[1];
 
         var author = '';
-        if (book.volumeInfo.authors === undefined) {
+        if (!book.volumeInfo.authors) {
             author = 'Neznámý autor';
         } else {
             var authors = book.volumeInfo.authors;
@@ -235,7 +235,7 @@ if (localStorage.length !== 0) {
             }
         }
         var imageUrl;
-        if (book.volumeInfo.imageLinks === undefined) {
+        if (!book.volumeInfo.imageLinks) {
             imageUrl = 'https://books.google.cz/googlebooks/images/no_cover_thumb.gif';
         } else {
             imageUrl = book.volumeInfo.imageLinks.smallThumbnail;
