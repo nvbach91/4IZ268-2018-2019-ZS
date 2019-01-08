@@ -46,22 +46,21 @@ form.submit(function (e) {
     var dataUrl = 'https://www.googleapis.com/books/v1/volumes?q=' + mode + ':"' + query + '"&langRestrict=cs&printType=books&maxResults=' + maxBooks;
 
     $.getJSON(dataUrl).done(function (response) {
-        if (openedForm === true) {
+        if (openedForm) {
             if (resultsField !== undefined) {
-                resultsField.empty();
-            } else {
-                resultsField = $('<div>').attr('id', 'results-field');
-                formBody.append(resultsField);
+                resultsField.remove();
             }
+            resultsField = $('<div>').attr('id', 'results-field');
             if (response.totalItems === 0) {
                 var result = $('<div>').addClass('result-row').text('Nebyla nalezena žádná kniha.');
                 resultsField.append(result);
             } else {
                 for (var i = 0; i < response.items.length; i++) {
-                    addToResults(response.items[i]);
+                    resultsField.append(addToResults(response.items[i]));
                 }
             }
         }
+        formBody.append(resultsField);
         $('.whole-page').remove();
     });
 });
@@ -115,7 +114,8 @@ var addToResults = function (item) {
         }
     });
     resultRow.append(image).append(result).append(addButton).append('<hr>');
-    resultsField.append(resultRow);
+    return resultRow;
+    //resultsField.append(resultRow);
 };
 /*--------------------- add a book to my library -----------------------------------------*/
 var addToLibrary = function (book, author, url, rating) {
