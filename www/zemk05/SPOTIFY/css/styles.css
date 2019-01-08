@@ -8,7 +8,7 @@ body {
 }
  main {
     background-color:#37b670;
-    max-width:800px;
+    max-width:1000px;
     margin: 0 auto;
     border-radius: 8px;
 }
@@ -24,10 +24,7 @@ header {
     text-align: center;
 }
 
-#hide-show {
-    display:none;
-}
-#login-btn {
+#login-btn,#logout {
     width:24%;
     border: none;
     background-color:#2a6041;
@@ -40,10 +37,17 @@ header {
     cursor:pointer;
 }
 
+footer {
+    margin-top:30px;
+    text-align:center;
+    background-color:#2a6041;
+    color:white;
+    height:30px;
+}
 /*--------Add a searched value--------*/
 #insert-row input {
     border: none;
-    background-color:#2a6041;
+    background-color:#264b37;
     width:95%;
     color:white;
     padding: 10px;
@@ -54,7 +58,7 @@ header {
 /*--------Submit the form--------*/
 #submit-row input {
     margin-top:20px;
-    width:49%;
+    width:48%;
     border: none;
     background-color:#2a6041;
     color:white;
@@ -64,8 +68,91 @@ header {
     font-size: 14px;
     cursor:pointer;
 }
-/*--------Loader--------*/
-/*DODĚLAT*/
+.message-results {
+    text-align:center;
+}
+
+ /*--------------------------Result list---------------------------*/
+/*--------result head--------*/
+ h2 {
+     text-align:center;
+     background-color: #356249;
+     color:white; 
+ }
+ .closed {
+     display:none;
+ }
+ #resultsTable {
+    background-color: #4cab77; 
+ }
+ .results-head {
+    display: flex;
+    flex-direction: row;
+}
+.header-result {
+    font-weight: bold;
+    width:26%;
+    text-align:center;
+    float:left;
+    padding:10px;
+}
+
+/*--------result body--------*/
+.result-body,.playlist-body {
+    display: flex;
+    flex-direction: row; 
+}
+.result-row,.playlist-row {
+    width: 100%;
+    margin-top: 5px;
+    overflow: auto;
+    padding-left: 10px;
+}
+
+.result-name,.result-artist,.result-album,.playlist-name,.playlist-artist,.playlist-album {
+    width:26%;
+    float:left;
+    text-align:center;
+}
+
+.add-button,.delete-button {
+    float:right;
+    width:20%;
+    border:none;
+    background-color:#2d533e;
+    color:white;
+    padding: 5px;
+    font-size: 14px;
+    cursor:pointer;
+    margin-right:10px;
+}
+.add-button:hover,.delete-button:hover{
+    border: white 1px solid;
+}
+
+ /*--------------------------My Playlist---------------------------*/
+ /*--------playlist head--------*/
+ #id {
+     display:none;
+ }
+.playlist-head {
+    display: flex;
+    flex-direction: row;
+}
+.header-playlist {
+    font-weight: bold;
+    width:26%;
+    text-align:center;
+    float:left;
+    padding:10px;
+}
+
+/*--------playlist body--------*/
+
+
+ /*--------------------------Responsivity---------------------------*/
+
+  /*--------------------------Loader---------------------------*/
 .loader {
     border: 5px solid #f3f3f3; 
     border-top: 5px solid #2a6041; 
@@ -79,20 +166,3 @@ header {
   @keyframes spin {
     100% { transform: rotate(360deg); }
   }
- /*--------Result list--------*/
- /*--------Playlist--------*/
-#playlist {
-    display: flex;
-    flex-direction: row;
-}
-.playlist-head {
-    width:40%;
-}
- footer {
-    margin-top:30px;
-    text-align:center;
-    background-color:#2a6041;
-    color:white;
-    height:30px;
-}
- /*--------Responsivity--------*/
