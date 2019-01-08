@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
-  <title>Zobrazovač GPX</title>
+  <title>Zobrazení GPX</title>
   <meta name="author" content="Josef Beneš">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/styles_1.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <script type="text/javascript" src="https://api.mapy.cz/loader.js"></script>
-  <script type="text/javascript">Loader.load();</script>
+  <meta name="description" content="No Headache - party kapela">
+  <meta name="keywords" content="Kapela, hudba, party, ples, muzika">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
+
 <body>
-<div id="myDIV">
-<h1>Vložte vaše GPX údaje:</h1><br/>
-<textarea style="width: 300px; height: 200px" id="gpx"></textarea><br>
-<input type="button" value="Zobrazit na mapě" onclick="load(), myFunction()" />
-</div>
-
-<div id="mapicka">
-    <div id="m" style="height:500px"></div>
-</div>
-
-<script src="js/hide.js"></script>
-<script src="js/mapa.js"></script>
-
+  <header>
+    <div class="nadpis text-center">
+      <div>
+        <h1 style="color:white">Zobrazovač GPX</h1>
+        <p style="color:#888;">Vyberte si prosím API</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="loga">
+      <img onclick="hategoogle()" src="img/gmaps.png" alt="Google Maps" width="128" height="128">
+      <a href="mapycz.html"><img src="img/mapy.png" alt="Mapy.cz" width="128" height="128"></a>
+    </div>
+    <script>
+        function hategoogle() {
+          alert("Google Maps API jsou bohužel placené a lezou mi na nervy, jakékoliv příspěvky na zprovoznění uvítám na 248198014/0300");
+        }
+        </script>
+    <footer class="nadpis text-center">
+      <div>
+        <p style="color:#888">Vytvořil Josef Beneš</a></p>
+      </div>
+    </footer>
+  </main>
 </body>
 </html>
-
-

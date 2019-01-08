@@ -1,0 +1,18 @@
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+body {
+	font-family: 'Lato', sans-serif;
+	background: #353535;
+	color: #FFF;
+}
+.img {
+  padding: 10px;
+}
+.nadpis {
+  color: #888888;
+}
+.loga {
+  text-align: center;
+  padding: 10px;
+}

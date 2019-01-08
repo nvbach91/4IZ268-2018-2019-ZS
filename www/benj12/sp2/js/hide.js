@@ -1,5 +1,5 @@
-function myFunction() {
-  var x = document.getElementById("myDIV");
+function hideFunction() {
+  var x = document.getElementById("vyhledavani");
   if (x.style.display === "none") {
       x.style.display = "block";
   } else {
