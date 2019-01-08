@@ -209,7 +209,7 @@ var addToLibrary = function (book, author, url, rating) {
 var createLoader = function () {
     var loader = $('<div>').addClass('loader').append($('<figure>').addClass('page'));
     $(document.body).append($('<div>').addClass('whole-page').append(loader));
-}
+};
 
 /* ----------------- init page ----------------------- */
 if (localStorage.length !== 0) {
