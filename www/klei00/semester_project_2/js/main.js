@@ -119,7 +119,12 @@ var addToResults = function (item) {
 }
 /*--------------------- add a book to my library -----------------------------------------*/
 var addToLibrary = function (book, author, url, rating) {
-    localStorage.setItem(book.id, JSON.stringify([JSON.stringify(book), 0]));
+    var books = JSON.parse(localStorage.getItem('books'));
+    if (books[book.id] === undefined) {
+        books[book.id] = JSON.stringify([JSON.stringify(book), 0]);
+        localStorage.removeItem('books');
+        localStorage.setItem('books', JSON.stringify(books));
+    }
 
     var imageCell = $('<div>').addClass('table-cell').append($('<img>').addClass('image').attr('src', url));
     var nameCell = $('<div>').addClass('table-cell').text(book.volumeInfo.title);
@@ -145,13 +150,13 @@ var addToLibrary = function (book, author, url, rating) {
     }
     var categoryCell = $('<div>').addClass('table-cell').text(category);
 
-    var star1 = $('<span>').addClass('star').text('*');
-    var star2 = $('<span>').addClass('star').text('*');
-    var star3 = $('<span>').addClass('star').text('*');
-    var star4 = $('<span>').addClass('star').text('*');
-    var star5 = $('<span>').addClass('star').text('*');
+    var star1 = $('<span>').addClass('star').text('*').attr('title', 'star-1');
+    var star2 = $('<span>').addClass('star').text('*').attr('title', 'star-2');
+    var star3 = $('<span>').addClass('star').text('*').attr('title', 'star-3');
+    var star4 = $('<span>').addClass('star').text('*').attr('title', 'star-4');
+    var star5 = $('<span>').addClass('star').text('*').attr('title', 'star-5');
 
-    var ratingCell = $('<div>').addClass('table-cell').addClass('rating').append(star1).append(star2).append(star3).append(star4).append(star5);
+    var ratingCell = $('<div>').addClass('table-cell').addClass('rating').append(star1, star2, star3, star4, star5);
     var deleteCell = $('<div>').addClass('table-cell').addClass('delete').text('Odebrat');
     var idCell = $('<div>').addClass('table-cell').addClass('id').text(book.id);
     var newRow = $('<div>').addClass('table-row').append(imageCell).append(nameCell).append(authorCell).append(categoryCell).append(yearCell).append(ratingCell).append(deleteCell).append(idCell);
@@ -162,7 +167,11 @@ var addToLibrary = function (book, author, url, rating) {
     $('#my-library').append(newRow);
 
     deleteCell.click(function () {
-        localStorage.removeItem(book.id);
+        var booksAfterDelete = JSON.parse(localStorage.getItem('books'));
+        delete booksAfterDelete[book.id];
+        localStorage.removeItem('books');
+        localStorage.setItem('books', JSON.stringify(booksAfterDelete));
+
         newRow.remove();
         if ($('.id').length === 1) {
             tableHead.addClass('closed');
@@ -170,120 +179,20 @@ var addToLibrary = function (book, author, url, rating) {
         form.submit();
     });
 
-    star1.click(function () {
-        if (!star1.hasClass('checked')) {
-            star1.addClass('checked');
-        } else {
-            if (star2.hasClass('checked')) {
-                star2.removeClass('checked');
-            }
-            if (star3.hasClass('checked')) {
-                star3.removeClass('checked');
-            }
-            if (star4.hasClass('checked')) {
-                star4.removeClass('checked');
-            }
-            if (star5.hasClass('checked')) {
-                star5.removeClass('checked');
-            }
-        }
-        var changedRating = JSON.parse(localStorage.getItem(book.id));
-        changedRating[1] = 1;
-        localStorage.removeItem(book.id);
-        localStorage.setItem(book.id, JSON.stringify(changedRating));
-        form.submit();
+    newRow.find('.star').click(function () {
+        var star = $(this);
+        star.nextAll().removeClass('checked');
+        star.prevAll().addClass('checked');
+        star.addClass('checked');
+
+        var changedRatingBooks = JSON.parse(localStorage.getItem('books'));
+        var changedRating = JSON.parse(changedRatingBooks[book.id]);
+        changedRating[1] = parseInt(this.title.substr(5));
+        changedRatingBooks[book.id] = JSON.stringify(changedRating);
+        localStorage.removeItem('books');
+        localStorage.setItem('books', JSON.stringify(changedRatingBooks));
     });
-    star2.click(function () {
-        if (!star1.hasClass('checked')) {
-            star1.addClass('checked');
-        }
-        if (!star2.hasClass('checked')) {
-            star2.addClass('checked');
-        } else {
-            if (star3.hasClass('checked')) {
-                star3.removeClass('checked');
-            }
-            if (star4.hasClass('checked')) {
-                star4.removeClass('checked');
-            }
-            if (star5.hasClass('checked')) {
-                star5.removeClass('checked');
-            }
-        }
-        var changedRating = JSON.parse(localStorage.getItem(book.id));
-        changedRating[1] = 2;
-        localStorage.removeItem(book.id);
-        localStorage.setItem(book.id, JSON.stringify(changedRating));
-        form.submit();
-    });
-    star3.click(function () {
-        if (!star1.hasClass('checked')) {
-            star1.addClass('checked');
-        }
-        if (!star2.hasClass('checked')) {
-            star2.addClass('checked');
-        }
-        if (!star3.hasClass('checked')) {
-            star3.addClass('checked');
-        } else {
-            if (star4.hasClass('checked')) {
-                star4.removeClass('checked');
-            }
-            if (star5.hasClass('checked')) {
-                star5.removeClass('checked');
-            }
-        }
-        var changedRating = JSON.parse(localStorage.getItem(book.id));
-        changedRating[1] = 3;
-        localStorage.removeItem(book.id);
-        localStorage.setItem(book.id, JSON.stringify(changedRating));
-        form.submit();
-    });
-    star4.click(function () {
-        if (!star1.hasClass('checked')) {
-            star1.addClass('checked');
-        }
-        if (!star2.hasClass('checked')) {
-            star2.addClass('checked');
-        }
-        if (!star3.hasClass('checked')) {
-            star3.addClass('checked');
-        }
-        if (!star4.hasClass('checked')) {
-            star4.addClass('checked');
-        } else {
-            if (star5.hasClass('checked')) {
-                star5.removeClass('checked');
-            }
-        }
-        var changedRating = JSON.parse(localStorage.getItem(book.id));
-        changedRating[1] = 4;
-        localStorage.removeItem(book.id);
-        localStorage.setItem(book.id, JSON.stringify(changedRating));
-        form.submit();
-    });
-    star5.click(function () {
-        if (!star1.hasClass('checked')) {
-            star1.addClass('checked');
-        }
-        if (!star2.hasClass('checked')) {
-            star2.addClass('checked');
-        }
-        if (!star3.hasClass('checked')) {
-            star3.addClass('checked');
-        }
-        if (!star4.hasClass('checked')) {
-            star4.addClass('checked');
-        }
-        if (!star5.hasClass('checked')) {
-            star5.addClass('checked');
-        }
-        var changedRating = JSON.parse(localStorage.getItem(book.id));
-        changedRating[1] = 5;
-        localStorage.removeItem(book.id);
-        localStorage.setItem(book.id, JSON.stringify(changedRating));
-        form.submit();
-    });
+
     switch (rating) {
         case 1: star1.trigger('click');
             break;
@@ -304,8 +213,10 @@ var createLoader = function () {
 
 /* ----------------- init page ----------------------- */
 if (localStorage.length !== 0) {
-    for (var i = 0; i < localStorage.length; i++) {
-        var content = JSON.parse(localStorage.getItem(localStorage.key(i)));
+    var storedBooks = JSON.parse(localStorage.getItem('books'));
+    var keys = Object.keys(storedBooks);
+    for (var i = 0; i < keys.length; i++) {
+        var content = JSON.parse(storedBooks[keys[i]]);
         var book = JSON.parse(content[0]);
         var rating = content[1];
 
@@ -331,4 +242,7 @@ if (localStorage.length !== 0) {
         }
         addToLibrary(book, author, imageUrl, rating);
     }
+} else {
+    var books = new Object();
+    localStorage.setItem('books', JSON.stringify(books));
 }
