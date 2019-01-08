@@ -81,6 +81,21 @@
             );
         }
 
+        function findGroups() {
+            FB.api(
+                "/me/groups",
+                function (response) {
+                    if (response && !response.error) {
+                        for (var l = response.data.length, i = 0; i < l; i++) {
+                            var obj = response.data[i];                         
+                            console.log(obj.name + ": " + obj.id);
+
+                        }
+                    }
+                },
+                { admin_only: true },
+            );
+        }
 
     </script>
 
@@ -104,7 +119,7 @@
             <div class="btn btn-primary" id="fbLoginButton" onclick="loginFb()">Povolte nám přístup na Facebook.</div>
         </div>
 
-
+        <div class="btn btn-primary" id="d" onclick="findGroups()">najdi skupiny</div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="postFb()">Sdílej!</button>
         <p class="mt-5 mb-3 text-muted text-center">&copy; 2018-2019</p>
         <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
