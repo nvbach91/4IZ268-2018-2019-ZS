@@ -176,7 +176,11 @@ var addToLibrary = function (book, author, url, rating) {
         if ($('.id').length === 1) {
             tableHead.addClass('closed');
         }
-        form.submit();
+        $('.result').each(function () {
+            if (this.innerHTML === author.toUpperCase() + ':<br>' + book.volumeInfo.title) {
+                $(this).next().removeClass('add-existing');
+            }
+        });
     });
 
     newRow.find('.star').click(function () {
