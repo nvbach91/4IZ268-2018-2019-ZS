@@ -13,3 +13,11 @@
 .form-check{
     padding-bottom: 15px;
 }
+
+#fbLoginButton{
+    margin: 10px auto 10px auto;
+}
+
+#fbStatus{
+    margin: 0 auto;
+}
