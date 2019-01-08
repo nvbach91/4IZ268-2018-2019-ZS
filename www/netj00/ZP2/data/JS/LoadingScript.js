@@ -8,10 +8,13 @@ const eMemes = document.getElementById("memeBody");
 
 // functions
 
-function search(){
-    eMemes.innerText=""; // reset
+eSearch.onclick = search;
+
+
+function search() {
+    eMemes.innerText = ""; // reset
     let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             parser(this);
         }
@@ -27,7 +30,7 @@ function loadDoc() {
 function parser(xml) {
     let xmlDoc = xml.responseXML;
     let x = xmlDoc.getElementsByTagName("meme");
-    for (let i = 0; i <x.length; i++) {
+    for (let i = 0; i < x.length; i++) {
         let element = document.createElement("img");
         element.src = x[i].getElementsByTagName("source")[0].childNodes[0].nodeValue;
 
@@ -37,12 +40,12 @@ function parser(xml) {
         let width = x[i].getElementsByTagName("width")[0].childNodes[0].nodeValue;    // Current image width
         let height = x[i].getElementsByTagName("height")[0].childNodes[0].nodeValue;  // Current image height
 
-        if(width > maxWidth){
+        if (width > maxWidth) {
             ratio = maxWidth / width;   // get ratio for scaling image
             width = maxWidth;
             height = height * ratio;
         }
-        if(height > maxHeight){
+        if (height > maxHeight) {
             ratio = maxHeight / height; // get ratio for scaling image
             height = maxHeight;
             width = width * ratio;
@@ -50,12 +53,9 @@ function parser(xml) {
 
         element.width = width;
         element.height = height;
-        console.log(width,height);
-
         eMemes.appendChild(element);
     }
 }
-
 
 
 loadDoc();

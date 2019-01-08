@@ -26,6 +26,11 @@ nav *{
     margin: 2px;
 }
 
+nav img {
+    width: 125px;
+    height: 125px;
+}
+
 main {
     margin-left: auto;
     margin-right: auto;

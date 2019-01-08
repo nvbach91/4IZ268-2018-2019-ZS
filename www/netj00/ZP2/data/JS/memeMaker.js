@@ -9,15 +9,24 @@ const color3 = document.getElementById("textColor3");
 const color4 = document.getElementById("textColor4");
 const color5 = document.getElementById("textColor5");
 const color6 = document.getElementById("textColor6");
-
-
-
-
-_canvasState = new CanvasState(canvas);
+const saveButton = document.getElementById("save");
+const shareButton = document.getElementById("share");
 
 let xmlDoc = null;
+let _canvasState = null;
 
 function onLoad() {
+    _canvasState = new CanvasState(canvas);
+
+    saveButton.addEventListener("click", saveButtonHandler);
+    shareButton.addEventListener("click", share); // TODO
+
+    let elements = document.getElementsByClassName("refresh");
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].addEventListener("change",redraw);
+        elements[i].addEventListener("keypress",redraw);
+    }
+
     canvas._width = canvas.width;
     canvas._height = canvas.height;
     let xhttp = new XMLHttpRequest();
@@ -51,56 +60,48 @@ function parser(xml) {
     }
 }
 
-function saveButton(){
-    this._canvasState.selection = null;
-    this._canvasState.valid = false;
-    this._canvasState.draw();
-    let link = document.createElement("a");
-    link.setAttribute("href", canvas.toDataURL());
-    link.setAttribute("download", "meme");
-    link.click();
-}
-
-function share(){
-    console.log("share");
-
-
-    //    TODO Share
+function saveButtonHandler() {
+    _canvasState.selection = null;
+    _canvasState.valid = false;
+    _canvasState.draw();
+    let anchor = document.createElement("a");
+    anchor.setAttribute("href", canvas.toDataURL());
+    anchor.setAttribute("download", "meme");
+    anchor.click();
 }
 
 
 //----------------------------------------------------------------------------------------------------------------------
-{
-    function TextShape(x, y, w, h, textinput, color1, color2) {
-        this.x = x || 0;
-        this.y = y || 0;
-        this.w = w || 1;
-        this.h = h || 1;
-        this.textinput = textinput;
-        this.color1 = color1;
-        this.color2 = color2;
-    }
+
+function TextShape(x, y, w, h, textinput, color1, color2) {
+    this.x = x || 0;
+    this.y = y || 0;
+    this.w = w || 1;
+    this.h = h || 1;
+    this.textinput = textinput;
+    this.color1 = color1;
+    this.color2 = color2;
+}
 
 // Draws this shape to a given context
-    TextShape.prototype.draw = function (ctx) {
-        ctx.font = "30px Sans-serif";
-        ctx.strokeStyle = this.color2.value;
-        ctx.lineWidth = 3;
-        ctx.strokeText(this.textinput.value, this.x, this.y + this.h);
-        ctx.fillStyle = this.color1.value;
-        ctx.fillText(this.textinput.value, this.x, this.y + this.h);
+TextShape.prototype.draw = function (ctx) {
+    ctx.font = "30px Sans-serif";
+    ctx.strokeStyle = this.color2.value;
+    ctx.lineWidth = 3;
+    ctx.strokeText(this.textinput.value, this.x, this.y + this.h);
+    ctx.fillStyle = this.color1.value;
+    ctx.fillText(this.textinput.value, this.x, this.y + this.h);
 
-        this.w = ctx.measureText(this.textinput.value).width; // Fix Containers
-    };
+    this.w = ctx.measureText(this.textinput.value).width; // Fix Containers
+};
 
 // Determine if a point is inside the shape's bounds
-    TextShape.prototype.contains = function (mx, my) {
-        // All we have to do is make sure the Mouse X,Y fall in the area between
-        // the shape's X and (X + Width) and its Y and (Y + Height)
-        return (this.x <= mx) && (this.x + this.w >= mx) &&
-            (this.y <= my) && (this.y + this.h >= my);
-    };
-}
+TextShape.prototype.contains = function (mx, my) {
+    // All we have to do is make sure the Mouse X,Y fall in the area between
+    // the shape's X and (X + Width) and its Y and (Y + Height)
+    return (this.x <= mx) && (this.x + this.w >= mx) &&
+        (this.y <= my) && (this.y + this.h >= my);
+};
 
 function BackgroundShape(w, h, image) {
     this.width = w;
@@ -113,12 +114,12 @@ BackgroundShape.prototype.draw = function (ctx) {
     let maxHeight = canvas._height;
     let ratio = 0;
 
-    if(this.width > maxWidth){
+    if (this.width > maxWidth) {
         ratio = maxWidth / this.width;
         canvas.width = maxWidth;
         canvas.height = this.height * ratio;
     }
-    if(this.height > maxHeight){
+    if (this.height > maxHeight) {
         ratio = maxHeight / this.height;
         canvas.height = maxHeight;
         canvas.width = this.width * ratio;
@@ -130,13 +131,13 @@ BackgroundShape.prototype.contains = function (mx, my) {
     return false;
 };
 
-
+// https://github.com/simonsarris/Canvas-tutorials/blob/master/shapes.js
 function CanvasState(canvas) {
     // **** First some setup! ****
     this.canvas = canvas;
     this.width = canvas.width;
     this.height = canvas.height;
-    this.ctx = canvas.getContext('2d');
+    this.ctx = canvas.getContext("2d");
     // This complicates things a little but but fixes mouse co-ordinate problems
     // when there's a border or padding. See getMouse for more detail
     let stylePaddingLeft, stylePaddingTop, styleBorderLeft, styleBorderTop;
@@ -239,7 +240,7 @@ CanvasState.prototype.addShape = function (shape) {
     this.valid = false;
 };
 
-CanvasState.prototype.clear = function (){
+CanvasState.prototype.clear = function () {
     // todo remove shapes
     this.ctx.clearRect(0, 0, this.width, this.height);
 };
@@ -267,16 +268,13 @@ CanvasState.prototype.draw = function () {
 
         // draw selection
         // right now this is just a stroke along the edge of the selected TextShape
-        if (this.selection != null) {
+        if (this.selection !== null) {
             ctx.strokeStyle = this.selectionColor;
             ctx.lineWidth = this.selectionWidth;
             let mySel = this.selection;
             ctx.strokeRect(mySel.x, mySel.y, mySel.w, mySel.h);
         }
-
-        // ** Add stuff you want drawn on top all the time here **
-
-        this.valid = true;
+       this.valid = true;
     }
 };
 
@@ -307,10 +305,12 @@ CanvasState.prototype.getMouse = function (e) {
 };
 
 function redraw() {
-    this._canvasState.valid = false;
-    this._canvasState.draw();
+    _canvasState.valid = false;
+    _canvasState.draw();
 }
 
-
+function share(){
+    console.log("TODO"); // TODO
+}
 // Now go and make something amazing!
 onLoad();
