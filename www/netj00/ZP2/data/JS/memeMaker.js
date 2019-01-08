@@ -9,8 +9,10 @@ const color3 = document.getElementById("textColor3");
 const color4 = document.getElementById("textColor4");
 const color5 = document.getElementById("textColor5");
 const color6 = document.getElementById("textColor6");
-const saveButton = document.getElementById("save");
-const shareButton = document.getElementById("share");
+const downloadButton = document.getElementById("downloadButton");
+const saveButton = document.getElementById("saveForLaterButton");
+const loadButton = document.getElementById("loadButton");
+
 
 let xmlDoc = null;
 let _canvasState = null;
@@ -18,13 +20,13 @@ let _canvasState = null;
 function onLoad() {
     _canvasState = new CanvasState(canvas);
 
-    saveButton.addEventListener("click", saveButtonHandler);
-    shareButton.addEventListener("click", share); // TODO
+    downloadButton.addEventListener("click", saveButtonHandler);
+    saveButton.addEventListener("click", save);
 
     let elements = document.getElementsByClassName("refresh");
     for (let i = 0; i < elements.length; i++) {
-        elements[i].addEventListener("change",redraw);
-        elements[i].addEventListener("keypress",redraw);
+        elements[i].addEventListener("change", redraw);
+        elements[i].addEventListener("keypress", redraw);
     }
 
     canvas._width = canvas.width;
@@ -50,6 +52,7 @@ function parser(xml) {
         element._width = x[i].getElementsByTagName("width")[0].childNodes[0].nodeValue;
         element._height = x[i].getElementsByTagName("height")[0].childNodes[0].nodeValue;
         element.addEventListener("click", function () {
+            _canvasState.shapes = [];
             _canvasState.clear();
             _canvasState.addShape(new BackgroundShape(this._width, this._height, this));
             _canvasState.addShape(new TextShape(20, 20, 100, 30, text1, color1, color2));
@@ -127,7 +130,7 @@ BackgroundShape.prototype.draw = function (ctx) {
     ctx.drawImage(this.image, 0, 0, this.width, this.height, 0, 0, canvas.width, canvas.height);
 };
 
-BackgroundShape.prototype.contains = function (mx, my) {
+BackgroundShape.prototype.contains = function () {
     return false;
 };
 
@@ -179,10 +182,10 @@ function CanvasState(canvas) {
     }, false);
     // Up, down, and move are for dragging
     canvas.addEventListener('mousedown', function (e) {
-        var mouse = myState.getMouse(e);
-        var mx = mouse.x;
-        var my = mouse.y;
-        var shapes = myState.shapes;
+        let mouse = myState.getMouse(e);
+        let mx = mouse.x;
+        let my = mouse.y;
+        let shapes = myState.shapes;
         let l = shapes.length;
         for (let i = l - 1; i >= 0; i--) {
             if (shapes[i].contains(mx, my)) {
@@ -241,9 +244,13 @@ CanvasState.prototype.addShape = function (shape) {
 };
 
 CanvasState.prototype.clear = function () {
-    // todo remove shapes
     this.ctx.clearRect(0, 0, this.width, this.height);
 };
+
+CanvasState.prototype.getShapes = function () {
+    return this.shapes
+};
+
 
 // While draw is called as often as the INTERVAL variable demands,
 // It only ever does something if the canvas gets invalidated by our code
@@ -274,7 +281,7 @@ CanvasState.prototype.draw = function () {
             let mySel = this.selection;
             ctx.strokeRect(mySel.x, mySel.y, mySel.w, mySel.h);
         }
-       this.valid = true;
+        this.valid = true;
     }
 };
 
@@ -282,7 +289,7 @@ CanvasState.prototype.draw = function () {
 // Creates an object with x and y defined, set to the mouse position relative to the state's canvas
 // If you wanna be super-correct this can be tricky, we have to worry about padding and borders
 CanvasState.prototype.getMouse = function (e) {
-    var element = this.canvas, offsetX = 0, offsetY = 0, mx, my;
+    let element = this.canvas, offsetX = 0, offsetY = 0, mx, my;
 
     // Compute the total offset
     if (element.offsetParent !== undefined) {
@@ -309,8 +316,35 @@ function redraw() {
     _canvasState.draw();
 }
 
-function share(){
-    console.log("TODO"); // TODO
+function save() {
+
+    let memes = JSON.parse(localStorage.getItem("memes"));
+    if (!memes.length) {
+        memes = [];
+    }
+    let object = {};
+    let shapes = _canvasState.getShapes();
+    object.bgSrc = shapes[0].image.src;
+    object.bgWidth = shapes[0].width;
+    object.bgHeight = shapes[0].height;
+
+    let texts = [];
+    for (let i = 1; i < shapes.length; i++) {
+        let textObject = {};
+        textObject.textvalue = shapes[i].textinput.value;
+        textObject.textcolor1 = shapes[i].color1.value;
+        textObject.textcolor2 = shapes[i].color2.value;
+        textObject.textx = shapes[i].x;
+        textObject.texty = shapes[i].y;
+        texts.push(textObject);
+    }
+    debugger;
+    object.texts = texts;
+    if (memes.length >= 10) {
+        memes.shift();
+    }
+    memes.push(object);
+    localStorage.setItem("memes", JSON.stringify(memes));
 }
 // Now go and make something amazing!
 onLoad();
