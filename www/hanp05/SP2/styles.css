@@ -21,3 +21,27 @@
 #fbStatus{
     margin: 0 auto;
 }
+
+.groupCheckBox{
+    margin-top: 7px;
+    margin-right: 10px;
+}
+
+#checkBoxContainer{
+    margin:20px;
+}
+
+#shareBtn{
+    display: none;
+}
+
+#checkBoxForm{
+    display:grid;
+    grid-template-columns: 5% 1fr;
+}
+
+#formHeading{
+    display: none;
+    font-weight: 600;
+    margin-bottom: 10px;
+}

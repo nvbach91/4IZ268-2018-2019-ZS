@@ -20,6 +20,10 @@
     <!-- FB JavaScript SDK -->
     <script>
         var postTxt;
+        var checkBoxContainer;
+        var checkBoxForm;
+        var groups;
+        var errorOccurred = false;
 
         window.fbAsyncInit = function () {
             FB.init({
@@ -31,9 +35,9 @@
             FB.getLoginStatus(function (response) {
                 statusChangeCallback(response);
             });
-
-
         };
+
+
 
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -43,21 +47,26 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
 
+        /*zjišťuje status připojení na FB*/
         function statusChangeCallback(response) {
             if (response.status === 'connected') {
                 console.log("přihlášen a autorizován");
                 document.querySelector('#fbStatus').innerHTML = "Povolen přístup na FB";
-                document.querySelector('#fbLoginButton').style.display = 'none';
-
+                document.querySelector('#fbLoginButton').style.display = "none";
+                document.querySelector('#shareBtn').style.display = 'inline';
+                findGroups();
             } else if (response.status === 'not_authorized') {
                 document.querySelector('#fbStatus').innerHTML = "Nepovolen přístup na FB";
+                document.querySelector('#shareBtn').style.display = 'none';
                 console.log("přihlášen ale neautorizován");
             } else {
                 document.querySelector('#fbStatus').innerHTML = "Nepřihlášen na FB";
+                document.querySelector('#shareBtn').style.display = 'none';
                 console.log("nepřihlášen");
             }
         }
 
+        /*reaguje na tlačítko login a přes fb api jej řeší*/
         function loginFb() {
             console.log("Login přes custom tlačítko");
             FB.login(function (response) {
@@ -65,30 +74,57 @@
             }, { scope: 'email,user_likes,publish_to_groups' });
         }
 
+        /*zjistí jaké fb skupiny (checkboxy) uživatel zaškrtl a u nich spustí proces odesílání příspěvku*/
         function postFb() {
             saveTextareaToVar()
+            groups = document.forms['checkBoxForm'].elements['fbGroup'];
+            for (var i = 0, len = groups.length; i < len; i++) {
+                if (groups[i].checked) {
+                    // if checked ...
+                    console.log(groups[i].value)
+                    sendToGroup(groups[i].value);
+                } else {
+                    // if not checked ...
+                }
+            }
+
+            if (!errorOccurred) {
+                window.alert("Úspěšně odesláno na zvolené Facebook skupiny.");
+            } else {
+                window.alert("Něco se pokazilo. Zkus to znova.");
+            }
+        }
+
+        /*přes fb api odesílá obsah textboxu na fb skupinu s id předaným parametrem*/
+        function sendToGroup(groupId) {
             FB.api(
-                "/531173624069426/feed",
+                "/" + groupId + "/feed",
                 "POST",
                 {
                     "message": postTxt
                 },
                 function (response) {
                     if (response && !response.error) {
-                        console.log(response.id);
+                    }
+
+                    if (response.error) {
+                        errorOccurred = true;
                     }
                 }
             );
         }
 
+        /*pomocí fb api zjišťuje u jakých skupin je uživatel adminem a podle toho pak vytváří checkboxy*/
         function findGroups() {
+            document.querySelector("#formHeading").style.display = "block";
+
             FB.api(
                 "/me/groups",
                 function (response) {
                     if (response && !response.error) {
                         for (var l = response.data.length, i = 0; i < l; i++) {
-                            var obj = response.data[i];                         
-                            console.log(obj.name + ": " + obj.id);
+                            var obj = response.data[i];
+                            createCheckBox(obj.name, obj.id);
 
                         }
                     }
@@ -97,10 +133,30 @@
             );
         }
 
+        /*vytváří checkboxy fb skupin, které spravuje daný uživatel a ke kterým udělil oprávnění*/
+        function createCheckBox(name, value) {
+            var row = document.createElement('div');
+            row.className = "row";
+
+            var checkbox = document.createElement('input');
+            checkbox.type = "checkbox";
+            checkbox.name = "fbGroup";
+            checkbox.value = value;
+            checkbox.id = value;
+            checkbox.className = "groupCheckBox";
+
+            var label = document.createElement('label')
+            label.htmlFor = value;
+            label.appendChild(document.createTextNode(name));
+
+            checkBoxForm.appendChild(checkbox);
+            checkBoxForm.appendChild(label);
+        }
+
     </script>
 
 
-    <form class="form-share">
+    <div class="form-share">
         <div class="text-center mb-4">
             <img class="mb-4" src="https://image.flaticon.com/icons/svg/148/148800.svg" alt="" width="72" height="72">
             <h1 class="h1 mb-3 font-weight-normal">Sdíleč</h1>
@@ -116,15 +172,22 @@
 
         <div class="row">
             <div id="fbStatus"></div>
-            <div class="btn btn-primary" id="fbLoginButton" onclick="loginFb()">Povolte nám přístup na Facebook.</div>
+            <div class="btn btn-primary btn-block" id="fbLoginButton" onclick="loginFb()">Povolte nám přístup na
+                Facebook.</div>
         </div>
 
-        <div class="btn btn-primary" id="d" onclick="findGroups()">najdi skupiny</div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="postFb()">Sdílej!</button>
+
+        <div id="checkBoxContainer">
+            <div id=formHeading>Skupiny, kde jste administrátorem:</div>
+            <form id="checkBoxForm" name="checkBoxForm"></form>
+        </div>
+        <row>
+            <button id="shareBtn" class="btn btn-primary btn-block" onclick="postFb()">Sdílej!</button>
+        </row>
         <p class="mt-5 mb-3 text-muted text-center">&copy; 2018-2019</p>
         <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
         </div>
-    </form>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -135,10 +198,15 @@
         crossorigin="anonymous"></script>
 
     <script>
+        /*ukládá obsah texboxu do proměnné*/
         function saveTextareaToVar() {
             postTxt = document.querySelector('#textarea').value;
             console.log("Odesílám: " + postTxt);
         }
+
+        /*přiřazuje html elementy k proměnným*/
+        checkBoxContainer = document.querySelector("#checkBoxContainer");
+        checkBoxForm = document.querySelector("#checkBoxForm");
     </script>
 
 </body>
