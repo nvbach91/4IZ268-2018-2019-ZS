@@ -10,7 +10,7 @@ const color4 = document.getElementById("textColor4");
 const color5 = document.getElementById("textColor5");
 const color6 = document.getElementById("textColor6");
 const downloadButton = document.getElementById("downloadButton");
-const saveButton = document.getElementById("saveForLaterButt?on");
+const saveButton = document.getElementById("saveForLaterButton");
 const history = document.getElementById("history");
 
 
