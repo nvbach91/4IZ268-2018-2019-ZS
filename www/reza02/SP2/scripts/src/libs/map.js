@@ -46,6 +46,7 @@
 
     // searched places
     // optimalized
+    activePlaceObj: null,
     places: new Map(),
     favoritePlaces: new Map(),
 
@@ -119,6 +120,7 @@
       // Create destination marker
       self.showDefaultMarker();
       $('#showDefaultMarker').on('click', function(e) {
+        self.activePlaceObj = null;
         self.showDefaultMarker();
       });
 
@@ -159,6 +161,10 @@
     createMarker: function(coordinates) {
 
       var self = map;
+
+      if (self.infoWindow) {
+        self.infoWindow.close();
+      }
 
       // remove actual marker and route;
       if (self.marker !== null) {
@@ -209,13 +215,20 @@
 
       var html = '';
       html +=  '<div class="popup">';
-        html += '<h3 class="popup__title">' + self.popupTitle + '</h3>';
+      html += '<h3 class="popup__title">' + self.popupTitle + '</h3>';
+
+      // photos
+      if (self.activePlaceObj && self.activePlaceObj.mainPhoto) {
+        html += '<img class="popup__photo" height="100" src="' + self.activePlaceObj.mainPhoto + '" alt="' + self.popupTitle + '">'
+      }
+
         if (self.routeCalculated) {
           html += '<ul class="popup__list list list--no-style space-m-t-10">';
             html += '<li class="list__item"><span class="text--medium">Vzdálenost:</span> ' + self.distance + '</li>';
             html += '<li class="list__item"><span class="text--medium">Doba trvání:</span> ' + self.duration + '</li>';
           html += '</ul>';
         }
+
       html += '</div>';
 
       return html;
@@ -333,7 +346,7 @@
 
       var request = {
         query: query,
-        fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry', 'types'],
+        fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry', 'types', 'id'],
       };
 
       self.placesService.findPlaceFromQuery(request, self.showQueryResult);
@@ -354,11 +367,17 @@
             self.setActivePlace(place);
 
             // save only unique the place into map
-            if (!self.places.has(place.name)) {
-              self.places.set(place.name, place);
+            if (!self.places.has(place.id)) {
+
+              // save the photo url
+              if (place.photos) {
+                place.mainPhoto = place.photos[0].getUrl();
+              }
+
+              self.places.set(place.id, place);
 
               // append place into results container
-              self.appendPlaceElementIntoResutlsContainer(place.name, false);
+              self.appendPlaceElementIntoResutlsContainer(place.id, place.name, false);
             }
 
           }
@@ -372,11 +391,11 @@
       }
     },
 
-    appendPlaceElementIntoResutlsContainer: function(placeName, isActive) {
+    appendPlaceElementIntoResutlsContainer: function(id, placeName, isActive) {
 
       var html = '';
       html += (isActive) ? '<div class="place active">' : '<div class="place">';
-        html += '<button class="place__favorite" data-key="' + placeName + '"></button>';
+        html += '<button class="place__favorite" data-key="' + id + '"></button>';
         html += '<button class="place__title text--semi-small">' + placeName +'</button>';
       html += '</div>';
 
@@ -399,7 +418,7 @@
 
           // remove from localStorage
           self.favoritePlaces.delete(key);
-          localStorage.setItem('places', JSON.stringify(Array.from(self.favoritePlaces.entries())));
+          localStorage.setItem('places', JSON.stringify(Array.from(self.favoritePlaces)));
         }
         else {
 
@@ -408,8 +427,9 @@
 
           // save into localStorage
           self.favoritePlaces.set(key, self.places.get(key));
-          localStorage.setItem('places', JSON.stringify(Array.from(self.favoritePlaces.entries())));
+          localStorage.setItem('places', JSON.stringify(Array.from(self.favoritePlaces)));
         }
+
       });
     },
 
@@ -424,7 +444,7 @@
       }
 
       for (var [key, place] of self.favoritePlaces) {
-        self.appendPlaceElementIntoResutlsContainer(place.name, true);
+        self.appendPlaceElementIntoResutlsContainer(place.id, place.name, true);
       }
 
     },
@@ -433,6 +453,8 @@
 
       var self = map;
 
+      // addActive place
+      self.activePlaceObj = place;
       self.popupTitle = place.name;
       self.searchedCoords = place.geometry.location;
       self.marker = self.createMarker(self.searchedCoords);
