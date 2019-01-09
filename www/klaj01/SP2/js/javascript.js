@@ -1,3 +1,5 @@
+var x = document.getElementsByTagName("p");
+const lose = "you losed";
 const winscore = 2;
 /* vybrání elementu podle id */
 const canvas = document.getElementById("gamefield");
@@ -111,8 +113,11 @@ function update() {
   } else if (ball.x + ball.radius > canvas.width) {
     user.score++;
     resetBall();
-  } else if (user.score >= winscore || com.score >= winscore) {
-    window.location.href = "gameend.html";
+  } else if (user.score >= winscore) {
+    document.getElementById("score").innerHTML = "Winner!";
+    resetBall();
+  } else if (com.score >= winscore) {
+    document.getElementById("score").innerHTML = "Loser!";
     resetBall();
   }
 

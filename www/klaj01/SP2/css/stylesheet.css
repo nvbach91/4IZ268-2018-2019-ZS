@@ -33,3 +33,27 @@ console.log {
     height: 100px;
     width: 400px;
 }
+
+.panel {
+    background: #bebebe;
+    height: 25%;
+    left: 140px;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    position: fixed;
+    width: 15%;
+    font-weight: bold;
+    font-size: 20px;
+    border: 5px solid black;
+}
+
+.panel p {
+    height: 20px;
+    width: 200px;
+    margin: 40px auto;
+}
+
+#score {
+    font-size: 50px;
+}
