@@ -17,33 +17,10 @@ const history = document.getElementById("history");
 let xmlDoc = null;
 let _canvasState = null;
 
-function onLoad() {
-    // init
-    _canvasState = new CanvasState(canvas);
-    downloadButton.addEventListener("click", saveButtonHandler);
-    saveButton.addEventListener("click", save);
-
-    // events
-    let elements = document.getElementsByClassName("refresh");
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].addEventListener("change", redraw);
-        elements[i].addEventListener("keypress", redraw);
+function loadHistory() {
+    for (let i = history.childElementCount; i > 1; i--) {
+        history.removeChild(history.childNodes[i - 1]);
     }
-
-    canvas._width = canvas.width;
-    canvas._height = canvas.height;
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
-            parser(this);
-        }
-    };
-    xhttp.open("GET", "memeTemplate.xml", true);
-    xhttp.send();
-
-
-    // TODO OPT Separate
-    // load localStorage
     let memes = JSON.parse(localStorage.getItem("memes"));
     if (!memes) {
         memes = [];
@@ -86,6 +63,37 @@ function onLoad() {
         });
         history.appendChild(element);
     }
+}
+
+function onLoad() {
+    // init
+    _canvasState = new CanvasState(canvas);
+    downloadButton.addEventListener("click", saveButtonHandler);
+    saveButton.addEventListener("click", save);
+
+    // events
+    let elements = document.getElementsByClassName("refresh");
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].addEventListener("change", redraw);
+        elements[i].addEventListener("keypress", redraw);
+    }
+
+    canvas._width = canvas.width;
+    canvas._height = canvas.height;
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            parser(this);
+        }
+    };
+    xhttp.open("GET", "memeTemplate.xml", true);
+    xhttp.send();
+
+
+    // TODO OPT Separate
+    // TODO Resize Templates
+    // load localStorage
+    loadHistory();
 
 }
 
@@ -386,6 +394,7 @@ function save() {
     }
     memes.push(object);
     localStorage.setItem("memes", JSON.stringify(memes));
+    loadHistory();
 }
 
 // Now go and make something amazing!
