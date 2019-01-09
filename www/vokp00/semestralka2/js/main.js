@@ -4,11 +4,9 @@ $("<div class='textBox'></div>").appendTo("body");
 $("<div id='coordinates'></div>").appendTo(".textBox");
 $("<div class='location'></div>").appendTo("body");
 
-
 var latitude = 0;
 var longitude = 0;
 var city = "";
-
 
 /*
 fetch("http://extreme-ip-lookup.com/json/").then(function (response) {
@@ -24,7 +22,6 @@ fetch("http://extreme-ip-lookup.com/json/").then(function (response) {
     city = "no info found";
 });
 */
-
 
 /* Geo location api from browser */
 const geoFindMe = () => {
@@ -54,7 +51,7 @@ const geoOptions = {
     timeout: 27000
 };
 
-/*document.getElementById("load").addEventListener("load", geoFindMe);*/
+$(window).on('load', geoFindMe);
 
 /* Map init */
 
