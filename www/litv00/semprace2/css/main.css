@@ -70,4 +70,11 @@ h3{
 	text-align: center;
 }
 
+.gtable{
+  border: 0px;
+  overflow:hidden;
+}
+.gform{
+  border: 0px;
+}
 
