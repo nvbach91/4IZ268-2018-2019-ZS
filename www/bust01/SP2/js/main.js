@@ -14,29 +14,29 @@ App.getMovies = function (searchText) {
     if (movies.length === 0) {
       var html = `<p class="no-records">No records</p>`;
     }
-    movies.sort(function (a, b) {
-      var textA = a.vote_average;
-      var textB = b.vote_average;
-      if (textA > textB)
-        return -1;
-      if (textA < textB)
-        return 1;
-      return 0;
-    });
+    movies.sort(App.sortByKey("vote_average"));
+    var moviesContainer = $("<div>");
     $.each(movies, (index, movie) => {
-      html += `
+      html = `
           <div class="movie-item">
             <div class="movie-poster">
               <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}">
             </div>
               <h3>${movie.title}</h3>
-              <a onclick="App.movieSelected('${movie.id}')" class="movie-select" href="#">Movie Details</a>
+              <a class="movie-select" href="#">Movie Details</a>
               <div class="rate"><strong>Rated: </strong>${movie.vote_average}</div>
           </div>
         `;
+      var movieFragment = $(html);
+      var movieLink = movieFragment.find(".movie-select");
+      movieLink.click(function () {
+        App.movieSelected(movie.id);
+      });
+      moviesContainer.append(movieFragment);
     });
+    App.loader.remove();
+    moviesContainer.children().appendTo(App.movieField);
     App.containerSideMov.html(message);
-    App.movieField.html(html);
   })
     .catch(function (error) {
       console.log(error);
@@ -88,6 +88,18 @@ App.getMovie = function () {
     });
 }
 
+App.sortByKey = function (key) {
+  return function (a, b) {
+    var textA = a[key];
+    var textB = b[key];
+    if (textA > textB)
+      return -1;
+    if (textA < textB)
+      return 1;
+    return 0;
+  }
+}
+
 App.getActors = function (searchText) {
   App.actorField.empty();
   App.actorField.append(App.loader);
@@ -124,11 +136,9 @@ App.showElement = function (elem) {
     alert("No elements");
     return;
   }
-  var pages = $('.page');
-  pages.each(function( i ) {
-    this.style.display = 'none';
-  });
-  elem.css("display","block");
+  App.moviesPage.hide();
+  App.actorsPage.hide();
+  elem.show();
 }
 
 App.init = function () {
@@ -139,28 +149,27 @@ App.init = function () {
     var trendMovs = mov.results;
     var html = '';
     var message = '<p class="message"><strong>Trending movies</strong></p>';
-    trendMovs.sort(function (a, b) {
-      var textA = a.popularity;
-      var textB = b.popularity;
-      if (textA > textB)
-        return -1;
-      if (textA < textB)
-        return 1;
-      return 0;
-    });
+    trendMovs.sort(App.sortByKey("popularity"));
+    var moviesContainer = $("<div>");
     $.each(trendMovs, (index, trendMov) => {
-      html += `
+      html = `
             <div class="movie-item-trend">
               <div class="movie-poster">
                 <img src="https://image.tmdb.org/t/p/w500${trendMov.poster_path}">
               </div>
                 <h3>${trendMov.original_title}</h3>
-                <a onclick="App.movieSelected('${trendMov.id}')" class="movie-select" href="#">Movie Details</a>
+                <a class="movie-select" href="#">Movie Details</a>
               <div class="popularity"><strong>Popularity: </strong>${trendMov.popularity}</div>
             </div>
           `;
+      var movieFragment = $(html);
+      var movieLink = movieFragment.find(".movie-select");
+      movieLink.click(function () {
+        App.movieSelected(trendMov.id);
+      });
+      moviesContainer.append(movieFragment);
     });
-    App.movieField.html(html);
+    moviesContainer.children().appendTo(App.movieField);
     App.containerSideMov.html(message);
   });
 
@@ -238,4 +247,3 @@ $(document).ready(function () {
   App.init();
   App.getMovie();
 });
-
