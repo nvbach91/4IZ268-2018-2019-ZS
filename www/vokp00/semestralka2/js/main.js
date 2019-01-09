@@ -51,10 +51,10 @@ const error = (error) => {
 const geoOptions = {
     enableHighAccuracy: true,
     maximumAge: 30000,
-    timeout: 7000
+    timeout: 27000
 };
 
-document.getElementById("load").addEventListener("load", geoFindMe);
+/*document.getElementById("load").addEventListener("load", geoFindMe);*/
 
 /* Map init */
 
@@ -129,24 +129,22 @@ $.getJSON("gpx/hrady.json", function (data) {
 });
 
 var routeLength;
+var routeLayer;
 
 var planRoute = function () {
     if (routed === true) {
         $('.textBox').empty();
-        delete route;
+        routeLayer.removeAll();
+        console.log("bing");
     }
     var information = function (route) {
-        var routeLayer = new SMap.Layer.Geometry();
+        routeLayer = new SMap.Layer.Geometry();
         map.addLayer(routeLayer).enable();
         var coords = route.getResults().geometry;
-        console.log(route.getResults().length);
         routeLength = route.getResults().length;
-        console.log(length);
         routeLength = Math.round(routeLength / 1000);
         var time = route.getResults().time;
         time = Math.round(time / 60);
-        console.log(routeLength);
-        console.log(route.getResults());
         var cz = map.computeCenterZoom(coords);
         map.setCenterZoom(cz[0], cz[1]);
         var g = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
