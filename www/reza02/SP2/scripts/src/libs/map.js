@@ -45,8 +45,13 @@
     searchedCoords: null,
 
     // searched places
-    places: [],
-    favoritePlaces: [],
+    // optimalized
+    places: new Map(),
+    favoritePlaces: new Map(),
+
+    // caching variablesd
+    gMapsLink: $('#showInGoogleMaps'),
+    resultsContainer: $('#resultsContainer'),
 
     init: function(options) {
 
@@ -62,7 +67,7 @@
       self.setFavoritesPlaces();
 
       // reg add place into favorite
-      self.toggleSetPlaceAsAFavorite();
+      self.regToggleSetPlaceAsAFavorite();
 
       // reg set active place
       self.regPlaceOnClick();
@@ -147,7 +152,7 @@
       }
 
       // update Google Maps link
-      $('#showInGoogleMaps').attr('href', 'https://www.google.com/maps/dir/?api=1&destination=' + self.searchedCoords.lat() + ',' + self.searchedCoords.lng());
+      self.gMapsLink.attr('href', 'https://www.google.com/maps/dir/?api=1&destination=' + self.searchedCoords.lat() + ',' + self.searchedCoords.lng());
 
     },
 
@@ -304,12 +309,13 @@
     regOninput: function() {
 
       var self = map;
+      var $input = $('#searchInput');
 
       $('#searchForm').on('submit', function(e) {
 
         e.preventDefault();
 
-        var val = $('#searchInput').val();
+        var val = $input.val();
 
         if (val !== '') {
           self.search(val);
@@ -338,23 +344,18 @@
       var self = map;
       if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
+
           var place = results[i];
           // console.log(place);
+
+          // only point_of_interest, establishment and premise ==> culture places
           if (jQuery.inArray('point_of_interest', place.types) !== -1 || jQuery.inArray('establishment', place.types) !== -1 || jQuery.inArray('premise', place.types) !== -1) {
 
             self.setActivePlace(place);
 
-            // save the place into array
-            var isUnique = true;
-            for (var i = 0; i < self.places.length; i++) {
-              if (self.places[i][0] == place.name) {
-                isUnique = false;
-              }
-            }
-
-            if (isUnique) {
-              var p = [place.name, place];
-              self.places.push(p);
+            // save only unique the place into map
+            if (!self.places.has(place.name)) {
+              self.places.set(place.name, place);
 
               // append place into results container
               self.appendPlaceElementIntoResutlsContainer(place.name, false);
@@ -375,22 +376,21 @@
 
       var html = '';
       html += (isActive) ? '<div class="place active">' : '<div class="place">';
-        html += '<button class="place__favorite"></button>';
+        html += '<button class="place__favorite" data-key="' + placeName + '"></button>';
         html += '<button class="place__title text--semi-small">' + placeName +'</button>';
       html += '</div>';
 
-      $('#resultsContainer').append(html);
+      $(self.resultsContainer).append(html);
     },
 
-    toggleSetPlaceAsAFavorite: function() {
+    regToggleSetPlaceAsAFavorite: function() {
 
       var self = map;
 
-      $('#resultsContainer').on('click', '.place__favorite', function(e) {
+      $(self.resultsContainer).on('click', '.place__favorite', function(e) {
 
-        var $places = $('#resultsContainer').find('.place');
         var $place = $(this).closest('.place');
-        var index = $places.index($place);
+        var key = $(this).attr('data-key');
 
         if ($place.hasClass('active')) {
 
@@ -398,9 +398,8 @@
           $place.removeClass('active');
 
           // remove from localStorage
-          self.favoritePlaces.splice(index, 1);
-          localStorage.setItem('favorites', JSON.stringify(self.favoritePlaces));
-
+          self.favoritePlaces.delete(key);
+          localStorage.setItem('places', JSON.stringify(Array.from(self.favoritePlaces.entries())));
         }
         else {
 
@@ -408,10 +407,8 @@
           $place.addClass('active');
 
           // save into localStorage
-          var place = self.places[index];
-          self.favoritePlaces.push(place);
-          localStorage.setItem('favorites', JSON.stringify(self.favoritePlaces));
-
+          self.favoritePlaces.set(key, self.places.get(key));
+          localStorage.setItem('places', JSON.stringify(Array.from(self.favoritePlaces.entries())));
         }
       });
     },
@@ -419,15 +416,15 @@
     setFavoritesPlaces: function() {
 
       var self = map;
+      var favorites = new Map(JSON.parse(localStorage.getItem('places')));
 
-      var favorites = JSON.parse(localStorage.getItem('favorites'));
       if (favorites !== null) {
-        self.favoritePlaces = favorites;
-        self.places = favorites;
+        self.favoritePlaces = favorites; // tady byl bug
+        self.places = new Map(favorites); // tady byl bug
       }
 
-      for (var i = 0; i < self.favoritePlaces.length; i++) {
-        self.appendPlaceElementIntoResutlsContainer(self.favoritePlaces[i][0], true);
+      for (var [key, place] of self.favoritePlaces) {
+        self.appendPlaceElementIntoResutlsContainer(place.name, true);
       }
 
     },
@@ -446,11 +443,10 @@
 
       var self = map;
 
-      $('#resultsContainer').on('click', '.place__title', function(e) {
-        var $places = $('#resultsContainer').find('.place');
+      $(self.resultsContainer).on('click', '.place__title', function(e) {
         var $place = $(this).closest('.place');
-        var index = $places.index($place);
-        var place = self.places[index][1];
+        var key = $place.find('.place__favorite').attr('data-key');
+        var place = self.places.get(key);
         self.setActivePlace(place);
       });
     },
