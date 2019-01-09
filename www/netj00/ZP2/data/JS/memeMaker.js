@@ -25,7 +25,6 @@ function loadHistory() {
     if (!memes) {
         memes = [];
     }
-    // debugger;
     for (let i = 0; i < memes.length; i++) {
         let element = document.createElement("img");
         element.src = memes[i].view;
@@ -89,12 +88,8 @@ function onLoad() {
     xhttp.open("GET", "memeTemplate.xml", true);
     xhttp.send();
 
-
-    // TODO OPT Separate
-    // TODO Resize Templates
     // load localStorage
     loadHistory();
-
 }
 
 function parser(xml) {
@@ -169,20 +164,8 @@ function BackgroundShape(w, h, image) {
 }
 
 BackgroundShape.prototype.draw = function (ctx) {
-    let maxWidth = canvas._width;
-    let maxHeight = canvas._height;
-    let ratio = 0;
-
-    if (this.width > this.height) {
-        ratio = maxWidth / this.width;
-        canvas.width = maxWidth;
-        canvas.height = this.height * ratio;
-    }
-    else {
-        ratio = maxHeight / this.height;
-        canvas.height = maxHeight;
-        canvas.width = this.width * ratio;
-    }
+    canvas.width = this.width;
+    canvas.height = this.height;
     ctx.drawImage(this.image, 0, 0, this.width, this.height, 0, 0, canvas.width, canvas.height);
 };
 
