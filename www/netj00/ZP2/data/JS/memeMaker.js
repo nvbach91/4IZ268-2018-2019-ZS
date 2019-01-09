@@ -13,6 +13,7 @@ const downloadButton = document.getElementById("downloadButton");
 const saveButton = document.getElementById("saveForLaterButton");
 const history = document.getElementById("history");
 
+// load https://api.myjson.com/bins/r1lnk
 
 let xmlDoc = null;
 let _canvasState = null;
@@ -29,7 +30,6 @@ function loadHistory() {
         let element = document.createElement("img");
         element.src = memes[i].view;
         element.width = 150;
-        element.height = 150;
         element.addEventListener("click", function () {
             let image = new Image();
             image.src = memes[i].bgSrc;
@@ -82,24 +82,24 @@ function onLoad() {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            parser(this);
+            let json = JSON.parse(this.responseText);
+            let xml = new DOMParser().parseFromString(json.memes, "text/xml")
+            parser(xml)
         }
     };
-    xhttp.open("GET", "memeTemplate.xml", true);
+    xhttp.open("GET", "https://api.myjson.com/bins/r1lnk", true);
     xhttp.send();
 
     // load localStorage
     loadHistory();
 }
 
-function parser(xml) {
-    xmlDoc = xml.responseXML;
+function parser(xmlDoc) {
     let x = xmlDoc.getElementsByTagName("meme");
     for (let i = 0; i < x.length; i++) {
         let element = document.createElement("img");
         element.src = x[i].getElementsByTagName("source")[0].childNodes[0].nodeValue;
         element.width = 150;
-        element.height = 150;
         element._width = x[i].getElementsByTagName("width")[0].childNodes[0].nodeValue;
         element._height = x[i].getElementsByTagName("height")[0].childNodes[0].nodeValue;
         element.addEventListener("click", function () {
