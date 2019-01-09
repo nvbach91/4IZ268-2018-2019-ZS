@@ -1,9 +1,14 @@
-/* pozice uživatele na mapě dle IP */
+$("<div id='map'></div>").appendTo("body");
+$("<input type='button' id='coors' value='Where to go??'>").appendTo("body");
+$("<div class='textBox'></div>").appendTo("body");
+$("<div id='coordinates'></div>").appendTo(".textBox");
+$("<div class='location'></div>").appendTo("body");
+
+
 var latitude = 0;
 var longitude = 0;
 var city = "";
 
-/* Získání délky, šířky a města uživatele */
 
 /*
 fetch("http://extreme-ip-lookup.com/json/").then(function (response) {
@@ -20,12 +25,14 @@ fetch("http://extreme-ip-lookup.com/json/").then(function (response) {
 });
 */
 
+
+/* Geo location api from browser */
 const geoFindMe = () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(success, error, geoOptions);
     } else {
         console.log("Geolocation services are not supported by your web browser.");
-    }
+    };
 }
 
 const success = (position) => {
@@ -35,41 +42,37 @@ const success = (position) => {
 }
 
 const error = (error) => {
-    /*latitude = 14;
-    longitude = 50;*/
-    city = "Prague - default coordinates";
+    latitude = 14;
+    longitude = 50;
+    city = " Prague - default coordinates <br> yours cannot be obtained";
     alert(`Unable to retrieve your location due to ${error.code}: ${error.message}`);
 }
 
 const geoOptions = {
     enableHighAccuracy: true,
     maximumAge: 30000,
-    timeout: 27000
+    timeout: 7000
 };
 
-/* nastavení mapy */
+document.getElementById("load").addEventListener("load", geoFindMe);
+
+/* Map init */
 
 var center = SMap.Coords.fromWGS84(14, 50);
 var map = new SMap(JAK.gel("map"), center, 9);
-/* Aby mapa byla ovladatelná */
+/* Map controls */
 map.addControl(new SMap.Control.Sync());
 map.addDefaultLayer(SMap.DEF_TURIST).enable();
 var mouse = new SMap.Control.Mouse(SMap.MOUSE_PAN | SMap.MOUSE_WHEEL | SMap.MOUSE_ZOOM);
 map.addControl(mouse);
 map.addDefaultControls();
 
-/*
-var layerTwo = new SMap.Layer.Marker();
-map.addLayer(layerTwo);
-layerTwo.enable();
-*/
-
-/* Získání souboru do mapy */
+/* Getting castles */
 var xhr = new JAK.Request(JAK.Request.XML);
 xhr.setCallback(window, "response");
 xhr.send("gpx/hrady.gpx");
 
-/* přidání vrstvy pro zobrazení bodů na mapě */
+/* Adding a layer of castles to map */
 var response = function (xmlDoc) {
     var gpx = new SMap.Layer.GPX(xmlDoc, null, { maxPoints: 100 });
     map.addLayer(gpx);
@@ -98,7 +101,7 @@ $.getJSON("gpx/hrady.json", function (data) {
         descCastle = JSONItems.features[i].properties.desc;
         link = JSONItems.features[i].properties.links[0].href;
 
-        /* vzdálenost uživatele a hradu - haversine formula */
+        /* user - castle distance, haversine formula */
         var radlat1 = Math.PI * latitude / 180;
         var radlat2 = Math.PI * latitudeCastle / 180;
         var theta = longitude - longitudeCastle;
@@ -113,11 +116,11 @@ $.getJSON("gpx/hrady.json", function (data) {
         dist = dist * 180 / Math.PI;
         dist = dist * 60 * 1.1515;
 
-        /* uložení vzdáleností do pole */
+        /* saving distances to array */
         array.push(dist);
     }
 
-    /* hledání nejbližšího hradu */
+    /* closest castle */
     min = Math.min.apply(Math, array)
 
     if (dist = min) {
@@ -125,42 +128,43 @@ $.getJSON("gpx/hrady.json", function (data) {
     }
 });
 
-var length;
+var routeLength;
 
 var planRoute = function () {
     if (routed === true) {
         $('.textBox').empty();
+        delete route;
     }
-    var nalezeno = function (route) {
-        var vrstva = new SMap.Layer.Geometry();
-        map.addLayer(vrstva).enable();
-
+    var information = function (route) {
+        var routeLayer = new SMap.Layer.Geometry();
+        map.addLayer(routeLayer).enable();
         var coords = route.getResults().geometry;
         console.log(route.getResults().length);
-        length = route.getResults().length;
+        routeLength = route.getResults().length;
         console.log(length);
-        length = Math.round(length / 1000);
+        routeLength = Math.round(routeLength / 1000);
         var time = route.getResults().time;
         time = Math.round(time / 60);
-        console.log(length);
+        console.log(routeLength);
         console.log(route.getResults());
         var cz = map.computeCenterZoom(coords);
         map.setCenterZoom(cz[0], cz[1]);
         var g = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
-        vrstva.addGeometry(g);
-        $('.textBox').append("<br><br>" + name + " is " + length + " kilometres away. <br>" + " That is about " + time + " minutes spent in a car.");
+        routeLayer.addGeometry(g);
+        $('.textBox').append("<br><br>" + name + " is " + routeLength + " kilometres away. <br>" + " That is about " + time + " minutes spent in a car.");
     }
 
     var coords = [
         SMap.Coords.fromWGS84(longitude, latitude),
         SMap.Coords.fromWGS84(longitudeCastle, latitudeCastle)
     ];
-    var route = new SMap.Route(coords, nalezeno);
+    var route = new SMap.Route(coords, information);
 }
 
 var name;
 var routed;
-/* Po kliknutí na marker se zobrazí trasa k hradu */
+
+/* Route appears after clicking on the marker */
 map.getSignals().addListener(this, "marker-click", function (e) {
     var marker = e.target;
     var coords = marker.getCoords();
@@ -171,16 +175,17 @@ map.getSignals().addListener(this, "marker-click", function (e) {
     routed = true;
 });
 
-/* Vaše pozice dle IP adresy, informace o nejbližším hradu, trase a jeho webu */
+
 var buttonclicked;
 
+/* Information for the user */
 $("#coors").click(function () {
     if (buttonclicked !== true) {
         buttonclicked = true;
 
         /* $('coordinates').append("<p id='p'></p>");*/
         $('.location').append("<br><br> Your coordinates are: " + latitude + ", " + longitude + city +
-            ".<br> The closest castle you can visit is according to haversine formula is: <br>" + nameCastle + ". " + " <br>Basic info: " + descCastle +
+            ".<br> The closest castle you can visit according to haversine formula is: <br>" + nameCastle + ". " + " <br>Basic info: " + descCastle +
             " <br>You can get more info here: ");
         var thelink = $('<a>', {
             text: link,

@@ -1,17 +1,18 @@
-* {
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    text-align: justify;
-    size: 12px;
-}
+
 
 body {
     background-color: whitesmoke;
     padding: 20px;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 h1 {
     font-family: 'MedievalSharp';
     text-align: center;
+}
+
+.randomText {
+    text-align: justify;
 }
 
 #coors {
@@ -23,15 +24,6 @@ h1 {
     position: static;
 }
 
-.randomText {
-    font-family: 'Arial Narrow', Arial, sans-serif;
-}
-
-
-.textBox p {
-    padding-right: 15px;
-    padding-bottom: 30px;
-}
 
 #map {
     height: 350px;
@@ -51,10 +43,6 @@ h1 {
 .card {
     width: 100%;
     height: 100px;
-}
-
-.card-header {
-    font-family: 'MedievalSharp', 'Arial Narrow', Arial, sans-serif;
 }
 
 .card-body {
