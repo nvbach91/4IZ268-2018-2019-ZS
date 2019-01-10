@@ -1,7 +1,5 @@
-@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
-
 body {
+  text-align: center;
 	font-family: 'Lato', sans-serif;
 	background: #353535;
 	color: #FFF;
@@ -11,8 +9,19 @@ body {
 }
 .nadpis {
   color: #888888;
+  text-align: center;
 }
 .loga {
   text-align: center;
   padding: 10px;
+}
+.text1 {
+  color:white;
+}
+.text2 {
+  color:#888;
+}
+.zapati {
+  text-align: center;
+  color:#888;
 }

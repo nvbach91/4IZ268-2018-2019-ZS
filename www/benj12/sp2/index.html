@@ -7,19 +7,17 @@
   <link rel="stylesheet" type="text/css" href="css/styles_1.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-  <meta name="description" content="No Headache - party kapela">
-  <meta name="keywords" content="Kapela, hudba, party, ples, muzika">
+  <meta name="description" content="Zobrazení GPX">
+  <meta name="keywords" content="gpx, vizualizace, mapy">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 <body>
   <header>
-    <div class="nadpis text-center">
-      <div>
-        <h1 style="color:white">Zobrazovač GPX</h1>
-        <p style="color:#888;">Vyberte si prosím API</p>
-      </div>
+    <div>
+      <h1 class="text1">Zobrazovač GPX</h1>
+      <p class="text2">Vyberte si prosím API (Mapy.cz podporují vkládání textové, Google Maps přímo GPX souboru.</p>
     </div>
   </header>
   <main>
@@ -27,16 +25,14 @@
       <a href="gmaps.html"><img onclick="hategoogle()" src="img/gmaps.png" alt="Google Maps" width="128" height="128"></a>
       <a href="mapycz.html"><img src="img/mapy.png" alt="Mapy.cz" width="128" height="128"></a>
     </div>
-    <script>
-        function hategoogle() {
-          alert("Nebyl jsem schopný sám vytvořit zobrazovač GPX pro Google Maps, využil jsem proto script od WATANABE Hiroaki, který jsem osekal pro své potřeby. Pro testovací účely je v adresáři soubor test.gpx");
-        }
-        </script>
-    <footer class="nadpis text-center">
+    <footer class="zapati">
       <div>
-        <p style="color:#888">Vytvořil Josef Beneš</a></p>
+        <p class="text2">Vytvořil Josef Beneš</a></p>
       </div>
     </footer>
+    <script src="js/hategoogle.js"></script>
+  
   </main>
 </body>
+
 </html>

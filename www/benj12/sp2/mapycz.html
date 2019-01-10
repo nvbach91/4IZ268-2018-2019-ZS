@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
   <title>Zobrazení GPX - Mapy.cz</title>
-  <meta charset="UTF-8">
   <meta name="author" content="Josef Beneš">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,19 +13,26 @@
   <script type="text/javascript" src="https://api.mapy.cz/loader.js"></script>
   <script type="text/javascript">Loader.load();</script>
 </head>
+
 <body>
   <header>
-    <div id="vyhledavani">
-      <h1>Vložte vaše GPX údaje:</h1><br/>
-      <a href="index.html" style="color:white"><p style="color:#888;">Zpět na výběr API</p></a>
-      <textarea style="width: 300px; height: 100px" id="gpx"></textarea><br>
-      <input type="button" value="Zobrazit na mapě" onclick="load(), hideFunction()" />
+    <div id="search">
+      <a href="index.html" class="whiteLink"><p>Zpět na výběr API</p></a>
+      <h2>Vložte vaše GPX údaje do textového pole nebo zvolte připravenou trasu:</h2><br>
+      <button class='myButton' onclick='trasa1()'>Památky Praha</button>
+      <button class='myButton' onclick='trasa2()'>Památky Drážďany</button>
+      <button class='myButton' onclick='trasa3()'>Památky Vídeň</button><br>
+      <textarea class="searchArea" id="gpx"></textarea><br>
+      <input type="button" value="Zobrazit na mapě" onclick="load()" />
     </div>
   </header>
-  <div id="m"></div>
+  <div id="mapycz"></div>
   <script src="js/mapa.js"></script>
   <script src="js/hide.js"></script>
+  <script src="js/trasy.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
+
 </html>
 
 

@@ -1,5 +1,6 @@
+Loader.load();
 var center = SMap.Coords.fromWGS84(14.400307, 50.071853);
-var m = new SMap(JAK.gel("m"), center, 5);
+var m = new SMap(JAK.gel("mapycz"), center, 5);
 m.addDefaultLayer(SMap.DEF_TURIST).enable();
 m.addDefaultControls();
 

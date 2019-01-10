@@ -1181,3 +1181,14 @@ MapsGPX._emit = function() {
     MapsGPX._emit();
   });
 })();
+MapsGPX.strict = false;
+MapsGPX.onReady(function() {
+  new MapsGPX('map_canvas')
+    .extend('InputFileControl')
+    .extended(function() {
+      this.register('onAddGPX', function(key) {
+        this.fitBounds();
+        this.showOverlayGpxs(key);
+      });
+    });
+});
