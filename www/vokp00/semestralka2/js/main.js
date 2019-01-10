@@ -147,6 +147,7 @@ var planRoute = function () {
         var g = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
         routeLayer.addGeometry(g);
         $('.textBox').append("<br><br>" + name + " is " + routeLength + " kilometres away. <br>" + " That is about " + time + " minutes spent in a car.");
+
     }
 
     var coords = [

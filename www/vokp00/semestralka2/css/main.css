@@ -66,4 +66,15 @@ h1 {
     text-align: center;
  }
 
+ @media screen and (max-width: 1020px) {
+    #map {
+        height: 400px;
+        width: 100%;
+        float: none;
+        margin: auto;
+    }
 
+    .footer {
+        position: relative;
+     }
+  }
