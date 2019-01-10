@@ -48,7 +48,7 @@ h1 {
 .results li {
   display: flex;
   flex-direction: row;
-  padding: 5px;
+  padding: 10px 70px;
 }
 .picture {
   margin: auto;
@@ -57,7 +57,7 @@ h1 {
   width: 100%;
 }
 .information {
-  padding-left: 25px;
+  padding: 10px 70px;
   width: 70%;
 }
 
