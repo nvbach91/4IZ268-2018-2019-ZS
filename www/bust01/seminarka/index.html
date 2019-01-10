@@ -18,8 +18,24 @@
     <header>
         <div class="pozadi">
             <div class="option">
-                    <button id="btn">Login</button>
+                    <button id="optBtn">Login</button>
             </div>
+            <div id="myModal" class="modal">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Zadejte jméno sportovce</h2>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                             <input id="modal-input"></input>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button>Přidat sportovce</button>
+                      </div>
+                    </div>            
+                  </div>
             <div class="logo"></div>
             <h3 class="nadpis">Čeští olympijští medailisté</h3>
             <nav>
@@ -182,7 +198,7 @@
         <div class="copyright">Copyright &copy; 2018 Bušek Tomáš</div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
