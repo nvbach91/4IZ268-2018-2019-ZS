@@ -1,7 +1,4 @@
 
-
-
-
 /*----------------------Gain an access token---------------------- */
 
 var CLIENT_ID = "9ed280f473334a61ad254a84e0ec0593";
@@ -24,7 +21,6 @@ var state = params.state;
 var userID = null;
 var accessToken = params.access_token;
 var errMessage = $('.error').text("Chyba přihlášení, zkuste to znovu.");
-var logoutButton = $('<input type="button" value="Odhlášení uživatele" id="logout"/>');
 
 $(document).ready(function () {
     var currentUrl = window.location.href;
@@ -42,6 +38,14 @@ $(document).ready(function () {
                     }
                 }
             }
+            //create a loader during ajax response loading
+            $(document).ajaxStart(function () {
+                var loader = $('<div>').addClass('loader');
+                $('.message').append(loader);
+                $(".loader").show();
+            }).ajaxStop(function () {
+                $(".loader").hide();
+            });
             $.ajax({
                 url: 'https://api.spotify.com/v1/me',
                 headers: {
@@ -54,7 +58,6 @@ $(document).ready(function () {
                         $('.error').text('');
 
                         $('.message').text('Uživatel @' + response.display_name + ' byl úspěšně přihlášen.');
-                        $(".intro").append(logoutButton);
                     }
                     else {
                         return errMessage;
@@ -99,31 +102,36 @@ $('#login-btn').click(function () {
     url += '&state=' + encodeURIComponent(stateValue);
     window.location = url;
 });
-/*----------------------Logout from Spotify---------------------- */
 
 
 /*----------------------Search an item in Spotify database---------------------- */
 var errFoundedMessage = $('.error').text('Nebyl nalezen žádný výsledek.');
-var header = $('.closed');
+var resultsHeader = $('#resultsTable');
 var resultsBody = $('.results-body');
+var resultsHead = $(".results-head");
+var offset = 0;
+
+
 $('#submit-btn').click(function () {
     function searchTracks() {
         var query = $("#searched-text").val().replace(/ /g, '+');
         if (query === "") {
-            return errFoundedMessage;
+            return $('.error').text('Nebyl nalezen žádný výsledek.');
         }
         else {
             $.ajax({
-                url: "https://api.spotify.com/v1/search?q=" + query + "&type=track",
+                url: "https://api.spotify.com/v1/search?q=" + query +"&offset="+ offset + "&type=track",
                 method: "GET",
                 headers: {
                     'Authorization': 'Bearer ' + accessToken
                 },
                 success: function (data) {
+
+                    resultsHeader.removeClass();
+                    resultsHead.empty();
                     resultsBody.empty();
-                    header.removeClass();
                     $('.message-results').text('Nalezeno ' + data.tracks.total + ' výsledků.');
-                    var resultsHead = $(".results-head");
+
                     var resultsHeadName = $('<div>').addClass("header-result").text("Název");
                     var resultsHeadArtist = $('<div>').addClass("header-result").text("Autor");
                     var resultsHeadAlbum = $('<div>').addClass("header-result").text("Album");
@@ -131,20 +139,48 @@ $('#submit-btn').click(function () {
 
                     for (var i = 0; i < 20; i++) {
                         var resultsRow = $('<div>').addClass('result-row');
+                        let resultID = $('<div>').addClass('result-id').addClass("closed");
                         var resultName = $('<div>').addClass('result-name');
                         var resultArtist = $('<div>').addClass('result-artist');
                         var resultAlbum = $('<div>').addClass('result-album');
                         var addingButton = $('<button>').addClass('add-button').text('Přidat');
+                        resultID.text([data.tracks.items[i].id]);
                         resultName.append([data.tracks.items[i].name]);
                         resultArtist.append([data.tracks.items[i].artists[0].name]);
                         resultAlbum.append([data.tracks.items[i].album.name]);
-                        resultsRow.append($('<hr>')).append(resultName).append(resultArtist).append(resultAlbum).append(addingButton);
+                        resultsRow.append($('<hr>')).append(resultID).append(resultName).append(resultArtist).append(resultAlbum).append(addingButton);
                         resultsBody.append(resultsRow);
                         let resultArray = data.tracks.items[i];
                         addingButton.click(function () {
-                            addToPlaylist(resultArray);
+                            trackExists(resultArray, resultID);
                         });
                     }
+                    //STRÁNKOVÁNÍ
+                    var pageLimit = 20;
+                    var totalRecord = data.tracks.total;
+                    var prevButton = $('<button>').addClass('prev-button').text('Předchozí');
+                    var nextButton = $('<button>').addClass('next-button').text('Následující');
+                    resultsBody.append(prevButton).append(nextButton);
+                    $(".prev-button").click(function () {
+                        if (data.tracks.previous === null) {
+                            alert("Toto je první stránka výsledků.");
+                        }
+                        else {
+                            offset = offset  - pageLimit;
+                            searchTracks();
+                        }
+                    });
+                    $(".next-button").click(function () {
+                        if (offset < totalRecord) {
+                            offset = offset + pageLimit;
+                            searchTracks();
+                        }
+                        else {
+                            if (data.tracks.next === null) {
+                                alert("Toto je poslední stránka výsledků.");
+                            }
+                        }
+                    });
                 },
                 error: function () {
                     alert("Chyba spojení. Prosíme, přihlašte se znovu.");
@@ -155,30 +191,44 @@ $('#submit-btn').click(function () {
     searchTracks();
 });
 
-/*----------------------Control of added track---------------------- */
-var trackExists = function (idField) {
-    var existingTrack = idField;
-    for (var i = 0; i < existingTrack.length; i++) {
-        var song = existingTrack.get(i);
-        if (id === song.innerHTML) {
-            return true;
-        }
+
+//Zmáčknutí klávesy enter
+$("#searched-text").keyup(function (event) {
+    if (event.keyCode === 13) {
+        $('#submit-btn').click();
     }
-    return false;
+});
+
+/*----------------------Control of added track---------------------- */
+function trackExists(resultArray, resultID) {
+    var placed = false;
+    if ($('.playlist-id')) {
+        $('.playlist-id').each(function () {
+            if ($(this).text() === resultID.text()) {
+                alert("Tato skladba se již nachází ve tvém playlistu.");
+                placed = true;
+            }
+        });
+    }
+    if (!placed) {
+        addToPlaylist(resultArray);
+    }
 }
 
 /*----------------------Add a result to my playlist---------------------- */
 var playlistBody = $(".playlist-body");
+var playlistHead = $(".playlist-head");
+var playlistHeader = $("#myPlaylist");
 
 function addToPlaylist(resultArray) {
-    var playlistHead = $(".playlist-head");
+    playlistHead.empty();
     var playlistHeadName = $('<div>').addClass("header-playlist").text("Název");
     var playlistHeadArtist = $('<div>').addClass("header-playlist").text("Autor");
     var playlistHeadAlbum = $('<div>').addClass("header-playlist").text("Album");
     playlistHead.append(playlistHeadName).append(playlistHeadArtist).append(playlistHeadAlbum);
 
     var playlistRow = $('<div>').addClass('playlist-row');
-    var idField = $('<div>').addClass("closed").text(resultArray.id);
+    var idField = $('<div>').addClass('closed').addClass('playlist-id').text(resultArray.id);
     var nameTrack = $('<div>').addClass('playlist-name').text(resultArray.name);
     var nameArtist = $('<div>').addClass('playlist-artist').text(resultArray.artists[0].name);
     var nameAlbum = $('<div>').addClass('playlist-album').text(resultArray.album.name);
@@ -188,21 +238,14 @@ function addToPlaylist(resultArray) {
     } else {
         nameAlbum;
     }
-    playlistRow.append(idField).append(nameTrack).append(nameArtist).append(nameAlbum).append(deleteButton);
+    playlistRow.append($('<hr>')).append(idField).append(nameTrack).append(nameArtist).append(nameAlbum).append(deleteButton);
     playlistBody.append(playlistRow);
-    localStorage.setItem(playlistRow, playlistBody);
 
     deleteButton.click(function () {
         playlistRow.remove();
-        /*
-        if (playlistRow.length === 0) {
-            playlistHead.removeClass();
-            playlistHead.addClass("closed");
-            playlistBody = $('<div>').addClass("info").text("Zde se nenachází žádné skladby");
-        }
-        */
     });
 }
+
 
 
 
