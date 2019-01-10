@@ -1,0 +1,57 @@
+<memes>
+    <meme id="1">
+        <name>Distracted-Boyfriend</name>
+        <size>
+            <width>600</width>
+            <height>400</height>
+        </size>
+        <desc>Distracted </desc>
+        <tags>MEME,FUN,SOME</tags>
+        <source>data/memeTemplates/Distracted-Boyfriend.jpg</source>
+        <type>jpg</type>
+    </meme>
+    <meme id="2">
+        <name>Surprised-Pikachu</name>
+        <size>
+            <width>600</width>
+            <height>600</height>
+        </size>
+        <desc>Some Pickachu</desc>
+        <tags>MEME,FUN,SOME</tags>
+        <source>data/memeTemplates/Surprised-Pikachu.jpg</source>
+        <type>jpg</type>
+    </meme>
+    <meme id="3">
+        <name>Mocking-Spongebob</name>
+        <size>
+            <width>600</width>
+            <height>422</height>
+        </size>
+        <desc>Mocking-Spongebob</desc>
+        <tags>MEME,FUN,SOME</tags>
+        <source>data/memeTemplates/Mocking-Spongebob.jpg</source>
+        <type>jpg</type>
+    </meme>
+    <meme id="4">
+        <name>Two-Buttons</name>
+        <size>
+            <width>600</width>
+            <height>908</height>
+        </size>
+        <desc>Two-Buttons</desc>
+        <tags>MEME,FUN,SOME</tags>
+        <source>data/memeTemplates/Two-Buttons.jpg</source>
+        <type>jpg</type>
+    </meme>
+    <meme id="5">
+        <name>Futurama-Fry</name>
+        <size>
+            <width>552</width>
+            <height>414</height>
+        </size>
+        <desc>Futurama-Fry</desc>
+        <tags>MEME,FUN,SOME</tags>
+        <source>data/memeTemplates/Futurama-Fry.jpg</source>
+        <type>jpg</type>
+    </meme>
+</memes>
