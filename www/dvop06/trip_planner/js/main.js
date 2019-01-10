@@ -1,5 +1,16 @@
+var CLIENT_ID = '311660390252-sk64cfms5qnf8qecr3njfcr9vj13mma4.apps.googleusercontent.com';
+var API_KEY = 'AIzaSyCqrIm5k4rHJuYEwMlMGkusAAeLGBNNhZ8';
+var SCOPES = 'https://www.googleapis.com/auth/drive.appdata https://www.googleapis.com/auth/drive.metadata.readonly';;
+// Array of API discovery doc URLs for APIs used by the quickstart
+var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
+
+var markerList = [];
+var labelIndex = 0;
+var labels = 'ABCDEFGHIJKLMNOPQRSTUVXYZ';
+var map;
+
 function initAutocomplete() {
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 50.08804, lng: 14.42076 },
         zoom: 13,
         mapTypeId: 'roadmap'
@@ -21,6 +32,16 @@ function initAutocomplete() {
         // Browser doesn't support Geolocation
         handleLocationError(false, map.getCenter());
     }
+
+    //Retrieve markers from localStorage 
+    var i;
+    $(document).ready(function () {
+        for (i = 0; i < localStorage.length; i++) {
+            retrieveMarker(labels[labelIndex++ % labels.length]);
+        }
+    });
+
+
 
 
     // Create the search box and link it to the UI element.
@@ -82,31 +103,11 @@ function initAutocomplete() {
         map.fitBounds(bounds);
     });
 
-    var labels = 'ABCDEFGHIJKLMNOPQRSTUVXYZ';
-    var labelIndex = 0;
 
-    map.addListener('click', function (event) {
+
+    map.addListener('rightclick', function (event) {
         placeMarker(event.latLng);
     });
-
-    function placeMarker(location, note) {
-        var marker = new google.maps.Marker({
-            position: location,
-            label: labels[labelIndex++ % labels.length],
-            map: map,
-            draggable: true,
-            editable: true
-        });
-        var infowindow = new google.maps.InfoWindow(
-            {
-                content: '<div contentEditable="true">Write your note here :)</div>'
-            });
-
-        google.maps.event.addListener(marker, 'click', function () {
-            infowindow.open(map, marker);
-        });
-    }
-
 
 
 }
@@ -117,22 +118,72 @@ function handleLocationError(browserHasGeolocation, pos) {
         'Error: The Geolocation service failed.' :
         'Error: Your browser doesn\'t support geolocation.');
 }
+function retrieveMarker(markerId) {
+    var markerData = JSON.parse(localStorage.getItem(markerId));
+    // console.log(markerRestored);
+    var parameters = {};
+    parameters.position = markerData.position;
+    parameters.label = markerData.label;
+    parameters.content = markerData.content;
+    var marker = new google.maps.Marker({
+        position: parameters.position,
+        label: parameters.label,
+        map: map,
+        draggable: false
+    });
+    console.log("retrieved");
+
+    var infowindow = new google.maps.InfoWindow(
+        {
+            content: parameters.content
+        });
+
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.open(map, marker);
+    });
+}
+
+function googleMapsMarkerToSerializable(markerObject, infoWindowObject) {
+    var outputObject = {};
+    outputObject.position = markerObject.position;
+    outputObject.label = markerObject.label;
+    outputObject.draggable = markerObject.draggable ? 1 : 0;
+    outputObject.text = infoWindowObject.content;
+    return outputObject;
+}
+
+function placeMarker(location) {
+    var marker = new google.maps.Marker({
+        position: location,
+        label: labels[labelIndex++ % labels.length],
+        map: map,
+        draggable: true
+    });
 
 
 
+
+    var html = '<div class="test">Lorem ipsum blab bla</div>';
+
+    var infowindow = new google.maps.InfoWindow(
+        {
+            content: html
+        });
+
+    google.maps.event.addListener(marker, 'click', function () {
+        $(".test").css('font-weight', 'bold');
+        infowindow.open(map, marker);
+    });
+
+    try {
+        window.localStorage.setItem(marker.label, JSON.stringify(googleMapsMarkerToSerializable(marker, infowindow)));
+    } catch (error) {
+        alert("Error - marker could not be stored" + "\n Your web storage might be full.");
+    }
+}
 
 
 // var ApiKey = "AIzaSyCqrIm5k4rHJuYEwMlMGkusAAeLGBNNhZ8";
-// var mapDiv = $('#map');
-// var map;
 
-// // Initialize and add the map
-// var map;
-// var initMap = function () {
-//     map = new google.maps.Map(document.getElementById('map'), {
-//         center: { lat: -34.397, lng: 150.644 },
-//         zoom: 8
-//     });
-// }
 
 

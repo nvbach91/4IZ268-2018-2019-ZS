@@ -3,32 +3,33 @@
 }
 
 html, body {
-    font-family: roboto;
+    font-family: Roboto;
 }
 
-span > h2 {
+h2 {
     padding-left: 10px;
 }
 
-
-
+.test {
+  background-color: crimson;
+}
 
 /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-       #map {
-        height: 100%;
-        width: 100%;
-        border: solid #ddd 3px;
-        margin: auto;
-      }
-      /* Optional: Makes the sample page fill the window. */
+* element that contains the map. */
+#map {
+  height: 100%;
+  width: 100%;
+  border: solid #ddd 3px;
+  margin: auto;
+}
+      
+/* Optional: Makes the sample page fill the window. */
       html, body {
         height: 95%;
         margin: 0;
         padding: 0;
       }
       #description {
-        font-family: Roboto;
         font-size: 15px;
         font-weight: 300;
       }
