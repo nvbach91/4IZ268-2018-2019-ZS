@@ -120,35 +120,44 @@
                             <!-- Control Bar -->
                             <div class="map-component__controls">
 
-                            <ul class="list list--no-style space-m-b-40">
-                                <li class="list__item space-m-b-15">
-                                <button id="showDefaultMarker" class="btn">Zobraz původní místo</button>
-                                </li>
-                                <li class="list__item space-m-b-15">
-                                <button class="btn btn--navigate" data-mode="DRIVING">Naviguj z aktuální pozice autem</button>
-                                </li>
-                                <li class="list__item space-m-b-15">
-                                <button class="btn btn--navigate" data-mode="WALKING">Naviguj z aktuální pozice pěšky</button>
-                                </li>
-                                <li class="list__item">
-                                <a id="showInGoogleMaps" href="#" class="link" target="_blank" title="Naviguj v Google Mapách">Otevři v Google Maps</a>
-                                </li>
-                            </ul>
+                                <ul class="list list--no-style space-m-b-40">
+                                    <li class="list__item space-m-b-15">
+                                        <button id="showDefaultMarker" class="btn">Zobraz původní místo</button>
+                                    </li>
+                                    <li class="list__item space-m-b-15">
+                                        <button class="btn btn--navigate" data-mode="DRIVING">Naviguj z aktuální pozice autem</button>
+                                    </li>
+                                    <li class="list__item space-m-b-15">
+                                        <button class="btn btn--navigate" data-mode="WALKING">Naviguj z aktuální pozice pěšky</button>
+                                    </li>
+                                    <li class="list__item">
+                                        <a id="showInGoogleMaps" href="#" class="link" target="_blank" title="Naviguj v Google Mapách">Otevři v Google Maps</a>
+                                    </li>
+                                </ul>
 
-                            <!-- Search input -->
-                            <form id="searchForm" class="map-component__form" method="POST" action="">
-                                <input id="searchInput" class="space-m-right-15" type="text" placeholder="Zadej místo">
-                                <button class="btn btn--submit" type="submit">Hledej</button>
-                            </form>
+                                <!-- Search input -->
+                                <form id="searchForm" class="map-component__form" method="POST" action="">
+                                    <input id="searchInput" class="space-m-right-15" type="text" placeholder="Zadej místo">
+                                    <button class="btn btn--submit" type="submit">Hledej</button>
+                                </form>
 
-                            <!-- Close Map -->
-                            <button id="closeMapBtn" class="btn">Zavři mapu</button>
+                                <!-- Searched results -->
+                                <div id="resultsContainer" class="map-component__results space-m-t-15 space-m-b-15">
+
+                                    <div class="text-center space-m-b-15">
+                                        Výsledky vyhledávání
+                                    </div>
+
+                                </div>
+
+                                <!-- Close Map -->
+                                <button id="closeMapBtn" class="btn">Zavři mapu</button>
 
                             </div>
 
                             <!-- Google Maps -->
                             <div class="map-component__map-container">
-                            <div id="map" class="map"></div>
+                                <div id="map" class="map"></div>
                             </div>
 
                         </div>
@@ -212,7 +221,7 @@
         </footer>
 
         <!-- Google Map Api -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_gAYwfbRhBmg4XRSVPCNvl-s8vJa4JBI&language=cs"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_gAYwfbRhBmg4XRSVPCNvl-s8vJa4JBI&language=cs&libraries=places"></script>
 
         <!-- JQuery -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

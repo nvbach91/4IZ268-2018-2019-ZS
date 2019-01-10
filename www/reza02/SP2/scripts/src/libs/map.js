@@ -44,6 +44,16 @@
     placesService: null,
     searchedCoords: null,
 
+    // searched places
+    // optimalized
+    activePlaceObj: null,
+    places: new Map(),
+    favoritePlaces: new Map(),
+
+    // caching variablesd
+    gMapsLink: $('#showInGoogleMaps'),
+    resultsContainer: $('#resultsContainer'),
+
     init: function(options) {
 
       var self = map;
@@ -53,6 +63,15 @@
 
       self.regOnNavigate();
       self.regOninput();
+
+      // get favorites places from localStorage
+      self.setFavoritesPlaces();
+
+      // reg add place into favorite
+      self.regToggleSetPlaceAsAFavorite();
+
+      // reg set active place
+      self.regPlaceOnClick();
 
       $.getJSON( self.settings.mapStyleJson, function(mapStyles) {
         if ( mapStyles ) {
@@ -101,6 +120,7 @@
       // Create destination marker
       self.showDefaultMarker();
       $('#showDefaultMarker').on('click', function(e) {
+        self.activePlaceObj = null;
         self.showDefaultMarker();
       });
 
@@ -129,14 +149,22 @@
 
       var self = map;
 
+      if (!isNaN(self.searchedCoords.lat)) {
+        self.searchedCoords = new google.maps.LatLng(self.searchedCoords.lat, self.searchedCoords.lng);
+      }
+
       // update Google Maps link
-      $('#showInGoogleMaps').attr('href', 'https://www.google.com/maps/dir/?api=1&destination=' + self.searchedCoords.lat() + ',' + self.searchedCoords.lng());
+      self.gMapsLink.attr('href', 'https://www.google.com/maps/dir/?api=1&destination=' + self.searchedCoords.lat() + ',' + self.searchedCoords.lng());
 
     },
 
     createMarker: function(coordinates) {
 
       var self = map;
+
+      if (self.infoWindow) {
+        self.infoWindow.close();
+      }
 
       // remove actual marker and route;
       if (self.marker !== null) {
@@ -187,13 +215,20 @@
 
       var html = '';
       html +=  '<div class="popup">';
-        html += '<h3 class="popup__title">' + self.popupTitle + '</h3>';
+      html += '<h3 class="popup__title">' + self.popupTitle + '</h3>';
+
+      // photos
+      if (self.activePlaceObj && self.activePlaceObj.mainPhoto) {
+        html += '<img class="popup__photo" height="100" src="' + self.activePlaceObj.mainPhoto + '" alt="' + self.popupTitle + '">'
+      }
+
         if (self.routeCalculated) {
           html += '<ul class="popup__list list list--no-style space-m-t-10">';
             html += '<li class="list__item"><span class="text--medium">Vzdálenost:</span> ' + self.distance + '</li>';
             html += '<li class="list__item"><span class="text--medium">Doba trvání:</span> ' + self.duration + '</li>';
           html += '</ul>';
         }
+
       html += '</div>';
 
       return html;
@@ -287,12 +322,13 @@
     regOninput: function() {
 
       var self = map;
+      var $input = $('#searchInput');
 
       $('#searchForm').on('submit', function(e) {
 
         e.preventDefault();
 
-        var val = $('#searchInput').val();
+        var val = $input.val();
 
         if (val !== '') {
           self.search(val);
@@ -310,7 +346,7 @@
 
       var request = {
         query: query,
-        fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry', 'types'],
+        fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry', 'types', 'id'],
       };
 
       self.placesService.findPlaceFromQuery(request, self.showQueryResult);
@@ -321,13 +357,29 @@
       var self = map;
       if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
+
           var place = results[i];
           // console.log(place);
+
+          // only point_of_interest, establishment and premise ==> culture places
           if (jQuery.inArray('point_of_interest', place.types) !== -1 || jQuery.inArray('establishment', place.types) !== -1 || jQuery.inArray('premise', place.types) !== -1) {
-            self.popupTitle = place.name;
-            self.searchedCoords = place.geometry.location;
-            self.marker = self.createMarker(self.searchedCoords);
-            self.updateGoogleMapsLink();
+
+            self.setActivePlace(place);
+
+            // save only unique the place into map
+            if (!self.places.has(place.id)) {
+
+              // save the photo url
+              if (place.photos) {
+                place.mainPhoto = place.photos[0].getUrl();
+              }
+
+              self.places.set(place.id, place);
+
+              // append place into results container
+              self.appendPlaceElementIntoResutlsContainer(place.id, place.name, false);
+            }
+
           }
           else {
             alert('Nejedná se o bod zájmu, zkus to znovu.')
@@ -339,8 +391,90 @@
       }
     },
 
+    appendPlaceElementIntoResutlsContainer: function(id, placeName, isActive) {
+
+      var html = '';
+      html += (isActive) ? '<div class="place active">' : '<div class="place">';
+        html += '<button class="place__favorite" data-key="' + id + '"></button>';
+        html += '<button class="place__title text--semi-small">' + placeName +'</button>';
+      html += '</div>';
+
+      $(self.resultsContainer).append(html);
+    },
+
+    regToggleSetPlaceAsAFavorite: function() {
+
+      var self = map;
+
+      $(self.resultsContainer).on('click', '.place__favorite', function(e) {
+
+        var $place = $(this).closest('.place');
+        var key = $(this).attr('data-key');
+
+        if ($place.hasClass('active')) {
+
+          // remove
+          $place.removeClass('active');
+
+          // remove from localStorage
+          self.favoritePlaces.delete(key);
+          localStorage.setItem('places', JSON.stringify(Array.from(self.favoritePlaces)));
+        }
+        else {
+
+          // add
+          $place.addClass('active');
+
+          // save into localStorage
+          self.favoritePlaces.set(key, self.places.get(key));
+          localStorage.setItem('places', JSON.stringify(Array.from(self.favoritePlaces)));
+        }
+
+      });
+    },
+
+    setFavoritesPlaces: function() {
+
+      var self = map;
+      var favorites = new Map(JSON.parse(localStorage.getItem('places')));
+
+      if (favorites !== null) {
+        self.favoritePlaces = favorites; // tady byl bug
+        self.places = new Map(favorites); // tady byl bug
+      }
+
+      for (var [key, place] of self.favoritePlaces) {
+        self.appendPlaceElementIntoResutlsContainer(place.id, place.name, true);
+      }
+
+    },
+
+    setActivePlace: function(place) {
+
+      var self = map;
+
+      // addActive place
+      self.activePlaceObj = place;
+      self.popupTitle = place.name;
+      self.searchedCoords = place.geometry.location;
+      self.marker = self.createMarker(self.searchedCoords);
+      self.updateGoogleMapsLink();
+    },
+
+    regPlaceOnClick: function() {
+
+      var self = map;
+
+      $(self.resultsContainer).on('click', '.place__title', function(e) {
+        var $place = $(this).closest('.place');
+        var key = $place.find('.place__favorite').attr('data-key');
+        var place = self.places.get(key);
+        self.setActivePlace(place);
+      });
+    },
 
   };
+
   if ($('#map').length) {
     map.init();
   }
