@@ -120,7 +120,7 @@ $('#submit-btn').click(function () {
         }
         else {
             $.ajax({
-                url: "https://api.spotify.com/v1/search?q=" + query +"&offset="+ offset + "&type=track",
+                url: "https://api.spotify.com/v1/search?q=" + query + "&offset=" + offset + "&type=track",
                 method: "GET",
                 headers: {
                     'Authorization': 'Bearer ' + accessToken
@@ -140,6 +140,8 @@ $('#submit-btn').click(function () {
                     for (var i = 0; i < 20; i++) {
                         var resultsRow = $('<div>').addClass('result-row');
                         let resultID = $('<div>').addClass('result-id').addClass("closed");
+                        var imageUrl = data.tracks.items[i].album.images[2].url;
+                        var resultImage = $('<img>').addClass('result-image').attr('src', imageUrl);
                         var resultName = $('<div>').addClass('result-name');
                         var resultArtist = $('<div>').addClass('result-artist');
                         var resultAlbum = $('<div>').addClass('result-album');
@@ -148,7 +150,7 @@ $('#submit-btn').click(function () {
                         resultName.append([data.tracks.items[i].name]);
                         resultArtist.append([data.tracks.items[i].artists[0].name]);
                         resultAlbum.append([data.tracks.items[i].album.name]);
-                        resultsRow.append($('<hr>')).append(resultID).append(resultName).append(resultArtist).append(resultAlbum).append(addingButton);
+                        resultsRow.append($('<hr>')).append(resultImage).append(resultID).append(resultName).append(resultArtist).append(resultAlbum).append(addingButton);
                         resultsBody.append(resultsRow);
                         let resultArray = data.tracks.items[i];
                         addingButton.click(function () {
@@ -166,7 +168,7 @@ $('#submit-btn').click(function () {
                             alert("Toto je první stránka výsledků.");
                         }
                         else {
-                            offset = offset  - pageLimit;
+                            offset = offset - pageLimit;
                             searchTracks();
                         }
                     });
@@ -228,6 +230,7 @@ function addToPlaylist(resultArray) {
     playlistHead.append(playlistHeadName).append(playlistHeadArtist).append(playlistHeadAlbum);
 
     var playlistRow = $('<div>').addClass('playlist-row');
+    var imageField = $('<img>').addClass('playlist-image').attr('src', resultArray.album.images[2].url);
     var idField = $('<div>').addClass('closed').addClass('playlist-id').text(resultArray.id);
     var nameTrack = $('<div>').addClass('playlist-name').text(resultArray.name);
     var nameArtist = $('<div>').addClass('playlist-artist').text(resultArray.artists[0].name);
@@ -238,7 +241,7 @@ function addToPlaylist(resultArray) {
     } else {
         nameAlbum;
     }
-    playlistRow.append($('<hr>')).append(idField).append(nameTrack).append(nameArtist).append(nameAlbum).append(deleteButton);
+    playlistRow.append($('<hr>')).append(imageField).append(idField).append(nameTrack).append(nameArtist).append(nameAlbum).append(deleteButton);
     playlistBody.append(playlistRow);
 
     deleteButton.click(function () {

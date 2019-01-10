@@ -188,6 +188,7 @@ footer {
 }
 
 .playlist-row {
+    overflow: auto;
     width: 100%;
     margin-top: 5px;
     padding-left: 10px;
