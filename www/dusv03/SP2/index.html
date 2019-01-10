@@ -4,22 +4,37 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>VSEMusicBox</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
 
 <body>
     <header>
-
+        <h1>VSEMusicBox</h1>
 
     </header>
-    <div>Aplikace pro vyhledávní hudby přes spotify</div>
+    <div class="info">Aplikace pro vyhledávní hudby přes spotify a vytváření seznamu oblíbených písniček</div>
+    <div class="search">
+        <form id="search-form">
+            <input id="search-input" type="text">
+            <button id="search-button">Search</button>
+        </form>
+
+    </div>
+    <div class="results"></div>
+    <div class="favorite"></div>
     <footer>
+        <div>
+            &copy Vladimír Dušek 2018
+            <br>
+            Vytvořeno v rámci předmětu 4IZ268 jako semestrální práce.
 
+
+        </div>
     </footer>
-
-    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

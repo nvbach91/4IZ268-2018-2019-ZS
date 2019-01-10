@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;  
+  }
+
+body {
+      max-width: 1360px;
+      margin-right:auto;
+      margin-left:auto;
+      background-color: rgb(27, 247, 247);
+      text-align: center;
+
+  }
+
+h1 {
+    font-size: 72px;
+}
+
+.info{
+    font-size:24px;
+}
+
+.search{
+    margin-top:25px;
+}
+
+.results{
+    margin-top:25px;
+}
+
+.favorite{
+    margin-top:25px;
+}
+
+footer{
+    margin-top: 100px;
+}
