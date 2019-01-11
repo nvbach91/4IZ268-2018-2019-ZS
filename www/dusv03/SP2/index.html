@@ -14,16 +14,25 @@
         <h1>VSEMusicBox</h1>
 
     </header>
-    <div class="info">Aplikace pro vyhledávní hudby přes spotify a vytváření seznamu oblíbených písniček</div>
-    <div class="search">
-        <form id="search-form">
-            <input id="search-input" type="text">
-            <button id="search-button">Search</button>
-        </form>
-
+    <div id="info">
+        Aplikace pro vyhledávní hudby přes spotify a vytváření seznamu oblíbených písniček.
+        <br>
+        Pro funkčnost aplikace je nutné se přihlásit.
     </div>
-    <div class="results"></div>
-    <div class="favorite"></div>
+    <div id="login">
+        <form id="login_form">
+            <button type="button" id="login_button">Přihlásit se</button>
+        </form>
+    </div>
+    <div id="search"></div>
+    <div class="results">
+        <div id='result_info'></div>
+        <div id='result_enum'></div>
+    </div>
+    <div class="favorite">
+        <div id="favorite_info"> Seznam oblíbených písniček (playlist)</div>
+        <div id="favorite_enum"></div>
+    </div>
     <footer>
         <div>
             &copy Vladimír Dušek 2018
