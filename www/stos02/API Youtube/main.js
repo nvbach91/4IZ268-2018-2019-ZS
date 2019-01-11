@@ -36,8 +36,24 @@ function getRenderVideo(video) {
   var videoDate = video.snippet.publishedAt;
   var channelTitle = video.snippet.channelTitle;
 
-  videoDate = videoDate.replace("T", " ");
-  videoDate = videoDate.replace("Z", "");
+  function addZero(i) {
+    if (i < 10) {
+      i = "0" + i;
+    }
+    return i;
+  }
+
+  var date = new Date(videoDate);
+  var formatDate =
+    date.getDate() +
+    "." +
+    addZero(date.getMonth() + 1) +
+    "." +
+    date.getFullYear() +
+    " " +
+    addZero(date.getHours()) +
+    ":" +
+    addZero(date.getMinutes());
 
   var renderVideo =
     "<li>" +
@@ -56,7 +72,7 @@ function getRenderVideo(video) {
     channelTitle +
     " " +
     "</div>" +
-    videoDate +
+    formatDate +
     "<p>" +
     description +
     "</p>" +
