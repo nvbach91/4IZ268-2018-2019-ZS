@@ -4,14 +4,127 @@
 
 html, body {
     font-family: Roboto;
+    height: 85%;
+    margin: 0;
+    padding: 0;
 }
 
-h2 {
+span > h2 {
     padding-left: 10px;
 }
 
-.test {
-  background-color: crimson;
+span > h3 {
+  float: right;
+  padding-right: 20px;
+}
+
+.head {
+  display: inline;
+}
+
+#infoWindow {
+  width: 250px;
+  height: 300px;
+}
+
+.title {
+  height: 15%;
+  background-color: #48b5e9;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 12px 14px;
+  border: solid #48b5e9 1px;
+  border-radius: 2px;
+}
+
+.content {
+  height: 70%;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.save-button {
+  /* background-color: #48b5e9; */
+  background-color: white; 
+  color: black; 
+  border: 2px solid #48b5e9;
+  padding: 7px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+#floating-panel {
+  /* position: absolute; */
+  top: 10px;
+  left: 50%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+.google-button {
+  height: 40px;
+  border-width: 0;
+  background: white;
+  color: #737373;
+  border-radius: 5px;
+  white-space: nowrap;
+  box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.05);
+  transition-property: background-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+  padding: 0;
+}
+
+google-button:focus, google-button:hover {
+    box-shadow: 1px 4px 5px 1px rgba(0,0,0,0.1);
+  }
+  
+google-button:active {
+    background-color: #e5e5e5;
+    box-shadow: none;
+    transition-duration: 10ms;
+  }
+
+    
+.google-button__icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 8px 0 8px 8px;
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+}
+
+.google-button__icon--plus {
+  width: 27px;
+}
+
+.google-button__text {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Roboto',arial,sans-serif;
 }
 
 /* Always set the map height explicitly to define the size of the div
@@ -23,78 +136,74 @@ h2 {
   margin: auto;
 }
       
-/* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 95%;
-        margin: 0;
-        padding: 0;
-      }
-      #description {
-        font-size: 15px;
-        font-weight: 300;
-      }
+      
+#description {
+  font-size: 15px;
+  font-weight: 300;
+}
 
-      #infowindow-content .title {
-        font-weight: bold;
-      }
+#infowindow-content .title {
+  font-weight: bold;
+}
 
-      #infowindow-content {
-        display: none;
-      }
+#infowindow-content {
+  display: none;
+}
 
-      #map #infowindow-content {
-        display: inline;
-      }
+#map #infowindow-content {
+  display: inline;
+}
 
-      .pac-card {
-        margin: 10px 10px 0 0;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        background-color: #fff;
-        font-family: Roboto;
-      }
+.pac-card {
+  margin: 10px 10px 0 0;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  font-family: Roboto;
+}
 
-      #pac-container {
-        padding-bottom: 12px;
-        margin-right: 12px;
-      }
+#pac-container {
+  padding-bottom: 12px;
+  margin-right: 12px;
+}
 
-      .pac-controls {
-        display: inline-block;
-        padding: 5px 11px;
-      }
+.pac-controls {
+  display: inline-block;
+  padding: 5px 11px;
+}
 
-      .pac-controls label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-      }
+.pac-controls label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
 
-      #pac-input {
-        background-color: #fff;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        margin-left: 12px;
-        padding: 0 11px 0 13px;
-        text-overflow: ellipsis;
-        width: 400px;
-      }
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 400px;
+}
 
-      #pac-input:focus {
-        border-color: #4d90fe;
-      }
+#pac-input:focus {
+  border-color: #4d90fe;
+}
 
-      #title {
-        color: #fff;
-        background-color: #4d90fe;
-        font-size: 25px;
-        font-weight: 500;
-        padding: 6px 12px;
-      }
-      #target {
-        width: 345px;
-      }
+#title {
+  color: #fff;
+  background-color: #4d90fe;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+#target {
+  width: 345px;
+}
+

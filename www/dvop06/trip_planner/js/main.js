@@ -37,7 +37,8 @@ function initAutocomplete() {
     var i;
     $(document).ready(function () {
         for (i = 0; i < localStorage.length; i++) {
-            retrieveMarker(labels[labelIndex++ % labels.length]);
+            var retrievedMarker = retrieveMarker(labels[labelIndex++ % labels.length]);
+            markerList.push(retrievedMarker);
         }
     });
 
@@ -109,6 +110,28 @@ function initAutocomplete() {
         placeMarker(event.latLng);
     });
 
+    // map.addListener('click', function (event) {
+    //     var placeid = placeid;
+    //     var API_URL = `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeid}&key=${API_KEY}`;
+    //     // const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    //     try {
+    //         if (!place.geometry) {
+    //             console.log("Returned place contains no geometry");
+    //             return;
+    //         }
+
+    //         $.getJSON(API_URL, {
+    //             tags: placeid,
+    //             tagmode: "any",
+    //             format: "json"
+    //         },
+    //             function (data) {
+    //                 alert(data);
+    //             });
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // });
 
 }
 
@@ -141,6 +164,7 @@ function retrieveMarker(markerId) {
     google.maps.event.addListener(marker, 'click', function () {
         infowindow.open(map, marker);
     });
+    return marker;
 }
 
 function googleMapsMarkerToSerializable(markerObject, infoWindowObject) {
@@ -148,7 +172,7 @@ function googleMapsMarkerToSerializable(markerObject, infoWindowObject) {
     outputObject.position = markerObject.position;
     outputObject.label = markerObject.label;
     outputObject.draggable = markerObject.draggable ? 1 : 0;
-    outputObject.text = infoWindowObject.content;
+    outputObject.content = infoWindowObject.content;
     return outputObject;
 }
 
@@ -161,26 +185,163 @@ function placeMarker(location) {
     });
 
 
+    markerList.push(marker);
 
-
-    var html = '<div class="test">Lorem ipsum blab bla</div>';
-
+    var html = ['<div  id="infoWindow">',
+        '<div class="title">My notes</div>',
+        '<div contenteditable="true" class="content"></div>',
+        '<div>',
+        '<button onclick="markerList.forEach(saveMarker)" class="save-button">',
+        'Save</button>',
+        '</div>',
+        '</div>'].join('');
+    ;
     var infowindow = new google.maps.InfoWindow(
         {
             content: html
         });
 
     google.maps.event.addListener(marker, 'click', function () {
-        $(".test").css('font-weight', 'bold');
         infowindow.open(map, marker);
     });
 
+
+    saveMarker(marker, infowindow);
+
+}
+
+function saveMarker(markerToSave, infowindowToSave) {
     try {
-        window.localStorage.setItem(marker.label, JSON.stringify(googleMapsMarkerToSerializable(marker, infowindow)));
+        window.localStorage.setItem(markerToSave.label, JSON.stringify(googleMapsMarkerToSerializable(markerToSave, infowindowToSave)));
     } catch (error) {
-        alert("Error - marker could not be stored" + "\n Your web storage might be full.");
+        alert("Error - marker could not be stored " + error + console.log(error));
     }
 }
+
+
+// Sets the map on all markers in the array.
+function setMapOnAll(map) {
+    for (var i = 0; i < markerList.length; i++) {
+        markerList[i].setMap(map);
+    }
+}
+// Removes the markers from the map, but keeps them in the array.
+function clearMarkers() {
+    setMapOnAll(null);
+}
+
+// Shows any markers currently in the array.
+function showMarkers() {
+    setMapOnAll(map);
+}
+
+// Deletes all markers in the array by removing references to them.
+function deleteMarkers() {
+    if (window.confirm("Alert - this action will delete all your saved files \n Do you want to proceed?")) {
+        clearMarkers();
+        localStorage.clear();
+        markerList = [];
+        labelIndex = 0;
+    }
+    return false;
+}
+
+var authorizeButton = document.getElementById('authorize_button');
+var signoutButton = document.getElementById('signout_button');
+
+/**
+ *  On load, called to load the auth2 library and API client library.
+ */
+function handleClientLoad() {
+    gapi.load('client:auth2', initClient);
+}
+
+/**
+ *  Initializes the API client library and sets up sign-in state
+ *  listeners.
+ */
+function initClient() {
+    gapi.client.init({
+        apiKey: API_KEY,
+        clientId: CLIENT_ID,
+        discoveryDocs: DISCOVERY_DOCS,
+        scope: SCOPES
+    }).then(function () {
+        // Listen for sign-in state changes.
+        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+        // Handle the initial sign-in state.
+        updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+        authorizeButton.onclick = handleAuthClick;
+        signoutButton.onclick = handleSignoutClick;
+    }, function (error) {
+        appendPre(JSON.stringify(error, null, 2));
+    });
+}
+
+/**
+ *  Called when the signed in status changes, to update the UI
+ *  appropriately. After a sign-in, the API is called.
+ */
+function updateSigninStatus(isSignedIn) {
+    if (isSignedIn) {
+        authorizeButton.style.display = 'none';
+        signoutButton.style.display = 'block';
+        listFiles();
+    } else {
+        authorizeButton.style.display = 'block';
+        signoutButton.style.display = 'none';
+    }
+}
+
+/**
+ *  Sign in the user upon button click.
+ */
+function handleAuthClick(event) {
+    gapi.auth2.getAuthInstance().signIn();
+}
+
+/**
+ *  Sign out the user upon button click.
+ */
+function handleSignoutClick(event) {
+    gapi.auth2.getAuthInstance().signOut();
+}
+
+/**
+ * Append a pre element to the body containing the given message
+ * as its text node. Used to display the results of the API call.
+ *
+ * @param {string} message Text to be placed in pre element.
+ */
+function appendPre(message) {
+    var pre = document.getElementById('content');
+    var textContent = document.createTextNode(message + '\n');
+    pre.appendChild(textContent);
+}
+
+/**
+ * Print files.
+ */
+function listFiles() {
+    gapi.client.drive.files.list({
+        'pageSize': 10,
+        'fields': "nextPageToken, files(id, name)"
+    }).then(function (response) {
+        appendPre('Files:');
+        var files = response.result.files;
+        if (files && files.length > 0) {
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                appendPre(file.name + ' (' + file.id + ')');
+            }
+        } else {
+            appendPre('No files found.');
+        }
+    });
+}
+
+
 
 
 // var ApiKey = "AIzaSyCqrIm5k4rHJuYEwMlMGkusAAeLGBNNhZ8";
