@@ -39,6 +39,22 @@ var createPokemon = function (pokemonName) {
 
     newPokemon.appendChild(newPokemonName);
     newPokemon.appendChild(newPokemonDelete);
+
+    var loader = document.createElement('div');
+    loader.classList.add('loader');
+    newPokemon.appendChild(loader);
+
+    var pokemonUrl = 'http://pokeapi.salestock.net/api/v2/pokemon/' + pokemonName.toLowerCase() + '/';
+    fetch(pokemonUrl).then(function (response) {
+        return response.json();
+    }).then(function (response) {
+        newPokemon.removeChild(loader);
+        var pokemonData = response;
+        var pokemonWeight = document.createElement('div');
+        pokemonWeight.innerText = pokemonData.weight;
+        newPokemon.insertBefore(pokemonWeight, newPokemonName);
+    })
+
     return newPokemon;
 }
 pokemonForm.addEventListener('submit', function (e) {
@@ -67,4 +83,4 @@ var addPokemonToList = function (pokemonName) {
 addPokemonToList('Pikachu');
 addPokemonToList('Eevee');
 
-var pokemonImage = '' + pokemonName + '.png';
+/*var pokemonImage = '' + pokemonName + '.png';*/
