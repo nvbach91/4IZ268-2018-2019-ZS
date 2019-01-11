@@ -67,8 +67,8 @@ form.submit(function (e) {
 /*--------------------- check existing books ----------------------------*/
 var bookExists = function (id) {
     var existingBooks = $('.id');
-    for (var k = 0; k < existingBooks.length; k++) {
-        var book = existingBooks.get(k);
+    for (var i = 0; i < existingBooks.length; i++) {
+        var book = existingBooks.get(i);
         if (id === book.innerHTML) {
             return true;
         }
@@ -86,7 +86,7 @@ var addToResults = function (item) {
             author = authors[0];
         } else {
             author = authors[0];
-            for (var i = 0; j < authors.length; i++) {
+            for (var i = 1; i < authors.length; i++) {
                 author += ', ' + authors[i];
             }
         }
@@ -115,7 +115,6 @@ var addToResults = function (item) {
     });
     resultRow.append(image).append(result).append(addButton).append('<hr>');
     return resultRow;
-    //resultsField.append(resultRow);
 };
 /*--------------------- add a book to my library -----------------------------------------*/
 var addToLibrary = function (book, author, url, rating) {
@@ -216,7 +215,7 @@ var createLoader = function () {
 };
 
 /* ----------------- init page ----------------------- */
-if (localStorage.length !== 0) {
+if (!localStorage.books) {
     var storedBooks = JSON.parse(localStorage.getItem('books'));
     var keys = Object.keys(storedBooks);
     for (var i = 0; i < keys.length; i++) {
