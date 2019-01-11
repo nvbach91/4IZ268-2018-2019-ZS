@@ -1,0 +1,50 @@
+
+body {
+    /*background-color: antiquewhite;*/
+    background-image: url("https://www.themaparchive.com/media/catalog/product/cache/1/image/b9d24ee63e043d9dae72d8cfeefe8ff8/a/x/ax00601.jpg");
+    background-size: cover;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+input, textarea {
+    display: inline-block;
+    width: 100%;
+}
+
+#cipher {
+    position: fixed;
+     top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -300px;
+    width: 600px;
+    max-height: 1000px;
+    background-color: rgba(173, 216, 230, 0.9);
+    padding: 15px;
+}
+
+#result {
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+    background-color: antiquewhite;
+    color: black;
+    padding: 10px;
+    border: white 1px solid;
+    margin-top: 15px;
+}
+
+input, textarea {
+    display: block;
+    width: 580px;
+    padding: 10px;
+    border: white 1px solid;
+}
+
+textarea {
+    height: 100px;
+}

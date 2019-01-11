@@ -1,0 +1,94 @@
+
+
+body {
+    background-color: whitesmoke;
+    padding: 20px;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+    font-family: 'MedievalSharp';
+    text-align: center;
+}
+
+.randomText {
+    text-align: justify;
+}
+
+#coors {
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 18px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    position: static;
+}
+
+
+#map {
+    height: 350px;
+    width: 50%;
+    margin: 10px 10px;
+    padding: 10px;
+    box-shadow: 7px 7px 20px grey;
+    float: left;
+}
+
+#coors:hover {
+    background-color:white;
+    cursor: pointer;
+}
+
+
+.card {
+    width: 100%;
+    height: 100px;
+}
+
+.card-body {
+    background-image: url("../img/icon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: transparent;
+    width: 40px;
+    height: 100px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(196, 196, 196);
+ }
+
+ .footer p {
+    text-align: center;
+ }
+
+ @media screen and (max-width: 1020px) {
+    #map {
+        height: 400px;
+        width: 100%;
+        float: none;
+        margin: auto;
+    }
+
+    .footer {
+        position: relative;
+     }
+  }
+
+ul {
+    column-count: 3;
+    text-align: left;
+  }
+
+  li {
+      list-style: none;
+  }
+
+  a:hover {
+      color: black;
+      transform: scale(2);
+  }
