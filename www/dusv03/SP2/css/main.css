@@ -63,6 +63,11 @@ footer{
     padding-bottom: 5px;
 }
 
+.audio_preview{
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
 .add_button{
     background-color: rgb(32, 121, 255);
     border: 1px solid black;
