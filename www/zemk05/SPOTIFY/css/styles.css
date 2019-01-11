@@ -89,7 +89,7 @@ footer {
     width:48%;
     border: 1px solid black;
     background-color: #33a878;
-    margin-left:20px;
+    margin-left:20px;;
  }
  #userLayout h2 {
     background-color: #165e46;
@@ -129,12 +129,15 @@ footer {
     padding-left: 10px;
 }
 
-.result-name,.result-artist,.result-album {
-    width:26%;
+.result-name,.result-artist,.result-album,.result-audio {
+    width:20%;
     float:left;
     text-align:center;
 }
 
+.result-audio {
+    width:48px;
+}
 .add-button {
     float:right;
     width:10%;
@@ -194,10 +197,13 @@ footer {
     padding-left: 10px;
 }
 
-.playlist-name,.playlist-artist,.playlist-album {
-    width:25%;
+.playlist-name,.playlist-artist,.playlist-album,.playlist-audio {
+    width:20%;
     float:left;
     text-align:center;
+}
+.playlist-audio {
+    width:48px;
 }
 .delete-button {
     float:right;

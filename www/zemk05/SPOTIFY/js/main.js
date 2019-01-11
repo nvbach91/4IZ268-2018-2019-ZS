@@ -40,6 +40,7 @@ $(document).ready(function () {
             }
             //create a loader during ajax response loading
             $(document).ajaxStart(function () {
+                $(".loader").remove();
                 var loader = $('<div>').addClass('loader');
                 $('.message').append(loader);
                 $(".loader").show();
@@ -120,13 +121,12 @@ $('#submit-btn').click(function () {
         }
         else {
             $.ajax({
-                url: "https://api.spotify.com/v1/search?q=" + query + "&offset=" + offset + "&type=track",
-                method: "GET",
+                url: 'https://api.spotify.com/v1/search?q=' + query + '&offset=' + offset + '&type=track',
+                method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + accessToken
                 },
                 success: function (data) {
-
                     resultsHeader.removeClass();
                     resultsHead.empty();
                     resultsBody.empty();
@@ -137,20 +137,33 @@ $('#submit-btn').click(function () {
                     var resultsHeadAlbum = $('<div>').addClass("header-result").text("Album");
                     resultsHead.append(resultsHeadName).append(resultsHeadArtist).append(resultsHeadAlbum);
 
-                    for (var i = 0; i < 20; i++) {
+                    //console.log(data.tracks.items);
+
+                    for (var i = 0; i < data.tracks.items.length; i++) {
                         var resultsRow = $('<div>').addClass('result-row');
-                        let resultID = $('<div>').addClass('result-id').addClass("closed");
+
+                        var previewUrl = data.tracks.items[i].preview_url;
+
+                        if(previewUrl === null) {
+                            var resultAudio = $('<div>').addClass('result-id');
+                        }
+                        else {
+                            var resultAudio = $('<audio controls>').addClass('result-audio').attr('src', previewUrl);
+                        }
+
                         var imageUrl = data.tracks.items[i].album.images[2].url;
                         var resultImage = $('<img>').addClass('result-image').attr('src', imageUrl);
+                        let resultID = $('<div>').addClass('result-id').addClass("closed");
                         var resultName = $('<div>').addClass('result-name');
                         var resultArtist = $('<div>').addClass('result-artist');
                         var resultAlbum = $('<div>').addClass('result-album');
                         var addingButton = $('<button>').addClass('add-button').text('Přidat');
+
                         resultID.text([data.tracks.items[i].id]);
                         resultName.append([data.tracks.items[i].name]);
                         resultArtist.append([data.tracks.items[i].artists[0].name]);
                         resultAlbum.append([data.tracks.items[i].album.name]);
-                        resultsRow.append($('<hr>')).append(resultImage).append(resultID).append(resultName).append(resultArtist).append(resultAlbum).append(addingButton);
+                        resultsRow.append($('<hr>')).append(resultAudio).append(resultImage).append(resultID).append(resultName).append(resultArtist).append(resultAlbum).append(addingButton);
                         resultsBody.append(resultsRow);
                         let resultArray = data.tracks.items[i];
                         addingButton.click(function () {
@@ -163,29 +176,31 @@ $('#submit-btn').click(function () {
                     var prevButton = $('<button>').addClass('prev-button').text('Předchozí');
                     var nextButton = $('<button>').addClass('next-button').text('Následující');
                     resultsBody.append(prevButton).append(nextButton);
-                    $(".prev-button").click(function () {
+                    $('.prev-button').click(function () {
                         if (data.tracks.previous === null) {
-                            alert("Toto je první stránka výsledků.");
+                            alert('Toto je první stránka výsledků.');
                         }
                         else {
                             offset = offset - pageLimit;
                             searchTracks();
+                            $('html,body').scrollTop(0);
                         }
                     });
-                    $(".next-button").click(function () {
+                    $('.next-button').click(function () {
                         if (offset < totalRecord) {
                             offset = offset + pageLimit;
                             searchTracks();
+                            $('html,body').scrollTop(0);
                         }
                         else {
                             if (data.tracks.next === null) {
-                                alert("Toto je poslední stránka výsledků.");
+                                alert('Toto je poslední stránka výsledků.');
                             }
                         }
                     });
                 },
                 error: function () {
-                    alert("Chyba spojení. Prosíme, přihlašte se znovu.");
+                    alert('Chyba spojení. Prosíme, přihlašte se znovu.');
                 }
             });
         }
@@ -195,7 +210,7 @@ $('#submit-btn').click(function () {
 
 
 //Zmáčknutí klávesy enter
-$("#searched-text").keyup(function (event) {
+$('#searched-text').keyup(function (event) {
     if (event.keyCode === 13) {
         $('#submit-btn').click();
     }
@@ -204,10 +219,10 @@ $("#searched-text").keyup(function (event) {
 /*----------------------Control of added track---------------------- */
 function trackExists(resultArray, resultID) {
     var placed = false;
-    if ($('.playlist-id')) {
+    if ($('.playlist-id').length) {
         $('.playlist-id').each(function () {
             if ($(this).text() === resultID.text()) {
-                alert("Tato skladba se již nachází ve tvém playlistu.");
+                alert('Tato skladba se již nachází ve tvém playlistu.');
                 placed = true;
             }
         });
@@ -218,19 +233,28 @@ function trackExists(resultArray, resultID) {
 }
 
 /*----------------------Add a result to my playlist---------------------- */
-var playlistBody = $(".playlist-body");
-var playlistHead = $(".playlist-head");
-var playlistHeader = $("#myPlaylist");
+var playlistBody = $('.playlist-body');
+var playlistHead = $('.playlist-head');
+var playlistHeader = $('#myPlaylist');
 
 function addToPlaylist(resultArray) {
     playlistHead.empty();
-    var playlistHeadName = $('<div>').addClass("header-playlist").text("Název");
-    var playlistHeadArtist = $('<div>').addClass("header-playlist").text("Autor");
-    var playlistHeadAlbum = $('<div>').addClass("header-playlist").text("Album");
+    var playlistHeadName = $('<div>').addClass('header-playlist').text('Název');
+    var playlistHeadArtist = $('<div>').addClass('header-playlist').text('Autor');
+    var playlistHeadAlbum = $('<div>').addClass('header-playlist').text('Album');
     playlistHead.append(playlistHeadName).append(playlistHeadArtist).append(playlistHeadAlbum);
 
     var playlistRow = $('<div>').addClass('playlist-row');
     var imageField = $('<img>').addClass('playlist-image').attr('src', resultArray.album.images[2].url);
+
+
+    if(resultArray.preview_url === null) {
+        var previewField = $('<div>').addClass('playlist-preview');
+    }
+    else {
+        var previewField = $('<audio controls>').addClass('playlist-audio').attr('src', resultArray.preview_url);
+    }
+
     var idField = $('<div>').addClass('closed').addClass('playlist-id').text(resultArray.id);
     var nameTrack = $('<div>').addClass('playlist-name').text(resultArray.name);
     var nameArtist = $('<div>').addClass('playlist-artist').text(resultArray.artists[0].name);
@@ -241,15 +265,13 @@ function addToPlaylist(resultArray) {
     } else {
         nameAlbum;
     }
-    playlistRow.append($('<hr>')).append(imageField).append(idField).append(nameTrack).append(nameArtist).append(nameAlbum).append(deleteButton);
+    playlistRow.append($('<hr>')).append(previewField).append(imageField).append(idField).append(nameTrack).append(nameArtist).append(nameAlbum).append(deleteButton);
     playlistBody.append(playlistRow);
 
     deleteButton.click(function () {
         playlistRow.remove();
     });
 }
-
-
 
 
 
