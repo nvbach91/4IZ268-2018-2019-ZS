@@ -78,3 +78,17 @@ h1 {
         position: relative;
      }
   }
+
+ul {
+    column-count: 3;
+    text-align: left;
+  }
+
+  li {
+      list-style: none;
+  }
+
+  a:hover {
+      color: black;
+      transform: scale(2);
+  }

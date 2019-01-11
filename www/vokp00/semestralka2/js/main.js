@@ -1,3 +1,4 @@
+
 $("<div id='map'></div>").appendTo("body");
 $("<input type='button' id='coors' value='Where to go??'>").appendTo("body");
 $("<div class='textBox'></div>").appendTo("body");
@@ -8,7 +9,7 @@ var latitude = 0;
 var longitude = 0;
 var city = "";
 
-/*
+
 fetch("http://extreme-ip-lookup.com/json/").then(function (response) {
     return response.json();
 }).then(function (response) {
@@ -21,9 +22,9 @@ fetch("http://extreme-ip-lookup.com/json/").then(function (response) {
     longitude = 50;
     city = "no info found";
 });
-*/
 
-/* Geo location api from browser */
+
+/* Geo location api from browser 
 const geoFindMe = () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(success, error, geoOptions);
@@ -52,6 +53,7 @@ const geoOptions = {
 };
 
 $(window).on('load', geoFindMe);
+*/
 
 /* Map init */
 
@@ -84,11 +86,14 @@ var descCastle = "";
 var dist = 0;
 var link = "";
 
+var newCastle;
+var cont = $('<ul>');
 
 $.getJSON("gpx/hrady.json", function (data) {
     var JSONItems = [];
     JSONItems = data;
     var array = [];
+
     for (var i = 0; i < JSONItems.features.length; i++) {
 
 
@@ -97,6 +102,19 @@ $.getJSON("gpx/hrady.json", function (data) {
         nameCastle = JSONItems.features[i].properties.name;
         descCastle = JSONItems.features[i].properties.desc;
         link = JSONItems.features[i].properties.links[0].href;
+
+        var listPois = function () {
+            newCastle = $('<li>').appendTo(cont);
+            var thelink = $('<a>', {
+                text: nameCastle,
+                title: 'Castle page',
+                href: link,
+                target: '_blank'
+            }).appendTo(newCastle);
+        };
+
+        listPois();
+
 
         /* user - castle distance, haversine formula */
         var radlat1 = Math.PI * latitude / 180;
@@ -117,6 +135,8 @@ $.getJSON("gpx/hrady.json", function (data) {
         array.push(dist);
     }
 
+    $(cont).appendTo(".randomText");
+
     /* closest castle */
     min = Math.min.apply(Math, array)
 
@@ -124,6 +144,7 @@ $.getJSON("gpx/hrady.json", function (data) {
         return nameCastle;
     }
 });
+
 
 var routeLength;
 var routeLayer;
@@ -212,5 +233,3 @@ $("#coors").click(function () {
 
 
 });
-
-
