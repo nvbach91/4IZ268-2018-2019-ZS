@@ -29,7 +29,7 @@ var accessToken = params.access_token;
 var state = params.state;
 var stateKey = 'spotify_auth_state';
 var clientId = 'bd8138fa0b1640b297139a6b30482253';
-var redirectURI = "http://localhost:5500/";
+var redirectURI = "https://fcp.vse.cz/4IZ268/2018-2019-ZS/www/dusv03/SP2";
 var resFavOb = {};
 
 
