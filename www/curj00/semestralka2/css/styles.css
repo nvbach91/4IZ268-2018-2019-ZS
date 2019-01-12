@@ -32,6 +32,9 @@ main{
 img{
     height: 20px;
 }
+h2{
+    text-align: center;
+}
 footer{
     text-align: center;
     font-size: 15px;
@@ -83,6 +86,7 @@ main ul{
 @media screen and (min-width: 1100px) {
     .brand, .brand_p{
         padding: 40px;
+        padding-bottom: 0;
     }
     img{
         height: 70px;
@@ -107,9 +111,6 @@ main ul{
 @media screen and (min-width: 1500px) {
     img{
         height: 100px;
-    }
-    li{
-        height: 200px;
     }
     li p{
         font-size: 60px;
