@@ -1,41 +1,41 @@
 [{
-		name: "NH Car",
-		id: 1,
-		popis: "50°5'1.732\"N, 14°23'3.251\"E"
+		"name": "NH Car",
+		"id": 1,
+		"popis": "50°5'1.732\"N, 14°23'3.251\"E"
 	}, {
-		name: "Porsche Praha Smíchov",
-		id: 2,
-		popis: "50°4'10.489\"N, 14°22'41.630\"E"
+		"name": "Porsche Praha Smíchov",
+		"id": 2,
+		"popis": "50°4'10.489\"N, 14°22'41.630\"E"
 	}, {
-		name: "Porsche Praha Prosek",
-		id: 3,
-		popis: "50°7'55.227\"N, 14°29'30.433\"E"
+		"name": "Porsche Praha Prosek",
+		"id": 3,
+		"popis": "50°7'55.227\"N, 14°29'30.433\"E"
 	}, {
-		name: "Auto Jarov",
-		id: 4,
-		popis: "50°5'25.698\"N, 14°29'56.907\"E"
+		"name": "Auto Jarov",
+		"id": 4,
+		"popis": "50°5'25.698\"N, 14°29'56.907\"E"
 	}, {
-		name: "Auto Podbabská Praha",
-		id: 5,
-		popis: "50°6'52.443\"N, 14°23'30.614\"E"
+		"name": "Auto Podbabská Praha",
+		"id": 5,
+		"popis": "50°6'52.443\"N, 14°23'30.614\"E"
 	}, {
-		name: "Autosalon Klokoèka Centrum",
-		id: 6,
-		popis: "50°4'35.496\"N, 14°17'56.176\"E"
+		"name": "Autosalon Klokoèka Centrum",
+		"id": 6,
+		"popis": "50°4'35.496\"N, 14°17'56.176\"E"
 	}, {
-		name: "TUkas",
-		id: 7,
-		popis: "50°0'7.182\"N, 14°24'45.595\"E"
+		"name": "TUkas",
+		"id": 7,
+		"popis": "50°0'7.182\"N, 14°24'45.595\"E"
 	}, {
-		name: "AUTO JAROV KUNRATICE",
-		id: 8,
-		popis: "50°0'38.903\"N, 14°28'36.962\"E"
+		"name": "AUTO JAROV KUNRATICE",
+		"id": 8,
+		"popis": "50°0'38.903\"N, 14°28'36.962\"E"
 	}, {
-		name: "Louda Auto Praha",
-		id: 9,
-		popis: "50°6'29.972\"N, 14°32'54.237\"E"
+		"name": "Louda Auto Praha",
+		"id": 9,
+		"popis": "50°6'29.972\"N, 14°32'54.237\"E"
 	}, {
-		name: "Auto I.S.R.",
-		id: 10,
-		popis: "50°0'18.520\"N, 14°34'10.862\"E"
+		"name": "Auto I.S.R.",
+		"id": 10,
+		"popis": "50°0'18.520\"N, 14°34'10.862\"E"
 	}]
