@@ -1,0 +1,41 @@
+[{
+		"name": "NH Car",
+		"id": 1,
+		"popis": ""
+	}, {
+		"name": "Porsche Praha Smíchov",
+		"id": 2,
+		"popis": ""
+	}, {
+		"name": "Porsche Praha Prosek",
+		"id": 3,
+		"popis": ""
+	}, {
+		"name": "Auto Jarov",
+		"id": 4,
+		"popis": ""
+	}, {
+		"name": "Auto Podbabská Praha",
+		"id": 5,
+		"popis": ""
+	}, {
+		"name": "Autosalon Klokočka Centrum",
+		"id": 6,
+		"popis": ""
+	}, {
+		"name": "TUkas",
+		"id": 7,
+		"popis": ""
+	}, {
+		"name": "AUTO JAROV KUNRATICE",
+		"id": 8,
+		"popis": ""
+	}, {
+		"name": "Louda Auto Praha",
+		"id": 9,
+		"popis": ""
+	}, {
+		"name": "Auto I.S.R.",
+		"id": 10,
+		"popis": ""
+	}]
