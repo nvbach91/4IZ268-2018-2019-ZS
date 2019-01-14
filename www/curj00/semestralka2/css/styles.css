@@ -32,8 +32,15 @@ main{
 img{
     height: 20px;
 }
-h2{
+.p_info{
+    width: 250px;
+    font-size: 12px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 20px;
+    font-weight: 700;
+    padding-bottom: 20px;
 }
 footer{
     text-align: center;
@@ -64,6 +71,9 @@ main ul{
     margin-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
+    color: dodgerblue;
+    font-weight: bold;
+    font-size: 15px;
 }
 #button{
     display: block;
@@ -103,6 +113,10 @@ main ul{
     li p{
         font-size: 40px;
     }
+    .p_info{
+        width: 450px;
+        line-height: 25px;
+    }
     footer{
         font-size: 20px;
         padding-top: 30px;
@@ -130,6 +144,10 @@ main ul{
     li p{
         font-size: 55px;
     }
+    .p_info{
+        width: 600px;
+        font-size: 16px;
+    }
     footer{
         font-size: 30px;
         padding-top: 40px;
@@ -152,6 +170,10 @@ main ul{
     }
     li p{
         font-size: 60px;
+    }
+    .p_info{
+        width: 700px;
+        font-size: 16px;
     }
     #mapa{
         width: 1350px;

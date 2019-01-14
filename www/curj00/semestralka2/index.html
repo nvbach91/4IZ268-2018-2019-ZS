@@ -21,10 +21,18 @@
             </li>
             <li class="clear"></li>
         </ul>
-        <h2>Region: Praha</h2>
+        <p class="p_uvod"></p>
         <div id="ajax"></div>
         <button id="button" value="Refresh Page" onClick="window.location.href=window.location.href">Zrušit trasu</button>
         <div id="mapa"></div>
+        <p class="p_info">INFO:<br>Vyberte dealera pro vykreslení trasy. Výchozím bodem je sídlo Volkswagen Česká
+            republika. Pokud napoprvé kliknete do mapy jinam, než na některého z&nbsp;dealerů, bude toto místo novým
+            výchozím bodem pro
+            plánování trasy. Poté jen stačí kliknout na cílovou destinaci - jednoho z&nbsp;dealerů na mapě. Po zanesení
+            výchozího bodu do mapy (černý špendlík VW) s&nbsp;ním lze libovolně po mapě pohybovat stisknutím
+            a&nbsp;podržením
+            levého tlačítka myši právě na výchozím bodu a&nbsp;potáhnout jej na libovolné místo v&nbsp;mapě.
+        </p>
     </main>
     <footer>
         <div class="footer_text_2">Tato stránka slouží jako studijní materiál a byla vytvořena v rámci předmětu 4IZ268
@@ -32,8 +40,8 @@
         <div class="footer_text_3">Autor: Jan Čuřík &copy; 2019</div>
     </footer>
 
-    <script type="text/javascript" src="https://api.mapy.cz/loader.js"></script>
-    <script type="text/javascript">Loader.load()</script>
+    <script src="https://api.mapy.cz/loader.js"></script>
+    <script>Loader.load()</script>
     <script src="js/main.js"></script>
 </body>
 

@@ -63,6 +63,154 @@ var data = [{
     name: "Auto I.S.R.",
     id: 10,
     coords: "50°0'18.520\"N, 14°34'10.862\"E"
+}, {
+    name: "TOP CENTRUM Car",
+    id: 11,
+    coords: "48°52'20.365\"N, 17°6'56.297\"E"
+}, {
+    name: "CB Auto",
+    id: 12,
+    coords: "48°58'44.498\"N, 14°26'28.316\"E"
+}, {
+    name: "Porsche České Budějovice",
+    id: 13,
+    coords: "49°00'06.0\"N, 14°29'08.9\"E"
+}, {
+    name: "Auto - Bayer",
+    id: 14,
+    coords: "49°09'09.7\"N, 16°53'35.7\"E"
+}, {
+    name: "Porsche Brno",
+    id: 15,
+    coords: "49°10'40.4\"N, 16°40'30.3\"E"
+}, {
+    name: "ROS Brno",
+    id: 16,
+    coords: "49°11'11.0\"N, 16°35'25.8\"E"
+}, {
+    name: "Euro Car Zlín",
+    id: 17,
+    coords: "49°13'26.8\"N, 17°42'03.4\"E"
+}, {
+    name: "Samohýl Motor",
+    id: 18,
+    coords: "49°13'3.247\"N, 17°37'42.570\"E"
+}, {
+    name: "Samohýl Motor",
+    id: 19,
+    coords: "49°13'3.247\"N, 17°37'42.570\"E"
+}, {
+    name: "Auto Vysočina",
+    id: 20,
+    coords: "49°23'40.0\"N, 15°34'00.4\"E"
+}, {
+    name: "CB Auto Tábor",
+    id: 21,
+    coords: "49°23'43.945\"N, 14°41'12.562\"E"
+}, {
+    name: "Intermobil",
+    id: 22,
+    coords: "49°23'43.945\"N, 14°41'12.562\"E"
+}, {
+    name: "Car Point Domažlice",
+    id: 23,
+    coords: "49°25'58.7\"N, 12°57'10.5\"E"
+}, {
+    name: "Autocentrum Jan Šmucler Horšovský Týn",
+    id: 24,
+    coords: "49°31'39.2\"N, 12°56'52.3\"E"
+}, {
+    name: "Autocentrum Olomouc",
+    id: 25,
+    coords: "49°34'26.0\"N, 17°13'56.0\"E"
+}, {
+    name: "Araver",
+    id: 26,
+    coords: "49°4'27.175\"N, 17°27'24.445\"E"
+}, {
+    name: "Porsche Plzeň",
+    id: 27,
+    coords: "49°43'30.7\"N, 13°20'43.4\"E"
+}, {
+    name: "Autocentrum Jan Šmucler",
+    id: 28,
+    coords: "49°44'8.681\"N, 13°21'18.633\"E"
+}, {
+    name: "Louda Auto Svitavy",
+    id: 29,
+    coords: "49°45'16.931\"N, 16°27'54.932\"E"
+}, {
+    name: "Auto Heller Ostrava",
+    id: 30,
+    coords: "49°50'26.7\"N, 18°16'25.9\"E"
+}, {
+    name: "Auto Heller Opava",
+    id: 31,
+    coords: "49°57'08.5\"N, 17°52'09.9\"E"
+}, {
+    name: "Fortex",
+    id: 32,
+    coords: "49°57'20.548\"N, 16°57'50.342\"E"
+}, {
+    name: "Autocentrum Barth Pardubice",
+    id: 33,
+    coords: "50°02'49.5\"N, 15°48'31.9\"E"
+}, {
+    name: "Louda Auto Pardubice",
+    id: 34,
+    coords: "50°03'15.5\"N, 15°46'08.2\"E"
+}, {
+    name: "AMOND Kladno",
+    id: 35,
+    coords: "50°8'30.399\"N, 14°3'40.436\"E"
+}, {
+    name: "Louda Auto Poděbrady",
+    id: 36,
+    coords: "50°08'42.0\"N, 15°10'15.5\"E"
+}, {
+    name: "Autocentrum Barth Hradec Králové",
+    id: 37,
+    coords: "50°11'21.3\"N, 15°50'58.5\"E"
+}, {
+    name: "Olfin Car Hradec Králové",
+    id: 38,
+    coords: "50°11'43.029\"N, 15°48'48.207\"E"
+}, {
+    name: "Car Point  Karlovy Vary",
+    id: 39,
+    coords: "50°13'41.6\"N, 12°49'54.8\"E"
+}, {
+    name: "Gerhard Horejsek Litoměřice",
+    id: 40,
+    coords: "50°30'55.0\"N, 14°08'12.9\"E"
+}, {
+    name: "Olfin Car Trutnov",
+    id: 41,
+    coords: "50°33'12.0\"N, 15°54'15.4\"E"
+}, {
+    name: "Louda Auto Teplice",
+    id: 42,
+    coords: "50°39'44.5\"N, 13°52'26.0\"E"
+}, {
+    name: "Gerhard Horejsek Česká Lípa",
+    id: 43,
+    coords: "50°40'41.7\"N, 14°32'39.4\"E"
+}, {
+    name: "Gerhard Horejsek Děčín",
+    id: 44,
+    coords: "50°46'35.5\"N, 14°13'04.2\"E"
+}, {
+    name: "Manfred Schoner autoservis",
+    id: 45,
+    coords: "50°5'10.807\"N, 12°24'6.505\"E"
+}, {
+    name: "Louda Auto Praha",
+    id: 46,
+    coords: "50°6'29.972\"N, 14°32'54.237\"E"
+}, {
+    name: "Autotrend",
+    id: 47,
+    coords: "50°44'36.438\"N, 15°2'53.052\"E"
 }];
 
 var znacky = [];
@@ -70,7 +218,7 @@ var souradnice = [];
 var startovniBod;
 
 data.forEach(function (marker) { /* Vyrobit markery */
-    var c = SMap.Coords.fromWGS84(marker.coords); /* Souřadnice značky, z textového formátu souřadnic */
+    var c = SMap.Coords.fromWGS84(marker.coords); /* Souřadnice značky, z textového formátu souřadnic fromWGS84(14.297847, 50.076322);*/
     var options = {
         url: obrazek,
         title: marker.name,
@@ -104,7 +252,7 @@ for (var i = 0; i < znacky.length; i++) {
 
 
 var cz = mapa.computeCenterZoom(souradnice); /* Spočítat pozici mapy tak, aby značky byly vidět */
-mapa.setCenterZoom(cz[0], cz[1]);
+//mapa.setCenterZoom(cz[0], cz[1]);
 var trasa;
 var vrstvaSTrasou = new SMap.Layer.Geometry();
 mapa.addLayer(vrstvaSTrasou).enable();
@@ -112,7 +260,7 @@ mapa.addLayer(vrstvaSTrasou).enable();
 var nalezeno = function (route) {
     var coords = route.getResults().geometry;
     var cz = mapa.computeCenterZoom(coords);
-    //mapa.setCenterZoom(cz[0], cz[1]);
+    mapa.setCenterZoom(cz[0], cz[1]);
     if (trasa != null) {
         vrstvaSTrasou.removeGeometry(trasa);
     }
