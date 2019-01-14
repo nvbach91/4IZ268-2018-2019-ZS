@@ -1,43 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mápa kaváren</title>
+    <title>Prague On Grid</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,800|Palanquin:300,400&amp;subset=latin-ext"
+        rel="stylesheet">
+    <link rel="icon" href="img/favicon.png">
+    <link rel="canonical" href="http://example.com/pragueongrid/" />
+    <meta name="author" content="Alina Baltabaeva, bala00" />
+    <meta name="description" content="###########" />
+    <meta name="keywords" content="prague,praha,kavárna,cafe,káva,coffee" />
 </head>
-<body>
+
+<body data-spy="scroll" data-target="#navbarResponsive" data-target=".navbar" data-offset="100">
     <!-- Navigation -->
     <header>
-        <nav>
+        <nav class="navbar navbar-expand-sm navbar-light bg-custom fixed-top">
             <!-- Logo -->
-            <span><a href="index.html"><img src="" alt="" title="Hlavní stránka">
-                </a></span>
-
-            <!-- Links -->
-            <ul>
-                <li><a href="">Mapa</a></li>
-                <li><a href="">O nás</a></li>
-                <li><a href="">Kontakty</a></li>
-            </ul>
-            <div class="search">
-                <input type="text" name="search" placeholder="Hledat..">
+            <span><a href="index.html"><img src="img/logo.png" alt="" title="Hlavní stránka" class="navbar-brand"></a></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <!-- Links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#section-1">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#section-2">VYZKOUŠEJ!</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#section-3">MÁPA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#section-4">KONTAKTY</a></li>
+                </ul>
             </div>
         </nav>
     </header>
-    <!-- End of navigation -->
+    <!-- End Navigation -->
 
+    <!-- Content -->
+    <div class="content">
+        <div id="section-1" class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-5 text-center">
+                    <h1>Prague On Grid</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, excepturi consequatur!
+                        Officiis
+                        nostrum recusandae aperiam, ad fuga explicabo ea alias hic eaque quisquam, corrupti animi error
+                        perferendis expedita voluptates iusto?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, excepturi consequatur!
+                        Officiis
+                        nostrum recusandae aperiam, ad fuga explicabo ea alias hic eaque quisquam, corrupti animi error
+                        perferendis expedita voluptates iusto?</p>
+                    <a href="#section-2"><i class="fas fa-angle-down"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Application -->
+        <div id="section-2" class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <form>
+                        <div class="form-group">
+                            <label for="sel1">Co si dáte?</label>
+                            <select class="form-control" id="sel1" name="sellist1">
+                                <option>Kávu</option>
+                                <option>Kávu se snídaním</option>
+                                <option>Kávu a denní menu</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 ">
+                    <form>
+                        <div class="form-check">
+                            <label class="form-check-label" for="check1"><input type="checkbox" class="form-check-input"
+                                    id="check1" name="option1" value="something">Vhodné pro vegetariány</label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label" for="check2"><input type="checkbox" class="form-check-input"
+                                    id="check2" name="option2" value="something">Bezlepkové</label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label" for="check3"><input type="checkbox" class="form-check-input"
+                                    id="check3" name="option3" value="something">Platba kartou</label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label" for="check4"><input type="checkbox" class="form-check-input"
+                                    id="check4" name="option4" value="something">Vhodné pro děti</label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label" for="check5"><input type="checkbox" class="form-check-input"
+                                    id="check5" name="option5" value="something">Otevřeno teď</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-5 text-center">
+                    <form>
+                        <div class="form-check">
+                            <label class="form-check-label" for="check6"><input type="checkbox" class="form-check-input"
+                                    id="check6" name="option6" value="something"></label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label" for="check6"><input type="checkbox" class="form-check-input"
+                                    id="check6" name="option6" value="something"></label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label" for="check6"><input type="checkbox" class="form-check-input"
+                                    id="check6" name="option6" value="something"></label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label" for="check6"><input type="checkbox" class="form-check-input"
+                                    id="check6" name="option6" value="something"></label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label" for="check6"><input type="checkbox" class="form-check-input"
+                                    id="check6" name="option6" value="something"></label>
+                        </div>
+                    </form>
+                </div>
+                <!-- <button type="submit" class="btn btn-primary">Hledej</button> -->
+            </div>
+        </div>
+    </div>
+
+    <div id="section-3" class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-5 text-center">
+                <h1>Mápa kaváren</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, excepturi consequatur!
+                    Officiis
+                    nostrum recusandae aperiam, ad fuga explicabo ea alias hic eaque quisquam, corrupti animi error
+                    perferendis expedita voluptates iusto?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, excepturi consequatur!
+                    Officiis
+                    nostrum recusandae aperiam, ad fuga explicabo ea alias hic eaque quisquam, corrupti animi error
+                    perferendis expedita voluptates iusto?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, excepturi consequatur!
+                    Officiis
+                    nostrum recusandae aperiam, ad fuga explicabo ea alias hic eaque quisquam, corrupti animi error
+                    perferendis expedita voluptates iusto?</p>
+                <a href="#section-4"><i class="fas fa-angle-down"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- End Application -->
+
+    <div id="section-4" class="container-fluid">
+        <div class="row justify-content-center text-center">
+            <div class="col-xl-6 offset-xl-6">
+                <h1>Kontaktujte nás</h1>
+            </div>
+            <div class="col-xl-6 offset-xl-6">
+                <p>Adresa adresa adresa 1231/23</p>
+                <p>+420 123 456 789</p>
+                <p>pragueongrid@pragueongrid.com</p>
+            </div>
+            <div class="col-xl-6 offset-xl-6">
+                <a href="https://www.facebook.com/" target="_blank" title="Join us on Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://twitter.com/" target="_blank" title="Join us on Twitter"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" title="Join us on Instagram"><i class="fab fa-instagram"></i></a><br>
+            </div>
+            <div class="col-xl-6 offset-xl-6">
+                <a href="#section-1"><i class="fas fa-angle-up"></i></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- End Content -->
 
     <!-- Footer -->
     <footer>
-        <p>Created by <a target="_blank" href="https://github.com/alina-bal">Alina Baltabaeva</a></p>
-        <p>Inspired by <a href="https://onthegrid.city" target="_blank">On The Grid</a>, <a href="https://www.stylishcoffee.cz"
-                target="_blank">Stylish Coffee</a> and <a href="https://goout.net/" target="_blank">GoOut</a></p>
+        <p>Created by <a target="_blank" href="https://github.com/alina-bal" title="Open on GitHub">Alina Baltabaeva</a></p>
+        <p>Inspired by <a href="https://www.stylishcoffee.cz" target="_blank">Stylish Coffee</a> and <a href="https://goout.net/"
+                target="_blank">GoOut</a></p>
     </footer>
-    <!-- End of footer -->
-    
+    <!-- End Footer -->
+
+    <!-- Script sources -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
+    <!-- End Script sources -->
 </body>
+
 </html>

@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    font-family: 'Palanquin', sans-serif;
+    font-weight: 300;
+    position: relative;
+}
+
+body {
+    margin-top: 10vh;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: #C1403D;
+    text-decoration: none;
+}
+
+p {
+    letter-spacing: .4px;
+}
+
+#section-1 p,
+#section-1 h1,
+#section-4 p,
+#section-4 h1 {
+    color: #fff;
+}
+
+.content h1 {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 800;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    line-height: 100%;
+    margin: 30px;
+}
+
+nav {
+    min-height: 10vh;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #C1403D;
+}
+
+header .bg-custom,
+.navbar-collapse {
+    background-color: #fff;
+}
+
+nav img {
+    height: 45px;
+}
+
+#section-1,
+#section-2,
+#section-3,
+#section-4 {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.fa-facebook-square,
+.fa-twitter-square,
+.fa-instagram {
+    font-size: 30px;
+    color: #fff;
+    margin: 15px 0 0 10px;
+}
+
+.fa-angle-down,
+.fa-angle-up {
+    font-size: 48px;
+    color: #fff;
+    margin-top: 30px;
+}
+
+#section-2 .fa-angle-down,
+#section-3 .fa-angle-down {
+    color: black;
+}
+
+.navbar .navbar-toggler {
+    outline: none;
+}
+.nav-item {
+    padding-left: 10px;
+}
+
+#section-1 {
+    /* Photo by Nathan Dumlao on Unsplash */
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#section-4 {
+    /* Photo by Brooke Cagle on Unsplash */
+    background-image: url(../img/background-2.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-top: 20vh;
+}
