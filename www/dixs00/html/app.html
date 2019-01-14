@@ -42,18 +42,36 @@
 
    <main>
       <label class="disabled" for="topics">Select a topic to practice</label>
-
-      <div class="flexContainerWrap" id="appContainer">
-         <div class="flexContainerWrap">
-            <div id="loader" class="loader">
+      <div class="flexColumn" id="appContainerOne">
+         <div class="flexContainerWrap" id="appContainer">
+            <div class="flexContainerWrap">
+               <div id="loader" class="loader">
+                  <div>Loading...</div>
+               </div>
+               <select name="topics" class="disabled" id="topicDropdown">
+               </select>
+               <button class="disabled" id="practiceButton">Practice</button>
+            </div>
+            <div id="loader2" class="loader">
                <div>Loading...</div>
             </div>
-            <select name="topics" class="disabled" id="topicDropdown">
-            </select>
-            <button class="disabled" id="practiceButton">Practice</button>
          </div>
+         <div class="disabled" id="flashcard">
+            <div class="disabled" id="question"></div>
+            <button class="disabled" id="show-answer">Show answer</button>
+            <div class="disabled" id="answer"></div>
+            <div class="flexContainerWrap">
 
-         <div class="disabled" id="flashcard"></div>
+               <button id="forgot">Forgot</button>
+               <button id="hard">Hard</button>
+
+               <button id="good">Good</button>
+               <button id="easy">Easy</button>
+
+            </div>
+         </div>
+         <ul id="map"></ul>
+         <div id="bub"></div>
       </div>
       </div>
 

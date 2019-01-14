@@ -8,8 +8,39 @@
     color: #002868;
 }
 
+#map {
+    display: flex;
+    flex-flow: row wrap;
+    list-style-type: none;
+    justify-content: center;
+    align-content: stretch;
+}
+
+.mapItem {
+    margin: 5px;
+    border: 1px solid #C30011;
+    text-align: center;
+    font-size: small;
+    padding: 5px;
+    height: 20px;
+    width: 70px;
+    flex-grow: 1;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: pre;
+    overflow: overlay;
+}
+
 #appContainer {
     flex-flow: row wrap;
+    padding: 15px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flexColumn {
+    display: flex;
+    flex-flow: column wrap;
     padding: 15px;
     justify-content: center;
     align-items: flex-start;
@@ -63,6 +94,11 @@ select {
     box-sizing: border-box;
 }
 
+#flashcard button {
+    min-width: 70px;
+    margin: 2px;
+}
+
 .disabled {
     display: none;
 }
@@ -86,6 +122,10 @@ select {
 .loader {
     display: inline-block;
     transform: translateZ(1px);
+}
+
+#loader2 {
+    display: none;
 }
 
 .loader>div {

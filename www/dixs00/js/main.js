@@ -1,3 +1,4 @@
+
 function toggleNav() {
    var burger = document.getElementById("toggleHamburger");
    var sidebar = document.getElementById("mySidenav");
