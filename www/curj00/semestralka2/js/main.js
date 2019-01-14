@@ -1,4 +1,3 @@
-// var obrazek = "https://api.mapy.cz/img/api/marker/drop-red.png";
 var obrazek = "img/drop-vw.png";
 var obrazek_start = "img/drop-vw2.png";
 var mapa = new SMap(JAK.gel("mapa"));
@@ -96,9 +95,9 @@ var data = [{
     id: 18,
     coords: "49°13'3.247\"N, 17°37'42.570\"E"
 }, {
-    name: "Samohýl Motor",
+    name: "AUTO STRAKONICE",
     id: 19,
-    coords: "49°13'3.247\"N, 17°37'42.570\"E"
+    coords: "49°16'5.897\"N, 13°54'50.982\"E"
 }, {
     name: "Auto Vysočina",
     id: 20,
@@ -167,10 +166,6 @@ var data = [{
     name: "Louda Auto Poděbrady",
     id: 36,
     coords: "50°08'42.0\"N, 15°10'15.5\"E"
-}, {
-    name: "Autocentrum Barth Hradec Králové",
-    id: 37,
-    coords: "50°11'21.3\"N, 15°50'58.5\"E"
 }, {
     name: "Olfin Car Hradec Králové",
     id: 38,
@@ -243,7 +238,7 @@ vrstva.enable();                         /* A povolit */
 for (var i = 0; i < znacky.length; i++) {
     vrstva.addMarker(znacky[i]);
     var card = new SMap.Card();
-    card.getBody().innerHTML = "<br>Prodejce Volkswagen";
+    card.getBody().innerHTML = "<br>Prodejce vozů Volkswagen";
     card.setSize(270, 90);
     card.getHeader().innerHTML = "<strong>" + data[i].name + "</strong>";
     znacky[i].decorate(SMap.Marker.Feature.Card, card);
@@ -260,7 +255,7 @@ mapa.addLayer(vrstvaSTrasou).enable();
 var nalezeno = function (route) {
     var coords = route.getResults().geometry;
     var cz = mapa.computeCenterZoom(coords);
-    mapa.setCenterZoom(cz[0], cz[1]);
+    //mapa.setCenterZoom(cz[0], cz[1]);
     if (trasa != null) {
         vrstvaSTrasou.removeGeometry(trasa);
     }
@@ -367,7 +362,7 @@ function loadDoc(id) {
             var jsonResponse = JSON.parse(this.responseText);
             jsonResponse.forEach(function (marker) {
                 if (marker.id == id) {
-                    document.getElementById("ajax").innerHTML = marker.name + ", popis: " + marker.popis;
+                    document.getElementById("ajax").innerHTML = marker.name + "<br>" + marker.adresa + "<br> " + marker.souradnice;
                 }
             });
         }

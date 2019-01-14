@@ -25,12 +25,20 @@ li.clear{
 .brand, .brand_p{
     float: left;
     padding: 5px;
+    padding-bottom: 0;
 }
 main{
     border-bottom: 1px rgb(48, 47, 47) solid;
 }
 img{
     height: 20px;
+}
+.p_uvod{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 700;
+    color: dodgerblue;
 }
 .p_info{
     width: 250px;
@@ -65,15 +73,20 @@ main ul{
     margin-right: auto;
 }
 #ajax{
-    width:300px; 
-    height:40px;
+    width:320px; 
+    height:70px;
     margin-top: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
     color: dodgerblue;
     font-weight: bold;
     font-size: 15px;
+    text-align: center;
+    line-height: 22px;
+    border-color: dodgerblue;
+    border: solid;
+    border-radius: 35px;
 }
 #button{
     display: block;
@@ -88,6 +101,7 @@ main ul{
     border: none;
     border-radius: 15px;    
     box-shadow: 0 9px #999;
+    padding: 5px;
 }
 #button:hover{
     transition-duration: 0.8s;
@@ -102,7 +116,8 @@ main ul{
 
 @media screen and (min-width: 660px) {
     .brand, .brand_p{
-        padding: 25px;
+        padding: 10px;
+        padding-bottom: 0;
     }
     img{
         height: 50px;
@@ -124,6 +139,9 @@ main ul{
     .footer_text_2{
         font-size: 15px;
     }
+    #ajax{
+        width: 400px;
+    }
     #mapa{
         width:600px;
         height:600px;
@@ -132,20 +150,23 @@ main ul{
 }
 @media screen and (min-width: 1100px) {
     .brand, .brand_p{
-        padding: 40px;
+        padding: 20px;
         padding-bottom: 0;
     }
     img{
         height: 70px;
     }
     li{
-        height: 150px;
+        height: 110px;
     }
     li p{
         font-size: 55px;
+    }    
+    li.brand{
+        padding-left: 120px;
     }
     .p_info{
-        width: 600px;
+        width: 650px;
         font-size: 16px;
     }
     footer{
@@ -172,7 +193,7 @@ main ul{
         font-size: 60px;
     }
     .p_info{
-        width: 700px;
+        width: 750px;
         font-size: 16px;
     }
     #mapa{
