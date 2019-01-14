@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hudební databáze</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="hudební databáze Spotify">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+    <link rel="icon" type="img/png" href="images/icon.png" />
+</head>
+
+<body>
+    <header>
+        <h1>Vítejte v hudební databázi!</h1>
+    </header>
+    <br>
+
+    <main>
+        <div class="intro">
+            <p>
+                Pomocí <b>vyhledávacích polí</b> můžete zadat <b>název skladby</b>, který si můžete přidat do
+                playlistu.
+            </p>
+            <br>
+            <p class="message"></p>
+            <p class="error">
+                Pro práci s databází je nutné mít aktivní účet na Spotify.
+            </p>
+            <input type="button" id="login-btn" value="Přihlásit se">
+        </div>
+        <form id="music-form">
+            <div id="insert-row">
+                <input type="text" id="searched-text" name="song/artist" placeholder="Zadejte hledanou skladbu">
+            </div>
+            <br>
+            <div class="message-results"></div>
+            <div id="submit-row">
+                <input type="button" id="submit-btn" value="Hledat v databázi">
+                <input type="reset" value="Reset formuláře">
+            </div>
+        </form>
+        <div id="userLayout">
+            <div id="resultsTable" class="closed">
+                <h2>Výsledky hledání</h2>
+                <div class="results-head"> </div>
+                <div class="results-body"></div>
+            </div>
+            <div id="myPlaylist">
+                <h2>Můj playlist</h2>
+                <div class="playlist-head">
+                </div>
+                <div class="playlist-body">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer> ZS 2018/2019 &copy; Kateřina Zemánková</footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

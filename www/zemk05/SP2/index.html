@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hudební databáze</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+    <link rel="icon" type="img/png" href="images/icon.png" />
+</head>
+
+<body>
+    <header>
+        <h1>Vítejte v hudební databázi!</h1>
+    </header>
+    <br>
+    <main>
+        <div class="intro">
+            <p>
+                Pomocí <b>vyhledávacích polí</b> můžete zadat <b>název písně, či jméno umělce nebo název alba</b>.
+            </p>
+            <p>
+                Pro vyhledávání jsme použili <b>hudební databázi Spotify</b>, která obsahuje miliony skladeb.
+            </p>
+        </div>
+        <form id="music-form">
+            <div id="insert-row">
+                <input type="text" name="song/artist" placeholder="Zadejte hledaný výraz">
+            </div>
+            <br>
+            <div id="search-place">
+                <input type="radio" name="place" value="song name">Hledat jako název písničky<br>
+                <input type="radio" name="place" value="artist name">Hledat jako jméno umělce<br>
+                <input type="radio" name="place" value="LP name">Hledat jako název alba umělce<br>
+            </div>
+            <div id="submit-row">
+                <input type="button" value="Hledat v databázi">
+                <input type="button" value="Přidat písničku">
+                <input type="button" value="Odstranit písničku">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+        <hr>
+        <div id="playlist">
+            <div class="playlist-head">ID</div>
+            <div class="playlist-head">Náhled</div>
+            <div class="playlist-head">Jméno</div>
+            <div class="playlist-head">Typ</div>
+            <div class="playlist-head">Rok vydání</div>
+            <div class="playlist-head">Album</div>
+        </div>
+        <hr>
+    </main>
+    <footer>2018 &copy; Kateřina Zemánková</footer>
+    <script src="js/main.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+</body>
+
+</html>
