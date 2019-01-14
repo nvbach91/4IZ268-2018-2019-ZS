@@ -106,7 +106,7 @@
 }, {
     "name": "INTERMOBIL",
     "id": 22,
-    "souradnice": "49°23'43.945\"N, 14°41'12.562\"E",
+    "souradnice": "48°51'37.911\"N, 16°3'2.894\"E",
     "adresa": "Sokolská 1307/29, 66902 Znojmo"
 }, {
     "name": "Car Point Domažlice",

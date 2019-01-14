@@ -109,7 +109,7 @@ var data = [{
 }, {
     name: "Intermobil",
     id: 22,
-    coords: "49°23'43.945\"N, 14°41'12.562\"E"
+    coords: "48°51'37.911\"N, 16°3'2.894\"E"
 }, {
     name: "Car Point Domažlice",
     id: 23,
@@ -367,6 +367,6 @@ function loadDoc(id) {
             });
         }
     };
-    xhttp.open("GET", "txt/data.txt", true);
+    xhttp.open("GET", "https://raw.githubusercontent.com/nvbach91/4IZ268-2018-2019-ZS/student-curj00/www/curj00/semestralka2/txt/data.txt", true);
     xhttp.send();
 }
