@@ -2,19 +2,15 @@ var App = App || {};
 //User token 
 App.token = "1150314422.93c52c9.a0e2f3b2a4fe4091a63d1455ed3b2958";
 App.baseApiUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=';
+
 App.loader = $('<div class="loader"></div>');
 App.carousel = $('.carousel-1');
 App.myJSON;
-
-App.galleryHastagInput = document.querySelector('.hastagInput');
-console.log(App.galleryHastagInput);
 
 App.init = function () {
 
     App.carousel.append(App.loader);
     var url = App.baseApiUrl + App.token;
-
-
 
     $.getJSON(url, function (json) {
         App.myJSON = json;
@@ -22,7 +18,7 @@ App.init = function () {
 
         .done(function () {
             console.log("JSON downloaded");
-            App.carouselPhotos(url);
+            // App.carouselPhotos(url);
             App.loader.remove();
         }).fail(function () {
             console.log("problem with getJSON");
@@ -35,11 +31,12 @@ galleryForm.addEventListener('submit', function (e) {
     var hastagGallery = $('#hashtagInput').val();
     console.log(hastagGallery);
     $('#galleryForm').trigger("reset");
+    App.carouselPhotos(hastagGallery);
 });
 
-App.carouselPhotos = function () {
+App.carouselPhotos = function (tag) {
 
-    var tag = "hockey";
+    //var tag = "hockey";
     var content = `<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">`;
 
@@ -49,9 +46,13 @@ App.carouselPhotos = function () {
 
             if (b == tag) {
                 content += `<div class="carousel-item">
-                <img class="d-block w-100" src="${a.images.standard_resolution.url}"
+                <img class="d-block w-100" src="${a.images.low_resolution.url}"
                     alt="First slide"> 
                     <p>${a.caption.text}</p>
+                    <div class = "likes"> 
+                        <img src="http://www.transparentpng.com/download/instagram-heart/bULeEp-heart-instagram-vector.png" width="30px" height="30px" alt="Srdce"> 
+                        <p>${a.likes.count} likes</p>
+                    </div>
             </div>`;
 
             }
