@@ -3,13 +3,21 @@ var App = App || {};
 App.token = "1150314422.93c52c9.a0e2f3b2a4fe4091a63d1455ed3b2958";
 App.baseApiUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=';
 
-App.loader = $('<div class="loader"></div>');
+
+App.buttonLoader = (`<button class="btn btn-primary" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+                    </button>`);
+
+App.formButton = $(".form-button");
 App.carousel = $('.carousel-1');
 App.myJSON;
 
 App.init = function () {
 
-    App.carousel.append(App.loader);
+
+    App.formButton.append(App.buttonLoader);
+
     var url = App.baseApiUrl + App.token;
 
     $.getJSON(url, function (json) {
@@ -19,13 +27,15 @@ App.init = function () {
         .done(function () {
             console.log("JSON downloaded");
             // App.carouselPhotos(url);
-            App.loader.remove();
+            App.formButton.empty();
+            App.formButton.append('<button type="submit" class="btn btn-primary">Hledej</button>');
         }).fail(function () {
             console.log("problem with getJSON");
         });
 
 };
 
+//Po zmáčnutí tlačítka hledej volá metodu pro vytvoření carouselu
 galleryForm.addEventListener('submit', function (e) {
     e.preventDefault();
     var hastagGallery = $('#hashtagInput').val();
@@ -34,12 +44,11 @@ galleryForm.addEventListener('submit', function (e) {
     App.carouselPhotos(hastagGallery);
 });
 
+//Vytváří carousel
 App.carouselPhotos = function (tag) {
 
-    //var tag = "hockey";
     var content = `<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">`;
-
 
     App.myJSON.data.forEach(function (a) {
         a.tags.forEach(function (b) {
@@ -50,7 +59,7 @@ App.carouselPhotos = function (tag) {
                     alt="First slide"> 
                     <p>${a.caption.text}</p>
                     <div class = "likes"> 
-                        <img src="http://www.transparentpng.com/download/instagram-heart/bULeEp-heart-instagram-vector.png" width="30px" height="30px" alt="Srdce"> 
+                        <img src="/img/heart.png" width="30px" height="30px" alt="Srdce"> 
                         <p>${a.likes.count} likes</p>
                     </div>
             </div>`;
