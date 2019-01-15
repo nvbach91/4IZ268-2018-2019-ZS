@@ -1,16 +1,19 @@
 var App = App || {};
 //User token 
 App.token = "1150314422.93c52c9.a0e2f3b2a4fe4091a63d1455ed3b2958";
-App.baseApiUrl = "https://api.instagram.com/v1/users/self/media/recent/?access_token="
+App.baseApiUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=';
 App.loader = $('<div class="loader"></div>');
 App.carousel = $('.carousel-1');
-
 App.myJSON;
+
+App.galleryHastagInput = document.querySelector('.hastagInput');
+console.log(App.galleryHastagInput);
+
 App.init = function () {
 
     App.carousel.append(App.loader);
     var url = App.baseApiUrl + App.token;
-    console.log(url);
+
 
 
     $.getJSON(url, function (json) {
@@ -27,12 +30,19 @@ App.init = function () {
 
 };
 
+galleryForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var hastagGallery = $('#hashtagInput').val();
+    console.log(hastagGallery);
+    $('#galleryForm').trigger("reset");
+});
+
 App.carouselPhotos = function () {
 
     var tag = "hockey";
     var content = `<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">`;
-    console.log(App.myJSON);
+
 
     App.myJSON.data.forEach(function (a) {
         a.tags.forEach(function (b) {
@@ -43,7 +53,7 @@ App.carouselPhotos = function () {
                     alt="First slide"> 
                     <p>${a.caption.text}</p>
             </div>`;
-                console.log(a.images.standard_resolution.url);
+
             }
         });
 
