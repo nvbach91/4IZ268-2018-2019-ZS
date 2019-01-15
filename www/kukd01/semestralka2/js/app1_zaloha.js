@@ -50,7 +50,6 @@ galleryForm.addEventListener('submit', function (e) {
 //Vytváří carousel
 App.carouselPhotos = function (tag) {
     var nalezeno = false;
-    var media = "";
     var content = `<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">`;
 
@@ -59,18 +58,6 @@ App.carouselPhotos = function (tag) {
 
             if (b == tag) {
                 nalezeno = true;
-
-                media += `<div class="media">
-                <a href = "${a.images.standard_resolution.url}"><img src="${a.images.thumbnail.url}" class="align-self-start mr-3" alt="${a.caption.text}"></a>
-                <div class="media-body">
-                  <h5 class="mt-0">${a.caption.text}</h5> 
-                  <div class = "likes"> 
-                        <img src="../img/heart.png" width="30" height="30" alt="Srdce"> 
-                        <p>${a.likes.count} likes</p>
-                    </div>
-                </div>
-              </div>`;
-
                 content += `<div class="carousel-item">
                 <img class="d-block w-100" src="${a.images.standard_resolution.url}"
                     alt="First slide"> 
@@ -98,7 +85,6 @@ App.carouselPhotos = function (tag) {
 
     if (nalezeno == true) {
         App.carousel.html(content);
-        $('.mediaList').html(media);
         $('.carousel-item').first().removeClass('carousel-item').addClass('carousel-item active');
     }
     else {

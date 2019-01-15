@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Authentication</title>
+    <title>Search hashtag</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
@@ -14,31 +14,45 @@
 </head>
 
 <body>
-    <h1>Authentication</h1>
+    <h1>Search hashtag</h1>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Semestrální práce 2</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="index.html">Authentication</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="">Search hashtag <span class="sr-only">(current)</span></a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="">Search hashtag <span class="sr-only">(current)</span></a>
                 </li>
 
             </ul>
         </div>
     </nav>
 
-    <input type="button" class="btn btn-primary btn-lg" onclick="location.href='https://api.instagram.com/oauth/authorize/?client_id=93c52c960d444e75b7c60e3c46ba182d&redirect_uri=http://127.0.0.1:5500/search.html&response_type=token';"
-        value="Přihlášení do aplikace" />
 
+    <form id="galleryForm">
+        <div class="form-group">
 
+            <p>Aplikace umožňuje zobrazit fotografie podle zadaného hashtagu. Bohužel je zde omezení na posledních 20
+                příspěvků.</p>
+            <input type="text" class="form-control" id="hashtagInput" placeholder="Zadej hashtag ve tvaru 'hockey' ">
+        </div>
+        <div class="form-button">
+
+        </div>
+
+    </form>
+
+    <div class="carousel-1"> </div>
+    <div class="mediaList"> </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
