@@ -46,7 +46,7 @@ galleryForm.addEventListener('submit', function (e) {
 
 //Vytváří carousel
 App.carouselPhotos = function (tag) {
-
+    var nalezeno = false;
     var content = `<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">`;
 
@@ -54,8 +54,9 @@ App.carouselPhotos = function (tag) {
         a.tags.forEach(function (b) {
 
             if (b == tag) {
+                nalezeno = true;
                 content += `<div class="carousel-item">
-                <img class="d-block w-100" src="${a.images.low_resolution.url}"
+                <img class="d-block w-100" src="${a.images.standard_resolution.url}"
                     alt="First slide"> 
                     <p>${a.caption.text}</p>
                     <div class = "likes"> 
@@ -65,6 +66,7 @@ App.carouselPhotos = function (tag) {
             </div>`;
 
             }
+
         });
 
     });
@@ -78,9 +80,13 @@ App.carouselPhotos = function (tag) {
         <span class="sr-only">Next</span>
     </a> </div>`;
 
-    App.carousel.html(content);
-    $('.carousel-item').first().removeClass('carousel-item').addClass('carousel-item active');
-
+    if (nalezeno == true) {
+        App.carousel.html(content);
+        $('.carousel-item').first().removeClass('carousel-item').addClass('carousel-item active');
+    }
+    else {
+        App.carousel.html('<p>Hashtag nenalezen</p>')
+    }
 };
 
 
