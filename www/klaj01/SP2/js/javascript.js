@@ -1,5 +1,10 @@
-var x = document.getElementsByTagName("p");
-const lose = "you losed";
+var el = document.querySelector("gamefield");
+var el1 = document.querySelector("panel_01");
+setTimeout(Element, 10000000000000000000000000000);
+
+function onClickFunction() {
+  document.location.reload();
+}
 const winscore = 2;
 /* vybrání elementu podle id */
 const canvas = document.getElementById("gamefield");
@@ -74,6 +79,11 @@ function resetBall() {
   ball.velocityX = -ball.velocityX;
   ball.speed = 15;
 }
+function endBall() {
+  ball.x = canvas.width / 2;
+  ball.y = canvas.height / 2;
+  ball.color = "YELLOW";
+}
 
 /* Vykreslení dělící čáry */
 function drawNet() {
@@ -114,11 +124,17 @@ function update() {
     user.score++;
     resetBall();
   } else if (user.score >= winscore) {
-    document.getElementById("score").innerHTML = "Winner!";
-    resetBall();
+    document.getElementById("score").innerHTML =
+      "Winner!" + user.score + ":" + com.score;
+    $("#gamefield").remove();
+    $(".panel_01").remove();
+    endBall();
   } else if (com.score >= winscore) {
-    document.getElementById("score").innerHTML = "Loser!";
-    resetBall();
+    document.getElementById("score").innerHTML =
+      "Loser!" + user.score + ":" + com.score;
+    $("#gamefield").remove();
+    $(".panel_01").remove();
+    endBall();
   }
 
   /* rychlost míčku*/

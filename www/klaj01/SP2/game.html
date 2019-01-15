@@ -11,6 +11,7 @@
       media="screen"
       href="css/stylesheet.css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 
   <head>
@@ -21,12 +22,12 @@
   <body>
     <canvas id="gamefield" width="1200" height="600"></canvas>
     <script src="js/javascript.js"></script>
-    <div class="panel">
-      
-        <p>Pohybujte myší</p>
-        <p>Pro restart zmáčkni R</p>
-        <p>Pro pauzu zmáčkni P</p>
-      </ul>
+    <button onclick="onClickFunction()">Restart hry</button>
+    <p id="panel_02"></p>
+    <div class="panel_01">
+      <p>Pohybujte myší</p>
+      <p>Pro restart zmáčkni R</p>
+      <p>Pro pauzu zmáčkni P</p>
     </div>
     <p id="score"></p>
   </body>
