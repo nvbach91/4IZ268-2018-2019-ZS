@@ -1,7 +1,9 @@
 *{
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
     color: black;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
 }
 .clear{
     clear: both;
@@ -33,7 +35,7 @@ main{
 img{
     height: 20px;
 }
-.p_uvod{
+.p_dealer{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -65,14 +67,14 @@ main ul{
     margin: 0 auto;
     padding: 0;
 }
-#mapa{
+#map{
     width:300px; 
     height:400px;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
 }
-#ajax{
+#dealerBox{
     width:320px; 
     height:70px;
     margin-top: 20px;
@@ -102,6 +104,13 @@ main ul{
     border-radius: 15px;    
     box-shadow: 0 9px #999;
     padding: 5px;
+}
+#button:disabled{
+	color: #aaaaaa;
+}
+#button:disabled:hover{
+    background-color: #DCDCDC;
+    cursor: not-allowed;
 }
 #button:hover{
     transition-duration: 0.8s;
@@ -139,10 +148,10 @@ main ul{
     .footer_text_2{
         font-size: 15px;
     }
-    #ajax{
+    #dealerBox{
         width: 400px;
     }
-    #mapa{
+    #map{
         width:600px;
         height:600px;
         margin-bottom: 50px;
@@ -176,7 +185,7 @@ main ul{
     .footer_text_2{
         font-size: 25px;
     }
-    #mapa{
+    #map{
         width:900px;
     }
     #button{
@@ -196,7 +205,7 @@ main ul{
         width: 750px;
         font-size: 16px;
     }
-    #mapa{
+    #map{
         width: 1350px;
     }
 }

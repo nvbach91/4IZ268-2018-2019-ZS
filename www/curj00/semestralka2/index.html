@@ -21,10 +21,10 @@
             </li>
             <li class="clear"></li>
         </ul>
-        <p class="p_uvod">Inforamce o vybraném dealerovi</p>
-        <div id="ajax"></div>
-        <button id="button" value="Refresh Page" onClick="window.location.href=window.location.href">Obnovit</button>
-        <div id="mapa"></div>
+        <p class="p_dealer">Inforamce o vybraném dealerovi</p>
+        <div id="dealerBox"></div>
+        <button id="button" value="Reset" onClick="cancelPath()" disabled>Zrušit</button>
+        <div id="map"></div>
         <p class="p_info">INFO:<br>Vyberte dealera pro vykreslení trasy. Výchozím bodem je sídlo Volkswagen Česká
             republika. Pokud napoprvé kliknete do mapy jinam, než na některého z&nbsp;dealerů, bude toto místo novým
             výchozím bodem pro
@@ -40,9 +40,9 @@
         <div class="footer_text_3">Autor: Jan Čuřík &copy; 2019</div>
     </footer>
 
-    <script src="https://api.mapy.cz/loader.js"></script>
-    <script>Loader.load()</script>
-    <script src="js/main.js"></script>
+    <script type="text/javascript" src="https://api.mapy.cz/loader.js"></script>
+    <script>Loader.load();</script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>

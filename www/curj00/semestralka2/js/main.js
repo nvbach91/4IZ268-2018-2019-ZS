@@ -1,16 +1,18 @@
-var obrazek = "img/drop-vw.png";
-var obrazek_start = "img/drop-vw2.png";
-var mapa = new SMap(JAK.gel("mapa"));
-mapa.addControl(new SMap.Control.Sync()); /* Aby mapa reagovala na změnu velikosti průhledu */
-mapa.addDefaultLayer(SMap.DEF_BASE).enable(); /* Turistický podklad */
-mapa.addDefaultControls(); /* Ovládací prvky v pravém horní rohu mapy */
+// Loader.load();
+var picture = "img/drop-vw.png";
+var picture_start = "img/drop-vw2.png";
+var button = document.getElementById("button");
+var map = new SMap(JAK.gel("map"));
+map.addControl(new SMap.Control.Sync()); /* Aby mapa reagovala na změnu velikosti průhledu */
+map.addDefaultLayer(SMap.DEF_BASE).enable(); /* Turistický podklad */
+map.addDefaultControls(); /* Ovládací prvky v pravém horní rohu mapy */
 var mouse = new SMap.Control.Mouse(SMap.MOUSE_PAN | SMap.MOUSE_WHEEL | SMap.MOUSE_ZOOM); /* Ovládání myší */
-mapa.addControl(mouse);
-mapa.addDefaultLayer(SMap.DEF_OPHOTO);
-mapa.addDefaultLayer(SMap.DEF_TURIST);
-mapa.addDefaultLayer(SMap.DEF_HISTORIC);
-mapa.addDefaultLayer(SMap.DEF_OPHOTO0203);
-mapa.addDefaultLayer(SMap.DEF_OPHOTO0406);
+map.addControl(mouse);
+map.addDefaultLayer(SMap.DEF_OPHOTO);
+map.addDefaultLayer(SMap.DEF_TURIST);
+map.addDefaultLayer(SMap.DEF_HISTORIC);
+map.addDefaultLayer(SMap.DEF_OPHOTO0203);
+map.addDefaultLayer(SMap.DEF_OPHOTO0406);
 
 // Možnost změnit typ mapy
 var layerSwitch = new SMap.Control.Layer();
@@ -20,7 +22,7 @@ layerSwitch.addDefaultLayer(SMap.DEF_TURIST);
 layerSwitch.addDefaultLayer(SMap.DEF_OPHOTO0406);
 layerSwitch.addDefaultLayer(SMap.DEF_OPHOTO0203);
 layerSwitch.addDefaultLayer(SMap.DEF_HISTORIC);
-mapa.addControl(layerSwitch, { left: "10px", top: "7px" });
+map.addControl(layerSwitch, { left: "10px", top: "7px" });
 
 var data = [{
     name: "NH Car",
@@ -208,59 +210,60 @@ var data = [{
     coords: "50°44'36.438\"N, 15°2'53.052\"E"
 }];
 
-var znacky = [];
-var souradnice = [];
-var startovniBod;
+var markers = [];
+var coordinates = [];
+var startPoint;
 
 data.forEach(function (marker) { /* Vyrobit markery */
     var c = SMap.Coords.fromWGS84(marker.coords); /* Souřadnice značky, z textového formátu souřadnic fromWGS84(14.297847, 50.076322);*/
     var options = {
-        url: obrazek,
+        url: picture,
         title: marker.name,
         anchor: { left: 10, bottom: 1 }  /* Ukotvení značky za bod uprostřed dole */
     }
     // Důležité je přiřazení ID jednotlivým markerům - vlastní ID, jinak se generuje nahodne
-    var znacka = new SMap.Marker(c, marker.id, options);
-    souradnice.push(c);
-    znacky.push(znacka);
+    var point = new SMap.Marker(c, marker.id, options);
+    coordinates.push(c);
+    markers.push(point);
 });
 
 /* NH Car ukotvíme za střed značky, přestože neznáme její velikost */
 // var options = {
 //     anchor: { left: 0.5, top: 0.5 }
 // }
-// znacky[1].decorate(SMap.Marker.Feature.RelativeAnchor, options);
+// markers[1].decorate(SMap.Marker.Feature.RelativeAnchor, options);
 
 
-var vrstva = new SMap.Layer.Marker();     /* Vrstva se značkami */
-mapa.addLayer(vrstva);                          /* Přidat ji do mapy */
-vrstva.enable();                         /* A povolit */
-for (var i = 0; i < znacky.length; i++) {
-    vrstva.addMarker(znacky[i]);
+var layer = new SMap.Layer.Marker();     /* layer se značkami */
+map.addLayer(layer);                          /* Přidat ji do mapy */
+layer.enable();                         /* A povolit */
+for (var i = 0; i < markers.length; i++) {
+    layer.addMarker(markers[i]);
     var card = new SMap.Card();
     card.getBody().innerHTML = "<br>Prodejce vozů Volkswagen";
-    card.setSize(270, 90);
+    card.setSize(270, 100);
     card.getHeader().innerHTML = "<strong>" + data[i].name + "</strong>";
-    znacky[i].decorate(SMap.Marker.Feature.Card, card);
+    markers[i].decorate(SMap.Marker.Feature.Card, card);
 }
 
 
 
-var cz = mapa.computeCenterZoom(souradnice); /* Spočítat pozici mapy tak, aby značky byly vidět */
-//mapa.setCenterZoom(cz[0], cz[1]);
-var trasa;
-var vrstvaSTrasou = new SMap.Layer.Geometry();
-mapa.addLayer(vrstvaSTrasou).enable();
+var cz = map.computeCenterZoom(coordinates); /* Spočítat pozici mapy tak, aby značky byly vidět */
+//map.setCenterZoom(cz[0], cz[1]);
+var path;
+var layerPath = new SMap.Layer.Geometry();
+map.addLayer(layerPath).enable();
 
-var nalezeno = function (route) {
+var found = function (route) {
     var coords = route.getResults().geometry;
-    var cz = mapa.computeCenterZoom(coords);
-    //mapa.setCenterZoom(cz[0], cz[1]);
-    if (trasa != null) {
-        vrstvaSTrasou.removeGeometry(trasa);
+    var cz = map.computeCenterZoom(coords);
+    //map.setCenterZoom(cz[0], cz[1]);
+    if (path != null) {
+        layerPath.removeGeometry(path);
     }
-    trasa = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
-    vrstvaSTrasou.addGeometry(trasa);
+    path = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
+    layerPath.addGeometry(path);
+    button.removeAttribute("disabled", "");
 }
 
 var markerClicked = false;
@@ -268,6 +271,8 @@ var endPointCoords;
 
 function handleMarkerClick(e) { /* Kliknutí na marker */
     markerClicked = true;
+    // Nastavíme button jako disabled, dokud se nepřepočítá trasa
+    button.setAttribute("disabled", "");
     // Vybraný marker
     var marker = e.target;
     var id = marker.getId();
@@ -280,23 +285,23 @@ function handleMarkerClick(e) { /* Kliknutí na marker */
         }
     }
     var startPointCoords;
-    if (startovniBod != null) {
+    if (startPoint != null) {
         // Máme startovní bod, najdeme trasu.
-        startPointCoords = startovniBod._coords;
+        startPointCoords = startPoint._coords;
     } else {
         // Nemáme startovní bod, najdeme trasu ze středu mapy a přidáme tam marker.
         startPointCoords = SMap.Coords.fromWGS84(14.3573103, 50.0479011);
         var options = {
-            url: obrazek_start,
+            url: picture_start,
             title: "Startovní bod",
             anchor: { left: 10, bottom: 1 }  /* Ukotvení značky za bod uprostřed dole */
         };
-        startovniBod = new SMap.Marker(startPointCoords, null, options);
-        startovniBod.decorate(SMap.Marker.Feature.Draggable);
-        vrstva.addMarker(startovniBod);
+        startPoint = new SMap.Marker(startPointCoords, null, options);
+        startPoint.decorate(SMap.Marker.Feature.Draggable);
+        layer.addMarker(startPoint);
     }
     var coords = [startPointCoords, endPointCoords];
-    var route = new SMap.Route(coords, nalezeno);
+    var route = new SMap.Route(coords, found);
 }
 
 function handleMapClick(e) { /* Kliknutí do mapy */
@@ -311,25 +316,27 @@ function handleMapClick(e) { /* Kliknutí do mapy */
         // marker, žádný bod se na mapu zase nepřidá.
         markerClicked = false;
     } else {
+        // Máme změnu v mapě, tak můžeme nastavit button pro zrušení trasy jako "enabled" - odebere se atribut disabled
+        button.removeAttribute("disabled", "");
         // Souřadnice bodu kam se kliknulo
-        var startPointCoords = SMap.Coords.fromEvent(e.data.event, mapa);
-        if (startovniBod != null) {
+        var startPointCoords = SMap.Coords.fromEvent(e.data.event, map);
+        if (startPoint != null) {
             // Odstraníme starý startovní bod
-            vrstva.removeMarker(startovniBod);
+            layer.removeMarker(startPoint);
         }
         var options = {
-            url: obrazek_start,
+            url: picture_start,
             title: "Startovní bod",
             anchor: { left: 10, bottom: 1 }  /* Ukotvení značky za bod uprostřed dole */
         };
-        startovniBod = new SMap.Marker(startPointCoords, null, options);
-        startovniBod.decorate(SMap.Marker.Feature.Draggable);
-        vrstva.addMarker(startovniBod);
-        if (trasa != null) {
+        startPoint = new SMap.Marker(startPointCoords, null, options);
+        startPoint.decorate(SMap.Marker.Feature.Draggable);
+        layer.addMarker(startPoint);
+        if (path != null) {
             // Už jsme dřív našli nějakou trasu, tak ji teď přepočítáme pro nový
             // startovní bod.
             var coords = [startPointCoords, endPointCoords];
-            var route = new SMap.Route(coords, nalezeno);
+            var route = new SMap.Route(coords, found);
         }
     }
 }
@@ -337,19 +344,21 @@ function handleMapClick(e) { /* Kliknutí do mapy */
 function start(e) { /* Začátek tažení */
     var node = e.target.getContainer();
     node[SMap.LAYER_MARKER].style.cursor = "default";
+    // Nastavíme button jako disabled, dokud se nepřepočítá trasa
+    button.setAttribute("disabled", "");
 }
 
 function stop(e) { /* Konec tažení */
     var node = e.target.getContainer();
     node[SMap.LAYER_MARKER].style.cursor = "pointer";
     var startPointCoords = e.target.getCoords();
-    if (trasa != null) {
+    if (path !== null) {
         var coords = [startPointCoords, endPointCoords];
-        var route = new SMap.Route(coords, nalezeno);
+        var route = new SMap.Route(coords, found);
     }
 }
 
-var signals = mapa.getSignals();
+var signals = map.getSignals();
 signals.addListener(window, "marker-drag-stop", stop);
 signals.addListener(window, "marker-drag-start", start);
 signals.addListener(this, "marker-click", handleMarkerClick);
@@ -358,15 +367,31 @@ signals.addListener(this, "map-click", handleMapClick);
 function loadDoc(id) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) { // DONE and Success
+        if (this.readyState === 4 && this.status === 200) { // DONE and Success
             var jsonResponse = JSON.parse(this.responseText);
             jsonResponse.forEach(function (marker) {
-                if (marker.id == id) {
-                    document.getElementById("ajax").innerHTML = marker.name + "<br>" + marker.adresa + "<br> " + marker.souradnice;
+                if (marker.id === id) {
+                    document.getElementById("dealerBox").innerHTML = marker.name + "<br>" + marker.adresa + "<br> " + marker.coordinates;
                 }
             });
         }
     };
-    xhttp.open("GET", "https://raw.githubusercontent.com/nvbach91/4IZ268-2018-2019-ZS/student-curj00/www/curj00/semestralka2/txt/data.txt", true);
+    xhttp.open("GET", "json/data.json", true);
     xhttp.send();
+}
+function cancelPath() {
+    // Odstraníme startovní bod
+    if (layer != null && startPoint != null) {
+        layer.removeMarker(startPoint);
+        startPoint = null;
+    }
+    // Odstraníme vykreslenou trasu
+    if (layerPath != null && path != null) {
+        layerPath.removeGeometry(path);
+        path = null;
+    }
+    // Odstraníme info o dealerovi
+    document.getElementById("dealerBox").innerHTML = "";
+    // Nastavíme button jako disabled
+    button.setAttribute("disabled", "");
 }
