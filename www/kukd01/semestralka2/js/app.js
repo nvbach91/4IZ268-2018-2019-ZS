@@ -1,6 +1,9 @@
 var App = App || {};
 //User token 
-App.token = "1150314422.93c52c9.a0e2f3b2a4fe4091a63d1455ed3b2958";
+
+
+//App.token = url.split("=")[1]; //"1150314422.93c52c9.a0e2f3b2a4fe4091a63d1455ed3b2958";
+
 App.baseApiUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=';
 
 
@@ -60,7 +63,7 @@ App.carouselPhotos = function (tag) {
                     alt="First slide"> 
                     <p>${a.caption.text}</p>
                     <div class = "likes"> 
-                        <img src="/img/heart.png" width="30px" height="30px" alt="Srdce"> 
+                        <img src="/img/heart.png" width="30" height="30" alt="Srdce"> 
                         <p>${a.likes.count} likes</p>
                     </div>
             </div>`;
@@ -91,6 +94,12 @@ App.carouselPhotos = function (tag) {
 
 
 $(document).ready(function () {
+    hash = window.location.hash.substr(1); //url of the current page
+    arHash = hash.split('='); //this creates an array with key ([0] element) and value ([1] element)
+    App.token = arHash[1]; //recieve value
+
     App.init();
+
+
 
 });
