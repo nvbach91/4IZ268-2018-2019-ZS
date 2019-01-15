@@ -1,9 +1,9 @@
 *{
     box-sizing: border-box;
-    color: black;
 }
 body{
     font-family: 'Open Sans', sans-serif;
+    color: black;
 }
 .clear{
     clear: both;
@@ -122,6 +122,48 @@ main ul{
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
+#myBtnTop {
+    width: 60px;
+    height: 60px;
+    display: none;
+    position: fixed;
+    bottom: 45px;
+    right: 15px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: dodgerblue;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 30px;
+  }
+  #myBtnBottom {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 45px;
+    right: 15px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: dodgerblue;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 30px;
+  } 
+  #myBtnTop:hover, #myBtnBottom:hover {
+    background-color: rgb(154, 154, 154);
+  }
+  #btn, #btn2 {
+      height: 30px;
+  }
+  #btn2{
+      transform: rotate(180deg)
+  }
 
 @media screen and (min-width: 660px) {
     .brand, .brand_p{
@@ -181,6 +223,7 @@ main ul{
     footer{
         font-size: 30px;
         padding-top: 40px;
+        padding-bottom: 20px;
     }
     .footer_text_2{
         font-size: 25px;

@@ -376,7 +376,7 @@ function loadDoc(id) {
             });
         }
     };
-    xhttp.open("GET", "json/data.json", true);
+    xhttp.open("GET", "https://raw.githubusercontent.com/nvbach91/4IZ268-2018-2019-ZS/student-curj00/www/curj00/semestralka2/json/data.json", true);
     xhttp.send();
 }
 function cancelPath() {
@@ -394,4 +394,46 @@ function cancelPath() {
     document.getElementById("dealerBox").innerHTML = "";
     // Nastavíme button jako disabled
     button.setAttribute("disabled", "");
+}
+hideButton();
+
+//Zkontrolovat, jestli není po změně velikosti okna není okno větší než stránka
+window.onresize = function () {
+    hideButton();
+}
+//Skrýt tlačítko pro posun na konec stránky, pokud je okno větší než stránka
+function hideButton() {
+    if (document.documentElement.offsetHeight < document.documentElement.clientHeight) {
+        document.getElementById("myBtnBottom").style.display = "none";
+    }
+}
+
+// Když se stránka posune dolů o více než 20px, objeví se tlačítko
+window.onscroll = function () {
+    scrollFunction();
+    scrollFunction2();
+}
+
+function scrollFunction() {
+    if (document.documentElement.scrollTop > 1) {
+        document.getElementById("myBtnTop").style.display = "block";
+    } else {
+        document.getElementById("myBtnTop").style.display = "none";
+    }
+}
+function scrollFunction2() { //offsetHeight = 1324
+    if (document.documentElement.offsetHeight - 1 > document.documentElement.clientHeight + document.documentElement.scrollTop) {
+        document.getElementById("myBtnBottom").style.display = "block";
+    } else {
+        document.getElementById("myBtnBottom").style.display = "none";
+    }
+}
+
+// Když se stiskne tlačítko, posunout stránku na začátek
+function topFunction() {
+    document.documentElement.scrollTop = 0;
+}
+// Když se stiskne tlačítko, posunout stránku na konec
+function bottomFunction() {
+    document.documentElement.scrollTo(0, document.documentElement.scrollHeight);
 }
