@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.user-avatar {
+    width: 150px;
+    height: 150px;
+}
+#medias {
+    display: flex;
+    flex-wrap: wrap;
+}
+.media {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 320px;
+    border: 10px solid transparent;
+}
+.media-image {
+    display: block;
+    width: 100%;
+    flex-grow: 1;
+}
+.media-likes {
+    
+}
+#logout-button {
+    display: none;
+}
