@@ -25,6 +25,7 @@
 }
 
 
+/*DESIGN*/
 *{
     text-align: center;
     justify-content: center;
@@ -43,11 +44,25 @@ body{
 }
 
 #refresh-button{
-  width: 40px;
+  width: 70px;
   height: 40px;
+  background-color: #d63737;
+  animation: 1s ease-out 0s 1 slideInFromTop;
+  border: 2px solid rgb(250, 232, 193);
+  border-radius: 10px;
+  margin-left: 42%;
+  margin-right: 42%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
 
-  background-color: aliceblue;
-  
+#refresh-button:hover{
+  background-color:rgb(250, 232, 193);
+  color: #d63737;
+  transform: scale(1.2);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.42);
+  border: 5px solid #d63737;
+  border-radius: 10px;
 }
 
 #tip{
@@ -91,10 +106,26 @@ body{
 
 #mistakes{
   animation: 1s ease-out 0s 1 slideInFromTop;
+  border: 2px solid rgb(250, 232, 193);
+  border-radius: 10px;
+  margin-left: 42%;
+  margin-right: 42%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color:rgb(250, 232, 193);
+  color: rgb(45, 75, 120);
 }
 
 #remaining{
   animation: 1s ease-out 0s 1 slideInFromTop;
+  border: 2px solid rgb(250, 232, 193);
+  border-radius: 10px;
+  margin-left: 42%;
+  margin-right: 42%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color:rgb(250, 232, 193);
+  color: rgb(45, 75, 120);
 }
 
 #id{
@@ -127,5 +158,10 @@ height: 30px;
 /*ready for screen resolution adjustements*/
 @media screen and (max-width: 700px) {
 
+
+  #h1c{
+    font-size: 300%;
+    margin-top: -50px;
+  }
 
 }
