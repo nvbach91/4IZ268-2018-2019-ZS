@@ -6,7 +6,7 @@ $(function () {
 
     window.mishaProcessResult = function (data) {
         for (x in data.data) {
-            container.innerHTML += '<div class="photoBox"><img onload="fillByImage(this)" onclick="window.open(\''+ data.data[x].link +'\')" src="' + data.data[x].images.low_resolution.url + '"><div class="midle"><div class="textOnHover"> <i class="fas fa-heart"></i> ' + data.data[x].likes.count + '</div></div></div>';
+            container.innerHTML += '<div class="photoBox"><img onload="fillByImage(this)" onclick="window.open(\''+ data.data[x].link +'\')" src="' + data.data[x].images.low_resolution.url + '"><div class="midle"><div class="textOnHover"><img class="icon" src="IMG/heart-solid.svg" alt="heart icon"> ' + data.data[x].likes.count + '</div></div></div>';
         }
     }
     apiScriptCreate(ptoken);

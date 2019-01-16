@@ -32,20 +32,20 @@
 }
 /**ENDflexbox**/
 #instafeed{
-display: flex;
-flex-wrap: wrap;
-width: 100%;
-flex-direction: row;
-align-items: center;
-justify-content:center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
 }
 .photoBox{
-border: 1px solid transparent;
-width: 320px;
-height: 320px;
-overflow: hidden;
-background-color: black;
-position: relative;
+    border: 1px solid transparent;
+    width: 320px;
+    height: 320px;
+    overflow: hidden;
+    background-color: black;
+    position: relative;
 }  
 .photoBox .fillHeight {
     height: 100%;
@@ -55,7 +55,7 @@ position: relative;
     height: auto;
     width: 100%; 
 }
-.photoBox img {
+.photoBox > img {
     opacity: 1;
     position: absolute;
     left: 50%;
@@ -64,7 +64,7 @@ position: relative;
     -webkit-transform: translateY(-50%) translateX(-50%);
     transform: translateY(-50%) translateX(-50%);
   }
-.photoBox:hover img{
+.photoBox:hover > img{
     opacity: 0.3;  
 }
 .photoBox:hover .midle{
@@ -80,17 +80,30 @@ position: relative;
     -ms-transform: translate(-50%, -50%);
     text-align: center;
 }
+
 .textOnHover {
-    
     color: white;
     font-size: 16px;
     padding: 16px 32px;
   }
 
+.icon{
+    width: 20px;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    display:inline-block;
+    font-style:normal;
+    font-variant:normal;
+    text-rendering:auto;
+    line-height:1
+      
+}  
+
 header{
     height: 10px;
     width: 100%;
 }
+
 .pageHeader{
     height: 150px;
 }
