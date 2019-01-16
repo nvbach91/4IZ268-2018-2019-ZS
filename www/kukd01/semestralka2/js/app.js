@@ -61,7 +61,9 @@ App.carouselPhotos = function (tag) {
                 nalezeno = true;
 
                 media += `<div class="media">
-                <a href = "${a.images.standard_resolution.url}"><img src="${a.images.thumbnail.url}" class="align-self-start mr-3" alt="${a.caption.text}"></a>
+                <a href = "#" data-toggle="modal" data-target="#exampleModalCenter">
+                    <img src="${a.images.thumbnail.url}" class="align-self-center mr-3" alt="${a.caption.text}">
+                </a>
                 <div class="media-body">
                   <h5 class="mt-0">${a.caption.text}</h5> 
                   <div class = "likes"> 
@@ -69,7 +71,24 @@ App.carouselPhotos = function (tag) {
                         <p>${a.likes.count} likes</p>
                     </div>
                 </div>
-              </div>`;
+              </div>
+              
+              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">${a.caption.text}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <img src="${a.images.standard_resolution.url}" class="align-self-center mr-3" alt="${a.caption.text}">
+      </div>
+      
+    </div>
+  </div>
+</div>`;
 
                 content += `<div class="carousel-item">
                 <img class="d-block w-100" src="${a.images.standard_resolution.url}"
