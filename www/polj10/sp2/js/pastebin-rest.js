@@ -211,8 +211,7 @@ function login() {
     closeStatusPanel();
 }
 function logout() {
-    const localStorage = window.localStorage;
-    localStorage.removeItem("api_user_key");
+    window.localStorage.removeItem("api_user_key");
     showAnonymousUserId();
 }
 
@@ -466,8 +465,7 @@ function createApiUserKey(userName, password) {
             }
 
             $('#loginStatus').text('');
-            const localStorage = window.localStorage;
-            localStorage.setItem("api_user_key", responseText);
+            window.localStorage.setItem("api_user_key", responseText);
             getUserInfo();
         },
         function (statusText) {
