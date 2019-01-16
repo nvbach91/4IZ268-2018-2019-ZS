@@ -13,7 +13,7 @@ App.myJSON;
 
 App.init = function () {
 
-
+    App.token = localStorage.getItem('token');
     App.formButton.append(App.buttonLoader);
 
     var url = App.baseApiUrl + App.token;
@@ -32,6 +32,9 @@ App.init = function () {
         });
 
 };
+
+
+
 
 //Po zmáčnutí tlačítka hledej volá metodu pro vytvoření carouselu
 galleryForm.addEventListener('submit', function (e) {
@@ -94,17 +97,19 @@ function onClick(element) {
     document.getElementById("modal01").style.display = "block";
 }
 
+function localToken() {
+    hash = window.location.hash.substr(1); //url of the current page
+
+    if (hash !== "") {
+        arHash = hash.split('='); //this creates an array with key ([0] element) and value ([1] element)
+        App.token1 = arHash[1]; //recieve value
+        localStorage.setItem("token", App.token1);
+        window.location = 'http://127.0.0.1:5500/search.html';
+    }
+}
 
 $(document).ready(function () {
-    hash = window.location.hash.substr(1); //url of the current page
-    arHash = hash.split('='); //this creates an array with key ([0] element) and value ([1] element)
-    App.token = arHash[1]; //recieve value
-
     App.init();
-
-
-
-
-
-
+    localToken();
 });
+
