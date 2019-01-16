@@ -28,15 +28,18 @@ function deletePage() {
 //alert when you win + repeat?
 function winRepeatConfirmation() {
     var txt;
-    if (confirm("YOU WON! :)" + "Do you want to play again?")) {
+    if (confirm("YOU WON! :)" +"\n"+ "Do you want to play again?")) {
         refreshPage()
+    }
+    else {
+        deletePage();
     }
 }
 
 //alert when you loose + repeat?
 function looseRepeatConfirmation() {
     var txt;
-    if (confirm("YOU LOOSE! :( " + "Do you want to repeat?")) {
+    if (confirm("YOU LOOSE! :( " +"\n"+ "Do you want to repeat?")) {
         refreshPage();
     }
     else {
@@ -137,13 +140,13 @@ function guessWord(p) {
     $('#tip').val("");
 
     if (chosenWord.length == correct) {
-        //$('#tip').val("You won!");
+        $('#tip').val("You won!");
         $("#tip").prop('disabled', true);
-        winRepeatConfirmation();
+        setTimeout(winRepeatConfirmation, 2000);
     } else if ((tries - wrongCount) <= 0) {
         $('#tip').val("You lose!");
         $("#tip").prop('disabled', true);
-        looseRepeatConfirmation();
+        setTimeout(looseRepeatConfirmation, 2000);
     }
 }
 

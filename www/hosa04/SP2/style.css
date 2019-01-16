@@ -1,9 +1,4 @@
 /*ANIMATIONS*/
-
-#inputText{
-  color: black;
-}
-
 @keyframes slideInFromTop {
   0% {
       transform: translateY(-100%);
@@ -29,7 +24,7 @@
 *{
     text-align: center;
     justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, sans-serif;
     color: white;
     background-repeat: no-repeat;
 }
@@ -98,8 +93,8 @@ body{
   margin-top: -50px;
 }
 
-#guess_text{
-  animation: 1s ease-out 0s 1 slideInFromBottom;
+#guess-text{
+  animation: 2s ease-out 0s 1 slideInFromBottom;
 }
 
 
@@ -137,6 +132,8 @@ body{
 }
 
 #secret{
+  width: 100%;
+  height: 100%;
   animation: 1s ease-out 0s 1 slideInFromBottom;
 }
 
@@ -144,14 +141,10 @@ body{
   animation: 1s ease-out 0s 1 slideInFromBottom;
 }
 
-a{
-  animation: 1s ease-out 0s 1 slideInFromBottom;
-}
-
 #hangman-image-1{
 width: 30px;
 height: 30px;
- background-image: url( "https://cdn.pixabay.com/photo/2015/04/04/19/13/one-706897_1280.jpg");
+background-image: url( "https://cdn.pixabay.com/photo/2015/04/04/19/13/one-706897_1280.jpg");
  background-size: cover; 
 }
 
