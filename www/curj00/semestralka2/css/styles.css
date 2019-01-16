@@ -138,8 +138,10 @@ main ul{
     cursor: pointer;
     padding: 15px;
     border-radius: 30px;
-  }
-  #myBtnBottom {
+}
+@keyframes bounce { 0% { top: 30px; } 50% { top: 60px; } 100% { top: 30px; } }
+#myBtnBottom {
+    animation: bounce 2.5s infinite;
     width: 60px;
     height: 60px;
     position: fixed;
@@ -154,17 +156,19 @@ main ul{
     cursor: pointer;
     padding: 15px;
     border-radius: 30px;
-  } 
-  #myBtnTop:hover, #myBtnBottom:hover {
+} 
+#myBtnTop:hover, #myBtnBottom:hover {
     background-color: rgb(154, 154, 154);
-  }
-  #btn, #btn2 {
+}
+#myBtnTop:hover {
+    transform: translateY(5px);
+}
+#btn, #btn2 {
       height: 30px;
-  }
-  #btn2{
+}
+#btn2{
       transform: rotate(180deg)
-  }
-
+}
 @media screen and (min-width: 660px) {
     .brand, .brand_p{
         padding: 10px;
