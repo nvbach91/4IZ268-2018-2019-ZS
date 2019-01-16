@@ -1,10 +1,10 @@
 var el = document.querySelector("gamefield");
 var el1 = document.querySelector("panel_01");
-setTimeout(Element, 10000000000000000000000000000);
 
 function onClickFunction() {
   document.location.reload();
 }
+function finalscore() {}
 const winscore = 2;
 /* vybrání elementu podle id */
 const canvas = document.getElementById("gamefield");
@@ -78,6 +78,7 @@ function resetBall() {
   ball.y = canvas.height / 2;
   ball.velocityX = -ball.velocityX;
   ball.speed = 15;
+  ball.color = randomColor();
 }
 function endBall() {
   ball.x = canvas.width / 2;
@@ -125,15 +126,23 @@ function update() {
     resetBall();
   } else if (user.score >= winscore) {
     document.getElementById("score").innerHTML =
-      "Winner!" + user.score + ":" + com.score;
+      "Vyhrál jsi!" + user.score + ":" + com.score;
     $("#gamefield").remove();
     $(".panel_01").remove();
+    document.getElementById("gameover").innerHTML = "Konec hry";
+    document.getElementById("gameovertext").innerHTML =
+      "Hru můžeš spustit znova, nebo můžeš sdílet svůj výsledek na sociálních sítích";
+
     endBall();
   } else if (com.score >= winscore) {
     document.getElementById("score").innerHTML =
-      "Loser!" + user.score + ":" + com.score;
+      "Prohrál jsi!" + user.score + ":" + com.score;
     $("#gamefield").remove();
     $(".panel_01").remove();
+    document.getElementById("gameover").innerHTML = "Konec hry";
+    document.getElementById("gameovertext").innerHTML =
+      "Hru můžeš spustit znova, nebo můžeš sdílet svůj výsledek na sociálních sítích";
+
     endBall();
   }
 
@@ -182,10 +191,27 @@ function render() {
   drawArc(ball.x, ball.y, ball.radius, ball.color);
 }
 
+// animation will pause when paused==true
+var paused = false;
+
+// testing, a rotation angle for the animated rect
+var angle = 0;
+
 let framePerSecond = 60;
 
 let loop = setInterval(game, 1200 / framePerSecond);
 
+function fbshareCurrentPage() {
+  window.open(
+    "https://twitter.com/home?status=" +
+      "Hrál jsem Pong v prohlížeči a moje skore je:" +
+      user.score +
+      ":" +
+      com.score,
+    "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600"
+  );
+  return false;
+}
 function game() {
   update();
   render();

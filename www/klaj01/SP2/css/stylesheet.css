@@ -62,10 +62,24 @@ console.log {
 }
 
 #score {
-    font-size: 50px;
+    font-size: 75px;
     color: red;
+}
+
+#gameover {
+    font-size: 75px;
+    color: black;
+}
+
+#gameovertext {
+    font-size: 40px;
+    color: black;
 }
 
 #panel_02 {
     float: left;
+}
+
+.twitter {
+    width: 60px;
 }

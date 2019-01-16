@@ -12,6 +12,7 @@
       href="css/stylesheet.css"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://connect.facebook.net/en_US/sdk.js"></script>
   </head>
 
   <head>
@@ -29,6 +30,17 @@
       <p>Pro restart zmáčkni R</p>
       <p>Pro pauzu zmáčkni P</p>
     </div>
+    <p id="gameover"></p>
     <p id="score"></p>
+    <p id="gameovertext"></p>
+    <p id="twitter"></p>
+
+    "<a
+      href="javascript:fbshareCurrentPage()"
+      target="_blank"
+      alt="Share on Twitter"
+      ><img class="twitter"
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAflBMVEUAAAD////39/efn5+tra3Pz8/h4eHZ2dny8vLBwcFxcXEtLS2Li4u8vLzj4+Ps7OxUVFRfX1+dnZ1PT0+EhIRmZmYMDAx5eXlWVlY2NjYlJSUeHh5sbGyzs7PU1NTIyMhFRUUTExNCQkI6OjqIiIh+fn6VlZWnp6caGhopKSlAc0hEAAAJ8ElEQVR4nOWdaWOqPBCFEVAUi9biUrW4tHW5//8PXnGpKJBl5oSgng/vp9u+eQpkksnMidMwrnaw9L1hOFpNZ+ux4zjj9Wwaj8Kh5y+Dtvn/vWPylwfRdjB1xOoO3pLANTgIU4StZNKVsN1wTvyWoZGYIGx5Aw24qwZeYGA0aEI3Ckl0F4UR+o2FErb9mIV3UuxD5x8coZu8A/DOkAnuSaIIm7yXM6+vJmhkEEJ3Nwfzpdp7kAcJIOxtDOCdNAGEEDbh4tMYX6rPhWXC5rdRvlTfzA+SRbhYGedLtWIxMghbuOggU8z4HsmEbXR4ECskrwKohF6lfKk+KiVsmoh/Ms1pnyOF0P2ywJfqi7IEIBBGlvhSRRUQurS9H0oD7ceoS7i0ypdqaZZwaJvvoI1Bwr5O6sWcun1ThB3baH/qmCF8s82V0a8JwupWoSp6hxP2Z7aZ7jRX/RgVCQPbQAVSTK6qEdZnjslKbb5RIvRts5TIRxF+2CYplcqOSoGwTlHiXm8Iwl/bFELJA6OUsN6ACogywjq/oifJXlQJYX0nmask042YsK5h4lbioCEkrGegz0sY+kWEdVyqFUu0gBMQ9m2PW0OCZbiA0EZOlKo5hbBe+0GZyveLpYT1D4S3Kg2LZYSPMo1eVTahlhA+0ixzUclsU0JYj7Shnro6hHVI/OprqE5oP3VPU2HCv4jQtT1SsoqObYoI7Z4ucTRQI7R5PshVwflinvBx39FU+fc0T2jrCBujLzlh0/YYmcqVM+QIH2lHUaTcLuOe8BESM2J5YsK27fEB1BYSVlvKZUahiLBle3QQtQSEj7WvL9N7OeGjR4qLFqWEK9tDA2lVRvgsj/A27GcJzddsV6VVMeHC9riAWhQSmm0rqFafRYQ926OCqldAOLE9KKgmecLH3vjm5eYId7aHBNYuR2hxX/i92SWdTuT/IvozL5rfE1qL9uFNknOBy0U37wgtZWc+8pmjZJz/Zx3CKUN4S2hnnilOw+f6cXa0XZ17Q5iwRhqTPuJxaWthP2NT8JNQ37DkhpD3jfcof+NVGV/2o/k97mZpi5H3LCEvPfNJOVAtSsBn9HuYYreXh0xcT7YzhLzKoCXhN3wWg121uM5B1GMGP0PIe0mPv0KvXe+fDDAj8gsWXwl5M+l5CaiFqNMTQj+Pdv8IeadNl/MejXWfUvnyWZf3a08c2ZGQF+7/NirKf6gfbcBpQll0hX+EhB/O6Doa1SyBejNo/9/hn397hz/imjq09D+8PPA+OyClvhP1R+g779vl8WuiBYzWmZDXtXxb5DFS+IlEFdD9O4IgVmjtzoS8c/vp/Z9dKuVH+CfqonJwJiT++Fn3hTo9mfeVNNjnRK9+OREyj2P2uQFJziDvD/gMAqYfosPdVxQVB/SF84JuWz2nfik5EnKTbL2iUQnis6b/A2vNPDkScqv0iqfGoq36SXqAvLRGNyVkb+8nJWPzi/fFYx0+l5ucSgn5Ffml4+usCv51fmYSiH1kGxwI+UVeAg+AXj5Uaz1DdolddCDkF3SLA1xzc/dF6hCyU4DbAyGgElHmANTysuFDZy5lEw4OhICCZ5VVSisZxqf9gY6xBfvPPz0QsvkcdY8Dt9WMPJ2Izz/TbDiYKihTFqv8k4y2g2nfEiY/GZKt4uUKHFDVeigfLUX8gS0ddhPl16lTuGxlY5vQd9i2ZJNG+yOdjyVJbJIAtQWewz6wO5L1k81qivc6BpxqDh12vWVJMw5EgD7k0FFJHYllkBBwIjxy+BHHlBF3AxEOD3z8iLOTj5QqPuCBj+8dZCraY0qWZw4pW34rLXMxHSEMD9ZOaTpFXQoWKjQhCkQAfI65dTdmdAiVVI1wVSdPBzMBY4sZHORN0DmWVxc/kDkpH2AudYqa4vjClPSuAfHwqC2eEPOSzgBrmpPwiJh60ClgXXoWegsMqgeNAXuLi76xaxvQwEb8/WFG2mefAqE6IUP+Hj+rsU4pkFgon7ghP09zp8kSs4ZDjcfj59ou+hyl1T3zeAK5BQfWj+yj8qWUEguRUKM68OGWt8ipFLQkddKcN657W9NJXCRgS3kbc/Z0Eu4hAnsjMOeHZ8G+RGAn5BRzBnwR4W6GQgGdtQeQc/yrMO8pbpo5neMjDXf2iFAItT2IIPU0GSEOMaBddAGiJupG/9h3F2J7WSF1bXdiXiKGdanqQmoT78WK/GDvkQmkvjQv+lkNukswQdQIF+qtqOhUQT/gcbQQdd4l2m+SRV932oG7xzQQtfoiab6uuJzRWZdafVO3xP1oLnHwvciXfgtD3km6eSn4E7z2zBj5EEe6a1QTxiONCyHe4SvWvWHbReXes7r2rqHdLkfaN4ib+VCu/YfQODv/0F+a4hcdR117SBF1Kyf9bCmHpYZ88DJ9wJCih9lguyRtLAJC/6uSsr3c1NxWt7OIEj+Jlgv67t6c73S2H5/+mlJveL3IoPf7jacC51NX7ggtUIB0pCkZGMDb5B81xdYzazp9623CWxPuKYdqC8Om2nf+NOwzZd0NYYLeCeZ07zHEz3CtfOVUYrMC57ScTxTE6yveyZ9kO6rG5zbv9QVauc3DpHxV04t+TSywC5X3a0Om3KbhR7LoXV9at7dIvEml1poFnntmfBPHe0sVlEW+ic/vffkC/qXP70H7Aj7CjZXtkYFU6gX9NF9iuZ/383uyP4mvfk9A+Px3I7zA/RbGTmmqk+SOkhe4Z+bhw778rqDnv+/pwa3LVe7sev57117g7rwHfk9V7z98/jssX+Ae0he4S/YF7gN+/judX+Be7kdLn5Z3Qgi8V4A9AcY1K8cQED7SbCMolBD559TJ00AsUQ2W0CHoUSZUoeWf2AMJ1n5pVOIqAonL0yNcLSsp6ZH5WNU/LMrccaROXaiealP6lQHIvcjq/RSlgAqEtUZUMHBS8ZOr73SjUjeo5JhX16ChVGym5glYz9Cv5u2r6HpYxwWcYrm8qq+j2v0qFWquWpWs7lxZr/2ieme8hjdnnaKGhs2fjvtofeYbVf9wXcJGvx5Jxq5WY0Cl92lgpOlhqOuRaz/hr2PLTyFsuHZPpgbarg0En2Ob54uExgeKk7Nr6yD8i2K7QfOqbtqo2JjT3BqobtzV191QO6zIfuPtagvEQrKjCMNRvVVdJeM7w+SW5Rm/WFXCt2LZpTBd8ZvmGXl8bMLDczS7q/osvby7MsJGo7cxxjchWqSACQ9LgJ2J+Dj3IC6aqNspmujg8cX8/P6Eu3/DTXDRI4Y4hJ4EvWGk7SM6l2Of7ReWFfoOFbcTsrrVwgh9DYGJW2JaO9oecrAz4c9v6h6cVrLRSep0J76p62pM3vTTCKLtQNYW2x28RYGpCzJSGSU8qR0sfW8YjuLpbJ1+o+P1bBqPwqHnLwPonFKs/6V8gMg9CSGDAAAAAElFTkSuQmCC" </a
+    >";
   </body>
 </html>
