@@ -30,28 +30,39 @@ const globals = {
   api_user_key_local_storage: "api_user_key",
 };
 
+
+const navbarToggleExternalContentElement = $('#navbarToggleExternalContent');
+const loginFormToggleElement = $('#loginFormToggle');
+const logoutButtonElement = $('#logoutButton');
+const loginButtonElement = $('#loginButton');
+
+const userNameElement = $('#userName');
+const userAvatarElement = $('#userAvatar');
+
+const syntaxSelectElement = $('#syntaxSelect');
+const expirationSelectElement = $('#expirationSelect');
+const visibilitySelectElement = $('#visibilitySelect');
+const statusBoxElement = $('#statusBox');
+
+
 //HELPERS
 function loadUserDefaults(defaultSyntaxCode, defaultExpirationCode, defaultVisibilityCode) {
-    const syntaxSelectElement = document.getElementById("syntaxSelect");
-    const expirationSelectElement = document.getElementById("expirationSelect");
-    const visibilitySelectElement = document.getElementById("visibilitySelect");
-
     const defaultSyntaxIndex = globals.api_paste_code.indexOf(defaultSyntaxCode);
     const defaultExpirationIndex = globals.expire_paste_code.indexOf(defaultExpirationCode);
     const defaultVisibilityIndex = globals.visibility_paste_code.indexOf(defaultVisibilityCode);
 
     if (defaultSyntaxIndex !== -1){
-        syntaxSelectElement.selectedIndex = defaultSyntaxIndex;
+        syntaxSelectElement.val(defaultSyntaxIndex);
     } else {
-        syntaxSelectElement.selectedIndex = 148;
+        syntaxSelectElement.val(148);
     }
 
     if (defaultExpirationIndex !== -1) {
-        expirationSelectElement.selectedIndex = defaultExpirationIndex;
+        expirationSelectElement.val(defaultExpirationIndex);
     }
 
     if (defaultVisibilityIndex !== -1) {
-        visibilitySelectElement.selectedIndex = defaultVisibilityIndex;
+        visibilitySelectElement.val(defaultVisibilityIndex);
     }
 }
 function hasUserApiKey() {
@@ -62,120 +73,126 @@ function hasUserApiKey() {
     return true;
 }
 function showLoggedUserUi(userName, avatarUrl, userAccountType) {
-    const loginFormElement = document.getElementById("loginForm");
-    const logoutButtonElement = document.getElementById("logoutButton");
-    const userNameElement = document.getElementById("userName");
-    const userAvatarImgElement = document.getElementById("userAvatar");
+    navbarToggleExternalContentElement.collapse('hide');
+    loginFormToggleElement.hide();
+    logoutButtonElement.show();
+    userNameElement.show();
+    userAvatarElement.show();
 
-    document.getElementById("userPastes").classList.add("remove");
-
-    if(!loginFormElement.classList.contains("hidden")){
-        loginFormElement.classList.add("hidden");
-    }
-
-    if(logoutButtonElement.classList.contains("hidden")){
-        logoutButtonElement.classList.remove("hidden");
-    }
-
-    if(userNameElement.classList.contains("hidden")){
-        userNameElement.innerText = userName;
-        userNameElement.classList.remove("hidden");
-    }
-
-    if(userAvatarImgElement.classList.contains("hidden")){
-        userAvatarImgElement.setAttribute("src", avatarUrl);
-        userAvatarImgElement.classList.remove("hidden");
-    }
+    $('#userPastes').addClass("remove");
+    userNameElement.text(userName);
+    userAvatarElement.attr("src", avatarUrl);
+   
 
     if(userAccountType === "0"){
-        const visibilitySelect = document.getElementById("visibilitySelect");
-        visibilitySelect.lastElementChild.disabled = true;
-        document.getElementById("proBadge").classList.add("hidden");
+        visibilitySelectElement.children().last().attr('disabled','disabled')
+        $('#proBadge').hide();
     }
 }
 function showAnonymousUserId() {
-    const loginFormElement = document.getElementById("loginForm");
-    const logoutButtonElement = document.getElementById("logoutButton");
-    const userNameElement = document.getElementById("userName");
-    const userAvatarImgElement = document.getElementById("userAvatar");
+    loginFormToggleElement.show();
+    logoutButtonElement.hide();
+    userNameElement.hide();
+    userAvatarElement.hide();
 
-    document.getElementById("userPastes").classList.add("hidden");
+    syntaxSelectElement.selectedIndex = 148;
+    expirationSelectElement.selectedIndex = 0;
+    visibilitySelectElement.selectedIndex = 0;
+    visibilitySelectElement.children().last().attr('disabled','disabled')
 
-    if(loginFormElement.classList.contains("hidden")){
-        loginFormElement.classList.remove("hidden");
-    }
-
-    if(!logoutButtonElement.classList.contains("hidden")){
-        logoutButtonElement.classList.add("hidden");
-    }
-
-    if(!userNameElement.classList.contains("hidden")){
-        userNameElement.classList.add("hidden");
-    }
-
-    if(!userAvatarImgElement.classList.contains("hidden")){
-        userAvatarImgElement.classList.add("hidden");
-    }
-
-    const syntaxSelect = document.getElementById("syntaxSelect");
-    const expirationSelect = document.getElementById("expirationSelect");
-    const visibilitySelect = document.getElementById("visibilitySelect");
-
-    syntaxSelect.selectedIndex = 148;
-    expirationSelect.selectedIndex = 0;
-    visibilitySelect.selectedIndex = 0;
-
-    visibilitySelect.lastElementChild.disabled = true;
+    $('#userPaste').hide();
 }
+
 function closeStatusPanel() {
-    const statusBox = document.getElementById("statusBox");
-    statusBox.className = "";
-    statusBox.classList.add("hidden");
+     $('#statusBox').alert('close');
 }
-function showStatusPanel(color, message) {
-    const statusBox = document.getElementById("statusBox");
-    const statusLinkWrap = document.getElementById("statusLinkWrap");
-    statusLinkWrap.innerText = message;
-    statusBox.className = "";
-    statusBox.classList.add(color);
+var mainAlertIsClosing = false;
+
+function createTextAlert(color, messageText, autofade){
+    closeStatusPanel();
+    var alert = $('<div>', {
+        id: 'statusBox',
+        class: 'alert alert-dismissible fade show sm-2',
+        role: 'alert'
+    }).text(messageText);
+    var closeAlertButton = $('<button>', {
+        class: 'close',
+        ["data-dismiss"]: 'alert',
+        type: 'button'
+    });
+    closeAlertButton.append($('<span>').html('&times;'))
+
+    alert.append(closeAlertButton);
+    alert.addClass(color);
+    $('main').append(alert);
 }
+
+function createLinkAlert(color, messageText, autofade){
+    closeStatusPanel();
+    var alert = $('<div>', {
+        id: 'statusBox',
+        class: 'alert alert-dismissible fade show',
+        role: 'alert'
+    });
+    alert.append($('<a>', {
+        href: messageText,
+        target: '_blank'
+    }).text(messageText));
+    var closeAlertButton = $('<button>', {
+        class: 'close',
+        ["data-dismiss"]: 'alert',
+        type: 'button'
+    });
+    closeAlertButton.append($('<span>').html('&times;'))
+
+    alert.append(closeAlertButton);
+    alert.addClass(color);
+    $('main').append(alert);
+}
+
 function assignEventListeners() {
-    document.getElementById("loginButton").onclick = login;
-    document.getElementById("logoutButton").onclick = logout;
-    document.getElementById("createNewPasteButton").onclick = createNewPaste;
-    document.getElementById("closeStatusButton").onclick = closeStatusPanel;
+    loginButtonElement.click(login);
+    logoutButtonElement.click(logout);
+    $('#createNewPasteButton').click(createNewPaste);
+    $('#closeStatusButton').click(closeStatusPanel);
 }
 function init() {
     assignEventListeners();
-
-    const syntaxSelect = document.getElementById("syntaxSelect");
-    for(let i = 0; i < globals.api_paste_code_names.length; i++)
-    {
-        const opt = document.createElement("option");
-        opt.value= i.toString();
-        opt.innerHTML = globals.api_paste_code_names[i];
-        syntaxSelect.appendChild(opt);
-    }
+    
+    var pasteToAppend = $();
+    $.each(globals.api_paste_code_names, function(i,e){
+        pasteToAppend = pasteToAppend.add(
+            $('<option>', {
+                value: i.toString(),
+                text: globals.api_paste_code_names[i]
+            }));
+    });
+    var syntaxSelect = $('#syntaxSelect');
+    syntaxSelect.append(pasteToAppend);
     syntaxSelect.selectedIndex = 148;
-
-    const expirationSelect = document.getElementById("expirationSelect");
-    for(let i = 0; i < globals.expire_paste_code_names.length; i++)
-    {
-        const opt = document.createElement("option");
-        opt.value= i.toString();
-        opt.innerHTML = globals.expire_paste_code_names[i];
-        expirationSelect.appendChild(opt);
-    }
+   
+    var expirationToAppend = $();
+    $.each(globals.expire_paste_code_names, function(i,e){
+        expirationToAppend = expirationToAppend.add(
+            $('<option>', {
+                value: i.toString(),
+                text: globals.expire_paste_code_names[i]
+            }));
+    });
+    var expirationSelect = $('#expirationSelect');
+    expirationSelect.append(expirationToAppend);
     expirationSelect.selectedIndex = 0;
-
-    const visibilitySelect = document.getElementById("visibilitySelect");
-    for(let i = 0; i < globals.visibility_paste_code_names.length; i++)
-    {
-        const opt = document.createElement("option");
-        opt.value= i.toString();
-        opt.innerHTML = globals.visibility_paste_code_names[i];
-        visibilitySelect.appendChild(opt);
-    }
+   
+    var visibilityToAppend = $();
+    $.each(globals.visibility_paste_code_names, function(i,e){
+        visibilityToAppend = visibilityToAppend.add(
+            $('<option>', {
+                value: i.toString(),
+                text: globals.visibility_paste_code_names[i]
+            }));
+    });
+    var visibilitySelect = $('#visibilitySelect');
+    visibilitySelect.append(visibilityToAppend);
     visibilitySelect.selectedIndex = 0;
 
     if(hasUserApiKey()){
@@ -187,10 +204,10 @@ function init() {
 
 //LOGIN
 function login() {
-    const userName = document.getElementById("loginName").value;
-    const password = document.getElementById("loginPassword").value;
+    const userNameValue = $('#loginName').val();
+    const passwordValue = $('#loginPassword').val();
 
-    createApiUserKey(userName, password);
+    createApiUserKey(userNameValue, passwordValue);
     closeStatusPanel();
 }
 function logout() {
@@ -200,57 +217,50 @@ function logout() {
 }
 
 function createPasteElement(paste_key, paste_date, paste_title, paste_expire_date, paste_private, paste_format_long, paste_url) {
-    const pasteElement = document.createElement("li");
-    pasteElement.classList.add("pasteListElement");
+    if(paste_title === ""){
+        paste_title = "Bez názvu"
+    }
 
-    const linkElement = document.createElement("a");
-    const dateElement = document.createElement("span");
-    const titleElement = document.createElement("span");
-    const expireElement = document.createElement("span");
-    const privateElement = document.createElement("em");
-    const formatElement = document.createElement("format");
-    const clearElement = document.createElement("div");
-    const clearElement2 = document.createElement("div");
-    const deleteButton = document.createElement("button");
+    var pasteElement = $('<div>', {
+        id: paste_key,
+        class: 'list-group-item mt-4',
+    });
+    var upPart = $('<div>', {
+        class: 'd-flex w-100 justify-content-between'
+    });
+    var dates = $('<small>').text(new Date(paste_date * 1000).toLocaleString("cs-CZ") + " - " + new Date(paste_expire_date * 1000).toLocaleString("cs-CZ"));
+    var name = $('<h5>',{
+        class: 'mb-1'
+    }).text(paste_title);
+    
+    upPart.append(dates);
+    upPart.append(name);
 
-    linkElement.innerText = paste_url;
-    linkElement.href = paste_url;
-    linkElement.target = "_blank";
+    var bottomPart = $('<div>', {
+        class: 'mt-4'
+    });
+    var link = $('<a>',{
+        class: 'mb-1',
+        href: paste_url,
+        target: '_blank'
+    }).text(paste_url);
 
-
-    titleElement.classList.add("pasteListName");
-    expireElement.classList.add("pasteListDate");
-    dateElement.classList.add("pasteListDate");
-    clearElement.classList.add("clear");
-    clearElement2.classList.add("clear");
-    deleteButton.classList.add("deletePaste");
-    deleteButton.innerText = "Odstranit";
-    deleteButton.onclick = function () {
+    var buttonWrap = $('<div>', {
+        class: 'float-right'
+    });
+    var button = $('<button>', {
+        class: 'btn btn-outline-secondary',
+        type: 'button'
+    }).text("Odstranit").click(function(){
         deletePaste(paste_key);
-        listUserPastes();
-    };
+    })
+    buttonWrap.append(button);
 
-    dateElement.innerText = "Vytvořeno" +new Date(paste_date * 1000).toLocaleString("cs-CZ");
+    bottomPart.append(link);
+    bottomPart.append(buttonWrap);
 
-
-    titleElement.innerText = paste_title;
-    expireElement.innerText = "Expirace: " + new Date(paste_expire_date * 1000).toLocaleString("cs-CZ");
-    privateElement.innerText = " (" + globals.visibility_paste_code_names[paste_private] + ")";
-    formatElement.innerText = " - " + paste_format_long;
-
-    pasteElement.appendChild(titleElement);
-    pasteElement.appendChild(formatElement);
-    pasteElement.appendChild(privateElement);
-
-
-    pasteElement.appendChild(dateElement);
-    pasteElement.appendChild(clearElement);
-
-    pasteElement.appendChild(linkElement);
-
-    pasteElement.appendChild(expireElement);
-    pasteElement.appendChild(clearElement2);
-    pasteElement.appendChild(deleteButton);
+    pasteElement.append(upPart);
+    pasteElement.append(bottomPart);
 
     return pasteElement;
 }
@@ -262,33 +272,25 @@ function listUserPastes() {
     data.append("api_dev_key", globals.api_dev_key);
     data.append("api_user_key", apiUserKey);
     data.append("api_option", globals.api_option_list);
-    document.getElementById("userPastes").classList.remove("hidden");
+    document.getElementById("userPastes").classList.remove("collapse");
 
     postData(globals.create_paste_url, data,
         function (responseText) {
             if (responseText === "No pastes found."){
-                document.getElementById("userPastes").classList.add("hidden");
+                document.getElementById("userPastes").classList.add("collapse");
                 return;
             }
 
             if (responseText.includes("Bad API request")){
-                showStatusPanel("crimson", "Nepodařilo se načíst uložené texty.");
+                createTextAlert("alert-danger", "Nepodařilo se načíst uložené texty.", false);               
                 return;
             }
 
             let oParser = new DOMParser();
-            let oDOM = oParser.parseFromString(responseText, "application/xml");
-            let pastes = oDOM.childNodes;
+            let oDOM = oParser.parseFromString("<pastes>"+responseText+"</pastes>", "application/xml");
+            let pastes = oDOM.childNodes[0].childNodes;
 
-            const userPastesElement = document.getElementById("userPastes");
-            const pasteElementList = document.createElement("ul");
-            userPastesElement.appendChild(pasteElementList);
-
-            if(pastes.length === 0){
-                document.getElementById("userPastes").classList.add("hidden");
-            }
-
-            for (let i = 0; i < pastes.length; i++){
+            for (let i = 0; i < pastes.length; i += 2){
                 const paste = pastes[i];
                 const paste_key = paste.getElementsByTagName("paste_key")[0].innerHTML;
                 const paste_date = paste.getElementsByTagName("paste_date")[0].innerHTML;
@@ -300,11 +302,11 @@ function listUserPastes() {
 
                 const pasteElement = createPasteElement(paste_key, paste_date, paste_title, paste_expire_date, paste_private, paste_format_long, paste_url);
 
-                pasteElementList.appendChild(pasteElement);
+                $('#userPastes').append(pasteElement);
             }
         },
         function (statusText) {
-            showStatusPanel("crimson", "Při komunikaci se serverem se vyskytla chyba.")
+            createTextAlert("alert-danger", "Při komunikaci se serverem se vyskytla chyba.", false);               
         });
 }
 function deletePaste(paste_key) {
@@ -318,13 +320,14 @@ function deletePaste(paste_key) {
     postData(globals.create_paste_url, data,
         function (responseText) {
             if (responseText === "Paste Removed"){
-                showStatusPanel("green", "Text byl úspěšně odstraněn.")
+                createTextAlert("alert-success", "Text byl úspěšně odstraněn.", false);    
+                $('#'+paste_key).remove();   
             } else {
-                showStatusPanel("crimson", "Text se nepodařilo odstranit.");
+                createTextAlert("alert-danger", "Text se nepodařilo odstranit.", false);       
             }
         },
         function (statusText) {
-            showStatusPanel("crimson", "Při komunikaci se serverem se vyskytla chyba.")
+            createTextAlert("alert-danger", "Při komunikaci se serverem se vyskytla chyba.", false);       
         });
 
 
@@ -341,10 +344,10 @@ function getUserInfo() {
             if(responseText.includes("Bad API request") || responseText.includes(" ")){
                 if(responseText.includes("api_user_key")){
                     logout();
-                    showStatusPanel("crimson", "Při komunikaci se serverem se vyskytla chyba.")
+                    createTextAlert("alert-danger", "Při komunikaci se serverem se vyskytla chyba.", false);  
                 } else {
                     logout();
-                    showStatusPanel("crimson", "Při komunikaci se serverem se vyskytla chyba.")
+                    createTextAlert("alert-danger", "Při komunikaci se serverem se vyskytla chyba.", false);  
                 }
             } else {
                 let oParser = new DOMParser();
@@ -359,22 +362,18 @@ function getUserInfo() {
 
                 loadUserDefaults(user_format_short, user_expiration, user_private);
 
-                document.getElementById("userName").innerText = user_name;
-                document.getElementById("userAvatar").setAttribute("src", user_avatar_url);
+                userNameElement.innerText = user_name;
+                userAvatarElement.attr("src", user_avatar_url);
 
                 showLoggedUserUi(user_name, user_avatar_url, user_account_type);
                 listUserPastes("10");
             }
         },
         function (statusText) {
-            showStatusPanel("crimson", "Při komunikaci se serverem se vyskytla chyba.");
+            createTextAlert("alert-danger", "Při komunikaci se serverem se vyskytla chyba.", false);  
         });
 }
 function createNewPaste() {
-    const statusBox = document.getElementById("statusBox");
-    statusBox.className = "";
-    statusBox.classList.add("hidden");
-
     const syntaxSelectElement = document.getElementById("syntaxSelect");
     const expirationSelectElement = document.getElementById("expirationSelect");
     const visibilitySelectElement = document.getElementById("visibilitySelect");
@@ -404,62 +403,43 @@ function createNewPaste() {
 
     postData(globals.create_paste_url, data,
         function (responseText) {
-            const statusBox = document.getElementById("statusBox");
-            const statusLinkWrap = document.getElementById("statusLinkWrap");
-
             if(responseText.includes("https://pastebin.com")){
-                const link = document.createElement("a");
-                link.title = responseText;
-                link.href = responseText;
-                link.innerText = responseText;
-                link.target = "_blank";
-                statusLinkWrap.innerHTML = "";
-                statusLinkWrap.appendChild(link);
-                statusBox.className = "";
-                statusBox.classList.add("green");
-
+                createLinkAlert("alert-success", responseText, false);
+                
                 document.getElementById("pasteName").value = "";
                 document.getElementById("pasteTextArea").value = "";
-                listUserPastes();
+
+                const pasteElement = createPasteElement(responseText.split('/').pop(), new Date(), api_paste_name, new Date(), api_paste_private, api_paste_format, responseText);
+
+                $('#userPastes').append(pasteElement);
                 return;
             }
 
             if(responseText === "Post limit, maximum pastes per 24h reached"){
-                showStatusPanel("crimson", "Dosáhl/a jste maximálního počtu vložených textů za 24 hodin.");
-                // statusLinkWrap.innerText = "Dosáhl/a jste maximálního počtu vložených textů za 24 hodin.";
-                // statusBox.className = "";
-                // statusBox.classList.add("crimson");
+                createTextAlert("alert-danger", "Dosáhl/a jste maximálního počtu vložených textů za 24 hodin.", false);
                 return;
             }
 
             if (responseText.includes("maximum")){
-                showStatusPanel("crimson", responseText);
-                // statusLinkWrap.innerText = responseText;
-                // statusBox.className = "";
-                // statusBox.classList.add("crimson");
+                createTextAlert("alert-danger", responseText, false);
                 return;
             }
 
             if(responseText.includes("empty")){
-                showStatusPanel("crimson", "Nebyl zadán žádný text.");
-                // statusLinkWrap.innerText = "Nebyl zadán žádný text.";
-                // statusBox.className = "";
-                // statusBox.classList.add("crimson");
+                createTextAlert("alert-danger", "Nebyl zadán žádný text.", false);
                 return;
             }
 
             if(responseText.includes("expired")){
                 logout();
-                showStatusPanel("crimson", "Byl/a jste automaticky odhlášen/a");
-                // statusLinkWrap.innerText = "Byl/a jste automaticky odhlášen/a";
-                // statusBox.classList.add("crimson");
+                createTextAlert("alert-danger", "Byl/a jste automaticky odhlášen/a.", false);
                 return;
             }
 
-            showStatusPanel("crimson", "Při komunikaci se vyskytla chyba.");
+            createTextAlert("alert-danger", "Při komunikaci se vyskytla chyba.", false);
         },
         function (statusText) {
-            showStatusPanel("crimson","Při komunikaci se vyskytla chyba.");
+            createTextAlert("alert-danger", "Při komunikaci se vyskytla chyba.", false);
         });
 }
 function createApiUserKey(userName, password) {
@@ -471,41 +451,27 @@ function createApiUserKey(userName, password) {
     postData(globals.login_user_url, data,
         function (responseText) {
             if (responseText === "Bad API request, invalid login"){
-                const statusBox = document.getElementById("statusBox");
-                const statusLinkWrap = document.getElementById("statusLinkWrap");
-
-                statusLinkWrap.innerText = "Špatné přihlašovací údaje.";
-                statusBox.className = "";
-                statusBox.classList.add("crimson");
+                $('#loginStatus').text('Špatné přihlašovací údaje.');
                 return;
             }
 
             if (responseText === "Bad API request, too many logins in 5 minutes. Blocked for 5 minutes."){
-                const statusBox = document.getElementById("statusBox");
-                const statusLinkWrap = document.getElementById("statusLinkWrap");
-
-                statusLinkWrap.innerText = "Příliš mnoho pokusů o přihlášení za posledních 5 minut. Blokace na 5 minut";
-                statusBox.className = "";
-                statusBox.classList.add("crimson");
+                $('#loginStatus').text('Příliš mnoho pokusů o přihlášení za posledních 5 minut. Blokace na 5 minut.');
                 return;
             }
 
             if(responseText.includes("Bad API request")){
-                const statusBox = document.getElementById("statusBox");
-                const statusLinkWrap = document.getElementById("statusLinkWrap");
-
-                statusLinkWrap.innerText = responseText;
-                statusBox.className = "";
-                statusBox.classList.add("crimson");
+                $('#loginStatus').text(responseText);
                 return;
             }
 
+            $('#loginStatus').text('');
             const localStorage = window.localStorage;
             localStorage.setItem("api_user_key", responseText);
             getUserInfo();
         },
         function (statusText) {
-            showStatusPanel("crimson", "Při přihlašování se vyskytla chyba.");
+            $('#loginStatus').text('Při přihlašování se vyskytla chyba.');
         });
 }
 

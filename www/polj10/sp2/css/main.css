@@ -3,17 +3,35 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
+.superscript {
+    vertical-align: super;
+    font-size: 0.5em;
+}
+
+#userAvatar {
+    width: 2em;
+    height: 2em;
+}
+
+.alert {
+    position: fixed !important;
+    bottom: 16px !important;
+    right: 16px !important;
+}
+
+#pasteTextArea {
+    height: 20em;
+}
+
+
+/* body {
     padding: 0;
     margin: 0;
     line-height: 1em;
     color: #000000;
 }
 
-.hidden {
-    display: none;
-    visibility: collapse;
-}
+
 
 .dodgerBlue {
     background-color: dodgerblue;
@@ -284,4 +302,4 @@ body {
 main {
     background-color: gainsboro;
     height: calc(100% - 3em);
-}
+} */
