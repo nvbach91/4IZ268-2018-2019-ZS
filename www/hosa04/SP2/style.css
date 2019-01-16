@@ -23,7 +23,6 @@
 /*DESIGN*/
 *{
     text-align: center;
-    justify-content: center;
     font-family: -apple-system, sans-serif;
     color: white;
     background-repeat: no-repeat;
@@ -49,6 +48,7 @@ body{
   margin-right: 42%;
   padding-top: 1%;
   padding-bottom: 1%;
+  color: rgb(250, 232, 193);
 }
 
 #refresh-button:hover{
@@ -78,6 +78,16 @@ body{
   font-size: 200%;
 }
 
+#images-render{
+  height: 300px;
+  width: 300px;
+  /*background-image: url("https://f4.bcbits.com/img/a3002435732_10.jpg");*/
+  background-size: cover;
+  background-color: green;
+  margin: auto;
+
+}
+
 #title{
   margin-top: 60px;
   animation: 1s ease-out 0s 1 slideInFromTop;
@@ -86,18 +96,25 @@ body{
 
 #h1a{
   margin-bottom: -20px;
+  color: rgb(250, 232, 193);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.42);
 }
 
 #h1c{
   font-size: 500%;
   margin-top: -50px;
+  color: rgb(250, 232, 193);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.42);
+}
+
+#h1b{
+  color: rgb(250, 232, 193);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.42);
 }
 
 #guess-text{
-  animation: 2s ease-out 0s 1 slideInFromBottom;
+  animation: 1s ease-out 0s 1 slideInFromBottom;
 }
-
-
 
 #mistakes{
   animation: 1s ease-out 0s 1 slideInFromTop;
@@ -123,10 +140,6 @@ body{
   color: rgb(45, 75, 120);
 }
 
-#id{
-  animation: 1s ease-out 0s 1 slideInFromTop;
-}
-
 #discovered{
   animation: 1s ease-out 0s 1 slideInFromTop;
 }
@@ -141,12 +154,10 @@ body{
   animation: 1s ease-out 0s 1 slideInFromBottom;
 }
 
-#hangman-image-1{
-width: 30px;
-height: 30px;
-background-image: url( "https://cdn.pixabay.com/photo/2015/04/04/19/13/one-706897_1280.jpg");
- background-size: cover; 
+#hint{
+  color: grey;
 }
+
 
 /*ready for screen resolution adjustements*/
 @media screen and (max-width: 700px) {
@@ -157,4 +168,12 @@ background-image: url( "https://cdn.pixabay.com/photo/2015/04/04/19/13/one-70689
     margin-top: -50px;
   }
 
+  #fill{
+  height: 0px;
+  }
+
+  body{
+    background-size: 200%;
+    background-position: center;
+  }
 }

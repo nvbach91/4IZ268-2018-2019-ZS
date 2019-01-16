@@ -1,3 +1,9 @@
+//testing functions
+function imageChange(){
+    $('#images-render').css("background-color","blue");
+}
+
+
 //basic variables
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
 var offlineWords = ['bespin', 'hoth', 'coruscant', 'naboo', 'dagobah'];
@@ -47,6 +53,16 @@ function looseRepeatConfirmation() {
     }
 }
 
+//clicking into guessing fild "tip"
+$(document).ready(
+    function () {
+    $('#tip').focus();
+    $('#tip').change(function () {
+        guessWord($(this).val());
+    });
+    rewrite();
+});
+
 //chooses a random path for JSON to get planet name
 function getRandomPlanet() {
     var planet1 = "https://swapi.co/api/planets/1/?format=json";
@@ -76,10 +92,12 @@ function getRandomWord() {
         complete: function () {
             console.log("Chosen word: " + chosenWord);
             fillTajenka();
+
+            $('#hint').text("(Word is: " + chosenWord + ")");
         }
     });
-}
 
+}
 
 
 function createTajenka() {
@@ -117,6 +135,7 @@ function findAllOccurrencesOfIn(letter, str) {
     return occurrences;
 }
 
+
 //trying new guess words
 function guessWord(p) {
     p = p.toLowerCase();
@@ -139,6 +158,7 @@ function guessWord(p) {
 
     $('#tip').val("");
 
+//determination of game ending
     if (chosenWord.length == correct) {
         $('#tip').val("You won!");
         $("#tip").prop('disabled', true);
@@ -149,11 +169,3 @@ function guessWord(p) {
         setTimeout(looseRepeatConfirmation, 2000);
     }
 }
-
-$(document).ready(function () {
-    $('#tip').focus();
-    $('#tip').change(function () {
-        guessWord($(this).val());
-    });
-    rewrite();
-});
