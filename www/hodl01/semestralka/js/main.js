@@ -18,11 +18,11 @@ $(function () {
         if (this.innerHTML == '@makacenkoteam') {
             apiScriptCreate(mtoken);
             this.innerHTML = '@lukashodbod';
-            $('.profileName').innerHTML = 'Instagram @makacenkoteam';
+            $('.profileName').text('Instagram @makacenkoteam');
         } else {
             apiScriptCreate(ptoken);
             this.innerHTML = '@makacenkoteam';
-            $('.profileName').innerHTML = 'Instagram @lukashodbod';
+            $('.profileName').text('Instagram @lukashodbod');
         }
     });
 
