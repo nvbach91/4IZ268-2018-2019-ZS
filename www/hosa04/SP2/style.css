@@ -1,5 +1,9 @@
 /*ANIMATIONS*/
 
+#inputText{
+  color: black;
+}
+
 @keyframes slideInFromTop {
   0% {
       transform: translateY(-100%);
@@ -35,7 +39,7 @@ body{
 }
 
 #fill{
- height: 1000px;
+ height: 820px;
 }
 
 #refresh-button{
@@ -52,13 +56,12 @@ body{
   margin: 20px;
   padding: 10px 14px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
+  border: 5px solid rgb(250, 232, 193);
   border-radius: 4px;
-  background-color: #f8f8f8;
-  font-size: 16px;
+  background-color: #d63737;
   resize: none;
-  font-size: 200%;
-  color: midnightblue;
+  font-size: 400%;
+  color: rgb(250, 232, 193);
 }
 
 #secret{
