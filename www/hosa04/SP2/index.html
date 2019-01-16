@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <!-- <link rel="stylesheet" href="style.css" type="text/css" /> -->
   <script type="text/javascript" src="jquery.js"></script>
-  <script type="text/javascript" src="script_clean.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+
   <title>Hangman</title>
 </head>
+
 <body>
-    <h1>Hangman</h1>
-    <br>
-    <h2>The Star Wars</h2>
-    <p id="mistakes">Mistakes:</p>
-    <p id="remaining">Remaining:</p>
-  <p id="secret"></p>
-  <a>Guess the letter: </a>
   <br>
-  <input id="tip" type="text" />
+  <div id="title">
+    <h1 id="h1a">The</h1>
+    <h1 id="h1b">Star Wars</h1>
+    <br>
+    <h1 id="h1c"> Hang(wo)man</h2>
+  </div>
+
+  <div id="refresh-button"></div>
+  <div id="images-render"></div>
+  <p id="mistakes">Mistakes:</p>
+  <p id="remaining">Remaining:</p>
+  <p id="secret"></p>
+  <a id="guess_text">Guess the letter by typing it into the box below: </a>
+  <br>
+  <input id="tip" type="text" maxlength="1" />
   <p id="discovered"></p>
+  <div id="fill"></div>
+
+
 
 </body>
+
 </html>
