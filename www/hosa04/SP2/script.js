@@ -13,10 +13,14 @@ function pushData() {
 
 
 //testing functions
-function imageChange() {
-    $('#images-render').css("background-color", "blue");
+
+function getHangImage() {
+    return("hang"+wrongCount+".png");
 }
 
+function changeHangImage() {
+    $('#images-render').css("background-image",'url(hang_images/' + getHangImage() + ')');
+}
 
 //basic variables
 var guessedLettersArr = [];
@@ -24,8 +28,7 @@ var alphabet = "abcdefghijklmnopqrstuvwxyz";
 var offlineWords = ['bespin', 'hoth', 'coruscant', 'naboo', 'dagobah'];
 var unknown = [];
 var chosenWord = getRandomWord();
-
-var tries = 15;
+var tries = 10;
 var correct = 0;
 var wrongCount = 0;
 
@@ -191,5 +194,6 @@ function guessWord(p) {
         }
     }
     pushData();
+    changeHangImage();
 
 }

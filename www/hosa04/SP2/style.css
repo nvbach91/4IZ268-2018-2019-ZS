@@ -49,6 +49,7 @@ body{
   padding-top: 1%;
   padding-bottom: 1%;
   color: rgb(250, 232, 193);
+  font-size: 60%;
 }
 
 #refresh-button:hover{
@@ -81,10 +82,10 @@ body{
 #images-render{
   height: 300px;
   width: 300px;
-  /*background-image: url("https://f4.bcbits.com/img/a3002435732_10.jpg");*/
   background-size: cover;
-  background-color: green;
   margin: auto;
+  background-image: url(hang_images/hang0.png);
+  background-size: auto;
 
 }
 
@@ -94,20 +95,20 @@ body{
   letter-spacing: 5px;
 }
 
-#h1a{
+#h2a{
   margin-bottom: -20px;
   color: rgb(250, 232, 193);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.42);
 }
 
-#h1c{
+#h1a{
   font-size: 500%;
   margin-top: -50px;
   color: rgb(250, 232, 193);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.42);
 }
 
-#h1b{
+#h2b{
   color: rgb(250, 232, 193);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.42);
 }
