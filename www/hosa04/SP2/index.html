@@ -8,21 +8,16 @@
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="script.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-
-
-  <title>Hangman</title>
 </head>
 
 <body>
   <br>
   <div id="title">
-    <h1 id="h1a">The</h1>
-    <h1 id="h1b">Star Wars</h1>
+    <h2 id="h1a">The</h2>
+    <h2 id="h1b">Star Wars</h2>
     <br>
     <h1 id="h1c"> Hang(wo)man</h2>
   </div>
-
-
 
   <button id="refresh-button" onclick="refreshPage()">REFRESH</button>
   <p id="mistakes">Mistakes:</p>
@@ -30,7 +25,7 @@
   <p id="secret"></p>
   <p id="hint"></p>
   <div id="guess-text"><a>Guess the letter by typing it into the box below: </a></div>
-  <input autocomplete="off" id="tip" type="text" maxlength="1" />
+  <input autocomplete="off" id="tip" type="text" maxlength="1" name="text" <input />
   <p id="discovered"></p>
   <div id="images-render"></div>
   <div id="fill"></div>

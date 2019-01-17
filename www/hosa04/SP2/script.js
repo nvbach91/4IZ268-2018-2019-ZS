@@ -1,10 +1,25 @@
+
+
+function pushData() {
+    var inputText = $('#tip').val();
+    if (inputText.length <= 0) return;
+    inputText = inputText.toLowerCase();
+
+    guessedLettersArr.push(inputText);
+    $('#tip').val("");
+
+    console.log(guessedLettersArr);
+}
+
+
 //testing functions
-function imageChange(){
-    $('#images-render').css("background-color","blue");
+function imageChange() {
+    $('#images-render').css("background-color", "blue");
 }
 
 
 //basic variables
+var guessedLettersArr = [];
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
 var offlineWords = ['bespin', 'hoth', 'coruscant', 'naboo', 'dagobah'];
 var unknown = [];
@@ -34,7 +49,7 @@ function deletePage() {
 //alert when you win + repeat?
 function winRepeatConfirmation() {
     var txt;
-    if (confirm("YOU WON! :)" +"\n"+ "Do you want to play again?")) {
+    if (confirm("YOU WON! :)" + "\n" + "Do you want to play again?")) {
         refreshPage()
     }
     else {
@@ -45,7 +60,7 @@ function winRepeatConfirmation() {
 //alert when you loose + repeat?
 function looseRepeatConfirmation() {
     var txt;
-    if (confirm("YOU LOOSE! :( " +"\n"+ "Do you want to repeat?")) {
+    if (confirm("YOU LOOSE! :( " + "\n" + "Do you want to repeat?")) {
         refreshPage();
     }
     else {
@@ -56,12 +71,12 @@ function looseRepeatConfirmation() {
 //clicking into guessing fild "tip"
 $(document).ready(
     function () {
-    $('#tip').focus();
-    $('#tip').change(function () {
-        guessWord($(this).val());
+        $('#tip').focus();
+        $('#tip').change(function () {
+            guessWord($(this).val());
+        });
+        rewrite();
     });
-    rewrite();
-});
 
 //chooses a random path for JSON to get planet name
 function getRandomPlanet() {
@@ -110,7 +125,6 @@ function createTajenka() {
     /*var result = unknown.join("");*/
 
     $('#secret').text(result);
-    $('#tip').val("");
 }
 
 //creates _ _ _ field according to the number of characters in chosenWord
@@ -141,31 +155,41 @@ function guessWord(p) {
     p = p.toLowerCase();
     var indexes = findAllOccurrencesOfIn(p, chosenWord);
 
-    if (indexes.length > 0) {
-        $('#discovered').text("");
+    if (guessedLettersArr.includes(p) === true) {
+        $('#discovered').text("Try different letter");
+        return;
+    }
+    else {
+        if (indexes.length > 0) {
+            $('#discovered').text("");
 
-        for (var i = 0; i < indexes.length; i++) {
-            unknown[indexes[i]] = p;
+            for (var i = 0; i < indexes.length; i++) {
+                unknown[indexes[i]] = p;
+            }
+
+            correct += indexes.length;
+            createTajenka();
+        } else {
+            wrongCount += 1;
+            rewrite();
+            $('#discovered').text("Wrong");
+
+
         }
 
-        correct += indexes.length;
-        createTajenka();
-    } else {
-        wrongCount += 1;
-        rewrite();
-        $('#discovered').text("Wrong");
-    }
 
-    $('#tip').val("");
 
-//determination of game ending
-    if (chosenWord.length == correct) {
-        $('#tip').val("You won!");
-        $("#tip").prop('disabled', true);
-        setTimeout(winRepeatConfirmation, 2000);
-    } else if ((tries - wrongCount) <= 0) {
-        $('#tip').val("You lose!");
-        $("#tip").prop('disabled', true);
-        setTimeout(looseRepeatConfirmation, 2000);
+        //determination of game ending
+        if (chosenWord.length == correct) {
+            $('#tip').val("You won!");
+            $("#tip").prop('disabled', true);
+            setTimeout(winRepeatConfirmation, 2000);
+        } else if ((tries - wrongCount) <= 0) {
+            $('#tip').val("You lose!");
+            $("#tip").prop('disabled', true);
+            setTimeout(looseRepeatConfirmation, 2000);
+        }
     }
+    pushData();
+
 }
