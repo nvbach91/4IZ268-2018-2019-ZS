@@ -440,10 +440,14 @@ function createPasteElement(paste_key, paste_date, paste_title, paste_expire_dat
     }
 
     function createPasteElementDates(paste_date, paste_expire_date){
+        if(moment.unix(paste_date)){
+
+        }
+
         let small = $('<small>',{
             class: 'mr-4'
         })
-        .text('Vytvořeno\u00a0' + moment.unix(paste_date).fromNow().replace(/ /g, '\u00a0'));
+        .text('Vytvořeno\u00a0' + moment.unix(paste_date).max(moment()).fromNow().replace(/ /g, '\u00a0'));
 
         return small;
     }
