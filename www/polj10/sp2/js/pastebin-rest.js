@@ -314,6 +314,7 @@ function init() {
     assignEventListeners();
     initPastebinOptions();
     selectPastebinOptions(148, 0, 0);
+    moment.locale("cs-CZ");
 
     $(function () {
         $('[data-toggle="tooltip"]').tooltip({
@@ -423,6 +424,8 @@ function createPasteElement(paste_key, paste_date, paste_title, paste_expire_dat
 
         pasteElem.append(upPart);
         pasteElem.append(bottomPart);
+        pasteElem.append(createPasteElementUpPart($('<span>').text(' '), $('<small>',{class: 'text-muted mt-2'})
+        .text('('.concat(globals.visibility_paste_code_names[paste_private],')' ,' - Expiruje ', pastebinTimestampToLocaleString(paste_expire_date)))));
         return pasteElem;
     }
 
@@ -437,12 +440,17 @@ function createPasteElement(paste_key, paste_date, paste_title, paste_expire_dat
     }
 
     function createPasteElementDates(paste_date, paste_expire_date){
-        return $('<small>').text(pastebinTimestampToLocaleString(paste_date) + " - " + pastebinTimestampToLocaleString(paste_expire_date));
+        let small = $('<small>',{
+            class: 'mr-4'
+        })
+        .text('Vytvořeno\u00a0' + moment.unix(paste_date).fromNow().replace(/ /g, '\u00a0'));
+
+        return small;
     }
 
     function createPasteElementName(paste_title){
         return $('<h5>',{
-            class: 'mb-1'
+            class: 'mb-1 text-right'
         }).text(paste_title);
     }
 
@@ -450,6 +458,7 @@ function createPasteElement(paste_key, paste_date, paste_title, paste_expire_dat
         let bottomPart = $('<div>', {
             class: 'mt-4'
         });
+        bottomPart.append($('<small>',{class: 'text-muted mt-2'}).text('('.concat(paste_format_long, ') ')));
         bottomPart.append(left);
         bottomPart.append(right);
     
