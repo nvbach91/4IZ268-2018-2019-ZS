@@ -36,7 +36,7 @@ App.init = function () {
 
 
 
-//Po zmáčnutí tlačítka hledej volá metodu pro vytvoření carouselu
+//Po zmáčnutí tlačítka hledej volá metodu galleryList
 galleryForm.addEventListener('submit', function (e) {
     e.preventDefault();
     var hastagGallery = $('#hashtagInput').val();
@@ -44,7 +44,7 @@ galleryForm.addEventListener('submit', function (e) {
     App.galleryList(hastagGallery);
 });
 
-//Vytváří carousel
+//Vytváří galleryList
 App.galleryList = function (tag) {
     var nalezeno = false;
     var media = "";
@@ -74,7 +74,6 @@ App.galleryList = function (tag) {
               
              `;
 
-
             }
 
         });
@@ -97,6 +96,7 @@ function onClick(element) {
     document.getElementById("modal01").style.display = "block";
 }
 
+//Ukládá token do localStorage
 function localToken() {
     hash = window.location.hash.substr(1); //url of the current page
 
@@ -104,7 +104,7 @@ function localToken() {
         arHash = hash.split('='); //this creates an array with key ([0] element) and value ([1] element)
         App.token1 = arHash[1]; //recieve value
         localStorage.setItem("token", App.token1);
-        window.location = 'http://127.0.0.1:5500/search.html';
+        window.location = 'http://127.0.0.1:5500/search.html'; //Při nasazení na web bude potřeba změnit + redirect URI
     }
 }
 
