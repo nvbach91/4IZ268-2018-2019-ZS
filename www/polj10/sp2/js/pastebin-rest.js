@@ -597,24 +597,27 @@ function createNewPaste() {
                 pasteNameElement.val('');
                 pasteTextAreaElement.val('');
 
-                getUserPastes(1, function (responseText) {           
-                    let oParser = new DOMParser();
-                    let oDOM = oParser.parseFromString("<pastes>"+responseText+"</pastes>", "application/xml");
-                    let pastes = oDOM.childNodes[0].childNodes;
-            
-                    const paste = pastes[0];
-                    const paste_key = paste.getElementsByTagName("paste_key")[0].innerHTML;
-                    const paste_date = paste.getElementsByTagName("paste_date")[0].innerHTML;
-                    const paste_title = paste.getElementsByTagName("paste_title")[0].innerHTML;
-                    const paste_expire_date = paste.getElementsByTagName("paste_expire_date")[0].innerHTML;
-                    const paste_private = paste.getElementsByTagName("paste_private")[0].innerHTML;
-                    const paste_format_long = paste.getElementsByTagName("paste_format_long")[0].innerHTML;
-                    const paste_url = paste.getElementsByTagName("paste_url")[0].innerHTML;
-
-                    let pasteElem = createPasteElement(paste_key, paste_date, paste_title, paste_expire_date, paste_private, paste_format_long, paste_url);           
-                    userPastesElement.prepend(pasteElem);
-                    $('#'+paste_key).hide().slideDown('fast').fadeIn('slow');
-                });
+                let userApiKey = getUserApiKey();
+                if(userApiKeyNotNull(userApiKey)){
+                    getUserPastes(1, function (responseText) {           
+                        let oParser = new DOMParser();
+                        let oDOM = oParser.parseFromString("<pastes>"+responseText+"</pastes>", "application/xml");
+                        let pastes = oDOM.childNodes[0].childNodes;
+                
+                        const paste = pastes[0];
+                        const paste_key = paste.getElementsByTagName("paste_key")[0].innerHTML;
+                        const paste_date = paste.getElementsByTagName("paste_date")[0].innerHTML;
+                        const paste_title = paste.getElementsByTagName("paste_title")[0].innerHTML;
+                        const paste_expire_date = paste.getElementsByTagName("paste_expire_date")[0].innerHTML;
+                        const paste_private = paste.getElementsByTagName("paste_private")[0].innerHTML;
+                        const paste_format_long = paste.getElementsByTagName("paste_format_long")[0].innerHTML;
+                        const paste_url = paste.getElementsByTagName("paste_url")[0].innerHTML;
+    
+                        let pasteElem = createPasteElement(paste_key, paste_date, paste_title, paste_expire_date, paste_private, paste_format_long, paste_url);           
+                        userPastesElement.prepend(pasteElem);
+                        $('#'+paste_key).hide().slideDown('fast').fadeIn('slow');
+                    });
+                }          
                 return;
             }
 
