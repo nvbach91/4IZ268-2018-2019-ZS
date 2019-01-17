@@ -6,6 +6,7 @@ var checkBoxContainer = document.querySelector("#checkBoxContainer");
 var checkBoxForm = document.querySelector("#checkBoxForm");
 var groups;
 var errorOccurred = false;
+var messageSent = false;
 var atLeastOneChecked;
 var mainLoader = document.querySelector("#loader");
 var postSend;
@@ -25,6 +26,9 @@ var profileRow = document.querySelector('.profileRow');
 /*přiřazuje eventy k příslušným html elementům*/
 shareBtn.addEventListener("click", postFb);
 loginBtn.addEventListener("click", loginFb);
+textarea.addEventListener("click", resetIndicators);
+
+
 
 
 /*Základní napojení FB api */
@@ -157,6 +161,7 @@ function sendToGroup(groupId) {
         },
         function (response) {
             if (response && !response.error) {
+                messageSent=true;
                 var succesCheckBoxLabel = $("#label" + groupId);
                 $(succesCheckBoxLabel).css({ 'color': 'green', 'font-weight': '600' });
                 $(succesCheckBoxLabel).html($(succesCheckBoxLabel).html() + " &#10004");
@@ -220,6 +225,24 @@ function createCheckBox(name, value) {
 /*ukládá obsah texboxu do proměnné*/
 function saveTextareaToVar() {
     postTxt = textarea.value;
+}
 
+/* Resetuje stavy indikátorů (zelená/červená) po odeslání messege na FB skupiny. Spustí se při opětovném kliknutí na textarea po tom, co již byl odeslán nějaký příspěvek. */
+function resetIndicators(){
+    if(messageSent){
+        if (confirm("Přejete si vymazat obsah textového pole?")) {
+            setDefaultStyleOfIndicators();
+            $(textarea).val('');
+          } else {
+            setDefaultStyleOfIndicators();
+          }
+    messageSent = false;
+}
+}
+
+
+function setDefaultStyleOfIndicators(){
+    $(checkBoxForm).contents().css({ 'color': 'black', 'font-weight': 'normal' });
+ 
 }
 
