@@ -1,0 +1,10 @@
+{
+    "liveServer.settings.https": {
+    "enable": true, //set it true to enable the feature.
+    "cert": "C:\\Temp\\Weby\\cert.crt", //full path of the certificate
+    "key": "C:\\Temp\\Weby\\key.pem", //full path of the private key
+    "passphrase": "",
+    },
+    "liveServer.settings.host": "localhost",
+    "liveServer.settings.port": 80,
+    }
