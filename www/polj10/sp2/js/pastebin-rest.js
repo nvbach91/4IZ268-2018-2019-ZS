@@ -28,137 +28,244 @@ const globals = {
   api_option_show_paste: "show_paste",
   api_option_list: "list",
   api_user_key_local_storage: "api_user_key",
+
+  account_pro_value: "0",
 };
 
-
+//FREQUENTLY USED ELEMENTS
 const navbarToggleExternalContentElement = $('#navbarToggleExternalContent');
 const loginFormToggleElement = $('#loginFormToggle');
 const logoutButtonElement = $('#logoutButton');
 const loginButtonElement = $('#loginButton');
-
 const userNameElement = $('#userName');
+const proBadgeElement = $('#proBadge');
 const userAvatarElement = $('#userAvatar');
-
 const syntaxSelectElement = $('#syntaxSelect');
 const expirationSelectElement = $('#expirationSelect');
 const visibilitySelectElement = $('#visibilitySelect');
 const statusBoxElement = $('#statusBox');
-
+const userPastesElement = $('#userPastes');
+const createNewPasteButtonElement = $('#createNewPasteButton');
+const mainElement = $('main');
 
 //HELPERS
-function loadUserDefaults(defaultSyntaxCode, defaultExpirationCode, defaultVisibilityCode) {
-    const defaultSyntaxIndex = globals.api_paste_code.indexOf(defaultSyntaxCode);
-    const defaultExpirationIndex = globals.expire_paste_code.indexOf(defaultExpirationCode);
-    const defaultVisibilityIndex = globals.visibility_paste_code.indexOf(defaultVisibilityCode);
+/**
+ * Selects default Pastebin options of logged user.
+ * @param {number} defaultSyntaxCode syntax code defined in globals.api_paste_code
+ * @param {number} defaultExpirationCode expiration code defined in globals.expire_paste_code
+ * @param {number} defaultVisibilityCode visibility code defined in globals.visibility_paste_code
+ */
+function selectUsersDefaultPastebinOptions(defaultSyntaxCode, defaultExpirationCode, defaultVisibilityCode){
+    let defaultSyntaxIndex = globals.api_paste_code.indexOf(defaultSyntaxCode);
+    let defaultExpirationIndex = globals.expire_paste_code.indexOf(defaultExpirationCode);
+    let defaultVisibilityIndex = globals.visibility_paste_code.indexOf(defaultVisibilityCode);
 
-    if (defaultSyntaxIndex !== -1){
-        syntaxSelectElement.val(defaultSyntaxIndex);
-    } else {
-        syntaxSelectElement.val(148);
-    }
+    if (defaultSyntaxIndex === -1){ defaultSyntaxIndex = 148; } 
 
-    if (defaultExpirationIndex !== -1) {
-        expirationSelectElement.val(defaultExpirationIndex);
-    }
+    if (defaultExpirationIndex === -1) { defaultExpirationIndex = 0; }
 
-    if (defaultVisibilityIndex !== -1) {
-        visibilitySelectElement.val(defaultVisibilityIndex);
-    }
+    if (defaultVisibilityIndex !== -1) { defaultVisibilityIndex = 0; }
+
+    selectPastebinOptions(defaultSyntaxIndex, defaultExpirationIndex, defaultVisibilityIndex);
 }
-function hasUserApiKey() {
-    const apiUserKey = localStorage.getItem(globals.api_user_key_local_storage);
-    if(apiUserKey == null){
+
+/**
+ * Selects given Pastebin options.
+ * @param {number} syntaxIndex Index of syntax element to select.
+ * @param {number} expirationIndex Index of expiration element to select.
+ * @param {number} visibilityIndex Index of visibility element to select.
+ */
+function selectPastebinOptions(syntaxIndex, expirationIndex, visibilityIndex){
+    syntaxSelectElement.val(syntaxIndex);
+    expirationSelectElement.val(expirationIndex);
+    visibilitySelectElement.val(visibilityIndex);
+}
+
+/**
+ * Checks if userApiKey is not null.
+ * @param {string} userApiKey Users Pastebin API key.
+ * @return {boolean} true if userApiKey is not null; false otherwise.
+ */
+function userApiKeyNotNull(userApiKey){
+    if(userApiKey == null){
         return false;
     }
     return true;
 }
-function showLoggedUserUi(userName, avatarUrl, userAccountType) {
-    navbarToggleExternalContentElement.collapse('hide');
-    loginFormToggleElement.hide();
-    logoutButtonElement.show();
-    userNameElement.show();
-    userAvatarElement.show();
 
-    $('#userPastes').addClass("remove");
+/**
+ * Gets users Pastebin API key from localStorage.
+ * @return {string} Users Pastebin API key if exists; null otherwise.
+ */
+function getUserApiKey(){
+    return localStorage.getItem(globals.api_user_key_local_storage);
+}
+
+/**
+ * Removes users Pastebin API key from localStorage.
+ */
+function removeUserApiKey(){
+    localStorage.removeItem(globals.api_user_key_local_storage);
+}
+
+/**
+ * 
+ * @param {string} userAccountType User account type from range {"0", "1"}.
+ * @return {boolean} Returns true if userAccount type is PRO; false otherwise.
+ */
+function isUserAccountTypePro(userAccountType){
+    if(userAccountType === globals.account_pro_value){
+        return true;
+    }
+    return false;
+}
+
+/**
+ * Shows jQuery object DOM element in UI.
+ * @param  {...Object} elements Elements to show.
+ */
+function showElements(...elements){
+    $.each(elements, function(index, element){
+        element.show();
+    });
+}
+
+/**
+ * Hides jQuery object DOM element in UI.
+ * @param  {...Object} elements Elements to hide.
+ */
+function hideElements(...elements){
+    $.each(elements, function(index, element){
+        element.hide();
+    });
+}
+
+/**
+ * Collapses specified jQuery object DOM elements using bootstrap collapse animation.
+ * @param  {...Object} elements Elements to collapse with animation.
+ */
+function collapseElementsAnimated(...elements){
+    $.each(elements, function(index, element){
+        element.collapse('hide');
+    });
+}
+
+/**
+ * Shows UI for logged user.
+ * @param {string} userName Users username
+ * @param {string} avatarUrl Url of users avatar
+ * @param {string} userAccountType User account type
+ */
+function showLoggedUserUi(userName, avatarUrl, userAccountType) {
+    collapseElementsAnimated(navbarToggleExternalContentElement); 
+    hideElements(loginFormToggleElement);
+    showElements(logoutButtonElement, userNameElement, userAvatarElement);
+
     userNameElement.text(userName);
     userAvatarElement.attr("src", avatarUrl);
-   
+    userPastesElement.addClass("remove"); //????????????????????????????????????
 
-    if(userAccountType === "0"){
-        visibilitySelectElement.children().last().attr('disabled','disabled')
-        $('#proBadge').hide();
+    if(!isUserAccountTypePro(userAccountType)){
+        disableProAccount();
     }
 }
-function showAnonymousUserId() {
-    loginFormToggleElement.show();
-    logoutButtonElement.hide();
-    userNameElement.hide();
-    userAvatarElement.hide();
 
-    syntaxSelectElement.selectedIndex = 148;
-    expirationSelectElement.selectedIndex = 0;
-    visibilitySelectElement.selectedIndex = 0;
+/**
+ * Hides Pastebin PRO account UI and disable PRO options.
+ */
+function disableProAccount(){
     visibilitySelectElement.children().last().attr('disabled','disabled')
-
-    $('#userPaste').hide();
+    hideElements(proBadgeElement);
 }
 
-function closeStatusPanel() {
-     $('#statusBox').alert('close');
+/**
+ * Shows UI for anonymous user.
+ */
+function showAnonymousUserId() {
+    showElements(loginFormToggleElement);
+    hideElements(logoutButtonElement, userNameElement, userAvatarElement, userPastesElement);
+    disableProAccount();
+    selectPastebinOptions(148, 0, 0);
 }
-var mainAlertIsClosing = false;
 
-function createTextAlert(color, messageText, autofade){
-    closeStatusPanel();
-    var alert = $('<div>', {
+/**
+ * Closes application notification.
+ */
+function closeApplicationNotification(){
+    $('#statusBox').alert('close');
+}
+
+/**
+ * Shows application alert notification (and closes previous one).
+ * @param {string} color Bootstraps alert contextual class
+ * @param {*} messageText Alert text.
+ */
+function showAlertApplicationNotification(color, messageText){
+    closeApplicationNotification(); //Closes previous one - if exists.
+
+    let alertElem = $('<div>', {
         id: 'statusBox',
         class: 'alert alert-dismissible fade show sm-2',
         role: 'alert'
-    }).text(messageText);
-    var closeAlertButton = $('<button>', {
+    });
+    let closeAlertButtonElem = $('<button>', {
         class: 'close',
         ["data-dismiss"]: 'alert',
         type: 'button'
     });
-    closeAlertButton.append($('<span>').html('&times;'))
+    closeAlertButtonElem.append($('<span>').html('&times;'))
 
-    alert.append(closeAlertButton);
-    alert.addClass(color);
-    $('main').append(alert);
+    alertElem.text(messageText);
+    alertElem.addClass(color);
+    alertElem.append(closeAlertButtonElem);
+    mainElement.append(alertElem);
 }
 
-function createLinkAlert(color, messageText, autofade){
-    closeStatusPanel();
-    var alert = $('<div>', {
+/**
+ * Shows application alert notification (and closes previous one).
+ * @param {*} link link URL.
+ */
+function showLinkAlertApplicationNotification(link){
+    closeApplicationNotification();
+    let alertElem = $('<div>', {
         id: 'statusBox',
-        class: 'alert alert-dismissible fade show',
+        class: 'alert alert-success alert-dismissible fade show',
         role: 'alert'
     });
-    alert.append($('<a>', {
-        href: messageText,
+    let linkElem = $('<a>', {
+        href: link,
         target: '_blank'
-    }).text(messageText));
-    var closeAlertButton = $('<button>', {
+    });
+    linkElem.click(function(){
+        closeApplicationNotification();
+    });
+    let closeAlertButtonElem = $('<button>', {
         class: 'close',
         ["data-dismiss"]: 'alert',
         type: 'button'
     });
-    closeAlertButton.append($('<span>').html('&times;'))
+    closeAlertButtonElem.append($('<span>').html('&times;'))
 
-    alert.append(closeAlertButton);
-    alert.addClass(color);
-    $('main').append(alert);
+    linkElem.text(link);
+    alertElem.append(linkElem);
+
+    alertElem.append(closeAlertButtonElem);
+    mainElement.append(alertElem);
 }
 
+/**
+ * Assigns application default event listeners.
+ */
 function assignEventListeners() {
     loginButtonElement.click(login);
     logoutButtonElement.click(logout);
-    $('#createNewPasteButton').click(createNewPaste);
-    $('#closeStatusButton').click(closeStatusPanel);
+    createNewPasteButtonElement.click(createNewPaste);
 }
-function init() {
-    assignEventListeners();
-    
+
+/**
+ * Initializes Pastebin options.
+ */
+function initPastebinOptions(){
     var pasteToAppend = $();
     $.each(globals.api_paste_code_names, function(i,e){
         pasteToAppend = pasteToAppend.add(
@@ -167,9 +274,7 @@ function init() {
                 text: globals.api_paste_code_names[i]
             }));
     });
-    var syntaxSelect = $('#syntaxSelect');
-    syntaxSelect.append(pasteToAppend);
-    syntaxSelect.selectedIndex = 148;
+    syntaxSelectElement.append(pasteToAppend);
    
     var expirationToAppend = $();
     $.each(globals.expire_paste_code_names, function(i,e){
@@ -179,9 +284,7 @@ function init() {
                 text: globals.expire_paste_code_names[i]
             }));
     });
-    var expirationSelect = $('#expirationSelect');
-    expirationSelect.append(expirationToAppend);
-    expirationSelect.selectedIndex = 0;
+    expirationSelectElement.append(expirationToAppend);
    
     var visibilityToAppend = $();
     $.each(globals.visibility_paste_code_names, function(i,e){
@@ -191,83 +294,139 @@ function init() {
                 text: globals.visibility_paste_code_names[i]
             }));
     });
-    var visibilitySelect = $('#visibilitySelect');
-    visibilitySelect.append(visibilityToAppend);
-    visibilitySelect.selectedIndex = 0;
+    visibilitySelectElement.append(visibilityToAppend);
+}
 
-    if(hasUserApiKey()){
+/**
+ * Initializes application.
+ */
+function init() {
+    assignEventListeners();
+    initPastebinOptions();
+    selectPastebinOptions(148, 0, 0);
+    
+    let userApiKey = getUserApiKey();
+    if(userApiKeyNotNull(userApiKey)){
         getUserInfo();
     } else {
         showAnonymousUserId();
     }
 }
 
-//LOGIN
+/**
+ * Login user - use this for login button.
+ */
 function login() {
     const userNameValue = $('#loginName').val();
     const passwordValue = $('#loginPassword').val();
 
     createApiUserKey(userNameValue, passwordValue);
-    closeStatusPanel();
 }
+
+/**
+ * Logout user - use this for logout button.
+ */
 function logout() {
-    window.localStorage.removeItem("api_user_key");
+    removeUserApiKey();
     showAnonymousUserId();
 }
 
+/**
+ * Transforms given timestamp to cs-CZ locale string.
+ * @param {number} timestamp unix timestamp in UTC.
+ */
+function pastebinTimestampToLocaleString(timestamp){
+    return new Date(timestamp * 1000).toLocaleString("cs-CZ");
+}
+
+/**
+ * Creates paste element in UI.
+ * @param {string} paste_key 
+ * @param {string} paste_date 
+ * @param {string} paste_title 
+ * @param {string} paste_expire_date 
+ * @param {string} paste_private 
+ * @param {string} paste_format_long 
+ * @param {string} paste_url 
+ */
 function createPasteElement(paste_key, paste_date, paste_title, paste_expire_date, paste_private, paste_format_long, paste_url) {
-    if(paste_title === ""){
-        paste_title = "Bez názvu"
+    
+    function createPasteElementWrap(paste_key, upPart, bottomPart){
+        let pasteElem = $('<div>', {
+            id: paste_key,
+            class: 'list-group-item mt-4'
+        });
+
+        pasteElem.append(upPart);
+        pasteElem.append(bottomPart);
+        return pasteElem;
     }
 
-    var pasteElement = $('<div>', {
-        id: paste_key,
-        class: 'list-group-item mt-4',
-    });
-    var upPart = $('<div>', {
-        class: 'd-flex w-100 justify-content-between'
-    });
-    var dates = $('<small>').text(new Date(paste_date * 1000).toLocaleString("cs-CZ") + " - " + new Date(paste_expire_date * 1000).toLocaleString("cs-CZ"));
-    var name = $('<h5>',{
-        class: 'mb-1'
-    }).text(paste_title);
+    function createPasteElementUpPart(left, right){
+        let upPart =  $('<div>', {
+            class: 'd-flex w-100 justify-content-between'
+        });
+        upPart.append(left);
+        upPart.append(right);
     
-    upPart.append(dates);
-    upPart.append(name);
+        return upPart;
+    }
 
-    var bottomPart = $('<div>', {
-        class: 'mt-4'
-    });
-    var link = $('<a>',{
-        class: 'mb-1',
-        href: paste_url,
-        target: '_blank'
-    }).text(paste_url);
+    function createPasteElementDates(paste_date, paste_expire_date){
+        return $('<small>').text(pastebinTimestampToLocaleString(paste_date) + " - " + pastebinTimestampToLocaleString(paste_expire_date));
+    }
 
-    var buttonWrap = $('<div>', {
+    function createPasteElementName(paste_title){
+        return $('<h5>',{
+            class: 'mb-1'
+        }).text(paste_title);
+    }
+
+    function createPasteElementBottomPart(left, right){
+        let bottomPart = $('<div>', {
+            class: 'mt-4'
+        });
+        bottomPart.append(left);
+        bottomPart.append(right);
+    
+        return bottomPart;
+    }
+
+    if(paste_title === ""){ paste_title = "[Bez názvu]" }
+    
+    let dates = createPasteElementDates(paste_date, paste_expire_date);
+    let name = createPasteElementName(paste_title);
+    let upPart = createPasteElementUpPart(dates, name); 
+
+
+    let deleteButtonWrap = $('<div>', {
         class: 'float-right'
     });
-    var button = $('<button>', {
+    let button = $('<button>', {
         class: 'btn btn-outline-secondary',
         type: 'button'
     }).text("Odstranit").click(function(){
         deletePaste(paste_key);
     })
-    buttonWrap.append(button);
+    deleteButtonWrap.append(button);
 
-    bottomPart.append(link);
-    bottomPart.append(buttonWrap);
+    let pasteLink = $('<a>',{
+        class: 'mb-1',
+        href: paste_url,
+        target: '_blank'
+    }).text(paste_url);
+    
 
-    pasteElement.append(upPart);
-    pasteElement.append(bottomPart);
+    let bottomPart = createPasteElementBottomPart(pasteLink, deleteButtonWrap); 
 
-    return pasteElement;
+    return createPasteElementWrap(paste_key, upPart, bottomPart);
 }
 
 //API FUNCTIONS
+//
 function listUserPastes() {
-    const apiUserKey = localStorage.getItem("api_user_key");
-    const data = new URLSearchParams();
+    const apiUserKey = getUserApiKey();
+    let data = new URLSearchParams();
     data.append("api_dev_key", globals.api_dev_key);
     data.append("api_user_key", apiUserKey);
     data.append("api_option", globals.api_option_list);
@@ -281,7 +440,7 @@ function listUserPastes() {
             }
 
             if (responseText.includes("Bad API request")){
-                createTextAlert("alert-danger", "Nepodařilo se načíst uložené texty.", false);               
+                showAlertApplicationNotification("alert-danger", "Nepodařilo se načíst uložené texty.");               
                 return;
             }
 
@@ -298,18 +457,17 @@ function listUserPastes() {
                 const paste_private = paste.getElementsByTagName("paste_private")[0].innerHTML;
                 const paste_format_long = paste.getElementsByTagName("paste_format_long")[0].innerHTML;
                 const paste_url = paste.getElementsByTagName("paste_url")[0].innerHTML;
-
                 const pasteElement = createPasteElement(paste_key, paste_date, paste_title, paste_expire_date, paste_private, paste_format_long, paste_url);
 
-                $('#userPastes').append(pasteElement);
+                userPastesElement.append(pasteElement);
             }
         },
         function (statusText) {
-            createTextAlert("alert-danger", "Při komunikaci se serverem se vyskytla chyba.", false);               
+            showAlertApplicationNotification("alert-danger","Při komunikaci se serverem se vyskytla chyba.");               
         });
 }
 function deletePaste(paste_key) {
-    const apiUserKey = localStorage.getItem("api_user_key");
+    const apiUserKey = getUserApiKey();   
     const data = new URLSearchParams();
     data.append("api_dev_key", globals.api_dev_key);
     data.append("api_user_key", apiUserKey);
@@ -319,14 +477,14 @@ function deletePaste(paste_key) {
     postData(globals.create_paste_url, data,
         function (responseText) {
             if (responseText === "Paste Removed"){
-                createTextAlert("alert-success", "Text byl úspěšně odstraněn.", false);    
+                showAlertApplicationNotification("alert-success", "Text byl úspěšně odstraněn.");    
                 $('#'+paste_key).remove();   
             } else {
-                createTextAlert("alert-danger", "Text se nepodařilo odstranit.", false);       
+                showAlertApplicationNotification("alert-danger", "Text se nepodařilo odstranit.");       
             }
         },
         function (statusText) {
-            createTextAlert("alert-danger", "Při komunikaci se serverem se vyskytla chyba.", false);       
+            showAlertApplicationNotification("alert-danger", "Při komunikaci se serverem se vyskytla chyba.");       
         });
 
 
@@ -343,10 +501,10 @@ function getUserInfo() {
             if(responseText.includes("Bad API request") || responseText.includes(" ")){
                 if(responseText.includes("api_user_key")){
                     logout();
-                    createTextAlert("alert-danger", "Při komunikaci se serverem se vyskytla chyba.", false);  
+                    showAlertApplicationNotification("alert-danger", "Při komunikaci se serverem se vyskytla chyba.");  
                 } else {
                     logout();
-                    createTextAlert("alert-danger", "Při komunikaci se serverem se vyskytla chyba.", false);  
+                    showAlertApplicationNotification("alert-danger", "Při komunikaci se serverem se vyskytla chyba.");  
                 }
             } else {
                 let oParser = new DOMParser();
@@ -359,7 +517,7 @@ function getUserInfo() {
                 let user_private = item.getElementsByTagName("user_private")[0].innerHTML;
                 let user_account_type = item.getElementsByTagName("user_account_type")[0].innerHTML;
 
-                loadUserDefaults(user_format_short, user_expiration, user_private);
+                selectUsersDefaultPastebinOptions(user_format_short, user_expiration, user_private);
 
                 userNameElement.innerText = user_name;
                 userAvatarElement.attr("src", user_avatar_url);
@@ -369,7 +527,7 @@ function getUserInfo() {
             }
         },
         function (statusText) {
-            createTextAlert("alert-danger", "Při komunikaci se serverem se vyskytla chyba.", false);  
+            showAlertApplicationNotification("alert-danger", "Při komunikaci se serverem se vyskytla chyba.");  
         });
 }
 function createNewPaste() {
@@ -403,7 +561,7 @@ function createNewPaste() {
     postData(globals.create_paste_url, data,
         function (responseText) {
             if(responseText.includes("https://pastebin.com")){
-                createLinkAlert("alert-success", responseText, false);
+                showLinkAlertApplicationNotification(responseText);
                 
                 document.getElementById("pasteName").value = "";
                 document.getElementById("pasteTextArea").value = "";
@@ -415,30 +573,30 @@ function createNewPaste() {
             }
 
             if(responseText === "Post limit, maximum pastes per 24h reached"){
-                createTextAlert("alert-danger", "Dosáhl/a jste maximálního počtu vložených textů za 24 hodin.", false);
+                showAlertApplicationNotification("alert-danger", "Dosáhl/a jste maximálního počtu vložených textů za 24 hodin.");
                 return;
             }
 
             if (responseText.includes("maximum")){
-                createTextAlert("alert-danger", responseText, false);
+                showAlertApplicationNotification("alert-danger", responseText);
                 return;
             }
 
             if(responseText.includes("empty")){
-                createTextAlert("alert-danger", "Nebyl zadán žádný text.", false);
+                showAlertApplicationNotification("alert-danger", "Nebyl zadán žádný text.");
                 return;
             }
 
             if(responseText.includes("expired")){
                 logout();
-                createTextAlert("alert-danger", "Byl/a jste automaticky odhlášen/a.", false);
+                showAlertApplicationNotification("alert-danger", "Byl/a jste automaticky odhlášen/a.");
                 return;
             }
 
-            createTextAlert("alert-danger", "Při komunikaci se vyskytla chyba.", false);
+            showAlertApplicationNotification("alert-danger", "Při komunikaci se vyskytla chyba.");
         },
         function (statusText) {
-            createTextAlert("alert-danger", "Při komunikaci se vyskytla chyba.", false);
+            showAlertApplicationNotification("alert-danger", "Při komunikaci se vyskytla chyba.");
         });
 }
 function createApiUserKey(userName, password) {
