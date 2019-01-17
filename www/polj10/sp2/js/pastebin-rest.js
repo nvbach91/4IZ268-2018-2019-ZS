@@ -186,6 +186,9 @@ function showAnonymousUserId() {
     hideElements(logoutButtonElement, userNameElement, userAvatarElement, userPastesElement);
     disableProAccount();
     selectPastebinOptions(148, 0, 0);
+
+    userNameElement.text('');
+    userAvatarElement.attr('src', 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=');
 }
 
 /**
@@ -305,9 +308,6 @@ function init() {
     initPastebinOptions();
     selectPastebinOptions(148, 0, 0);
 
-
-
-
     $(function () {
         $('[data-toggle="tooltip"]').tooltip({
             trigger: 'hover',
@@ -330,8 +330,13 @@ function init() {
  * Login user - use this for login button.
  */
 function login() {
-    const userNameValue = $('#loginName').val();
-    const passwordValue = $('#loginPassword').val();
+    const userNameValue = $('#loginName').val().trim();
+    const passwordValue = $('#loginPassword').val().trim();
+
+    if(userNameValue === "" || passwordValue === ""){
+        $('#loginStatus').text('Nejprve vyplňte přihlašovací údaje.');
+        return;
+    }
 
     createApiUserKey(userNameValue, passwordValue);
 }
