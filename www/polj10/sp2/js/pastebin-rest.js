@@ -574,9 +574,9 @@ function createNewPaste() {
     //OPTIONAL
     const api_user_key = getUserApiKey();
     const api_paste_name = pasteNameElement.val().trim();
-    const api_paste_format = globals.api_paste_code[syntaxSelectElement.selectedIndex];
-    const api_paste_private = globals.visibility_paste_code[visibilitySelectElement.selectedIndex];
-    const api_paste_expire_date = globals.expire_paste_code[expirationSelectElement.selectedIndex];
+    const api_paste_format = globals.api_paste_code[syntaxSelectElement.index()];
+    const api_paste_private = globals.visibility_paste_code[visibilitySelectElement.index()];
+    const api_paste_expire_date = globals.expire_paste_code[expirationSelectElement.index()];
 
     const data = new URLSearchParams();
     data.append("api_dev_key",api_dev_key);
