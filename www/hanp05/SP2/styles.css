@@ -69,12 +69,12 @@
       display: none;
       border-radius: 50%;
       margin:5px 0 5px auto;
-      width: 35px;
-      height: 35px;
+      width: 40px;
+      height: 40px;
       }
 
       #userName{
-          margin: 10px auto 5px 5px;
+          margin: 12px auto 5px 5px;
       }
 
       .profileRow{
@@ -82,4 +82,17 @@
           border: #d3d3d3 1px solid;
           padding: 20px;          
           margin: 0 auto;
+      }
+
+      .fb-footer{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+      }
+
+      .fb-like{
+          margin:4px 0 0 10px;
+      }
+
+      .fb-login-button{
+          margin-bottom:10px;
       }

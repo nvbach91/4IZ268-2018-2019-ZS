@@ -7,7 +7,7 @@ var checkBoxForm = document.querySelector("#checkBoxForm");
 var groups;
 var errorOccurred = false;
 var atLeastOneChecked;
-var mainLoader  = document.querySelector("#loader");
+var mainLoader = document.querySelector("#loader");
 var postSend;
 var shareBtn = document.querySelector('#shareBtn');;
 var loginBtn = document.querySelector('#fbLoginButton');
@@ -38,7 +38,7 @@ window.fbAsyncInit = function () {
     FB.getLoginStatus(function (response) {
         statusChangeCallback(response);
     });
-    
+
 };
 
 
@@ -66,12 +66,12 @@ function statusChangeCallback(response) {
     } else {
         $(fbStatus).html("Nepřihlášen na FB");
         $(shareBtn).hide();
-        
+
     }
 }
 
 /* zjistí informace o profilu*/
-function getUserInfo(){
+function getUserInfo() {
     getUserName();
     getProfilePicture();
 }
@@ -80,28 +80,27 @@ function getProfilePicture() {
     FB.api(
         '/me/picture',
         'GET',
-        {"redirect":"false"},
-        function(response) {
-           console.log(response.data.url);
-           pathToProfilePhoto = response.data.url;       
-           $(profilePhoto).attr("src", pathToProfilePhoto);
-           $(profilePhoto).show();
+        { "redirect": "false" },
+        function (response) {
+            pathToProfilePhoto = response.data.url;
+            $(profilePhoto).attr("src", pathToProfilePhoto);
+            $(profilePhoto).show();
         }
-      );
-      
+    );
+
 
 }
 
-function getUserName(){
+function getUserName() {
     FB.api(
         '/me?fields=id,name',
         'GET',
-        {"redirect":"false"},
-        function(response) {
-          userName = response.name;
-          $(userNameElement).html(userName);
+        { "redirect": "false" },
+        function (response) {
+            userName = response.name;
+            $(userNameElement).html(userName);
         }
-      );
+    );
 }
 
 /*reaguje na tlačítko login a přes fb api jej řeší*/
@@ -120,11 +119,20 @@ function checkIfEmpty() {
     }
 }
 
+function checkIfOnlyWhitespaces() {
+    postTxt = postTxt.replace(/^\s+/, '').replace(/\s+$/, '');
+    if (!postTxt) {
+        window.alert("Nepoužívej pouze bílé znaky!")
+    }
+}
+
+
+
 /*zjistí jaké fb skupiny (checkboxy) uživatel zaškrtl a u nich spustí proces odesílání příspěvku*/
 function postFb() {
     atLeastOneChecked = false;
     saveTextareaToVar();
-    if (checkIfEmpty()) { return };
+    if (checkIfEmpty()) { return; };
     groups = document.forms['checkBoxForm'].elements['fbGroup'];
     for (var i = 0, len = groups.length; i < len; i++) {
         if (groups[i].checked) {
@@ -133,7 +141,6 @@ function postFb() {
             sendToGroup(groups[i].value);
         }
     }
-    
     if (!atLeastOneChecked) {
         window.alert("Vyber aspoň jednu Facebook skupinu, kterou spravuješ.");
         return;
@@ -151,14 +158,15 @@ function sendToGroup(groupId) {
         function (response) {
             if (response && !response.error) {
                 var succesCheckBoxLabel = $("#label" + groupId);
-                $(succesCheckBoxLabel).css({'color':'green','font-weight':'600'});
+                $(succesCheckBoxLabel).css({ 'color': 'green', 'font-weight': '600' });
                 $(succesCheckBoxLabel).html($(succesCheckBoxLabel).html() + " &#10004");
             }
 
             if (response.error) {
                 var errorCheckBoxLabel = $("#label" + groupId);
-                $(errorCheckBoxLabel).css({'color':'red','font-weight':'600'});
+                $(errorCheckBoxLabel).css({ 'color': 'red', 'font-weight': '600' });
                 $(errorCheckBoxLabel).html($(errorCheckBoxLabel).html() + " &#10006");
+                checkIfOnlyWhitespaces();
             }
         }
     );
@@ -212,5 +220,6 @@ function createCheckBox(name, value) {
 /*ukládá obsah texboxu do proměnné*/
 function saveTextareaToVar() {
     postTxt = textarea.value;
+
 }
 
