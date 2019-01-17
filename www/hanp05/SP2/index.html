@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/floating-label.css">
     <link rel="icon" type="image/png" href="/favicon.png">
     <title>Sdíleč!</title>
+    <script src="scripts/jquery-3.3.1.js"></script>
 </head>
 
 <body>
@@ -26,10 +27,11 @@
                 "Sdílej!""
                 a sdílíte!</p>
         </div>
-        <div class="form-label-group">
-            <textarea class="form-control" id="textarea" rows="5" placeholder="Napište příspěvek"></textarea>
+        <form class="form-textarea">
+            <textarea class="form-control" id="textarea" rows="5" placeholder="Napište příspěvek" required></textarea>
             <label for="textarea">Napište příspěvek</label>
-        </div>
+            <button id="checkValidityBtn" type="submit">gfgdfgdff</button>
+        </form>
 
         <div class="row">
             <div id="fbStatus"></div>

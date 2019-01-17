@@ -12,6 +12,8 @@ var postSend;
 var shareBtn = document.querySelector('#shareBtn');;
 var loginBtn = document.querySelector('#fbLoginButton');
 var fbStatus = document.querySelector('#fbStatus');
+var textarea = document.querySelector('#textarea');
+var checkValidityBtn = document.querySelector('#checkValidityBtn');
 
 /*přiřazuje eventy k příslušným html elementům*/
 shareBtn.addEventListener("click", postFb);
@@ -69,8 +71,8 @@ function loginFb() {
 }
 /*kontroluje, aby textarea nebyla prázdná*/
 function checkIfEmpty() {
-    if (postTxt === "") {
-        window.alert("Nejdříve vyplň zprávu, která se má odeslat na Facebook.")
+    if (!postTxt) {
+        checkValidityBtn.click();
         return true;
     } else {
         return false;
@@ -92,8 +94,7 @@ function postFb() {
             sendToGroup(groups[i].value);
         }
     }
-    console.log("1")
-
+    
 
     if (!atLeastOneChecked) {
         window.alert("Vyber aspoň jednu Facebook skupinu, kterou spravuješ.");
@@ -110,7 +111,6 @@ function sendToGroup(groupId) {
             "message": postTxt
         },
         function (response) {
-            console.log("2")
             if (response && !response.error) {
                 var succesCheckBoxLabel = document.querySelector("#label" + groupId);
                 succesCheckBoxLabel.style.cssText = "color:green;font-weight:600;";
@@ -174,7 +174,6 @@ function createCheckBox(name, value) {
 
 /*ukládá obsah texboxu do proměnné*/
 function saveTextareaToVar() {
-    postTxt = document.querySelector('#textarea').value;
-    console.log("Odesílám: " + postTxt);
+    postTxt = textarea.value;
 }
 
