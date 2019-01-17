@@ -1,13 +1,24 @@
 /*FB JavaScript SDK*/
+
+/*přiřazuje html elementy k proměnným*/
 var postTxt;
-var checkBoxContainer;
-var checkBoxForm;
+var checkBoxContainer = document.querySelector("#checkBoxContainer");
+var checkBoxForm = document.querySelector("#checkBoxForm");
 var groups;
 var errorOccurred = false;
 var atLeastOneChecked;
-var mainLoader;
+var mainLoader  = document.querySelector("#loader");
 var postSend;
+var shareBtn = document.querySelector('#shareBtn');;
+var loginBtn = document.querySelector('#fbLoginButton');
+var fbStatus = document.querySelector('#fbStatus');
 
+/*přiřazuje eventy k příslušným html elementům*/
+shareBtn.addEventListener("click", postFb);
+loginBtn.addEventListener("click", loginFb);
+
+
+/*Základní napojení FB api */
 window.fbAsyncInit = function () {
     FB.init({
         appId: '360643444726398',
@@ -34,18 +45,18 @@ window.fbAsyncInit = function () {
 function statusChangeCallback(response) {
     if (response.status === 'connected') {
         console.log("přihlášen a autorizován");
-        document.querySelector('#fbStatus').innerHTML = "Povolen přístup na FB";
-        document.querySelector('#fbLoginButton').style.display = "none";
-        document.querySelector('#shareBtn').style.display = 'inline';
+        innerHTML = "Povolen přístup na FB";
+        loginBtn.style.display = "none";
+        shareBtn.style.display = 'inline';
         findGroups();
     } else if (response.status === 'not_authorized') {
-        document.querySelector('#fbStatus').innerHTML = "Nepovolen přístup na FB";
-        document.querySelector('#shareBtn').style.display = 'none';
+        fbStatus.innerHTML = "Nepovolen přístup na FB";
+        shareBtn.style.display = 'none';
         console.log("přihlášen ale neautorizován");
     } else {
-        document.querySelector('#fbStatus').innerHTML = "Nepřihlášen na FB";
-        document.querySelector('#shareBtn').style.display = 'none';
-        console.log("nepřihlášen");
+        fbStatus.innerHTML = "Nepřihlášen na FB";
+        shareBtn.style.display = 'none';
+        
     }
 }
 
@@ -103,13 +114,13 @@ function sendToGroup(groupId) {
             if (response && !response.error) {
                 var succesCheckBoxLabel = document.querySelector("#label" + groupId);
                 succesCheckBoxLabel.style.cssText = "color:green;font-weight:600;";
-                succesCheckBoxLabel.innerHTML=succesCheckBoxLabel.innerHTML+" &#10004"
+                succesCheckBoxLabel.innerHTML = succesCheckBoxLabel.innerHTML + " &#10004"
             }
 
             if (response.error) {
                 var errorCheckBoxLabel = document.querySelector("#label" + groupId);
                 errorCheckBoxLabel.style.cssText = "color:red;font-weight:600;";
-                errorCheckBoxLabel.innerHTML=errorCheckBoxLabel.innerHTML+" &#10006"
+                errorCheckBoxLabel.innerHTML = errorCheckBoxLabel.innerHTML + " &#10006"
             }
         }
     );
@@ -117,14 +128,14 @@ function sendToGroup(groupId) {
 
 /*pomocí fb api zjišťuje u jakých skupin je uživatel adminem a podle toho pak vytváří checkboxy*/
 function findGroups() {
-    mainLoader.style.display="block";
+    mainLoader.style.display = "block";
     document.querySelector("#formHeading").style.display = "block";
-   
+
     FB.api(
-        
+
         "/me/groups",
         function (response) {
-           
+
             if (response && !response.error) {
                 for (var l = response.data.length, i = 0; i < l; i++) {
                     var obj = response.data[i];
@@ -132,7 +143,7 @@ function findGroups() {
 
                 }
             }
-            mainLoader.style.display="none";
+            mainLoader.style.display = "none";
         },
         { admin_only: true },
     );
@@ -157,5 +168,13 @@ function createCheckBox(name, value) {
 
     checkBoxForm.appendChild(checkbox);
     checkBoxForm.appendChild(label);
+
+}
+
+
+/*ukládá obsah texboxu do proměnné*/
+function saveTextareaToVar() {
+    postTxt = document.querySelector('#textarea').value;
+    console.log("Odesílám: " + postTxt);
 }
 
