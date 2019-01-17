@@ -3,6 +3,8 @@ var count = 0;
 
 function onAction() {
 	var city = $("#city").val();
+	var cities = city.split(',');
+	cities.forEach(function(city) {
 	if (city !== '') {
 		$.ajax({
 			url: 'http://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=metric" +
@@ -11,7 +13,7 @@ function onAction() {
 			dataType: "json",
 			success: function (data) {
 				$("#show").html($('#show').html()).append(getForecast(data));
-				$("#city").val(' ');
+				$("#city").val('');
 				$('#compareBtn').show();
 
 			},
@@ -24,6 +26,7 @@ function onAction() {
 
 	}
 }
+	)};
 
 function showErrorMsg(msg) {
 	$("#error").html("<div class='alert alert-danger text-center'><a href='#' class='close' data-dismiss='alert' aria-label='close' onclick='$(this).parent().remove();'>&times;</a>" + msg + "</div>");
