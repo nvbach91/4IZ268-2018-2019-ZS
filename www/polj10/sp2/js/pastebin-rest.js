@@ -47,6 +47,8 @@ const statusBoxElement = $('#statusBox');
 const userPastesElement = $('#userPastes');
 const createNewPasteButtonElement = $('#createNewPasteButton');
 const mainElement = $('main');
+const pasteNameElement = $("#pasteName");
+const pasteTextAreaElement = $("#pasteTextArea");
 
 //HELPERS
 /**
@@ -566,11 +568,12 @@ function createNewPaste() {
     //REQUIRED
     const api_dev_key = globals.api_dev_key;
     const api_option = "paste";
-    const api_paste_code = document.getElementById("pasteTextArea").value;
+
+    const api_paste_code = pasteTextAreaElement.val();
 
     //OPTIONAL
     const api_user_key = getUserApiKey();
-    const api_paste_name = document.getElementById("pasteName").value;
+    const api_paste_name = pasteNameElement.val();
     const api_paste_format = globals.api_paste_code[syntaxSelectElement.selectedIndex];
     const api_paste_private = globals.visibility_paste_code[visibilitySelectElement.selectedIndex];
     const api_paste_expire_date = globals.expire_paste_code[expirationSelectElement.selectedIndex];
@@ -591,8 +594,8 @@ function createNewPaste() {
             if(responseText.includes("https://pastebin.com")){
                 showLinkAlertApplicationNotification(responseText);
                 
-                $("#pasteName").val('');
-                $("#pasteTextArea").val('');
+                pasteNameElement.val('');
+                pasteTextAreaElement.val('');
 
                 getUserPastes(1, function (responseText) {           
                     let oParser = new DOMParser();
@@ -600,17 +603,17 @@ function createNewPaste() {
                     let pastes = oDOM.childNodes[0].childNodes;
             
                     const paste = pastes[0];
-                        const paste_key = paste.getElementsByTagName("paste_key")[0].innerHTML;
-                        const paste_date = paste.getElementsByTagName("paste_date")[0].innerHTML;
-                        const paste_title = paste.getElementsByTagName("paste_title")[0].innerHTML;
-                        const paste_expire_date = paste.getElementsByTagName("paste_expire_date")[0].innerHTML;
-                        const paste_private = paste.getElementsByTagName("paste_private")[0].innerHTML;
-                        const paste_format_long = paste.getElementsByTagName("paste_format_long")[0].innerHTML;
-                        const paste_url = paste.getElementsByTagName("paste_url")[0].innerHTML;
+                    const paste_key = paste.getElementsByTagName("paste_key")[0].innerHTML;
+                    const paste_date = paste.getElementsByTagName("paste_date")[0].innerHTML;
+                    const paste_title = paste.getElementsByTagName("paste_title")[0].innerHTML;
+                    const paste_expire_date = paste.getElementsByTagName("paste_expire_date")[0].innerHTML;
+                    const paste_private = paste.getElementsByTagName("paste_private")[0].innerHTML;
+                    const paste_format_long = paste.getElementsByTagName("paste_format_long")[0].innerHTML;
+                    const paste_url = paste.getElementsByTagName("paste_url")[0].innerHTML;
 
-                        let pasteElem = createPasteElement(paste_key, paste_date, paste_title, paste_expire_date, paste_private, paste_format_long, paste_url);           
-                        userPastesElement.prepend(pasteElem);
-                        $('#'+paste_key).hide().slideDown('fast').fadeIn('slow');
+                    let pasteElem = createPasteElement(paste_key, paste_date, paste_title, paste_expire_date, paste_private, paste_format_long, paste_url);           
+                    userPastesElement.prepend(pasteElem);
+                    $('#'+paste_key).hide().slideDown('fast').fadeIn('slow');
                 });
                 return;
             }
