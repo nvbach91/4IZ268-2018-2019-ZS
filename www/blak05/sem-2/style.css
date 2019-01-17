@@ -9,6 +9,10 @@ h1{font-size: 30px; text-align: center;}
 p{text-align: justify;margin-bottom: 50px;margin-top: 30px;}
 .logo{color:dimgrey; text-transform:uppercase; font-weight: bold; font-size: 60px; margin: 0 auto; text-align: center; font-family: 'Staatliches', cursive;}
 .line{background-color: dimgray; width:80%; height: 2px; margin: 0 auto;}
+#chart{margin: 0 auto; margin-top: 50px;}
+.logo2{color:dimgrey; text-transform:uppercase; font-weight: bold; font-size: 35px; margin: 0 auto; text-align: center; font-family: 'Staatliches', cursive;}
+.line2{background-color: dimgray; width:10%; height: 2px; margin: 0 auto;}
+.full-chart{color: dimgray; margin: 0 auto; text-align: center;}
 .description{color:gray; text-align: center; font-family: 'Staatliches', cursive; text-transform: uppercase; margin: 0 auto; margin-bottom: 10px; margin-top: 10px;}
 
 @media only screen and (max-width: 992px) {
@@ -20,6 +24,9 @@ p{text-align: justify;margin-bottom: 50px;margin-top: 30px;}
 @media only screen and (max-width: 350px) {
     .row{width: 90%; margin: 0 auto;}
 }
+
+
+
 #loader {
   border: 10px solid #f3f3f3;
   border-radius: 50%;
