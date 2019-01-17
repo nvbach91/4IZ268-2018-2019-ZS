@@ -22,6 +22,7 @@
             document.getElementById("signup_div").style.display = "none";
     
             document.getElementById("welcome-h3").innerText = "Vítej! " + user.displayName;
+            document.getElementById("info-pLog").innerText = "Narozen " + user.displayBirthday + "Post " + user.displayPost;
         } else {
             // No user is signed in.
             //navigace
@@ -38,6 +39,9 @@
         let userEmail = document.getElementById("sign_up_email_field").value;
         let userPassword = document.getElementById("sign_up_password_field").value;
         let userName = document.getElementById("sign_up_name_field").value;
+        let userBirth = document.getElementById("sign_up_birth_field").value;
+        let userPost = document.getElementById("sign_up_post_field").value;
+      //  let userPhoto = document.getElementById("sign_up_photo_field").value;
     
         firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).catch(function(error) {
             let errorMessage = error.message;
@@ -48,7 +52,9 @@
             if (user) {
                 user.updateProfile({
                     displayName: userName,
-                    photoURL: "..."
+                    displayBirthday: userBirth,
+                    displayPost: userPost,
+                //  photoURL: userPhoto,
                 }).then(function() {
                     console.log("Uspech!");
                 }).catch(function(error) {
@@ -71,12 +77,18 @@
     }
     
     function signOut() {
-        firebase.auth().signOut().then(function() {
-            window.alert("Úspěšně jste se odhlásili!");
-        }).catch(function(error) {
+        firebase.auth().signOut().then(function() {  
+           window.alert("Úspěšně jste se odhlásili!");
+           document.getElementById("sign_in_email_field").value="";
+           document.getElementById("sign_in_password_field").value="";
+           document.getElementById("sign_up_email_field").value="";
+           document.getElementById("sign_up_password_field").value="";
+           document.getElementById("sign_up_name_field").value="";
+            }).catch(function(error) {
             window.alert("Něco se nepovedlo: " + error.message);
         });
     }
+
     //registrace nh
     
     $(document).ready(function () {
@@ -87,13 +99,20 @@
     function registrationScript(value) {
 
     var db = firebase.database().ref("users");
+    var firstName = $("#fname");
+    var lastName = $("#lname");
+    var birthDate = $("#bdate");
+    var tel = $("#tel");
+    var email = $("#email");
+    var registerForm = $("#registr");
+
     $("#registr").submit(function (config) {
         $(this);
-        var c = $("#fname").val(),
-            d = $("#lname").val(),
-            e = $("#bdate").val(),
-            f = $("#tel").val(),
-            g = $("#email").val(),
+        var c = firstName.val(),
+            d = lastName.val(),
+            e = birthDate.val(),
+            f = tel.val(),
+            g = email.val(),
             z = { fname: c, lname: d, bdate: e, tel: f, email: g };
             if(!c || !d|| !e|| !f|| !g){
                 alert("Nevyplněny údaje, prosím vyplňte všechny informace")
@@ -103,11 +122,11 @@
             alert("Registrace proběhla úspěšně")
             $(".sucess").css("display", "block"),
                 $(".sucess-none").css("display", "none")
-                c = $("#fname").val("")
-                d = $("#lname").val(""),
-                e = $("#bdate").val(""),
-                f = $("#tel").val(""),
-                g = $("#email").val(""),
+                c = firstName.val("")
+                d = lastName.val(""),
+                e = birthDate.val(""),
+                f = tel.val(""),
+                g = email.val(""),
                 z = { fname: c, lname: d, bdate: e, tel: f, email: g };
 
         }), !1

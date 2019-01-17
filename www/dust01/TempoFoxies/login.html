@@ -10,51 +10,7 @@
     <link rel="icon" href="img/tempotrans.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Tempo Foxies - přihlášení</title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="main.js"></script>
-
-    <style>
-        .main-div, .loggedin-div {
-            display: flex;
-            flex-direction: column;
-            width: 200px;
-        }
-
-        .main-div input, button {
-            margin: 5px 0;
-            padding: 10px;
-        }
-
-        li button {
-            color: white;
-            font-size: 25px;
-            /* border-right: 2px solid antiquewhite; */
-            padding: 6px;
-            margin: 10px 0;
-            text-shadow: 2px 1px black;
-            background: none;
-            border: none;
-        }
-
-        li button:hover {
-            background-color: #F1C40F;
-            color: white;
-            transition: 0.5s;
-        }
-        .btn{
-             background-color: #004d40;
-        }
-        .btn:hover{
-             background-color: #F1C40F;
-             color: #004d40;
-
-        }
-      
-
-    </style>
+   
 </head>
 <body>
 <nav>
@@ -72,30 +28,41 @@
     </ul>
 </nav>
 <div class="container">
+
+        <div id="signin_div" class="main-div">
+                <h3>Přihlášení</h3>
+                <input type="email" placeholder="Email" id="sign_in_email_field">
+                <input type="password" placeholder="Password" id="sign_in_password_field">
+                <button onclick="signIn()" class="btn">Přihlásit</button>
+            </div>
+            
     <div id="signup_div" class="main-div">
         <h3>Registrace</h3>
         <input type="text" placeholder="Name" id="sign_up_name_field">
+      <!-- <input type="file" placeholder="Image" id="sign_up_photo_field"> -->
         <input type="email" placeholder="Email" id="sign_up_email_field">
         <input type="password" placeholder="Password" id="sign_up_password_field">
+        <input type="date" placeholder="Birthday" id="sign_up_birth_field">
+        <input type="text" placeholder="Post" id="sign_up_post_field">
         <button onclick="signUp()" class="btn">Registrovat se</button>
     </div>
 
-    <div id="signin_div" class="main-div">
-        <h3>Přihlášení</h3>
-        <input type="email" placeholder="Email" id="sign_in_email_field">
-        <input type="password" placeholder="Password" id="sign_in_password_field">
-        <button onclick="signIn()" class="btn">Přihlásit</button>
-    </div>
+   
 
     <div id="user_div" class="loggedin-div">
         <h3 id="welcome-h3"></h3>
         <p>Úspěšně jste se přihlasili do webové aplikace <strong>TempoFoxies</strong></p>
-
+        <p id="info-pLog"></p>
         <button onclick="signOut()" class="btn">Odhlásit</button>
     </div>
 
 
 </div>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="main.js"></script>
 </body>
+
+
 </html>

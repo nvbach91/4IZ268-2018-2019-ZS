@@ -435,20 +435,46 @@ text-align: center;
     width: 200px;
 }
 
-.btn{
-    background-color: #004d40;
-}
-.btn:hover{
-    background-color: #F1C40F;
-    color: #004d40;
-
-}
 .row{
     display: inline;
     width: 600px;
 }
+/*login*/
+.main-div, .loggedin-div {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
 
+.main-div input, button {
+    margin: 5px 0;
+    padding: 10px;
+}
 
+li button {
+    color: white;
+    font-size: 25px;
+    /* border-right: 2px solid antiquewhite; */
+    padding: 6px;
+    margin: 10px 0;
+    text-shadow: 2px 1px black;
+    background: none;
+    border: none;
+}
+
+li button:hover {
+    background-color: #F1C40F;
+    color: white;
+    transition: 0.5s;
+}
+.btn{
+     background-color: #004d40;
+}
+.btn:hover{
+     background-color: #F1C40F;
+     color: #004d40;
+
+}
 
 @media screen and (max-width: 1360px) {
     /*kontakty*/
