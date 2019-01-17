@@ -1,4 +1,5 @@
 .{box-sizing: border-box;}
+a.mainlogo{text-decoration: none;}
 form{margin-top: 40px;}
 input, label{text-align: center;}
 #error{width: 100%; margin: 0 auto; text-align: center;}
@@ -19,18 +20,18 @@ p{text-align: justify;margin-bottom: 50px;margin-top: 30px;}
 @media only screen and (max-width: 350px) {
     .row{width: 90%; margin: 0 auto;}
 }
-
-
-
-.loader {
-  border: 16px solid #f3f3f3;
+#loader {
+  border: 10px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 16px solid gray;
-  border-bottom: 16px solid gray;
-  width: 60px;
-  height: 60px;
+  border-top: 10px solid gray;
+  border-bottom: 10px solid gray;
+  width: 40px;
+  height: 40px;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 1s linear infinite;
+    display: none;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 @-webkit-keyframes spin {
