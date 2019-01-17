@@ -16,7 +16,6 @@ var fbStatus = document.querySelector('#fbStatus');
 var textarea = document.querySelector('#textarea');
 var checkValidityBtn = document.querySelector('#checkValidityBtn');
 
-
 var userName;
 var pathToProfilePhoto;
 var profilePhoto = document.querySelector('#profilePhoto');
@@ -27,9 +26,6 @@ var profileRow = document.querySelector('.profileRow');
 shareBtn.addEventListener("click", postFb);
 loginBtn.addEventListener("click", loginFb);
 textarea.addEventListener("click", resetIndicators);
-
-
-
 
 /*Základní napojení FB api */
 window.fbAsyncInit = function () {
@@ -42,10 +38,7 @@ window.fbAsyncInit = function () {
     FB.getLoginStatus(function (response) {
         statusChangeCallback(response);
     });
-
 };
-
-
 
 (function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -130,8 +123,6 @@ function checkIfOnlyWhitespaces() {
     }
 }
 
-
-
 /*zjistí jaké fb skupiny (checkboxy) uživatel zaškrtl a u nich spustí proces odesílání příspěvku*/
 function postFb() {
     atLeastOneChecked = false;
@@ -145,6 +136,7 @@ function postFb() {
             sendToGroup(groups[i].value);
         }
     }
+
     if (!atLeastOneChecked) {
         window.alert("Vyber aspoň jednu Facebook skupinu, kterou spravuješ.");
         return;
@@ -161,7 +153,7 @@ function sendToGroup(groupId) {
         },
         function (response) {
             if (response && !response.error) {
-                messageSent=true;
+                messageSent = true;
                 var succesCheckBoxLabel = $("#label" + groupId);
                 $(succesCheckBoxLabel).css({ 'color': 'green', 'font-weight': '600' });
                 $(succesCheckBoxLabel).html($(succesCheckBoxLabel).html() + " &#10004");
@@ -218,9 +210,7 @@ function createCheckBox(name, value) {
 
     checkBoxForm.appendChild(checkbox);
     checkBoxForm.appendChild(label);
-
 }
-
 
 /*ukládá obsah texboxu do proměnné*/
 function saveTextareaToVar() {
@@ -228,21 +218,19 @@ function saveTextareaToVar() {
 }
 
 /* Resetuje stavy indikátorů (zelená/červená) po odeslání messege na FB skupiny. Spustí se při opětovném kliknutí na textarea po tom, co již byl odeslán nějaký příspěvek. */
-function resetIndicators(){
-    if(messageSent){
+function resetIndicators() {
+    if (messageSent) {
         if (confirm("Přejete si vymazat obsah textového pole?")) {
             setDefaultStyleOfIndicators();
             $(textarea).val('');
-          } else {
+        } else {
             setDefaultStyleOfIndicators();
-          }
-    messageSent = false;
-}
+        }
+        messageSent = false;
+    }
 }
 
-
-function setDefaultStyleOfIndicators(){
+function setDefaultStyleOfIndicators() {
     $(checkBoxForm).contents().css({ 'color': 'black', 'font-weight': 'normal' });
- 
 }
 

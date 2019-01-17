@@ -1,98 +1,103 @@
-.form-share{
+.form-share {
     max-width: 400px;
     margin: 0 auto;
 }
 
-#motto{
+#motto {
     font-size: 12px;
     margin-top: -10px;
-    color:rgb(131, 131, 131);
-
+    color: rgb(131, 131, 131);
 }
 
-.form-check{
+.form-check {
     padding-bottom: 15px;
 }
 
-#fbLoginButton{
+#fbLoginButton {
     margin: 10px auto 10px auto;
 }
 
-#fbStatus{
+#fbStatus {
     margin: 0 auto;
 }
 
-.groupCheckBox{
+.groupCheckBox {
     margin-top: 7px;
     margin-right: 10px;
 }
 
-#checkBoxContainer{
-    margin:20px;
+#checkBoxContainer {
+    margin: 20px;
 }
 
-#shareBtn{
+#shareBtn {
     display: none;
 }
 
-#checkBoxForm{
-    display:grid;
+#checkBoxForm {
+    display: grid;
     grid-template-columns: 5% 1fr;
 }
 
-#formHeading{
+#formHeading {
     display: none;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
 #loader {
-    border: 6px solid #f3f3f3; /* Light grey */
-    border-top: 6px solid #3498db; /* Blue */
+    border: 6px solid #f3f3f3;
+    /* Light grey */
+    border-top: 6px solid #3498db;
+    /* Blue */
     border-radius: 50%;
     width: 50px;
     height: 50px;
     animation: spin 0.3s linear infinite;
     display: none;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+}
 
-  #checkValidityBtn{
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#checkValidityBtn {
     display: none;
-  }
-  
-  #profilePhoto{
-      display: none;
-      border-radius: 50%;
-      margin:5px 0 5px auto;
-      width: 40px;
-      height: 40px;
-      }
+}
 
-      #userName{
-          margin: 12px auto 5px 5px;
-      }
+#profilePhoto {
+    display: none;
+    border-radius: 50%;
+    margin: 5px 0 5px auto;
+    width: 40px;
+    height: 40px;
+}
 
-      .profileRow{
-          background-color: #eee;
-          border: #d3d3d3 1px solid;
-          padding: 20px;          
-          margin: 0 auto;
-      }
+#userName {
+    margin: 12px auto 5px 5px;
+}
 
-      .fb-footer{
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-      }
+.profileRow {
+    background-color: #eee;
+    border: #d3d3d3 1px solid;
+    padding: 20px;
+    margin: 0 auto;
+}
 
-      .fb-like{
-          margin:4px 0 0 10px;
-      }
+.fb-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
-      .fb-login-button{
-          margin-bottom:10px;
-      }
+.fb-like {
+    margin: 4px 0 0 10px;
+}
+
+.fb-login-button {
+    margin-bottom: 10px;
+}
