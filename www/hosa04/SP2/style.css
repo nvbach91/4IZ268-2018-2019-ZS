@@ -164,9 +164,9 @@ body{
 @media screen and (max-width: 700px) {
 
 
-  #h1c{
+  #h1a{
     font-size: 300%;
-    margin-top: -50px;
+    margin-top: -30px;
   }
 
   #fill{
@@ -177,4 +177,16 @@ body{
     background-size: 200%;
     background-position: center;
   }
+  #mistakes{
+    font-size: 70%;
+  }
+  
+  #remaining{
+    font-size: 70%;
+  }
+
+  #title{
+    margin-top: 0px;
+  }
+
 }
