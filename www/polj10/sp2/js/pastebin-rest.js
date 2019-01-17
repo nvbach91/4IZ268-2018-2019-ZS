@@ -27,9 +27,15 @@ const globals = {
   api_option_userdetails: "userdetails",
   api_option_show_paste: "show_paste",
   api_option_list: "list",
+  api_option_paste: "paste",
+  api_option_delete: "delete",
   api_user_key_local_storage: "api_user_key",
-
   account_pro_value: "1",
+
+  api_data_mime: "application/xml",
+  message_communication_error: "Při komunikaci se vyskytla chyba.",
+  message_auto_logout: "Byl/a jste automaticky odhlášen/a.",
+  message_no_text: "Nebyl zadán žádný text.",
 };
 
 //FREQUENTLY USED ELEMENTS
@@ -328,6 +334,14 @@ function init() {
 }
 
 /**
+ * Clears bin code and name values
+ */
+function clearForm(){
+    pasteNameElement.val('');
+    pasteTextAreaElement.val('');
+}
+
+/**
  * Login user - use this for login button.
  */
 function login() {
@@ -348,6 +362,37 @@ function login() {
 function logout() {
     removeUserApiKey();
     showAnonymousUserId();
+}
+
+function parseUserInfo(data){
+    let oParser = new DOMParser();
+    let oDOM = oParser.parseFromString(data, globals.api_data_mime);
+    let item = oDOM.childNodes[0];
+
+    return {
+        user_name: item.getElementsByTagName("user_name")[0].innerHTML,
+        user_format_short: item.getElementsByTagName("user_format_short")[0].innerHTML,
+        user_expiration: item.getElementsByTagName("user_expiration")[0].innerHTML,
+        user_avatar_url: item.getElementsByTagName("user_avatar_url")[0].innerHTML,
+        user_private: item.getElementsByTagName("user_private")[0].innerHTML,
+        user_account_type: item.getElementsByTagName("user_account_type")[0].innerHTML
+    };
+}
+
+function parseLastPaste(data){
+    let oParser = new DOMParser();
+    let oDOM = oParser.parseFromString("<pastes>".concat(data,"</pastes>"), globals.api_data_mime);
+    let pastes = oDOM.childNodes[0].childNodes;
+    const paste = pastes[0];
+    return {
+        paste_key: paste.getElementsByTagName("paste_key")[0].innerHTML,
+        paste_date: paste.getElementsByTagName("paste_date")[0].innerHTML,
+        paste_title: paste.getElementsByTagName("paste_title")[0].innerHTML,
+        paste_expire_date: paste.getElementsByTagName("paste_expire_date")[0].innerHTML,
+        paste_private: paste.getElementsByTagName("paste_private")[0].innerHTML,
+        paste_format_long: paste.getElementsByTagName("paste_format_long")[0].innerHTML,
+        paste_url: paste.getElementsByTagName("paste_url")[0].innerHTML
+    };
 }
 
 /**
@@ -456,12 +501,11 @@ function getUserPastes(limit, responseCallback){
             responseCallback(responseText);
         },
         function (statusText) {
-            showAlertApplicationNotification("alert-danger","Při komunikaci se serverem se vyskytla chyba.");               
+            showAlertApplicationNotification("alert-danger",globals.message_communication_error);               
         });
 }
 
 //API FUNCTIONS
-//
 function listUserPastes() {
     userPastesElement.empty();
     showElements(userPastesElement);
@@ -478,7 +522,7 @@ function listUserPastes() {
         }
 
         let oParser = new DOMParser();
-        let oDOM = oParser.parseFromString("<pastes>"+responseText+"</pastes>", "application/xml");
+        let oDOM = oParser.parseFromString("<pastes>"+responseText+"</pastes>", globals.api_data_mime);
         let pastes = oDOM.childNodes[0].childNodes;
 
         for (let i = 0; i < pastes.length && i < 50; i += 2){
@@ -498,11 +542,12 @@ function listUserPastes() {
 }
 function deletePaste(paste_key) {
     const apiUserKey = getUserApiKey();   
-    const data = new URLSearchParams();
-    data.append("api_dev_key", globals.api_dev_key);
-    data.append("api_user_key", apiUserKey);
-    data.append("api_paste_key", paste_key);
-    data.append("api_option", "delete");
+    const data = new URLSearchParams({
+        "api_dev_key": globals.api_dev_key,
+        "api_user_key": apiUserKey,
+        "api_paste_key": paste_key,
+        "api_option": globals.api_option_delete
+    });    
 
     postData(globals.create_paste_url, data,
         function (responseText) {
@@ -514,60 +559,47 @@ function deletePaste(paste_key) {
             }
         },
         function (statusText) {
-            showAlertApplicationNotification("alert-danger", "Při komunikaci se serverem se vyskytla chyba.");       
+            showAlertApplicationNotification("alert-danger", globals.message_communication_error);       
         });
 
 
 }
 function getUserInfo() {
-    const apiUserKey = localStorage.getItem("api_user_key");
-    const data = new URLSearchParams();
-    data.append("api_dev_key", globals.api_dev_key);
-    data.append("api_user_key", apiUserKey);
-    data.append("api_option", globals.api_option_userdetails);
+    const apiUserKey = getUserApiKey();
+    const data = new URLSearchParams({
+        "api_dev_key": globals.api_dev_key,
+        "api_user_key": apiUserKey,
+        "api_option": globals.api_option_userdetails
+    });
 
     postData(globals.create_paste_url, data,
         function (responseText) {
             if(responseText.includes("Bad API request") || responseText.includes(" ")){
                 if(responseText.includes("api_user_key")){
                     logout();
-                    showAlertApplicationNotification("alert-danger", "Při komunikaci se serverem se vyskytla chyba.");  
+                    showAlertApplicationNotification("alert-danger", globals.message_communication_error);  
                 } else {
                     logout();
-                    showAlertApplicationNotification("alert-danger", "Při komunikaci se serverem se vyskytla chyba.");  
+                    showAlertApplicationNotification("alert-danger", globals.message_communication_error);  
                 }
             } else {
-                let oParser = new DOMParser();
-                let oDOM = oParser.parseFromString(responseText, "application/xml");
-                let item = oDOM.childNodes[0];
-                let user_name = item.getElementsByTagName("user_name")[0].innerHTML;
-                let user_format_short = item.getElementsByTagName("user_format_short")[0].innerHTML;
-                let user_expiration = item.getElementsByTagName("user_expiration")[0].innerHTML;
-                let user_avatar_url = item.getElementsByTagName("user_avatar_url")[0].innerHTML;
-                let user_private = item.getElementsByTagName("user_private")[0].innerHTML;
-                let user_account_type = item.getElementsByTagName("user_account_type")[0].innerHTML;
-
-                selectUsersDefaultPastebinOptions(user_format_short, user_expiration, user_private);
-
-                userNameElement.innerText = user_name;
-                userAvatarElement.attr("src", user_avatar_url);
-
-                showLoggedUserUi(user_name, user_avatar_url, user_account_type);
+                let userInfo = parseUserInfo(responseText);
+                selectUsersDefaultPastebinOptions(userInfo.user_format_short, userInfo.user_expiration, userInfo.user_private);
+                showLoggedUserUi(userInfo.user_name, userInfo.user_avatar_url, userInfo.user_account_type);
                 listUserPastes();
             }
         },
         function (statusText) {
-            showAlertApplicationNotification("alert-danger", "Při komunikaci se serverem se vyskytla chyba.");  
+            showAlertApplicationNotification("alert-danger", globals.message_communication_error);  
         });
 }
 function createNewPaste() {
     //REQUIRED
     const api_dev_key = globals.api_dev_key;
-    const api_option = "paste";
-
+    const api_option = globals.api_option_paste;
     const api_paste_code = pasteTextAreaElement.val().trim();
     if(api_paste_code === ""){
-        showAlertApplicationNotification("alert-danger", "Nebyl zadán žádný text.");
+        showAlertApplicationNotification("alert-danger", globals.message_no_text);
         return;
     }
 
@@ -578,44 +610,37 @@ function createNewPaste() {
     const api_paste_private = globals.visibility_paste_code[visibilitySelectElement.prop('selectedIndex')];
     const api_paste_expire_date = globals.expire_paste_code[expirationSelectElement.prop('selectedIndex')];
 
-    const data = new URLSearchParams();
-    data.append("api_dev_key",api_dev_key);
-    data.append("api_option",api_option);
-    data.append("api_paste_code",api_paste_code);
-
-    data.append("api_user_key",api_user_key);
-    data.append("api_paste_name",api_paste_name);
-    data.append("api_paste_format",api_paste_format);
-    data.append("api_paste_private",api_paste_private);
-    data.append("api_paste_expire_date", api_paste_expire_date);
+    const data = new URLSearchParams({
+        "api_dev_key": api_dev_key,
+        "api_option": api_option,
+        "api_paste_code": api_paste_code,
+        "api_user_key": api_user_key,
+        "api_paste_name": api_paste_name,
+        "api_paste_format": api_paste_format,
+        "api_paste_private": api_paste_private,
+        "api_paste_expire_date": api_paste_expire_date
+    });
 
     postData(globals.create_paste_url, data,
         function (responseText) {
             if(responseText.includes("https://pastebin.com")){
-                showLinkAlertApplicationNotification(responseText);
-                
-                pasteNameElement.val('');
-                pasteTextAreaElement.val('');
+                showLinkAlertApplicationNotification(responseText);            
+                clearForm();
 
                 let userApiKey = getUserApiKey();
                 if(userApiKeyNotNull(userApiKey)){
-                    getUserPastes(1, function (responseText) {           
-                        let oParser = new DOMParser();
-                        let oDOM = oParser.parseFromString("<pastes>"+responseText+"</pastes>", "application/xml");
-                        let pastes = oDOM.childNodes[0].childNodes;
-                
-                        const paste = pastes[0];
-                        const paste_key = paste.getElementsByTagName("paste_key")[0].innerHTML;
-                        const paste_date = paste.getElementsByTagName("paste_date")[0].innerHTML;
-                        const paste_title = paste.getElementsByTagName("paste_title")[0].innerHTML;
-                        const paste_expire_date = paste.getElementsByTagName("paste_expire_date")[0].innerHTML;
-                        const paste_private = paste.getElementsByTagName("paste_private")[0].innerHTML;
-                        const paste_format_long = paste.getElementsByTagName("paste_format_long")[0].innerHTML;
-                        const paste_url = paste.getElementsByTagName("paste_url")[0].innerHTML;
-    
-                        let pasteElem = createPasteElement(paste_key, paste_date, paste_title, paste_expire_date, paste_private, paste_format_long, paste_url);           
+                    getUserPastes(1, function (responseText) {  
+                        let lastParse = parseLastPaste(responseText);                       
+                        let pasteElem = createPasteElement(
+                            lastParse.paste_key, 
+                            lastParse.paste_date, 
+                            lastParse.paste_title, 
+                            lastParse.paste_expire_date, 
+                            lastParse.paste_private, 
+                            lastParse.paste_format_long, 
+                            lastParse.paste_url);           
                         userPastesElement.prepend(pasteElem);
-                        $('#'+paste_key).hide().slideDown('fast').fadeIn('slow');
+                        $('#'+lastParse.paste_key).hide().slideDown('fast').fadeIn('slow');
                     });
                 }          
                 return;
@@ -632,20 +657,20 @@ function createNewPaste() {
             }
 
             if(responseText.includes("empty")){
-                showAlertApplicationNotification("alert-danger", "Nebyl zadán žádný text.");
+                showAlertApplicationNotification("alert-danger", globals.message_no_text);
                 return;
             }
 
             if(responseText.includes("expired")){
                 logout();
-                showAlertApplicationNotification("alert-danger", "Byl/a jste automaticky odhlášen/a.");
+                showAlertApplicationNotification("alert-danger", globals.message_auto_logout);
                 return;
             }
 
-            showAlertApplicationNotification("alert-danger", "Při komunikaci se vyskytla chyba.");
+            showAlertApplicationNotification("alert-danger", globals.message_communication_error);
         },
         function (statusText) {
-            showAlertApplicationNotification("alert-danger", "Při komunikaci se vyskytla chyba.");
+            showAlertApplicationNotification("alert-danger", globalsmessage_communication_error);
         });
 }
 function createApiUserKey(userName, password) {
