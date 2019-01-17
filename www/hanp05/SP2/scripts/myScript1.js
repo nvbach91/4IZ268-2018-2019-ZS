@@ -15,6 +15,13 @@ var fbStatus = document.querySelector('#fbStatus');
 var textarea = document.querySelector('#textarea');
 var checkValidityBtn = document.querySelector('#checkValidityBtn');
 
+
+var userName;
+var pathToProfilePhoto;
+var profilePhoto = document.querySelector('#profilePhoto');
+var userNameElement = document.querySelector('#userName');
+var profileRow = document.querySelector('.profileRow');
+
 /*přiřazuje eventy k příslušným html elementům*/
 shareBtn.addEventListener("click", postFb);
 loginBtn.addEventListener("click", loginFb);
@@ -31,6 +38,7 @@ window.fbAsyncInit = function () {
     FB.getLoginStatus(function (response) {
         statusChangeCallback(response);
     });
+    
 };
 
 
@@ -46,6 +54,8 @@ window.fbAsyncInit = function () {
 /*zjišťuje status připojení na FB*/
 function statusChangeCallback(response) {
     if (response.status === 'connected') {
+        getUserInfo();
+
         $(fbStatus).html("Povolen přístup na FB");
         $(loginBtn).hide();
         $(shareBtn).show();
@@ -58,6 +68,40 @@ function statusChangeCallback(response) {
         $(shareBtn).hide();
         
     }
+}
+
+/* zjistí informace o profilu*/
+function getUserInfo(){
+    getUserName();
+    getProfilePicture();
+}
+
+function getProfilePicture() {
+    FB.api(
+        '/me/picture',
+        'GET',
+        {"redirect":"false"},
+        function(response) {
+           console.log(response.data.url);
+           pathToProfilePhoto = response.data.url;       
+           $(profilePhoto).attr("src", pathToProfilePhoto);
+           $(profilePhoto).show();
+        }
+      );
+      
+
+}
+
+function getUserName(){
+    FB.api(
+        '/me?fields=id,name',
+        'GET',
+        {"redirect":"false"},
+        function(response) {
+          userName = response.name;
+          $(userNameElement).html(userName);
+        }
+      );
 }
 
 /*reaguje na tlačítko login a přes fb api jej řeší*/
