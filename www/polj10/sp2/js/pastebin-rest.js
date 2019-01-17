@@ -561,22 +561,19 @@ function getUserInfo() {
         });
 }
 function createNewPaste() {
-    const syntaxSelectElement = document.getElementById("syntaxSelect");
-    const expirationSelectElement = document.getElementById("expirationSelect");
-    const visibilitySelectElement = document.getElementById("visibilitySelect");
-
     //REQUIRED
     const api_dev_key = globals.api_dev_key;
     const api_option = "paste";
 
-    const api_paste_code = pasteTextAreaElement.val();
-    if(api_paste_code.trim() === ""){
+    const api_paste_code = pasteTextAreaElement.val().trim();
+    if(api_paste_code === ""){
         showAlertApplicationNotification("alert-danger", "Nebyl zadán žádný text.");
+        return;
     }
 
     //OPTIONAL
     const api_user_key = getUserApiKey();
-    const api_paste_name = pasteNameElement.val();
+    const api_paste_name = pasteNameElement.val().trim();
     const api_paste_format = globals.api_paste_code[syntaxSelectElement.selectedIndex];
     const api_paste_private = globals.visibility_paste_code[visibilitySelectElement.selectedIndex];
     const api_paste_expire_date = globals.expire_paste_code[expirationSelectElement.selectedIndex];
