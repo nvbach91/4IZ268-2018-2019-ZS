@@ -467,10 +467,10 @@ li button:hover {
     color: white;
     transition: 0.5s;
 }
-.btn{
+.btnLog{
      background-color: #004d40;
 }
-.btn:hover{
+.btnLog:hover{
      background-color: #F1C40F;
      color: #004d40;
 
@@ -1014,8 +1014,35 @@ li button:hover {
         background-color: white;
         color: black;
     }
+}
 
+#logged-user{
+    color: white;
+    font-size: 20px;
+}
 
+#login-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#user_div_inner{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+#user_div_inner strong{
+    font-weight: bold;
+}
+
+#user_div_inner div:first-child{
+    margin-right: 20px;
+}
+
+#profile-photo{
+    height: 200px;
 }
 
    
