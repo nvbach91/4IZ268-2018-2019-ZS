@@ -5,18 +5,17 @@ function storageAvailable(type) {
         storage.setItem(x, x);
         storage.removeItem(x);
         return true;
-    }
-    catch (e) {
+    } catch (e) {
         return e instanceof DOMException && (
-            // everything except Firefox
-            e.code === 22 ||
-            // Firefox
-            e.code === max14 ||
-            // test name field too, because code might not be present
-            // everything except Firefox
-            e.name === 'QuotaExceededError' ||
-            // Firefox
-            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+                // everything except Firefox
+                e.code === 22 ||
+                // Firefox
+                e.code === max14 ||
+                // test name field too, because code might not be present
+                // everything except Firefox
+                e.name === 'QuotaExceededError' ||
+                // Firefox
+                e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
             // acknowledge QuotaExceededError only if there's something already stored
             storage.length !== 0;
     }
@@ -37,7 +36,9 @@ function insertUniqueElement(tag, name, target, id) {
         return element;
     } else {
         element = $('#' + id);
-        if (element.hasClass("disabled")) {element.removeClass("disabled")};
+        if (element.hasClass("disabled")) {
+            element.removeClass("disabled")
+        };
         return element;
     }
 }
@@ -56,7 +57,9 @@ function vocab(newData) {
             throw "No 'dix-application-data' item in local storage"
         }
     } else {
-        if (typeof newData == "object") {newData = JSON.stringify(newData)}
+        if (typeof newData == "object") {
+            newData = JSON.stringify(newData)
+        }
         ls.setItem("dix-application-data", newData)
     }
 }
@@ -112,7 +115,9 @@ function removeDuplicates(arrayOfObjects) {
     for (var i = 0; i < arrayOfObjects.length; i++) {
         var wordObject = arrayOfObjects[i]
         var key = Object.keys(wordObject)[0]
-        if (keys.indexOf(key) == -1) {keys.push(key)} else {
+        if (keys.indexOf(key) == -1) {
+            keys.push(key)
+        } else {
             for (var j = 0; j < arrayOfObjects.length; j++) {
                 if (arrayOfObjects[i][key] != undefined) {
                     arrayOfObjects.splice(i, 1)
@@ -154,9 +159,9 @@ function chooseNextWord() {
     for (var i = 0; i < max; i++) {
         //object[i] = v.filter(e => e["difficultyCardStackNumber"] === i)
         array[i] = v.filter(word => word["difficultyCardStackNumber"] === i)
+        shuffleArray(array[i])
     }
-
-    shuffleArray(array)
+    //  console.log(vocab().map(e => e.difficultyCardStackNumber))
 
     for (var i = 0; i < max; i++) {
         if (array[i].length != 0) {
@@ -180,6 +185,7 @@ function key(object) {
 }
 
 function changeDifficulty(question, difficulty) {
+    console.log("change")
     let term = findTerm(question)
     var difficultyMap = {
         "forgot": -1,
@@ -196,6 +202,7 @@ function changeDifficulty(question, difficulty) {
         v[index]["difficultyCardStackNumber"] = dif;
         vocab(v);
     }
+
 }
 
 function findIndexOfWord(word) {
@@ -223,6 +230,9 @@ function answer(question, difficulty) {
     $("#answer").css("display", "none")
 
     $("#question").text(key(chooseNextWord()));
+    vocabularyDashboard();
+    dashboardConditionalFormatting();
+
 }
 
 /**
@@ -238,6 +248,105 @@ function shuffleArray(array) {
         array[j] = temp;
     }
 }
+
+function vocabularyDashboard() {
+    let map = $("#map")[0]
+
+    while (map.firstChild) {
+        map.removeChild(map.firstChild);
+    }
+
+    let v = vocab();
+    v.forEach(wordObject => {
+        let practiceLevel = wordObject.difficultyCardStackNumber;
+        let item = document.createElement("li");
+        item.classList.add("mapItem");
+        item.setAttribute("data-practiceLevel", practiceLevel)
+        item.innerText = key(wordObject);
+        item.style.order = practiceLevel + 1;
+        map.appendChild(item);
+    });
+
+    /*let mapItemArray = $(".mapItem");
+    $.each(mapItemArray, function (index, value) {
+        console.log(value.getAttribute("data-practiceLevel"));
+    })*/
+
+}
+
+
+function colorScaleArray(numberOfLevels) {
+    let color = window.w3color;
+    if (!numberOfLevels) {
+        numberOfLevels = 10
+    }
+    numberOfLevels = 10;
+    let c = new color("hwb(151, 34%, 27%)")
+    let colorArray = [];
+    for (let i = 1; i < numberOfLevels; i++) {
+        let whitenessToAdd = (1 - c.whiteness) / (numberOfLevels - i)
+        let blacknessToSubtract = (c.blackness) / (numberOfLevels - i)
+        c.whiteness = c.whiteness + whitenessToAdd;
+        c.blackness = c.blackness - blacknessToSubtract;
+        c = new color(`hwb(151,${c.whiteness},${c.blackness})`);
+        colorArray.push(c.toHexString());
+    }
+    return colorArray;
+}
+
+function reverseColorScaleArray(numberOfLevels) {
+    let color = window.w3color;
+    if (!numberOfLevels) {
+        numberOfLevels = 10
+    }
+    numberOfLevels = 10;
+    let c = new color("hwb(151, 34%, 27%)")
+    let colorArray = [];
+    for (let i = 1; i < numberOfLevels; i++) {
+        let whitenessToAdd = (1 - c.whiteness) / (numberOfLevels - i)
+        let blacknessToSubtract = (c.blackness) / (numberOfLevels - i)
+        c.whiteness = c.whiteness + whitenessToAdd;
+        c.blackness = c.blackness - blacknessToSubtract;
+        c = new color(`hwb(151,${c.whiteness},${c.blackness})`);
+        colorArray.unshift(c.toHexString());
+    }
+    return colorArray;
+}
+
+function dashboardConditionalFormatting() {
+    let dashboard = document.getElementsByClassName("mapItem")
+    var colorMap = reverseColorScaleArray();
+    for (let i = 0; i < dashboard.length; i++) {
+        const listItem = dashboard[i];
+        const practiceLevel = listItem.getAttribute("data-practiceLevel")
+        listItem.style.backgroundColor = colorMap[practiceLevel]
+    }
+}
+
+
+function createTenShadedDivs(numberOfLevels) {
+    let color = window.w3color;
+    if (!numberOfLevels) {
+        numberOfLevels = 10
+    }
+    numberOfLevels = 10;
+    let c = new color("hwb(151, 34%, 27%)")
+    var header = document.getElementsByTagName("header")[0];
+    console.log(header)
+    for (let i = 1; i < numberOfLevels; i++) {
+        let d = document.createElement("div");
+        d.innerText = Math.random();
+        let whitenessToAdd = (1 - c.whiteness) / (numberOfLevels - i)
+        let blacknessToSubtract = (c.blackness) / (numberOfLevels - i)
+        c.whiteness = c.whiteness + whitenessToAdd;
+        c.blackness = c.blackness - blacknessToSubtract;
+        c = new color(`hwb(151,${c.whiteness},${c.blackness})`);
+        d.style.backgroundColor = c.toHexString();
+        header.appendChild(d)
+    }
+}
+
+
 
 
 

@@ -1,10 +1,10 @@
 $(document).ready(function () {
     var topics = fetch('https://pure-chamber-44082.herokuapp.com/api/topics', {
-        mode: 'cors',
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
-    })
+            mode: 'cors',
+            headers: {
+                'Access-Control-Allow-Origin': '*'
+            }
+        })
         .then(data => data.json())
         .then(data => {
             $("#loader").hide();
@@ -23,7 +23,7 @@ $(document).ready(function () {
         })
 
     /*Teprve na kliknuti se zavola dalsi pozadavek */
-    $("#practiceButton").on("click", function () {
+    $("#practiceButton").unbind().on("click", function () {
 
         $("#loader2").show();
         var topicDropdown = document.getElementById("topicDropdown");
@@ -40,8 +40,8 @@ $(document).ready(function () {
                 let ls = window.localStorage;
 
                 if (!storageAvailable('localStorage')) {
-                    alert("Local storage is not available on your machine! Please wait until March 2019 for"
-                        + "database, until then, use a different or more modern browser or enable local storage.")
+                    alert("Local storage is not available on your machine! Please wait until March 2019 for" +
+                        "database, until then, use a different or more modern browser or enable local storage.")
                     $("*").hide();
 
                 }
@@ -50,9 +50,9 @@ $(document).ready(function () {
                 let dad = ls.getItem("dix-application-data");
                 if (dad === null || dad === undefined) {
                     /*
-                    **check if localstorage has dix-application-data entry
-                    **and if not, create it and put data into it
-                    */
+                     **check if localstorage has dix-application-data entry
+                     **and if not, create it and put data into it
+                     */
                     data = trimObj(data) //remove trailing spaces
                     removeDuplicates(data) // remove duplicate words
                     ls.setItem("dix-application-data", JSON.stringify(data));
@@ -72,9 +72,9 @@ $(document).ready(function () {
 
                     } else {
                         /**
-                     * If the words we are trying to add are not exactly the same as the words we already have,
-                     * then we need to add those which are different from those we already have in our local storage vocabulary.
-                     */
+                         * If the words we are trying to add are not exactly the same as the words we already have,
+                         * then we need to add those which are different from those we already have in our local storage vocabulary.
+                         */
                         let wordsCurrentlyInLocalStorage = vocab().map(e => e[Object.keys(e)[0]]);
                         let newWordNames = data.map(e => e[Object.keys(e)[0]]);
                         let vo = vocab();
@@ -105,7 +105,9 @@ $(document).ready(function () {
                                 const newWord = newWordNames[j];
                                 if (newWord != duplicate) {
                                     let wordsToAdd = data.filter(e => key(e) == newWord)
-                                    if (wordsToAdd.length != 0) {vo.push(wordsToAdd);}
+                                    if (wordsToAdd.length != 0) {
+                                        vo.push(wordsToAdd);
+                                    }
                                 }
                             }
                         }
@@ -130,15 +132,25 @@ $(document).ready(function () {
                 $("#question").text(key(chooseNextWord()))
                 $("#question").show();
                 $("#show-answer").show();
+                vocabularyDashboard()
+                dashboardConditionalFormatting();
             })
-    })//end of practice button on click
+
+    }) //end of practice button on click
 
     /*adds functions to buttons which change the difficulty of the given words*/
-    $("#forgot").hide().unbind().on("click", function () {answer($("#question").text(), "forgot")})
-    $("#hard").hide().unbind().on("click", function () {answer($("#question").text(), "hard")})
-    $("#easy").hide().unbind().on("click", function () {answer($("#question").text(), "easy")})
-    $("#good").hide().unbind().on("click", function () {answer($("#question").text(), "good")})
-
+    $("#forgot").hide().unbind().on("click", function () {
+        answer($("#question").text(), "forgot")
+    })
+    $("#hard").hide().unbind().on("click", function () {
+        answer($("#question").text(), "hard")
+    })
+    $("#easy").hide().unbind().on("click", function () {
+        answer($("#question").text(), "easy")
+    })
+    $("#good").hide().unbind().on("click", function () {
+        answer($("#question").text(), "good")
+    })
     $("#show-answer").on("click", function () {
         let ans = findAnswer($("#question").text());
         $("#answer").text(ans).show();
@@ -146,39 +158,5 @@ $(document).ready(function () {
         $("#hard").show()
         $("#easy").show()
         $("#good").show()
-        let map = $("#map")
-        let v = vocab();
-
-        /*
-        v.forEach(wordObject => {
-            $(`<` + "li" + `> ${ key(wordObject) }</` + "li" + `>`)
-                .attr('class', "mapItem")
-                .appendTo(map)
-                .data("difficultyCardStackNumber", wordObject.difficultyCardStackNumber)
-        });
-
-        let mapItemArray = $(".mapItem");
-        console.log(mapItemArray)
-        mapItemArray.each();
-        */
     })
-
-
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

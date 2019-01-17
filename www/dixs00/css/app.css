@@ -6,6 +6,20 @@
     color: #0437B6;
     color: #C30011;
     color: #002868;
+
+    color: hsl(130, 30, 40);
+    color: hsl(130, 30, 46);
+    color: hsl(130, 30, 52);
+
+    color: hsl(130, 30, 58);
+    color: hsl(130, 30, 64);
+    color: hsl(130, 30, 70);
+
+    color: hsl(130, 30, 76);
+    color: hsl(130, 30, 82);
+    color: hsl(130, 30, 88);
+
+    color: hsl(130, 30, 100);
 }
 
 #map {
@@ -147,16 +161,21 @@ select {
 }
 
 @keyframes loader {
-    0%, 100% {
+
+    0%,
+    100% {
         animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
     }
+
     0% {
         transform: rotateY(0deg);
     }
+
     50% {
         transform: rotateY(180deg);
         animation-timing-function: cubic-bezier(0, 0.2, 0.8, 1);
     }
+
     100% {
         transform: rotateY(360deg);
     }
