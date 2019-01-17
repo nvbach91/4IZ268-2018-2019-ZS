@@ -570,6 +570,9 @@ function createNewPaste() {
     const api_option = "paste";
 
     const api_paste_code = pasteTextAreaElement.val();
+    if(api_paste_code.trim() === ""){
+        showAlertApplicationNotification("alert-danger", "Nebyl zadán žádný text.");
+    }
 
     //OPTIONAL
     const api_user_key = getUserApiKey();
