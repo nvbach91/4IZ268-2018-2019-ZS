@@ -10,6 +10,10 @@
     <title>Tempo Foxies-registrace</title>
     <link rel="stylesheet" href="main.css">
     <link rel="icon" href="img/tempotrans.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
@@ -21,31 +25,51 @@
             <li><a href="soutez.html">Soutěže</a></li>  
             <li><a href="kontakty.html">Kontakty</a></li>
             <li><a class="active" href="registrace.html">Registrace</a></li>
+            <li><a href ="login.html">Pro hráče</a></li>
         </ul>
     </nav>
     <h1>Registrace nových hráčů</h1>
     <p id="registrpar">Pokud se chceš přidat do našeho týmu, vyplň údaje a my ti co nejdříve odpovíme.</p>
-
-    <form id="registr">
-        jméno:<br>
-        <input class="inputR" type="text" name="firstname" id="fname" size="25">
-        <br>
-        příjmení:<br>
-        <input class="inputR" type="text" name="lastname" id="lname" size="25">
-        <br>
-        datum narození:<br>
-        <input class="inputR" type="date" name="birthdate" id="bdate">
-        <br>
-        telefon<br>
-        <input class="inputR" type="number" name="contact" id="tel" maxlegth="9">
-        <br>
-        email<br>
-        <input class="inputR" type="email" name="email" id="email" size="25">
-        <br>
-        <br>
-        <input class="inputR" type="submit" value="odeslat formular">
-    </form>
-
+    <div class="row">
+        <form id="registr" class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+      <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                  <input placeholder="firstName" id="fname" size="25" type="text" class="validate">
+                  <label for="first_name">Jméno</label>
+                </div>
+                <div class="row">
+                <div class="input-field col s6">
+                  <input placeholder="lastName" type="text" id="lname" size="25" class="validate">
+                  <label for="last_name">Příjmení</label>
+                </div>
+              </div>
+              <div class="row">
+            <div class ="input-field col s12">
+            <input type="date" id="bdate" class="validate">
+            <label for="birthdate">Datum narození</label>
+              </div>
+            </div>
+            <div class="row">
+            <div class ="input-field col s12">
+            <input placeholder="telefon" type="number" id="tel" maxlegth="9" class="validate">
+            <label for="telefon">telefon</label>
+             </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                  <input placeholder="email" type="email" id="email" size="25" class="validate">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="row">
+            <input class="btn" type="submit" value="odeslat formular">
+            </div>
+        </form>
+        </div>
 
 </body>
 <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>

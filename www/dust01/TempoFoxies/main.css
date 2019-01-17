@@ -425,7 +425,8 @@ div.teams-list img {
 /*registrace*/
 #registr{
     text-align: center;
-    text-shadow: 2px 2px #F1C40F;
+    text-shadow: 1px 1px #F1C40F;
+    margin-left: 350px;
 }
 #registrpar{
 text-align: center;
@@ -433,6 +434,20 @@ text-align: center;
 .inputR{
     width: 200px;
 }
+
+.btn{
+    background-color: #004d40;
+}
+.btn:hover{
+    background-color: #F1C40F;
+    color: #004d40;
+
+}
+.row{
+    display: inline;
+    width: 600px;
+}
+
 
 
 @media screen and (max-width: 1360px) {
