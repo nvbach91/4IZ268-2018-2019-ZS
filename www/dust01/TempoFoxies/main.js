@@ -85,11 +85,11 @@ function signOut() {
     document.location.reload()
 }
 
-// $(document).ready(function () {
-//     if ($('#registr').length > 0) {
-//         registrationScript('forcontact');
-//     }
-// });
+ $(document).ready(function () {
+     if ($('#registr').length > 0) {
+         registrationScript('forcontact');
+    }
+ });
 
 function registrationScript(value) {
 
