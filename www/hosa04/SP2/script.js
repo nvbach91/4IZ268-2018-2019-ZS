@@ -1,25 +1,24 @@
-
-
-function pushData() {
-    var inputText = $('#tip').val();
+//pushed entered letters to an array
+function pushDataToArray() {
+    var inputText = $('#tip-window').val();
     if (inputText.length <= 0) return;
     inputText = inputText.toLowerCase();
 
     guessedLettersArr.push(inputText);
-    $('#tip').val("");
+    $('#tip-window').val("");
 
     console.log(guessedLettersArr);
 }
 
 
-//testing functions
-
+//gets hang image based od mistakes
 function getHangImage() {
-    return("hang"+wrongCount+".png");
+    return ("hang" + wrongCount + ".png");
 }
 
+//changes the hang picture based on getHangImage
 function changeHangImage() {
-    $('#images-render').css("background-image",'url(hang_images/' + getHangImage() + ')');
+    $('#images-render').css("background-image", 'url(hang_images/' + getHangImage() + ')');
 }
 
 //basic variables
@@ -31,10 +30,11 @@ var chosenWord = getRandomWord();
 var tries = 10;
 var correct = 0;
 var wrongCount = 0;
+var audio = new Audio('winner_music.mp3');
 
 
 //updates mistakes + tries
-function rewrite() {
+function rewriteCounts() {
     $("#mistakes").text("Mistakes: " + wrongCount);
     $("#remaining").text("Remaining: " + (tries - wrongCount));
 }
@@ -49,6 +49,18 @@ function deletePage() {
     $("body").remove();
 }
 
+function removeDivs() {
+    $("#tip-window").remove();
+    $("#mistakes").remove();
+    $("#remaining").remove();
+    $("#secret").remove();
+    $("#images-render").remove();
+    $("#discovered").remove();
+    $("#refresh-button").remove();
+    $("#hint").remove();
+    $("a").remove();
+}
+
 //alert when you win + repeat?
 function winRepeatConfirmation() {
     var txt;
@@ -57,6 +69,7 @@ function winRepeatConfirmation() {
     }
     else {
         deletePage();
+        audio.pause();
     }
 }
 
@@ -74,11 +87,11 @@ function looseRepeatConfirmation() {
 //clicking into guessing fild "tip"
 $(document).ready(
     function () {
-        $('#tip').focus();
-        $('#tip').change(function () {
+        $('#tip-window').focus();
+        $('#tip-window').change(function () {
             guessWord($(this).val());
         });
-        rewrite();
+        rewriteCounts();
     });
 
 //chooses a random path for JSON to get planet name
@@ -88,6 +101,7 @@ function getRandomPlanet() {
     var planet3 = "https://swapi.co/api/planets/13/?format=json";
     var planet4 = "https://swapi.co/api/planets/19/?format=json";
     var planet5 = "https://swapi.co/api/planets/29/?format=json";
+
     var planets = [planet1, planet2, planet3, planet4, planet5];
 
     var APIChosenPlanet = planets[Math.floor(Math.random() * planets.length)];
@@ -109,16 +123,16 @@ function getRandomWord() {
         },
         complete: function () {
             console.log("Chosen word: " + chosenWord);
-            fillTajenka();
+            plantSpaces();
 
-            $('#hint').text("(Word is: " + chosenWord + ")");
+            $('#hint').text("Dev// Word is: " + chosenWord + "");
         }
     });
 
 }
 
 
-function createTajenka() {
+function preparePlantingSpaces() {
     var result = "";
 
     for (var i = 0; i < unknown.length; i++) {
@@ -131,12 +145,12 @@ function createTajenka() {
 }
 
 //creates _ _ _ field according to the number of characters in chosenWord
-function fillTajenka() {
+function plantSpaces() {
     for (var i = 0; i < chosenWord.length; i++) {
         unknown[i] = " _ ";
     }
 
-    createTajenka();
+    preparePlantingSpaces();
 }
 
 //looks for reseblence of characters in entered character and chosenWord
@@ -153,7 +167,7 @@ function findAllOccurrencesOfIn(letter, str) {
 }
 
 
-//trying new guess words
+//trying new guess words !MAIN FUNCTION!
 function guessWord(p) {
     p = p.toLowerCase();
     var indexes = findAllOccurrencesOfIn(p, chosenWord);
@@ -171,29 +185,30 @@ function guessWord(p) {
             }
 
             correct += indexes.length;
-            createTajenka();
+            preparePlantingSpaces();
         } else {
             wrongCount += 1;
-            rewrite();
+            rewriteCounts();
             $('#discovered').text("Wrong");
-
-
         }
 
 
 
         //determination of game ending
         if (chosenWord.length == correct) {
-            $('#tip').val("You won!");
-            $("#tip").prop('disabled', true);
-            setTimeout(winRepeatConfirmation, 2000);
+            $('#tip-window').val("You won!");
+            $("#tip-window").prop('disabled', true);
+            audio.play();
+            removeDivs();
+            $("body").css("background-image", "url(https://thumbs.gfycat.com/DefiniteAridAnkole-small.gif)");
+            $("body").css("background-size", "contain");
+            setTimeout(winRepeatConfirmation, 10000);
         } else if ((tries - wrongCount) <= 0) {
-            $('#tip').val("You lose!");
-            $("#tip").prop('disabled', true);
-            setTimeout(looseRepeatConfirmation, 2000);
+            $('#tip-window').val("You lose!");
+            $("#tip-window").prop('disabled', true);
+            setTimeout(looseRepeatConfirmation, 1000);
         }
     }
-    pushData();
+    pushDataToArray();
     changeHangImage();
-
 }
