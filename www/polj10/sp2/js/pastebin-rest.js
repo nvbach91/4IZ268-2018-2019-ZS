@@ -304,6 +304,19 @@ function init() {
     assignEventListeners();
     initPastebinOptions();
     selectPastebinOptions(148, 0, 0);
+
+
+
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip({
+            trigger: 'hover',
+            delay: {
+                show: 500,
+                hide: 0
+            }
+        })
+      })
     
     let userApiKey = getUserApiKey();
     if(userApiKeyNotNull(userApiKey)){
@@ -411,7 +424,7 @@ function createPasteElement(paste_key, paste_date, paste_title, paste_expire_dat
     deleteButtonWrap.append(button);
 
     let pasteLink = $('<a>',{
-        class: 'mb-1',
+        class: 'mb-1 text-decoration-none',
         href: paste_url,
         target: '_blank'
     }).text(paste_url);
@@ -650,4 +663,6 @@ async function postData(url, data, resolutionCallback, rejectionCallback) {
     }
 }
 
-init();
+$(document).ready(function() {
+    init();
+});

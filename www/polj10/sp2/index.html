@@ -31,11 +31,15 @@
                 <span id="proBadge" class="badge badge-secondary collapse">PRO</span>
             </div>
 
-            <button id="loginFormToggle" class="btn btn-primary collapse" type="button" data-toggle="collapse"
-                data-target="#navbarToggleExternalContent">
-                Přihlášení
-            </button>
-            <button id="logoutButton" class="btn btn-outline-danger collapse" type="button">
+            <span data-toggle="tooltip" data-placement="bottom" title="Stisknutím tlačítka se objeví přihlašovací formulář">
+                <button id="loginFormToggle" class="btn btn-primary collapse" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent">
+                    Přihlášení
+                </button>
+            </span>
+
+            <button id="logoutButton" class="btn btn-outline-danger collapse" type="button" data-toggle="tooltip"
+                data-placement="bottom" title="Stiskněte pro odhlášení">
                 Odhlásit se
             </button>
         </nav>
@@ -80,24 +84,26 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-md-3">
-                        <label class="col-form-label font-weight-bold" for="syntaxSelect">Syntaxe (volitelné)</label>
+                        <label class="col-form-label font-weight-bold" for="syntaxSelect">Syntaxe <span class="text-muted">(volitelné)</span></label>
                         <select id="syntaxSelect" class="form-control"></select>
                     </div>
                     <div class="form-group col-md-3">
-                        <label class="col-form-label font-weight-bold" for="expirationSelect">Expirace (volitelné)</label>
+                        <label class="col-form-label font-weight-bold" for="expirationSelect">Expirace <span class="text-muted">(volitelné)</span></label>
                         <select id="expirationSelect" class="form-control"></select>
                     </div>
                     <div class="form-group col-md-3">
-                        <label class="col-form-label font-weight-bold" for="visibilitySelect">Viditelnost (volitelné)</label>
+                        <label class="col-form-label font-weight-bold" for="visibilitySelect">Viditelnost <span class="text-muted">(volitelné)</span></label>
                         <select id="visibilitySelect" class="form-control"></select>
                     </div>
                     <div class="form-group col-md-3">
-                        <label class="col-form-label" for="pasteName">Název (volitelné)</label>
+                        <label class="col-form-label font-weight-bold" for="pasteName">Název <span class="text-muted">(volitelné)</span></label>
                         <input placeholder="Zadejte název (volitelné)" id="pasteName" type="text" class="form-control">
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <button id="createNewPasteButton" class="btn btn-primary" type="button">Vložit na Pastebin</button>
+                    <button id="createNewPasteButton" class="btn btn-primary" type="button" data-toggle="tooltip"
+                        data-placement="bottom" title="Stisknutím tlačítka se vloží text na server Pastebin.com">Vložit
+                        na Pastebin</button>
                 </div>
             </form>
             <div id="userPastes" class="list-group">
