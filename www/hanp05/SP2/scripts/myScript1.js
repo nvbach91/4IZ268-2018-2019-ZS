@@ -46,25 +46,22 @@ window.fbAsyncInit = function () {
 /*zjišťuje status připojení na FB*/
 function statusChangeCallback(response) {
     if (response.status === 'connected') {
-        console.log("přihlášen a autorizován");
-        innerHTML = "Povolen přístup na FB";
-        loginBtn.style.display = "none";
-        shareBtn.style.display = 'inline';
+        $(fbStatus).html("Povolen přístup na FB");
+        $(loginBtn).hide();
+        $(shareBtn).show();
         findGroups();
     } else if (response.status === 'not_authorized') {
-        fbStatus.innerHTML = "Nepovolen přístup na FB";
-        shareBtn.style.display = 'none';
-        console.log("přihlášen ale neautorizován");
+        $(fbStatus).html("Nepovolen přístup na FB");
+        $(shareBtn).hide();
     } else {
-        fbStatus.innerHTML = "Nepřihlášen na FB";
-        shareBtn.style.display = 'none';
+        $(fbStatus).html("Nepřihlášen na FB");
+        $(shareBtn).hide();
         
     }
 }
 
 /*reaguje na tlačítko login a přes fb api jej řeší*/
 function loginFb() {
-    console.log("Login přes custom tlačítko");
     FB.login(function (response) {
         statusChangeCallback(response)
     }, { scope: 'email,user_likes,publish_to_groups' });
@@ -89,13 +86,10 @@ function postFb() {
         if (groups[i].checked) {
             // if checked ...
             atLeastOneChecked = true;
-
-            console.log(groups[i].value);
             sendToGroup(groups[i].value);
         }
     }
     
-
     if (!atLeastOneChecked) {
         window.alert("Vyber aspoň jednu Facebook skupinu, kterou spravuješ.");
         return;
@@ -112,15 +106,15 @@ function sendToGroup(groupId) {
         },
         function (response) {
             if (response && !response.error) {
-                var succesCheckBoxLabel = document.querySelector("#label" + groupId);
-                succesCheckBoxLabel.style.cssText = "color:green;font-weight:600;";
-                succesCheckBoxLabel.innerHTML = succesCheckBoxLabel.innerHTML + " &#10004"
+                var succesCheckBoxLabel = $("#label" + groupId);
+                $(succesCheckBoxLabel).css({'color':'green','font-weight':'600'});
+                $(succesCheckBoxLabel).html($(succesCheckBoxLabel).html() + " &#10004");
             }
 
             if (response.error) {
-                var errorCheckBoxLabel = document.querySelector("#label" + groupId);
-                errorCheckBoxLabel.style.cssText = "color:red;font-weight:600;";
-                errorCheckBoxLabel.innerHTML = errorCheckBoxLabel.innerHTML + " &#10006"
+                var errorCheckBoxLabel = $("#label" + groupId);
+                $(errorCheckBoxLabel).css({'color':'red','font-weight':'600'});
+                $(errorCheckBoxLabel).html($(errorCheckBoxLabel).html() + " &#10006");
             }
         }
     );
@@ -128,9 +122,8 @@ function sendToGroup(groupId) {
 
 /*pomocí fb api zjišťuje u jakých skupin je uživatel adminem a podle toho pak vytváří checkboxy*/
 function findGroups() {
-    mainLoader.style.display = "block";
-    document.querySelector("#formHeading").style.display = "block";
-
+    $("#formHeading").show();
+    $(mainLoader).show();
     FB.api(
 
         "/me/groups",
@@ -143,7 +136,7 @@ function findGroups() {
 
                 }
             }
-            mainLoader.style.display = "none";
+            $(mainLoader).hide();
         },
         { admin_only: true },
     );
