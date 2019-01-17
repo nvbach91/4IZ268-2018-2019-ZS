@@ -29,7 +29,7 @@ const globals = {
   api_option_list: "list",
   api_user_key_local_storage: "api_user_key",
 
-  account_pro_value: "0",
+  account_pro_value: "1",
 };
 
 //FREQUENTLY USED ELEMENTS
@@ -159,11 +159,10 @@ function collapseElementsAnimated(...elements){
 function showLoggedUserUi(userName, avatarUrl, userAccountType) {
     collapseElementsAnimated(navbarToggleExternalContentElement); 
     hideElements(loginFormToggleElement);
-    showElements(logoutButtonElement, userNameElement, userAvatarElement);
+    showElements(logoutButtonElement, userNameElement, userAvatarElement, userPastesElement);
 
     userNameElement.text(userName);
     userAvatarElement.attr("src", avatarUrl);
-    userPastesElement.addClass("remove"); //????????????????????????????????????
 
     if(!isUserAccountTypePro(userAccountType)){
         disableProAccount();
@@ -440,49 +439,60 @@ function createPasteElement(paste_key, paste_date, paste_title, paste_expire_dat
     return createPasteElementWrap(paste_key, upPart, bottomPart);
 }
 
-//API FUNCTIONS
-//
-function listUserPastes() {
+function getUserPastes(limit, responseCallback){
     const apiUserKey = getUserApiKey();
     let data = new URLSearchParams();
     data.append("api_dev_key", globals.api_dev_key);
     data.append("api_user_key", apiUserKey);
     data.append("api_option", globals.api_option_list);
-    document.getElementById("userPastes").classList.remove("collapse");
+    data.append("api_results_limit", limit.toString());
+
+    showElements(userPastesElement);
 
     postData(globals.create_paste_url, data,
         function (responseText) {
-            if (responseText === "No pastes found."){
-                document.getElementById("userPastes").classList.add("collapse");
-                return;
-            }
-
-            if (responseText.includes("Bad API request")){
-                showAlertApplicationNotification("alert-danger", "Nepodařilo se načíst uložené texty.");               
-                return;
-            }
-
-            let oParser = new DOMParser();
-            let oDOM = oParser.parseFromString("<pastes>"+responseText+"</pastes>", "application/xml");
-            let pastes = oDOM.childNodes[0].childNodes;
-
-            for (let i = 0; i < pastes.length; i += 2){
-                const paste = pastes[i];
-                const paste_key = paste.getElementsByTagName("paste_key")[0].innerHTML;
-                const paste_date = paste.getElementsByTagName("paste_date")[0].innerHTML;
-                const paste_title = paste.getElementsByTagName("paste_title")[0].innerHTML;
-                const paste_expire_date = paste.getElementsByTagName("paste_expire_date")[0].innerHTML;
-                const paste_private = paste.getElementsByTagName("paste_private")[0].innerHTML;
-                const paste_format_long = paste.getElementsByTagName("paste_format_long")[0].innerHTML;
-                const paste_url = paste.getElementsByTagName("paste_url")[0].innerHTML;
-                const pasteElement = createPasteElement(paste_key, paste_date, paste_title, paste_expire_date, paste_private, paste_format_long, paste_url);
-
-                userPastesElement.append(pasteElement);
-            }
+            responseCallback(responseText);
         },
         function (statusText) {
             showAlertApplicationNotification("alert-danger","Při komunikaci se serverem se vyskytla chyba.");               
         });
+}
+
+//API FUNCTIONS
+//
+function listUserPastes() {
+    userPastesElement.empty();
+    showElements(userPastesElement);
+
+    getUserPastes(50, function (responseText) {
+        if (responseText === "No pastes found."){
+            hideElements(userPastesElement);
+            return;
+        }
+
+        if (responseText.includes("Bad API request")){
+            showAlertApplicationNotification("alert-danger", "Nepodařilo se načíst uložené texty.");               
+            return;
+        }
+
+        let oParser = new DOMParser();
+        let oDOM = oParser.parseFromString("<pastes>"+responseText+"</pastes>", "application/xml");
+        let pastes = oDOM.childNodes[0].childNodes;
+
+        for (let i = 0; i < pastes.length && i < 50; i += 2){
+            const paste = pastes[i];
+            const paste_key = paste.getElementsByTagName("paste_key")[0].innerHTML;
+            const paste_date = paste.getElementsByTagName("paste_date")[0].innerHTML;
+            const paste_title = paste.getElementsByTagName("paste_title")[0].innerHTML;
+            const paste_expire_date = paste.getElementsByTagName("paste_expire_date")[0].innerHTML;
+            const paste_private = paste.getElementsByTagName("paste_private")[0].innerHTML;
+            const paste_format_long = paste.getElementsByTagName("paste_format_long")[0].innerHTML;
+            const paste_url = paste.getElementsByTagName("paste_url")[0].innerHTML;
+            const pasteElement = createPasteElement(paste_key, paste_date, paste_title, paste_expire_date, paste_private, paste_format_long, paste_url);
+
+            userPastesElement.append(pasteElement);
+        }
+    });
 }
 function deletePaste(paste_key) {
     const apiUserKey = getUserApiKey();   
@@ -541,7 +551,7 @@ function getUserInfo() {
                 userAvatarElement.attr("src", user_avatar_url);
 
                 showLoggedUserUi(user_name, user_avatar_url, user_account_type);
-                listUserPastes("10");
+                listUserPastes();
             }
         },
         function (statusText) {
@@ -559,7 +569,7 @@ function createNewPaste() {
     const api_paste_code = document.getElementById("pasteTextArea").value;
 
     //OPTIONAL
-    const api_user_key = localStorage.getItem(globals.api_user_key_local_storage);
+    const api_user_key = getUserApiKey();
     const api_paste_name = document.getElementById("pasteName").value;
     const api_paste_format = globals.api_paste_code[syntaxSelectElement.selectedIndex];
     const api_paste_private = globals.visibility_paste_code[visibilitySelectElement.selectedIndex];
@@ -581,12 +591,27 @@ function createNewPaste() {
             if(responseText.includes("https://pastebin.com")){
                 showLinkAlertApplicationNotification(responseText);
                 
-                document.getElementById("pasteName").value = "";
-                document.getElementById("pasteTextArea").value = "";
+                $("#pasteName").val('');
+                $("#pasteTextArea").val('');
 
-                const pasteElement = createPasteElement(responseText.split('/').pop(), new Date(), api_paste_name, new Date(), api_paste_private, api_paste_format, responseText);
+                getUserPastes(1, function (responseText) {           
+                    let oParser = new DOMParser();
+                    let oDOM = oParser.parseFromString("<pastes>"+responseText+"</pastes>", "application/xml");
+                    let pastes = oDOM.childNodes[0].childNodes;
+            
+                    const paste = pastes[0];
+                        const paste_key = paste.getElementsByTagName("paste_key")[0].innerHTML;
+                        const paste_date = paste.getElementsByTagName("paste_date")[0].innerHTML;
+                        const paste_title = paste.getElementsByTagName("paste_title")[0].innerHTML;
+                        const paste_expire_date = paste.getElementsByTagName("paste_expire_date")[0].innerHTML;
+                        const paste_private = paste.getElementsByTagName("paste_private")[0].innerHTML;
+                        const paste_format_long = paste.getElementsByTagName("paste_format_long")[0].innerHTML;
+                        const paste_url = paste.getElementsByTagName("paste_url")[0].innerHTML;
 
-                $('#userPastes').append(pasteElement);
+                        let pasteElem = createPasteElement(paste_key, paste_date, paste_title, paste_expire_date, paste_private, paste_format_long, paste_url);           
+                        userPastesElement.prepend(pasteElem);
+                        $('#'+paste_key).hide().slideDown('fast').fadeIn('slow');
+                });
                 return;
             }
 
