@@ -332,7 +332,7 @@ function init() {
  */
 function login() {
     const userNameValue = $('#loginName').val().trim();
-    const passwordValue = $('#loginPassword').val().trim();
+    const passwordValue = $('#loginPassword').val();
 
     if(userNameValue === "" || passwordValue === ""){
         $('#loginStatus').text('Nejprve vyplňte přihlašovací údaje.');
