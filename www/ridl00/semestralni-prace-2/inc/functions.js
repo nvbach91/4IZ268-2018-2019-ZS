@@ -47,7 +47,7 @@ function showTimetable(lessons){
                     $.each(timeLessons, function(i, value) {
                         var type = value.type == "Přednáška" ? "lecture" : "seminar";
                         timetable += `<div class="timetable-lesson lesson-${type}">
-                                ${value.name}
+                                <a href="https://insis.vse.cz/katalog/syllabus.pl?predmet=${value.syllabus}" target="_blank">${value.name}</a>
                                 <span class="room">${value.room}</span>
                             </div>`;
                     });
@@ -219,7 +219,9 @@ function importTimetable(){
                     'teacher_link': teacher_link[0]
                 }
                 lessons.push(row);
+
             });
+            console.log(lessons);
             $.ajax({
                 type: 'post', url: 'https://chrome-app.vseved.eu/add/',
                 headers: {'Token': token},
