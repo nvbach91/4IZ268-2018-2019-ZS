@@ -64,6 +64,20 @@ function getMovie() {
     axios.get('http://www.omdbapi.com?i=' + movieId + "&apikey=d8ae8847")
         .then(function (response) {
             console.log(response);
+            let movie = response.data;
+
+            let output = `
+                <div class="row" >
+                    <div class="col-md-4">
+                        <img src="${movie.Poster}" class="thumbnail">
+                    </div>
+                    <div class="col-md-8">
+                 
+                    </div>
+                </div> `;
+
+            $('#movie').html(output);
+            $(document).attr("title", "Filmová databáza | " + movie.Title);
         })
         .catch(function (err) { //v prípade nejakého error
             console.log(err);
