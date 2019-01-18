@@ -21,11 +21,22 @@
             </li>
             <li class="clear"></li>
         </ul>
-        <p class="p_dealer">Inforamce o vybraném dealerovi</p>
+        <div id="loader"></div>
+        <div id="dealerList">Vybrat dealera ze seznamu</div>
+        <div class="select">
+            <select id="sel">
+                <option value="50">Trasa k dealerovi:</option>
+            </select>
+        </div>
+        <button id="btnSel">Navigovat</button>
+        <button id="bMap"><img id="btn3" src="img/mapy.png" alt="Přejít na mapu"></button>
+        <p class="p_dealer">Informace o vybraném dealerovi</p>
         <div id="dealerBox"></div>
-        <button id="button" value="Reset" onClick="cancelPath()" disabled>Zrušit</button>
-        <button onclick="topFunction()" id="myBtnTop" title="Začátek stránky"><img id="btn" src="img/up.png" alt="Nahoru"></button>
-        <button onclick="bottomFunction()" id="myBtnBottom" title="Konec stránky"><img id="btn2" src="img/up.png" alt="Dolů"></button>
+        <p class="p_route">Informace o trase</p>
+        <div id="route"></div>
+        <button id="button" value="Reset" disabled>Zrušit</button>
+        <button id="myBtnTop"><img id="btn" src="img/up.png" alt="Nahoru"></button>
+        <button id="myBtnBottom"><img id="btn2" src="img/up.png" alt="Dolů"></button>
         <div id="map"></div>
         <p class="p_info"><u>INFO</u>:<br>Vyberte dealera pro vykreslení trasy. Výchozím bodem je sídlo Volkswagen
             Česká

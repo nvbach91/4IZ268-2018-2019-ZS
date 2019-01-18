@@ -1,7 +1,17 @@
 // Loader.load(); //nefunguje
+window.onloadend = document.getElementById("loader").style.display = "none";
+
+document.getElementById("btnSel").addEventListener("click", fNav);
+document.getElementById("bMap").addEventListener("click", bMap);
+document.getElementById("myBtnTop").addEventListener("click", topFunction);
+document.getElementById("myBtnBottom").addEventListener("click", bottomFunction);
+document.getElementById("button").addEventListener("click", cancelPath);
+
 var picture = "img/drop-vw.png";
 var picture_start = "img/drop-vw2.png";
 var button = document.getElementById("button");
+var bNav = document.getElementById("btnSel");
+
 var map = new SMap(JAK.gel("map"));
 map.addControl(new SMap.Control.Sync()); /* Aby mapa reagovala na změnu velikosti průhledu */
 map.addDefaultLayer(SMap.DEF_BASE).enable(); /* Turistický podklad */
@@ -34,10 +44,11 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
         data = JSON.parse(this.responseText);
+        // console.log(typeof this.responseText);
         addData(data);
     }
 };
-xmlhttp.open("GET", "https://raw.githubusercontent.com/nvbach91/4IZ268-2018-2019-ZS/student-curj00/www/curj00/semestralka2/json/data.json", true);
+xmlhttp.open("GET", "https://api.myjson.com/bins/11fgww", true);
 xmlhttp.send();
 
 var layer = new SMap.Layer.Marker();     /* layer se značkami */
@@ -51,7 +62,7 @@ function addData(data) {
             url: picture,
             title: marker.name,
             anchor: { left: 10, bottom: 1 }  /* Ukotvení značky za bod uprostřed dole */
-        }
+        };
         // Důležité je přiřazení ID jednotlivým markerům - vlastní ID, jinak se generuje nahodne
         var point = new SMap.Marker(c, marker.id, options);
         coordinates.push(c);
@@ -60,9 +71,10 @@ function addData(data) {
     for (var i = 0; i < markers.length; i++) {
         layer.addMarker(markers[i]);
         var card = new SMap.Card();
-        card.getBody().innerHTML = "<br>Prodejce vozů Volkswagen";
+        card.getBody().innerHTML = "<br>Prodejce vozů Volkswagen<br>";// + found.route.getResults().length;
         card.setSize(270, 100);
         card.getHeader().innerHTML = "<strong>" + data[i].name + "</strong>";
+        document.getElementById("sel").options[i + 1] = new Option(data[i].name, data[i].id);
         markers[i].decorate(SMap.Marker.Feature.Card, card);
     }
 }
@@ -75,8 +87,12 @@ map.addLayer(layerPath).enable();
 
 var found = function (route) {
     var coords = route.getResults().geometry;
+    var time = route.getResults().time;
+    var date = new Date(time * 1000).toISOString().substr(11, 8);
+    document.getElementById("route").innerHTML = "Délka trasy: " + route.getResults().length / 1000 + "km<br>Celkový čas: " + date + "<br>Stoupání: " + route.getResults().ascent + "m Klesání: " + route.getResults().descent + "m";
+    console.log(route.getResults().length);
     var cz = map.computeCenterZoom(coords);
-    // map.setCenterZoom(cz[0], cz[1]); //přibližování na úroveň trasy
+    map.setCenterZoom(cz[0], cz[1]); //přibližování na úroveň trasy
     // if (path !== null) { //nefunguje
     if (path != null) {
         layerPath.removeGeometry(path);
@@ -99,6 +115,7 @@ function handleMarkerClick(e) { /* Kliknutí na marker */
     // Párovaní vybraného markeru pomocí jeho ID a našich vstupních dat.
     for (var i = 0; i < data.length; i++) {
         if (data[i].id === id) {
+            document.getElementById("sel").selectedIndex = data[i].id;
             endPointCoords = SMap.Coords.fromWGS84(data[i].coordinates);
             document.getElementById("dealerBox").innerHTML = data[i].name + "<br>" + data[i].adresa + "<br> " + data[i].coordinates;
             break;
@@ -110,6 +127,7 @@ function handleMarkerClick(e) { /* Kliknutí na marker */
         // Máme startovní bod, najdeme trasu.
         startPointCoords = startPoint._coords;
     } else {
+        // noStart();
         // Nemáme startovní bod, najdeme trasu ze středu mapy a přidáme tam marker.
         startPointCoords = SMap.Coords.fromWGS84(14.3573103, 50.0479011);
         var options = {
@@ -199,10 +217,13 @@ function cancelPath() {
     }
     // Odstraníme info o dealerovi
     document.getElementById("dealerBox").innerHTML = "";
+    document.getElementById("route").innerHTML = "";
     // Nastavíme button jako disabled
     button.setAttribute("disabled", "");
     var cz = map.computeCenterZoom(coordinates); /* Spočítat pozici mapy tak, aby značky byly vidět */
     map.setCenterZoom(cz[0], cz[1]);
+
+    document.getElementById("sel").selectedIndex = 50;
 }
 hideButton();
 
@@ -245,4 +266,35 @@ function topFunction() {
 // Když se stiskne tlačítko, posunout stránku na konec
 function bottomFunction() {
     document.documentElement.scrollTo(0, document.documentElement.scrollHeight);
+}
+function noStart() {
+    // Nemáme startovní bod, najdeme trasu ze středu mapy a přidáme tam marker.
+    startPointCoords = SMap.Coords.fromWGS84(14.3573103, 50.0479011);
+    var options = {
+        url: picture_start,
+        title: "Startovní bod",
+        anchor: { left: 10, bottom: 1 }  /* Ukotvení značky za bod uprostřed dole */
+    };
+    startPoint = new SMap.Marker(startPointCoords, null, options);
+    startPoint.decorate(SMap.Marker.Feature.Draggable);
+    layer.addMarker(startPoint);
+}
+var elmnt = document.getElementById("bMap");
+function bMap() {
+    elmnt.scrollIntoView();
+}
+function fNav() {
+
+    noStart();
+    var select = document.getElementById("sel");
+    var id = select.options[select.selectedIndex].value;
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].id == id) {
+            endPointCoords = SMap.Coords.fromWGS84(data[i].coordinates);
+            document.getElementById("dealerBox").innerHTML = data[i].name + "<br>" + data[i].adresa + "<br> " + data[i].coordinates;
+        }
+    }
+    elmnt.scrollIntoView();
+    var coords = [startPointCoords, endPointCoords];
+    var route = new SMap.Route(coords, found);
 }

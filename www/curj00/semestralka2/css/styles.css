@@ -8,6 +8,51 @@ body{
 .clear{
     clear: both;
 }
+@keyframes spin {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+#loader{
+    width:400px;
+    height: 400px;
+    border: 40px solid blue;
+    border-top: 40px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;    
+    position: fixed;
+    top:5%;
+    margin-left: -200px;
+    left: 50%;
+    display: block;
+    
+}
+#dealerList{
+    margin-top: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 700;
+}
+select, .select, #btnSel{
+    display: block;
+    height: 30px;
+    border-radius: 15px;
+    margin: auto auto;
+    padding: 5px;
+}
+#btnSel{
+    margin-top: 10px;
+}
+#sel{
+    text-align: center
+}
+option{
+    text-align: center;
+}
 ul {
     list-style: none;
     margin: 10px auto;
@@ -35,12 +80,19 @@ main{
 img{
     height: 20px;
 }
-.p_dealer{
+.p_dealer, .p_route{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     font-weight: 700;
     color: dodgerblue;
+    margin-bottom: 8px;
+}
+.p_route{    
+    margin-top: 30px;
+}
+.p_dealer{    
+    margin-top: 0px;
 }
 .p_info{
     width: 250px;
@@ -70,15 +122,15 @@ main ul{
 #map{
     width:300px; 
     height:400px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
 }
-#dealerBox{
+#dealerBox, #route{
     width:320px; 
     height:70px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     margin-left: auto;
     margin-right: auto;
     color: dodgerblue;
@@ -97,6 +149,7 @@ main ul{
     outline: none;
     width:80px; 
     height:30px;
+    margin-top: 10px;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -156,7 +209,20 @@ main ul{
     cursor: pointer;
     padding: 15px;
     border-radius: 30px;
-} 
+}
+#bMap {
+    top: 15%;
+    left: 30%;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin: auto auto;
+    display: block;
+}
+#btn3{
+    height: 50px;
+    margin-top: 5px;
+}
 #myBtnTop:hover, #myBtnBottom:hover {
     background-color: rgb(154, 154, 154);
 }

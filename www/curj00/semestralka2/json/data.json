@@ -217,61 +217,61 @@
         },
         {
             "name": "Olfin Car Hradec Králové",
-            "id": 38,
+            "id": 37,
             "coordinates": "50°11'43.029\"N, 15°48'48.207\"E",
             "adresa": "Na Rybárně 1670, 50002 Hradec Králové"
         },
         {
             "name": "Car Point  Karlovy Vary",
-            "id": 39,
+            "id": 38,
             "coordinates": "50°13'41.6\"N, 12°49'54.8\"E",
             "adresa": "Chebská 55, 360 06 Karlovy Vary"
         },
         {
             "name": "Gerhard Horejsek Litoměřice",
-            "id": 40,
+            "id": 39,
             "coordinates": "50°30'55.0\"N, 14°08'12.9\"E",
             "adresa": "U Terezínské křižovatky 161, 41201 Litoměřice"
         },
         {
             "name": "Olfin Car Trutnov",
-            "id": 41,
+            "id": 40,
             "coordinates": "50°33'12.0\"N, 15°54'15.4\"E",
             "adresa": "Královédvorská 517, 54101 Trutnov"
         },
         {
             "name": "Louda Auto Teplice",
-            "id": 42,
+            "id": 41,
             "coordinates": "50°39'44.5\"N, 13°52'26.0\"E",
             "adresa": "Dvořákova 83, 41510 Teplice"
         },
         {
             "name": "Gerhard Horejsek Česká Lípa",
-            "id": 43,
+            "id": 42,
             "coordinates": "50°40'41.7\"N, 14°32'39.4\"E",
             "adresa": "Česká 2725, 47001 Česká Lípa"
         },
         {
             "name": "Gerhard Horejsek Děčín",
-            "id": 44,
+            "id": 43,
             "coordinates": "50°46'35.5\"N, 14°13'04.2\"E",
             "adresa": "Oblouková 1444/11, 40501 Děčín"
         },
         {
             "name": "Manfred Schoner autoservis",
-            "id": 45,
+            "id": 44,
             "coordinates": "50°5'10.807\"N, 12°24'6.505\"E",
             "adresa": "Ke Hřbitovu 1, 35002 Cheb"
         },
         {
             "name": "Louda Auto Praha",
-            "id": 46,
+            "id": 45,
             "coordinates": "50°6'29.972\"N, 14°32'54.237\"E",
             "adresa": "Kolbenova 898/37a, 198 00 Praha 9"
         },
         {
             "name": "AUTOTREND",
-            "id": 47,
+            "id": 46,
             "coordinates": "50°44'36.438\"N, 15°2'53.052\"E",
             "adresa": "České Mládeže 1101, 46312 Liberec"
         }
