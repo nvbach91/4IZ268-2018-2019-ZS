@@ -29,7 +29,7 @@ function insertUniqueElement(tag, name, target, id) {
     var element;
     if (!exists(id)) {
         /*function insertUniqueElement = simplifies the appending of elements in jQuery to a single line*/
-        element = $(`<` + tag + `> ${ name }</` + tag + `>`)
+        element = `<${tag}>${name}</${tag}>`
             .attr('id', id)
             .appendTo(target)
 
@@ -46,10 +46,9 @@ function insertUniqueElement(tag, name, target, id) {
 function vocab(newData) {
     /*function vocab(newData) = this function either returns the value from local storage which matches
     the key 'dix-application-data' OR, if a argument is passed, sets the data*/
-    var ls = window.localStorage;
     if (!newData) {
 
-        let applicationData = ls.getItem("dix-application-data");
+        let applicationData = window.localStorage.getItem("dix-application-data");
         if (applicationData) {
             return JSON.parse(applicationData);
         } else {
@@ -60,7 +59,7 @@ function vocab(newData) {
         if (typeof newData === "object") {
             newData = JSON.stringify(newData)
         }
-        ls.setItem("dix-application-data", newData)
+        window.localStorage.setItem("dix-application-data", newData)
     }
 }
 
@@ -79,14 +78,14 @@ function changeLevelOfPractice(termName, button) {
 
     const index = voc.findIndex(function (element) {
         var index = Object.keys(element)[0];
-        if (index === -1 || index === undefined) {
+        if (index === -1 || !index) {
             alert("Cannot change difficulty of word, it is not in the vocabulary!");
         }
 
         return index === termName;
     });
 
-    if (voc[index]["difficultyCardStackNumber"] === undefined) {
+    if (!voc[index]["difficultyCardStackNumber"]) {
         voc[index]["difficultyCardStackNumber"] = 0;
     }
 

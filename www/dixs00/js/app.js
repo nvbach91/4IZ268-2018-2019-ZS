@@ -8,11 +8,11 @@ $(document).ready(function () {
         })
         .then(data => data.json())
         .then(data => {
-
+            var topicDropDown = $('#topicDropdown');
             $("#loader").hide();
             $("#loader2").hide();
             $('#appContainer').show();
-            $('#topicDropdown').show();
+            topicDropDown.show();
             $("#practiceButton").show();
 
             data = JSON.parse(data);
@@ -27,9 +27,8 @@ $(document).ready(function () {
 
     /*Teprve na kliknuti se zavola dalsi pozadavek */
     $("#practiceButton").unbind().click(function () {
-
-        $("#loader2").show();
-        var topicDropdown = document.getElementById("topicDropdown");
+        var loader = $("#loader2")
+        loader.show();
         var topicName = topicDropdown.options[topicDropdown.options.selectedIndex].text;
         fetch('https://pure-chamber-44082.herokuapp.com/api/topics/' + topicName + '/vocab', {
             mode: 'cors',
@@ -38,7 +37,7 @@ $(document).ready(function () {
             }
         }).then(data => data.json()).then(
             data => {
-                $("#loader2").hide();
+                loader.hide();
                 data = JSON.parse(data);
                 let ls = window.localStorage;
 
@@ -50,7 +49,7 @@ $(document).ready(function () {
                 }
 
                 /*TODO: kontroluj co už uživatel má a přidávej*/
-                let dad = ls.getItem("dix-application-data");
+                let dad = window.localStorage.getItem("dix-application-data");
                 if (!dad) {
                     /*
                      **check if localstorage has dix-application-data entry
@@ -58,7 +57,7 @@ $(document).ready(function () {
                      */
                     data = trimObj(data) //remove trailing spaces
                     removeDuplicates(data) // remove duplicate words
-                    ls.setItem("dix-application-data", JSON.stringify(data));
+                    window.localStorage.setItem("dix-application-data", JSON.stringify(data));
                 } else {
                     data = trimObj(data) //remove trailing spaces
                     removeDuplicates(data) // remove duplicate words
@@ -120,14 +119,14 @@ $(document).ready(function () {
                 }
 
                 /*Each word should have a property indicating how much it has been practiced already*/
-                var words = JSON.parse(ls.getItem("dix-application-data"));
+                var words = JSON.parse(window.localStorage.getItem("dix-application-data"));
                 words.forEach(element => {
-                    if (element["difficultyCardStackNumber"] == undefined) {
+                    if (!element["difficultyCardStackNumber"]) {
                         element["difficultyCardStackNumber"] = 0;
                     }
                 })
 
-                ls.setItem("dix-application-data", JSON.stringify(words));
+                window.localStorage.setItem("dix-application-data", JSON.stringify(words));
 
                 //displays the flashcard
                 $("#flashcard").css("display", "flex")
