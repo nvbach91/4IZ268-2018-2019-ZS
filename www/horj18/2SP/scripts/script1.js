@@ -13,8 +13,7 @@ var textA = document.querySelector("#textarea");
 /*přiřazení funkcí k elementům*/
 loginBtn.addEventListener("click", loginFb);
 shareBtn.addEventListener("click", sharePost);
-sendBtn.addEventListener("click", TEST);
-// sendBtn.addEventListener("click", changeBtn);
+sendBtn.addEventListener("click", changeBtn);
 
 /*FB API*/
 window.fbAsyncInit = function () {
@@ -38,7 +37,7 @@ window.fbAsyncInit = function () {
 }(document, 'script', 'facebook-jssdk'));
 
 
-/*Status pripojeni FB uzivatele*/
+/*status pripojeni FB uzivatele*/
 function statusChangeCallback(response) {
     if (response.status === 'connected') {
         /*Načítá skupiny, zavírá okno*/
@@ -74,14 +73,13 @@ function sharePost() {
         $("#textarea").popover("show");
         setTimeout(function() { 
             $('#textarea').popover("hide"); 
-        }, 3000);
-        // window.alert("Nejdříve vyplň zprávu, která se má odeslat na Facebook.");
+        }, 4000);
         return;
     }
 }
 
 /*kontroluje zaškrtlé chceckboxy a následně odešle příspěvek*/
-function postToGroups() {
+function selectGroups() {
     var checkedGroups = $("#modalGroupBody input:checked");
     checkedGroups.each(function () {
         var $this = $(this);
@@ -109,13 +107,6 @@ function sendToGroup(groupId) {
     );
 }
 
-function TEST() {
-    postTxt = document.querySelector('#textarea').value;
-    document.querySelector('#textarea').value="";
-    validateTxt();
-    console.log(document.querySelector('#textarea').value.trim());
-}
-
 /*kontroluje zda je alespoň jedna skupina vybrána*/
 function checkChecked() {
     var n = $("#modalGroupBody input:checked").length;
@@ -130,10 +121,11 @@ function checkChecked() {
 function changeBtn() {
     var $this = $(this);
     if ($this.text() === "Odeslat") {
-        // postToGroups();
+        selectGroups();
         $this.text("Zavřít");
         $this.removeClass("btn btn-success");
         $this.addClass("btn btn-danger");
+        
     } else {
         $this.text("Odeslat");
         $('#groupModal').modal('hide');
@@ -144,6 +136,7 @@ function changeBtn() {
             var $this = $(this);
             $($this).css('color', 'black').css("font-weight", "normal");
         });
+        $(textA).val('');
         sendBtn.disabled = true;
     }
 }

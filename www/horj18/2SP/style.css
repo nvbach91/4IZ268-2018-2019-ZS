@@ -9,6 +9,10 @@
     background-color: white;
 }
 
+#login-modal-body{
+    text-align: center;
+}
+
 label {
     margin-left: 4px;
 }
