@@ -1,30 +1,21 @@
-var postTxt;
-var checkBoxContainer;
-var checkBoxForm;
-var groups;
-var errorOccurred = false;
-var atLeastOneChecked;
-var mainLoader;
-var postSend;
+/*deklarance proměnných*/
 var groups;
 var groupName;
 var groupId;
 
-
-/*přiřazuje html elementy k proměnným*/
+/*přiřazení elementů do proměnných*/
 var loginBtn = document.querySelector("#loginBtn");
 var shareBtn = document.querySelector("#shareBtn");
 var modalGroupBody = document.querySelector("#modalGroupBody")
 var sendBtn = document.querySelector("#sendBtn");
 
-
-
-/*přiřazuje html elementy k proměnným*/
+/*přiřazení funkcí k elementům*/
 loginBtn.addEventListener("click", loginFb);
 shareBtn.addEventListener("click", sharePost);
+// sendBtn.addEventListener("click", TEST);
+sendBtn.addEventListener("click", changeBtn);
 
-sendBtn.addEventListener("click", postToGroups);
-
+/*FB API*/
 window.fbAsyncInit = function () {
     FB.init({
         appId: '245822489648720',
@@ -49,20 +40,20 @@ window.fbAsyncInit = function () {
 /*Status pripojeni FB uzivatele*/
 function statusChangeCallback(response) {
     if (response.status === 'connected') {
-        console.log("přihlášen a autorizován");
+        /*Načítá skupiny, zavírá okno*/
         $('#loginModal').modal('hide');
         shareBtn.disabled = false;
         loadGroups();
     } else if (response.status === 'not_authorized') {
-        console.log("přihlášen ale neautorizován");
+        /*Vyžaduje autorizaci aplikace*/
         $('#loginModal').modal('show');
     } else {
-        console.log("nepřihlášen");
+        /*Vyžaduje přihlášení uživatele*/
         $('#loginModal').modal('show');
     }
 }
 
-/*login FB a jeho obsluha*/
+/*příhlášení/autorizace přes FB API*/
 function loginFb() {
     console.log("Login přes custom tlačítko");
     FB.login(function (response) {
@@ -70,36 +61,26 @@ function loginFb() {
     }, { scope: 'email,user_likes,publish_to_groups' });
 }
 
+/*obsluha tlačítka pro sdílení*/
 function sharePost() {
     $('#groupModal').modal('show');
-    console.log("share button clicked");
+    $("#modalGroupBody input:checkbox").prop("checked", false);
+    sendBtn.disabled = true;
 }
 
-/*kontroluje, aby textarea nebyla prázdná*/
-function checkIfEmpty() {
-    if (!postTxt) {
-        window.alert("Nejdříve vyplň zprávu, která se má odeslat na Facebook.")
-        return true;
-    } else {
-        return false;
-    }
-}
-
-/*zjistí jaké fb skupiny (checkboxy) uživatel zaškrtl a u nich spustí proces odesílání příspěvku*/
+/*kontroluje zaškrtlé chceckboxy a následně odešle příspěvek*/
 function postToGroups() {
     var checkedGroups = $("#modalGroupBody input:checked");
-    saveTextareaToVar();
+    postTxt = document.querySelector('#textarea').value;
     if (checkIfEmpty()) { return };
-    console.log("1");
-    checkedGroups.each(function(){
+    checkedGroups.each(function () {
         var $this = $(this);
         sendToGroup($this.attr("id"));
-        console.log("sent"+$this.attr("id"));
     });
 
 }
 
-/*přes fb api odesílá obsah textboxu na fb skupinu s id předaným parametrem*/
+/*facebook API odesílá příspěvek a kontroluje úspěšnost*/
 function sendToGroup(groupId) {
     FB.api(
         "/" + groupId + "/feed",
@@ -109,30 +90,23 @@ function sendToGroup(groupId) {
         },
         function (response) {
             if (response && !response.error) {
-                console.log("OK");
+                $("[value=" + groupId + "]").css('color', 'green').css("font-weight", "bold");
             }
-
             if (response.error) {
-                console.log("Nope");
+                $("[value=" + groupId + "]").css('color', 'red').css("font-weight", "bold");
             }
         }
     );
 }
 
 function TEST() {
-    var IDs = [];
-    var x = $("#modalGroupBody input:checked")
-    console.log("start");
-    x.each(function(){
-        var $this = $(this);
-        IDs.push($this.attr("id"));
-    });
-    $(sendBtn).text("odeslano");
-    console.log(IDs);
+    postTxt = document.querySelector('#textarea').value;
+    var validationTxt = $.trim(postTxt);
+    console.log(validationTxt);
 }
 
+/*kontroluje zda je alespoň jedna skupina vybrána*/
 function checkChecked() {
-    console.log("click");
     var n = $("#modalGroupBody input:checked").length;
     if (n > 0) {
         sendBtn.disabled = false;
@@ -141,7 +115,29 @@ function checkChecked() {
     }
 }
 
-/*pomocí fb api zjišťuje u jakých skupin je uživatel adminem a podle toho pak vytváří checkboxy*/
+/*mění talčítko pro odeslání, přebarvuje zpět skupiny, spouští funkci postToGroups*/
+function changeBtn() {
+    var $this = $(this);
+    if ($this.text() === "Odeslat") {
+        // postToGroups();
+        $this.text("Zavřít");
+        $this.removeClass("btn btn-success");
+        $this.addClass("btn btn-danger");
+    } else {
+        $this.text("Odeslat");
+        $('#groupModal').modal('hide');
+        $this.removeClass("btn btn-danger");
+        $this.addClass("btn btn-success");
+        var checkedGroups = $("#modalGroupBody label");
+        checkedGroups.each(function () {
+            var $this = $(this);
+            $($this).css('color', 'black').css("font-weight", "normal");
+        });
+        sendBtn.disabled = true;
+    }
+}
+
+/*facebook API, načítá skupiny (admin_only: true znamená, že načítá pouze skupiny s administrátorskými právy*/
 function loadGroups() {
     FB.api(
         "/me/groups",
@@ -150,8 +146,6 @@ function loadGroups() {
                 for (var l = response.data.length, i = 0; i < l; i++) {
                     groups = response.data[i];
                     createGroupChoice(groups.name, groups.id);
-                    console.log(groups.name);
-                    console.log(groups.id);
                 }
             }
         },
@@ -159,14 +153,20 @@ function loadGroups() {
     );
 }
 
-/*ukládá obsah texboxu do proměnné*/
-function saveTextareaToVar() {
-    postTxt = document.querySelector('#textarea').value;
-    console.log("Odesílám: " + postTxt);
-}
-
+/*vytváří skupinové Checkboxy s popisky*/
 function createGroupChoice(groupName, groupId) {
     $(modalGroupBody).append($("<div></div>", { class: "row" }), [$('<input />', { type: "checkbox", id: groupId, class: "chckBox" }).on("click", checkChecked), $('<label />', { text: groupName, value: groupId })]);
+}
+
+/*validace vstupu do textarea*/
+function checkIfEmpty() {
+    var validationTxt = $.trim(postTxt);
+    if (!postTxt) {
+        window.alert("Nejdříve vyplň zprávu, která se má odeslat na Facebook.")
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
