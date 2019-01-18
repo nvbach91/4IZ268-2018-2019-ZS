@@ -1,25 +1,61 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
+
 body{
-	font-size: 20px;
-	font-family: sans-serif;
-	color: #333;
+    font-size: 20px;
+    font-family: 'Work Sans', sans-serif;
+    color: #333;
+  font-weight: 300;
+  text-align: center;
+  background-color: #f8f6f0;
+}
+h1{
+  font-weight: 300;
+  margin: 0px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #444;
+  color: #fff;
 }
 .question{
-	font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 .answers {
+  margin-bottom: 20px;
+  text-align: left;
+  display: inline-block;
+}
+.answers label{
+  display: block;
+  margin-bottom: 10px;
+}
+button{
+  font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+    background-color: #279;
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 20px;
+    cursor: pointer;
     margin-bottom: 20px;
 }
-#submit{
-	font-family: sans-serif;
-	font-size: 20px;
-	background-color: #297;
-	color: #fff;
-	border: 0px;
-	border-radius: 3px;
-	padding: 20px;
-	cursor: pointer;
-	margin-bottom: 20px;
+button:hover{
+    background-color: #38a;
 }
-#submit:hover{
-	background-color: #3a8;
+
+.info {
+	border: #333 solid 5px;
+	border-style: double;
+	margin: 10px 5% 10px 5%;
+	font-size: 30px;
+	padding: 20px;
+}
+
+.quiz-container{
+  position: relative;
+  height: 200px;
+  margin-top: 50px;
+  border: #333 solid 5px;
+  
 }
