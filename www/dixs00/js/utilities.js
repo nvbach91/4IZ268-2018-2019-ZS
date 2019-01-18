@@ -102,7 +102,12 @@ function changeLevelOfPractice(termName, button) {
     vocab(JSON.stringify(voc));
 }
 
+
 function trimObj(obj) {
+    /*
+Zdroj
+https: //stackoverflow.com/questions/33510625/trim-white-spaces-in-both-object-key-and-value-recursively/33510710
+*/
     if (!Array.isArray(obj) && typeof obj != 'object') return obj;
     return Object.keys(obj).reduce(function (acc, key) {
         acc[key.trim()] = typeof obj[key] == 'string' ? obj[key].trim() : trimObj(obj[key]);
@@ -111,6 +116,7 @@ function trimObj(obj) {
 }
 
 function removeDuplicates(arrayOfObjects) {
+    //zdroj: autor = Sebastian Dix
     var keys = new Array();
     for (var i = 0; i < arrayOfObjects.length; i++) {
         var wordObject = arrayOfObjects[i]
@@ -119,9 +125,9 @@ function removeDuplicates(arrayOfObjects) {
             keys.push(key)
         } else {
             for (var j = 0; j < arrayOfObjects.length; j++) {
-                if (arrayOfObjects[i][key] != undefined) {
-                    arrayOfObjects.splice(i, 1)
-                }
+
+                arrayOfObjects.splice(i, 1)
+
             }
         }
     }
