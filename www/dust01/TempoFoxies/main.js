@@ -8,20 +8,30 @@ var config = {
 };
 firebase.initializeApp(config);
 
+
+var signoutBtn = document.getElementById("signout-btn-nav");
+var userDiv = document.getElementById("user_div");
+var signinDiv = document.getElementById("signin_div");
+var signupDiv = document.getElementById("signup_div");
+var loggedUser = document.getElementById("logged-user");
+
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-        
+        console.log(user);
         // User is signed in.
         //navigace
-        document.getElementById("signout-btn-nav").style.display = "initial";
+        signoutBtn.style.display = "initial";
 
         //formulare
-        document.getElementById("user_div").style.display = "flex";
-        document.getElementById("signin_div").style.display = "none";
-        document.getElementById("signup_div").style.display = "none";
+        userDiv.style.display = "flex";
+        signinDiv.style.display = "none";
+        signupDiv.style.display = "none";
 
         document.getElementById("welcome-h3").innerText = "Vítej! " + user.displayName;
-        document.getElementById("logged-user").innerText = "Přihlášený uživatel: " + user.displayName;
+        loggedUser.innerText = "Přihlášený uživatel: " + user.displayName;
+        document.getElementById("info-pLog").innerText ="email: "+user.email +" tel:"+user.phoneNumber;
+        
+        
 
         //profile photo
         document.getElementById("profile-photo").src = user.photoURL;
@@ -30,24 +40,35 @@ firebase.auth().onAuthStateChanged(function (user) {
     } else {
         // No user is signed in.
         //navigace
-        document.getElementById("signout-btn-nav").style.display = "none";
+        signoutBtn.style.display = "none";
 
         //formulare
-        document.getElementById("user_div").style.display = "none";
-        document.getElementById("signin_div").style.display = "flex";
-        document.getElementById("signup_div").style.display = "flex";
-        document.getElementById("logged-user").innerText = "";
+        userDiv.style.display = "none";
+        signinDiv.style.display = "flex";
+        signupDiv.style.display = "flex";
+        loggedUser.innerText = "";
     }
 });
 
-function signUp() {
-    let userEmail = document.getElementById("sign_up_email_field").value;
-    let userPassword = document.getElementById("sign_up_password_field").value;
-    let userName = document.getElementById("sign_up_name_field").value;
-    let userPhoto = document.getElementById("sign_up_photo_field").value;
 
+var signupEmail = document.getElementById("sign_up_email_field");
+var signupPass = document.getElementById("sign_up_password_field");
+var signupName = document.getElementById("sign_up_name_field");
+var signupPhoto = document.getElementById("sign_up_photo_field");
+var signinEmail = document.getElementById("sign_in_email_field");
+var signinPass = document.getElementById("sign_in_password_field");
+var signupTel = document.getElementById("sign_up_tel_field");
+
+function signUp() {
+
+    var userEmail = signupEmail.value;
+    var userPassword = signupPass.value;
+    var userName = signupName.value;
+    var userPhoto = signupPhoto.value;
+    var userTel = signupTel.value;
+    
     firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).catch(function (error) {
-        let errorMessage = error.message;
+        var errorMessage = error.message;
         window.alert("Error: " + errorMessage);
     });
 
@@ -56,6 +77,8 @@ function signUp() {
             user.updateProfile({
                 displayName: userName,
                 photoURL: userPhoto,
+                displayEmail: userEmail,
+                phoneNumber: userTel,
             }).then(function () {
                 console.log("Uspech!");
             }).catch(function (error) {
@@ -67,12 +90,13 @@ function signUp() {
 
 
 function signIn() {
-    let userEmail = document.getElementById("sign_in_email_field").value;
-    let userPassword = document.getElementById("sign_in_password_field").value;
+    let userEmail = signinEmail.value;
+    let userPassword = signinPass.value;
 
     firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).catch(function (error) {
         let errorMessage = error.message;
         window.alert("Error: " + errorMessage);
+        console.log(error);
     });
 }
 
@@ -82,14 +106,20 @@ function signOut() {
     }).catch(function (error) {
         window.alert("Něco se nepovedlo: " + error.message);
     });
-    document.location.reload()
+    signinEmail.value = "";
+    signinPass.value = "";
+    signupEmail.value = "";
+    signupPass.value = "";
+    signupName.value = "";
+    signupPhoto.value = "";
+    signupTel.value= "";
 }
 
- $(document).ready(function () {
-     if ($('#registr').length > 0) {
-         registrationScript('forcontact');
+$(document).ready(function () {
+    if ($('#registr').length > 0) {
+        registrationScript('forcontact');
     }
- });
+});
 
 function registrationScript(value) {
 
@@ -107,7 +137,7 @@ function registrationScript(value) {
             e = birthDate.val(),
             f = tel.val(),
             g = email.val(),
-            z = {fname: c, lname: d, bdate: e, tel: f, email: g};
+            z = { fname: c, lname: d, bdate: e, tel: f, email: g };
         if (!c || !d || !e || !f || !g) {
             alert("Nevyplněny údaje, prosím vyplňte všechny informace")
             return false;
@@ -121,7 +151,7 @@ function registrationScript(value) {
                     e = birthDate.val(""),
                     f = tel.val(""),
                     g = email.val(""),
-                    z = {fname: c, lname: d, bdate: e, tel: f, email: g};
+                    z = { fname: c, lname: d, bdate: e, tel: f, email: g };
 
             })
         }
