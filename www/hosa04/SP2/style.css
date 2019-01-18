@@ -1,0 +1,189 @@
+/*ANIMATIONS*/
+@keyframes slideInFromTop {
+  0% {
+      transform: translateY(-100%);
+  }
+      
+  100% {  
+  transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+      transform: translateY(+100%);
+  }
+      
+  100% {  
+  transform: translateY(0);
+  }
+}
+
+
+/*DESIGN*/
+*{
+    text-align: center;
+    font-family: -apple-system, sans-serif;
+    color: white;
+    background-repeat: no-repeat;
+}
+
+body{
+  background-image: url("https://nerdist.com/wp-content/uploads/2017/08/MinimalSWPoster002.jpg");
+  background-size: 100%;
+}
+
+#fill{
+ height: 820px;
+}
+
+#refresh-button{
+  width: 70px;
+  height: 40px;
+  background-color: #d63737;
+  animation: 1s ease-out 0s 1 slideInFromTop;
+  border: 2px solid rgb(250, 232, 193);
+  border-radius: 10px;
+  margin-left: 42%;
+  margin-right: 42%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  color: rgb(250, 232, 193);
+  font-size: 60%;
+}
+
+#refresh-button:hover{
+  background-color:rgb(250, 232, 193);
+  color: #d63737;
+  transform: scale(1.2);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.42);
+  border: 5px solid #d63737;
+  border-radius: 10px;
+}
+
+#tip-window{
+  width: 30%;
+  height: 150px;
+  margin: 20px;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  border: 5px solid rgb(250, 232, 193);
+  border-radius: 4px;
+  background-color: #d63737;
+  resize: none;
+  font-size: 400%;
+  color: rgb(250, 232, 193);
+  animation: 1s ease-out 0s 1 slideInFromBottom;
+}
+
+#secret{
+  font-size: 200%;
+}
+
+#images-render{
+  height: 300px;
+  width: 300px;
+  background-size: cover;
+  margin: auto;
+  background-image: url(hang_images/hang0.png);
+  background-size: cover;
+
+}
+
+#title{
+  margin-top: 60px;
+  animation: 1s ease-out 0s 1 slideInFromTop;
+  letter-spacing: 5px;
+}
+
+#h2a{
+  margin-bottom: -20px;
+  color: rgb(250, 232, 193);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.42);
+}
+
+#h1a{
+  font-size: 500%;
+  margin-top: -50px;
+  color: rgb(250, 232, 193);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.42);
+}
+
+#h2b{
+  color: rgb(250, 232, 193);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.42);
+}
+
+#guess-text{
+  animation: 1s ease-out 0s 1 slideInFromBottom;
+}
+
+#mistakes{
+  animation: 1s ease-out 0s 1 slideInFromTop;
+  border: 2px solid rgb(250, 232, 193);
+  border-radius: 10px;
+  margin-left: 42%;
+  margin-right: 42%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color:rgb(250, 232, 193);
+  color: rgb(45, 75, 120);
+}
+
+#remaining{
+  animation: 1s ease-out 0s 1 slideInFromTop;
+  border: 2px solid rgb(250, 232, 193);
+  border-radius: 10px;
+  margin-left: 42%;
+  margin-right: 42%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color:rgb(250, 232, 193);
+  color: rgb(45, 75, 120);
+}
+
+#discovered{
+  animation: 1s ease-out 0s 1 slideInFromTop;
+}
+
+#secret{
+  width: 100%;
+  height: 100%;
+  animation: 1s ease-out 0s 1 slideInFromBottom;
+}
+
+#hint{
+  color: grey;
+}
+
+
+/*ready for screen resolution adjustements*/
+@media screen and (max-width: 700px) {
+
+
+  #h1a{
+    font-size: 300%;
+    margin-top: -30px;
+  }
+
+  #fill{
+  height: 0px;
+  }
+
+  body{
+    background-size: 200%;
+    background-position: center;
+  }
+  #mistakes{
+    font-size: 70%;
+  }
+  
+  #remaining{
+    font-size: 70%;
+  }
+
+  #title{
+    margin-top: 0px;
+  }
+
+}
