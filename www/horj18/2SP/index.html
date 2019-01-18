@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-    <div id="groupModal" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+    <div id="groupModal" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -45,14 +45,22 @@
                 <div class="modal-body" id="modalGroupBody">
                     <div class="text-center font-weight-light">Příspěvěk přidáte jako uživatel</div>
                     <div id="txtAreaHdr" class="rounded bg-light row align-items-center no-gutters mb-3">
-                        <div id="pictureContainer" class="col-sm-4"><img id="profilePic" class="float-right mr-3 rounded-circle" src=""></div>
+                        <div id="pictureContainer" class="col-sm-4"><img id="profilePic" class="float-right mr-3 rounded-circle"
+                                src=""></div>
                         <div id="userName" class="col-sm-8 text-left"></div>
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <button id="closeModalGroupBtn" class="btn btn-danger">Zavřít</button>
                     <button id="sendBtn" class="btn btn-success" disabled>Odeslat</button>
                 </div>
             </div>
+        </div>
+    </div>
+    <div id="loadingModal" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="loader"></div>
         </div>
     </div>
     <div class="contet">
