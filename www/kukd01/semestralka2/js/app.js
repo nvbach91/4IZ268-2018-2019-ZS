@@ -9,6 +9,7 @@ App.buttonLoader = (`<button class="btn btn-primary" type="button" disabled>
 
 App.formButton = $(".form-button");
 App.carousel = $('.carousel-1');
+App.mediaList = $('.mediaList');
 App.myJSON;
 
 App.init = function () {
@@ -24,7 +25,6 @@ App.init = function () {
 
         .done(function () {
             console.log("JSON downloaded");
-            // App.carouselPhotos(url);
             App.formButton.empty();
             App.formButton.append('<button type="submit" class="btn btn-primary">Hledej</button>');
         }).fail(function () {
@@ -38,6 +38,7 @@ App.init = function () {
 
 //Po zmáčnutí tlačítka hledej volá metodu galleryList
 galleryForm.addEventListener('submit', function (e) {
+    App.mediaList.empty();
     e.preventDefault();
     var hastagGallery = $('#hashtagInput').val();
     $('#galleryForm').trigger("reset");
@@ -82,7 +83,8 @@ App.galleryList = function (tag) {
 
 
     if (nalezeno === true) {
-        $('.mediaList').html(media);
+        App.mediaList.html(media);
+        App.carousel.empty();
     }
     else {
         App.carousel.html('<p>Hashtag nenalezen</p>')
