@@ -54,7 +54,8 @@ xmlhttp.send();
 var layer = new SMap.Layer.Marker();     /* layer se značkami */
 map.addLayer(layer);                          /* Přidat ji do mapy */
 layer.enable();                         /* A povolit */
-
+var dealerList = "";
+var item;
 function addData(data) {
     data.forEach(function (marker) { /* Vyrobit markery */
         var c = SMap.Coords.fromWGS84(marker.coordinates); /* Souřadnice značky, z textového formátu souřadnic fromWGS84(14.297847, 50.076322);*/
@@ -74,11 +75,22 @@ function addData(data) {
         card.getBody().innerHTML = "<br>Prodejce vozů Volkswagen<br>";// + found.route.getResults().length;
         card.setSize(270, 100);
         card.getHeader().innerHTML = "<strong>" + data[i].name + "</strong>";
-        document.getElementById("sel").options[i + 1] = new Option(data[i].name, data[i].id);
+        // dealerList = new Option(data[i].name, data[i].id);
+        item = '<option value="' + data[i].id + '">' + data[i].name + '</option>';
+        dealerList = dealerList + item;
+        // document.getElementById("sel").appendChild = dealerList;
+        // document.getElementById("sel").insertAdjacentHTML("beforeend", dealerList);
+        // console.log(dealerList);
         markers[i].decorate(SMap.Marker.Feature.Card, card);
     }
+    document.getElementById("sel").innerHTML = dealerList;
+
+    console.log(dealerList);
+
 }
 
+// dealerList.push(item);
+// console.log(dealerList);
 var cz = map.computeCenterZoom(coordinates); /* Spočítat pozici mapy tak, aby značky byly vidět */
 
 var path;
@@ -279,7 +291,7 @@ function noStart() {
     startPoint.decorate(SMap.Marker.Feature.Draggable);
     layer.addMarker(startPoint);
 }
-var elmnt = document.getElementById("bMap");
+var elmnt = document.getElementById("button");
 function bMap() {
     elmnt.scrollIntoView();
 }
