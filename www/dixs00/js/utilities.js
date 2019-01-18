@@ -319,15 +319,20 @@ function answer(question, difficulty) {
 
 
 function vocabularyDashboard() {
-    $("#map").remove()
+    let map = $("#map").empty();
+
     let v = vocab();
 
     let virtualMap = $('<ul></ul>')
         .attr("id", "map")
 
+    let statisticsArray = new Array();
+
     v.forEach(wordObject => {
         let wordTitle = key(wordObject);
         let practiceLevel = wordObject.difficultyCardStackNumber;
+        if (!statisticsArray[practiceLevel]) statisticsArray[practiceLevel] = 0;
+        statisticsArray[practiceLevel]++
         let item = document.createElement("li");
         item.classList.add("mapItem");
         item.setAttribute("data-practiceLevel", practiceLevel)
@@ -336,9 +341,11 @@ function vocabularyDashboard() {
         item.title = wordTitle;
         virtualMap.append(item); //tohle se prekresluje tolikrat, kolikrat se appenduje
     });
-    console.log(virtualMap[0])
-    $("#appContainerOne").append(virtualMap);
+    //console.log(virtualMap[0])
+    console.log(statisticsArray)
+    map.append(virtualMap.children())
 
+    /*Snaha zobrazit uzivateli statistiky procvicenosti rovnou z mapy*/
 }
 
 
@@ -414,8 +421,6 @@ function createTenShadedDivs(numberOfLevels) {
 }
 
 
-
-function generateSettings() {}
 
 
 
