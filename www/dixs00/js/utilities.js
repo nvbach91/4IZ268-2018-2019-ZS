@@ -47,7 +47,7 @@ function vocab(newData) {
     /*function vocab(newData) = this function either returns the value from local storage which matches
     the key 'dix-application-data' OR, if a argument is passed, sets the data*/
     var ls = window.localStorage;
-    if (newData == undefined) {
+    if (!newData) {
 
         let applicationData = ls.getItem("dix-application-data");
         if (applicationData) {
@@ -57,7 +57,7 @@ function vocab(newData) {
             throw "No 'dix-application-data' item in local storage"
         }
     } else {
-        if (typeof newData == "object") {
+        if (typeof newData === "object") {
             newData = JSON.stringify(newData)
         }
         ls.setItem("dix-application-data", newData)
