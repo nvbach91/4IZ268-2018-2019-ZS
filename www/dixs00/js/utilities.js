@@ -321,12 +321,14 @@ function vocabularyDashboard() {
         .attr("id", "map")
 
     v.forEach(wordObject => {
+        let wordTitle = key(wordObject);
         let practiceLevel = wordObject.difficultyCardStackNumber;
         let item = document.createElement("li");
         item.classList.add("mapItem");
         item.setAttribute("data-practiceLevel", practiceLevel)
-        item.innerText = key(wordObject);
+        item.innerText = wordTitle;
         item.style.order = practiceLevel + 1;
+        item.title = wordTitle;
         virtualMap.append(item); //tohle se prekresluje tolikrat, kolikrat se appenduje
     });
     console.log(virtualMap[0])
@@ -405,6 +407,12 @@ function createTenShadedDivs(numberOfLevels) {
         header.appendChild(d)
     }
 }
+
+
+
+function generateSettings() {}
+
+
 
 
 
