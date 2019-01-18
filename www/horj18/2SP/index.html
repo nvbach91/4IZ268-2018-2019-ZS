@@ -43,6 +43,11 @@
                     <h3>Vyberte skupiny do kterých chcete příspěvek sdílet</h3>
                 </div>
                 <div class="modal-body" id="modalGroupBody">
+                    <div class="text-center font-weight-light">Příspěvěk přidáte jako uživatel</div>
+                    <div id="txtAreaHdr" class="rounded bg-light row align-items-center no-gutters mb-3">
+                        <div id="pictureContainer" class="col-sm-4"><img id="profilePic" class="float-right mr-3 rounded-circle" src=""></div>
+                        <div id="userName" class="col-sm-8 text-left"></div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button id="sendBtn" class="btn btn-success" disabled>Odeslat</button>
@@ -66,8 +71,10 @@
             </div>
             <br>
             <button id="shareBtn" class="btn btn-lg btn-primary btn-block" disabled>Sdílej!</button>
+            <button id="logoutBtn" class="btn btn-lg btn-secondary btn-block" disabled>Logout</button>
         </div>
     </div>
+    <div id="footer" class="text-center align-middle">SmartShare 2019</div>
     <script src="scripts/script1.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
