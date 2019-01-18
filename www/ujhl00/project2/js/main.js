@@ -16,25 +16,39 @@ function getMovies(searchText) {
         .then(function (response) {
             console.log(response);
             let movies = response.data.Search;
+            let moviesNotFound = response.data.Response;
             let output = '';
 
-            // each loop poľa, pripojenie každého filmu do premennej output a jej výpis
-            $.each(movies, function (index, movie) {
-                output += `
-                <div class="col-md-3">
+            if (moviesNotFound == "False") {
+                output = `
+                <div class="container">
                     <div class="well text-center">
-                        <img src="${movie.Poster}">
-                        <h5>${movie.Title}</h5>
-                        <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-primary" href="#">Detail filmu</a>
+                        Žiadny film nebol nájdený! Skúste vyhľadávanie znovu...
                     </div>
-                </div>
-            `;
-            });
+                </div>`;
+            } else {
+                // each loop poľa, pripojenie každého filmu do premennej output a jej výpis
+                $.each(movies, function (index, movie) {
+                    output += `
+                    <div class="col-md-3">
+                        <div class="well text-center">
+                            <img src="${movie.Poster}">
+                            <br><br>
+                            <h5>${movie.Title}</h5>
+                            <br>
+                            <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-primary" href="#">Detail filmu</a>
+                        </div>
+                    </div>`;
+                });
+            }
 
             $('#movies').html(output);
         })
         .catch(function (err) {  //v prípade nejakého error
             console.log(err);
         });
+}
+
+function movieSelected(id) {
 
 }
