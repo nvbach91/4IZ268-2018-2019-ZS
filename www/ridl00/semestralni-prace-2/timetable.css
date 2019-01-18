@@ -1,0 +1,51 @@
+body {
+    width: 100%;
+}
+
+.tasks {
+    width: calc(100% - 350px);
+    float: left;
+    margin-left: 50px;
+}
+
+.change-view {
+    margin-right: 10px;
+}
+
+.timetable .table {
+    width: 100%;
+    display: table;
+    margin-bottom: 50px;
+    table-layout: fixed;
+}
+
+.timetable .table .t-row .t-head:first-child {
+    width: 25px;
+    vertical-align: middle;
+}
+
+.table .t-row .t-cell.cell-name {
+    text-align: left;
+}
+
+.table .timetable-lesson {
+    margin: 1px;
+    padding: 5px 5px;
+    min-height: 50px;
+    position: relative;
+}
+
+.table .timetable-lesson span.room {
+    font-size: 7pt;
+    position: absolute;
+    right: 8px;
+    bottom: 5px;
+}
+
+.table .timetable-lesson.lesson-lecture {
+    background-color: #a6ea99;
+}
+
+.table .timetable-lesson.lesson-seminar {
+    background-color: #b3fcff;
+}

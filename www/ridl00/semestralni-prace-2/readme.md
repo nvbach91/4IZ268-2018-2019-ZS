@@ -13,17 +13,13 @@ Momentální instalace extension při vývoji:
 
 ## Verze
 
-### Funkce v momentální verzi (0.1)
+### Funkce v momentální verzi (1.0)
 
  - Vytvoření tokenu pro přístup do API. *(token je uložen v storage.sync, takže rozvrh bude načtený všude, kde se uživatel přihlásí do chromu)*
  - Načtení rozvrhových akcí do JSONu a odeslání do API.
  - Čtení dat o rozvrhu z API do seznamu rozvrhových akcí.
-
-### Soon
-
-- Možnost přepnutí ze zobrazení rozvrhových akcí na zobrazení rozvrhu.
-- Možnost schování hodin z rozvrhu. *(pokud student na některé přednášky nechodí)*
-- Zadávání úkolů k jednotlivým předmětům.
+ - Možnost přepnutí ze zobrazení rozvrhových akcí na zobrazení rozvrhu a naopak.
+ - Zadávání úkolů k jednotlivým předmětům.
 
 ## Ostatní
 

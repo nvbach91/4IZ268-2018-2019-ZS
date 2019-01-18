@@ -33,7 +33,7 @@ function validateToken(token) {
             dataType: 'json'
         }).done(function(data) { 
             if(data.result) {
-                chrome.storage.sync.set({'token': token});
+                chrome.storage.sync.set({'token': token, 'view': 'timetable'});
             } else {
                 token = null;
                 validateToken(token);

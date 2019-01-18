@@ -1,6 +1,6 @@
 {
   "name": "My Timetable",
-  "version": "0.1",
+  "version": "1.0",
   "description": "Rozšíření pro stáhnutí a úpravu rozvrhů",
   "manifest_version": 2,
   "icons": {
@@ -9,23 +9,12 @@
   "browser_action": {
     "default_icon": "images/icons/icon.png",
     "default_popup": "popup.html"
-  },  
-  "content_scripts": [
-    {
-      "matches": ["https://insis.vse.cz/auth/katalog/rozvrhy_view.pl?format=list;zobraz=Zobrazit;osobni=1;activate_my_timetable=1"],
-      "js" : ["lib/jquery.min.js", "inc/check.js", "insis.js"],
-      "run_at": "document_idle"
-    }
-  ],
-
+  },
   "permissions": [
     "tabs",
     "storage",
     "activeTab",
     "https://insis.vse.cz/*",
     "http://chrome-app.vseved.eu/*"
-  ],
-  "web_accessible_resources": [
-    "presets/*"
   ]
 }
