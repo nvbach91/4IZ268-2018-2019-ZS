@@ -57,5 +57,15 @@ function movieSelected(id) {
 }
 
 function getMovie() {
+    let movieId = sessionStorage.getItem('movieId');
+    //console.log(movieId);
 
+    //axios api request
+    axios.get('http://www.omdbapi.com?i=' + movieId + "&apikey=d8ae8847")
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (err) { //v prípade nejakého error
+            console.log(err);
+        });
 }
