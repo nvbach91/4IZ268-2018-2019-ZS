@@ -30,6 +30,7 @@
   .flexContainer {
     flex-flow: row-reverse wrap;
   }
+
   .imageInFlex {
     margin: 20px auto;
   }
@@ -135,7 +136,8 @@ ul {
   margin-top: 15px;
 }
 
-.reasons p, .reasons h2 {
+.reasons p,
+.reasons h2 {
   margin: auto 20px auto 20px;
 }
 

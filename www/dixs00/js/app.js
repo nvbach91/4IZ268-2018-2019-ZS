@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     var topics = fetch('https://pure-chamber-44082.herokuapp.com/api/topics', {
             mode: 'cors',
             headers: {
@@ -7,8 +8,10 @@ $(document).ready(function () {
         })
         .then(data => data.json())
         .then(data => {
+
             $("#loader").hide();
             $("#loader2").hide();
+            $('#appContainer').show();
             $('#topicDropdown').show();
             $("#practiceButton").show();
 
@@ -139,24 +142,39 @@ $(document).ready(function () {
     }) //end of practice button on click
 
     /*adds functions to buttons which change the difficulty of the given words*/
-    $("#forgot").hide().unbind().on("click", function () {
-        answer($("#question").text(), "forgot")
+    $("#forgot").hide().on("click", function () {
+        answer($("#question").text(), "forgot");
     })
-    $("#hard").hide().unbind().on("click", function () {
+    $("#hard").hide().on("click", function () {
         answer($("#question").text(), "hard")
     })
-    $("#easy").hide().unbind().on("click", function () {
+    $("#easy").hide().on("click", function () {
         answer($("#question").text(), "easy")
     })
-    $("#good").hide().unbind().on("click", function () {
+    $("#good").hide().on("click", function () {
         answer($("#question").text(), "good")
     })
     $("#show-answer").on("click", function () {
         let ans = findAnswer($("#question").text());
-        $("#answer").text(ans).show();
-        $("#forgot").show()
-        $("#hard").show()
-        $("#easy").show()
-        $("#good").show()
+        $("#answer").text(ans).show().css("visibility", "visible")
+        $("#forgot").show().css("visibility", "visible")
+        $("#hard").show().css("visibility", "visible")
+        $("#easy").show().css("visibility", "visible")
+        $("#good").show().css("visibility", "visible")
     })
 })
+
+function toggleHelp() {
+    var explanationList = document.getElementById("explanationList");
+    const style = getComputedStyle(explanationList);
+    if (explanationList.style.height == "0px" || style.height == "0px") {
+        document.getElementsByTagName("body").item(0).style.overflow = "none";
+        explanationList.style.height = (explanationList.innerHTML.length - 800) + "px"
+        explanationList.style.margin = "10px"
+        document.getElementsByTagName("body").item(0).style.overflow = "auto";
+    } else {
+        document.getElementsByTagName("body").item(0).style.overflow = "none";
+        explanationList.style.height = "0px";
+        document.getElementsByTagName("body").item(0).style.overflow = "auto";
+    }
+}

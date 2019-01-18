@@ -43,11 +43,36 @@
    <main>
       <label class="disabled" for="topics">Select a topic to practice</label>
       <div class="flexColumn" id="appContainerOne">
-         <div class="flexContainerWrap" id="appContainer">
+         <div class="appExplanation">
+            <h2>Practice vocabulary using spaced repetition!</h2>
+            Choose a topic from the dropdown menu and press "practice".
+
+            <button id="helpButton" onclick="toggleHelp()">Help
+            </button>
+            <ol id="explanationList">
+               <li>Once you choose a topic and click the "Practice" button, words shall be stored in your
+                  browser's local storage</li>
+               <li>You can then practice the words: Look at the word and try to remember the translation.</li>
+               <li>Was it easy or hard? Or have you perhaps forgotten? Doesn't matter! Click the "Show answer" button</li>
+               <li>Choose the appropriate button to rate how well you remembered the word.</li>
+               <li>The <span class="green">"Good"</span> button increases this word's "level of practice" by one.</li>
+               <li>The <span class="red">"Forgot"</span> button DEcreases this word's "level of practice" by one.</li>
+               <li>The <span class="orange">"Hard"</span> button leaves the level of practice of this word as it was
+                  before.</li>
+               <li>The <span class="blue">"Easy"</span> button increases this word's "level of practice" by two.</li>
+               <li>The app remembers how much you have practiced each word.</li>
+               <li>Each time you practice a word, the next word will be the one which has the lowest
+                  practice level</li>
+            </ol>
+
+         </div>
+
+         <div id="loader" class="loader">
+            <div>Loading...</div>
+         </div>
+         <div class="flexContainerWrap disabled" id="appContainer">
             <div class="flexContainerWrap">
-               <div id="loader" class="loader">
-                  <div>Loading...</div>
-               </div>
+               <span class="chooseTopics">Choose a topic to practice: </span>
                <select name="topics" class="disabled" id="topicDropdown">
                </select>
                <button class="disabled" id="practiceButton">Practice</button>
@@ -62,11 +87,11 @@
             <div class="disabled" id="answer"></div>
             <div class="flexContainerWrap">
 
-               <button id="forgot">Forgot</button>
-               <button id="hard">Hard</button>
+               <button class="appButton" id="forgot">Forgot</button>
+               <button class="appButton" id="hard">Hard</button>
 
-               <button id="good">Good</button>
-               <button id="easy">Easy</button>
+               <button class="appButton" id="good">Good</button>
+               <button class="appButton" id="easy">Easy</button>
 
             </div>
          </div>

@@ -143,6 +143,18 @@ function td(w, d) {
     return r;
 }
 
+function toggleVisibility(element) {
+    if (element.style.visibility == "hidden" || element.style.visibility == "") {
+        element.style.visibility = "visible"
+    } else {
+        element.style.visibility = "hidden"
+    }
+}
+
+function jqt() {
+    $("header").toggle("visibility");
+}
+
 function randomizeDifficulty() {
     let v = vocab();
     let r = Math.floor(Math.random() * 11);
@@ -151,28 +163,84 @@ function randomizeDifficulty() {
     return vocab().map(e => e.difficultyCardStackNumber)
 }
 
-function chooseNextWord() {
+function shuffle(array) {
+    var currentIndex = array.length,
+        temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
+function visibilityPracticeLevelArrays() {
     let max = 10;
     let v = vocab()
-    let object = new Object;
+    //let object = new Object;
     let array = new Array;
-    for (var i = 0; i < max; i++) {
+    for (let i = 0; i < max; i++) {
         //object[i] = v.filter(e => e["difficultyCardStackNumber"] === i)
         array[i] = v.filter(word => word["difficultyCardStackNumber"] === i)
-        shuffleArray(array[i])
+    }
+    console.log(array)
+}
+
+function chooseNextWord(previousWord) {
+    console.log(previousWord);
+    let max = 10; //TODO: user should be able to set this up themselves
+    let v = vocab()
+    //let object = new Object;
+    let array = new Array;
+    for (let i = 0; i < max; i++) {
+        //object[i] = v.filter(e => e["difficultyCardStackNumber"] === i)
+        array[i] = v.filter(word => word["difficultyCardStackNumber"] === i)
     }
     //  console.log(vocab().map(e => e.difficultyCardStackNumber))
 
-    for (var i = 0; i < max; i++) {
-        if (array[i].length != 0) {
-            for (var j = 0; j < array[i].length; j++) {
-                var word = array[i][j];
-                if (word != undefined) {
-                    return word;
-                } else {
-                    alert("No words to practice!")
+    let arrayOfCandidates = [];
+    for (let i = 0; i < max; i++) {
+        //console.log(i)
+        const level = array[i]
+        //console.log(level)
+        if (level.length != 0) {
+            let r = Math.floor(Math.random() * level.length);
+            console.log("previousWord", previousWord)
+            console.log("level[r]", level[r])
+            if (previousWord != undefined && key(previousWord) == key(level[r])) {
+                console.log("dve za sebou", i)
+                for (let j = i + 1; j < max; j++) {
+                    console.log(j)
+                    const newLevel = array[j]
+                    console.log(newLevel)
+                    if (newLevel.length != 0) {
+                        let r = Math.floor(Math.random() * level.length);
+                        console.log("jasny", newLevel[r])
+                        return newLevel[r];
+                    }
                 }
             }
+            return level[r];
+
+            /*for (let j = 0; j < level.length; j++) {
+                let word = array[i][j];
+                if (word != previousWord) {
+                    if (word != undefined) {
+                        return word;
+                    } else {
+                        alert("No words to practice!")
+                    }
+                }
+            }*/
 
         }
     }
@@ -185,7 +253,6 @@ function key(object) {
 }
 
 function changeDifficulty(question, difficulty) {
-    console.log("change")
     let term = findTerm(question)
     var difficultyMap = {
         "forgot": -1,
@@ -193,16 +260,16 @@ function changeDifficulty(question, difficulty) {
         "good": 1,
         "easy": 2
     }
-    let numberToAddToDifficulty = difficultyMap[difficulty]
-    let dif = term["difficultyCardStackNumber"];
-    dif = dif + numberToAddToDifficulty;
-    if (dif > -1) {
-        let v = vocab();
-        let index = findIndexOfWord(question);
-        v[index]["difficultyCardStackNumber"] = dif;
-        vocab(v);
-    }
+    let practiceLevelChange = difficultyMap[difficulty]
+    let practiceLevel = term["difficultyCardStackNumber"];
+    newPracticeLevel = practiceLevel + practiceLevelChange;
+    if (newPracticeLevel < 0) newPracticeLevel = 0;
 
+    let v = vocab();
+    let index = findIndexOfWord(question);
+
+    v[index]["difficultyCardStackNumber"] = newPracticeLevel;
+    vocab(v);
 }
 
 function findIndexOfWord(word) {
@@ -223,13 +290,17 @@ function findAnswer(question) {
 function answer(question, difficulty) {
     changeDifficulty(question, difficulty)
 
-    $("#forgot").css("display", "none")
-    $("#hard").css("display", "none")
-    $("#good").css("display", "none")
-    $("#easy").css("display", "none")
-    $("#answer").css("display", "none")
+    $("#forgot").css("visibility", "hidden")
+    $("#hard").css("visibility", "hidden")
+    $("#good").css("visibility", "hidden")
+    $("#easy").css("visibility", "hidden")
+    $("#answer").css("visibility", "hidden")
 
-    $("#question").text(key(chooseNextWord()));
+
+    $("#question").text(key(
+        chooseNextWord(findTerm(question))
+    ));
+
     vocabularyDashboard();
     dashboardConditionalFormatting();
 
@@ -240,14 +311,7 @@ function answer(question, difficulty) {
  * Using Durstenfeld shuffle algorithm.
  * https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
  */
-function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-}
+
 
 function vocabularyDashboard() {
     let map = $("#map")[0]
