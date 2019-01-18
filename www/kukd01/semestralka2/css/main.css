@@ -1,3 +1,6 @@
+body{
+    word-wrap: break-word;
+}
 .media {
     margin-top: 1em;
 }
