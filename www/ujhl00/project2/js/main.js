@@ -15,8 +15,25 @@ function getMovies(searchText) {
     axios.get('http://www.omdbapi.com?s=' + searchText + "&apikey=d8ae8847")
         .then(function (response) {
             console.log(response);
+            let movies = response.data.Search;
+            let output = '';
+
+            // each loop poľa, pripojenie každého filmu do premennej output a jej výpis
+            $.each(movies, function (index, movie) {
+                output += `
+                <div class="col-md-3">
+                    <div class="well text-center">
+                        <img src="${movie.Poster}">
+                        <h5>${movie.Title}</h5>
+                    </div>
+                </div>
+            `;
+            });
+
+            $('#movies').html(output);
         })
         .catch(function (err) {  //v prípade nejakého error
-            console.log(err)    //výpis do console
+            console.log(err);
         });
+
 }
