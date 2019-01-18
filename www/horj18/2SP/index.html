@@ -34,8 +34,8 @@
             </div>
         </div>
     </div>
-    <div id="groupModal" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog"
-        aria-labelledby="myModalLabel" aria-hidden="true" show="true">
+    <div id="groupModal" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true" show="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -60,7 +60,9 @@
                     najednou!</p>
             </div>
             <div class="form-label-group">
-                <textarea class="form-control" id="textarea" rows="5" class="form-control" placeholder="Napište příspěvek" required></textarea>
+                <textarea class="form-control" id="textarea" rows="5" class="form-control" placeholder="Napište příspěvek"
+                    data-container="body" data-toggle="popover" data-placement="right" data-trigger="manual" data-content="Vyplňte prosím text příspěvku. Příspěvek nesmí být prázdný nebo obsahovat pouze bílé znaky."
+                    required></textarea>
             </div>
             <br>
             <button id="shareBtn" class="btn btn-lg btn-primary btn-block" disabled>Sdílej!</button>

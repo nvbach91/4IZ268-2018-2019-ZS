@@ -6,8 +6,16 @@
 .contet {
     width: 400px;
     margin: 0 auto;
+    background-color: white;
 }
 
 label {
     margin-left: 4px;
+}
+
+h1 {
+    margin-top: 10px;
+}
+h1 img{
+    margin: -7px 3px 0 2px;
 }

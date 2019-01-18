@@ -8,12 +8,13 @@ var loginBtn = document.querySelector("#loginBtn");
 var shareBtn = document.querySelector("#shareBtn");
 var modalGroupBody = document.querySelector("#modalGroupBody")
 var sendBtn = document.querySelector("#sendBtn");
+var textA = document.querySelector("#textarea");
 
 /*přiřazení funkcí k elementům*/
 loginBtn.addEventListener("click", loginFb);
 shareBtn.addEventListener("click", sharePost);
-// sendBtn.addEventListener("click", TEST);
-sendBtn.addEventListener("click", changeBtn);
+sendBtn.addEventListener("click", TEST);
+// sendBtn.addEventListener("click", changeBtn);
 
 /*FB API*/
 window.fbAsyncInit = function () {
@@ -44,6 +45,7 @@ function statusChangeCallback(response) {
         $('#loginModal').modal('hide');
         shareBtn.disabled = false;
         loadGroups();
+        $('[data-toggle="popover"]').popover();
     } else if (response.status === 'not_authorized') {
         /*Vyžaduje autorizaci aplikace*/
         $('#loginModal').modal('show');
@@ -63,16 +65,24 @@ function loginFb() {
 
 /*obsluha tlačítka pro sdílení*/
 function sharePost() {
-    $('#groupModal').modal('show');
-    $("#modalGroupBody input:checkbox").prop("checked", false);
-    sendBtn.disabled = true;
+    postTxt = document.querySelector('#textarea').value.trim();
+    if (validateTxt()) {
+        $('#groupModal').modal('show');
+        $("#modalGroupBody input:checkbox").prop("checked", false);
+        sendBtn.disabled = true;
+    } else {
+        $("#textarea").popover("show");
+        setTimeout(function() { 
+            $('#textarea').popover("hide"); 
+        }, 3000);
+        // window.alert("Nejdříve vyplň zprávu, která se má odeslat na Facebook.");
+        return;
+    }
 }
 
 /*kontroluje zaškrtlé chceckboxy a následně odešle příspěvek*/
 function postToGroups() {
     var checkedGroups = $("#modalGroupBody input:checked");
-    postTxt = document.querySelector('#textarea').value;
-    if (checkIfEmpty()) { return };
     checkedGroups.each(function () {
         var $this = $(this);
         sendToGroup($this.attr("id"));
@@ -101,8 +111,9 @@ function sendToGroup(groupId) {
 
 function TEST() {
     postTxt = document.querySelector('#textarea').value;
-    var validationTxt = $.trim(postTxt);
-    console.log(validationTxt);
+    document.querySelector('#textarea').value="";
+    validateTxt();
+    console.log(document.querySelector('#textarea').value.trim());
 }
 
 /*kontroluje zda je alespoň jedna skupina vybrána*/
@@ -159,10 +170,9 @@ function createGroupChoice(groupName, groupId) {
 }
 
 /*validace vstupu do textarea*/
-function checkIfEmpty() {
-    var validationTxt = $.trim(postTxt);
-    if (!postTxt) {
-        window.alert("Nejdříve vyplň zprávu, která se má odeslat na Facebook.")
+function validateTxt() {
+    var validationTxt = postTxt.replace(/\s/g, '');
+    if (validationTxt) {
         return true;
     } else {
         return false;
