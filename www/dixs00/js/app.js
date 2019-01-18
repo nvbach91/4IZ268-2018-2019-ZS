@@ -26,7 +26,7 @@ $(document).ready(function () {
         })
 
     /*Teprve na kliknuti se zavola dalsi pozadavek */
-    $("#practiceButton").unbind().on("click", function () {
+    $("#practiceButton").unbind().click(function () {
 
         $("#loader2").show();
         var topicDropdown = document.getElementById("topicDropdown");
@@ -142,19 +142,19 @@ $(document).ready(function () {
     }) //end of practice button on click
 
     /*adds functions to buttons which change the difficulty of the given words*/
-    $("#forgot").hide().on("click", function () {
+    $("#forgot").hide().click(function () {
         answer($("#question").text(), "forgot");
     })
-    $("#hard").hide().on("click", function () {
+    $("#hard").hide().click(function () {
         answer($("#question").text(), "hard")
     })
-    $("#easy").hide().on("click", function () {
+    $("#easy").hide().click(function () {
         answer($("#question").text(), "easy")
     })
-    $("#good").hide().on("click", function () {
+    $("#good").hide().click(function () {
         answer($("#question").text(), "good")
     })
-    $("#show-answer").on("click", function () {
+    $("#show-answer").click(function () {
         let ans = findAnswer($("#question").text());
         $("#answer").text(ans).show().css("visibility", "visible")
         $("#forgot").show().css("visibility", "visible")
