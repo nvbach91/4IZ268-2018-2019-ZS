@@ -28,7 +28,7 @@ function renderGame(result) {
   <div class="box"> 
 	<div> <img class="gameimg" src= "${result.image.medium_url}"> <div>
 		<div class="gamename"> <p class="gameTitle"> ${result.name} </p> </div>
-		<div> <p class="deckER">${result.deck}<p> </div>
+		<div> <p class="decker">${result.deck}<p> </div>
 		<div class="siteLink"> <a href="${
       result.site_detail_url
     }"target="_blank">Více informací</a> </div>

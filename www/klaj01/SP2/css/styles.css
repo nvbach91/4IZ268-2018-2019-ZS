@@ -2,6 +2,7 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	font-family: 'Amatic SC', cursive;
 }
 
 main {
@@ -16,7 +17,7 @@ main {
 .nav {
 	background-color: rgb(92, 92, 92);
 	color: #feffff;
-	text-align: left;
+	text-align: center;
 	font-size: 25px;
 	margin: 0 auto;
 }
@@ -47,6 +48,7 @@ body {
 h1 {
 	text-align: center;
 	color: #007EE3;
+	font-size: 50px;
 }
 
 .headerimg {
@@ -81,29 +83,24 @@ h2 {
 	height: 75px;
 	width: 400px;
 	border: 3px solid black;
-	font-size: 20px;
-	font-family: sans-serif;
+	font-size: 25px;
 	padding-left: 10px;
 	border-radius: 10px;
+	font-weight: bold;
 }
 
 #submitButton {
 	height: 78px;
 	width: 150px;
-	font-family: sans-serif;
 	border: 3px solid black;
-	font-size: 20px;
+	font-size: 25px;
 	border-radius: 10px;
+	font-weight: bold;
 }
 
 #submitButton:hover {
 	background-color: #007EE3;
 	cursor: pointer;
-}
-
-.mainheader {
-	font-family: sans-serif;
-	font-size: 50px;
 }
 
 h3 {
@@ -203,14 +200,21 @@ footer p {
 }
 
 .gamename {
-	color: #007EE3;
+	color: black;
 	font-weight: bold;
+	font-family: 'Russo One', sans-serif;
+}
+
+.decker {
+	color: black;
+	font-family: 'Russo One', sans-serif;
 }
 
 .appinfo {
 	text-align: center;
 	color: #768591;
 	font-size: 25px;
+	font-weight: bold;
 }
 
 @media screen and (max-width: 600px) {

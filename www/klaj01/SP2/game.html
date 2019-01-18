@@ -9,10 +9,15 @@
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="css/stylesheet.css"
+      href="css/gamestylesheet.css"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="image/png" href="IMG/favicon-96x96.png" />
+      <meta charset="UTF-8" />
     <title>Pong Game JavaScript</title>
   </head>
 
@@ -20,14 +25,14 @@
   <main>
       <nav class="nav">
         <a href="index.html" >Domů</a>
-        <a href="Pong/game.html" class="activepage">Pong</a>
+        <a href="game.html" class="activepage">Pong</a>
       </nav>
     <canvas id="gamefield" width="960" height="540"></canvas>
-    <script src="js/javascript.js"></script>
     <button onclick="onClickFunction()">Restart hry</button>
     <p id="panel_02"></p>
     <div class="panel_01">
-      <p>Pravidla hry</p>
+      <p class="gamerules">Pravidla hry</p>
+      <hr>
       <p>Hraje se do 5 bodů</p>
       <p>Pohybujte myší</p>
     </div>
@@ -35,5 +40,7 @@
     <p id="score"></p>
     <p id="gameovertext"></p>
     <main>
+        <script src="js/gamejavascript.js"></script>
+
   </body>
 </html>

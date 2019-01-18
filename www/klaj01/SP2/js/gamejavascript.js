@@ -79,12 +79,10 @@ function resetBall() {
   ball.y = canvas.height / 2;
   ball.velocityX = -ball.velocityX;
   ball.speed = 15;
-  ball.color = randomColor();
 }
 function endBall() {
   ball.x = canvas.width / 2;
   ball.y = canvas.height / 2;
-  ball.color = "YELLOW";
 }
 
 /* Vykreslení dělící čáry */
@@ -127,7 +125,7 @@ function update() {
     resetBall();
   } else if (user.score >= winscore) {
     document.getElementById("score").innerHTML =
-      "Vyhrál jsi!" + user.score + ":" + com.score;
+      "Vyhrál jsi!" + "" + user.score + ":" + com.score;
     $("#gamefield").remove();
     $(".panel_01").remove();
     document.getElementById("gameover").innerHTML = "Konec hry";
@@ -142,7 +140,7 @@ function update() {
     $(".panel_01").remove();
     document.getElementById("gameover").innerHTML = "Konec hry";
     document.getElementById("gameovertext").innerHTML =
-      "Hru můžeš spustit znovu, nebo se můžeš vrátit na Game finder";
+      "Spusť hru znovu, nebo se vrať na Gamefinder";
 
     endBall();
   }

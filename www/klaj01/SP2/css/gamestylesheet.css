@@ -1,16 +1,20 @@
+* {
+    font-family: 'Amatic SC', cursive;
+}
+
 body {
     text-align: center;
-    background-color: rgba(10, 94, 172, 0.5);
+    background-color: #edeef1;
 }
 
 #gamefield {
-    border: 2px solid rgb(241, 241, 241);
     position: absolute;
     margin: auto;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
+    border: 5px solid #007EE3;
     border-radius: 25px;
 }
 
@@ -19,7 +23,7 @@ button {
     color: black;
     width: 15%;
     background-color: rgb(221, 221, 221);
-    border: 3px solid rgb(80, 190, 253);
+    border: 5px solid #007EE3;
     border-radius: 25px;
     align-items: center;
     justify-content: center;
@@ -32,7 +36,8 @@ button {
 }
 
 button:hover {
-    border: 5px solid darkgrey;
+    border: 5px solid rgb(60, 107, 207);
+    cursor: pointer;
 }
 
 console.log {
@@ -43,7 +48,7 @@ console.log {
 .nav {
     background-color: rgb(92, 92, 92);
     color: #feffff;
-    text-align: left;
+    text-align: center;
     font-size: 25px;
     margin: 0 auto;
 }
@@ -68,7 +73,7 @@ console.log {
 }
 
 .panel_01 {
-    background: #bebebe;
+    background: #dadada;
     height: 25%;
     left: 140px;
     top: 50%;
@@ -78,14 +83,14 @@ console.log {
     width: 15%;
     font-weight: bold;
     font-size: 20px;
-    border: 5px solid black;
+    border: 5px solid #007EE3;
     border-radius: 25px;
 }
 
 .panel_01 p {
-    height: 20px;
+    font-size: 20px;
     width: 200px;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 #score {
@@ -105,8 +110,4 @@ console.log {
 
 #panel_02 {
     float: left;
-}
-
-.twitter {
-    width: 60px;
 }
