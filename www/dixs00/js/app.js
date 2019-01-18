@@ -51,7 +51,7 @@ $(document).ready(function () {
 
                 /*TODO: kontroluj co už uživatel má a přidávej*/
                 let dad = ls.getItem("dix-application-data");
-                if (dad === null || dad === undefined) {
+                if (!dad) {
                     /*
                      **check if localstorage has dix-application-data entry
                      **and if not, create it and put data into it
