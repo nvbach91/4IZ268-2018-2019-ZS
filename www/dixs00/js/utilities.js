@@ -121,7 +121,7 @@ function removeDuplicates(arrayOfObjects) {
     for (var i = 0; i < arrayOfObjects.length; i++) {
         var wordObject = arrayOfObjects[i]
         var key = Object.keys(wordObject)[0]
-        if (keys.indexOf(key) == -1) {
+        if (keys.indexOf(key) === -1) {
             keys.push(key)
         } else {
             for (var j = 0; j < arrayOfObjects.length; j++) {
