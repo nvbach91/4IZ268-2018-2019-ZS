@@ -14,26 +14,42 @@
     <meta name="description" content="Smart Share">
     <meta name="keywords" content="facebook, twitter, share, post">
     <meta name="author" content="Jan Horáček">
+    <script src="scripts/jquery-3.3.1.js"></script>
 </head>
 
 <body>
-    <script src="scripts/script1.js"></script>
-    <a href="#myModal" role="button" class="btn btn-default" data-toggle="modal">Launch demo modal</a>
-    <div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="loginModal" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel" aria-hidden="true" show="true">
         <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="myModalLabel">Modal header</h3>
-            </div>
-            <div class="modal-body">
-                <p>One fine body…</p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn">Button</button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="myModalLabel">Share Modal</h3>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body…</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="loginBtn" class="btn">Button</button>
+                </div>
             </div>
         </div>
+    </div>
+    <div id="groupModal" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel" aria-hidden="true" show="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="myModalLabel">Group Modal</h3>
+                </div>
+                <div class="modal-body" id="modalGroupBody">
+                    <p>One fine body…</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="sendBtn" class="btn">Button</button>
+                </div>
+            </div>
         </div>
-        </div>
+    </div>
     <div class="contet">
         <div class="container-share">
             <div class="text-center mb-4">
@@ -47,12 +63,11 @@
                 <textarea class="form-control" id="textarea" rows="5" class="form-control" placeholder="Napište příspěvek"></textarea>
             </div>
             <br>
-            <div id="shareButton" onclick="funkce()" class="btn btn-lg btn-primary btn-block" disabled>Sdílej!</div>
-            <div onclick="findGroups()" class="btn btn-lg btn-primary btn-block">FBFBF</div>
-            <div onclick="postFb()" class="btn btn-lg btn-primary btn-block">Test</div>
+            <button id="shareBtn" class="btn btn-lg btn-primary btn-block" disabled>Sdílej!</button>
         </div>
     </div>
 </body>
+<script src="scripts/script1.js"></script>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -61,6 +76,5 @@
     crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-<script src="scripts/myScript1.js"></script>
 
 </html>

@@ -1,4 +1,3 @@
-/*FB JavaScript SDK*/
 var postTxt;
 var checkBoxContainer;
 var checkBoxForm;
@@ -7,7 +6,22 @@ var errorOccurred = false;
 var atLeastOneChecked;
 var mainLoader;
 var postSend;
-var obj;
+var groups;
+var groupName;
+var groupId;
+
+
+/*přiřazuje html elementy k proměnným*/
+var loginBtn = document.querySelector("#loginBtn");
+var shareBtn = document.querySelector("#shareBtn");
+var modalGroupBody = document.querySelector("#modalGroupBody")
+var sendBtn = document.querySelector("#sendBtn");
+
+
+/*přiřazuje html elementy k proměnným*/
+loginBtn.addEventListener("click", loginFb);
+shareBtn.addEventListener("click", sharePost);
+sendBtn.addEventListener("click", TEST);
 
 window.fbAsyncInit = function () {
     FB.init({
@@ -29,34 +43,36 @@ window.fbAsyncInit = function () {
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-/*zjišťuje status připojení na FB*/
+
+/*Status pripojeni FB uzivatele*/
 function statusChangeCallback(response) {
     if (response.status === 'connected') {
         console.log("přihlášen a autorizován");
-        // document.querySelector('.fb-login-button').style.display = "none";
-        document.querySelector('.btn-primary').disabled = false;
-
-        // document.querySelector('#shareBtn').style.display = 'inline';
-        // findGroups();
+        $('#loginModal').modal('hide');
+        shareBtn.disabled = false;
+        loadGroups();
     } else if (response.status === 'not_authorized') {
-        // document.querySelector('#fbStatus').innerHTML = "Nepovolen přístup na FB";
-        // document.querySelector('#shareBtn').style.display = 'none';
         console.log("přihlášen ale neautorizován");
+        $('#loginModal').modal('show');
     } else {
-        // document.querySelector('#fbStatus').innerHTML = "Nepřihlášen na FB";
-        // document.querySelector('#shareBtn').style.display = 'none';
         console.log("nepřihlášen");
+        $('#loginModal').modal('show');
     }
 }
 
-/*reaguje na tlačítko login a přes fb api jej řeší*/
+/*login FB a jeho obsluha*/
 function loginFb() {
     console.log("Login přes custom tlačítko");
     FB.login(function (response) {
         statusChangeCallback(response)
     }, { scope: 'email,user_likes,publish_to_groups' });
-    findGroups();
 }
+
+function sharePost() {
+    $('#groupModal').modal('show');
+    console.log("share button clicked");
+}
+
 /*kontroluje, aby textarea nebyla prázdná*/
 function checkIfEmpty() {
     if (!postTxt) {
@@ -72,12 +88,12 @@ function postFb() {
     saveTextareaToVar();
     if (checkIfEmpty()) { return };
     console.log("1");
-    console.log(obj);
-    console.log(obj.id);
-    sendToGroup(obj.id);
-    for (var i = 0, len = obj.length; i < len; i++) {
-        console.log("posted to group" + obj[i].id);    
-        sendToGroup(obj[i].id);
+    console.log(groups);
+    console.log(groups.id);
+    sendToGroup(groups.id);
+    for (var i = 0, len = groups.length; i < len; i++) {
+        console.log("posted to group" + groups[i].id);
+        sendToGroup(groups[i].id);
     }
 
 }
@@ -102,17 +118,21 @@ function sendToGroup(groupId) {
     );
 }
 
+function TEST() {
+    console.log($("#modalGroupBody input:checked"));
+}
+
 /*pomocí fb api zjišťuje u jakých skupin je uživatel adminem a podle toho pak vytváří checkboxy*/
-function findGroups() {
+function loadGroups() {
     FB.api(
         "/me/groups",
         function (response) {
             if (response && !response.error) {
                 for (var l = response.data.length, i = 0; i < l; i++) {
-                    obj = response.data[i];
-                    // createCheckBox(obj.name, obj.id);
-                    console.log(obj.name);
-                    console.log(obj.id);
+                    groups = response.data[i];
+                    createGroupChoice(groups.name, groups.id);
+                    console.log(groups.name);
+                    console.log(groups.id);
                 }
             }
         },
@@ -126,7 +146,8 @@ function saveTextareaToVar() {
     console.log("Odesílám: " + postTxt);
 }
 
-/*přiřazuje html elementy k proměnným*/
-checkBoxContainer = document.querySelector("#checkBoxContainer");
-checkBoxForm = document.querySelector("#checkBoxForm");
-mainLoader = document.querySelector("#loader");
+function createGroupChoice(groupName, groupId) {
+    $(modalGroupBody).append($("<div></div>", { class: "row" }), [$('<input />', { type: "checkbox", id: groupId, class: "chckBox" }), $('<label />', { text: groupName, value: groupId })]);
+}
+
+
