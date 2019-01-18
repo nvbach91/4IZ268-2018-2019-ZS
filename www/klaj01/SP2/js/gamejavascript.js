@@ -4,8 +4,9 @@ var el1 = document.querySelector("panel_01");
 function onClickFunction() {
   document.location.reload();
 }
+
 function finalscore() {}
-const winscore = 2;
+const winscore = 5;
 /* vybrání elementu podle id */
 const canvas = document.getElementById("gamefield");
 /* "kreslení" v Canvasu */
@@ -131,7 +132,7 @@ function update() {
     $(".panel_01").remove();
     document.getElementById("gameover").innerHTML = "Konec hry";
     document.getElementById("gameovertext").innerHTML =
-      "Hru můžeš spustit znova, nebo můžeš sdílet svůj výsledek na sociálních sítích";
+      "Hru můžeš spustit znovu, nebo se můžeš vrátit na Game finder";
 
     endBall();
   } else if (com.score >= winscore) {
@@ -141,7 +142,7 @@ function update() {
     $(".panel_01").remove();
     document.getElementById("gameover").innerHTML = "Konec hry";
     document.getElementById("gameovertext").innerHTML =
-      "Hru můžeš spustit znova, nebo můžeš sdílet svůj výsledek na sociálních sítích";
+      "Hru můžeš spustit znovu, nebo se můžeš vrátit na Game finder";
 
     endBall();
   }
@@ -191,27 +192,10 @@ function render() {
   drawArc(ball.x, ball.y, ball.radius, ball.color);
 }
 
-// animation will pause when paused==true
-var paused = false;
-
-// testing, a rotation angle for the animated rect
-var angle = 0;
-
 let framePerSecond = 60;
 
 let loop = setInterval(game, 1200 / framePerSecond);
 
-function fbshareCurrentPage() {
-  window.open(
-    "https://twitter.com/home?status=" +
-      "Hrál jsem Pong v prohlížeči a moje skore je:" +
-      user.score +
-      ":" +
-      com.score,
-    "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600"
-  );
-  return false;
-}
 function game() {
   update();
   render();

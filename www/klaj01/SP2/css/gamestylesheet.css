@@ -40,6 +40,33 @@ console.log {
     width: 400px;
 }
 
+.nav {
+    background-color: rgb(92, 92, 92);
+    color: #feffff;
+    text-align: left;
+    font-size: 25px;
+    margin: 0 auto;
+}
+
+.nav a {
+    display: inline-table;
+    color: #feffff;
+    padding: 25px;
+    text-decoration: unset;
+}
+
+.nav a:hover {
+    background-color: white;
+    color: rgb(92, 92, 92);
+}
+
+.activepage {
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    background-color: grey;
+}
+
 .panel_01 {
     background: #bebebe;
     height: 25%;
