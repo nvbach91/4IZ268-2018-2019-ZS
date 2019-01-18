@@ -38,6 +38,7 @@ var correct = 0;
 var wrongCount = 0;
 var audio = new Audio("winner_music.mp3");
 var selectTip = $("#tip-window");
+var selectBody = $("body")
 
 
 //updates mistakes + tries
@@ -49,6 +50,17 @@ function rewriteCounts() {
 
 //resetovat jen individualni prvky
 function resetElements() {
+    guessedLettersArr = [];
+    tries = 10;
+    correct = 0;
+    wrongCount = 0;
+    rewriteCounts();
+    getRandomWord();
+    plantSpaces();
+    selectTip.prop("disabled", false);
+    audio.pause();
+    selectBody.css("background-image", "url(https://nerdist.com/wp-content/uploads/2017/08/MinimalSWPoster002.jpg)");
+    selectBody.css("background-size", "contain");
 }
 
 //refreshes the page
@@ -151,7 +163,7 @@ function getRandomWord() {
             console.log("Chosen word: " + chosenWord);
             plantSpaces();
 
-            $("#hint").text("(" + chosenWord + ")");
+            //$("#hint").text("(" + chosenWord + ")");
         }
     });
 
@@ -225,7 +237,6 @@ function guessWord(p) {
             selectTip.val("You won!");
             selectTip.prop("disabled", true);
             audio.play();
-            removeDivs();
             $("body").css("background-image", "url(https://thumbs.gfycat.com/DefiniteAridAnkole-small.gif)");
             $("body").css("background-size", "contain");
             setTimeout(winRepeatConfirmation, 10000);
