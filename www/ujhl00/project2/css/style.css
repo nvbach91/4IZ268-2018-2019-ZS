@@ -18,3 +18,7 @@
 #movies .col-md-3 img {
     height: 260px;
 }
+
+#searchForm {
+    border: 1px solid #919aa1;
+}
