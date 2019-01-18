@@ -1,11 +1,17 @@
+//button refresh p
+$("#refresh-button").click(function () {
+    refreshPage();
+}
+);
+
 //pushed entered letters to an array
 function pushDataToArray() {
-    var inputText = $('#tip-window').val();
+    var inputText = selectTip.val();
     if (inputText.length <= 0) return;
     inputText = inputText.toLowerCase();
 
     guessedLettersArr.push(inputText);
-    $('#tip-window').val("");
+    selectTip.val("");
 
     console.log(guessedLettersArr);
 }
@@ -18,25 +24,31 @@ function getHangImage() {
 
 //changes the hang picture based on getHangImage
 function changeHangImage() {
-    $('#images-render').css("background-image", 'url(hang_images/' + getHangImage() + ')');
+    $("#images-render").css("background-image", "url(hang_images/" + getHangImage() + ")");
 }
 
 //basic variables
 var guessedLettersArr = [];
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
-var offlineWords = ['bespin', 'hoth', 'coruscant', 'naboo', 'dagobah'];
+var offlineWords = ["bespin", "hoth", "coruscant", "naboo", "dagobah"];
 var unknown = [];
 var chosenWord = getRandomWord();
 var tries = 10;
 var correct = 0;
 var wrongCount = 0;
-var audio = new Audio('winner_music.mp3');
+var audio = new Audio("winner_music.mp3");
+var selectTip = $("#tip-window");
 
 
 //updates mistakes + tries
 function rewriteCounts() {
     $("#mistakes").text("Mistakes: " + wrongCount);
     $("#remaining").text("Remaining: " + (tries - wrongCount));
+}
+
+
+//resetovat jen individualni prvky
+function resetElements() {
 }
 
 //refreshes the page
@@ -50,7 +62,7 @@ function deletePage() {
 }
 
 function removeDivs() {
-    $("#tip-window").remove();
+    selectTip.remove();
     $("#mistakes").remove();
     $("#remaining").remove();
     $("#secret").remove();
@@ -65,7 +77,7 @@ function removeDivs() {
 function winRepeatConfirmation() {
     var txt;
     if (confirm("YOU WON! :)" + "\n" + "Do you want to play again?")) {
-        refreshPage()
+        resetElements();
     }
     else {
         deletePage();
@@ -77,7 +89,7 @@ function winRepeatConfirmation() {
 function looseRepeatConfirmation() {
     var txt;
     if (confirm("YOU LOOSE! :( " + "\n" + "Do you want to repeat?")) {
-        refreshPage();
+        resetElements();
     }
     else {
         deletePage();
@@ -87,8 +99,8 @@ function looseRepeatConfirmation() {
 //clicking into guessing fild "tip"
 $(document).ready(
     function () {
-        $('#tip-window').focus();
-        $('#tip-window').change(function () {
+        selectTip.focus();
+        selectTip.change(function () {
             guessWord($(this).val());
         });
         rewriteCounts();
@@ -96,7 +108,21 @@ $(document).ready(
 
 //chooses a random path for JSON to get planet name
 function getRandomPlanet() {
-    var planet1 = "https://swapi.co/api/planets/1/?format=json";
+    var planetUrlBase = "https://swapi.co/api/planets/";
+    var planetUrlEnding = "/?format=json";
+    var planetNumbersArr = [];
+
+    for (var i = 1; i <= 61; i++) {
+        planetNumbersArr.push(i);
+    }
+
+    var randomPlanetNumber = planetNumbersArr[Math.floor(Math.random() * planetNumbersArr.length)];
+
+    return planetUrlBase + randomPlanetNumber + planetUrlEnding;
+
+
+
+    /*var planet1 = "https://swapi.co/api/planets/1/?format=json";
     var planet2 = "https://swapi.co/api/planets/2/?format=json";
     var planet3 = "https://swapi.co/api/planets/13/?format=json";
     var planet4 = "https://swapi.co/api/planets/19/?format=json";
@@ -105,7 +131,7 @@ function getRandomPlanet() {
     var planets = [planet1, planet2, planet3, planet4, planet5];
 
     var APIChosenPlanet = planets[Math.floor(Math.random() * planets.length)];
-    return APIChosenPlanet;
+    return APIChosenPlanet;*/
 }
 
 //chooses planet name through JSON and puts it as chosenWord
@@ -125,7 +151,7 @@ function getRandomWord() {
             console.log("Chosen word: " + chosenWord);
             plantSpaces();
 
-            $('#hint').text("Dev// Word is: " + chosenWord + "");
+            $("#hint").text("(" + chosenWord + ")");
         }
     });
 
@@ -141,7 +167,7 @@ function preparePlantingSpaces() {
 
     /*var result = unknown.join("");*/
 
-    $('#secret').text(result);
+    $("#secret").text(result);
 }
 
 //creates _ _ _ field according to the number of characters in chosenWord
@@ -154,11 +180,11 @@ function plantSpaces() {
 }
 
 //looks for reseblence of characters in entered character and chosenWord
-function findAllOccurrencesOfIn(letter, str) {
+function findIndexesOfOccurrencesOfLetterInWord(letter, str) {
     var occurrences = [];
 
     for (var i = 0; i < str.length; i++) {
-        if (letter == str[i]) {
+        if (letter === str[i]) {
             occurrences.push(i);
         }
     }
@@ -170,15 +196,15 @@ function findAllOccurrencesOfIn(letter, str) {
 //trying new guess words !MAIN FUNCTION!
 function guessWord(p) {
     p = p.toLowerCase();
-    var indexes = findAllOccurrencesOfIn(p, chosenWord);
+    var indexes = findIndexesOfOccurrencesOfLetterInWord(p, chosenWord);
 
-    if (guessedLettersArr.includes(p) === true) {
-        $('#discovered').text("Try different letter");
+    if (guessedLettersArr.includes(p)) {
+        $("#discovered").text("Try different letter");
         return;
     }
     else {
-        if (indexes.length > 0) {
-            $('#discovered').text("");
+        if (indexes.length) {
+            $("#discovered").text("");
 
             for (var i = 0; i < indexes.length; i++) {
                 unknown[indexes[i]] = p;
@@ -189,23 +215,23 @@ function guessWord(p) {
         } else {
             wrongCount += 1;
             rewriteCounts();
-            $('#discovered').text("Wrong");
+            $("#discovered").text("Wrong");
         }
 
 
 
         //determination of game ending
         if (chosenWord.length == correct) {
-            $('#tip-window').val("You won!");
-            $("#tip-window").prop('disabled', true);
+            selectTip.val("You won!");
+            selectTip.prop("disabled", true);
             audio.play();
             removeDivs();
             $("body").css("background-image", "url(https://thumbs.gfycat.com/DefiniteAridAnkole-small.gif)");
             $("body").css("background-size", "contain");
             setTimeout(winRepeatConfirmation, 10000);
         } else if ((tries - wrongCount) <= 0) {
-            $('#tip-window').val("You lose!");
-            $("#tip-window").prop('disabled', true);
+            selectTip.val("You lose!");
+            selectTip.prop("disabled", true);
             setTimeout(looseRepeatConfirmation, 1000);
         }
     }
