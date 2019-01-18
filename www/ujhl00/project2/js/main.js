@@ -49,6 +49,13 @@ function getMovies(searchText) {
         });
 }
 
+//Predanie dát z jednej stránky na druhú prostredníctvom sessionStorage
 function movieSelected(id) {
+    sessionStorage.setItem('movieId', id);
+    window.location = 'movie.html';
+    return false;
+}
+
+function getMovie() {
 
 }
