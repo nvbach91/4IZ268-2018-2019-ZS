@@ -314,13 +314,12 @@ function answer(question, difficulty) {
 
 
 function vocabularyDashboard() {
-    let map = $("#map")[0]
-
-    while (map.firstChild) {
-        map.removeChild(map.firstChild);
-    }
-
+    $("#map").remove()
     let v = vocab();
+
+    let virtualMap = $('<ul></ul>')
+        .attr("id", "map")
+
     v.forEach(wordObject => {
         let practiceLevel = wordObject.difficultyCardStackNumber;
         let item = document.createElement("li");
@@ -328,13 +327,10 @@ function vocabularyDashboard() {
         item.setAttribute("data-practiceLevel", practiceLevel)
         item.innerText = key(wordObject);
         item.style.order = practiceLevel + 1;
-        map.appendChild(item);
+        virtualMap.append(item); //tohle se prekresluje tolikrat, kolikrat se appenduje
     });
-
-    /*let mapItemArray = $(".mapItem");
-    $.each(mapItemArray, function (index, value) {
-        console.log(value.getAttribute("data-practiceLevel"));
-    })*/
+    console.log(virtualMap[0])
+    $("#appContainerOne").append(virtualMap);
 
 }
 
