@@ -18,10 +18,12 @@ var modalGroupBody = document.querySelector("#modalGroupBody")
 var sendBtn = document.querySelector("#sendBtn");
 
 
+
 /*přiřazuje html elementy k proměnným*/
 loginBtn.addEventListener("click", loginFb);
 shareBtn.addEventListener("click", sharePost);
-sendBtn.addEventListener("click", TEST);
+
+sendBtn.addEventListener("click", postToGroups);
 
 window.fbAsyncInit = function () {
     FB.init({
@@ -84,17 +86,16 @@ function checkIfEmpty() {
 }
 
 /*zjistí jaké fb skupiny (checkboxy) uživatel zaškrtl a u nich spustí proces odesílání příspěvku*/
-function postFb() {
+function postToGroups() {
+    var checkedGroups = $("#modalGroupBody input:checked");
     saveTextareaToVar();
     if (checkIfEmpty()) { return };
     console.log("1");
-    console.log(groups);
-    console.log(groups.id);
-    sendToGroup(groups.id);
-    for (var i = 0, len = groups.length; i < len; i++) {
-        console.log("posted to group" + groups[i].id);
-        sendToGroup(groups[i].id);
-    }
+    checkedGroups.each(function(){
+        var $this = $(this);
+        sendToGroup($this.attr("id"));
+        console.log("sent"+$this.attr("id"));
+    });
 
 }
 
@@ -119,7 +120,25 @@ function sendToGroup(groupId) {
 }
 
 function TEST() {
-    console.log($("#modalGroupBody input:checked"));
+    var IDs = [];
+    var x = $("#modalGroupBody input:checked")
+    console.log("start");
+    x.each(function(){
+        var $this = $(this);
+        IDs.push($this.attr("id"));
+    });
+    $(sendBtn).text("odeslano");
+    console.log(IDs);
+}
+
+function checkChecked() {
+    console.log("click");
+    var n = $("#modalGroupBody input:checked").length;
+    if (n > 0) {
+        sendBtn.disabled = false;
+    } else if (n === 0) {
+        sendBtn.disabled = true;
+    }
 }
 
 /*pomocí fb api zjišťuje u jakých skupin je uživatel adminem a podle toho pak vytváří checkboxy*/
@@ -147,7 +166,7 @@ function saveTextareaToVar() {
 }
 
 function createGroupChoice(groupName, groupId) {
-    $(modalGroupBody).append($("<div></div>", { class: "row" }), [$('<input />', { type: "checkbox", id: groupId, class: "chckBox" }), $('<label />', { text: groupName, value: groupId })]);
+    $(modalGroupBody).append($("<div></div>", { class: "row" }), [$('<input />', { type: "checkbox", id: groupId, class: "chckBox" }).on("click", checkChecked), $('<label />', { text: groupName, value: groupId })]);
 }
 
 
