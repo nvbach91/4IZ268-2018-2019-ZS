@@ -50,7 +50,7 @@ function vocab(newData) {
     if (newData == undefined) {
 
         let applicationData = ls.getItem("dix-application-data");
-        if (applicationData != null) {
+        if (applicationData) {
             return JSON.parse(applicationData);
         } else {
             alert("No 'dix-application-data' item in local storage");
@@ -126,7 +126,7 @@ function removeDuplicates(arrayOfObjects) {
         } else {
             for (var j = 0; j < arrayOfObjects.length; j++) {
 
-                arrayOfObjects.splice(i, 1)
+                arrayOfObjects.splice(i, 1);
 
             }
         }
