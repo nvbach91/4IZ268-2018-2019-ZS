@@ -132,8 +132,8 @@ function isUserAccountTypePro(userAccountType){
  * Shows jQuery object DOM element in UI.
  * @param  {...Object} elements Elements to show.
  */
-function showElements(...elements){
-    $.each(elements, function(index, element){
+function showElements(){
+    $.each(arguments, function(index, element){
         element.show();
     });
 }
@@ -142,8 +142,8 @@ function showElements(...elements){
  * Hides jQuery object DOM element in UI.
  * @param  {...Object} elements Elements to hide.
  */
-function hideElements(...elements){
-    $.each(elements, function(index, element){
+function hideElements(){
+    $.each(arguments, function(index, element){
         element.hide();
     });
 }
@@ -152,8 +152,8 @@ function hideElements(...elements){
  * Collapses specified jQuery object DOM elements using bootstrap collapse animation.
  * @param  {...Object} elements Elements to collapse with animation.
  */
-function collapseElementsAnimated(...elements){
-    $.each(elements, function(index, element){
+function collapseElementsAnimated(){
+    $.each(arguments, function(index, element){
         element.collapse('hide');
     });
 }
@@ -220,7 +220,7 @@ function showAlertApplicationNotification(color, messageText){
     });
     let closeAlertButtonElem = $('<button>', {
         class: 'close',
-        ["data-dismiss"]: 'alert',
+        "data-dismiss": 'alert',
         type: 'button'
     });
     closeAlertButtonElem.append($('<span>').html('&times;'))
@@ -251,7 +251,7 @@ function showLinkAlertApplicationNotification(link){
     });
     let closeAlertButtonElem = $('<button>', {
         class: 'close',
-        ["data-dismiss"]: 'alert',
+        "data-dismiss": 'alert',
         type: 'button'
     });
     closeAlertButtonElem.append($('<span>').html('&times;'))
@@ -381,18 +381,17 @@ function parseUserInfo(data){
 }
 
 function parseLastPaste(data){
-    let oParser = new DOMParser();
-    let oDOM = oParser.parseFromString("<pastes>".concat(data,"</pastes>"), globals.api_data_mime);
-    let pastes = oDOM.childNodes[0].childNodes;
-    const paste = pastes[0];
+    let parseNew = "<pastes>"+data+"</pastes>";
+    let parseChildren = $(parseNew).children().first();
+
     return {
-        paste_key: paste.getElementsByTagName("paste_key")[0].innerHTML,
-        paste_date: paste.getElementsByTagName("paste_date")[0].innerHTML,
-        paste_title: paste.getElementsByTagName("paste_title")[0].innerHTML,
-        paste_expire_date: paste.getElementsByTagName("paste_expire_date")[0].innerHTML,
-        paste_private: paste.getElementsByTagName("paste_private")[0].innerHTML,
-        paste_format_long: paste.getElementsByTagName("paste_format_long")[0].innerHTML,
-        paste_url: paste.getElementsByTagName("paste_url")[0].innerHTML
+        paste_key: $(parseChildren).find('paste_key').text(),
+        paste_date: $(parseChildren).find('paste_date').text(),
+        paste_title: $(parseChildren).find('paste_title').text(),
+        paste_expire_date: $(parseChildren).find('paste_expire_date').text(),
+        paste_private: $(parseChildren).find('paste_private').text(),
+        paste_format_long: $(parseChildren).find('paste_format_long').text(),
+        paste_url: $(parseChildren).find('paste_url').text()
     };
 }
 
@@ -440,10 +439,6 @@ function createPasteElement(paste_key, paste_date, paste_title, paste_expire_dat
     }
 
     function createPasteElementDates(paste_date, paste_expire_date){
-        if(moment.unix(paste_date)){
-
-        }
-
         let small = $('<small>',{
             class: 'mr-4'
         })
@@ -534,23 +529,23 @@ function listUserPastes() {
             return;
         }
 
-        let oParser = new DOMParser();
-        let oDOM = oParser.parseFromString("<pastes>"+responseText+"</pastes>", globals.api_data_mime);
-        let pastes = oDOM.childNodes[0].childNodes;
-
-        for (let i = 0; i < pastes.length && i < 50; i += 2){
-            const paste = pastes[i];
-            const paste_key = paste.getElementsByTagName("paste_key")[0].innerHTML;
-            const paste_date = paste.getElementsByTagName("paste_date")[0].innerHTML;
-            const paste_title = paste.getElementsByTagName("paste_title")[0].innerHTML;
-            const paste_expire_date = paste.getElementsByTagName("paste_expire_date")[0].innerHTML;
-            const paste_private = paste.getElementsByTagName("paste_private")[0].innerHTML;
-            const paste_format_long = paste.getElementsByTagName("paste_format_long")[0].innerHTML;
-            const paste_url = paste.getElementsByTagName("paste_url")[0].innerHTML;
+        var pasteElementList = [];
+        let parseNew = "<pastes>"+responseText+"</pastes>";
+        let parseChildren = $(parseNew).children();
+        $.each(parseChildren, function(index, element){
+            const paste_key = $(element).find('paste_key').text();
+            const paste_date = $(element).find('paste_date').text();
+            const paste_title = $(element).find('paste_title').text();
+            const paste_expire_date = $(element).find('paste_expire_date').text();
+            const paste_private = $(element).find('paste_private').text();
+            const paste_format_long = $(element).find('paste_format_long').text();
+            const paste_url = $(element).find('paste_url').text();
             const pasteElement = createPasteElement(paste_key, paste_date, paste_title, paste_expire_date, paste_private, paste_format_long, paste_url);
+        
+            pasteElementList.push(pasteElement);
+        });
 
-            userPastesElement.append(pasteElement);
-        }
+        userPastesElement.append(pasteElementList);
     });
 }
 function deletePaste(paste_key) {
@@ -719,22 +714,25 @@ function createApiUserKey(userName, password) {
 }
 
 //API Fetch
-async function postData(url, data, resolutionCallback, rejectionCallback) {
-    let res = await fetch(url, {
+function postData(url, data, resolutionCallback, rejectionCallback) {
+
+    fetch(url, {
         method: "POST",
         mode: "cors",
         headers: {
              "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
         },
         body: data
-    });
-
-    if(res.ok){
-        let result = await res.text();
-        resolutionCallback(result);
-    } else {
-        rejectionCallback(res.statusText);
-    }
+    }).then(res => {
+        if(res.ok){
+            res.text().then(result => {
+                resolutionCallback(result);
+            });
+            
+        } else {
+            rejectionCallback(res.statusText);
+        }
+    });  
 }
 
 $(document).ready(function() {
