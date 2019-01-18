@@ -1,12 +1,7 @@
-var j = 'jjj'; //global
-let k = 'k'; //local
-const pi = 3.14; //neda se zmenit
-
 function toggleNav() {
    var burger = document.getElementById("toggleHamburger");
-   var sidebar = document.getElementById("mySidenav");
-   const element = document.querySelector('.sidenav');
-   const style = getComputedStyle(element);
+   var sidebar = document.getElementById("benefitsMenu");
+   const style = getComputedStyle(sidebar);
    if (sidebar.style.height == "0px" || style.height == "0px") {
       document.getElementsByTagName("body").item(0).style.overflow = "none";
       sidebar.style.height = "300px";
@@ -21,5 +16,3 @@ function toggleNav() {
       document.getElementsByTagName("body").item(0).style.overflow = "auto";
    }
 }
-
-
