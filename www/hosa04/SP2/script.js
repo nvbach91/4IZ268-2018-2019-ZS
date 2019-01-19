@@ -1,6 +1,6 @@
 //button refresh p
 $("#refresh-button").click(function () {
-    refreshPage();
+    resetElements();
 }
 );
 
@@ -60,7 +60,7 @@ function resetElements() {
     selectTip.prop("disabled", false);
     audio.pause();
     selectBody.css("background-image", "url(https://nerdist.com/wp-content/uploads/2017/08/MinimalSWPoster002.jpg)");
-    selectBody.css("background-size", "contain");
+    selectBody.css("background-size", "100%");
 }
 
 //refreshes the page
@@ -73,6 +73,7 @@ function deletePage() {
     $("body").remove();
 }
 
+/*
 function removeDivs() {
     selectTip.remove();
     $("#mistakes").remove();
@@ -83,7 +84,7 @@ function removeDivs() {
     $("#refresh-button").remove();
     $("#hint").remove();
     $("a").remove();
-}
+}*/
 
 //alert when you win + repeat?
 function winRepeatConfirmation() {
