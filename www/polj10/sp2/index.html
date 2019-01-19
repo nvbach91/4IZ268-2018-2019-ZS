@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pastebin klient</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Webový klient pro Pastebin API">
+    <meta name="keywords" content="pastebin, js, api, klient">
+    <meta name="title" content="Pastebin klient">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="img/jp.svg" width="30" height="30" class="d-inline-block align-top" alt="jp-logo">
+                <span class="navbar-text">
+                    Pastebin<span class="superscript">AlterEGO</span>
+                </span>
+            </a>
+            <span>
+                <span class="navbar-text mr-2">
+                    <img id="userAvatar" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="avatar"
+                        class="collapse mr-2">
+                    <span id="userName" class="collapse"></span>
+                    <span id="proBadge" class="badge badge-secondary collapse">PRO</span>
+                </span>
+    
+                <span data-toggle="tooltip" data-placement="bottom" title="Stisknutím tlačítka se objeví přihlašovací formulář">
+                    <button id="loginFormToggle" class="btn btn-primary collapse" type="button" data-toggle="collapse"
+                        data-target="#navbarToggleExternalContent">
+                        Přihlášení
+                    </button>
+                </span>
+    
+                <button id="logoutButton" class="btn btn-outline-danger collapse" type="button" data-toggle="tooltip"
+                    data-placement="bottom" title="Stiskněte pro odhlášení">
+                    Odhlásit se
+                </button>
+            </span>
+        </nav>
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <h5 class="text-white h4">Přihlašte se pomocí Pastebin.com účtu</h5>
+                <div class="text-muted mb-4">
+                    Pokud nemáte účet, můžete si ho vytvořit na adrese <a href="https://pastebin.com/signup" target="_blank">https://pastebin.com/signup</a>
+                </div>
+                <form id="loginForm">
+                    <div class="form-group row">
+                        <label for="loginName" class="col-sm-2 col-form-label text-light">Uživatelské&nbsp;jméno</label>
+                        <div class="col-sm-2">
+                            <input id="loginName" class="form-control mr-sm-2" title="Login" name="login" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="loginPassword" class="col-sm-2 col-form-label text-light">Heslo</label>
+                        <div class="col-sm-2">
+                            <input id="loginPassword" class="form-control mr-sm-2" type="password">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <input id="loginButton" class="btn btn-outline-success my-2 my-sm-2" type="button" title="Přihlásit se"
+                                value="Přihlásit se">
+                            <span class="col-sm-2">
+                                <span id="loginStatus" class="text-danger"></span>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main id="main">
+            <form class="form settingsForm">
+                <div class="form-group">
+                    <label class="col-form-label font-weight-bold" for="pasteTextArea">Nový text</label>
+                    <textarea id="pasteTextArea" class="form-control"></textarea>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        <label class="col-form-label font-weight-bold" for="syntaxSelect">Syntaxe <span class="text-muted">(volitelné)</span></label>
+                        <select id="syntaxSelect" class="form-control"></select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label class="col-form-label font-weight-bold" for="expirationSelect">Expirace <span class="text-muted">(volitelné)</span></label>
+                        <select id="expirationSelect" class="form-control"></select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label class="col-form-label font-weight-bold" for="visibilitySelect">Viditelnost <span class="text-muted">(volitelné)</span></label>
+                        <select id="visibilitySelect" class="form-control"></select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label class="col-form-label font-weight-bold" for="pasteName">Název <span class="text-muted">(volitelné)</span></label>
+                        <input placeholder="Zadejte název (volitelné)" id="pasteName" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <button id="createNewPasteButton" class="btn btn-primary" type="button" data-toggle="tooltip"
+                        data-placement="bottom" title="Stisknutím tlačítka se vloží text na server Pastebin.com">Vložit na Pastebin</button>
+                </div>
+            </form>
+            <div id="userPastes" class="list-group">
+            </div>
+        </main>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/locale/cs.js"></script>
+    <script src="js/pastebin-rest.js"></script>
+</body>
+
+</html>
