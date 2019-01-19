@@ -1,13 +1,13 @@
 * {
     box-sizing: border-box;
     background-repeat: no-repeat;
-    font-family: 'Palanquin', sans-serif;
-    font-weight: 300;
     position: relative;
 }
 
 body {
     margin-top: 10vh;
+    font-family: 'Palanquin', sans-serif;
+    font-weight: 300;
 }
 
 a:link,
@@ -28,12 +28,13 @@ p {
 #section-4 h1 {
     color: #fff;
 }
-
+#section-3 h1, #section-4 h1 {
+    padding-bottom: 25px;
+}
 .content h1 {
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: 800;
-    padding: 0;
-    margin-bottom: 25px;
+    padding-bottom: 25px;
 }
 
 footer {
@@ -92,6 +93,7 @@ nav img {
 .navbar .navbar-toggler {
     outline: none;
 }
+
 .nav-item {
     padding-left: 10px;
 }
@@ -109,4 +111,42 @@ nav img {
     background-size: cover;
     background-position: center;
     padding-top: 20vh;
+}
+
+#section-2 .btn {
+    background-color: #C1403D;
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+}
+
+#section-2 .btn:hover {
+    opacity: .9;
+}
+
+.btn:focus,
+.btn:active,
+#foodChoice,
+#searchInput {
+    outline: none !important;
+    box-shadow: none;
+}
+
+.btn a {
+    color: #fff;
+}
+
+/* #section-2 {
+    background: 
+    /* Photo by Devin Avery on Unsplash *
+    url(../img/background-3.jpg), 
+    /* Photo by Tyler Nix on Unsplash *
+    url(../img/background-4.jpg);
+    background-size: 250px, 500px;
+    background-repeat: no-repeat;
+    background-position: 200px 180px, 800px 20px; 
+} */
+
+#section-2 p, form, .input-group {
+   margin: 15px;
 }
