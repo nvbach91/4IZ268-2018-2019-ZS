@@ -1,114 +1,118 @@
 <!DOCTYPE html>
 <html lang="cs">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="Webove stranky pro softballovy klub Tempo Praha" />
-    <meta name="author" content="Tereza Duskova" />
+    <meta charset="utf-8"/>
+    <meta name="description" content="Webove stranky pro softballovy klub Tempo Praha"/>
+    <meta name="author" content="Tereza Duskova"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="sport, softball, teams, Czech softball" />
+    <meta name="keywords" content="sport, softball, teams, Czech softball"/>
     <title>Tempo Foxies</title>
     <link rel="stylesheet" href="main.css">
     <link rel="icon" href="img/tempotrans.png">
-
-
 </head>
-
 <body>
-    <nav>
-        <ul>
-            <li><a class="active" href="index.html">Úvod</a></li>
-            <li><a href="teams.html">Týmy</a></li>
-            <li><a href="historie.html">Historie</a></li>
-            <li><a href="soutez.html">Soutěže</a></li>
-            <li><a id="li-end" href="kontakty.html">Kontakty</a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <div class="intro-img">
-            <div class="intro-text">
-                <h1 id="title-img">Tempo Foxies Praha</h1>
+<nav>
+    <ul>
+        <li><a class="active" href="index.html">Úvod</a></li>
+        <li><a href="teams.html">Týmy</a></li>
+        <li><a href="historie.html">Historie</a></li>
+        <li><a href="soutez.html">Soutěže</a></li>
+        <li><a id="li-end" href="kontakty.html">Kontakty</a></li>
+        <li><a href="registrace.html">Registrace</a></li>
+        <li><a href="login.html">Pro hráče</a></li>
+        <li>
+            <button id="signout-btn-nav" onclick="signOut()">Odhlásit</button>
+        </li>
+        <li id="logged-user"></li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="intro-img">
+        <div class="intro-text">
+            <h1 id="title-img">Tempo Foxies Praha</h1>
+        </div>
+    </div>
+    <!--<div id="uvod-obrazek">-->
+    <!--&lt;!&ndash;<img src="img/1.jpg">&ndash;&gt;-->
+    <!--</div>-->
+    <header>
+        <p>Novinky</p>
+        <hr/>
+        <div id="news">
+            <div class="news-content">
+                <h3>Mistři 2018</h3>
+                <div class="news-img-div">
+                    <img src="img/novinky1.jpg" alt="fotka-Mistri2018">
+                </div>
+                <div>
+                    <p class="intro-paragraph">Stáváme se Mistry republiky pro rok 2018! Po neuvěřitelných 27
+                        letech.
+                        Napínavé finále se odehrálo 25.10 na domácím hřišti. Do páté směny vedli soupeři a pro
+                        Tempo to nevypadalo
+                        dobře. Ale finální homerun Jana Nováka nám splnil sen.!
+                    </p>
+                </div>
+            </div>
+            <div class="news-content">
+                <h3>Postup do 2.ligy </h3>
+                <div class="news-img-div">
+                    <img src="img/novinky4.jpg" alt="fotka-Postup-Zeny">
+                </div>
+                <div>
+
+                    <p class="intro-paragraph">Ženy se utkaly ve finále 3.ČSL Žen s Hlubokou nad Vltavou. A i přes
+                        nepříznivé počasí a
+                        velice silné protihráčky,
+                        dokázaly vyhrát 12:10. Probojovaly se tedy do 2.ČSL Žen a my budeme doufat, že je přístí
+                        rok uvidíme ve finále druhé ligy.</p>
+                </div>
+            </div>
+            <div class="news-content">
+                <h3>4TH Place EuropeanCup</h3>
+                <div class="news-img-div">
+                    <img src="img/Uvod.jpg" alt="fotka-MuziSuperCup">
+                </div>
+                <div>
+
+                    <p class="intro-paragraph">Pohádkový turnaj pořádaný Eagles Praha skončil a my jsme si odvezli
+                        krásné 4. místo. Je to
+                        obrovský úspěch se v mezinárodním turnaji takhle dobře umístit.
+                        Při troše štěstí jsme mohli zažít obrovské překvapení. Našemu družstvu, bez posil, mezi
+                        nabitými soupeři, chyběl jediný aut, jediný hit navíc, o chybičku
+                        méně a postarali jsme se o obrovské překvapení turnaje.</p>
+                </div>
             </div>
         </div>
-        <!--<div id="uvod-obrazek">-->
-        <!--&lt;!&ndash;<img src="img/1.jpg">&ndash;&gt;-->
-        <!--</div>-->
-        <header>
-            <p>Novinky</p>
-            <hr />
-            <div id="news">
-                <div class="news-content">
-                    <h3>Mistři 2018</h3>
-                    <div class="news-img-div">
-                        <img src="img/novinky1.jpg" alt="fotka-Mistri2018">
-                    </div>
-                    <div>
-                        <p class="intro-paragraph">Stáváme se Mistry republiky pro rok 2018! Po neuvěřitelných 27
-                            letech.
-                            Napínavé finále se odehrálo 25.10 na domácím hřišti. Do páté směny vedli soupeři a pro
-                            Tempo to nevypadalo
-                            dobře. Ale finální homerun Jana Nováka nám splnil sen.!
-                        </p>
-                    </div>
-                </div>
-                <div class="news-content">
-                    <h3>Postup do 2.ligy </h3>
-                    <div class="news-img-div">
-                        <img src="img/novinky4.jpg" alt="fotka-Postup-Zeny">
-                    </div>
-                    <div>
+    </header>
+    <hr>
+    <section id="intro-section">
 
-                        <p class="intro-paragraph">Ženy se utkaly ve finále 3.ČSL Žen s Hlubokou nad Vltavou. A i přes
-                            nepříznivé počasí a
-                            velice silné protihráčky,
-                            dokázaly vyhrát 12:10. Probojovaly se tedy do 2.ČSL Žen a my budeme doufat, že je přístí
-                            rok uvidíme ve finále druhé ligy.</p>
-                    </div>
-                </div>
-                <div class="news-content">
-                    <h3>4TH Place EuropeanCup</h3>
-                    <div class="news-img-div">
-                        <img src="img/Uvod.jpg" alt="fotka-MuziSuperCup">
-                    </div>
-                    <div>
-
-                        <p class="intro-paragraph">Pohádkový turnaj pořádaný Eagles Praha skončil a my jsme si odvezli
-                            krásné 4. místo. Je to
-                            obrovský úspěch se v mezinárodním turnaji takhle dobře umístit.
-                            Při troše štěstí jsme mohli zažít obrovské překvapení. Našemu družstvu, bez posil, mezi
-                            nabitými soupeři, chyběl jediný aut, jediný hit navíc, o chybičku
-                            méně a postarali jsme se o obrovské překvapení turnaje.</p>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <hr>
-        <section id="intro-section">
-
-            <div>
-                <h2>O nás</h2>
-                <p>Tj Tempo je tu zhruba od roku 1963. Jako jeden z nejstarších týmu stál oddíl Tempo Praha u zrodu a u
-                    zákládů všech novodobých soutěží a turnajů.
-                    Byli jsme také průkopníky v navazování mezinárodních softballových styků (např. i s tehdejší
-                    softballovou velmocí z ostrova Guernsey v 70. letech)
-                    a naši hráči i hráčky se pravidelně dostávají do juniorských i seniorských reprezentačních výběrů.</p>
-                <p>Zatím nejúspěšnější období oddílu v historii moderních soutěží bylo označováno jako „doba bronzová“.
-                    Je ohraničeno roky 2006 a 2008, v nichž muži dosáhli
-                    na bronzové medaile (v roce 2008 byly jen krůček od bronzu dokonce i ženy), a je spojeno i s
-                    dobudováním našeho sportovního areálu do současné podoby.
-                    V současné době je to ale rok 2018 kdy se muži stali mistry České Republiky po vyrovnaném zápase s
-                    Havlíčkovým Brodem</p>
-            </div>
-            <div>
-                <img src="img/tempofield.jpg" alt="obrazek-hriste">
-            </div>
-        </section>
-    </div>
-    <footer>
-        <p>
-            © 2018 Tereza Dušková
-        </p>
-    </footer>
+        <div>
+            <h2>O nás</h2>
+            <p>Tj Tempo je tu zhruba od roku 1963. Jako jeden z nejstarších týmu stál oddíl Tempo Praha u zrodu a u
+                zákládů všech novodobých soutěží a turnajů.
+                Byli jsme také průkopníky v navazování mezinárodních softballových styků (např. i s tehdejší
+                softballovou velmocí z ostrova Guernsey v 70. letech)
+                a naši hráči i hráčky se pravidelně dostávají do juniorských i seniorských reprezentačních výběrů.</p>
+            <p>Zatím nejúspěšnější období oddílu v historii moderních soutěží bylo označováno jako „doba bronzová“.
+                Je ohraničeno roky 2006 a 2008, v nichž muži dosáhli
+                na bronzové medaile (v roce 2008 byly jen krůček od bronzu dokonce i ženy), a je spojeno i s
+                dobudováním našeho sportovního areálu do současné podoby.
+                V současné době je to ale rok 2018 kdy se muži stali mistry České Republiky po vyrovnaném zápase s
+                Havlíčkovým Brodem</p>
+        </div>
+        <div>
+            <img src="img/tempofield.jpg" alt="obrazek-hriste">
+        </div>
+    </section>
+</div>
+<footer>
+    <p>
+        © 2018 Tereza Dušková
+    </p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+<script src="main.js"></script>
 </body>
-
 </html>

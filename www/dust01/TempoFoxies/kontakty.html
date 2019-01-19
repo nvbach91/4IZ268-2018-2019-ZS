@@ -1,104 +1,108 @@
 <!DOCTYPE html>
 <html lang="cs">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="Webove stranky pro softballovy klub Tempo Praha" />
-    <meta name="author" content="Tereza Duskova" />
+    <meta charset="utf-8"/>
+    <meta name="description" content="Webove stranky pro softballovy klub Tempo Praha"/>
+    <meta name="author" content="Tereza Duskova"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="sport, softball, teams, Czech softball" />
+    <meta name="keywords" content="sport, softball, teams, Czech softball"/>
     <title>Tempo Foxies-Kontakty</title>
     <link rel="stylesheet" href="main.css">
     <link rel="icon" href="img/tempotrans.png">
 </head>
-
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Úvod</a></li>
-            <li><a href="teams.html">Týmy</a></li>
-            <li><a href="historie.html">Historie</a></li>
-            <li><a href="soutez.html">Soutěže</a></li>
-            <li><a class="active" href="kontakty.html">Kontakty</a></li>
-        </ul>
-    </nav>
-    <section id="contact-section">
-        <div>
-            <h1>Kontakty</h1>
-            <hr>
-            <ul id="ulcontacts">
-                <li class="licontacts">Adresa: Zelenkova 3, 140 00 Praha 2</li>
-                <li class="licontacts">Telefon: 678 901 234</li>
-                <li class="licontacts">IČO: 00550311</li>
-            </ul>
-        </div>
-        <div>
-            <div id="contact-table-div">
-                <table id="contact-table">
-                    <thead>
-                        <tr>
-                            <th>Jméno</th>
-                            <th>Tým</th>
-                            <th>Kontakt</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Pavel Bedna</td>
-                            <td>Muži A, Ženy</td>
-                            <td>+420 123 456 789<br><a href="mailto:tempopraha@tempo.cz">tempopraha@tempo.cz</a></td>
-                        </tr>
-                        <tr>
-                            <td>Jan Malý</td>
-                            <td>Žáci,Žákyně</td>
-                            <td>+420 234 567 890<br><a href="mailto:jmaly@tempo.cz">jmaly@tempo.cz</a></td>
-                        </tr>
-                        <tr>
-                            <td>Jiří Novák</td>
-                            <td>Kadeti, kadetky</td>
-                            <td>+420 345 678 901<br><a href="mailto:novakj@tempo.cz">novakj@tempo.cz</a></td>
-
-                        </tr>
-                        <tr>
-                            <td>Michal Dvořák</td>
-                            <td>Juniori,Juniorky</td>
-                            <td>+420 456 789 012<br><a href="mailto:dvorakmichal@tempo.cz">dvorakmichal@tempo.cz</a></td>
-
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+<nav>
+    <ul>
+        <li><a href="index.html">Úvod</a></li>
+        <li><a href="teams.html">Týmy</a></li>
+        <li><a href="historie.html">Historie</a></li>
+        <li><a href="soutez.html">Soutěže</a></li>
+        <li><a class="active" href="kontakty.html">Kontakty</a></li>
+        <li><a href="registrace.html">Registrace</a></li>
+        <li><a href="login.html">Pro hráče</a></li>
+        <li>
+            <button id="signout-btn-nav" onclick="signOut()">Odhlásit</button>
+        </li>
+        <li id="logged-user"></li>
+    </ul>
+</nav>
+<section id="contact-section">
+    <div>
+        <h1>Kontakty</h1>
         <hr>
-        <h2>Jak se k nám dostat?</h2>
-        <div id="contacts">
-            <div>
-                <h3>Autem</h3>
-                <p>Od Jižní spojky na krčskou nemocnici (Thomayerova), zde na světlech doprava do kopce. Na dalších
-                    světlech doleva do kopce (ulice Štúrova),
-                    stále do kopce (po levé straně sídliště) a na konci sídliště odbočit doprava. Na následujícím
-                    kruhovém objezdu doleva (do ulice Novodvorská),
-                    tou rovně až na konec (po cca 1,5 km). Zde na kruhovém objezdu doprava a pak dál rovně až k
-                    meteorologické věži. Před ní (u cedule TJ Tempo)
-                    doprava a sjet dolů ke hřišti.</p>
-            </div>
-            <div>
-                <h3>Autobusem</h3>
-                <p>Z metra „Kačerov“ autobusem č. 215 nebo č. 117 a z metra „Smíchovské nádraží“ autobusem č. 198
-                    vždy
-                    do zastávky „Pavlíkova“. Ze směru od Radotína,
-                    Modřan a ze stanic metra „Háje“ či „Opatov“ autobusem č. 165 do zastávky „Observatoř Libuš“</p>
-            </div>
+        <ul id="ulcontacts">
+            <li class="licontacts">Adresa: Zelenkova 3, 140 00 Praha 2</li>
+            <li class="licontacts">Telefon: 678 901 234</li>
+            <li class="licontacts">IČO: 00550311</li>
+        </ul>
+    </div>
+    <div>
+        <div id="contact-table-div">
+            <table id="contact-table">
+                <thead>
+                <tr>
+                    <th>Jméno</th>
+                    <th>Tým</th>
+                    <th>Kontakt</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Pavel Bedna</td>
+                    <td>Muži A, Ženy</td>
+                    <td>+420 123 456 789<br><a href="mailto:tempopraha@tempo.cz">tempopraha@tempo.cz</a></td>
+                </tr>
+                <tr>
+                    <td>Jan Malý</td>
+                    <td>Žáci,Žákyně</td>
+                    <td>+420 234 567 890<br><a href="mailto:jmaly@tempo.cz">jmaly@tempo.cz</a></td>
+                </tr>
+                <tr>
+                    <td>Jiří Novák</td>
+                    <td>Kadeti, kadetky</td>
+                    <td>+420 345 678 901<br><a href="mailto:novakj@tempo.cz">novakj@tempo.cz</a></td>
 
+                </tr>
+                <tr>
+                    <td>Michal Dvořák</td>
+                    <td>Juniori,Juniorky</td>
+                    <td>+420 456 789 012<br><a href="mailto:dvorakmichal@tempo.cz">dvorakmichal@tempo.cz</a></td>
+
+                </tr>
+                </tbody>
+            </table>
         </div>
-    </section>
-    <footer>
-        <p>
-            © 2018 Tereza Dušková
-        </p>
-    </footer>
+    </div>
+    <hr>
+    <h2>Jak se k nám dostat?</h2>
+    <div id="contacts">
+        <div>
+            <h3>Autem</h3>
+            <p>Od Jižní spojky na krčskou nemocnici (Thomayerova), zde na světlech doprava do kopce. Na dalších
+                světlech doleva do kopce (ulice Štúrova),
+                stále do kopce (po levé straně sídliště) a na konci sídliště odbočit doprava. Na následujícím
+                kruhovém objezdu doleva (do ulice Novodvorská),
+                tou rovně až na konec (po cca 1,5 km). Zde na kruhovém objezdu doprava a pak dál rovně až k
+                meteorologické věži. Před ní (u cedule TJ Tempo)
+                doprava a sjet dolů ke hřišti.</p>
+        </div>
+        <div>
+            <h3>Autobusem</h3>
+            <p>Z metra „Kačerov“ autobusem č. 215 nebo č. 117 a z metra „Smíchovské nádraží“ autobusem č. 198
+                vždy
+                do zastávky „Pavlíkova“. Ze směru od Radotína,
+                Modřan a ze stanic metra „Háje“ či „Opatov“ autobusem č. 165 do zastávky „Observatoř Libuš“</p>
+        </div>
 
-
+    </div>
+</section>
+<footer>
+    <p>
+        © 2018 Tereza Dušková
+    </p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+<script src="main.js"></script>
 </body>
-
 </html>
