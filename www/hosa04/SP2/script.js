@@ -164,7 +164,7 @@ function getRandomWord() {
             console.log("Chosen word: " + chosenWord);
             plantSpaces();
 
-            $("#hint").text("(" + chosenWord + ")");
+            //$("#hint").text("(" + chosenWord + ")");
         }
     });
 
