@@ -6,8 +6,9 @@
     <title>Twitter Stats</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
     <link href="css/homepage.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/codebird.js"></script>
 </head>
 
 <body>
@@ -17,17 +18,12 @@
             <p>Enter a name of any Twitter account and see various stats about it!</p>
         </header>
         <main>
-            <form id="search-form">
-                <input id="search-input" name="search" placeholder="Enter a name of Twitter account here" />
-                <button>Submit</button>
-            </form>
-            <div id="user-profile"></div>
+            <input id="search-input" name="search" placeholder="Enter a name of Twitter account here" />
+            <button onclick="searchTweets()">Submit</button>
             <h2>Stats</h2>
-            <ul id="repositories"></ul>
         </main>
         <footer>2019 &copy; Pavel Dohnal</footer>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/app.js"></script>
 </body>
 
