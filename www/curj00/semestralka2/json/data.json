@@ -1,0 +1,278 @@
+    [
+        {
+            "name": "NH Car",
+            "id": 1,
+            "coordinates": "50°5'1.732\"N, 14°23'3.251\"E",
+            "adresa": "Chodecká 2341/2, 16900 Praha 6"
+        },
+        {
+            "name": "Porsche Praha Smíchov",
+            "id": 2,
+            "coordinates": "50°4'10.489\"N, 14°22'41.630\"E",
+            "adresa": "Vrchlického 31/18, 150 00 Praha 5"
+        },
+        {
+            "name": "Porsche Praha Prosek",
+            "id": 3,
+            "coordinates": "50°7'55.227\"N, 14°29'30.433\"E",
+            "adresa": "Liberecká 12, 18200 Praha 8"
+        },
+        {
+            "name": "Auto Jarov",
+            "id": 4,
+            "coordinates": "50°5'25.698\"N, 14°29'56.907\"E",
+            "adresa": "Osiková 2, 13000 Praha 3"
+        },
+        {
+            "name": "Auto Podbabská Praha",
+            "id": 5,
+            "coordinates": "50°6'52.443\"N, 14°23'30.614\"E",
+            "adresa": "Pod Paťankou 217/1, 160 00 Praha 6"
+        },
+        {
+            "name": "Autosalon Klokočka Centrum",
+            "id": 6,
+            "coordinates": "50°4'35.496\"N, 14°17'56.176\"E",
+            "adresa": "Karlovarská 660, 16300 Praha 6"
+        },
+        {
+            "name": "TUkas",
+            "id": 7,
+            "coordinates": "50°0'7.182\"N, 14°24'45.595\"E",
+            "adresa": "Štěrboholská 391, 10200 Praha 10"
+        },
+        {
+            "name": "AUTO JAROV KUNRATICE",
+            "id": 8,
+            "coordinates": "50°0'38.903\"N, 14°28'36.962\"E",
+            "adresa": "Vídeňská 126, 14800 Praha - Kunratice"
+        },
+        {
+            "name": "Louda Auto Praha",
+            "id": 9,
+            "coordinates": "50°6'29.972\"N, 14°32'54.237\"E",
+            "adresa": "Kolbenova 898/37a, 198 00 Praha 9"
+        },
+        {
+            "name": "Auto I.S.R.",
+            "id": 10,
+            "coordinates": "50°0'18.520\"N, 14°34'10.862\"E",
+            "adresa": "V Oblouku 121, 25101 Čestlice - Praha - východ"
+        },
+        {
+            "name": "TOP CENTRUM Car",
+            "id": 11,
+            "coordinates": "48°52'20.365\"N, 17°6'56.297\"E",
+            "adresa": "Brněnská 4031, 695 01 Hodonín"
+        },
+        {
+            "name": "CB Auto",
+            "id": 12,
+            "coordinates": "48°58'44.498\"N, 14°26'28.316\"E",
+            "adresa": "Dr. Milady Horákové 1477, 37005 České Budějovice"
+        },
+        {
+            "name": "Porsche České Budějovice",
+            "id": 13,
+            "coordinates": "49°00'06.0\"N, 14°29'08.9\"E",
+            "adresa": "Okružní 2557, 37004 České Budějovice"
+        },
+        {
+            "name": "Auto - Bayer",
+            "id": 14,
+            "coordinates": "49°09'09.7\"N, 16°53'35.7\"E",
+            "adresa": "Bučovická 299, 68401 Slavkov u Brna"
+        },
+        {
+            "name": "Porsche Brno",
+            "id": 15,
+            "coordinates": "49°10'40.4\"N, 16°40'30.3\"E",
+            "adresa": "Řipská 13a, 62700 Brno"
+        },
+        {
+            "name": "ROS Brno",
+            "id": 16,
+            "coordinates": "49°11'11.0\"N, 16°35'25.8\"E",
+            "adresa": "Poříčí 3, 63900 Brno"
+        },
+        {
+            "name": "EURO CAR Zlín",
+            "id": 17,
+            "coordinates": "49°13'26.8\"N, 17°42'03.4\"E",
+            "adresa": "Vizovická 4097, 76001 Zlín"
+        },
+        {
+            "name": "SAMOHÝL MOTOR",
+            "id": 18,
+            "coordinates": "49°13'3.247\"N, 17°37'42.570\"E",
+            "adresa": "Tř. Tomáše Bati 623, 763 02 Zlín"
+        },
+        {
+            "name": "AUTO STRAKONICE",
+            "id": 19,
+            "coordinates": "49°16'5.897\"N, 13°54'50.982\"E",
+            "adresa": "Řepice 122, 38601 Strakonice"
+        },
+        {
+            "name": "Auto Vysočina",
+            "id": 20,
+            "coordinates": "49°23'40.0\"N, 15°34'00.4\"E",
+            "adresa": "Žižkova 109a, 586 01 Jihlava"
+        },
+        {
+            "name": "CB Auto Tábor",
+            "id": 21,
+            "coordinates": "49°23'43.945\"N, 14°41'12.562\"E",
+            "adresa": "39005 Tábor"
+        },
+        {
+            "name": "INTERMOBIL",
+            "id": 22,
+            "coordinates": "48°51'37.911\"N, 16°3'2.894\"E",
+            "adresa": "Sokolská 1307/29, 66902 Znojmo"
+        },
+        {
+            "name": "Car Point Domažlice",
+            "id": 23,
+            "coordinates": "49°25'58.7\"N, 12°57'10.5\"E",
+            "adresa": "Masarykova 570, 344 01 Domažlice"
+        },
+        {
+            "name": "Autocentrum Jan Šmucler Horšovský Týn",
+            "id": 24,
+            "coordinates": "49°31'39.2\"N, 12°56'52.3\"E",
+            "adresa": "J. Jindřicha 105, 346 01 Horšovský Týn"
+        },
+        {
+            "name": "Autocentrum Olomouc",
+            "id": 25,
+            "coordinates": "49°34'26.0\"N, 17°13'56.0\"E",
+            "adresa": "Horní lán 455/1, 77900 Olomouc"
+        },
+        {
+            "name": "ARAVER",
+            "id": 26,
+            "coordinates": "49°4'27.175\"N, 17°27'24.445\"E",
+            "adresa": "Zerzavice 2020, 686 03 Staré Město"
+        },
+        {
+            "name": "Porsche Plzeň",
+            "id": 27,
+            "coordinates": "49°43'30.7\"N, 13°20'43.4\"E",
+            "adresa": "Podnikatelská 1, 30100 Plzeň - Borská pole"
+        },
+        {
+            "name": "Autocentrum Jan Šmucler",
+            "id": 28,
+            "coordinates": "49°44'8.681\"N, 13°21'18.633\"E",
+            "adresa": "Borská 59, 30100 Plzeň-Karlov"
+        },
+        {
+            "name": "Louda Auto Svitavy",
+            "id": 29,
+            "coordinates": "49°45'16.931\"N, 16°27'54.932\"E",
+            "adresa": "Dimitrovova 2, 56802 Svitavy"
+        },
+        {
+            "name": "Auto Heller Ostrava",
+            "id": 30,
+            "coordinates": "49°50'26.7\"N, 18°16'25.9\"E",
+            "adresa": "Cihelní 3160/49b, 70200 Ostrava-Moravská Ostrava"
+        },
+        {
+            "name": "Auto Heller Opava",
+            "id": 31,
+            "coordinates": "49°57'08.5\"N, 17°52'09.9\"E",
+            "adresa": "Bruntálská 7, 74707 Opava - Jaktař"
+        },
+        {
+            "name": "FORTEX - AGS",
+            "id": 32,
+            "coordinates": "49°57'20.548\"N, 16°57'50.342\"E",
+            "adresa": "Jílová 1150/1, 78792 Šumperk"
+        },
+        {
+            "name": "Autocentrum Barth Pardubice",
+            "id": 33,
+            "coordinates": "50°02'49.5\"N, 15°48'31.9\"E",
+            "adresa": "Hůrka 1798, 53012 Pardubice - Dubina"
+        },
+        {
+            "name": "Louda Auto Pardubice",
+            "id": 34,
+            "coordinates": "50°03'15.5\"N, 15°46'08.2\"E",
+            "adresa": "Hradecká 555, 53009 Pardubice"
+        },
+        {
+            "name": "AMOND Kladno",
+            "id": 35,
+            "coordinates": "50°8'30.399\"N, 14°3'40.436\"E",
+            "adresa": "Smečenská 889, 27204 Kladno IV"
+        },
+        {
+            "name": "Louda Auto Poděbrady",
+            "id": 36,
+            "coordinates": "50°08'42.0\"N, 15°10'15.5\"E",
+            "adresa": "Choťánky 166, 29001 Poděbrady"
+        },
+        {
+            "name": "Olfin Car Hradec Králové",
+            "id": 37,
+            "coordinates": "50°11'43.029\"N, 15°48'48.207\"E",
+            "adresa": "Na Rybárně 1670, 50002 Hradec Králové"
+        },
+        {
+            "name": "Car Point  Karlovy Vary",
+            "id": 38,
+            "coordinates": "50°13'41.6\"N, 12°49'54.8\"E",
+            "adresa": "Chebská 55, 360 06 Karlovy Vary"
+        },
+        {
+            "name": "Gerhard Horejsek Litoměřice",
+            "id": 39,
+            "coordinates": "50°30'55.0\"N, 14°08'12.9\"E",
+            "adresa": "U Terezínské křižovatky 161, 41201 Litoměřice"
+        },
+        {
+            "name": "Olfin Car Trutnov",
+            "id": 40,
+            "coordinates": "50°33'12.0\"N, 15°54'15.4\"E",
+            "adresa": "Královédvorská 517, 54101 Trutnov"
+        },
+        {
+            "name": "Louda Auto Teplice",
+            "id": 41,
+            "coordinates": "50°39'44.5\"N, 13°52'26.0\"E",
+            "adresa": "Dvořákova 83, 41510 Teplice"
+        },
+        {
+            "name": "Gerhard Horejsek Česká Lípa",
+            "id": 42,
+            "coordinates": "50°40'41.7\"N, 14°32'39.4\"E",
+            "adresa": "Česká 2725, 47001 Česká Lípa"
+        },
+        {
+            "name": "Gerhard Horejsek Děčín",
+            "id": 43,
+            "coordinates": "50°46'35.5\"N, 14°13'04.2\"E",
+            "adresa": "Oblouková 1444/11, 40501 Děčín"
+        },
+        {
+            "name": "Manfred Schoner autoservis",
+            "id": 44,
+            "coordinates": "50°5'10.807\"N, 12°24'6.505\"E",
+            "adresa": "Ke Hřbitovu 1, 35002 Cheb"
+        },
+        {
+            "name": "Louda Auto Praha",
+            "id": 45,
+            "coordinates": "50°6'29.972\"N, 14°32'54.237\"E",
+            "adresa": "Kolbenova 898/37a, 198 00 Praha 9"
+        },
+        {
+            "name": "AUTOTREND",
+            "id": 46,
+            "coordinates": "50°44'36.438\"N, 15°2'53.052\"E",
+            "adresa": "České Mládeže 1101, 46312 Liberec"
+        }
+    ]
