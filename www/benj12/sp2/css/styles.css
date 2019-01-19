@@ -4,7 +4,28 @@ body, html {
   color: #FFF;
   height: 100%;
 }
+header {
+  text-align: center
+}
+button {
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 1
+}
 #search{
+  height: 100%;
   padding: 50px 0;
   text-align: center;
   background-color: #353535;
@@ -19,7 +40,7 @@ body, html {
   height: 100%;
 }
 .searchArea {
-  width: 300px; 
+  width: 550px; 
   height: 100px;
 }
 .whiteLink {

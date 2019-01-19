@@ -5,8 +5,16 @@ html, body, #map_canvas, #map_container {
   padding: 0px; 
 }
 .floatButton {
+  text-align: center;
+  width: 150px;
+  height: 20px;
   position: absolute;
   top: 20px;
   left: 20px;
   z-index:100;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
+  color: initial;
 }
