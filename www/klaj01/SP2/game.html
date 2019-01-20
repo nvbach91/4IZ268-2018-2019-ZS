@@ -1,10 +1,12 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="cs">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Pong JS game</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Video game finder and pong" />
+    <meta name="keywords" content="Pong, Games, Finder" />
+    <meta name="author" content="Klaj01" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -17,30 +19,30 @@
       rel="stylesheet"
     />
     <link rel="shortcut icon" type="image/png" href="IMG/favicon-96x96.png" />
-      <meta charset="UTF-8" />
     <title>Pong Game JavaScript</title>
   </head>
 
   <body>
-  <main>
+    <main>
       <nav class="nav">
-        <a href="index.html" >Domů</a>
+        <a href="index.html">Domů</a>
         <a href="game.html" class="activepage">Pong</a>
       </nav>
-    <canvas id="gamefield" width="960" height="540"></canvas>
-    <button onclick="onClickFunction()">Restart hry</button>
-    <p id="panel_02"></p>
-    <div class="panel_01">
-      <p class="gamerules">Pravidla hry</p>
-      <hr>
-      <p>Hraje se do 5 bodů</p>
-      <p>Pohybujte myší</p>
-    </div>
-    <p id="gameover"></p>
-    <p id="score"></p>
-    <p id="gameovertext"></p>
-    <main>
-        <script src="js/gamejavascript.js"></script>
+      <canvas id="gamefield" width="960" height="540"></canvas>
+      <button id="refresh-button">Restart hry</button>
+      <p id="panel_02"></p>
+      <div class="panel_01">
+        <p class="gamerules">Pravidla hry</p>
+        <hr />
+        <p>Hraje se do 5 bodů</p>
+        <p>Pohybujte myší</p>
+      </div>
+      <p id="gameover"></p>
+      <p id="score"></p>
+      <p id="gameovertext"></p>
+    </main>
+    <footer><p>&copy;Jan Klačmera / ZS 2018-2019 / 4IZ268</p></footer>
 
+    <script src="js/gamejavascript.js"></script>
   </body>
 </html>

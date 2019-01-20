@@ -20,6 +20,7 @@ main {
 	text-align: center;
 	font-size: 25px;
 	margin: 0 auto;
+	border-radius: 10px;
 }
 
 .nav a {
@@ -82,7 +83,7 @@ h2 {
 #searchText {
 	height: 75px;
 	width: 400px;
-	border: 3px solid black;
+	border: 3px solid #768591;
 	font-size: 25px;
 	padding-left: 10px;
 	border-radius: 10px;
@@ -92,7 +93,7 @@ h2 {
 #submitButton {
 	height: 78px;
 	width: 150px;
-	border: 3px solid black;
+	border: 3px solid #768591;
 	font-size: 25px;
 	border-radius: 10px;
 	font-weight: bold;
@@ -184,6 +185,7 @@ footer {
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
+	border-radius: 10px;
 }
 
 loading {

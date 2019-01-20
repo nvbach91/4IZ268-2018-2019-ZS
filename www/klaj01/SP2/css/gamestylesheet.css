@@ -33,11 +33,13 @@ button {
     margin-top: -50px;
     margin-left: -100px;
     position: fixed;
+    font-weight: bold;
 }
 
 button:hover {
     border: 5px solid rgb(60, 107, 207);
     cursor: pointer;
+    background-color: rgba(0, 140, 255, 0.589);
 }
 
 console.log {
@@ -51,6 +53,8 @@ console.log {
     text-align: center;
     font-size: 25px;
     margin: 0 auto;
+    border-radius: 10px;
+    width: 80%;
 }
 
 .nav a {
@@ -88,7 +92,7 @@ console.log {
 }
 
 .panel_01 p {
-    font-size: 20px;
+    font-size: 30px;
     width: 200px;
     margin: 20px auto;
 }
@@ -110,4 +114,23 @@ console.log {
 
 #panel_02 {
     float: left;
+}
+
+footer {
+    background-color: #007EE3;
+    bottom: 0%;
+    height: 50px;
+    display: table;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    margin-left: -40%;
+}
+
+footer p {
+    color: #dbd9d8;
+    font-size: 25px;
 }

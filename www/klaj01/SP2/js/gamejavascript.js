@@ -4,6 +4,9 @@ var el1 = document.querySelector("panel_01");
 function onClickFunction() {
   document.location.reload();
 }
+$("#refresh-button").click(function() {
+  document.location.reload();
+});
 
 function finalscore() {}
 const winscore = 5;
