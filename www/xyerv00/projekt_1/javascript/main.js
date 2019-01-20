@@ -50,10 +50,11 @@ App.init = function(){
             'Subject': 'Pokusnej subject'
         };
 
-        var message = 'Message jak ...';
+        var message = "Jméno klienta: " + $("#client-name").val() + ".\n" + "Email klienta: " + $("#client-email").val() + ".\n" + "Zpráva: " + $("#emailBody").val();
 
         function sendMessageCallback() {
             console.info("Email sent!");
+            alert("Váš email byl odeslán");
         }
 
         App.sendMessage(headers, message, sendMessageCallback);

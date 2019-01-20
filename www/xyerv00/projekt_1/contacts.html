@@ -41,13 +41,15 @@
     <P>Hradec Králové</P>
     <div class="form">
         <h2>Kontaktujte nás</h2>
-        <p>Uveďte vaši e-mailovou adresu:</p>
-        <input type="email" name="clienEmail" id="client-email" placeholder="e-mail">
-        <p>Vaše jméno:</p>
-        <input type="text" name="clientName" id="client-name" placeholder="Jméno">
-        <p>Zpráva:</p>
-        <textarea type="text" name="emailbody" id="email-body"></textarea>
-        <button type="button" id="sendButton">Odeslat</button>
+        <form name="contactForm" onsubmit="return false">
+        <label for="client-email">Uveďte vaši e-mailovou adresu:</label><br>
+        <input type="email" name="clienEmail" id="client-email" placeholder="e-mail"><br>
+        <label for="client-name">Vaše jméno:</label><br>
+        <input type="text" name="clientName" id="client-name" placeholder="Jméno"><br>
+        <label for="emailBody">Zpráva:</label>
+        <textarea type="text" name="emailbody" id="emailBody"></textarea>
+        <input type="submit" id="sendButton" value="Odeslat">
+        </form>
     </div>
 </main>
 <footer>

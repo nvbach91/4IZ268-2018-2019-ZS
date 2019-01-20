@@ -250,14 +250,14 @@ footer.cover, img.cover, header.cover {
     display: inline;
 }
 
-.form p, button, input, textarea{
+.form label, input, textarea{
     padding: 0;
     text-align: left;
     margin: 10px 0 0 100px;
     font-family: "Palatino Linotype";
 }
 
-.form #email-body {
+.form #emailBody {
     width: 75%;
     height: 200px;
 }
