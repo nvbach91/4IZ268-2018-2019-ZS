@@ -18,6 +18,7 @@ hr {
     border-style: solid;
     border-color: #eee;
 }
+
 button, .btn, a.btn {
     background-color: rgb(52, 152, 219);
     cursor: pointer;
@@ -30,13 +31,13 @@ button, .btn, a.btn {
 #latest_container {
     margin: 0 auto;
     text-align: center;
-    margin-left: 30%;
+    margin-left: 22%;
 }
 
 #first_container {
     margin: 0 auto;
     text-align: center;
-    margin-left: 30%;
+    margin-left: 22%;
 }
 
 #profile_image {
@@ -46,7 +47,7 @@ button, .btn, a.btn {
 #latestdirected_container {
     margin: 0 auto;
     text-align: center;
-    margin-left: 30%;
+    margin-left: 22%;
 }
 
 footer {
@@ -65,10 +66,12 @@ footer {
     margin-right: 25%;
     margin-left: 25%;
 }
-#twitterLogo{
+
+#twitterLogo {
     position: relative;
     margin-top: 10px;
 }
-h1{
+
+h1 {
     margin-left: 50px;
 }
