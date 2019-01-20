@@ -6,7 +6,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     text-align: center;
-    background-color: lightblue;
+    background-color: rgb(52, 152, 219);
 }
 
 main {
@@ -19,7 +19,7 @@ hr {
 }
 
 button, .btn, a.btn {
-    background-color: blue;
+    background-color: rgb(52, 152, 219);
     cursor: pointer;
     padding: 10px;
     border: none;
@@ -49,11 +49,18 @@ button, .btn, a.btn {
 }
 
 footer {
-    background-color: cadetblue;
+    background-color: rgb(52, 152, 219);
     padding: 20px 0;
+    font-weight: bold;
 }
 
 #basictable {
     margin: auto;
     text-align: left;
+}
+
+#app {
+    background-color: rgb(253, 253, 253);
+    margin-right: 25%;
+    margin-left: 25%;
 }
