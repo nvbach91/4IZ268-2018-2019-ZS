@@ -55,7 +55,7 @@ function searchUsers() {
                 },
                 true
             );
-            var min = 0;
+            var min = 1;
             if (reply.statuses_count < 100) {
                 var max = reply.statuses_count;
             }

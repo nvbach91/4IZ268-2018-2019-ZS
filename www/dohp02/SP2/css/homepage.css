@@ -68,9 +68,10 @@ footer {
     margin-left: 25%;
 }
 
-#twitterLogo {
+#TwitterLogo {
     position: relative;
     margin-top: 10px;
+    display: inline-block;
 }
 
 h1 {
