@@ -39,10 +39,25 @@
     <p>Light for home s.r.o.</p>
     <p>IČO 01760360</p>
     <P>Hradec Králové</P>
+    <div class="form">
+        <h2>Kontaktujte nás</h2>
+        <p>Uveďte vaši e-mailovou adresu:</p>
+        <input type="email" name="clienEmail" id="client-email" placeholder="e-mail">
+        <p>Vaše jméno:</p>
+        <input type="text" name="clientName" id="client-name" placeholder="Jméno">
+        <p>Zpráva:</p>
+        <textarea type="text" name="emailbody" id="email-body"></textarea>
+        <button type="button" id="sendButton">Odeslat</button>
+    </div>
 </main>
 <footer>
     <p>Light for home s.r.o., IČO 01760360, Střelecká 578, Hradec Králové</p>
 </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://apis.google.com/js/api.js"></script>
 
+<!--Do not change order of loading js-->
+<script src="javascript/main.js"></script>
+<script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
 </body>
 </html>

@@ -15,6 +15,7 @@ main {
     color: rgba(58, 58, 58, 0.83);
     min-height: 600px;
     font-size: 120%;
+    padding: 10px;
 }
 
 .clear {
@@ -249,16 +250,23 @@ footer.cover, img.cover, header.cover {
     display: inline;
 }
 
-.form p, button, input{
+.form p, button, input, textarea{
     padding: 0;
     text-align: left;
-    margin: 20px 0 0 100px;
+    margin: 10px 0 0 100px;
     font-family: "Palatino Linotype";
 }
 
 .form #email-body {
     width: 75%;
-    height: 400px;
+    height: 200px;
+}
+
+.form {
+    background-color: #cccccc;
+    width: 700px;
+    height: 550px;
+    margin: 35px 90px;
 }
 
 
