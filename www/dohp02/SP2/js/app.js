@@ -10,12 +10,24 @@ cb.__call("oauth2_token", {}, function (reply, err) {
         bearer_token = reply.access_token;
     }
 });
-function searchTweets() {
+function searchUsers() {
+    var params = {
+        screen_name: document.getElementById("search-input").value
+    };
     cb.__call(
-        "search_tweets",
-        "q=@realDonaldTrump",
-        function (reply) {
+        "users_show",
+        params,
+        function (reply, rate, err) {
             console.log(reply);
+            document.getElementById("name").innerHTML = "Name: " + reply.name;
+            document.getElementById("description").innerHTML = "Description: " + reply.description;
+            document.getElementById("location").innerHTML = "Location: " + reply.location;
+            document.getElementById("created").innerHTML = "Account created: " + reply.created_at;
+            document.getElementById("followers").innerHTML = "Number of followers: " + reply.followers_count;
+            document.getElementById("friends").innerHTML = "Number of followings: " + reply.friends_count;
+            document.getElementById("favourites").innerHTML = "Number of favourites: " + reply.favourites_count;
+            document.getElementById("statuses").innerHTML = "Number of tweets: " + reply.statuses_count;
+            document.getElementById("verified").innerHTML = "Verified: " + reply.verified;
         },
         true
     );
