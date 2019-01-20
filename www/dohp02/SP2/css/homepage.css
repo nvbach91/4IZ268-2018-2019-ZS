@@ -22,10 +22,11 @@ hr {
 button, .btn, a.btn {
     background-color: rgb(52, 152, 219);
     cursor: pointer;
-    padding: 10px;
+    padding: 15px;
     border: none;
     color: white;
     margin-top: 10px;
+    margin-left: 10px;
 }
 
 #latest_container {
