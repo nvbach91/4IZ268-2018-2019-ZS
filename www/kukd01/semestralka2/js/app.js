@@ -34,7 +34,7 @@ App.init = function () {
 
 //Přihlašovací tlačítko
 $(".authBut").click(function () {
-    document.location.href = 'https://api.instagram.com/oauth/authorize/?client_id=93c52c960d444e75b7c60e3c46ba182d&redirect_uri=http://127.0.0.1:5500/search.html&response_type=token';
+    document.location.href = 'https://api.instagram.com/oauth/authorize/?client_id=93c52c960d444e75b7c60e3c46ba182d&redirect_uri=https://fcp.vse.cz/4IZ268/2018-2019-ZS/www/kukd01/semestralka2/search.html&response_type=token';
 });
 
 
