@@ -16,6 +16,7 @@ $start = $_GET['start'];
 $end = $_GET['end'];
 $name = $_GET['name'];
 $organizer = $_GET['organizer'];
+$email = $_GET['email'];
 $address = $_GET['address'];
 $stream = ($_GET['stream'] == 'true');
 $projection = ($_GET['projection'] == 'true');
@@ -25,7 +26,7 @@ $clip = ($_GET['clip'] == 'true');
 $sql_query = "";
 $service_count = 0;
 
-store_session($conn, $id, $name, $address, $organizer, $start, $end, $size, $stream, $projection, $recording, $clip);
+store_session($conn, $id, $name, $address, $organizer, $email, $start, $end, $size, $stream, $projection, $recording, $clip);
 
 if($stream){
     $service_count++;
@@ -145,8 +146,8 @@ function get_multi_service_price($conn, $size, $duration, $stream, $projection, 
     echo $toEcho . " Kč";
 }
 
-function store_session($conn, $id, $name, $address, $organizer, $start, $end, $size, $stream, $projection, $recording, $clip){
-    $sql .= "INSERT INTO VSE_event_calculator_contacts (sess_id, event_name, event_address, organizer_contact, event_start, event_end, event_size, stream, projekce, zaznam, klip) VALUES ('".$id."', '".$name."', '".$address."', '".$organizer."', '".$start."', '".$end."', '".$size."', '".$stream."', '".$projection."', '".$recording."', '".$clip."') ON DUPLICATE KEY UPDATE event_name='".$name."',event_address='".$address."',organizer_contact='".$organizer."', event_start='".$start."', event_end='".$end."', event_size='".$size."', stream='".$stream."', projekce='".$projection."', zaznam='".$recording."', klip='".$clip."'";
+function store_session($conn, $id, $name, $address, $organizer, $email, $start, $end, $size, $stream, $projection, $recording, $clip){
+    $sql .= "INSERT INTO VSE_event_calculator_contacts (sess_id, event_name, event_address, organizer_contact, organizer_email, event_start, event_end, event_size, stream, projekce, zaznam, klip) VALUES ('".$id."', '".$name."', '".$address."', '".$organizer."', '".$email."', '".$start."', '".$end."', '".$size."', '".$stream."', '".$projection."', '".$recording."', '".$clip."') ON DUPLICATE KEY UPDATE event_name='".$name."',event_address='".$address."',organizer_contact='".$organizer."',organizer_email='".$email."', event_start='".$start."', event_end='".$end."', event_size='".$size."', stream='".$stream."', projekce='".$projection."', zaznam='".$recording."', klip='".$clip."'";
     if ($conn->query($sql) === TRUE) {
 
     }/* else {

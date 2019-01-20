@@ -39,6 +39,10 @@ header {
   z-index: 1000;
 }
 
+.dropdown-menu header {
+  background-color: #FFF;
+}
+
 header .logo {
   position:relative;
   float: left;
@@ -150,10 +154,19 @@ footer a {
   height:auto;
 }
 
+.send_email {
+  padding: 20px;
+  border: 0px;
+  background-color: #009700;
+  font-weight: 700;
+  color: #FFF;
+  font-size: 0.7em;
+}
+
 .kalkulacka{
   background-color: #ededed;
   max-width: 500px;
-  height: 1100px;
+  height: 1280px;
   position: relative;
   border-radius: 10px;
   padding: 50px;
@@ -377,6 +390,7 @@ input.empty {
   font-size: 1.5em;
   font-weight: 900;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 /* checkbox */
@@ -445,16 +459,47 @@ input.empty {
   margin: 12px 0;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
-th, td {
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #009700;
+  border-color: #009700;
+}
+
+.daterangepicker td.active, .daterangepicker td.active:hover {
+  background-color: #009700;
+  border-color: transparent;
+  color: #fff;
+}
+
+
+.tableview tr:nth-child(even){background-color: #f2f2f2}
+.tableview th, .tableview td {
   text-align: left;
   padding: 8px;
 }
-table {
+.tableview table {
   border-collapse: collapse;
   margin: 30px
 }
-th {
+.tableview th {
   background-color: #009700;
   color: white;
 }

@@ -7,11 +7,25 @@
     <meta name="keywords" content="produkce, live, stream, livefeed, LED, kamera, postprodukce">
     <meta name="author" content="Radovan Beneš">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex, nofollow">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("user_Nln38EShZsyjVgbBsbZmi");
+        })();
+    </script>
+
+    <script src="js/moment.js"></script>
+    
     <title>Kalkulačka | Profishot s.r.o.</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -65,13 +79,18 @@
                     </label>
                     <div class="input_error" id="organizer_contact_error">&nbsp;</div>
 
+                    <label for="organizer_email" class="full_width">Email na organizátora
+                        <input type="text" id="organizer_email" placeholder="rasta@profishot.cz" />
+                    </label>
+                    <div class="input_error" id="organizer_email_error">&nbsp;</div>
+
                     <label for="event_start" class="full_width">Začátek akce
-                        <input type="datetime-local" id="event_start">
+                        <input type="text" id="event_start" />
                     </label>
                     <div class="input_error" id="event_start_error">&nbsp;</div>
 
                     <label for="event_end" class="full_width">Konec akce
-                        <input type="datetime-local" id="event_end">
+                        <input type="text" id="event_end">
                     </label>
                     <div class="input_error" id="event_end_error">&nbsp;</div>
 
@@ -105,6 +124,7 @@
                     
 
                     <div id="result_price">Celkem: 0 Kč</div>
+                    <button type="button" class="send_email" onclick="sendEmail()">Poslat na email</button>
                     <div id="hidden_id"></div>
                 </div>
 
@@ -119,5 +139,8 @@
         </div>
     </main>
 <script src="js/calculator.js"></script>
+<script src="js/datetimepicker-init.js"></script>
+<!--script src="js/fillDocument.js"></script-->
+
 </body>
 </html>
