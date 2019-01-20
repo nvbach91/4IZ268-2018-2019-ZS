@@ -18,21 +18,6 @@ hr {
     border-color: #eee;
 }
 
-form {
-    background-color: #e1e1e1;
-    padding: 20px;
-    max-width: 840px;
-    margin: 0 auto;
-}
-
-form>* {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: none;
-}
-
 button, .btn, a.btn {
     background-color: blue;
     cursor: pointer;
@@ -41,103 +26,10 @@ button, .btn, a.btn {
     color: white;
 }
 
-#user-profile {
-    max-width: 840px;
-    margin: 10px auto;
-}
-
-.basic-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(9, 42px);
-    grid-gap: 5px;
-}
-
-.basic-info>.bi-info {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 10px;
-    background-color: #e1e1e1;
-}
-
-.bi-info>div:first-child {
-    width: 120px;
-    text-align: left;
-}
-
-.bi-info>div:nth-child(2) {
-    font-weight: bold;
-}
-
-.bi-name {
-    padding: 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    color: white;
-    text-align: left;
-    grid-column: 1/3;
-    grid-row: 1/2;
-    background-color: cadetblue;
-}
-
-.bi-avatar {
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    grid-column: 1/2;
-    grid-row: 2/10;
-}
-
-a.bi-view {
-    grid-column: 1/2;
-    grid-row: 10/11;
-    padding: 10px;
-    text-decoration: none;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg)
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.loader {
-    border: 5px solid cadetblue;
-    border-top: 5px solid #ccc;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: auto;
-}
-
-#repositories {
-    list-style: none;
-    padding: 0;
-    max-width: 840px;
+#latest_container {
     margin: 0 auto;
-}
-
-.repository {
-    display: flex;
-    padding: 5px 10px;
-    background-color: #e1e1e1;
-    margin-bottom: 5px;
-}
-
-.repo-name {
-    width: 200px;
-}
-
-.repo-url {
-    flex-grow: 1;
-    text-align: left;
+    text-align: center;
+    margin-left: 30%;
 }
 
 footer {

@@ -14,6 +14,7 @@ function searchUsers() {
     var params = {
         screen_name: document.getElementById("search-input").value
     };
+    document.getElementById("latest_container").innerHTML = "";
     cb.__call(
         "users_show",
         params,
@@ -28,6 +29,15 @@ function searchUsers() {
             document.getElementById("favourites").innerHTML = "Number of favourites: " + reply.favourites_count;
             document.getElementById("statuses").innerHTML = "Number of tweets: " + reply.statuses_count;
             document.getElementById("verified").innerHTML = "Verified: " + reply.verified;
+
+            twttr.widgets.createTweet(
+                reply.status.id_str,
+                document.getElementById('latest_container'),
+                {
+                    theme: 'light',
+                    conversation: 'no'
+                }
+            );
         },
         true
     );

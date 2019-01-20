@@ -12,15 +12,31 @@
 </head>
 
 <body>
+    <script>window.twttr = (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function (f) {
+                t._e.push(f);
+            };
+
+            return t;
+        }(document, "script", "twitter-wjs"));</script>
     <div id="app">
         <header>
             <h1>Twitter Stats</h1>
-            <p>Enter a name of any Twitter account and see various stats about it!</p>
+            <p>Enter a name of any Twitter account and see various statistics about it!</p>
         </header>
         <main>
-            <input id="search-input" name="search" placeholder="Enter a name of Twitter account here" size="35" />
-            <p><button onclick="searchUsers()">Submit</button></p>
-            <h2>Stats</h2>
+            <input id="search-input" name="search" placeholder="Enter the name of Twitter account here" size="35" />
+            <button onclick="searchUsers()">Submit</button>
+            <h2>Basic Statistics</h2>
             <p id="name"></p>
             <p id="verified"></p>
             <p id="description"></p>
@@ -30,6 +46,8 @@
             <p id="friends"></p>
             <p id="favourites"></p>
             <p id="statuses"></p>
+            <h2>Latest Tweet</h2>
+            <div id="latest_container"></div>
         </main>
         <footer>2019 &copy; Pavel Dohnal</footer>
     </div>
