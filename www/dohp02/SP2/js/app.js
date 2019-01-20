@@ -21,13 +21,11 @@ function searchUsers() {
         params,
         function (reply, rate, err) {
             console.log(reply);
-
             var split = reply.created_at.split(' ');
             var date = split.splice(1, 2);
             var year = split[split.length - 1];
             date.push(year);
             date = date.join(' ');
-
             document.getElementById("profile_image").innerHTML = "<img src=" + reply.profile_image_url + ">";
             document.getElementById("name").innerHTML = reply.name;
             document.getElementById("description").innerHTML = reply.description;
@@ -57,9 +55,13 @@ function searchUsers() {
                 },
                 true
             );
-
             var min = 0;
-            var max = 99;
+            if (reply.statuses_count < 100) {
+                var max = reply.statuses_count;
+            }
+            else {
+                var max = 99;
+            }
             var random = Math.floor(Math.random() * (+max - +min)) + +min;
             var randomTweets = {
                 q: "-filter:nativeretweets from:" + reply.screen_name,
@@ -82,7 +84,7 @@ function searchUsers() {
             );
             var paramsTweets = {
                 q: "to:" + reply.screen_name,
-                count: 1
+                count: 10
             };
             cb.__call(
                 "search_tweets",
