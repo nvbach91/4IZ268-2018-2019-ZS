@@ -37,17 +37,75 @@
             <input id="search-input" name="search" placeholder="Enter the name of Twitter account here" size="35" />
             <button onclick="searchUsers()">Submit</button>
             <h2>Basic Statistics</h2>
-            <p id="name"></p>
-            <p id="verified"></p>
-            <p id="description"></p>
-            <p id="location"></p>
-            <p id="created"></p>
-            <p id="followers"></p>
-            <p id="friends"></p>
-            <p id="favourites"></p>
-            <p id="statuses"></p>
-            <h2>Latest Tweet</h2>
+            <table id="basictable">
+                <tr>
+                    <td><b>Profile Image:</b></td>
+                    <td>
+                        <div id="profile_image"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Name:</b></td>
+                    <td>
+                        <p id="name"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Verified:</b></td>
+                    <td>
+                        <p id="verified"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Description:</b></td>
+                    <td>
+                        <p id="description"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Location:</b></td>
+                    <td>
+                        <p id="location"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Account Created</b>:</td>
+                    <td>
+                        <p id="created"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Number of followers:</b></td>
+                    <td>
+                        <p id="followers"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Number of followings:</b></td>
+                    <td>
+                        <p id="friends"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Number of favourites:</b></td>
+                    <td>
+                        <p id="favourites"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Number of tweets:</b></td>
+                    <td>
+                        <p id="statuses"></p>
+                    </td>
+                </tr>
+            </table>
+            <h2>Advanced Statistics</h2>
+            <h2>Latest Tweet by User</h2>
             <div id="latest_container"></div>
+            <h2>First Tweet by User</h2>
+            <div id="first_container"></div>
+            <h2>Latest Tweet replying to User</h2>
+            <div id="latestdirected_container"></div>
         </main>
         <footer>2019 &copy; Pavel Dohnal</footer>
     </div>

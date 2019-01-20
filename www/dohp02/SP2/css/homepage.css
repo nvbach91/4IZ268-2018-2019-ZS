@@ -32,7 +32,28 @@ button, .btn, a.btn {
     margin-left: 30%;
 }
 
+#first_container {
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 30%;
+}
+
+#profile_image {
+    margin: 0 auto;
+}
+
+#latestdirected_container {
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 30%;
+}
+
 footer {
     background-color: cadetblue;
     padding: 20px 0;
+}
+
+#basictable {
+    margin: auto;
+    text-align: left;
 }
