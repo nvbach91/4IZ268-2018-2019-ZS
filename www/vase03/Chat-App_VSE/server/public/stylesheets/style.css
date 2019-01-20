@@ -1,0 +1,254 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding-left: 50px;
+    color: #000;
+    font: 100% helvetica, arial, sans-serif;/* 16px */
+    line-height: 1.625;/* 26px */
+}
+
+h1 {
+    margin: 1em 0;
+}
+
+h3 {
+    margin: 0;
+}
+
+
+p {
+    margin: 0;
+}
+
+a {
+    color: #00B7FF;
+    margin: 2em 0;
+    display: inline-block;
+}
+
+input[type=text], input[type=password] {
+    display: block;
+    width: 16em;
+    height: 2em;
+    line-height: 2em;
+    margin-top: 0.1em;
+    padding-left: 0.5em;
+    border: 1px solid #81b8e2;
+    font: 100% helvetica, arial, sans-serif;/* 16px */
+}
+
+#signinButton {
+    padding: 0 0.2em;
+    font: 100% helvetica, arial, sans-serif;/* 16px */
+    display: inline-block;
+    background-color: #ffffff;
+    width: 8em;
+    height: 2em;
+    line-height: 2em;
+    border: 2px solid #81b8e2;
+    text-align: center;
+    margin: 3em 0 2em 7.9em;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; /* future proofing */
+}
+
+#signinButton:hover {
+    background-color: #81b8e2;
+    cursor: pointer;
+}
+
+.label {
+    color: #228b22;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+.label span {
+    margin-left: .5em;
+    font-weight: normal;
+}
+
+.flashMessage {
+    background: #e9967a;
+    border: 2px solid #cd5c5c;
+    padding: 0 0.5em;
+    height: 2em;
+    width: 16em;
+    line-height: 2em;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; /* future proofing */
+}
+
+#chatbox {
+    margin-top: 1em;
+    border: 1px solid #81b8e2;
+    width: 23em;
+}
+
+#chatbox header {
+    height: 4em;
+    border-bottom: 1px solid #81b8e2;
+    padding: 0 1em;
+    position: relative;
+    background-color: #dbefff;
+}
+
+header p {
+    line-height: 4em;
+    float: left;
+}
+
+header .userSlabWrapper {
+    float: left;
+    margin-left: 1em;
+    height: 2em;
+    position: relative;
+    top: 50%;
+    margin-top: -1em;
+}
+
+.userSlab {
+    height: 2em;
+    border: 1px solid #81b8e2;
+    text-align: center;
+    line-height: 2em;
+}
+
+.userSlab .username {
+    float: left;
+    padding: 0 1em;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.userSlab .onlineStatus {
+    float: left;
+    height: 100%;
+    padding: 0 0.5em;
+    font-size: .8em;
+    line-height: 2.5em;
+    border-left: 1px solid #81b8e2;
+    font-style: italic;
+    color: #666;
+}
+
+.userSlab .online {
+    background-color: #7CFC00;
+}
+
+.userSlab .offline {
+    background-color: rgba(0,0,0,0.12);
+}
+
+.changeUserButton {
+    float: right;
+    font-size: .8em;
+    height: 2em;
+    line-height: 2em;
+    border: 1px solid #81b8e2;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; /* future proofing */
+    padding: 0 .5em;
+    position: relative;
+    top: 50%;
+    margin-top: -1em;
+}
+
+.changeUserButton:hover {
+    cursor: pointer;
+    background-color: #81b8e2;
+}
+
+#chatterBoxChatter {
+    height: 25em;
+    padding: 0.5em .7em;
+    overflow: scroll;
+    font-size: .9em;
+}
+
+#chatterBoxChatter .opponentSpeak, #chatterBoxChatter .selfSpeak {
+    padding: 0.5em;
+    margin-top: .7em;
+}
+
+#chatterBoxChatter .selfSpeak {
+    background-color: rgba(0,0,0,0.05);
+}
+
+#chatterBoxChatter .userName {
+    color: #aaaaaa;
+}
+
+#chatterBoxChatter .time {
+    float: right;
+    font-size: 0.8em;
+    line-height: 2.013125em;
+    color: #aaaaaa;
+}
+
+#chatterBoxChatter .bullet {
+    color: #aaaaaa;
+    float: left;
+}
+
+#chatterBoxChatter .speakContent {
+    overflow: hidden;
+    padding-left: 0.5em;
+}
+
+#chatterBoxChatter .deliveryStatus {
+    font-style: italic;
+    color: #81b8e2;
+    font-size: 0.8em;
+    /*float: left;*/
+}
+
+#send {
+    margin-top: 1em;
+    height: 4em;
+    border-top: 1px solid #81b8e2;
+}
+
+#send form {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#send textarea {
+    float: left;
+    width: 80%;
+    height: 95%;
+    display: block;
+    padding: .5em;
+    resize: none;
+    overflow: auto;
+    outline: none;
+    border: none;
+    font: 100% helvetica, arial, sans-serif;/* 16px */
+}
+
+#chatbutton {
+    height: 100%;
+    float: right;
+    background-color: #81b8e2;
+    border: none;
+    font: 100% helvetica, arial, sans-serif;/* 16px */
+    width: 20%;
+}
+
+#chatbutton:hover {
+    cursor: pointer;
+    background-color: #6995B8;
+}

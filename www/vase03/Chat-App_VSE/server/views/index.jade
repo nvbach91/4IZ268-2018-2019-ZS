@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    if user
+        a(href="/auth/profile") My Profile
+        | &nbsp; |&nbsp;
+        a(href="/auth/logout") Log Out
+        h3 Hello, #{user.username}
+        #chatbox
+            header
+                p chat with:
+                .userSlabWrapper
+                .changeUserButton change user
+            #chatterBoxChatter
+            #send
+                form
+                    textarea#chatmessage(name='chatmessage', placeholder='write message')
+                    input#chatbutton(type='submit', value='send')
+        // /#chatbox
+    else
+        h1 Welcome!
+        h3 Please sign in
+        if (message.length > 0)
+            p.flashMessage #{message}
+        form(action="/auth/login", method="post")
+            p.label username
+            input#username(type='text', placeholder='user1', name="username")
+            p.label password
+            input#password(type='password', value='secret', name="password")
+            input(id='signinButton' type="submit", value="signin")

@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    a(href="/") Home
+    | &nbsp; |&nbsp;
+    a(href="/auth/logout") Log Out
+    p name: #{user.username}
