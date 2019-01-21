@@ -17,9 +17,8 @@ main {
 .nav {
 	background-color: rgb(92, 92, 92);
 	color: #feffff;
-	text-align: center;
+	text-align: left;
 	font-size: 25px;
-	margin: 0 auto;
 	border-radius: 10px;
 }
 
@@ -55,7 +54,6 @@ h1 {
 .headerimg {
 	max-width: 10%;
 	border-radius: 10px;
-	display: flex;
 	float: left;
 }
 
