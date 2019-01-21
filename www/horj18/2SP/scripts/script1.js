@@ -2,28 +2,29 @@
 var groups;
 var groupName;
 var groupId;
+var postTxt;
 
 /*přiřazení elementů do proměnných*/
-var loginBtn = document.querySelector("#loginBtn");
-var shareBtn = document.querySelector("#shareBtn");
-var modalGroup = document.querySelector("#groupModal");
-var modalGroupBody = document.querySelector("#modalGroupBody")
-var sendBtn = document.querySelector("#sendBtn");
-var textA = document.querySelector("#textarea");
-var logoutBtn = document.querySelector("#logoutBtn");
-var loader = document.querySelector("#loadingModal");
-var modalGrouplCloseBtn = document.querySelector("#closeModalGroupBtn");
+var loginBtn = $("#loginBtn");
+var shareBtn = $("#shareBtn");
+var modalGroup = $("#groupModal");
+var modalGroupBody = $("#modalGroupBody");
+var sendBtn = $("#sendBtn");
+var textA = $("#textarea");
+var logoutBtn = $("#logoutBtn");
+var loader = $("#loadingModal");
+var modalGrouplCloseBtn = $("#closeModalGroupBtn");
 
 /*přiřazení funkcí k elementům*/
-loginBtn.addEventListener("click", loginFb);
-shareBtn.addEventListener("click", sharePost);
-sendBtn.addEventListener("click", changeBtn);
-logoutBtn.addEventListener("click", logout);
-modalGrouplCloseBtn.addEventListener("click", closeGroupModal);
+loginBtn.on("click", loginFb);
+shareBtn.on("click", sharePost);
+sendBtn.on("click", changeBtn);
+logoutBtn.on("click", logout);
+modalGrouplCloseBtn.on("click", closeGroupModal);
 
 /*nacita loader ihned po nacteni stranky*/
-$(window).on('load',function(){
-    $(loader).modal('show');
+$(window).on("load", function () {
+    loader.modal("show");
 });
 
 /*FB API*/
@@ -45,20 +46,20 @@ window.fbAsyncInit = function () {
     js = d.createElement(s); js.id = id;
     js.src = "https://connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+}(document, "script", "facebook-jssdk"));
 
 /*Obsluhuje odhlaseni uzivatele pres FB API*/
 function logout() {
-    $(loader).modal("show");
-    shareBtn.disabled = true;
-    logoutBtn.disabled = true;
-    $(textA).val('');
+    loader.modal("show");
+    shareBtn.prop("disabled", true);
+    logoutBtn.prop("disabled", true);
+    textA.val("");
     $("#modalGroupBody label").remove();
     $("#modalGroupBody input").remove();
     FB.getLoginStatus(function (response) {
         FB.api("/me/permissions", "delete", function (response) {
-            $(loader).modal("hide");
-            $('#loginModal').modal("show");
+            loader.modal("hide");
+            $("#loginModal").modal("show");
         });
     });
 
@@ -66,17 +67,17 @@ function logout() {
 
 /*status pripojeni FB uzivatele*/
 function statusChangeCallback(response) {
-    if (response.status === 'connected') {
+    if (response.status === "connected") {
         /*Načítá skupiny, profilovy obrazek, zavírá okno*/
-        $(loader).modal('hide');
-        $('#loginModal').modal('hide');
-        shareBtn.disabled = false;
-        logoutBtn.disabled = false;
+        loader.modal("hide");
+        $("#loginModal").modal("hide");
+        shareBtn.prop("disabled", false);
+        logoutBtn.prop("disabled", false);
         loadGroups();
         $('[data-toggle="popover"]').popover();
         FB.api(
-            '/me/',
-            'GET',
+            "/me/",
+            "GET",
             { "redirect": "false" },
             function (response) {
                 var test = response;
@@ -84,22 +85,22 @@ function statusChangeCallback(response) {
             }
         );
         FB.api(
-            '/me/picture/',
-            'GET',
+            "/me/picture/",
+            "GET",
             { "redirect": "false" },
             function (response) {
                 var test = response.data;
                 $("#profilePic").attr("src", test.url);
             }
         );
-    } else if (response.status === 'not_authorized') {
+    } else if (response.status === "not_authorized") {
         /*Vyžaduje autorizaci aplikace*/
-        $(loader).modal('hide');
-        $('#loginModal').modal('show');
+        loader.modal("hide");
+        $("#loginModal").modal("show");
     } else {
         /*Vyžaduje přihlášení uživatele*/
-        $(loader).modal('hide');
-        $('#loginModal').modal('show');
+        loader.modal("hide");
+        $("#loginModal").modal("show");
     }
 }
 
@@ -107,26 +108,27 @@ function statusChangeCallback(response) {
 function loginFb() {
     FB.login(function (response) {
         statusChangeCallback(response)
-    }, { scope: 'email,user_likes,publish_to_groups' });
+    }, { scope: "email,user_likes,publish_to_groups,manage_pages,publish_pages" });
 }
 
 /*obsluha tlačítka pro sdílení*/
 function sharePost() {
-    postTxt = document.querySelector('#textarea').value.trim();
+    postTxt = textA.val().trim();
     if (validateTxt()) {
-        $(modalGrouplCloseBtn).show();
+        modalGrouplCloseBtn.show();
         var checkedGroups = $("#modalGroupBody label");
         checkedGroups.each(function () {
             var $this = $(this);
-            $($this).css('color', 'black').css("font-weight", "normal");
+            $this.css("color", "black").css("font-weight", "normal");
         });
-        $('#groupModal').modal('show');
         $("#modalGroupBody input:checkbox").prop("checked", false);
-        sendBtn.disabled = true;
+        $(".link-post").css("display","none");
+        $("#groupModal").modal("show");
+        sendBtn.prop("disabled", true);
     } else {
-        $("#textarea").popover("show");
+        textA.popover("show");
         setTimeout(function () {
-            $('#textarea').popover("hide");
+            textA.popover("hide");
         }, 4000);
         return;
     }
@@ -137,6 +139,7 @@ function selectGroups() {
     var checkedGroups = $("#modalGroupBody input:checked");
     checkedGroups.each(function () {
         var $this = $(this);
+        $("#loader_" + $this.attr("id")).css("display", "block");
         sendToGroup($this.attr("id"));
     });
 
@@ -152,10 +155,15 @@ function sendToGroup(groupId) {
         },
         function (response) {
             if (response && !response.error) {
-                $("[value=" + groupId + "]").css('color', 'green').css("font-weight", "bold");
+                var postId = response.id;
+                postId = postId.substring(postId.indexOf("_") + 1)
+                $("[value=" + groupId + "]").css("color", "green").css("font-weight", "bold");
+                $("#loader_" + groupId).css("display", "none");
+                $("#link_" + groupId).attr("href","https://www.facebook.com/groups/"+groupId+"/permalink/"+postId+"/").css("display","block");
             }
             if (response.error) {
-                $("[value=" + groupId + "]").css('color', 'red').css("font-weight", "bold");
+                $("[value=" + groupId + "]").css("color", "red").css("font-weight", "bold");
+                $("#loader_" + groupId).css("display", "none");
             }
         }
     );
@@ -165,16 +173,16 @@ function sendToGroup(groupId) {
 function checkChecked() {
     var n = $("#modalGroupBody input:checked").length;
     if (n > 0) {
-        sendBtn.disabled = false;
+        sendBtn.prop("disabled", false);
     } else if (n === 0) {
-        sendBtn.disabled = true;
+        sendBtn.prop("disabled", true);
     }
 }
 
 /*funkce zaviraciho tlacitka*/
 function closeGroupModal() {
     $("#modalGroupBody input:checkbox").prop("checked", false);
-    $(modalGroup).modal("hide");
+    modalGroup.modal("hide");
 }
 
 /*mění talčítko pro odeslání, přebarvuje zpět skupiny, spouští funkci postToGroups*/
@@ -185,20 +193,15 @@ function changeBtn() {
         $this.text("Zavřít");
         $this.removeClass("btn btn-success");
         $this.addClass("btn btn-danger");
-        $(modalGrouplCloseBtn).hide();
+        modalGrouplCloseBtn.hide();
 
     } else {
-        $('#groupModal').modal('hide');
+        $("#groupModal").modal("hide");
         $this.text("Odeslat");
         $this.removeClass("btn btn-danger");
         $this.addClass("btn btn-success");
-        var checkedGroups = $("#modalGroupBody label");
-        checkedGroups.each(function () {
-            var $this = $(this);
-            $($this).css('color', 'black').css("font-weight", "normal");
-        });
-        $(textA).val('');
-        sendBtn.disabled = true;
+        textA.val("");
+        sendBtn.prop("disabled", true);
     }
 }
 
@@ -208,10 +211,7 @@ function loadGroups() {
         "/me/groups",
         function (response) {
             if (response && !response.error) {
-                for (var l = response.data.length, i = 0; i < l; i++) {
-                    groups = response.data[i];
-                    createGroupChoice(groups.name, groups.id);
-                }
+                createGroupChoice(response);
             }
         },
         { admin_only: true },
@@ -219,16 +219,24 @@ function loadGroups() {
 }
 
 /*vytváří skupinové Checkboxy s popisky*/
-function createGroupChoice(groupName, groupId) {
-    $(modalGroupBody).append($("<div></div>", { class: "row" }), [$('<input />', { type: "checkbox", id: groupId, class: "chckBox" }).on("click", checkChecked), $('<label />', { text: groupName, value: groupId })]);
+function createGroupChoice(response) {
+    for (var l = response.data.length, i = 0; i < l; i++) {
+        groups = response.data[i];
+        modalGroupBody.append($("<div></div>", { class: "row" }),
+            [$("<input />", { type: "checkbox", id: groups.id, class: "chckBox" }).on("click", checkChecked),
+            $("<label />", { text: groups.name, value: groups.id }),
+            $("<a></a>", {id: "link_"+groups.id, class: "link-post", text: "Odkaz na příspěvek" }),
+            $("<div></div>", { id: "loader_" + groups.id, class: "loader-mini-test" })]);
+    }
 }
 
 /*validace vstupu do textarea*/
 function validateTxt() {
-    var validationTxt = postTxt.replace(/\s/g, '');
+    var validationTxt = postTxt.trim();
     if (validationTxt) {
         return true;
     } else {
         return false;
     }
 }
+
