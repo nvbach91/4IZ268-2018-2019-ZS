@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="style.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <link rel="shortcut icon" href="IMG/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="">
     <title>Galerie | Lukáš Hodboď</title>
 
 </head>
@@ -43,30 +42,31 @@
         <p>Přejít do galerie uživatele: </p><button id="profilBT">@makacenkoteam</button>
 
         <div id="instafeed">
-            <div class="photoBox" >
-                <img id="p0" alt="Photo from Instagram">
+            <div class="photoBox">
+                <img id="p0" src="IMG/no-img300.jpg" alt="Photo from Instagram">
                 <div class="midle">
-                    <div class="textOnHover" id="l0" >
+                    <div class="textOnHover" id="l0">
                         <img class="icon" src="IMG/heart-solid.svg" alt="heart icon">
 
                     </div>
                 </div>
             </div>
-            <div class="photoBox" >
-                    <img id="p1" alt="Photo from Instagram">
-                    <div class="midle">
-                        <div class="textOnHover" id="l1">
-                            <img class="icon" src="IMG/heart-solid.svg" alt="heart icon">
-    
-                        </div>
+            <div class="photoBox">
+                <img id="p1" src="IMG/no-img300.jpg" alt="Photo from Instagram">
+                <div class="midle">
+                    <div class="textOnHover" id="l1">
+                        <img class="icon" src="IMG/heart-solid.svg" alt="heart icon">
+
                     </div>
                 </div>
-            
+            </div>
+
         </div>
         <!-- Modal -->
         <div id="myModal" class="modal">
             <span class="close">&times;</span>
-            <img class="modal-content" id="img01">
+            <span id="modalIMG"></span>
+            <img class="modal-content" id="imgModal" src="IMG/no-img300.jpg" alt="Photo from Instagram">
             <div id="caption"></div>
         </div>
     </div>

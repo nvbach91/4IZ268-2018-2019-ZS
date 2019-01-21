@@ -66,9 +66,11 @@
 }
 .photoBox:hover > img{
     opacity: 0.3;  
+    cursor: Pointer;
 }
 .photoBox:hover .midle{
-    opacity: 1;  
+    opacity: 1; 
+    cursor: Pointer; 
 }
 .midle {
     transition: .5s ease;
@@ -84,7 +86,7 @@
 .textOnHover {
     color: white;
     font-size: 16px;
-    padding: 16px 32px;
+    
 }
 
 .icon{
