@@ -224,7 +224,7 @@ function createGroupChoice(response) {
         groups = response.data[i];
         modalGroupBody.append($("<div></div>", { class: "row" }),
             [$("<input />", { type: "checkbox", id: groups.id, class: "chckBox" }).on("click", checkChecked),
-            $("<label />", { text: groups.name, value: groups.id }),
+            $("<label />", { text: groups.name, value: groups.id, for: groups.id}),
             $("<a></a>", {id: "link_"+groups.id, class: "link-post", text: "Odkaz na příspěvek" }),
             $("<div></div>", { id: "loader_" + groups.id, class: "loader-mini-test" })]);
     }
