@@ -1,50 +1,98 @@
-$(function () {
-    //Instagram API
+$(document).ready(function () {
     var ptoken = '1404870044.fa0d083.290093ca2a4d4a7f90e28bf31ec3570d',
+        token = ptoken,
         mtoken = '6320184047.209a707.58363885aaa94bcdb68332026275b3f1',
-        container = document.getElementById('instafeed');
+        container = document.getElementById('instafeed'),
+        modal = document.getElementById('myModal'),
+        modalImg = document.getElementById("img01"),
+        captionText = document.getElementById("caption"),
+        parsedResult,
+        requestArray = new Array("první hodnota", "druhá hodnota");
 
-    window.mishaProcessResult = function (data) {
-        for (x in data.data) {
-            container.innerHTML += '<div class="photoBox"><img onload="fillByImage(this)" onclick="window.open(\''+ data.data[x].link +'\')" src="' + data.data[x].images.low_resolution.url + '"><div class="midle"><div class="textOnHover"><img class="icon" src="IMG/heart-solid.svg" alt="heart icon"> ' + data.data[x].likes.count + '</div></div></div>';
+    // vytvoření objektu XHR
+    xhr = new XMLHttpRequest();
+
+    // definice funkce volané v případě změny stavu požadavku
+    xhr.onreadystatechange = function () {
+
+        // je už požadavek vyřízen?
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+
+            // je návratový kód v pořádku?
+            if (xhr.status === 200) {
+
+
+                console.log(xhr.responseText);
+                parsedResult = JSON.parse(xhr.response);
+                console.log(parsedResult.data);
+                for (x in parsedResult.data) {
+                    console.log(parsedResult.data[x].likes.count);
+
+                    var img = document.getElementById('p' + x);
+
+                    img.src = parsedResult.data[x].images.standard_resolution.url;
+                    img.srcset = parsedResult.data[x].images.thumbnail.url + ' 150w,' + parsedResult.data[x].images.low_resolution.url + ' 306w,' + parsedResult.data[x].images.standard_resolution.url + ' 612w';
+                    img.onload = fillByImage(img);
+                    img.onclick = function () { openModal(this) };
+                    //img.addEventListener("click", openModal(x));
+
+
+                    var textOnHover = document.getElementById('l' + x);
+                    textOnHover.innerHTML += parsedResult.data[x].likes.count;
+                }
+
+            } else {
+                console.log(xhr.responseText);
+            }
         }
     }
-    apiScriptCreate(ptoken);
 
+    // nastavení způsobu odeslání požadavku
+    xhr.open("GET", 'https://api.instagram.com/v1/users/self/media/recent?access_token=' + token + '&count=' + 2);
 
-    $('button').click(function () {
-        $('.apiScript').remove();
-        $('.photoBox').remove();
+    // odeslání požadavku
+    xhr.send();
+
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    $('#profilBT').click(function () {
         if (this.innerHTML == '@makacenkoteam') {
-            apiScriptCreate(mtoken);
+            token = mtoken;
             this.innerHTML = '@lukashodbod';
             $('.profileName').text('Instagram @makacenkoteam');
+            xhr.abort();
+            xhr.open("GET", 'https://api.instagram.com/v1/users/self/media/recent?access_token=' + token + '&count=' + 2);
+            xhr.send();
         } else {
-            apiScriptCreate(ptoken);
+            token = ptoken;
             this.innerHTML = '@makacenkoteam';
             $('.profileName').text('Instagram @lukashodbod');
+            xhr.abort();
+            xhr.open("GET", 'https://api.instagram.com/v1/users/self/media/recent?access_token=' + token + '&count=' + 2);
+            xhr.send();
         }
     });
+    function openModal(obr) {
+        console.log(obr);
 
+        modal.style.display = "block";
+        modalImg.src = obr.src;
+        captionText.innerHTML = obr.alt;
+    }
 
 });
 
-function apiScriptCreate(token) {
-    var num_photos = 18;
-    var scrElement = document.createElement('script');
-    scrElement.classList = 'apiScript';
-    scrElement.setAttribute('src', 'https://api.instagram.com/v1/users/self/media/recent?access_token=' + token + '&count=' + num_photos + '&callback=mishaProcessResult');
-    document.body.appendChild(scrElement);
-}
-function fillByImage(t) {
-    var p = t.parentElement;
-    var pRatio = 1, tRatio = t.naturalWidth / t.naturalHeight;
-    if (pRatio < tRatio) {
-        t.classList.add('fillHeight');
-        t.classList.remove('fillWidth');
+function fillByImage(photo) {
+    var pRatio = 1, tRatio = photo.naturalWidth / photo.naturalHeight;
+    if (1 < tRatio) {
+        photo.classList.add('fillHeight');
+        photo.classList.remove('fillWidth');
     } else {
-        t.classList.add('fillWidth');
-        t.classList.remove('fillHeight');
+        photo.classList.add('fillWidth');
+        photo.classList.remove('fillHeight');
     }
 }
 
