@@ -11,8 +11,6 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
         crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/codebird.js"></script>
 </head>
 
 <body>
@@ -36,18 +34,6 @@
         </div>
     </div>
     <div class="pop-up">
-        Pop out
-    </div>
-
-    <div class="feature-coming hide">
-        <h1>Whooops!</h1>
-        <h2>This feature is not yet implemented.</h2>
-        <img src="https://media.giphy.com/media/bAplZhiLAsNnG/giphy.gif">
-        <h3>Currenty we suport these social media platforms:</p>
-            <hr width="300px">
-            <li>Twitter</li>
-            <hr width="300px">
-            <div class="feature-ok-btn">OK, take me back</div>
     </div>
 
     <div class="intro-container">
@@ -71,8 +57,8 @@
                 <h1>Log into Twitter</h1>
                 <p>Please request PIN (opens in new window - make sure that you have enabled pop up windows in your
                     browser!) and sign into Twitter with your credentials
-                    than copy and paste the generated numbers into the <i>"Enter PIN"</i> area bellow and click <i>Confirm
-                        PIN</i>.</p>
+                    than copy and paste the generated numbers into the <em>"Enter PIN"</em> area bellow and click <em>Confirm
+                        PIN</em>.</p>
                 <form class="tw-login-form">
                     <input type="button" class="tw-auth" value="Request PIN">
                     <input type="number" class="tw-pin" placeholder="Enter PIN" autocomplete="off">
@@ -80,8 +66,17 @@
                 </form>
             </div>
         </div>
-    </div>
 
+        <div class="fb-login">
+            <div class="fb-close"><i class="fas fa-times"></i></div>
+            <div class="fb-login-inner">
+                <h1>Log into Facebook</h1>
+                <p>Use a button bellow to authorize PUSH to post Facebook statuses on your behalf.
+                    <em>You may need to <strong>authorize pop up</strong> windows in your browser!</em>.</p>
+                <input type="button" class="fb-login-btn" value="Log into Facebook">
+            </div>
+        </div>
+    </div>
 
     <div class="tw-container hide">
         <div class="tw-logout-container">
@@ -111,15 +106,78 @@
         </div>
     </div>
 
+    <div class="fb-container hide">
+        <div class="fb-logout-container">
+            <div class="fb-user-profile"></div>
+            <span class="fb-logout"><i class="fas fa-sign-out-alt"></i> Log Out!</span>
+        </div>
+        <div class="fb-info-text">
+            <h1>Facebook PUSH!</h1>
+            <p>You can use the form bellow to post what is on your mind to one of your Facebook pages. Just select the
+                page, write it, PUSH it and pray to
+                the internet gods, it goes smoothly, but... I got a good feelin' about this.</p>
+
+        </div>
+        <div class="fb-profile-container">
+            <ul>
+                <li>
+                    <div>Your name:</div>
+                    <div class="fb-li-name"></div>
+                </li>
+                <li>
+                    <div>Your profile:</div>
+                    <div class="fb-li-profile"></div>
+                </li>
+                <li>
+                    <div>Your email:</div>
+                    <div class="fb-li-email"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="fb-profile-other">
+            <ul>
+            </ul>
+        </div>
+        <div class="fb-posting-container">
+            <div class="fb-page-info">
+                <h1>Select page to post to: </h1>
+                <p>If you don't have premission to post on selected page, error will occure!</p>
+                <select class="fb-post-page"></select>
+                <div class="fb-page-icon"></div>
+                <div class="fb-page-properties"></div>
+            </div>
+            <div class="fb-post">
+                <h1>Post here:</h1>
+                <textarea id="fb-post-text" class="fb-post-text" placeholder="Your post text goes here..." wrap="soft" draggable="false"
+                        autofocus="true"></textarea>
+                <div class="fb-post-btn">PUSH it to the top!</div>
+            </div>
+        </div>
+        <div class="fb-last-posts">
+            <h1>Last posts:</h1>
+            <p>Here are your last posts on this page.</p>
+            <ul class="fb-last-posts-list">
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo" title="PUSH"></div>
+        <p>Semestrální práce #2 z předmětu 4iz268, VŠE, ZS 2018/2019.</p>
+        <p>Vypracoval: <a href="mailto: braj08@vse.cz"><strong>Jan Brandejs</strong></a></p>
+    </footer>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codebird@2.6.0/codebird.js" integrity="sha256-2Et5MWRwf6+/v6K4wnXzEY8pbbZq7Y3l/Uc2WapTpw8="
+        crossorigin="anonymous"></script>
+    <script src="js/general_logic.js"></script>
+    <script src="js/twitter_logic.js"></script>
+    <script src="js/facebook_logic.js"></script>
+    <script src="js/login_screen.js"></script>
 </body>
-
-<footer>
-    <div class="logo" title="PUSH"></div>
-    <p>Semestrální práce #2 z předmětu 4iz268, VŠE, ZS 2018/2019.</p>
-    <p>Vypracoval: <a href="mailto: braj08@vse.cz"><strong>Jan Brandejs</strong></a></p>
-</footer>
-
-<script src="js/twitter_logic.js"></script>
-<script src="js/login_screen.js"></script>
 
 </html>

@@ -1,20 +1,28 @@
-$(".twitter").on("click",function(){
-    $(".tw-login").toggleClass("showed");
-  });
+twLogin = $(".tw-login");
+fbLogin = $(".fb-login");
 
-  $(".tw-close").on("click",function(){
-    $(".tw-login").toggleClass("showed");
-  });
-
-$(".facebook").on("click",function(){
-  $(".feature-coming").toggleClass('hide');
+$(".twitter").on("click", function () {
+  twLogin.toggleClass("shown");
 });
 
-$(".instagram").on("click",function(){
-  $(".feature-coming").toggleClass('hide');
+
+$(".tw-close").on("click", function () {
+  twLogin.toggleClass("shown");
 });
 
-$(".feature-ok-btn").click(function(e) {
-  e.preventDefault();
-  location.reload();
+$(".facebook").on("click", function () {
+  checkLoginState();
+  if (getLogin() == true) {
+    loadFacebook();
+  } else {
+    fbLogin.toggleClass("shown");
+  }
+});
+
+$(".fb-close").on("click", function () {
+  fbLogin.toggleClass("shown");
+});
+
+$(".instagram").on("click", function () {
+  window.location.replace("notimplemented.html");
 });

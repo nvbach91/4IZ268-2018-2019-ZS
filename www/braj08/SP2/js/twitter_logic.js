@@ -20,16 +20,17 @@ $(".tw-pin").click(function (e) {
 })
 
 $(".tw-pin-submit").click(function (e) {
+  loaderContainer = $(".loader-container");
   e.preventDefault();
   loadUser();
   var response = authorizePin();
   if (response != false) {
-    if (response == "short") {
-      alertPopUp("Your PIN is not... ehm... long enough. Please request new PIN!", 5000);
+    if (response == "different") {
+      alertPopUp("Your PIN has different lenght than requested. Please request new PIN!", 5000);
     } else {
-      $(".loader-container").toggleClass("hide");
+      loaderContainer.toggleClass("hide");
       setTimeout(function () {
-        $(".loader-container").toggleClass("hide");
+        loaderContainer.toggleClass("hide");
       }, 2000);
       $(".intro-container").toggleClass("hide");
       $(".tw-container").toggleClass("hide");
@@ -95,19 +96,20 @@ function authorizeOpen() {
 };
 
 function authorizePin() {
-  if ($(".tw-pin").val().length != 7) {
-    return "short";
+  twPin = $(".tw-pin"); 
+  if (twPin.val().length !== 7) {
+    return "different";
   }
   cb.__call(
     "oauth_accessToken",
-    { oauth_verifier: $(".tw-pin").val() },
+    { oauth_verifier: twPin.val() },
     function (reply, rate, err) {
       if (err) {
         console.log("error response or timeout exceeded" + err.error);
         errorScreen("Authentification of your PIN has failed, please try again or contact the administrator");
       }
       if (reply) {
-        if ((reply.oauth_token || reply.oauth_token_secret) == undefined) {
+        if ((reply.oauth_token || reply.oauth_token_secret) === undefined) {
           errorScreen("Authentification of your PIN has failed, please try again or contact the administrator");
           return false;
         } else {
@@ -145,6 +147,7 @@ function tweet(text) {
 };
 
 function logOut() {
+  /* This function is broken on the current CDN, there for, just changes the "view"
   cb.logout().then(() => {
     $(".loader-container").toggleClass("hide");
     setTimeout(function () {
@@ -157,7 +160,17 @@ function logOut() {
     $(".tw-container").toggleClass("hide");
     requested = false;
     alertPopUp("Log out successful", 3000);
-  });
+  });*/
+  
+  // For getting to other platforms
+  $(".loader-container").toggleClass("hide");
+  setTimeout(function () {
+    $(".loader-container").toggleClass("hide");
+  }, 2000);
+  $(".tw-login").toggleClass("showed");
+  $(".intro-container").toggleClass("hide");
+  $(".tw-container").toggleClass("hide");
+  alertPopUp("NOT LOGGED OUT!", 5000);
 };
 
 function loadUser() {
@@ -166,31 +179,19 @@ function loadUser() {
     var profileHTML = `<div class="tw-user-profile" style="background-image: url(${reply.profile_image_url_https})"></div>`;
     var aboutHMTL = reply.description;
     var registeredDate = new Date(reply.created_at).toLocaleDateString('cs-CZ');
-    var registeredHTML = `You registerd at: <i>` + registeredDate + `</i>`;
+    var registeredHTML = `You registerd at: <em>` + registeredDate + `</em>`;
     var activityDate = new Date(reply.status.created_at).toLocaleDateString('cs-CZ');
     var activityTime = new Date(reply.status.created_at).toLocaleTimeString('cs-CZ');
-    var activityHTML = `Your last activity happened: <i>` + activityDate + ` ` + activityTime + `</i>`;
+    var activityHTML = `Your last activity happened: <em>` + activityDate + ` ` + activityTime + `</em>`;
     $(".tw-user-name").html(nameHTML);
-    if (aboutHMTL != null) {
-      $(".tw-about").html(aboutHMTL);
+    twAbout = $(".tw-about");
+    if (aboutHMTL !== null) {
+      twAbout.html(aboutHMTL);
     } else {
-      $(".tw-about").toggleClass("hide");
+      twAbout.toggleClass("hide");
     };
     $(".tw-user-profile").html(profileHTML);
     $(".tw-registered").html(registeredHTML);
     $(".tw-last-activity").html(activityHTML);
   });
-};
-
-function errorScreen(text) {
-  $(".error-text").html(text);
-  $(".error-overlay").toggleClass('error-show');
-};
-
-function alertPopUp(text, duration) {
-  $(".pop-up").html(text);
-  $(".pop-up").toggleClass("pop");
-  setTimeout(function () {
-    $(".pop-up").toggleClass("pop");
-  }, duration);
 };
