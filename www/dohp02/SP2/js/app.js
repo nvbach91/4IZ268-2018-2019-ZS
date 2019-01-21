@@ -37,12 +37,13 @@ $("#buttonSearch").click(function () {
 });
 
 function searchUsers() {
+    var userInput = $('#search-input').val();
     var params = {
-        screen_name: document.getElementById("search-input").value
+        screen_name: userInput
     };
-    document.getElementById("latest_container").innerHTML = "";
-    document.getElementById("first_container").innerHTML = "";
-    document.getElementById("latestdirected_container").innerHTML = "";
+    $('#latest_container').empty();
+    $('#first_container').empty();
+    $('#latestdirected_container').empty();
     cb.__call("users_show", params, function (reply, rate, err) {
         console.log(reply);
 
@@ -84,7 +85,7 @@ function searchUsers() {
                 $('#latest_stats').html("<h2>Latest Tweet by User</h2>");
                 twttr.widgets.createTweet(
                     reply[0].id_str,
-                    document.getElementById('latest_container'),
+                    $('#latest_container')[0],
                     {
                         theme: 'light',
                     }
@@ -114,7 +115,7 @@ function searchUsers() {
                 $('#random_stats').html("<h2>Random Tweet by User</h2>");
                 twttr.widgets.createTweet(
                     reply[randomNumber].id_str,
-                    document.getElementById('first_container'),
+                    $('#first_container')[0],
                     {
                         theme: 'light',
                     }
@@ -139,7 +140,7 @@ function searchUsers() {
                 $('#latestdirected_stats').html("<h2>Latest Tweet replying to User</h2>");
                 twttr.widgets.createTweet(
                     reply.statuses[0].id_str,
-                    document.getElementById('latestdirected_container'),
+                    $('#latestdirected_container')[0],
                     {
                         theme: 'light',
                     }
