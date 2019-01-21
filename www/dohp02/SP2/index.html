@@ -2,17 +2,15 @@
 <html lang="en">
 
 <head>
+    <title>Twitter Stats</title>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="Twitter Stats - Enter a name of any Twitter account and see various statistics about it!">
     <meta name="author" content="Pavel Dohnal">
     <meta name="keywords" content="twitter, stats, statistics, data, datamining">
-    <title>Twitter Stats</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link href="css/homepage.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/codebird.js"></script>
 </head>
 
 <body>
@@ -24,7 +22,7 @@
         <main>
             <input id="search-input" name="search" placeholder="Enter the name of Twitter account here" size="40"
                 required />
-            <button onclick="searchUsers()">Submit</button>
+            <button type=submit id="buttonSearch">Submit</button>
             <h2>Basic Statistics</h2>
 
             <table id="basictable">
@@ -92,6 +90,8 @@
         </main>
         <footer>2019 &copy; Pavel Dohnal</footer>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codebird@2.6.0/codebird.min.js"></script>
     <script src="js/app.js"></script>
 </body>
 

@@ -26,6 +26,16 @@ window.twttr = (function (d, s, id) {
     return t;
 }(document, "script", "twitter-wjs"));
 
+$("#search-input").keyup(function (event) {
+    if (event.keyCode == 13) {
+        $("#buttonSearch").click();
+    }
+});
+
+$("#buttonSearch").click(function () {
+    searchUsers();
+});
+
 function searchUsers() {
     var params = {
         screen_name: document.getElementById("search-input").value
@@ -33,108 +43,108 @@ function searchUsers() {
     document.getElementById("latest_container").innerHTML = "";
     document.getElementById("first_container").innerHTML = "";
     document.getElementById("latestdirected_container").innerHTML = "";
-    cb.__call(
-        "users_show",
-        params,
-        function (reply, rate, err) {
+    cb.__call("users_show", params, function (reply, rate, err) {
+        console.log(reply);
+
+        var split = reply.created_at.split(' ');
+        var date = split.splice(1, 2);
+        var year = split[split.length - 1];
+        date.push(year);
+        date = date.join(' ');
+
+        var verified = "";
+        if (reply.verified == true) {
+            verified = "Yes";
+        }
+        else {
+            verified = "No";
+        }
+        document.getElementById("profile_image").innerHTML = "<img src=" + reply.profile_image_url + ">";
+        document.getElementById("name").innerHTML = reply.name;
+        document.getElementById("description").innerHTML = reply.description;
+        document.getElementById("location").innerHTML = reply.location;
+        document.getElementById("created").innerHTML = date;
+        document.getElementById("followers").innerHTML = reply.followers_count;
+        document.getElementById("friends").innerHTML = reply.friends_count;
+        document.getElementById("favourites").innerHTML = reply.favourites_count;
+        document.getElementById("statuses").innerHTML = reply.statuses_count;
+        document.getElementById("verified").innerHTML = verified;
+
+        var Tweets = {
+            screen_name: reply.screen_name,
+            include_rts: false,
+            count: 50
+        };
+
+        cb.__call("statuses_userTimeline", Tweets, function (reply, rate, err) {
             console.log(reply);
-
-            var split = reply.created_at.split(' ');
-            var date = split.splice(1, 2);
-            var year = split[split.length - 1];
-            date.push(year);
-            date = date.join(' ');
-
-            var verified = "";
-            if (reply.verified == true) {
-                verified = "Yes";
+            try {
+                twttr.widgets.createTweet(
+                    reply[0].id_str,
+                    document.getElementById('latest_container'),
+                    {
+                        theme: 'light',
+                    }
+                );
             }
-            else {
-                verified = "No";
+            catch{
+                document.getElementById("latest_container").innerHTML = "No User tweets were found";
             }
-            document.getElementById("profile_image").innerHTML = "<img src=" + reply.profile_image_url + ">";
-            document.getElementById("name").innerHTML = reply.name;
-            document.getElementById("description").innerHTML = reply.description;
-            document.getElementById("location").innerHTML = reply.location;
-            document.getElementById("created").innerHTML = date;
-            document.getElementById("followers").innerHTML = reply.followers_count;
-            document.getElementById("friends").innerHTML = reply.friends_count;
-            document.getElementById("favourites").innerHTML = reply.favourites_count;
-            document.getElementById("statuses").innerHTML = reply.statuses_count;
-            document.getElementById("verified").innerHTML = verified;
-
-            var Tweets = {
-                q: "-filter:nativeretweets from:" + reply.screen_name,
-                count: 1
-            };
-
-            cb.__call(
-                "search_tweets",
-                Tweets,
-                function (reply) {
-                    console.log(reply);
-                    twttr.widgets.createTweet(
-                        reply.statuses[0].id_str,
-                        document.getElementById('latest_container'),
-                        {
-                            theme: 'light',
-                        }
-                    );
-                },
-                true
-            );
-
-            var min = 1;
-            if (reply.statuses_count < 100) {
-                var max = reply.statuses_count;
-            }
-            else {
-                var max = 99;
-            }
-
-            var random = Math.floor(Math.random() * (+max - +min)) + +min;
-            var randomTweets = {
-                q: "-filter:nativeretweets from:" + reply.screen_name,
-                count: 100
-            };
-
-            cb.__call(
-                "search_tweets",
-                randomTweets,
-                function (reply) {
-                    console.log(reply);
-                    twttr.widgets.createTweet(
-                        reply.statuses[random].id_str,
-                        document.getElementById('first_container'),
-                        {
-                            theme: 'light',
-                        }
-                    );
-                },
-                true
-            );
-
-            var paramsTweets = {
-                q: "to:" + reply.screen_name,
-                count: 10
-            };
-
-            cb.__call(
-                "search_tweets",
-                paramsTweets,
-                function (reply) {
-                    console.log(reply);
-                    twttr.widgets.createTweet(
-                        reply.statuses[0].id_str,
-                        document.getElementById('latestdirected_container'),
-                        {
-                            theme: 'light',
-                        }
-                    );
-                },
-                true
-            );
         },
+            true
+        );
+
+        var randomTweets = {
+            screen_name: reply.screen_name,
+            include_rts: false,
+            count: 200
+        };
+
+        cb.__call("statuses_userTimeline", randomTweets, function (reply, rate, err) {
+            console.log(reply);
+            var realTweets = reply.length;
+            var minNumber = 0;
+            var maxNumber = realTweets;
+            var randomNumber = Math.floor(Math.random() * (+maxNumber - +minNumber)) + +minNumber;
+            try {
+                twttr.widgets.createTweet(
+                    reply[randomNumber].id_str,
+                    document.getElementById('first_container'),
+                    {
+                        theme: 'light',
+                    }
+                );
+            }
+            catch{
+                document.getElementById("first_container").innerHTML = "No User tweets were found";
+            }
+        },
+            true
+        );
+
+        var paramsTweets = {
+            q: "-filter:nativeretweets to:" + reply.screen_name,
+            count: 50
+        };
+
+        cb.__call("search_tweets", paramsTweets, function (reply, rate, err) {
+            console.log(reply);
+            try {
+                twttr.widgets.createTweet(
+                    reply.statuses[0].id_str,
+                    document.getElementById('latestdirected_container'),
+                    {
+                        theme: 'light',
+                    }
+                );
+            }
+            catch{
+                document.getElementById("latestdirected_container").innerHTML = "No replies to the User were found.";
+            }
+        },
+            true
+        );
+    },
         true
     );
 }
