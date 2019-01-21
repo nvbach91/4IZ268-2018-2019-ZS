@@ -53,13 +53,13 @@ function searchUsers() {
         date = date.join(' ');
 
         var verified = "";
-        if (reply.verified == true) {
+        if (reply.verified) {
             verified = "Yes";
         }
         else {
             verified = "No";
         }
-        document.getElementById("profile_image").innerHTML = "<img src=" + reply.profile_image_url + ">";
+        document.getElementById("profile_image").innerHTML = "<img src=" + reply.profile_image_url + " alt='ProfileImage'>";
         document.getElementById("name").innerHTML = reply.name;
         document.getElementById("description").innerHTML = reply.description;
         document.getElementById("location").innerHTML = reply.location;
@@ -70,13 +70,13 @@ function searchUsers() {
         document.getElementById("statuses").innerHTML = reply.statuses_count;
         document.getElementById("verified").innerHTML = verified;
 
-        var Tweets = {
+        var latestTweets = {
             screen_name: reply.screen_name,
             include_rts: false,
             count: 50
         };
 
-        cb.__call("statuses_userTimeline", Tweets, function (reply, rate, err) {
+        cb.__call("statuses_userTimeline", latestTweets, function (reply, rate, err) {
             console.log(reply);
             try {
                 twttr.widgets.createTweet(
@@ -122,12 +122,12 @@ function searchUsers() {
             true
         );
 
-        var paramsTweets = {
+        var latestDirectedTweets = {
             q: "-filter:nativeretweets to:" + reply.screen_name,
             count: 50
         };
 
-        cb.__call("search_tweets", paramsTweets, function (reply, rate, err) {
+        cb.__call("search_tweets", latestDirectedTweets, function (reply, rate, err) {
             console.log(reply);
             try {
                 twttr.widgets.createTweet(
