@@ -59,16 +59,18 @@ function searchUsers() {
         else {
             verified = "No";
         }
-        document.getElementById("profile_image").innerHTML = "<img src=" + reply.profile_image_url + " alt='ProfileImage'>";
-        document.getElementById("name").innerHTML = reply.name;
-        document.getElementById("description").innerHTML = reply.description;
-        document.getElementById("location").innerHTML = reply.location;
-        document.getElementById("created").innerHTML = date;
-        document.getElementById("followers").innerHTML = reply.followers_count;
-        document.getElementById("friends").innerHTML = reply.friends_count;
-        document.getElementById("favourites").innerHTML = reply.favourites_count;
-        document.getElementById("statuses").innerHTML = reply.statuses_count;
-        document.getElementById("verified").innerHTML = verified;
+
+        $('#basic_stats').html("<h2>Basic Statistics</h2>");
+        $('#profile_image').html("<strong>Profile Image:</strong> <img src=" + reply.profile_image_url + " alt='ProfileImage'>");
+        $('#name').html("<strong>Name:</strong> " + reply.name);
+        $('#description').html("<strong>Description:</strong> " + reply.description);
+        $('#location').html("<strong>Location:</strong> " + reply.location);
+        $('#verified').html("<strong>Verified:</strong> " + verified);
+        $('#created').html("<strong>Account Created:</strong> " + date);
+        $('#followers').html("<strong>Number of followers:</strong> " + reply.followers_count);
+        $('#friends').html("<strong>Number of followings:</strong> " + reply.friends_count);
+        $('#favourites').html("<strong>Number of favourites:</strong> " + reply.favourites_count);
+        $('#tweets').html("<strong>Number of tweets:</strong> " + reply.statuses_count);
 
         var latestTweets = {
             screen_name: reply.screen_name,
@@ -79,6 +81,7 @@ function searchUsers() {
         cb.__call("statuses_userTimeline", latestTweets, function (reply, rate, err) {
             console.log(reply);
             try {
+                $('#latest_stats').html("<h2>Latest Tweet by User</h2>");
                 twttr.widgets.createTweet(
                     reply[0].id_str,
                     document.getElementById('latest_container'),
@@ -88,7 +91,8 @@ function searchUsers() {
                 );
             }
             catch{
-                document.getElementById("latest_container").innerHTML = "No User tweets were found";
+                $('#latest_stats').html("<h2>Latest Tweet by User</h2>");
+                $('#latest_container').text("No User tweets were found.");
             }
         },
             true
@@ -107,6 +111,7 @@ function searchUsers() {
             var maxNumber = realTweets;
             var randomNumber = Math.floor(Math.random() * (+maxNumber - +minNumber)) + +minNumber;
             try {
+                $('#random_stats').html("<h2>Random Tweet by User</h2>");
                 twttr.widgets.createTweet(
                     reply[randomNumber].id_str,
                     document.getElementById('first_container'),
@@ -116,7 +121,8 @@ function searchUsers() {
                 );
             }
             catch{
-                document.getElementById("first_container").innerHTML = "No User tweets were found";
+                $('#random_stats').html("<h2>Random Tweet by User</h2>");
+                $('#first_container').text("No User tweets were found.");
             }
         },
             true
@@ -130,6 +136,7 @@ function searchUsers() {
         cb.__call("search_tweets", latestDirectedTweets, function (reply, rate, err) {
             console.log(reply);
             try {
+                $('#latestdirected_stats').html("<h2>Latest Tweet replying to User</h2>");
                 twttr.widgets.createTweet(
                     reply.statuses[0].id_str,
                     document.getElementById('latestdirected_container'),
@@ -139,7 +146,8 @@ function searchUsers() {
                 );
             }
             catch{
-                document.getElementById("latestdirected_container").innerHTML = "No replies to the User were found.";
+                $('#latestdirected_stats').html("<h2>Latest Tweet replying to User</h2>");
+                $('#latestdirected_container').text("No replies to the User were found.");
             }
         },
             true

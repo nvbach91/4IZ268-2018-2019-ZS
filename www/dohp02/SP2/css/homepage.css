@@ -14,6 +14,13 @@ main {
     min-height: 100vh;
 }
 
+main p {
+    text-align: left;
+    width: 50%;
+    margin: 0 auto;
+    line-height: 35px;
+}
+
 hr {
     border-style: solid;
     border-color: #eee;
@@ -30,25 +37,22 @@ button, .btn, a.btn {
 }
 
 #latest_container {
+    width: 50%;
     margin: 0 auto;
-    text-align: center;
-    margin-left: 22%;
 }
 
 #first_container {
-    margin: 0 auto;
-    text-align: center;
-    margin-left: 22%;
-}
-
-#profile_image {
+    width: 50%;
     margin: 0 auto;
 }
 
 #latestdirected_container {
+    width: 50%;
     margin: 0 auto;
-    text-align: center;
-    margin-left: 22%;
+}
+
+#profile_image {
+    margin: 0 auto;
 }
 
 footer {
