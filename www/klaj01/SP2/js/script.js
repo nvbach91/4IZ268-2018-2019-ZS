@@ -18,7 +18,7 @@ function getData(searchTerm, callback) {
     dataType: "jsonp",
     crossDomain: true,
     jsonp: "json_callback",
-    success: callback
+    success: callback,
   };
   $.ajax(settings);
 }
@@ -30,7 +30,7 @@ function renderGame(result) {
 		<div class="gamename"> <p class="gameTitle"> ${result.name} </p> </div>
 		<div> <p class="decker">${result.deck}<p> </div>
 		<div class="siteLink"> <a href="${
-      result.site_detail_url
+    result.site_detail_url
     }"target="_blank">Více informací</a> </div>
 		  </div>
 		  
@@ -47,9 +47,9 @@ $.ajax({
     Accept: "application/vnd.twitchtv.v5+json",
     "Client-ID": "uv11n4zns54ctbu5u5ih3muz6u9urb"
   },
-  success: function(datatopplayed) {
+  success: function (datatopplayed) {
     console.log(datatopplayed);
-    $.each(datatopplayed.games, function() {
+    $.each(datatopplayed.games, function () {
       console.log(this.name);
       opt.append(new Option(this.name, this.name));
     });
@@ -69,7 +69,7 @@ function displayGame(data) {
 }
 
 function watchSubmit() {
-  $("form").submit(function(event) {
+  $("form").submit(function (event) {
     timeoutBackground();
     event.preventDefault();
     let queryTarget = $(event.currentTarget).find("#searchText");
@@ -83,13 +83,13 @@ $(watchSubmit);
 
 /* Animace karet */
 function timeoutBackground() {
-  $(".backgroundImage").fadeOut(1000, function() {
+  $(".backgroundImage").fadeOut(1000, function () {
     $(this).remove();
   });
 }
 
 function timeinBackground() {
-  $(".box").fadeOut(1300, function() {});
+  $(".box").fadeOut(1300, function () { });
 }
 
 function timeinInitial() {

@@ -188,14 +188,6 @@ footer {
 	border-radius: 10px;
 }
 
-loading {
-	overflow: hidden;
-}
-
-loading footer {
-	display: block;
-}
-
 footer p {
 	color: #dbd9d8;
 	font-size: 25px;
