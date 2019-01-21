@@ -16,34 +16,18 @@
 </head>
 
 <body>
-    <script>window.twttr = (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0],
-                t = window.twttr || {};
-            if (d.getElementById(id)) return t;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js, fjs);
-
-            t._e = [];
-            t.ready = function (f) {
-                t._e.push(f);
-            };
-            return t;
-        }(document, "script", "twitter-wjs"));</script>
     <div id="app">
         <header>
-
-            <h1>Twitter Stats
-                <img src="img/logoTwitter.png" id="TwitterLogo" alt="TwitterLogo" height="60" width="60"></h1>
-
+            <h1>Twitter Stats<img src="img/logoTwitter.png" id="TwitterLogo" alt="TwitterLogo" height="60" width="60"></h1>
             <p>Enter a name of any Twitter account and see various statistics about it!</p>
         </header>
         <main>
-            <input id="search-input" name="search" placeholder="Enter the name of Twitter account here" size="40" />
+            <input id="search-input" name="search" placeholder="Enter the name of Twitter account here" size="40"
+                required />
             <button onclick="searchUsers()">Submit</button>
             <h2>Basic Statistics</h2>
-            <table id="basictable">
+
+            <table id="basictable" cellspacing="10">
                 <tr>
                     <td><strong>Profile Image:</strong></td>
                     <td>
@@ -52,59 +36,51 @@
                 </tr>
                 <tr>
                     <td><strong>Name:</strong></td>
-                    <td>
-                        <p id="name"></p>
+                    <td id="name">
                     </td>
                 </tr>
                 <tr>
                     <td><strong>Verified:</strong></td>
-                    <td>
-                        <p id="verified"></p>
+                    <td id="verified">
                     </td>
                 </tr>
                 <tr>
                     <td><strong>Description:</strong></td>
-                    <td>
-                        <p id="description"></p>
+                    <td id="description">
                     </td>
                 </tr>
                 <tr>
                     <td><strong>Location:</strong></td>
-                    <td>
-                        <p id="location"></p>
+                    <td id="location">
                     </td>
                 </tr>
                 <tr>
                     <td><strong>Account Created</strong>:</td>
-                    <td>
-                        <p id="created"></p>
+                    <td id="created">
                     </td>
                 </tr>
                 <tr>
                     <td><strong>Number of followers:</strong></td>
-                    <td>
-                        <p id="followers"></p>
+                    <td id="followers">
                     </td>
                 </tr>
                 <tr>
                     <td><strong>Number of followings:</strong></td>
-                    <td>
-                        <p id="friends"></p>
+                    <td id="friends">
                     </td>
                 </tr>
                 <tr>
                     <td><strong>Number of favourites:</strong></td>
-                    <td>
-                        <p id="favourites"></p>
+                    <td id="favourites">
                     </td>
                 </tr>
                 <tr>
                     <td><strong>Number of tweets:</strong></td>
-                    <td>
-                        <p id="statuses"></p>
+                    <td id="statuses">
                     </td>
                 </tr>
             </table>
+
             <h2>Advanced Statistics</h2>
             <h2>Latest Tweet by User</h2>
             <div id="latest_container"></div>
@@ -112,6 +88,7 @@
             <div id="first_container"></div>
             <h2>Latest Tweet replying to User</h2>
             <div id="latestdirected_container"></div>
+
         </main>
         <footer>2019 &copy; Pavel Dohnal</footer>
     </div>
