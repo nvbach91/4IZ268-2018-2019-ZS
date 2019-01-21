@@ -2,30 +2,31 @@
 
 /*přiřazuje html elementy k proměnným*/
 var postTxt;
-var checkBoxContainer = document.querySelector("#checkBoxContainer");
-var checkBoxForm = document.querySelector("#checkBoxForm");
+var checkBoxContainer = $("#checkBoxContainer");
 var groups;
 var errorOccurred = false;
 var messageSent = false;
 var atLeastOneChecked;
-var mainLoader = document.querySelector("#loader");
+var mainLoader = $("#loader");
 var postSend;
-var shareBtn = document.querySelector('#shareBtn');;
-var loginBtn = document.querySelector('#fbLoginButton');
-var fbStatus = document.querySelector('#fbStatus');
-var textarea = document.querySelector('#textarea');
-var checkValidityBtn = document.querySelector('#checkValidityBtn');
+var shareBtn = $('#shareBtn');
+var loginBtn = $('#fbLoginButton');
+var fbStatus = $('#fbStatus');
+var textarea = $('#textarea');
+var checkValidityBtn = $('#checkValidityBtn');
 
 var userName;
 var pathToProfilePhoto;
-var profilePhoto = document.querySelector('#profilePhoto');
-var userNameElement = document.querySelector('#userName');
-var profileRow = document.querySelector('.profileRow');
+var profilePhoto = $('#profilePhoto');
+var userNameElement = $('#userName');
+var profileRow = $('.profileRow');
+
+var checkBoxForm = document.querySelector("#checkBoxForm");
 
 /*přiřazuje eventy k příslušným html elementům*/
-shareBtn.addEventListener("click", postFb);
-loginBtn.addEventListener("click", loginFb);
-textarea.addEventListener("click", resetIndicators);
+shareBtn.on("click", postFb);
+loginBtn.on("click", loginFb);
+textarea.on("click", resetIndicators);
 
 /*Základní napojení FB api */
 window.fbAsyncInit = function () {
@@ -53,16 +54,16 @@ function statusChangeCallback(response) {
     if (response.status === 'connected') {
         getUserInfo();
 
-        $(fbStatus).html("Povolen přístup na FB");
-        $(loginBtn).hide();
-        $(shareBtn).show();
+        fbStatus.html("Povolen přístup na FB");
+        loginBtn.hide();
+        shareBtn.show();
         findGroups();
     } else if (response.status === 'not_authorized') {
-        $(fbStatus).html("Nepovolen přístup na FB");
-        $(shareBtn).hide();
+        fbStatus.html("Nepovolen přístup na FB");
+        shareBtn.hide();
     } else {
-        $(fbStatus).html("Nepřihlášen na FB");
-        $(shareBtn).hide();
+        fbStatus.html("Nepřihlášen na FB");
+        shareBtn.hide();
 
     }
 }
@@ -80,7 +81,7 @@ function getProfilePicture() {
         { "redirect": "false" },
         function (response) {
             pathToProfilePhoto = response.data.url;
-            $(profilePhoto).attr("src", pathToProfilePhoto);
+            profilePhoto.attr("src", pathToProfilePhoto);
             $(profilePhoto).show();
         }
     );
@@ -95,7 +96,7 @@ function getUserName() {
         { "redirect": "false" },
         function (response) {
             userName = response.name;
-            $(userNameElement).html(userName);
+            userNameElement.html(userName);
         }
     );
 }
@@ -172,7 +173,7 @@ function sendToGroup(groupId) {
 /*pomocí fb api zjišťuje u jakých skupin je uživatel adminem a podle toho pak vytváří checkboxy*/
 function findGroups() {
     $("#formHeading").show();
-    $(mainLoader).show();
+    mainLoader.show();
     FB.api(
 
         "/me/groups",
@@ -185,7 +186,7 @@ function findGroups() {
 
                 }
             }
-            $(mainLoader).hide();
+            mainLoader.hide();
         },
         { admin_only: true },
     );
@@ -214,7 +215,7 @@ function createCheckBox(name, value) {
 
 /*ukládá obsah texboxu do proměnné*/
 function saveTextareaToVar() {
-    postTxt = textarea.value;
+    postTxt = textarea.val();
 }
 
 /* Resetuje stavy indikátorů (zelená/červená) po odeslání messege na FB skupiny. Spustí se při opětovném kliknutí na textarea po tom, co již byl odeslán nějaký příspěvek. */
@@ -222,7 +223,7 @@ function resetIndicators() {
     if (messageSent) {
         if (confirm("Přejete si vymazat obsah textového pole?")) {
             setDefaultStyleOfIndicators();
-            $(textarea).val('');
+            textarea.val('');
         } else {
             setDefaultStyleOfIndicators();
         }
