@@ -18,7 +18,6 @@ window.twttr = (function (d, s, id) {
     js.id = id;
     js.src = "https://platform.twitter.com/widgets.js";
     fjs.parentNode.insertBefore(js, fjs);
-
     t._e = [];
     t.ready = function (f) {
         t._e.push(f);
@@ -38,13 +37,13 @@ $("#buttonSearch").click(function () {
 
 function searchUsers() {
     var userInput = $('#search-input').val();
-    var params = {
+    var paramUser = {
         screen_name: userInput
     };
     $('#latest_container').empty();
     $('#first_container').empty();
     $('#latestdirected_container').empty();
-    cb.__call("users_show", params, function (reply, rate, err) {
+    cb.__call("users_show", paramUser, function (reply, rate, err) {
         console.log(reply);
 
         var split = reply.created_at.split(' ');
@@ -61,6 +60,8 @@ function searchUsers() {
             verified = "No";
         }
 
+        var screenName = reply.screen_name;
+
         $('#basic_stats').html("<h2>Basic Statistics</h2>");
         $('#profile_image').html("<strong>Profile Image:</strong> <img src=" + reply.profile_image_url + " alt='ProfileImage'>");
         $('#name').html("<strong>Name:</strong> " + reply.name);
@@ -74,7 +75,7 @@ function searchUsers() {
         $('#tweets').html("<strong>Number of tweets:</strong> " + reply.statuses_count);
 
         var latestTweets = {
-            screen_name: reply.screen_name,
+            screen_name: screenName,
             include_rts: false,
             count: 50
         };
@@ -100,7 +101,7 @@ function searchUsers() {
         );
 
         var randomTweets = {
-            screen_name: reply.screen_name,
+            screen_name: screenName,
             include_rts: false,
             count: 200
         };
@@ -130,7 +131,7 @@ function searchUsers() {
         );
 
         var latestDirectedTweets = {
-            q: "-filter:nativeretweets to:" + reply.screen_name,
+            q: "-filter:nativeretweets to:" + screenName,
             count: 50
         };
 
