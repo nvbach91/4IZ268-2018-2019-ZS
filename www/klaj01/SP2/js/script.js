@@ -12,7 +12,7 @@ function getData(searchTerm, callback) {
       query: `"${searchTerm}"`,
       format: "jsonp",
       resources: "game",
-      limit: 9
+      limit: 10
     },
     type: "GET",
     dataType: "jsonp",

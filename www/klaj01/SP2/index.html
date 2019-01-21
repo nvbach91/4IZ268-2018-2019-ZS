@@ -20,23 +20,21 @@
 
     <header>
       <nav class="nav">
+        <img class="headerimg" src="img/backgroundtransparent.png" alt="Headerimg" />
         <a href="index.html" class="activepage">Domů</a>
         <a href="game.html">Pong</a>
       </nav>
-      <a href="javascript:restartPage()"><img class="headerimg" src="img/1.png" alt="Headerimg" /></a>
-      <a href="javascript:restartPage()">
-        <h1>VIDEO GAME FINDER</h1>
-      </a>
-      <p id="result"></p>
-
-      <h2>-Najdi svou oblíbenou hru-</h2>
+      <div class="formDiv">
+        <form action="#" class="gameSearch">
+          <input required type="text" placeholder="Zde napište název hry" id="searchText" />
+          <button type="submit" id="submitButton">Najít hru</button>
+        </form>
+        <a href="javascript:restartPage()">
+          <h1>VIDEO GAME FINDER</h1>
+        </a>
+        <h2>-Najdi svou oblíbenou hru-</h2>
     </header>
-    <div class="formDiv">
-      <form action="#" class="gameSearch">
-        <input required type="text" placeholder="Zde napište název hry" id="searchText" />
-        <button type="submit" id="submitButton">Najít hru</button>
-      </form>
-    </div>
+
 
     <h3 id="errorMessage" class="hide">Bohužel jste zadal špatný název</h3>
     <div class="backgroundImage"></div>
