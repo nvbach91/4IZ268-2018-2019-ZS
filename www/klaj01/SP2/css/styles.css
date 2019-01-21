@@ -12,7 +12,9 @@ main {
 	background-color: white;
 	width: 80%;
 	height: 100%;
+	border-radius: 10px;
 }
+#refresh-button:hover {cursor: pointer;}
 
 .nav {
 	background-color: rgb(92, 92, 92);
@@ -176,7 +178,7 @@ a {
 }
 
 footer {
-	background-color: #007EE3;
+	background-color: rgb(216, 216, 216);
 	height: 50px;
 	display: table;
 	text-align: center;
@@ -187,8 +189,9 @@ footer {
 }
 
 footer p {
-	color: #dbd9d8;
+	color: #007EE3;
 	font-size: 25px;
+	font-weight: bold;
 }
 
 .gamename {

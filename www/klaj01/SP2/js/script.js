@@ -4,6 +4,10 @@ const apiKey = `43a8e73f86bfd09392311e55fd784c43ae5aced8`;
 
 const searchURL = `https://www.giantbomb.com/api/search/`;
 
+$("#refresh-button").click(function () {
+  document.location.reload();
+});
+
 function getData(searchTerm, callback) {
   const settings = {
     url: searchURL,

@@ -50,7 +50,7 @@ console.log {
 .nav {
     background-color: rgb(92, 92, 92);
     color: #feffff;
-    text-align: center;
+    text-align: left;
     font-size: 25px;
     margin: 0 auto;
     border-radius: 10px;
@@ -115,9 +115,13 @@ console.log {
 #panel_02 {
     float: left;
 }
-
+.headerimg {
+	max-width: 10%;
+	border-radius: 10px;
+	float: left;
+}
 footer {
-    background-color: #007EE3;
+    background-color: rgb(216, 216, 216);
     bottom: 0%;
     height: 50px;
     display: table;
@@ -131,6 +135,7 @@ footer {
 }
 
 footer p {
-    color: #dbd9d8;
+    color: #007EE3;
     font-size: 25px;
+    font-weight: bold;
 }
