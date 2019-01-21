@@ -40,15 +40,42 @@
     <p>IČO 01760360</p>
     <P>Hradec Králové</P>
     <div class="form">
-        <h2>Kontaktujte nás</h2>
+        <h2>Odeslat objednávku/dotaz</h2>
         <form name="contactForm" onsubmit="return false">
-        <label for="client-email">Uveďte vaši e-mailovou adresu:</label><br>
-        <input type="email" name="clienEmail" id="client-email" placeholder="e-mail"><br>
-        <label for="client-name">Vaše jméno:</label><br>
-        <input type="text" name="clientName" id="client-name" placeholder="Jméno"><br>
-        <label for="emailBody">Zpráva:</label>
-        <textarea type="text" name="emailbody" id="emailBody"></textarea>
-        <input type="submit" id="sendButton" value="Odeslat">
+            <label for="client-email">Uveďte vaši e-mailovou adresu:</label>
+            <input type="email" name="clienEmail" id="client-email" placeholder="e-mail">
+            <label for="client-name">Vaše jméno:</label>
+            <input type="text" name="clientName" id="client-name" placeholder="Jméno">
+            <label>Vyberte modely</label>
+            <div class="order">
+            <div class="items">
+                <div class="item" id="1">
+                    <select name="model">
+                        <option value="Mika">Mika</option>
+                        <option value="Viktoria">Viktoria</option>
+                        <option value="Fiji">Fiji</option>
+                    </select>
+                    <select name="size">
+                        <option value="36">36</option>
+                        <option value="38">38</option>
+                        <option value="40">40</option>
+                        <option value="42">42</option>
+                    </select>
+                    <select name="count">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            </div>
+            <button name="buttonAdd" id="buttonAdd">Přídat</button>
+            <button name="buttonDelete" id="buttonDelete">Odebrat</button>
+            </div>
+            <label for="emailBody">Zpráva:</label>
+            <textarea type="text" name="emailbody" id="emailBody"></textarea>
+            <input type="submit" id="sendButton" value="Odeslat">
         </form>
     </div>
 </main>

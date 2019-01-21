@@ -240,23 +240,6 @@ footer.cover, img.cover, header.cover {
     font-weight: bold;
 }
 
-.order {
-    text-align: center;
-}
-
-.order p {
-    padding: 0;
-    margin: 15px;
-    display: inline;
-}
-
-.form label, input, textarea{
-    padding: 0;
-    text-align: left;
-    margin: 10px 0 0 100px;
-    font-family: "Palatino Linotype";
-}
-
 .form #emailBody {
     width: 75%;
     height: 200px;
@@ -264,11 +247,25 @@ footer.cover, img.cover, header.cover {
 
 .form {
     background-color: #cccccc;
-    width: 700px;
-    height: 550px;
-    margin: 35px 90px;
+    width: 80%;
+    height: 110%;
+    display: block;
+    margin: auto;
 }
 
+.form label, input, textarea{
+    display: block;
+    font-family: "Palatino Linotype";
+    margin: 2% 10%;
+}
+.order {
+    margin: 2% 10%;
+
+}
+.item select, button, value{
+    display: inline;
+    font-family: "Palatino Linotype";
+}
 
 
 @media screen and (min-width: 720px) {

@@ -5,6 +5,10 @@ var scopes =
     'https://www.googleapis.com/auth/gmail.readonly '+
     'https://www.googleapis.com/auth/gmail.send';
 
+var itemID = 2;
+var item = $(".items").html();
+var text ="";
+
 function handleClientLoad() {
     gapi.client.setApiKey(apiKey);
     window.setTimeout(checkAuth, 1);
@@ -35,6 +39,15 @@ function handleAuthClick() {
     return false;
 }
 
+function orderText(){
+    $(".item").each(function (index) {
+        text += "Model: " + $(this).children("select[name='model']").val() + "\n" +
+            "Velikost: " + $(this).children("select[name='size']").val() +"\n"+
+            "Počet: " +$(this).children("select[name='count']").val() + "\n";
+    });
+    return text;
+}
+
 function loadGmailApi() {
     gapi.client.load('gmail', 'v1', displayInbox);
 }
@@ -50,7 +63,9 @@ App.init = function(){
             'Subject': 'Pokusnej subject'
         };
 
-        var message = "Jméno klienta: " + $("#client-name").val() + ".\n" + "Email klienta: " + $("#client-email").val() + ".\n" + "Zpráva: " + $("#emailBody").val();
+        var textOrder = orderText();
+
+        var message = "Jméno klienta: " + $("#client-name").val() + "\n" + "Email klienta: " + $("#client-email").val() + "\n" + "Zprava: " + $("#emailBody").val() + "\n Objednávka: " + textOrder;
 
         function sendMessageCallback() {
             console.info("Email sent!");
@@ -69,7 +84,7 @@ App.sendMessage = function(headers_obj, message, callback) {
     var sendRequest = gapi.client.gmail.users.messages.send({
         'userId': 'me',
         'resource': {
-            'raw': window.btoa(email).replace(/\+/g, '-').replace(/\//g, '_')
+            'raw': window.btoa(unescape(encodeURIComponent(email))).replace(/\+/g, '-').replace(/\//g, '_')
         }
     });
     return sendRequest.execute(callback);
@@ -109,5 +124,16 @@ App.gInit = function() {
 
 $(document).ready(function () {
     App.init();
+
+    $("#buttonAdd").click(function(){
+        $(".items").append(item);
+        $(".item").last().attr("id", itemID);
+        itemID++;
+    });
+
+    $("#buttonDelete").click(function () {
+        $(".item").last().remove();
+    });
+
 });
 
