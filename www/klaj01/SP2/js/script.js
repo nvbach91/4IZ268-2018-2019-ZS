@@ -61,7 +61,7 @@ $(document).ready(function () {
       for (var i = 0; i < myGameJsonp.top.length; i++) {
         $("<a href='https://www.twitch.tv/directory/game/"
           + encodeURIComponent(myGameJsonp.top[i].game.name)
-          + "' class='list-group-item' target='_blank'>"
+          + "' class='list-group-item' target='_blank'>" + [i + 1] + '.'
           + myGameJsonp.top[i].game.name + '<img class="gameimage" src="' + myGameJsonp.top[i].game.logo.small + 'alt="Gameimg">' + "</a>").hide().appendTo('#topGamesList').fadeIn(3000);
       }
     }
