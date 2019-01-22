@@ -146,7 +146,19 @@ function fillFromLocalStorage(index) {
                stored_object.hidden_id)
     }
 
-function fillValues(event_name, event_address, event_contact, event_email, event_start, event_end, event_size, event_stream, event_projection, event_recording, event_clip, hidden_id) {
+function fillValues(event_name, 
+                    event_address, 
+                    event_contact, 
+                    event_email, 
+                    event_start, 
+                    event_end, 
+                    event_size, 
+                    event_stream, 
+                    event_projection, 
+                    event_recording, 
+                    event_clip, 
+                    hidden_id) {
+
     element_event_name.value = event_name;
     element_event_address.value = event_address;
     element_organizer_contact.value = event_contact;
@@ -367,7 +379,8 @@ function saveCalculation() {
         event_projection: element_event_projection.checked,
         event_recording: element_event_recording.checked,
         event_clip: element_event_clip.checked,
-        timestamp: moment().format("D.M.YYYY HH:mm:ss")
+        timestamp: moment().format("D.M.YYYY HH:mm:ss"),
+        hidden_id: element_event_hidden_id.className
     };
 
     var calculation_serialized = JSON.stringify(calculation);
