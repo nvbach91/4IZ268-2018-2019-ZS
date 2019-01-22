@@ -193,12 +193,18 @@ footer p {
 	font-size: 25px;
 }
 
+.list-group {
+	column-count: 3;
+	column-gap: 30px;
+	column-rule-style: solid;
+	column-span: all;
+}
+
 .list-group-item {
 	text-align: center;
+	height: 100px;
 	color: black;
-	display: block;
-	font-size: 25px;
-	text-decoration: none;
+	font-size: 20px;
 }
 
 .gamelink {
@@ -219,10 +225,4 @@ footer p {
 #date {
 	text-align: center;
 	font-size: 25px;
-}
-
-@media screen and (max-width: 600px) {
-	.backgroundImage {
-		display: none;
-	}
 }
