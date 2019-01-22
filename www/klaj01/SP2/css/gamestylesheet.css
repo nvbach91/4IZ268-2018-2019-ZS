@@ -1,5 +1,5 @@
 * {
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -92,7 +92,7 @@ console.log {
 }
 
 .panel_01 p {
-    font-size: 30px;
+    font-size: 25px;
     width: 200px;
     margin: 20px auto;
 }
@@ -115,11 +115,13 @@ console.log {
 #panel_02 {
     float: left;
 }
+
 .headerimg {
-	max-width: 10%;
-	border-radius: 10px;
-	float: left;
+    max-width: 10%;
+    border-radius: 10px;
+    float: left;
 }
+
 footer {
     background-color: rgb(216, 216, 216);
     bottom: 0%;

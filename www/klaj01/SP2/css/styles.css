@@ -2,7 +2,7 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	font-family: 'Amatic SC', cursive;
+	font-family: 'Open Sans', sans-serif;
 }
 
 main {
@@ -45,7 +45,6 @@ main {
 }
 
 .activepage {
-	font-weight: bold;
 	font-style: italic;
 	color: white;
 	background-color: grey;
@@ -94,7 +93,6 @@ h2 {
 	font-size: 25px;
 	padding-left: 10px;
 	border-radius: 10px;
-	font-weight: bold;
 }
 
 #submitButton {
@@ -103,7 +101,6 @@ h2 {
 	border: 3px solid #768591;
 	font-size: 25px;
 	border-radius: 10px;
-	font-weight: bold;
 }
 
 #submitButton:hover {
@@ -114,7 +111,6 @@ h2 {
 h3 {
 	text-align: center;
 	color: #768591;
-	font-weight: bold;
 }
 
 .formDiv {
@@ -193,25 +189,22 @@ footer {
 footer p {
 	color: #007EE3;
 	font-size: 25px;
-	font-weight: bold;
 }
 
 .gamename {
 	color: black;
-	font-weight: bold;
-	font-family: 'Russo One', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .decker {
 	color: black;
-	font-family: 'Russo One', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .appinfo {
 	text-align: center;
 	color: #768591;
 	font-size: 25px;
-	font-weight: bold;
 }
 
 .list-group-item {
@@ -228,12 +221,12 @@ footer p {
 }
 
 #topGamesLink {
-	font-weight: bold;
 	font-size: 25px;
 }
 
 .gameimage {
 	border-radius: 5px;
+	margin-left: 20px;
 }
 
 @media screen and (max-width: 600px) {
