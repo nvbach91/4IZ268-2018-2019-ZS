@@ -16,30 +16,43 @@
 <body>
     <div id="app">
         <header>
-            <h1>Twitter Stats<img src="img/logoTwitter.png" id="TwitterLogo" alt="TwitterLogo" height="60" width="60"></h1>
-            <p>Enter a name of any Twitter account and see various statistics about it!</p>
         </header>
         <main>
-            <input id="search-input" name="search" placeholder="Enter the name of Twitter account here" size="40"
-                required />
-            <button type=submit id="buttonSearch">Submit</button>
-            <p id="basic_stats"></p>
-            <p id="profile_image"></p>
-            <p id="name"></p>
-            <p id="description"></p>
-            <p id="verified"></p>
-            <p id="location"></p>
-            <p id="created"></p>
-            <p id="followers"></p>
-            <p id="friends"></p>
-            <p id="favourites"></p>
-            <p id="tweets"></p>
-            <p id="latest_stats"></p>
-            <div id="latest_container"></div>
-            <p id="random_stats"></p>
-            <div id="first_container"></div>
-            <p id="latestdirected_stats"></p>
-            <div id="latestdirected_container"></div>
+            <div class="grid-container">
+                <div class="Sidebar">
+                    <h1>Twitter Stats<img src="img/logoTwitter.png" id="TwitterLogo" alt="TwitterLogo" height="60"
+                            width="60"></h1>
+                </div>
+                <div class="Mainbar">
+                    <div class="Searchbar">
+                        <input id="search-input" name="search" placeholder="Enter the name of Twitter account here"
+                            size="40" required />
+                        <button type=submit id="buttonSearch">Search</button>
+                        <p>Enter a name of any Twitter account and see various statistics about it!</p>
+                    </div>
+                    <div class="Profilebar">
+                        <div class="statsText" id="basic_stats"></div>
+                        <div class="statsText" id="profile_image"></div>
+                        <div class="statsText" id="name"></div>
+                        <div class="statsText" id="description"></div>
+                        <div class="statsText" id="verified"></div>
+                        <div class="statsText" id="location"></div>
+                        <div class="statsText" id="created"></div>
+                        <div class="statsText" id="followers"></div>
+                        <div class="statsText" id="friends"></div>
+                        <div class="statsText" id="favourites"></div>
+                        <div class="statsText" id="tweets"></div>
+                    </div>
+                    <div class="Tweetbar">
+                        <div id="latest_stats"></div>
+                        <div id="latest_container"></div>
+                        <div id="random_stats"></div>
+                        <div id="first_container"></div>
+                        <div id="latestdirected_stats"></div>
+                        <div id="latestdirected_container"></div>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer>2019 &copy; Pavel Dohnal</footer>
     </div>

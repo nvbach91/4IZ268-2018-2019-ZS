@@ -84,8 +84,7 @@ function searchUsers() {
             console.log(reply);
             try {
                 $('#latest_stats').html("<h2>Latest Tweet by User</h2>");
-                twttr.widgets.createTweet(
-                    reply[0].id_str,
+                twttr.widgets.createTweet(reply[0].id_str,
                     $('#latest_container')[0],
                     {
                         theme: 'light',
@@ -114,8 +113,7 @@ function searchUsers() {
             var randomNumber = Math.floor(Math.random() * (+maxNumber - +minNumber)) + +minNumber;
             try {
                 $('#random_stats').html("<h2>Random Tweet by User</h2>");
-                twttr.widgets.createTweet(
-                    reply[randomNumber].id_str,
+                twttr.widgets.createTweet(reply[randomNumber].id_str,
                     $('#first_container')[0],
                     {
                         theme: 'light',
@@ -139,8 +137,7 @@ function searchUsers() {
             console.log(reply);
             try {
                 $('#latestdirected_stats').html("<h2>Latest Tweet replying to User</h2>");
-                twttr.widgets.createTweet(
-                    reply.statuses[0].id_str,
+                twttr.widgets.createTweet(reply.statuses[0].id_str,
                     $('#latestdirected_container')[0],
                     {
                         theme: 'light',

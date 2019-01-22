@@ -10,10 +10,6 @@ body {
     background-color: rgb(52, 152, 219);
 }
 
-main {
-    min-height: 100vh;
-}
-
 main p {
     text-align: left;
     width: 50%;
@@ -21,9 +17,11 @@ main p {
     line-height: 35px;
 }
 
-hr {
-    border-style: solid;
-    border-color: #eee;
+.statsText {
+    text-align: left;
+    width: 50%;
+    margin: 0 auto;
+    line-height: 35px;
 }
 
 button, .btn, a.btn {
@@ -34,6 +32,11 @@ button, .btn, a.btn {
     color: white;
     margin-top: 10px;
     margin-left: 10px;
+}
+
+#search-input {
+    width: 27%;
+    margin: 0 auto;
 }
 
 #latest_container {
@@ -61,17 +64,11 @@ footer {
     font-weight: bold;
 }
 
-#basictable {
-    margin: auto;
-    text-align: left;
-    border-spacing: 10px;
-    border-collapse: separate;
-}
-
 #app {
     background-color: rgb(253, 253, 253);
-    margin-right: 25%;
-    margin-left: 25%;
+    margin-top: 1%;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 #TwitterLogo {
@@ -82,4 +79,46 @@ footer {
 
 h1 {
     margin-left: 50px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "Sidebar Mainbar Mainbar Mainbar Mainbar" "Sidebar Mainbar Mainbar Mainbar Mainbar" "Sidebar Mainbar Mainbar Mainbar Mainbar" "Sidebar Mainbar Mainbar Mainbar Mainbar" "Sidebar Mainbar Mainbar Mainbar Mainbar" "Sidebar Mainbar Mainbar Mainbar Mainbar";
+}
+
+.Sidebar {
+    grid-area: Sidebar;
+    background-color: rgb(214, 243, 253);
+}
+
+.Mainbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "Searchbar Searchbar Searchbar Searchbar" "Profilebar Profilebar Tweetbar Tweetbar" "Profilebar Profilebar Tweetbar Tweetbar" "Profilebar Profilebar Tweetbar Tweetbar" "Profilebar Profilebar Tweetbar Tweetbar" "Profilebar Profilebar Tweetbar Tweetbar";
+    grid-area: Mainbar;
+}
+
+.Searchbar {
+    grid-area: Searchbar;
+    margin-top: 2%;
+    max-height: 40px;
+}
+
+.Searchbar p {
+    text-align: center;
+}
+
+.Profilebar {
+    grid-area: Profilebar;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+.Tweetbar {
+    grid-area: Tweetbar;
+    align-content: space-around;
+    justify-content: space-between;
 }
