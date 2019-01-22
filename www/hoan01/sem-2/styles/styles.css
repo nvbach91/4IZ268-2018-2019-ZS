@@ -1,6 +1,6 @@
 * { 
 	padding: 0; 
-	margin: 0; 
+	margin: 0;
 }
 
 canvas { 
@@ -9,4 +9,28 @@ canvas {
 	margin: 0 auto; 
 	border: 2px solid green;
 	box-shadow: 10px 10px 5px grey;
+}
+
+h1 {
+	text-align: center;
+}
+
+.hide-me {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(.75);
+}
+
+button {
+  background-color: white;
+  color: black;
+  padding: 10px 15px;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 10px;
+  transition: opacity .4s ease-out, transform .4s ease-out, visibility .4s ease-out;
+  position: relative;
+  top: -10px;
 }
