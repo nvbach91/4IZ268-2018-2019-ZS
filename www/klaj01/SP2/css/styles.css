@@ -72,20 +72,6 @@ h2 {
 	font-size: 35px;
 }
 
-#loader {
-	border: 10px solid #f3f3f3;
-	border-radius: 50%;
-	border-top: 10px solid gray;
-	border-bottom: 10px solid gray;
-	width: 40px;
-	height: 40px;
-	-webkit-animation: spin 2s linear infinite;
-	animation: spin 1s linear infinite;
-	display: none;
-	margin: 0 auto;
-	margin-top: 20px;
-}
-
 #searchText {
 	height: 75px;
 	width: 400px;
@@ -227,6 +213,12 @@ footer p {
 .gameimage {
 	border-radius: 5px;
 	margin-left: 20px;
+	box-shadow: 0 0 25px 5px #a7a7a7;
+}
+
+#date {
+	text-align: center;
+	font-size: 25px;
 }
 
 @media screen and (max-width: 600px) {

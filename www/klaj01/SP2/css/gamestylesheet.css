@@ -33,7 +33,6 @@ button {
     margin-top: -50px;
     margin-left: -100px;
     position: fixed;
-    font-weight: bold;
 }
 
 button:hover {
@@ -70,7 +69,6 @@ console.log {
 }
 
 .activepage {
-    font-weight: bold;
     font-style: italic;
     color: white;
     background-color: grey;
@@ -85,7 +83,6 @@ console.log {
     margin-left: -100px;
     position: fixed;
     width: 15%;
-    font-weight: bold;
     font-size: 20px;
     border: 5px solid #007EE3;
     border-radius: 25px;
@@ -139,5 +136,4 @@ footer {
 footer p {
     color: #007EE3;
     font-size: 25px;
-    font-weight: bold;
 }

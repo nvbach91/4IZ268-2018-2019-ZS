@@ -5,8 +5,16 @@ const searchURL = 'https://www.giantbomb.com/api/search/';
 const twitchClientId = 'uv11n4zns54ctbu5u5ih3muz6u9urb';
 
 var myGameJson;
-var date = new Date();
-document.getElementById("date").innerHTML = date;
+
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1;
+var yyyy = today.getFullYear();
+
+
+var today = dd + '.' + mm + '.' + yyyy;
+
+document.getElementById("date").innerHTML = today;
 
 
 $("#refresh-button").click(function () {
@@ -50,7 +58,7 @@ $(document).ready(function () {
     url: "https://api.twitch.tv/kraken/games/top",
     type: "GET",
     data: {
-      limit: 21
+      limit: 20
     },
     headers: {
       "Client-ID": twitchClientId
