@@ -4,7 +4,7 @@ var REDIRECT_URI = 'http://localhost:5500';
 var STATE_KEY = 'spotify_auth_state';
 
 var userAccess = null;
-var userID = null
+var userID = null;
 var userCountry = null;
 var userAlbums = [];
 
