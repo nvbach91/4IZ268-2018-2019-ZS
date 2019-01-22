@@ -14,7 +14,6 @@ App.initClient = () => {
       authorizeButton.hide();
       signoutButton.show();
       App.fetchUserInfo();
-      //showProfile();
     } else {
       authorizeButton.show();
       signoutButton.hide();
@@ -43,7 +42,7 @@ App.initClient = () => {
 };
 
 App.warn = (msg) => {
-  App.modal.find('.modal-body p').text(msg);
+  App.modal.find('.modal-body p').html(msg);
   App.modal.modal();
 };
 
@@ -61,6 +60,10 @@ App.bindEmailForm = () => {
   };
   messageForm.submit((e) => {
     e.preventDefault();
+    if (!gapi.auth2.getAuthInstance().isSignedIn.get()) {
+      App.warn('You must sign in first');
+      return false;
+    }
     messageFormSubmitButton.prop('disabled', true);
     const emailRaw = `To: ${recipientInput.val()}\r\nSubject: ${subjectInput.val()}\r\n\r\n${messageInput.val()}`;
     //console.log(emailRaw);
@@ -69,9 +72,12 @@ App.bindEmailForm = () => {
       resource: { raw: btoa(emailRaw).replace(/\+/g, '-').replace(/\//g, '_') },
     });
     sendRequest.execute((e) => {
-      //console.log(e);
+      if (e.code) {
+        App.warn('Email was not sent due to an error<br>' + e.code + ': ' + e.message);
+      } else {
+        App.warn('Email was sent successfully<br>ID: ' + e.id);
+      }
       clearEmailForm();
-      App.warn('Email was sent');
     });
   });
 };
@@ -84,7 +90,7 @@ App.fetchUserInfo = () => {
       const email = resp.emails[0].value;
       messageForm.find('input[placeholder="USERNAME"]').val(displayName);
       messageForm.find('input[placeholder="EMAIL"]').val(email);
-      messageForm.find('#user-info').show();
+      messageForm.find('#user-info').css({ display: 'flex' });
     });
   });
 };
