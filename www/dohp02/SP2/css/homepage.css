@@ -4,6 +4,10 @@
     font-family: Helvetica, Sans-Serif;
 }
 
+body.waiting * {
+    cursor: progress;
+}
+
 body {
     font-family: Helvetica, Sans-Serif;
     text-align: center;
@@ -142,7 +146,6 @@ h1 {
 
 .Profilebar {
     grid-area: Profilebar;
-    white-space: nowrap;
     font-size: 16px;
 }
 

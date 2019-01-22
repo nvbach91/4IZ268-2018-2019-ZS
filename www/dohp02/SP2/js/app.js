@@ -32,7 +32,18 @@ $("#search-input").keyup(function (event) {
 });
 
 $("#buttonSearch").click(function () {
-    searchUsers();
+    if ($('#search-input').val().trim() == '') {
+        alert('Input can not be empty.');
+    }
+    else {
+        searchUsers();
+    }
+});
+
+document.querySelector('.list').addEventListener('click', function (e) {
+    var item = e.target;
+    $('#search-input').val(item.innerText);
+    $("#buttonSearch").click();
 });
 
 var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -40,25 +51,23 @@ favorites.forEach(function (favorite) {
     $(".list").append($("<li>").text(favorite));
 });
 
-document.querySelector('.list').addEventListener('click', function (e) {
-    var item = e.target;
-    $('#search-input').val(item.innerText);
-    searchUsers();
-});
-
 function searchUsers() {
     $('.list').empty();
+
     var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     favorites.forEach(function (favorite) {
         $(".list").append($("<li>").text(favorite));
     });
+
     var userInput = $('#search-input').val();
     var paramUser = {
         screen_name: userInput
     };
+
     $('#latest_container').empty();
     $('#first_container').empty();
     $('#latestdirected_container').empty();
+
     cb.__call("users_show", paramUser, function (reply, rate, err) {
         console.log(reply);
 
