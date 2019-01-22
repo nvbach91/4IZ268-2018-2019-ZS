@@ -1,25 +1,32 @@
+var searchForm = $('#searchForm');
+var searchText = $('#searchText');
+var apiUrl = 'http://www.omdbapi.com?s=';
+var apiUrlDetail = 'http://www.omdbapi.com?i=';
+var apiKey = '&apikey=d8ae8847';
+var movies = $('#movies');
+var movie = $('#movie');
+
 //Zachytenie vstupu z formulára, získam hodnotu a volám funkciu getMovies()
 $(document).ready(function () {
-    $('#searchForm').on('submit', function (e) {
-        //console.log($('#searchText').val());
-        let searchText = $('#searchText').val();
-        getMovies(searchText);
+    $(searchForm).on('submit', function (e) {
+        let searchTextVal = $(searchText).val();
+        getMovies(searchTextVal);
         e.preventDefault();
     });
 });
 
-function getMovies(searchText) {
-    //console.log(searchText);
+function getMovies(searchTextVal) {
+    //console.log(searchTextVal);
 
     //axios api request
-    axios.get('http://www.omdbapi.com?s=' + searchText + "&apikey=d8ae8847")
+    axios.get(apiUrl + searchTextVal + apiKey)
         .then(function (response) {
             console.log(response);
-            let movies = response.data.Search;
+            let moviesFound = response.data.Search;
             let moviesNotFound = response.data.Response;
             let output = '';
 
-            if (moviesNotFound == "False") {
+            if (moviesNotFound === "False") {
                 output = `
                 <div class="container">
                     <div class="well text-center">
@@ -29,7 +36,7 @@ function getMovies(searchText) {
                 `;
             } else {
                 // each loop poľa, pripojenie každého filmu do premennej output a jej výpis
-                $.each(movies, function (index, movie) {
+                $.each(moviesFound, function (index, movie) {
                     output += `
                     <div class="col-md-3">
                         <div class="well text-center">
@@ -44,7 +51,7 @@ function getMovies(searchText) {
                 });
             }
 
-            $('#movies').html(output);
+            $(movies).html(output);
         })
         .catch(function (err) {  //v prípade nejakého error
             console.log(err);
@@ -63,43 +70,82 @@ function getMovie() {
     //console.log(movieId);
 
     //axios api request
-    axios.get('http://www.omdbapi.com?i=' + movieId + "&apikey=d8ae8847")
+    axios.get(apiUrlDetail + movieId + apiKey)
         .then(function (response) {
             console.log(response);
-            let movie = response.data;
+            let movieData = response.data;
+            let poster = response.data.Poster;
 
-            let output = `
+            if (poster === "N/A") {
+                let output = `
                 <div class="row" >
                     <div class="col-md-4">
-                        <img src="${movie.Poster}" class="thumbnail">
+                        <img src="img/poster_unavailable.png" class="thumbnail" alt="Poster filmu">
                     </div>
                     <div class="col-md-8">
-                        <h2>${movie.Title}</h2>
+                        <h2>${movieData.Title}</h2>
                             <ul class="list-group">
-                                <li class="list-group-item">Žáner: ${movie.Genre}</li>
-                                <li class="list-group-item">Vydané: ${movie.Released}</li>
-                                <li class="list-group-item">Obsadenie: ${movie.Actors}</li>
-                                <li class="list-group-item">Produkcia: ${movie.Production}</li>
-                                <li class="list-group-item">Režisér: ${movie.Director}</li>
-                                <li class="list-group-item">Autor: ${movie.Writer}</li>
-                                <li class="list-group-item">Dĺžka: ${movie.Runtime}</li>
-                                <li class="list-group-item">IMDB hodnotenie: ${movie.imdbRating} / 10</li>
+                                <li class="list-group-item">Žáner: ${movieData.Genre}</li>
+                                <li class="list-group-item">Vydané: ${movieData.Released}</li>
+                                <li class="list-group-item">Obsadenie: ${movieData.Actors}</li>
+                                <li class="list-group-item">Produkcia: ${movieData.Production}</li>
+                                <li class="list-group-item">Režisér: ${movieData.Director}</li>
+                                <li class="list-group-item">Autor: ${movieData.Writer}</li>
+                                <li class="list-group-item">Dĺžka: ${movieData.Runtime}</li>
+                                <li class="list-group-item">IMDB hodnotenie: ${movieData.imdbRating} / 10</li>
+                            </ul>
                     </div>
                 </div> 
+
                 <div class="row">
                     <div class="well">
                         <br><br><hr>
                         <h3>Obsah</h3>
-                        ${movie.Plot}
+                        ${movieData.Plot}
                         <br><br><br>
-                        <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">Prejsť na IMDB</a>
+                        <a href="http://imdb.com/title/${movieData.imdbID}" target="_blank" class="btn btn-primary">Prejsť na IMDB</a>
                         <a href="index.html" class="btn btn-primary">Späť na vyhľadávanie</a>
                     </div>  
                 </div>
                 `;
 
-            $('#movie').html(output);
-            $(document).attr("title", "Filmová databáza | " + movie.Title);
+                $(movie).html(output);
+            } else {
+                let output = `
+                <div class="row" >
+                    <div class="col-md-4">
+                        <img src="${poster}" class="thumbnail" alt="Poster filmu">
+                    </div>
+                    <div class="col-md-8">
+                        <h2>${movieData.Title}</h2>
+                            <ul class="list-group">
+                                <li class="list-group-item">Žáner: ${movieData.Genre}</li>
+                                <li class="list-group-item">Vydané: ${movieData.Released}</li>
+                                <li class="list-group-item">Obsadenie: ${movieData.Actors}</li>
+                                <li class="list-group-item">Produkcia: ${movieData.Production}</li>
+                                <li class="list-group-item">Režisér: ${movieData.Director}</li>
+                                <li class="list-group-item">Autor: ${movieData.Writer}</li>
+                                <li class="list-group-item">Dĺžka: ${movieData.Runtime}</li>
+                                <li class="list-group-item">IMDB hodnotenie: ${movieData.imdbRating} / 10</li>
+                            </ul>
+                    </div>
+                </div> 
+
+                <div class="row">
+                    <div class="well">
+                        <br><br><hr>
+                        <h3>Obsah</h3>
+                        ${movieData.Plot}
+                        <br><br><br>
+                        <a href="http://imdb.com/title/${movieData.imdbID}" target="_blank" class="btn btn-primary">Prejsť na IMDB</a>
+                        <a href="index.html" class="btn btn-primary">Späť na vyhľadávanie</a>
+                    </div>  
+                </div>
+                `;
+                $(movie).html(output);
+            }
+
+            $(document).attr("title", "Filmová databáza | " + movieData.Title);
         })
         .catch(function (err) { //v prípade nejakého error
             console.log(err);

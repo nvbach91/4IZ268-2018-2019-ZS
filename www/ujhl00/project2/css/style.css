@@ -6,8 +6,7 @@
 
 #movies img:hover {
     transition: border 250ms linear,
-                color 250ms linear,
-                border 250ms linear;
+                color 250ms linear;
     border: 6px solid #919aa1;
 }
 
