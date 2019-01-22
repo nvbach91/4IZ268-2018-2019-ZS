@@ -3,7 +3,7 @@ a.mainlogo{text-decoration: none;}
 form{margin-top: 40px;}
 input, label{text-align: center;}
 #error{width: 100%; margin: 0 auto; text-align: center;}
-#error404{width:70%; margin: 0 auto; text-align: center; margin-top: 10px;}
+#error404{width:70%; margin: 0 auto; text-align: center;}
 button{width: 100%;}
 h1{font-size: 30px; text-align: center;}
 p{text-align: justify;margin-bottom: 50px;margin-top: 30px;}
@@ -14,7 +14,7 @@ p{text-align: justify;margin-bottom: 50px;margin-top: 30px;}
 .line2{background-color: dimgray; width:10%; height: 2px; margin: 0 auto;}
 .line3{background-color: dimgray; width:20%; height: 2px; margin: 0 auto;}
 .full-chart{color: dimgray; margin: 0 auto; text-align: center;}
-.description{color:gray; text-align: center; font-family: 'Staatliches', cursive; text-transform: uppercase; margin: 0 auto; margin-bottom: 10px; margin-top: 10px;}
+.date-chart,.description{color:gray; text-align: center; font-family: 'Staatliches', cursive; text-transform: uppercase; margin: 0 auto; margin-bottom: 10px; margin-top: 10px;}
 .text{text-align: center;}
 
 @media only screen and (max-width: 992px) {
