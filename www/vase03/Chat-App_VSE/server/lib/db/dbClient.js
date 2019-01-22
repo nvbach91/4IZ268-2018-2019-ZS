@@ -2,7 +2,7 @@ var mysql      = require('mysql');
 var async = require('async');
 
 client = mysql.createConnection({
-    host     : 'localhost',
+    host     : '91.240.85.69',
     user     : 'chat',
     password : '123456789a'
 });
