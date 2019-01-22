@@ -43,7 +43,7 @@ App.initClient = () => {
       });
     }, (err) => {
       console.error(err);
-      App.warn('Could not sign in<br>' + err.message);
+      App.warn('Could not sign in<br>' + err.message || err.details);
     }
   );
 };
