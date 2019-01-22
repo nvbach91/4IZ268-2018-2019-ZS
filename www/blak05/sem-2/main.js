@@ -97,5 +97,3 @@ $(document).ready(function(){
     
     };
 });
-
-
