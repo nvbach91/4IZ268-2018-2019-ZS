@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="CSS/styles.css" />
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet" />
   <link rel="shortcut icon" type="image/png" href="IMG/favicon-96x96.png" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -39,6 +40,9 @@
     <h3 id="errorMessage" class="hide">Bohužel jste zadal špatný název</h3>
     <div class="backgroundImage"></div>
     <div class="flex-container"></div>
+    <h3 id="topGamesLink">Nejvíce streamové hry k <p id="date"></p>
+    </h3>
+    <div id="topGamesList" class="list-group"></div>
     <div class="appinfo">
       <p>
         Tato aplikace slouží pro vyhledání základních informací o hře. </p>
@@ -46,11 +50,7 @@
       <p> Pokud jste vámi hledanou hru nenašel, tak do vyhledávače napiště
         přesnější název.</p>
     </div>
-    <div class="col-sm-4 text-center">
-      <h3 id="topGamesLink">Nejvíce streamové hry k <p id="date"></p>
-      </h3>
-      <div id="topGamesList" class="list-group"></div>
-    </div>
+
     <footer>
       <p>&copy;Jan Klačmera / ZS 2018-2019 / 4IZ268</p>
     </footer>
@@ -58,6 +58,8 @@
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="JS/script.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

@@ -40,7 +40,7 @@ function renderGame(result) {
 		<div> <p class="decker">${result.deck}<p> </div>
 		<div class="siteLink"> <a href="${
     result.site_detail_url
-    }"target="_blank">Více informací</a> </div>
+    }"class="gamelink" target="_blank">Více informací</a> </div>
 		  </div>
 		  
 	`;

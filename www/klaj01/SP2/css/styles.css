@@ -55,10 +55,10 @@ body {
 	background-color: #edeef1;
 }
 
-h1 {
+a h1 {
 	text-align: center;
 	color: #007EE3;
-	font-size: 50px;
+	font-size: 70px;
 }
 
 .headerimg {
@@ -160,8 +160,8 @@ h3 {
 }
 
 .gameimg {
-	width: 200px;
-	height: 250px;
+	max-width: 200px;
+	max-height: 250px;
 	box-shadow: 0 0 70px 5px #dbd9d8;
 	border-radius: 10px;
 	margin-bottom: 20px;
@@ -222,26 +222,18 @@ footer p {
 	text-decoration: none;
 }
 
+.gamelink {
+	color: black;
+	font-size: 25px;
+}
+
+#topGamesLink {
+	font-weight: bold;
+	font-size: 25px;
+}
+
 @media screen and (max-width: 600px) {
 	.backgroundImage {
 		display: none;
-	}
-}
-
-@-webkit-keyframes spin {
-	0% {
-		-webkit-transform: rotate(0deg);
-	}
-	100% {
-		-webkit-transform: rotate(360deg);
-	}
-}
-
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
 	}
 }
