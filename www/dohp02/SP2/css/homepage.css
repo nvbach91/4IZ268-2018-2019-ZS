@@ -24,6 +24,35 @@ main p {
     line-height: 35px;
 }
 
+.favourite_Text {
+    text-align: left;
+    width: 50%;
+    margin: 0 auto;
+    line-height: 35px;
+}
+
+#user {
+    text-align: left;
+    width: 50%;
+    margin: 0 auto;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+#user:hover:after, .list li.fav:after {
+    content: ' \2605';
+    color: rgb(255, 203, 0);
+}
+
+#user.fav:hover:after {
+    content: ' \2606';
+}
+
+.sideText {
+    text-align: center;
+    line-height: 35px;
+}
+
 button, .btn, a.btn {
     background-color: rgb(52, 152, 219);
     cursor: pointer;
@@ -121,4 +150,20 @@ h1 {
     grid-area: Tweetbar;
     align-content: space-around;
     justify-content: space-between;
+}
+
+.list li {
+    cursor: pointer;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 15%;
+}
+
+.list li:hover:after, .list li.fav:after {
+    content: ' \2605';
+    color: rgb(255, 203, 0);
+}
+
+.list li.fav:hover:after {
+    content: ' \2606';
 }

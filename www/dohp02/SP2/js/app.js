@@ -35,7 +35,23 @@ $("#buttonSearch").click(function () {
     searchUsers();
 });
 
+var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+favorites.forEach(function (favorite) {
+    $(".list").append($("<li>").text(favorite));
+});
+
+document.querySelector('.list').addEventListener('click', function (e) {
+    var item = e.target;
+    $('#search-input').val(item.innerText);
+    searchUsers();
+});
+
 function searchUsers() {
+    $('.list').empty();
+    var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    favorites.forEach(function (favorite) {
+        $(".list").append($("<li>").text(favorite));
+    });
     var userInput = $('#search-input').val();
     var paramUser = {
         screen_name: userInput
@@ -62,7 +78,32 @@ function searchUsers() {
 
         var screenName = reply.screen_name;
 
+        var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        document.querySelector('#user').addEventListener('click', function (e) {
+
+            var item = e.target;
+            var index = favorites.indexOf(screenName);
+
+            if (index == -1) {
+                favorites.push(screenName);
+                item.className = 'fav';
+                $('.list').empty();
+                favorites.forEach(function (favorite) {
+                    $(".list").append($("<li>").text(favorite));
+                });
+            } else {
+                favorites.splice(index, 1);
+                item.className = '';
+                $('.list').empty();
+                favorites.forEach(function (favorite) {
+                    $(".list").append($("<li>").text(favorite));
+                });
+            }
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+        });
+
         $('#basic_stats').html("<h2>Basic Statistics</h2>");
+        $('#user').html("<strong>User:</strong> " + screenName);
         $('#profile_image').html("<strong>Profile Image:</strong> <img src=" + reply.profile_image_url + " alt='ProfileImage'>");
         $('#name').html("<strong>Name:</strong> " + reply.name);
         $('#description').html("<strong>Description:</strong> " + reply.description);
@@ -154,4 +195,5 @@ function searchUsers() {
     },
         true
     );
+    $('#search-input').val('');
 }
