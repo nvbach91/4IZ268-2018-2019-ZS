@@ -6,7 +6,7 @@
 
 const App = {};
 
-App.CLIENT_ID = '210723404057-plq0cgmio9ttlg5vpvib3ovppbqt4dqd.apps.googleusercontent.com';
+App.CLIENT_ID = '210723404057-pffjv397ss64mf30rdag1ei2g8tvqdlr.apps.googleusercontent.com';
 App.API_KEY = 'AIzaSyBklnZIea-NFuupxxXDegXVPK4yHXXSwxE';
 App.DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest'];
 App.SCOPES = 'https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/gmail.send';
