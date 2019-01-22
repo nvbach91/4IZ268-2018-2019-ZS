@@ -1,3 +1,5 @@
+document.getElementById("btnSearch").addEventListener("click", searchVid);
+
 function searchVid() {
     gapi.client.setApiKey('AIzaSyAgAcMNHu1LUVxiGKN8Onb_Qga3WTImnI8');
     gapi.client.load('youtube', 'v3', function () {
@@ -13,9 +15,8 @@ function makeRequest() {
     });
     searchRequest.execute(function (response) {
         var clearList = document.getElementById("searchResults");
-        while (clearList.firstChild) {
-            clearList.removeChild(clearList.firstChild);
-        }
+        clearList.innerHTML = '';
+        
         var searchVids = response.result.items;
 
         searchVids.forEach(function(item, index) {
