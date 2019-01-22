@@ -4,7 +4,7 @@ var REDIRECT_URI = 'http://localhost:5500';
 var STATE_KEY = 'spotify_auth_state';
 
 var userAccess = null;
-var userID = null;
+var userID = null
 var userCountry = null;
 var userAlbums = [];
 
@@ -12,19 +12,37 @@ var lastAlbumsCount = 0;
 var lastAlbumsCurrent = 0;
 
 var options = {};
+var elementError = $('.error');
+var elementMessage = $('.message');
+var elementTitle = $('.title');
+var elementMenuYears = $('.years');
+var elementMenuYear; // = $('.year');
+var elementMenuMonth; //= $('.month');
+var elementTop = $('#top');
+var elementBody = $('body, html');
+
+function getHashParams() {
+    var hashParams = {};
+    var e, r = /([^&;=]+)=?([^&;]*)/g,
+        q = window.location.hash.substring(1);
+    while (e = r.exec(q)) {
+        hashParams[e[1]] = decodeURIComponent(e[2]);
+    }
+    return hashParams;
+}
 
 /* došlo k přihlášení uživatele */
 $(document).ready(function () {
     var currentUrl = window.location.href;
-    if (currentUrl.includes("access_denied")) {
+    if (currentUrl.includes('access_denied')) {
         // nesouhlasil s podmínkami
-        $('.error').text('Failed to login, you must accept the premissions.');
+        elementError.text('Failed to login, you must accept the premissions.');
     }
-    else if (currentUrl.includes("?error")) {
+    else if (currentUrl.includes('?error')) {
         // nastala chyba
-        $('.error').text('Failed to login, please try it again.');
+        elementError.text('Failed to login, please try it again.');
     }
-    else if (currentUrl.includes("#access_token=") && currentUrl.includes("&token_type=") && currentUrl.includes("&expires_in=") && currentUrl.includes("&state=")) {
+    else if (currentUrl.includes('#access_token=') && currentUrl.includes('&token_type=') && currentUrl.includes('&expires_in=') && currentUrl.includes('&state=')) {
         // úspěšné přihlášení
 
         // rozdělí získanou adresu a získá z ní parametry
@@ -38,9 +56,9 @@ $(document).ready(function () {
 
         if (userAccess) {
             // existuje user access
-            if (state == null || state !== storedState) {
+            if (state === null || state !== storedState) {
                 // a nezískal jsem hodnotu ze spotify loginu nebo se neshoduje s uloženou v místním úložišti = chyba
-                $('.error').text('Failed to login, please try it again.');
+                elementError.text('Failed to login, please try it again.');
             }
             else {
                 options = {
@@ -48,7 +66,7 @@ $(document).ready(function () {
                     headers: {
                         'Authorization': 'Bearer ' + userAccess
                     }
-                };
+                }
                 // získám informace o uživateli
                 $.ajax({
                     url: 'https://api.spotify.com/v1/me',
@@ -60,45 +78,36 @@ $(document).ready(function () {
                         if (userID) {
                             // úspěšně získané informace o uživateli
                             $('#login-button').remove();
-                            $('.error').text('');
+                            elementError.text('');
 
-                            $('#login').html('Logged in as "' + response.display_name + '"');
-                            $('#login').attr('title', 'Click to logout');
-                            $('#login').attr('href', '');
-                            $('.message').text('User @' + response.display_name + ' has been successfully logged in.');
+                            var elementLogin = $('#login');
+                            elementLogin.html('Logged in as "' + response.display_name + '" | Click to logout');
+                            elementLogin.attr('title', 'Click to logout');
+                            elementLogin.attr('href', '');
+                            elementMessage.text('User @' + response.display_name + ' has been successfully logged in.');
 
                             userCountry = response.country;
                             // získám umělce, které uživatel sleduje
-                            $('.message').text('Please wait: Getting list of your followed artists...');
-                            GetUserArtists('https://api.spotify.com/v1/me/following?type=artist&limit=50');
+                            elementMessage.text('Please wait: Getting list of your followed artists...');
+                            getUserArtists('https://api.spotify.com/v1/me/following?type=artist&limit=50');
                         }
                         else {
                             // nezískal jsem user id
-                            $('.error').text('Failed to login, please try it again.');
+                            elementError.text('Failed to login, please try it again.');
                         }
                     },
                     error: function () {
-                        $('.error').text('Failed to login, please try it again.');
+                        elementError.text('Failed to login, please try it again.');
                     }
                 });
             }
         }
         else {
             // nezískal jsem user access
-            $('.error').text('Failed to login, please try it again.');
+            elementError.text('Failed to login, please try it again.');
         }
         // odstraním z úložiště
         localStorage.removeItem(STATE_KEY);
-
-        function getHashParams() {
-            var hashParams = {};
-            var e, r = /([^&;=]+)=?([^&;]*)/g,
-                q = window.location.hash.substring(1);
-            while (e = r.exec(q)) {
-                hashParams[e[1]] = decodeURIComponent(e[2]);
-            }
-            return hashParams;
-        }
     }
 });
 
@@ -136,28 +145,28 @@ $('.login').click(function () {
 });
 
 /* získá z api json se seznamem umělců, které uživatel sleduje */
-function GetUserArtists(fetchUrl) {
+function getUserArtists(fetchUrl) {
     fetch(fetchUrl, options)
         .then(response => response.json())
         .then(json => {
             // možné chyby
             if (json.error) {
-                if (json.error.status == 429) {
-                    // chyba api - moc dotazů
-                    setTimeout(GetUserArtists(fetchUrl), 100);
+                if (json.error.status === 429) {
+                    // api - moc dotazů
+                    setTimeout(function () { getUserArtists(fetchUrl); }, 100);
                 }
                 else {
-                    ShowError('API Error', 'Failed to get list of your followed artists: ' + json.error.message + '.');
+                    elementError.html(elementError.text() + '<br>Failed to get list of your followed artists: ' + json.error.message + '.');
                 }
                 return;
             }
             var artists = json.artists.items;
             if (!artists) {
-                ShowError('No albums', 'Cannot get any album, because you are not following any artist.');
+                showError('No albums', 'Cannot get any album, because you are not following any artist.');
                 return;
             }
             if (artists.length < 1) {
-                ShowError('No albums', 'Cannot get any album, because you are not following any artist.');
+                showError('No albums', 'Cannot get any album, because you are not following any artist.');
                 return;
             }
 
@@ -165,22 +174,22 @@ function GetUserArtists(fetchUrl) {
                 // pokud existuje další stránka seznamu umělců, získám další seznam
                 for (let index = 0; index < artists.length; index++) {
                     // projde získané umělce a získá jejich alba
-                    GetArtistAlbums(artists[index], false);
+                    getArtistAlbums(artists[index], false);
                 }
-                GetUserArtists(json.artists.next);
+                getUserArtists(json.artists.next);
             }
             else {
                 // neexistuje další stránka umělců
                 lastAlbumsCurrent = 0;
                 lastAlbumsCount = artists.length;
                 for (let index = 0; index < artists.length; index++) {
-                    GetArtistAlbums(artists[index], true);
+                    getArtistAlbums(artists[index], true);
                 }
             }
         });
 }
 
-function ShowAlbums() {
+function showAlbums() {
     // jedná se o poslední stránku umělců
 
     // přičtu aktuální počet úspěšně získaných posledních albumů
@@ -193,38 +202,38 @@ function ShowAlbums() {
     // úspěšně jsem získal ze spotify interprety z poslední stránky
     // zobrazím alba
     if (!userAlbums) {
-        ShowError('No albums', 'Cannot get any album, because you are following only artists without albums.');
+        showError('No albums', 'Cannot get any album, because you are following only artists without albums.');
         return;
     }
     if (userAlbums.length < 1) {
-        ShowError('No albums', 'Cannot get any album, because you are following only artists without albums.');
+        showError('No albums', 'Cannot get any album, because you are following only artists without albums.');
         return;
     }
 
     // zobrazím roky vydaných alb umělců v menu
-    $('.title').text('All released albums');
-    AddMenuYears();
+    elementTitle.text('All released albums');
+    addMenuYears();
     // získám rok a měsíc nejnovějšího alba
     var date = userAlbums[0].release.split('-');
     var year = date[0];
     var month = date[1];
     // zobrazení v menu
-    $('#' + year).addClass("current-year");
-    $('#m' + year).addClass("selected-month");
-    $('#' + date[0] + '-' + date[1]).addClass("current-month");
+    $('#' + year).addClass('current-year');
+    $('#m' + year).addClass('selected-month');
+    $('#' + date[0] + '-' + date[1]).addClass('current-month');
     // zobrazení albumů
-    ViewAlbums(year, month);
-    $('.message').remove();
+    viewAlbums(year, month);
+    elementMessage.remove();
 }
 
 /* získá z api json seznam alb jednotlivých umělců */
-function GetArtistAlbums(artist, lastCheck) {
+function getArtistAlbums(artist, lastCheck) {
     if (!artist) {
-        ShowError('Error', 'Failed to get artist albums.');
+        elementError.html(elementError.text() + '<br>Failed to get artist albums.');
         return;
     }
 
-    $('.message').text('Please wait: Getting albums from artist ' + artist.name + '...');
+    elementMessage.text('Please wait: Getting albums from artist ' + artist.name + '...');
     var fetchUrl = 'https://api.spotify.com/v1/artists/' + artist.id + '/albums?offset=0&limit=50&include_groups=album&market=' + userCountry;
 
     fetch(fetchUrl, options)
@@ -232,12 +241,12 @@ function GetArtistAlbums(artist, lastCheck) {
         .then(json => {
             // možné chyby
             if (json.error) {
-                if (json.error.status == 429) {
-                    // chyba api - moc dotazů
-                    setTimeout(GetArtistAlbums(artist, lastCheck), 100);
+                if (json.error.status === 429) {
+                    // api - moc dotazů
+                    setTimeout(function () { getArtistAlbums(artist, lastCheck); }, 100);
                 }
                 else {
-                    ShowError('Please wait: Getting albums from artist ' + artist.name + '...', 'Failed to get albums from artist ' + artist.name + ': ' + json.error.message);
+                    elementError.html(elementError.text() + '<br>Failed to get albums from artist ' + artist.name + ': ' + json.error.message);
                 }
                 return;
             }
@@ -245,14 +254,14 @@ function GetArtistAlbums(artist, lastCheck) {
             if (!albums) {
                 if (lastCheck) {
                     // jedná se o poslední stránku umělců
-                    ShowAlbums();
+                    showAlbums();
                 }
                 return;
             }
             if (albums.length < 1) {
                 if (lastCheck) {
                     // jedná se o poslední stránku umělců
-                    ShowAlbums();
+                    showAlbums();
                 }
                 return;
             }
@@ -263,7 +272,7 @@ function GetArtistAlbums(artist, lastCheck) {
                 var added = false;
                 for (let index2 = 0; index2 < userAlbums.length; index2++) {
                     // projde již získaná alba
-                    if (newAlbum.id == userAlbums[index2].id) {
+                    if (newAlbum.id === userAlbums[index2].id) {
                         // nové album již bylo přidáno do seznamu dřive
                         added = true;
                         break;
@@ -281,6 +290,14 @@ function GetArtistAlbums(artist, lastCheck) {
                     if (artists.length > 1) {
                         artistsString += ' & ' + artists[artists.length - 1].name;
                     }
+                    // získá cover
+                    var coverUrl = '';
+                    if (newAlbum.images.length > 0) {
+                        coverUrl = newAlbum.images[1].url;
+                    }
+                    else {
+                        coverUrl = 'images/no-cover.png';
+                    }
 
                     // vytvoří objekt nového alba
                     var newAlbumObject = {
@@ -288,7 +305,7 @@ function GetArtistAlbums(artist, lastCheck) {
                         name: newAlbum.name,
                         artists: artistsString,
                         release: newAlbum.release_date,
-                        cover: newAlbum.images[1].url
+                        cover: coverUrl
                     };
 
                     // uloží ho do seznamu všech alb
@@ -305,27 +322,27 @@ function GetArtistAlbums(artist, lastCheck) {
             });
             if (lastCheck) {
                 // jedná se o poslední stránku umělců
-                ShowAlbums();
+                showAlbums();
             }
         })
 }
 
-/* menu - klknutí na rok */
+/* menu - kliknutí na rok */
 $(document).on('click', '.year', function (e) {
     // odstraní třídy vybraného roku a skrytí jeho měsíce
     // přidá třídy vybraného roku a zobrazení jeho měsíců
     var year = e.currentTarget.id;
-    $('.year').removeClass("selected-year");
-    $('#' + year).addClass("selected-year");
+    var elementMenuYearID = $('#' + year);
+    elementMenuYear.removeClass('selected-year');
+    elementMenuYearID.addClass('selected-year');
 
-    $('.months').removeClass("selected-month");
-    $('#m' + year).addClass("selected-month");
+    $('.months').removeClass('selected-month');
+    $('#m' + year).addClass('selected-month');
     if (year == 0) {
-        $('.year').removeClass("current-year");
-        $('.month').removeClass("selected-month");
-        $('.month').removeClass("current-month");
-        $('#' + year).addClass("current-year");
-        ViewAlbums(0, 0);
+        elementMenuYear.removeClass('current-year');
+        elementMenuMonth.removeClass('selected-month current-month');
+        elementMenuYearID.addClass('current-year');
+        viewAlbums(0, 0);
     }
 });
 
@@ -336,24 +353,22 @@ $(document).on('click', '.month', function (e) {
     var idSplit = id.split('-');
     var year = idSplit[0];
     var month = idSplit[1];
-    if (month == 'all') {
+    if (month === 'all') {
         month = 0;
     }
-    else if (month == 'undefined') {
+    else if (month === 'undefined') {
         month = -1;
     }
     // odstraní třídy vybraného a aktuálního roku
-    $('.year').removeClass("selected-year");
-    $('.year').removeClass("current-year");
-    $('#' + year).addClass("current-year");
+    elementMenuYear.removeClass('selected-year current-year');
+    $('#' + year).addClass('current-year');
 
     // odstraní třídy vybraného a aktuálního měsíce
-    $('.month').removeClass("selected-month");
-    $('.month').removeClass("current-month");
-    $('#' + id).addClass("current-month");
+    elementMenuMonth.removeClass('selected-month current-month');
+    $('#' + id).addClass('current-month');
 
     // zobrazí alba vybraného měsíce
-    ViewAlbums(year, month);
+    viewAlbums(year, month);
 });
 
 /* kliknutí na album - zobrazení přehrávače alba */
@@ -372,7 +387,7 @@ $(document).on('click', '.album', function (e) {
 });
 
 /* menu - přidání roků */
-function AddMenuYears() {
+function addMenuYears() {
     var years = [];
     if (userAlbums.length < 60) {
         years.push('all');
@@ -387,30 +402,32 @@ function AddMenuYears() {
     });
     years.forEach(year => {
         // pro každý získaný rok, získám měsíce
-        AddMenuMonths(year);
+        addMenuMonths(year);
+        elementMenuYear = $('.year');
+        elementMenuMonth = $('.month');
     });
 }
 
 /* menu - přidání měsíců */
-function AddMenuMonths(yearToAdd) {
-    if (yearToAdd == 'all') {
-        $('.years').append('<li><a class="year" id="' + 0 + '">' + 'all' + '</a></li>');
+function addMenuMonths(yearToAdd) {
+    if (yearToAdd === 'all') {
+        elementMenuYears.append('<li><a class="year" id="' + 0 + '">' + 'all' + '</a></li>');
         return;
     }
     var months = [];
-    var undefined = false; // měsíc není ve spotify vyplněn
+    var undefinedMonth = false; // měsíc není ve spotify vyplněn
     months.push('all');
     userAlbums.forEach(album => {
         // projde získané alba a získá z nich rok a měsíc
         var date = album.release.split('-');
         var year = date[0];
-        if (year == yearToAdd) {
+        if (year === yearToAdd) {
             // rok se shoduje
             var month = date[1];
             if (!months.includes(month)) {
                 // měsíc nebyl ještě přidán
                 if (!month) {
-                    undefined = true;
+                    undefinedMonth = true;
                 }
                 else {
                     months.push(month);
@@ -418,20 +435,20 @@ function AddMenuMonths(yearToAdd) {
             }
         }
     });
-    if (undefined) {
+    if (undefinedMonth) {
         // měsíc není ve spotify vyplněn
-        months.push("undefined");
+        months.push('undefined');
     }
     // přidá rok do menu
-    $('.years').append('<li><a class="year" id="' + yearToAdd + '" title="Click to view months in ' + yearToAdd + '">' + yearToAdd + '</a></li>');
+    elementMenuYears.append('<li><a class="year" id="' + yearToAdd + '" title="Click to view months in ' + yearToAdd + '">' + yearToAdd + '</a></li>');
     // přidá měsíce vybraného roku do menu
     $('nav').append('<ul class="months" id="m' + yearToAdd + '"></ul>');
     var rokDiv = $('#m' + yearToAdd);
     months.forEach(month => {
-        if (month == 'all') {
+        if (month === 'all') {
             rokDiv.append('<li><a class="month" id="' + yearToAdd + '-' + month + '" title="Click to view all released albums in ' + yearToAdd + '">' + month + '</a></li>');
         }
-        else if (month == 'undefined') {
+        else if (month === 'undefined') {
             rokDiv.append('<li><a class="month" id="' + yearToAdd + '-' + month + '" title="Click to view released albums in ' + yearToAdd + ' with undefined month">' + month + '</a></li>');
         }
         else {
@@ -441,37 +458,38 @@ function AddMenuMonths(yearToAdd) {
 }
 
 /* zobrazení albumů z vybraného měsíce a roku */
-function ViewAlbums(year, month) {
+function viewAlbums(year, month) {
     // odstraním alba z jiného roku nebo měsíce
-    $('.albums').empty();
+    var elementAlbums = $('.albums')
+    elementAlbums.empty();
     if (year < 1) {
         // zobrazuji všechny alba
-        $('.title').text('All albums releases');
+        elementTitle.text('All albums releases');
     }
-    else if (month == 0) {
+    else if (month === 0) {
         // zobrazuji alba ve vybraném roce
-        $('.title').text('Released albums in ' + year);
+        elementTitle.text('Released albums in ' + year);
     }
     else if (month < 0) {
         // zobrazuji alba ve vybraném měsíci, který není ve spotify vyplněn
-        $('.title').text('Released albums in ' + year + ' with undefined month');
+        elementTitle.text('Released albums in ' + year + ' with undefined month');
     }
     else {
         // zobrazuji alba ve vybraném měsíci
-        $('.title').text('Released albums in ' + year + '-' + month);
+        elementTitle.text('Released albums in ' + year + '-' + month);
     }
     userAlbums.forEach(album => {
         // projdu získaná alba a získám měsíc a rok
         var realese = album.release.split('-');
         var albumYear = realese[0];
         var albumMonth = realese[1];
-        if ((year < 1) || (year == albumYear)) {
+        if ((year < 1) || (year === albumYear)) {
             // zobrazuji všechna alba nebo se jedná o vybraný rok
-            if ((month == 0) || (month == albumMonth) || (month < 0 && !albumMonth)) {
+            if ((month === 0) || (month === albumMonth) || (month < 0 && !albumMonth)) {
                 // zobrazuji alba ve vybraném roce nebo se jedná o správný měsíc
                 // získám div a zobrazím ho
                 var artistDiv = '<div class="album" id="' + album.id + '" title="View tracklist"><div class="album-flex"><div class="album-img"><img src="' + album.cover + '"></img></div><div class="album-info"><h2>' + album.name + '</h2><h3>' + album.artists + '</h3><p>' + album.release + '</p></div></div></div>';
-                $('.albums').append(artistDiv);
+                elementAlbums.append(artistDiv);
             }
         }
     });
@@ -479,26 +497,25 @@ function ViewAlbums(year, month) {
 
 /* posunutí stránky dolů */
 window.onscroll = function () {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (elementBody.scrollTop() > 20) {
         // poloha je níže než 20px, zobrazím posunovník nahoru
-        document.getElementById("top").style.display = "block";
+        elementTop.show();
     }
     else {
-        document.getElementById("top").style.display = "none";
+        elementTop.hide();
     }
 };
 
 /* kliknutí na posunovník nahoru */
-$('#top').click(function () {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+elementTop.click(function () {
+    elementBody.scrollTop(0);
 });
 
-function ShowError(title, error) {
-    $('.title').text(title);
-    if ($('.error').text()) {
-        error = $('.error').text() + '<br>' + error;
+function showError(title, error) {
+    elementTitle.text(title);
+    if (elementError.text()) {
+        error = elementError.text() + '<br>' + error;
     }
-    $('.error').html(error);
-    $('.message').remove();
+    elementError.html(error);
+    elementMessage.remove();
 }
