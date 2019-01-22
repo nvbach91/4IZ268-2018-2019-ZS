@@ -1,3 +1,7 @@
+// in google developer console
+// create a project, add gmail api, plus api and contacts api
+// generate API key
+
 const App = {};
 
 App.CLIENT_ID = '210723404057-plq0cgmio9ttlg5vpvib3ovppbqt4dqd.apps.googleusercontent.com';
