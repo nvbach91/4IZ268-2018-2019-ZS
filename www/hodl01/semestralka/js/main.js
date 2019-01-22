@@ -82,6 +82,20 @@ $(document).ready(function () {
         }
         xhr.send();
     });
+
+    $('#BT').click(function () {
+        window.open("https://api.instagram.com/oauth/authorize/?client_id=209a707af7004f7abcc776a3cdeddaa2&redirect_uri=http://127.0.0.1:5500/foto.html&response_type=token");
+        //token = getTokenFromUrl();
+        //xhr.open("GET", 'https://api.instagram.com/v1/users/self/media/recent?access_token=' + token + '&count=' + numphotos);
+        //xhr.send();
+    });
+    $('#BT2').click(function () {
+        token = getTokenFromUrl();
+        xhr.open("GET", 'https://api.instagram.com/v1/users/self/media/recent?access_token=' + token + '&count=' + numphotos);
+        xhr.send();
+    });
+
+
     function openModal(obr) {
         modal.style.display = "block";
         modalImg.src = obr.src;
@@ -115,4 +129,11 @@ function fillByImage(photo) {
         photo.classList.remove('fillHeight');
     }
 }
+function getTokenFromUrl() {
+    var query = document.URL;
+    var vars = query.split('=');
+    return vars[1];
+
+}
+
 
