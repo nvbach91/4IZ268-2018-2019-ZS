@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Password generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+
+<body>
+    <h1>Password generator</h1>
+    <div class="form1">
+        <form id="datainput" name="form" method="get">
+            <h2>Please specify your preference:</h2>
+            <input type="checkbox" name="capitals" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ">Capital letters
+            (ABCDEFGHIJKLMNOPQRSTUVWXYZ)<br>
+            <input type="checkbox" name="smalls" value="abcdefghijklmnopqrstuvwxyz">Small letters
+            (abcdefghijklmnopqrstuvwxyz)<br>
+            <input type="checkbox" name="numbers" value="123456789">Numbers (123456789)<br>
+            <input type="checkbox" name="others" value="@/\()-*+#&">@/\()-*+#&<br>
+
+
+        </form>
+
+    </div>
+    <form name="password_box">
+        <hr>
+        <input type="button" onClick="check_checks();generate_pswd();" value="Submit">
+        <h2>Your generated password:</h2>
+        <input class="generated_pswd" readonly type="text" name="blank" value="">
+    </form>
+
+    <p class="odstavec1">Summary of chosen characters:</p>
+    <p id="show"></p>
+
+
+    <div class="hash-generator">
+        <hr>
+        <h1>Hash Generator</h1>
+        <div class="hash__input">
+            <label for="hash-input">Input</label>
+            <input type="text" name="hash-input" id="hash-input">
+        </div>
+
+        <div class="hash__options">
+            <button class="hash__option" id="hash-md5">MD5</button>
+            <button class="hash__option" id="hash-sha256">SHA 256</button>
+            <button class="hash__option" id="hash-sha512">SHA 512</button>
+        </div>
+        <div class="hash__result">
+            <label for="hash-result">Result</label>
+            <input type="text" name="hash-result" id="hash-result">
+        </div>
+
+
+        <hr>
+
+    </div>
+
+
+
+    <script src="hash_functions/sha512.js"></script>
+    <script src="hash_functions/sha256.js"></script>
+    <script src="hash_functions/md5.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>

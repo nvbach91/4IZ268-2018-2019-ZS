@@ -3,9 +3,8 @@ body{
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
-    background-color: black;
-    color: white;
     text-align: center;
+    background: white;
 }
 h1{
     font-size: 40px;
