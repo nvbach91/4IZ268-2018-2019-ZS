@@ -27,13 +27,6 @@ $(document).ready(function () {
                 for (x in parsedResult.data) {
 
                     if (document.getElementById('p' + x) == null) {
-                        // toto nefunguje :?
-                        //$('<div/>', {
-                        //     class: 'photoBox'
-                        // }).appendTo('instafeed');
-                        // $('<img/>', {
-                        //     id: 'p' + x
-                        // }).appendTo('photoBox[3]');
                         innerString += ' <div class="photoBox"><img id = "p' + x + '" alt = "Photo from Instagram"><div class="midle"><div class="textOnHover" id="l' + x + '"><img class="icon" src="IMG/heart-solid.svg" alt="heart icon"></div></div></div>';
                     }
 
@@ -47,7 +40,6 @@ $(document).ready(function () {
                     img.onload = fillByImage(img);
                     img.data = x;
                     img.onclick = function () { openModal(this) };
-                    //img.addEventListener("click", openModal(x));
 
                     var textOnHover = document.getElementById('l' + x);
                     textOnHover.innerHTML = '<img class="icon" src="IMG/heart-solid.svg" alt="heart icon"></img>' + parsedResult.data[x].likes.count;
@@ -93,7 +85,21 @@ $(document).ready(function () {
     function openModal(obr) {
         modal.style.display = "block";
         modalImg.src = obr.src;
+        console.log(obr.src);
         modalImg.srcset = obr.srcset;
+        /*var imgtags="";
+        if (parsedResult.data[obr.data].carousel_media!=null) {
+            for (x in parsedResult.data[obr.data].carousel_media ) {
+          
+            }
+            modal.innerHTML+= '<a class="prev">&#10094;</a><a class="next">&#10095;</a>';
+            $( ".prev" ).click(function() {
+                modalImg.src=parsedResult.data[obr.data].carousel_media[1].images.standard_resolution.url;
+                console.log(parsedResult.data[obr.data].carousel_media[1].images.standard_resolution.url);
+                console.log(modalImg.src);
+                
+              });
+        }*/
         captionText.innerHTML = parsedResult.data[obr.data].caption.text;
     }
 

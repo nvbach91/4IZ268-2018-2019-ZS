@@ -39,6 +39,11 @@
     align-items: center;
     justify-content:center;
 }
+#profilBT{
+    position: absolute;
+    top: 305px;
+    left: 290px;
+}
 .photoBox{
     border: 1px solid transparent;
     width: 320px;
@@ -113,37 +118,84 @@
     overflow: auto; 
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.9); 
-  }
+}
   
-  .modal-content {
-    margin: auto;
+.modal-content {
     display: block;
-    width: 80%;
-    max-width: 700px;
-  }
+    width: 100%;
+    margin: 20px;
+    display: -webkit-flex;
+
+}
+.modal-img {
+    width: auto;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+}
   
-  #caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-  }
+#caption {
+    margin: 25px;
+    color: #ccc;  
+}
+
+.modalAside {
+    padding: 25px 25px 0px 25px;
+    color: #ccc; 
+    width: 40%; 
+    height: 80%;
+    float: left;
+    min-width: 240px;
+}
+.modalMain {
+    color: #ccc; 
+    vertical-align: middle;
+    width: 60%; 
+    height: 80%;
+    overflow: hidden;
+    background-color: green;
+    position: relative;
+}
   
-  .modal-content, #caption { 
+.modal-content, #caption { 
     animation-name: zoom;
     animation-duration: 0.6s;
-  }
+}
+ 
+    
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+    
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
   
-  @keyframes zoom {
+@keyframes zoom {
     from {transform:scale(0)} 
     to {transform:scale(1)}
-  }
+}
   
-  .close {
+.close {
     position: absolute;
     top: 15px;
     right: 35px;
@@ -151,20 +203,15 @@
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
-  }
+}
   
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
-  }
+}
   
-  @media only screen and (max-width: 700px){
-    .modal-content {
-      width: 100%;
-    }
-  }
 /* Modal END */
 
 header{
