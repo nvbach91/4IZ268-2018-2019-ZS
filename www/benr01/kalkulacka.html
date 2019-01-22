@@ -13,22 +13,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init("user_Nln38EShZsyjVgbBsbZmi");
-        })();
-    </script>
-
-    <script src="js/moment.js"></script>
-    
-    <title>Kalkulačka | Profishot s.r.o.</title>
-
     <link rel="stylesheet" type="text/css" href="styles.css">
+    
+
+    <title>Kalkulačka | Profishot s.r.o.</title>
 
     <link rel="icon" type="image/png" href="img/favicon.png">
 
@@ -124,7 +113,12 @@
                     
 
                     <div id="result_price">Celkem: 0 Kč</div>
-                    <button type="button" class="send_email" onclick="sendEmail()">Poslat na email</button>
+                    <button type="button" class="calculator_button" id="save_calculation">Uložit kalkulaci</button>
+                    
+                    <select id="calculator_select">
+                    </select>
+
+                    <button type="button" class="calculator_button" id="send_email">Poslat na email</button>
                     <div id="hidden_id"></div>
                 </div>
 
@@ -138,9 +132,13 @@
             </footer>
         </div>
     </main>
+
+<script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
 <script src="js/calculator.js"></script>
 <script src="js/datetimepicker-init.js"></script>
-<!--script src="js/fillDocument.js"></script-->
 
 </body>
 </html>

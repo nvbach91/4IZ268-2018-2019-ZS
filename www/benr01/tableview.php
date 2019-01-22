@@ -16,18 +16,18 @@ $sql = "SELECT * FROM VSE_event_calculator_contacts ORDER BY timestamp DESC";
 $result = mysqli_query($conn,$sql);
 
 echo "<table>";
-echo "<tr><th><b>Jméno akce</b></th>
-      <th><b>Adresa akce</b></th>
-      <th><b>Telefon na organizátora</b></th>
-      <th><b>E-mail na organizátora</b></th>
-      <th><b>Začátek akce</b></th>
-      <th><b>Konec akce</b></th>
-      <th><b>Velikost akce</b></th>
-      <th><b>Stream</b></th>
-      <th><b>Projekce</b></th>
-      <th><b>Záznam</b></th>
-      <th><b>Klip</b></th>
-      <th><b>Obnova formuláře</b></th>
+echo "<tr><th><strong>Jméno akce</strong></th>
+      <th><strong>Adresa akce</strong></th>
+      <th><strong>Telefon na organizátora</strong></th>
+      <th><strong>E-mail na organizátora</strong></th>
+      <th><strong>Začátek akce</strong></th>
+      <th><strong>Konec akce</strong></th>
+      <th><strong>Velikost akce</strong></th>
+      <th><strong>Stream</strong></th>
+      <th><strong>Projekce</strong></th>
+      <th><strong>Záznam</strong></th>
+      <th><strong>Klip</strong></th>
+      <th><strong>Obnova formuláře</strong></th>
       </tr>";
 
 while($row = mysqli_fetch_array($result)){

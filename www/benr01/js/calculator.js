@@ -11,6 +11,7 @@ var element_event_stream = document.getElementById('event_stream');
 var element_event_projection = document.getElementById('event_projection');
 var element_event_recording = document.getElementById('event_recording');
 var element_event_clip = document.getElementById('event_clip');
+var element_calculator_select = document.getElementById("calculator_select");
 var element_event_hidden_id = document.getElementById("hidden_id");
 
 var element_event_name_error = document.getElementById("event_name_error");
@@ -74,8 +75,29 @@ element_event_end.addEventListener('focusout', function() {
 }, false);
 
 document.addEventListener('DOMContentLoaded', function() {
-    guid()
+    guid();
 }, false);
+
+document.getElementById("save_calculation").onclick = function() {
+    saveCalculation();
+    element_calculator_select.selectedIndex = localStorage.length - 1;
+};
+
+document.getElementById("calculator_select").onblur = function() {
+    if(localStorage.length === 1){
+
+    }
+};
+
+document.getElementById("calculator_select").onchange = function() {
+    fillFromLocalStorage(element_calculator_select.value);
+};
+
+document.getElementById("send_email").onclick = function() {
+    sendEmail();
+};
+
+emailjs.init("user_Nln38EShZsyjVgbBsbZmi");
 
 function getUrlVars() {
     var vars = {};
@@ -94,14 +116,45 @@ function getUrlParam(parameter) {
 }
 
 function fillIfPossible() {
-    element_event_name.value = getUrlParam('event_name');
-    element_event_address.value = getUrlParam('event_address');
-    element_organizer_contact.value = getUrlParam('event_contact');
-    element_organizer_email.value = getUrlParam('event_email');
-    element_event_start.value = moment(getUrlParam('event_start')).format('D.M.YYYY HH:mm');
-    element_event_end.value = moment(getUrlParam('event_end')).format('D.M.YYYY HH:mm');
+    fillValues(getUrlParam('event_name'),
+               getUrlParam('event_address'),
+               getUrlParam('event_contact'),
+               getUrlParam('event_email'),
+               moment(getUrlParam('event_start')).format('D.M.YYYY HH:mm'),
+               moment(getUrlParam('event_end')).format('D.M.YYYY HH:mm'),
+               getUrlParam('event_size'),
+               parseInt(getUrlParam('event_stream')) === 1,
+               parseInt(getUrlParam('event_projection')) === 1,
+               parseInt(getUrlParam('event_recording')) === 1,
+               parseInt(getUrlParam('event_clip')) === 1,
+               getUrlParam('id'));
+}
 
-    var event_size = getUrlParam('event_size');
+function fillFromLocalStorage(index) {
+    var stored_object = JSON.parse(localStorage.getItem(index));
+    fillValues(stored_object.event_name,
+               stored_object.event_address, 
+               stored_object.event_contact, 
+               stored_object.event_email, 
+               stored_object.event_start, 
+               stored_object.event_end, 
+               stored_object.event_size, 
+               stored_object.event_stream, 
+               stored_object.event_projection, 
+               stored_object.event_recording, 
+               stored_object.event_clip, 
+               stored_object.hidden_id)
+    }
+
+function fillValues(event_name, event_address, event_contact, event_email, event_start, event_end, event_size, event_stream, event_projection, event_recording, event_clip, hidden_id) {
+    element_event_name.value = event_name;
+    element_event_address.value = event_address;
+    element_organizer_contact.value = event_contact;
+    element_organizer_email.value = event_email;
+    element_event_start.value = event_start;
+    element_event_end.value = event_end;
+
+    var event_size = event_size;
     if (event_size === 1) {
         element_event_size_1.checked = "checked";
     } else if (event_size === 2) {
@@ -110,24 +163,17 @@ function fillIfPossible() {
         element_event_size_3.checked = "checked";
     }
 
-    if (getUrlParam('event_stream') === 1) {
-        element_event_stream.checked = true;
-    }
-    if (getUrlParam('event_projection') === 1) {
-        element_event_projection.checked = true;
-    }
-    if (getUrlParam('event_recording') === 1) {
-        element_event_recording.checked = true;
-    }
-    if (getUrlParam('event_clip') === 1) {
-        element_event_clip.checked = true;
-    }
+    element_event_stream.checked = event_stream;
+    element_event_projection.checked = event_projection;
+    element_event_recording.checked = event_recording;
+    element_event_clip.checked = event_clip;
 
-    element_event_hidden_id.className = getUrlParam('id');
+    element_event_hidden_id.className = hidden_id;
     get_price_if_possible();
 }
 
 fillIfPossible();
+fillDropDownMenu();
 
 function check_event_name(mark) {
     if (element_event_name.value.length < 5) {
@@ -305,6 +351,52 @@ function check_all_fields() {
 function get_price_if_possible() {
     if (check_all_fields()) {
         get_price();
+    }
+}
+
+function saveCalculation() {
+    var calculation = {
+        event_name: element_event_name.value,
+        event_address: element_event_address.value,
+        event_contact: element_organizer_contact.value,
+        event_email: element_organizer_email.value,
+        event_start: element_event_start.value,
+        event_end: element_event_end.value,
+        event_size: get_event_size(),
+        event_stream: element_event_stream.checked,
+        event_projection: element_event_projection.checked,
+        event_recording: element_event_recording.checked,
+        event_clip: element_event_clip.checked,
+        timestamp: moment().format("D.M.YYYY HH:mm:ss")
+    };
+
+    var calculation_serialized = JSON.stringify(calculation);
+    localStorage.setItem(localStorage.length++, calculation_serialized);
+    fillDropDownMenu();
+}
+
+function fillDropDownMenu(){
+    if(localStorage.length === 0){
+        var option = document.createElement("option");
+        option.selected = true;
+        option.disabled = true;
+        option.text = "Není uložena žádná kalkulace";
+        option.id = "no_calculation_option";
+        element_calculator_select.add(option);
+        return;
+    }
+    if(localStorage.length > 0 && document.getElementById("no_calculation_option") !== null){
+        var to_remove = document.getElementById("no_calculation_option");
+        to_remove.remove(to_remove.selectedIndex);
+    }
+    for (var i = element_calculator_select.length; i < localStorage.length; i++) { 
+        var option = document.createElement("option");
+        var stored_option = JSON.parse(localStorage.getItem(i));
+
+        option.text = stored_option.timestamp;
+        option.value = i;
+
+        element_calculator_select.add(option);
     }
 }
 
