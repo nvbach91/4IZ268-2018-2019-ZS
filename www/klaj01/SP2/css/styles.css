@@ -232,6 +232,10 @@ footer p {
 	font-size: 25px;
 }
 
+.gameimage {
+	border-radius: 5px;
+}
+
 @media screen and (max-width: 600px) {
 	.backgroundImage {
 		display: none;
