@@ -50,7 +50,7 @@ $(document).ready(function () {
     url: "https://api.twitch.tv/kraken/games/top",
     type: "GET",
     data: {
-      limit: 20
+      limit: 21
     },
     headers: {
       "Client-ID": twitchClientId
@@ -62,7 +62,7 @@ $(document).ready(function () {
         $("<a href='https://www.twitch.tv/directory/game/"
           + encodeURIComponent(myGameJsonp.top[i].game.name)
           + "' class='list-group-item' target='_blank'>" + [i + 1] + '.'
-          + myGameJsonp.top[i].game.name + '<img class="gameimage" src="' + myGameJsonp.top[i].game.logo.small + 'alt="Gameimg">' + "</a>").hide().appendTo('#topGamesList').fadeIn(3000);
+          + myGameJsonp.top[i].game.name + '<img class="gameimage" src="' + myGameJsonp.top[i].game.box.small + 'alt="Gameimg">' + "</a>").hide().appendTo('#topGamesList').fadeIn(3000);
       }
     }
   })
