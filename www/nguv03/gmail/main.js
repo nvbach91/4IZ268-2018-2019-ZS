@@ -1,6 +1,8 @@
 // in google developer console
 // create a project, add gmail api, plus api and contacts api
 // generate API key
+// enter authorized JavaScript origin while creating OAuth client ID
+// for example use http://localhost:5500 if using live server
 
 const App = {};
 
