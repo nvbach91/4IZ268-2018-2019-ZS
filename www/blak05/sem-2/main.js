@@ -7,11 +7,11 @@ $(document).ready(function(){
     submit.addEventListener('submit', function(e) {
  
         e.preventDefault();
-        var artist = $("#artist").val();
-        var song = $("#song").val();
+        var artist = $('#artist').val();
+        var song = $('#song').val();
         
         $('#lyric').empty();    
-        $("#loader").show();
+        $('#loader').show();
  
         if(!artist){
             alertArtist();
@@ -24,16 +24,16 @@ $(document).ready(function(){
             type: "GET",
             dataType: "json",
             error: function(data){
-                $("#loader").hide();
-                $("#error").hide();
+                $('#loader').hide();
+                $('#error').hide();
                 var error404 = error(data);
-                $("#lyric").html(error404);
+                $('#lyric').html(error404);
                 },
             success: function(data){
-                $("#loader").hide();
-                $("#error").hide();
+                $('#loader').hide();
+                $('#error').hide();
                 var lyrics = lyric(data);
-                $("#lyric").html(lyrics);
+                $('#lyric').html(lyrics);
                 }
             });
         };
@@ -51,12 +51,12 @@ $(document).ready(function(){
     };
     
     function alertArtist(){
-        $("#loader").hide();
+        $('#loader').hide();
         $('#error').html('<div class="alert alert-danger" role="alert">CHYBÍ JMÉNO UMĚLCE!!</div>');
     };
     
     function alertSong(){
-        $("#loader").hide();
+        $('#loader').hide();
         $('#error').html('<div class="alert alert-danger" role="alert">CHYBÍ JMÉNO PÍSNĚ!!</div>');
     };
   
