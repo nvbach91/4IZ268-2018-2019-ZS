@@ -1,8 +1,13 @@
-"use strict";
 
-const apiKey = `43a8e73f86bfd09392311e55fd784c43ae5aced8`;
+const apiKey = '43a8e73f86bfd09392311e55fd784c43ae5aced8';
 
-const searchURL = `https://www.giantbomb.com/api/search/`;
+const searchURL = 'https://www.giantbomb.com/api/search/';
+const twitchClientId = 'uv11n4zns54ctbu5u5ih3muz6u9urb';
+
+var myGameJson;
+var date = new Date();
+document.getElementById("date").innerHTML = date;
+
 
 $("#refresh-button").click(function () {
   document.location.reload();
@@ -40,25 +45,29 @@ function renderGame(result) {
 		  
 	`;
 }
+$(document).ready(function () {
+  $.ajax({
+    url: "https://api.twitch.tv/kraken/games/top",
+    type: "GET",
+    data: {
+      limit: 20
+    },
+    headers: {
+      "Client-ID": twitchClientId
+    },
+    error: function () { alert('Nastal problém s načítáním externích dat') },
+    success: function (data) {
+      myGameJsonp = data;
+      for (var i = 0; i < myGameJsonp.top.length; i++) {
+        $("<a href='https://www.twitch.tv/directory/game/"
+          + encodeURIComponent(myGameJsonp.top[i].game.name)
+          + "' class='list-group-item' target='_blank'>"
+          + myGameJsonp.top[i].game.name + "</a>").hide().appendTo('#topGamesList').fadeIn(3000);
+      }
+    }
+  })
+})
 
-$.ajax({
-  url: "https://api.twitch.tv/kraken/games/top",
-  type: "GET",
-  data: {
-    limit: 10
-  },
-  headers: {
-    Accept: "application/vnd.twitchtv.v5+json",
-    "Client-ID": "uv11n4zns54ctbu5u5ih3muz6u9urb"
-  },
-  success: function (datatopplayed) {
-    console.log(datatopplayed);
-    $.each(datatopplayed.games, function () {
-      console.log(this.name);
-      opt.append(new Option(this.name, this.name));
-    });
-  }
-});
 
 function displayGame(data) {
   const searchResults = data.results.map(renderGame);
