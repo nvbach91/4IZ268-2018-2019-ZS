@@ -97,13 +97,11 @@ App.fetchUserInfo = () => {
 
 $(document).ready(() => {
   $.ajaxSetup({ cache: true });
-  $.getScript('https://apis.google.com/js/api.js')
-    .done((script, textStatus) => {
-      gapi.load('client:auth2', App.initClient);
-    })
-    .fail((jqxhr, settings, exception) => {
-      console.error('Failed to load Google API scripts');
-    });
+  $.getScript('https://apis.google.com/js/api.js').done((script, textStatus) => {
+    gapi.load('client:auth2', App.initClient);
+  }).fail((jqxhr, settings, exception) => {
+    console.error('Failed to load Google API scripts');
+  });
   App.modal = $('#modal');
   App.bindEmailForm();
 });
