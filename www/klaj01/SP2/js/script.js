@@ -14,7 +14,7 @@ var yyyy = today.getFullYear();
 
 var today = dd + '.' + mm + '.' + yyyy;
 
-document.getElementById("date").innerHTML = today;
+document.getElementById("topGamesLink").innerHTML = "Nejvíce streamované hry k" + ":" + "<strong>" + today + "</strong>";
 
 
 $("#refresh-button").click(function () {
