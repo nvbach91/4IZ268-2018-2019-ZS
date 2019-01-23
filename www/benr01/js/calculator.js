@@ -80,7 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById("save_calculation").onclick = function() {
     saveCalculation();
-    element_calculator_select.selectedIndex = localStorage.length - 1;
+    fillDropDownMenu();
+    element_calculator_select.selectedIndex = JSON.parse(localStorage.getItem("calculations")).length - 1;
 };
 
 document.getElementById("calculator_select").onblur = function() {
@@ -116,57 +117,32 @@ function getUrlParam(parameter) {
 }
 
 function fillIfPossible() {
-    fillValues(getUrlParam('event_name'),
-               getUrlParam('event_address'),
-               getUrlParam('event_contact'),
-               getUrlParam('event_email'),
-               moment(getUrlParam('event_start')).format('D.M.YYYY HH:mm'),
-               moment(getUrlParam('event_end')).format('D.M.YYYY HH:mm'),
-               getUrlParam('event_size'),
-               parseInt(getUrlParam('event_stream')) === 1,
-               parseInt(getUrlParam('event_projection')) === 1,
-               parseInt(getUrlParam('event_recording')) === 1,
-               parseInt(getUrlParam('event_clip')) === 1,
-               getUrlParam('id'));
+    var event = {
+        event_name: getUrlParam('event_name'),
+        event_address: getUrlParam('event_address'),
+        event_contact: getUrlParam('event_contact'),
+        event_email: getUrlParam('event_email'),
+        event_start: moment(getUrlParam('event_start')).format('D.M.YYYY HH:mm'),
+        event_end: moment(getUrlParam('event_end')).format('D.M.YYYY HH:mm'),
+        event_size: getUrlParam('event_size'),
+        event_stream: parseInt(getUrlParam('event_stream')) === 1,
+        event_projection: parseInt(getUrlParam('event_projection')) === 1,
+        event_recording: parseInt(getUrlParam('event_recording')) === 1,
+        event_clip: parseInt(getUrlParam('event_clip')) === 1,
+        hidden_id:  getUrlParam('id')
+    };
+    fillValues(event);
 }
 
-function fillFromLocalStorage(index) {
-    var stored_object = JSON.parse(localStorage.getItem(index));
-    fillValues(stored_object.event_name,
-               stored_object.event_address, 
-               stored_object.event_contact, 
-               stored_object.event_email, 
-               stored_object.event_start, 
-               stored_object.event_end, 
-               stored_object.event_size, 
-               stored_object.event_stream, 
-               stored_object.event_projection, 
-               stored_object.event_recording, 
-               stored_object.event_clip, 
-               stored_object.hidden_id)
-    }
+function fillValues(event) {
+    element_event_name.value = event.event_name;
+    element_event_address.value = event.event_address;
+    element_organizer_contact.value = event.event_contact;
+    element_organizer_email.value = event.event_email;
+    element_event_start.value = event.event_start;
+    element_event_end.value = event.event_end;
 
-function fillValues(event_name, 
-                    event_address, 
-                    event_contact, 
-                    event_email, 
-                    event_start, 
-                    event_end, 
-                    event_size, 
-                    event_stream, 
-                    event_projection, 
-                    event_recording, 
-                    event_clip, 
-                    hidden_id) {
-
-    element_event_name.value = event_name;
-    element_event_address.value = event_address;
-    element_organizer_contact.value = event_contact;
-    element_organizer_email.value = event_email;
-    element_event_start.value = event_start;
-    element_event_end.value = event_end;
-
-    var event_size = event_size;
+    var event_size = event.event_size;
     if (event_size === 1) {
         element_event_size_1.checked = "checked";
     } else if (event_size === 2) {
@@ -175,13 +151,18 @@ function fillValues(event_name,
         element_event_size_3.checked = "checked";
     }
 
-    element_event_stream.checked = event_stream;
-    element_event_projection.checked = event_projection;
-    element_event_recording.checked = event_recording;
-    element_event_clip.checked = event_clip;
+    element_event_stream.checked = event.event_stream;
+    element_event_projection.checked = event.event_projection;
+    element_event_recording.checked = event.event_recording;
+    element_event_clip.checked = event.event_clip;
 
-    element_event_hidden_id.className = hidden_id;
+    element_event_hidden_id.className = event.hidden_id;
     get_price_if_possible();
+}
+
+function fillFromLocalStorage(index) {
+    var stored_object = JSON.parse(localStorage.getItem("calculations"));
+    fillValues(stored_object[index]);
 }
 
 fillIfPossible();
@@ -383,9 +364,16 @@ function saveCalculation() {
         hidden_id: element_event_hidden_id.className
     };
 
-    var calculation_serialized = JSON.stringify(calculation);
-    localStorage.setItem(localStorage.length++, calculation_serialized);
-    fillDropDownMenu();
+    var calculations;
+    if(localStorage.getItem("calculations") === null){
+        calculations = [calculation];
+    } else {
+        calculations = JSON.parse(localStorage.getItem("calculations"));
+        calculations.push(calculation);
+    }
+    
+    var calculations_serialized = JSON.stringify(calculations);
+    localStorage.setItem("calculations", calculations_serialized);
 }
 
 function fillDropDownMenu(){
@@ -402,13 +390,13 @@ function fillDropDownMenu(){
         var to_remove = document.getElementById("no_calculation_option");
         to_remove.remove(to_remove.selectedIndex);
     }
-    for (var i = element_calculator_select.length; i < localStorage.length; i++) { 
+
+    var stored_calculations = JSON.parse(localStorage.getItem("calculations"));
+    element_calculator_select.length = 0;
+    for (var i = 0; i < stored_calculations.length; i++) { 
         var option = document.createElement("option");
-        var stored_option = JSON.parse(localStorage.getItem(i));
-
-        option.text = stored_option.timestamp;
+        option.text = stored_calculations[i].timestamp;
         option.value = i;
-
         element_calculator_select.add(option);
     }
 }
