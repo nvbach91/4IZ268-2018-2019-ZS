@@ -52,6 +52,15 @@ h1 img {
     display: none;
 }
 
+.group-label {
+    user-select: none;
+}
+
+.group-label:hover {
+    font-weight: 600 !important;
+    cursor: pointer;
+}
+
 .loader {
     border: 8px solid #f3f3f3;
     /* Light grey */

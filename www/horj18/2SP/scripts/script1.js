@@ -13,6 +13,7 @@ var sendBtn = $("#sendBtn");
 var textA = $("#textarea");
 var logoutBtn = $("#logoutBtn");
 var loader = $("#loadingModal");
+var modalLogin = $("#loginModal")
 var modalGrouplCloseBtn = $("#closeModalGroupBtn");
 
 /*přiřazení funkcí k elementům*/
@@ -23,7 +24,7 @@ logoutBtn.on("click", logout);
 modalGrouplCloseBtn.on("click", closeGroupModal);
 
 /*nacita loader ihned po nacteni stranky*/
-$(window).on("load", function () {
+$(document).ready(function() {
     loader.modal("show");
 });
 
@@ -59,7 +60,7 @@ function logout() {
     FB.getLoginStatus(function (response) {
         FB.api("/me/permissions", "delete", function (response) {
             loader.modal("hide");
-            $("#loginModal").modal("show");
+            modalLogin.modal("show");
         });
     });
 
@@ -70,7 +71,7 @@ function statusChangeCallback(response) {
     if (response.status === "connected") {
         /*Načítá skupiny, profilovy obrazek, zavírá okno*/
         loader.modal("hide");
-        $("#loginModal").modal("hide");
+        modalLogin.modal("hide");
         shareBtn.prop("disabled", false);
         logoutBtn.prop("disabled", false);
         loadGroups();
@@ -96,11 +97,11 @@ function statusChangeCallback(response) {
     } else if (response.status === "not_authorized") {
         /*Vyžaduje autorizaci aplikace*/
         loader.modal("hide");
-        $("#loginModal").modal("show");
+        modalLogin.modal("show");
     } else {
         /*Vyžaduje přihlášení uživatele*/
         loader.modal("hide");
-        $("#loginModal").modal("show");
+        modalLogin.modal("show");
     }
 }
 
@@ -123,7 +124,7 @@ function sharePost() {
         });
         $("#modalGroupBody input:checkbox").prop("checked", false);
         $(".link-post").css("display","none");
-        $("#groupModal").modal("show");
+        modalGroup.modal("show");
         sendBtn.prop("disabled", true);
     } else {
         textA.popover("show");
@@ -196,7 +197,7 @@ function changeBtn() {
         modalGrouplCloseBtn.hide();
 
     } else {
-        $("#groupModal").modal("hide");
+        modalGroup.modal("hide");
         $this.text("Odeslat");
         $this.removeClass("btn btn-danger");
         $this.addClass("btn btn-success");
@@ -224,7 +225,7 @@ function createGroupChoice(response) {
         groups = response.data[i];
         modalGroupBody.append($("<div></div>", { class: "row" }),
             [$("<input />", { type: "checkbox", id: groups.id, class: "chckBox" }).on("click", checkChecked),
-            $("<label />", { text: groups.name, value: groups.id, for: groups.id}),
+            $("<label />", { text: groups.name, value: groups.id, for: groups.id, class: "group-label"}),
             $("<a></a>", {id: "link_"+groups.id, class: "link-post", text: "Odkaz na příspěvek", target: "blank" }),
             $("<div></div>", { id: "loader_" + groups.id, class: "loader-mini-test" })]);
     }
