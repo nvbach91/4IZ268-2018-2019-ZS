@@ -8,11 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
@@ -21,6 +16,8 @@
     <div class="main">
         <h1>INSTAGRAM by HASHTAGS</h1>
         <form id="form" action="">
+            <input type="button" id="auth" class="btn btn-primary btn-lg" value="Přihlášení do aplikace" /> <br>
+            <input type="button" id="logout" class="btn btn-primary btn-lg" value="Odhlášení" /> <br>
             Zadej hashtag: <input id="text" type="text" name="tag" placeholder="Zadej hashtag...">
             <button class="eightbit-btn" id="button">Submit</button>
         </form>
@@ -36,13 +33,8 @@
             <ol id="seznam-indicators" class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             </ol>
-
-
-            <div id="test" class="carousel-inner">
-
-
+            <div id="posts" class="carousel-inner">
             </div>
-
             <!-- controls -->
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
@@ -54,7 +46,10 @@
             </a>
         </div>
     </div>
-    <script src="js/js.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/hashtagApp.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 
 </html>
