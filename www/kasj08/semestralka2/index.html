@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="View all albums by years and months of your followed artists on Spotify.">
+    <meta name="keywords" content="spotify, albums, spotify albums, spotify releases, albums releases, releases, music">
+    <meta name="author" content="Jakub Kastner @kasj08">
+    <title>Released albums on Spotify</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <link rel="icon" type="image/ico" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <div class="in-body">
+            <div class="in-header">
+                <h1>Released albums on Spotify</h1>
+                <a class="login" id="login" title="Click to login">Login via Spotify</a>
+            </div>
+            <nav>
+                <ul class="years">
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="in-body">
+            <div class="in-main">
+                <h2 class="title"></h2>
+                <h2 class="message">View all albums by years and months of your followed artists on Spotify</h2>
+                <p class="error">To see all albums releases, you must login with your Spotify account.</p>
+                <a class="login login-button" id="login-button"><i class="fab fa-spotify"></i>Login via Spotify</a>
+                <div class="albums"></div>
+            </div>
+        </div>
+        <button class="top" id="top" title="Top"><i class="fas fa-angle-double-up"></i></button>
+    </main>
+    <footer>
+        <div class="in-body">
+            <p>&copy; 2018 Jakub Kastner</p>
+        </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
