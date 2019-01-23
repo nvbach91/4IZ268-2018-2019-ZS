@@ -1,9 +1,10 @@
-var login;
+var isUserLoggedIn;
 var pages;
 var selectedPageId;
 var selectedIndex;
 var canPost = false;
 var lastPostsList = $('.fb-last-posts-list');
+var loaderContainer = $(".loader-container");
 
 window.fbAsyncInit = function () {
     FB.init({
@@ -48,13 +49,13 @@ $(".fb-post-page").change(function (e) {
 $(".fb-post-btn").click(function (e) {
     e.preventDefault;
     var postText = $(".fb-post-text");
-    if (canPost == true) {
-        if (postText.val().length !== 0) {
-            window.scrollTo(top);
+    if (canPost) {
+        if (postText.val().length > 0) {
+            window.scrollTo(0, 0);
             sendPost(postText.val());
         } else {
             window.scrollTo(top);
-            alertPopUp('There is no text!', 2000);  
+            alertPopUp('There is no text!', 2000);
         }
     } else {
         errorScreen("You don't have permission to post to this page you ding dong!");
@@ -64,7 +65,7 @@ $(".fb-post-btn").click(function (e) {
 function checkLoginState() {
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
-            login = true;
+            isUserLoggedIn = true;
         } else {
             login = false;
         }
@@ -72,7 +73,7 @@ function checkLoginState() {
 }
 
 function getLogin() {
-    return login;
+    return isUserLoggedIn;
 }
 
 function loadFacebook() {
@@ -83,9 +84,9 @@ function loadFacebook() {
     var userBirthday = "";
     var userHometown = "";
     var postingContainer = $(".fb-posting-container");
-    $(".loader-container").toggleClass("hide");
+    loaderContainer.toggleClass("hide");
     setTimeout(function () {
-        $(".loader-container").toggleClass("hide");
+        loaderContainer.toggleClass("hide");
     }, 2000);
     $(".fb-container").toggleClass("hide");
     $(".intro-container").toggleClass("hide");
@@ -94,8 +95,14 @@ function loadFacebook() {
     })
     FB.api('/me/accounts', function (response) {
         if (response.data.length > 0) {
+            var pagesSelectorHTML = '';
             pages = response.data;
-            pages.forEach(addPages);
+            for (i = 0; i < pages.length; i++) {
+                pagesSelectorHTML += `<option>`;
+                pagesSelectorHTML += pages[i].name;
+                pagesSelectorHTML += `</option>`;
+            }
+            $('.fb-post-page').append(pagesSelectorHTML);
             reloadSelectedPage();
             postingContainer.removeClass("hide");
             $('.fb-last-posts').removeClass("hide");
@@ -112,30 +119,26 @@ function loadFacebook() {
             userLink = response.link;
             userEmail = response.email;
             userBirthday = response.birthday;
-            try {
-                if (typeof response.hometown !== 'undefined') {
-                    userHometown = response.hometown.name;
-                }
-            } catch (e) {
-                console.log('response.hometown is undefined');
+            if (response.hometown) {
+                userHometown = response.hometown.name;
             }
             userBirthday = response.birthday;
+
+
+            $('.fb-user-profile').css("background-image", `url(${profilePic})`);
+            $('.fb-li-name').html(userName);
+            var userLinkHTML = `<a href="${userLink}" target="_blank">Your profile</a>`;
+            $('.fb-li-profile').html(userLinkHTML);
+            $('.fb-li-email').html(userEmail);
+
+            if (userHometown) {
+                getWeather(userHometown.substring(0, userHometown.indexOf(",")));
+            }
+            if (userBirthday) {
+                getAge(userBirthday);
+            }
         }
     );
-    setTimeout(function () {
-        $('.fb-user-profile').css("background-image", `url(${profilePic})`);
-        $('.fb-li-name').html(userName);
-        var userLinkHTML = `<a href="${userLink}" target="_blank">Your profile</a>`;
-        $('.fb-li-profile').html(userLinkHTML);
-        $('.fb-li-email').html(userEmail);
-
-        if (userHometown !== '') {
-            getWeather(userHometown.substring(0, userHometown.indexOf(",")));
-        }
-        if (userBirthday !== ' ') {
-            getAge(userBirthday);
-        }
-    }, 2000);
 
 }
 
@@ -153,16 +156,14 @@ function logOutFacebook() {
             selectedPageId = null;
             selectedIndex = null;
             canPost = false;
+
         } else {
             window.scrollTo(top);
             alertPopUp("Logout error, please try again", 3000);
         }
+        loaderContainer.toggleClass("hide");
     })
-    $(".loader-container").toggleClass("hide");
-    setTimeout(function () {
-        $(".loader-container").toggleClass("hide");
-    }, 2000);
-    
+    loaderContainer.toggleClass("hide");
 }
 
 function getWeather(hometown) {
@@ -206,11 +207,8 @@ function getAge(age) {
     var countdownMM = bornMM - todayMM;
     if (bornDD <= todayDD) {
         var countdownDD = daysInMonth(today.getMonth(), today.getFullYear());
-        console.log(countdownDD);
         countdownDD -= todayDD;
-        console.log(countdownDD);
         countdownDD += bornDD;
-        console.log(countdownDD);
     } else {
         var countdownDD = bornDD - todayDD;
     }
@@ -232,10 +230,6 @@ function sendPost(text) {
     });
 }
 
-function addPages(item) {
-    $('.fb-post-page').append(`<option>${item.name}</option>`);
-}
-
 function reloadSelectedPage() {
     selectedIndex = $(".fb-post-page").prop('selectedIndex');
     var fbPostingContainer = $('.fb-page-properties');
@@ -255,57 +249,38 @@ function reloadSelectedPage() {
             fbPostingContainer.append(pageCategory);
             fbPostingContainer.append(pageLink);
         }, 1000);
-        try {
-            if (typeof response.about !== 'undefined') {
-                var pageAbout = '<div class="fb-page-about"><span class="fb-page-headline">Page about:</span></br>' + response.about + '</div>';
-                setTimeout(function () {
-                    fbPostingContainer.append(pageAbout);
-                }, 1000)
-            } else {
-                var pageAbout = '<div class="fb-page-about"><span class="fb-page-headline">Page about:</span></br>About info is not entered!</div>';
-                setTimeout(function () {
-                    fbPostingContainer.append(pageAbout);
-                }, 1000)
-            }
-        } catch (e) {
-            console.log('response.about is undefined');
+        if (response.about) {
+            var pageAbout = '<div class="fb-page-about"><span class="fb-page-headline">Page about:</span></br>' + response.about + '</div>';
+            setTimeout(function () {
+                fbPostingContainer.append(pageAbout);
+            }, 1000)
+        } else {
+            var pageAbout = '<div class="fb-page-about"><span class="fb-page-headline">Page about:</span></br>About info is not entered!</div>';
+            setTimeout(function () {
+                fbPostingContainer.append(pageAbout);
+            }, 1000)
         }
-        try {
-            if (typeof response.location !== 'undefined') {
-                var pageLocation = '<div class="fb-page-location"><span class="fb-page-headline">Page location:</span></br>' + response.location.street + ", " + response.location.city + ", " + response.location.country + ", " + response.location.zip + '</div>';
-                setTimeout(function () {
-                    fbPostingContainer.append(pageLocation);
-                }, 1000)
-            } else {
-                var pageLocation = '<div class="fb-page-location"><span class="fb-page-headline">Page location:</span></br>Location is not entered!</div>';
-                setTimeout(function () {
-                    fbPostingContainer.append(pageLocation);
-                }, 1000)
-            }
-        } catch (e) {
-            console.log('response.location is undefined');
+        if (response.location) {
+            var pageLocation = '<div class="fb-page-location"><span class="fb-page-headline">Page location:</span></br>' + response.location.street + ", " + response.location.city + ", " + response.location.country + ", " + response.location.zip + '</div>';
+            setTimeout(function () {
+                fbPostingContainer.append(pageLocation);
+            }, 1000)
+        } else {
+            var pageLocation = '<div class="fb-page-location"><span class="fb-page-headline">Page location:</span></br>Location is not entered!</div>';
+            setTimeout(function () {
+                fbPostingContainer.append(pageLocation);
+            }, 1000)
         }
-        try {
-            if (typeof response.website !== 'undefined') {
-                var pageWebsite = `<div class="fb-page-website"><span class="fb-page-headline">Page website:</span></br><a href="http://${response.website}" target="_blank">` + response.website + '</a></div>';
-                setTimeout(function () {
-                    fbPostingContainer.append(pageWebsite);
-                }, 1000)
-            } else {
-                var pageWebsite = `<div class="fb-page-website"><span class="fb-page-headline">Page website:</span></br>Website not entered!</div>`;
-                setTimeout(function () {
-                    fbPostingContainer.append(pageWebsite);
-                }, 1000)
-            }
-        } catch (e) {
-            console.log('response.website is undefined');
-        }
-        try {
-            if ((typeof response.location == 'undefined') || (typeof response.website == 'undefined')) {
-
-            }
-        } catch (e) {
-            console.log('response.location or response.website not defined, moving grid');
+        if (response.website) {
+            var pageWebsite = `<div class="fb-page-website"><span class="fb-page-headline">Page website:</span></br><a href="http://${response.website}" target="_blank">` + response.website + '</a></div>';
+            setTimeout(function () {
+                fbPostingContainer.append(pageWebsite);
+            }, 1000)
+        } else {
+            var pageWebsite = `<div class="fb-page-website"><span class="fb-page-headline">Page website:</span></br>Website not entered!</div>`;
+            setTimeout(function () {
+                fbPostingContainer.append(pageWebsite);
+            }, 1000)
         }
     })
     getLastPosts();
@@ -324,15 +299,15 @@ function getPost(id) {
         $(".fb-last-posts-list").append(createPost(response));
     })
 }
-
+//Delete post is not working!!!
 function deletePost(id) {
     FB.api("/" + id, 'DELETE', { access_token: pages[selectedIndex].access_token }, function (response) {
         if (response && !response.error) {
-            $(".loader-container").toggleClass("hide");
+            loaderContainer.toggleClass("hide");
             alertPopUp("Post has been deleted", 4000);
             reloadSelectedPage();
         } else {
-            $(".loader-container").toggleClass("hide");
+            loaderContainer.toggleClass("hide");
             try {
                 alertPopUp(error.message, 6000);
             } catch {
@@ -342,81 +317,42 @@ function deletePost(id) {
         }
     })
 }
-
-function viewPost(id) {
-    window.open("https://www.facebook.com/" + id);
+//View link is not working!!!
+function viewLink(postID) {
+    window.open("https://www.facebook.com/" + postID);
 }
-
+//This should work, but I need help to find out why it doesn't
+$('.fb-post-link').on('click', function (e) {
+    var postID = $(e.target).data('postID');
+    window.open("https://www.facebook.com/" + postID);
+})
+//Not fully working!!!
 var createPost = function (response) {
-    try {
-        if ((typeof response.message !== 'undefined') || (typeof response.story !== 'undefined')) {
-            var createdTime = new Date(response.created_time);
-            var post = document.createElement('li');
+    if ((response.message) || (response.story)) {
+        var createdTime = new Date(response.created_time);
+        var postHTML = `<li data-postID=${response.id}>`;
 
-            post.setAttribute("postID", response.id);
+        postHTML += `<div class="fb-post-date">${createdTime.toLocaleString()}</div>`;
 
-            var postDate = document.createElement('div');
-            postDate.classList.add('fb-post-date');
-            postDate.innerText = createdTime.toLocaleString();
-
-            try {
-                if (typeof response.message !== 'undefined') {
-                    var postMessage = document.createElement('div');
-                    postMessage.classList.add('fb-post-message');
-                    postMessage.innerText = response.message;
-                    post.appendChild(postMessage);
-                }
-            } catch (e) {
-                console.log('response.message is undefined');
-            };
-            try {
-                if (typeof response.story !== 'undefined') {
-                    var postStory = document.createElement('div');
-                    postStory.classList.add('fb-post-message');
-                    postStory.innerText = response.story;
-                    post.appendChild(postStory);
-                }
-            } catch (e) {
-                console.log('response.story is undefined');
-            };
-
-            try {
-                if (typeof response.full_picture !== 'undefined') {
-                    var fullPictureContainer = document.createElement('div');
-                    fullPictureContainer.classList.add('fb-post-picture-container');
-                    var fullPicture = document.createElement('div');
-                    fullPicture.classList.add('fb-post-picture');
-                    fullPicture.style.backgroundImage = `url(${response.full_picture})`;
-                    fullPictureContainer.appendChild(fullPicture);
-                    post.appendChild(fullPictureContainer);
-                }
-            } catch (e) {
-                console.log('response.message is undefined');
-            };
-
-            var postLink = document.createElement('div');
-            postLink.classList.add('fb-post-link');
-            postLink.innerText = "View post";
-            postLink.addEventListener('click', function () {
-                viewPost(post.getAttribute("postID"));
-            });
-
-            var postDelete = document.createElement('div');
-            postDelete.classList.add('fb-post-delete');
-            postDelete.innerText = "Delete post";
-            postDelete.addEventListener('click', function () {
-                $(".loader-container").toggleClass("hide");
-                window.scrollTo(top);
-                deletePost(post.getAttribute("postID"));
-            });
-
-            post.appendChild(postDate);
-            post.appendChild(postLink);
-            post.appendChild(postDelete);
-
-            return post;
+        if (response.message) {
+            postHTML += `<div class="fb-post-message">${response.message}</div>`;
         }
-    } catch (e) {
-        console.log('response story and message is undefined');
-    };
+
+        if (response.story) {
+            postHTML += `<div class="fb-post-message">${response.story}</div>`;
+        }
+
+        if (response.full_picture) {
+            postHTML += `<div class="fb-post-picture-container">`;
+            postHTML += `<div class="fb-post-picture" style="background-image: url(${response.full_picture})"></div>`;
+            postHTML += `</div>`;
+        }
+
+        postHTML += `<div class="fb-post-link" data-postID=${response.id}>View post</div>`; //Can be probalby simplified by selecting .parent('li').data('postID') in the click event
+        postHTML += `<div class="fb-post-delete" data-postID=${response.id}>Delete post</div>`; //Can be probalby simplified by selecting .parent('li').data('postID') in the click event
+
+        postHTML += `</li>`;
+        //View link and Delete post are not working!!!
+        return postHTML;
+    }
 }

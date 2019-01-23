@@ -1,4 +1,23 @@
-# Change Log PUSH
+﻿# Change Log PUSH
+
+## 2019-01-23
+<h3>Version 3</h2>
+<h5>This version is ready for approval</h3>
+
+### Repaired & fixed
+- Most of the comments from the pull request except the [comment](https://github.com/nvbach91/4IZ268-2018-2019-ZS/pull/323#discussion_r249540292) & [comment 2](https://github.com/nvbach91/4IZ268-2018-2019-ZS/pull/323#discussion_r249540998)
+- HTML revaluated
+
+### Added
+- Added 'nvbach91' facebook user as admin to Facebook app
+- Added loading last 10 tweets for the user
+
+
+### Changed
+- Minor changes and improvements
+
+### Notes
+
 
 ## 2019-01-21
 <h3>Version 2</h2>

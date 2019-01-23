@@ -1,12 +1,16 @@
+var popUp = $(".pop-up");
+var errorText = $(".error-text");
+var errorOverlay = $(".error-overlay");
+
 function errorScreen(text) {
-    $(".error-text").html(text);
-    $(".error-overlay").toggleClass('error-show');
-  };
-  
-  function alertPopUp(text, duration) {
-    $(".pop-up").html(text);
-    $(".pop-up").toggleClass("pop");
-    setTimeout(function () {
-      $(".pop-up").toggleClass("pop");
-    }, duration);
-  };
+  errorText.html(text);
+  errorOverlay.toggleClass('error-show');
+};
+
+function alertPopUp(text, duration) {
+  popUp.html(text);
+  popUp.toggleClass("pop");
+  setTimeout(function () {
+    popUp.toggleClass("pop");
+  }, duration);
+};

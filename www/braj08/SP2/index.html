@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -46,7 +46,7 @@
         <div class="platform-container">
             <div class="platform">
                 <div class="twitter"><i class="fab fa-twitter"></i> Twitter</div>
-                <div class="facebook"><i class="fab fa-facebook-f"></i> Facebook</i></div>
+                <div class="facebook"><i class="fab fa-facebook-f"></i> Facebook</div>
                 <div class="instagram"><i class="fab fa-instagram"></i> Instagram</div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                 <form class="tw-login-form">
                     <input type="button" class="tw-auth" value="Request PIN">
                     <input type="number" class="tw-pin" placeholder="Enter PIN" autocomplete="off">
-                    <input type="submit" class="tw-pin-submit" value="Confirm PIN" disabled="true">
+                    <input type="submit" class="tw-pin-submit" value="Confirm PIN" disabled>
                 </form>
             </div>
         </div>
@@ -97,12 +97,16 @@
             </div>
             <form id="tw-post-form" class="tw-post-form">
                 <div class="tw-tweet">
-                    <textarea id="post-text" class="post-text" placeholder="Tweet here..." wrap="soft" draggable="false"
-                        autofocus="true"></textarea>
+                    <textarea id="post-text" class="post-text" placeholder="Tweet here..." wrap="soft" draggable="false"></textarea>
                     <p class="tw-char-limit">0 / 280</p>
                 </div>
                 <input type="submit" class="tw-tweet-submit" id="tw-tweet-submit" value="PUNCH IT CHEWIE!">
             </form>
+            <div class="tw-container-last-tweets">
+                <h2>These are your last 10 tweets</h2>
+                <ul class="tw-last-tweets">
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -148,8 +152,8 @@
             </div>
             <div class="fb-post">
                 <h1>Post here:</h1>
-                <textarea id="fb-post-text" class="fb-post-text" placeholder="Your post text goes here..." wrap="soft" draggable="false"
-                        autofocus="true"></textarea>
+                <textarea id="fb-post-text" class="fb-post-text" placeholder="Your post text goes here..." wrap="soft"
+                    draggable="false"></textarea>
                 <div class="fb-post-btn">PUSH it to the top!</div>
             </div>
         </div>
@@ -164,7 +168,7 @@
     <footer>
         <div class="logo" title="PUSH"></div>
         <p>Semestrální práce #2 z předmětu 4iz268, VŠE, ZS 2018/2019.</p>
-        <p>Vypracoval: <a href="mailto: braj08@vse.cz"><strong>Jan Brandejs</strong></a></p>
+        <p>Vypracoval: <a href="mailto:braj08@vse.cz"><strong>Jan Brandejs</strong></a></p>
     </footer>
 
 

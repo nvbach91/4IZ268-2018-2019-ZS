@@ -1,5 +1,5 @@
-twLogin = $(".tw-login");
-fbLogin = $(".fb-login");
+var twLogin = $(".tw-login");
+var fbLogin = $(".fb-login");
 
 $(".twitter").on("click", function () {
   twLogin.toggleClass("shown");
@@ -12,7 +12,7 @@ $(".tw-close").on("click", function () {
 
 $(".facebook").on("click", function () {
   checkLoginState();
-  if (getLogin() == true) {
+  if (getLogin()) {
     loadFacebook();
   } else {
     fbLogin.toggleClass("shown");
