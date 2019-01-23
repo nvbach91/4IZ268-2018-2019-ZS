@@ -1,23 +1,25 @@
 const client_id = 'qLneyKfn9V2XEQ';   // client_id získáte po registraci OAuth účtu
-const client_secret = '3gpnbeg_aKLi4ZxdZg20FtH5EDY'; // client_secret získáte po registraci OAuth účtu, Tohle bezny uzivatel uvidi? OMG lol
+const client_secret = '3gpnbeg_aKLi4ZxdZg20FtH5EDY'; // client_secret získáte po registraci OAuth účtu, doufám, že  
 const baseWeb = 'https://www.reddit.com/r/';
 const searchReddit = '  https://www.reddit.com/r/noveltranslations/search?q=' //zatím to prohledává jenom posty, ale v budoucnu to bude i umete samo zadat hledaní
 /*
 Zatím nepotřebuju, ale možná v budoucnnu, tak abych se tím nezdržoval 
 */
-const postsPerRuests = 100; //bohuzel maximum které reddit povoluje, defaulne na 25
+const postsPerRequests = 100; //bohuzel maximum které reddit povoluje, defaulne na 25
 const maxPosttoFetch = 500; //tohle v budoucnu udelam nejak editovatelne v nejakem uzivatelsekm nastaveni
-const maxRequests = maxPosttoFetch / postsPerRuests; //zaokrouhleno nahoru..:).
+const maxRequests = maxPosttoFetch / postsPerRequests; //zaokrouhleno nahoru..:).
 
 //tady budu ukladat vsechny data z fetchPostu
 const responses = [];
-
+var novelName = []
 //vezme string z Inputu posle ho do fetchPost
 const handleSubmit = e => {   //e!!!
     e.preventDefault();
-    const subreddit = document.getElementById('js-search').value;
-    const novelName = document.getElementById('novel-search').value;
-    console.log(novelName);
+    subreddit = document.getElementById('js-search').value;
+    novelName[0] = document.getElementById('novel-search').value;
+    novelName[1] = document.getElementById('chapters-read').value;
+    novelName[2] = document.getElementById('Increment').value;
+    novelName[3] = subreddit;
     fetchPosts(subreddit, novelName);
 };
 //var handleSubmit = fuction(params) { }
@@ -25,7 +27,7 @@ const handleSubmit = e => {   //e!!!
 //zavola z fetchreqeust reditApi vysledek parseResult
 const fetchPosts = async (subreddit, novelName, afterParam) => {
     //ceka to, nez se to udela nez se to pohne na dalsi radku kodu, abych nemusel delat .then().then()...
-    const url = `${baseWeb}${subreddit}.json?limit=${postsPerRuests}${afterParam ? '&after=' + afterParam : ''}`;
+    const url = `${baseWeb}${subreddit}.json?limit=${postsPerRequests}${afterParam ? '&after=' + afterParam : ''}`;
     //pokud nebude afterParam zadan, vrati ten poslední segment toho stringu jako prazdný.
     //console.log(url);
     const response = await fetch(url);
@@ -35,9 +37,9 @@ const fetchPosts = async (subreddit, novelName, afterParam) => {
 
     if (responseJSON.data.after && responses.length < maxRequests) {
         fetchPosts(subreddit, novelName, responseJSON.data.after);
-        return; //pro jistotu aby se mi tam neudelalo nejaký cyklus...
+        return; //Pro jistotu, aby to pak neskakalo nekolikrat na radky pod tim.
     }
-    console.log(novelName);
+    //console.log(novelName);
     parseResults(responses, novelName);//tohle nastane až response.length => maxRequests, vzhledem k velikosti cílového subredittu...
 
 };
@@ -51,63 +53,177 @@ const parseResults = (responses, novelName) => {
     });
     //ted konecne zpracuju jednotliva data, tady to bude chtít jestě přepracovat
 
-
-    var rawTitles = [];
+    posts = {}; //compoudni pole
+    var rawTitles = [[], []]; //Multi pole, ted na permalink, více už asi nestihnu.
     var index6 = 0
     var theHighestCHCount = 0
-    allPosts.forEach(({ data: { title } }) => {
-        if (title.search(novelName) > 0) {
+    var theHighestCHDetails = [];
+    allPosts.forEach(({ data: { title, url } }) => {
+        if (title.search(novelName[0]) > 0) {
+            rawTitles[[index6][0]] = title;
+            rawTitles[[index6][1]] = url;
 
-            rawTitles[index6] = title;
+            //  posts[index6] = {titleName: title,   titleURL: url};
+            // console.log(posts[index6]: titleURL);
+
             index6 = index6 + 1;
             g = title.search('Chapter');
             var chapterCount = title.substring((g + 8), title.length);
             //console.log(chapterCount);
             if (theHighestCHCount < chapterCount) {
                 theHighestCHCount = chapterCount;
+                theHighestCHDetails[0] = title;
+                theHighestCHDetails[1] = url;
             }
         }
 
     });
 
-    console.log('nejvysi chapter je ' + theHighestCHCount)
+
+
+    //console.log('nejvysi chapter je ' + theHighestCHCount);
 
 
 
-    DisplayTitles(rawTitles, theHighestCHCount);
+    displayTitles(rawTitles, theHighestCHCount, theHighestCHDetails, novelName);
 
 };
 
 
 
 
-const DisplayTitles = (rawTitles, theHighestCHCount) => {
+const displayTitles = (rawTitles, theHighestCHCount, theHighestCHDetails, novelName) => {
     const container = document.getElementById('js-output');
-    //console.log(rawTitles);
+    var counter = document.getElementById('js-counter');
 
-    const userCard = document.createElement('a'); //vyrvori ahref element.
-    userCard.href = `https://www.reddit.com`
-    userCard.classList.add('user-card');
-    userCard.innerText = `nejvysi chapter je ${theHighestCHCount}`;
-    container.appendChild(userCard);
+    counter.innerHTML = Number(counter.innerHTML) + 1;
+    // console.log(counter.innerHTML);
+
+    //zjisteni zda to uz splnuje podminky pro upozorneni 10x nasobek novych kapitol zluta,2,5x nasobek fialova,1x nasobek modra
+    var zvyseni = (theHighestCHCount - novelName[1]) / novelName[2];
+    if (zvyseni > 10) {
+        extraColour = " yellow";
+    } else {
+
+        var zvyseni = (theHighestCHCount - novelName[1]) / novelName[2];
+        if (zvyseni > 5) {
+            extraColour = " violet";
+        } else {
+            extraColour = " blue";
+        };
+
+    };
+
+    if (zvyseni < 1) {
+        extraColour = " ";
+    };
 
 
 
-    rawTitles.forEach(function (element) {
-        // rank = index + 1;
-        const userCard = document.createElement('a'); //vyrvori ahref element.
-        userCard.href = `https://www.reddit.com`
-        userCard.classList.add('user-card');
-        userCard.innerText = `${element}`;
-        container.appendChild(userCard);
-    });
 
+
+    newHTML = `<!--START${counter.innerHTML}-->
+      <div class="informations">
+            <div class="profile__detail">
+                <div class="profile__detailName">${novelName[0]}</div>
+                <div class="profile__detailValue">${novelName[1]}</div>
+                <div class="profile__detailValue${extraColour}"><a href=${theHighestCHDetails[1]}>${theHighestCHCount}</a></div>
+                <div class="profile__detailValue">${novelName[2]}</div>
+                <div class="profile__detailValue"><button class = "button button--submitSearch" onclick="deleteteLine(${counter.innerHTML})">Delete Novel</button></div>
+                 
+            </div>
+        </div>
+    <!--KONEC${counter.innerHTML}-->`//pro moznost jednoduse smazat radek
+
+    container.innerHTML += `${newHTML}`;
+    saveLine(counter.innerHTML, novelName);
+
+    // <div class="profile__detailValue"><button class="button button--submitSearch" onclick="saveLine(${counter.innerHTML})">Save Novel</button></div>
 
 
 
 };
 
-const subredditSelectForm = document.getElementById('subreddit-select-form')
+const subredditSelectForm = document.getElementById('subreddit-select-form')//vyrvori ahref element.  Např: noveltranslations // Phoenix   (jmeno novely stačí pouze část, když jste si jistí, že ne nespojí s nějakou další..)
 subredditSelectForm.addEventListener('submit', handleSubmit);
 
-///mozna vymaz novelName protoze nekde bude zbytecny!!!!
+function deleteteLine(line) {
+    const container = document.getElementById('js-output');
+    var str = container.innerHTML
+    var konec = `<!--KONEC${line}-->`;
+    var start = `<!--START${line}-->`;
+    var prefixWithChapter = str.split(konec, 1);
+    var prefixWithouerChapter = str.split(start, 1);
+    //console.log(prefixWithouerChapter);
+    //container.innerHTML = prefixWithouerChapter;
+    var afterChapter = str.split(prefixWithChapter);
+    var newURL = prefixWithouerChapter + afterChapter;
+    //var wholeWithoutChapter = str.replace(theChapter, " ");
+    container.innerHTML = newURL;
+    var nName = 'N' + line;
+    var gName = 'G' + line;
+    var iName = 'I' + line;
+    var sName = 'S' + line;
+
+    localStorage.removeItem(nName);
+    localStorage.removeItem(gName);
+    localStorage.setItem(iName, null);
+    localStorage.setItem(sName, null);
+
+};
+
+function saveLine(line, novelName) {
+    var nName = 'N' + line;
+    var gName = 'G' + line;
+    var iName = 'I' + line;
+    var sName = 'S' + line;
+    //console.log(nName);
+    //console.log(novelName);
+    // localStorage.setItem(line, novelName);
+    // var h = number(localStorage.getItem("numberOfNovels")) + 1
+    // localStorage.setItem("numberOfNovels", h);
+    // g = (localStorage.getItem(line));
+    //console.log(h);
+    localStorage.setItem(nName, novelName[0]);
+    localStorage.setItem(gName, novelName[1]);
+    localStorage.setItem(iName, novelName[2]);
+    localStorage.setItem(sName, novelName[3]);
+
+
+};
+
+function LoadData() {
+
+
+
+    var line = 1
+    while (line < 21) {
+
+        var nName = 'N' + line;
+        var gName = 'G' + line;
+        var iName = 'I' + line;
+        var sName = 'S' + line;
+        if ((localStorage.getItem(nName) != 'undefined') && (localStorage.getItem(gName) != null)) {
+            var name0 = localStorage.getItem(nName);
+            var name1 = localStorage.getItem(gName);
+            var name2 = localStorage.getItem(iName);
+            var name3 = localStorage.getItem(sName);
+            var NovelName = [name0, name1, name2, name3];
+            fetchPosts(name3, NovelName);
+            console.log(line);
+        };
+
+
+
+
+        /*
+        
+                console.log(name0);
+                console.log(name1);
+                console.log(name2);
+                console.log(name3);
+        */
+
+        line = line + 1;
+    };
+};

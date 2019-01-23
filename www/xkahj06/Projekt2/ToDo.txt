@@ -3,3 +3,4 @@
 3) Upozornoňovaní když přesahné kritické množství, ruzně zbarvené při ruzných násobcích a dokončení serie.
 4) AJAX: když uživatel vyplní jmeno a heslo, muže upvote a poděkovat v komentu?
 5) Zrychlit toto nějak...
+6) zobrazit jednotliv0 prispevky (mam) plus hyperlink na ne.
