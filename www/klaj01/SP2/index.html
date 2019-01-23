@@ -1,26 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Pong Game JavaScript</title>
-    <style>
-        body {
-            background-color: rgb(199, 199, 199);
-        }
-
-        #pong {
-            border: 2px solid rgb(241, 241, 241);
-            position: absolute;
-            margin: auto;
-
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Gamefinder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Video game finder and pong" />
+  <meta name="keywords" content="Pong, Games, Finder" />
+  <meta name="author" content="Klaj01" />
+  <link rel="stylesheet" href="CSS/styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="IMG/favicon-96x96.png" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
+<span class=""></span>
 
 <body>
-    <canvas id="pong" width="1200" height="600"></canvas>
-    <script src="js/javascript.js"></script>
+  <main>
+    <header>
+      <nav class="nav">
+        <img class="headerimg" src="img/backgroundtransparent.png" alt="Headerimg" />
+        <a href="index.html" class="activepage">Domů</a>
+        <a href="game.html">Pong</a>
+      </nav>
+      <div class="formDiv">
+        <form action="#" class="gameSearch">
+          <input required type="text" placeholder="Zde napište název hry" id="searchText" />
+          <button type="submit" id="submitButton">Najít hru</button>
+        </form>
+      </div>
+      <a id="refresh-button">
+        <h1>VIDEO GAME FINDER</h1>
+      </a>
+      <h2>-Najdi svou oblíbenou hru-</h2>
+    </header>
+    <h3 id="errorMessage" class="hide">Bohužel jste zadal špatný název</h3>
+    <div class="backgroundImage"></div>
+    <div class="flex-container"></div>
+    <h3 id="topGamesLink"></h3>
+<p class="testarea"></p>
+    <div id="topGamesList" class="list-group"></div>
+    <div class="appinfo">
+      <p>
+        Tato aplikace slouží pro vyhledání základních informací o hře. </p>
+      <p>Po zadání názvu hry do vyhledávače dostanete 10 her s podobným názvem. </p>
+      <p> Pokud jste vámi hledanou hru nenašel, tak do vyhledávače napiště
+        přesnější název.</p>
+    </div>
+
+    <footer>
+      <p>&copy;Jan Klačmera / ZS 2018-2019 / 4IZ268</p>
+    </footer>
+
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="JS/script.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
