@@ -253,7 +253,7 @@ footer.cover, img.cover, header.cover {
     margin: auto;
 }
 
-.form label, input, textarea{
+.form-item{
     display: block;
     font-family: "Palatino Linotype";
     margin: 2% 10%;
@@ -262,11 +262,23 @@ footer.cover, img.cover, header.cover {
     margin: 2% 10%;
 
 }
-.item select, button, value{
+.item > select, button, label, option{
     display: inline;
     font-family: "Palatino Linotype";
+    margin: unset;
 }
 
+#select-models-label {
+    display: block;
+    font-family: "Palatino Linotype";
+    margin: 2% 10%;
+    text-decoration: underline;
+}
+
+#send-order{
+    font-family: "Palatino Linotype";
+    font-style: italic;
+}
 
 @media screen and (min-width: 720px) {
     .navigation {
