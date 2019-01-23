@@ -6,9 +6,16 @@ $(document).ready(function(){
     var loader = $('#loader');
     var inputError = $('#error');
     var lyricArea = $('#lyric');
+    var chartArea = $('#chart');
+    var artist = $('#artist');
+    var song = $('#song');
+    var form1 = $('#submit');
+    var searchButton = $("#search-button");
     
-    
+    cutMezer();
     loadChartAjax();
+
+
     submit.addEventListener('submit', function(e) {
  
         e.preventDefault();
@@ -43,6 +50,29 @@ $(document).ready(function(){
             });
         };
     });
+
+    
+    function cutMezer(){
+        artist.blur(function() {
+            var str = artist.val().trim();
+            artist.val(str);
+        });   
+        song.blur(function() {
+            var str = song.val().trim();
+            song.val(str);
+        });
+    };
+    
+    function lyricsChartSong(){
+        $('.fullSong').click(function() {
+            var thisSong = $(this);
+            var artistName = thisSong.find('span.artistName').text();
+            var songName = thisSong.find('span.songName').text();
+            artist.val(artistName);  
+            song.val(songName);
+            searchButton.click();
+            });
+        };
  
     function lyric(data){
         return  '<h1>' + data.result.artist.name + ' - ' + data.result.track.name + '</h1><p class="text">' + replaceN(data.result.track.text) + '</p>';
@@ -72,7 +102,8 @@ $(document).ready(function(){
         dataType: 'json',
         success: function(data) {
             var charts = chartSongs(data);
-            $('#chart').html(charts);
+            chartArea.html(charts);
+            lyricsChartSong();
         }});
     
         function addZero(i) {
@@ -87,18 +118,14 @@ $(document).ready(function(){
             var day = addZero(datum.getDate());
             var month = addZero(datum.getMonth()+1);
             var year = addZero(datum.getFullYear());
-            return '<p class="date-chart">- aktuální k ' + day + '. ' + month + '. ' + year + ' -</p><p class="full-chart">' +
-                        '<strong>1. </strong>'+ data.tracks.track[0].artist.name + ' - <strong>' + data.tracks.track[0].name + '</strong> <br>' + 
-                        '<strong>2. </strong>'+ data.tracks.track[1].artist.name + ' - <strong>' + data.tracks.track[1].name + '</strong> <br>' +
-                        '<strong>3. </strong>'+ data.tracks.track[2].artist.name + ' - <strong>' + data.tracks.track[2].name + '</strong> <br>' +
-                        '<strong>4. </strong>'+ data.tracks.track[3].artist.name + ' - <strong>' + data.tracks.track[3].name + '</strong> <br>' +
-                        '<strong>5. </strong>'+ data.tracks.track[4].artist.name + ' - <strong>' + data.tracks.track[4].name + '</strong> <br>' +
-                        '<strong>6. </strong>'+ data.tracks.track[5].artist.name + ' - <strong>' + data.tracks.track[5].name + '</strong> <br>' +
-                        '<strong>7. </strong>'+ data.tracks.track[6].artist.name + ' - <strong>' + data.tracks.track[6].name + '</strong> <br>' +
-                        '<strong>8. </strong>'+ data.tracks.track[7].artist.name + ' - <strong>' + data.tracks.track[7].name + '</strong> <br>' + 
-                        '<strong>9. </strong>'+ data.tracks.track[8].artist.name + ' - <strong>' + data.tracks.track[8].name + '</strong> <br>' + 
-                        '<strong>10. </strong>'+ data.tracks.track[9].artist.name + ' - <strong>' + data.tracks.track[9].name + '</strong> </p>'; 
+            var trackInfo = "";
+            var c = 0;
+            while (c < 10) {
+                trackInfo += '<span class="fullSong"><strong>' + (c+1) + '. </strong><span class="artistName">'+ data.tracks.track[c].artist.name + '</span> - <strong><span class="songName">' + data.tracks.track[c].name + '</span></strong></span><br>';
+                c++;
+            }
+            return '<p class="date-chart">- aktuální k ' + day + '. ' + month + '. ' + year + ' -</p><p class="full-chart">' + trackInfo + '</p>';
             };
-    
+        
     };
 });
