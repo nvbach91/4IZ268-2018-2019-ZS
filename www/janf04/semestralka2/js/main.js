@@ -21,9 +21,13 @@ function makeRequest() {
 
         searchVids.forEach(function(item, index) {
             var temp = document.getElementById("searchResults").innerHTML
-            document.getElementById("searchResults").innerHTML = temp + '<div class="video" >' + 
-            item.snippet.title + 
-            '<img src="' + item.snippet.thumbnails.high.url + '"></img>'
+            document.getElementById("searchResults").innerHTML =
+            temp + '<a href="https://youtube.com/watch?v=' + item.id.videoId + '"><div class="video">' + 
+            item.snippet.title + '<p></p>' +
+            '<img src="' + item.snippet.thumbnails.high.url + '"></img>' +
+            '</div></a>'
         });
     })
 }
+
+addEventListener

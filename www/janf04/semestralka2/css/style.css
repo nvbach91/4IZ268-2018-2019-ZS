@@ -2,6 +2,7 @@
     box-sizing: border-box;
     max-width: 720px;
     margin: 0 auto;
+    background-color: rgb(219, 218, 218);
 }
 
 body {
@@ -16,4 +17,12 @@ h1 {
 
 input[type=text] {
     width: 60%;
+}
+
+.video {
+    margin-bottom: 50px;
+}
+
+img {
+    width: 60%;    
 }
