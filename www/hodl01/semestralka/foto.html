@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
     <link rel="shortcut icon" href="IMG/favicon.ico" type="image/x-icon">
     <title>Galerie | Lukáš Hodboď</title>
+
 </head>
 
 <body>
@@ -36,14 +37,52 @@
             <li><a href="contact.html">Kontakty</a></li>
         </ul>
     </nav>
+    <div class="blackBox">
+        <h2 class="profileName">Instagram @lukashodbod</h2>
+        <p>Přejít do galerie uživatele: </p><button id="profilBT">@makacenkoteam</button><button
+            id="BT">Zobraz moje fotografie</button>
+        <div><IMG id="profilePicture" alt="profile picture" src="IMG/no-img300.jpg"></IMG>
+            <p id="bio"></p>
+            <p id="follows">Followers: </p>
+        </div>
 
-    <img class="cover" src="IMG/Lukas.png" alt="Lukas_Hodbod">
+        <div id="instafeed">
+            <div class="photoBox">
+                <img id="p0" src="IMG/no-img300.jpg" alt="Photo from Instagram">
+                <div class="midle">
+                    <div class="textOnHover" id="l0">
+                        <img class="icon" src="IMG/heart-solid.svg" alt="heart icon">
 
-    <section class="mainContent">
-        <h2>Galerie</h2>
-        <p>Tato stránka bude vytvořena vrámci druhé semestrální práce.</p>
-    </section>
+                    </div>
+                </div>
+            </div>
+            <div class="photoBox">
+                <img id="p1" src="IMG/no-img300.jpg" alt="Photo from Instagram">
+                <div class="midle">
+                    <div class="textOnHover" id="l1">
+                        <img class="icon" src="IMG/heart-solid.svg" alt="heart icon">
 
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <aside class="modalAside">
+                <div class="row">
+                    <div id="caption"></div>
+                </div>
+            </aside>
+            <main class="modalMain"><img class="modal-img" id="imgModal" src="IMG/no-img300.jpg" alt="Photo from Instagram"></main>
+
+
+
+        </div>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>
