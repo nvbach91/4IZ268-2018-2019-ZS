@@ -1,7 +1,8 @@
 var API_ID = 'd1c9a91ea65443af90946fde02fdda64';
 var API_SECRET = '26bbf4fad9384fd4bb3543649ade8b05';
-var REDIRECT_URI = 'http://localhost:5500';
+var REDIRECT_URI = 'https://fcp.vse.cz/4IZ268/2018-2019-ZS/www/kasj08/semestralka2/'
 var STATE_KEY = 'spotify_auth_state';
+var API_URL = 'https://api.spotify.com/v1';
 
 var userAccess = null;
 var userID = null;
@@ -69,7 +70,7 @@ $(document).ready(function () {
                 }
                 // získám informace o uživateli
                 $.ajax({
-                    url: 'https://api.spotify.com/v1/me',
+                    url: API_URL + '/me',
                     headers: {
                         'Authorization': 'Bearer ' + userAccess
                     },
@@ -89,7 +90,7 @@ $(document).ready(function () {
                             userCountry = response.country;
                             // získám umělce, které uživatel sleduje
                             elementMessage.text('Please wait: Getting list of your followed artists...');
-                            getUserArtists('https://api.spotify.com/v1/me/following?type=artist&limit=50');
+                            getUserArtists(API_URL + '/me/following?type=artist&limit=50');
                         }
                         else {
                             // nezískal jsem user id
@@ -234,7 +235,7 @@ function getArtistAlbums(artist, lastCheck) {
     }
 
     elementMessage.text('Please wait: Getting albums from artist ' + artist.name + '...');
-    var fetchUrl = 'https://api.spotify.com/v1/artists/' + artist.id + '/albums?offset=0&limit=50&include_groups=album&market=' + userCountry;
+    var fetchUrl = API_URL + '/artists/' + artist.id + '/albums?offset=0&limit=50&include_groups=album&market=' + userCountry;
 
     fetch(fetchUrl, options)
         .then(response => response.json())
@@ -443,24 +444,26 @@ function addMenuMonths(yearToAdd) {
     elementMenuYears.append('<li><a class="year" id="' + yearToAdd + '" title="Click to view months in ' + yearToAdd + '">' + yearToAdd + '</a></li>');
     // přidá měsíce vybraného roku do menu
     $('nav').append('<ul class="months" id="m' + yearToAdd + '"></ul>');
-    var rokDiv = $('#m' + yearToAdd);
+    var yearDiv = $('#m' + yearToAdd);
+    var monthDivs = '';
     months.forEach(month => {
         if (month === 'all') {
-            rokDiv.append('<li><a class="month" id="' + yearToAdd + '-' + month + '" title="Click to view all released albums in ' + yearToAdd + '">' + month + '</a></li>');
+            monthDivs += `<li><a class="month" id="` + yearToAdd + `-` + month + `" title="Click to view all released albums in ` + yearToAdd + `">` + month + `</a></li>`;
         }
         else if (month === 'undefined') {
-            rokDiv.append('<li><a class="month" id="' + yearToAdd + '-' + month + '" title="Click to view released albums in ' + yearToAdd + ' with undefined month">' + month + '</a></li>');
+            monthDivs += `<li><a class="month" id="` + yearToAdd + `-` + month + `" title="Click to view released albums in ` + yearToAdd + ` with undefined month">` + month + `</a></li>`;
         }
         else {
-            rokDiv.append('<li><a class="month" id="' + yearToAdd + '-' + month + '" title="Click to view released albums in ' + yearToAdd + '-' + month + '">' + month + '</a></li>');
+            monthDivs += `<li><a class="month" id="` + yearToAdd + `-` + month + `" title="Click to view released albums in ` + yearToAdd + `-` + month + `">` + month + `</a></li>`;
         }
     });
+    yearDiv.append(monthDivs);
 }
 
 /* zobrazení albumů z vybraného měsíce a roku */
 function viewAlbums(year, month) {
     // odstraním alba z jiného roku nebo měsíce
-    var elementAlbums = $('.albums')
+    var elementAlbums = $('.albums');
     elementAlbums.empty();
     if (year < 1) {
         // zobrazuji všechny alba
@@ -478,6 +481,7 @@ function viewAlbums(year, month) {
         // zobrazuji alba ve vybraném měsíci
         elementTitle.text('Released albums in ' + year + '-' + month);
     }
+    var albumsDiv = '';
     userAlbums.forEach(album => {
         // projdu získaná alba a získám měsíc a rok
         var realese = album.release.split('-');
@@ -488,11 +492,21 @@ function viewAlbums(year, month) {
             if ((month === 0) || (month === albumMonth) || (month < 0 && !albumMonth)) {
                 // zobrazuji alba ve vybraném roce nebo se jedná o správný měsíc
                 // získám div a zobrazím ho
-                var artistDiv = '<div class="album" id="' + album.id + '" title="View tracklist"><div class="album-flex"><div class="album-img"><img src="' + album.cover + '"></img></div><div class="album-info"><h2>' + album.name + '</h2><h3>' + album.artists + '</h3><p>' + album.release + '</p></div></div></div>';
-                elementAlbums.append(artistDiv);
+                albumsDiv += `<div class="album" id="` + album.id + `" title="View tracklist">
+                                <div class="album-flex">
+                                    <div class="album-img">
+                                        <img src="` + album.cover + `"></img>
+                                    </div>
+                                    <div class="album-info">
+                                        <h2>` + album.name + `</h2><h3>` + album.artists + `</h3>
+                                        <p>` + album.release + `</p>
+                                    </div>
+                                </div>
+                            </div>`;
             }
         }
     });
+    elementAlbums.append(albumsDiv);
 }
 
 /* posunutí stránky dolů */
