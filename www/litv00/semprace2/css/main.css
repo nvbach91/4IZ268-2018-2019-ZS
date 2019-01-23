@@ -78,3 +78,20 @@ h3{
   border: 0px;
 }
 
+.table{
+  margin-top: 30px;
+  text-align: center;
+}
+.klient{
+  cursor: pointer;
+}
+
+.hidden{
+  display: none;
+}
+
+#info-modal .modal-body p{
+  margin: 0;
+  padding: 0;
+}
+
