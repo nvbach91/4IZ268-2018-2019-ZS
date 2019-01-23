@@ -42,13 +42,39 @@ $("#buttonSearch").click(function () {
 
 document.querySelector('.list').addEventListener('click', function (e) {
     var item = e.target;
-    $('#search-input').val(item.innerText);
-    $("#buttonSearch").click();
+    var itemString = item.innerText;
+    console.log(item.id);
+    if (itemString.indexOf('Remove') >= 0) {
+        var index = favorites.indexOf(item.id);
+        favorites.splice(index, 1);
+        item.className = '';
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        $('.list').empty();
+        favorites.forEach(function (favorite) {
+            var html = '<li><div>' + favorite + '</div></li><button class="removefav" id=' + favorite + ' >Remove</button>';
+            $(".list").append($("<li>").html(html));
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+        });
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
+    else {
+        $('#search-input').val(item.innerText);
+        $("#buttonSearch").click();
+    }
+    localStorage.setItem('favorites', JSON.stringify(favorites));
 });
+
+function removeUsers(buttonID) {
+    $(buttonID).click(function () {
+
+    });
+}
+
 
 var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 favorites.forEach(function (favorite) {
-    $(".list").append($("<li>").text(favorite));
+    var html = '<li><div>' + favorite + '</div></li><button class="removefav" id=' + favorite + ' >Remove</button>';
+    $(".list").append($("<li>").html(html));
 });
 
 function searchUsers() {
@@ -56,7 +82,8 @@ function searchUsers() {
 
     var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     favorites.forEach(function (favorite) {
-        $(".list").append($("<li>").text(favorite));
+        var html = '<li><div>' + favorite + '</div></li><button class="removefav" id=' + favorite + ' >Remove</button>';
+        $(".list").append($("<li>").html(html));
     });
 
     var userInput = $('#search-input').val();
@@ -91,21 +118,28 @@ function searchUsers() {
         document.querySelector('#user').addEventListener('click', function (e) {
 
             var item = e.target;
-            var index = favorites.indexOf(screenName);
+            var userName = item.innerText.replace("User: ", '');
+            var index = favorites.indexOf(userName);
 
             if (index == -1) {
-                favorites.push(screenName);
+                favorites.push(userName);
+                console.log(item);
                 item.className = 'fav';
                 $('.list').empty();
                 favorites.forEach(function (favorite) {
-                    $(".list").append($("<li>").text(favorite));
+                    var html = '<li><div>' + favorite + '</div></li><button class="removefav" id=' + favorite + ' >Remove</button>';
+                    $(".list").append($("<li>").html(html));
+
                 });
+                localStorage.setItem('favorites', JSON.stringify(favorites));
             } else {
                 favorites.splice(index, 1);
                 item.className = '';
                 $('.list').empty();
                 favorites.forEach(function (favorite) {
-                    $(".list").append($("<li>").text(favorite));
+                    var html = '<li><div>' + favorite + '</div></li><button class="removefav" id=' + favorite + ' >Remove</button>';
+                    $(".list").append($("<li>").html(html));
+
                 });
             }
             localStorage.setItem('favorites', JSON.stringify(favorites));
@@ -205,4 +239,5 @@ function searchUsers() {
         true
     );
     $('#search-input').val('');
+    localStorage.setItem('favorites', JSON.stringify(favorites));
 }

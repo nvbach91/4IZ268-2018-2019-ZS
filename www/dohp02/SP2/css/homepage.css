@@ -2,6 +2,7 @@
     box-sizing: border-box;
     border-radius: 3px;
     font-family: Helvetica, Sans-Serif;
+    list-style: none;
 }
 
 body.waiting * {
@@ -162,6 +163,7 @@ h1 {
     margin-left: 15%;
 }
 
+/* 
 .list li:hover:after, .list li.fav:after {
     content: ' \2605';
     color: rgb(255, 203, 0);
@@ -170,3 +172,4 @@ h1 {
 .list li.fav:hover:after {
     content: ' \2606';
 }
+*/
