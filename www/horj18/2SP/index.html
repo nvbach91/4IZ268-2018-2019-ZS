@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+
+<head>
+    <title>Hlavní strana | SmartShare.cz</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="all" href="style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Smart Share">
+    <meta name="keywords" content="facebook, share, post">
+    <meta name="author" content="Jan Horáček">
+</head>
+
+<body>
+    <div id="loginModal" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Vítejte ve SmartShare!</h3>
+                </div>
+                <div class="modal-body" id="login-modal-body">
+                    <img width="82" src="https://cdn0.iconfinder.com/data/icons/elasto-online-store/26/00-ELASTOFONT-STORE-READY_mail-512.png"
+                        alt="logo">
+                    <p>Nejprve se prosím přihlašte a povolte aplikaci přístup k vašemu účtu</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="loginBtn" class="btn btn-primary">Přihlásit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="groupModal" class="modal fade" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Vyberte skupiny do kterých chcete příspěvek sdílet</h3>
+                </div>
+                <div class="modal-body" id="modalGroupBody">
+                    <div class="text-center font-weight-light">Příspěvěk přidáte jako uživatel</div>
+                    <div id="txtAreaHdr" class="rounded bg-light row align-items-center no-gutters mb-3">
+                        <div id="pictureContainer" class="col-sm-4"><img id="profilePic" class="float-right mr-3 rounded-circle"
+                                src="#" alt="profilový obrázek"></div>
+                        <div id="userName" class="col-sm-8 text-left"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="closeModalGroupBtn" class="btn btn-danger">Zavřít</button>
+                    <button id="sendBtn" class="btn btn-success" disabled>Odeslat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loadingModal" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <main class="content">
+        <div class="form-share">
+            <div class="text-center mb-4">
+                <h1 class="h1 mb-3 font-weight-normal">S<img width="52" src="https://cdn0.iconfinder.com/data/icons/elasto-online-store/26/00-ELASTOFONT-STORE-READY_mail-512.png"
+                        alt="logo">ART
+                    SHARE</h1>
+                <h2 class="mb-3 font-weight-normal" id="motto">Sdílej své přispěvky snadno a rychle</h2>
+                <p>Napiš příspěvek do textové oblasti a sdílej své pocity do více skupin najednou!</p>
+            </div>
+            <div class="form-label-group">
+                <textarea id="textarea" rows="5" class="form-control" placeholder="Napište příspěvek" data-container="body"
+                    data-toggle="popover" data-placement="right" data-trigger="manual" data-content="Vyplňte prosím text příspěvku. Příspěvek nesmí být prázdný nebo obsahovat pouze bílé znaky."
+                    required></textarea>
+            </div>
+            <br>
+            <button id="shareBtn" class="btn btn-lg btn-primary btn-block" disabled>Sdílej!</button>
+            <button id="logoutBtn" class="btn btn-lg btn-secondary btn-block" disabled>Odhlásit</button>
+        </div>
+    </main>
+    <footer class="text-center align-middle">SmartShare 2019</footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="scripts/script1.js"></script>
+</body>
+
+
+</html>
