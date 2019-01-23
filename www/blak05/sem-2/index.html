@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Lyriclly - Najdi text své oblibené písničky pomocí naší nové aplikace!">
+    <meta name="author" content="Kryštof Blažej">
+    <meta name="keywords" content="song, music, lyrics, karaoke, muzika, česká hudba, texty písní">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lyriclly - Najdi svůj oblíbený text</title>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet"> 
+    <!-- My style -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    
+    <header>
+        <a href="index.html" class="mainlogo">
+            <p class="logo">Lyriclly</p>
+            <hr class="line">
+            <p class="description">- najdi svůj oblíbený text - </p>
+        </a>
+    </header>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-2">
+                <p class="logo3">Search</p>
+                <hr class="line3">
+                <form id="submit" class="form-horizontal">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="artist" id="artist" placeholder="Artist Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="song" id="song" placeholder="Song" required>
+                    </div>
+                    <div id="error"></div>
+                    <button class="btn btn-default btn-lg active" id="search-button">FIND LYRICS</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div id="charts">
+                    <p class="logo2">Last.Fm Chart</p>
+                    <hr class="line2"> 
+                    <div id="chart"></div>
+                </div>
+                <div id="fav-songs"></div>
+            </div>
+        </div>
+        <div class="row col-md-4 col-md-offset-2">
+            <div id="lyric"></div>
+            <div id="loader"></div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container row col-md-2 col-md-offset-5">
+            <p class="foot">Kryštof Blažej &copy; ZS 2018/19</p>
+         </div>
+    </footer>
+
+    <!-- jQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- JS Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- My JS -->
+    <script src="main.js"></script>
+ </body>
+</html>
+ 

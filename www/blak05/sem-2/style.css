@@ -1,0 +1,64 @@
+*{box-sizing: border-box;}
+a.mainlogo{text-decoration: none;}
+form{margin-top: 40px;}
+input, label{text-align: center;}
+#error{width: 100%; margin: 0 auto; text-align: center;}
+#error404{width:70%; margin: 0 auto; text-align: center;}
+button{width: 100%;}
+h1{font-size: 30px; text-align: center;}
+p{text-align: justify;margin-bottom: 50px;margin-top: 30px;}
+.logo{color:dimgrey; text-transform:uppercase; font-weight: bold; font-size: 60px; margin: 0 auto; text-align: center; font-family: 'Staatliches', cursive;}
+.line{background-color: dimgray; width:80%; height: 2px; margin: 0 auto;}
+#chart{margin: 0 auto;}
+.logo2,.logo3{color:dimgrey; text-transform:uppercase; font-weight: bold; font-size: 35px; margin: 0 auto; text-align: center; font-family: 'Staatliches', cursive;}
+.line2{background-color: dimgray; width:10%; height: 2px; margin: 0 auto;}
+.line3{background-color: dimgray; width:20%; height: 2px; margin: 0 auto;}
+.full-chart{color: dimgray; margin: 0 auto; text-align: center;}
+.date-chart,.description{color:gray; text-align: center; font-family: 'Staatliches', cursive; text-transform: uppercase; margin: 0 auto; margin-bottom: 10px; margin-top: 10px;}
+.text{text-align: center;}
+
+@media only screen and (max-width: 992px) {
+    .row{width: 40%; margin: 0 auto;}
+}
+@media only screen and (max-width: 450px) {
+    .row{width: 60%; margin: 0 auto;}
+}
+@media only screen and (max-width: 350px) {
+    .row{width: 90%; margin: 0 auto;}
+}
+
+
+
+#loader {
+  border: 10px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 10px solid gray;
+  border-bottom: 10px solid gray;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
+    display: none;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.foot{
+    text-align: center;
+    font-family: 'Staatliches', cursive;   
+}
+header{
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
