@@ -14,7 +14,7 @@ var yyyy = today.getFullYear();
 
 var today = dd + '.' + mm + '.' + yyyy;
 
-document.getElementById("topGamesLink").innerHTML = "Nejvíce streamované hry k" + ":" + "<strong>" + today + "</strong>";
+document.getElementById("topGamesLink").innerHTML = "Nejsledovanější hry k" + ": " + "<strong>" + today + "</strong>";
 
 
 $("#refresh-button").click(function () {
@@ -35,6 +35,7 @@ function getData(searchTerm, callback) {
     dataType: "jsonp",
     crossDomain: true,
     jsonp: "json_callback",
+    error: function () { alert('Nastal problém s načítáním externích dat') },
     success: callback,
   };
   $.ajax(settings);
