@@ -1,69 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <title>Password generator</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Password generator</h1>
-    <div class="form1">
-        <form id="datainput" name="form" method="get">
-            <h2>Please specify your preference:</h2>
-            <input type="checkbox" name="capitals" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ">Capital letters
-            (ABCDEFGHIJKLMNOPQRSTUVWXYZ)<br>
-            <input type="checkbox" name="smalls" value="abcdefghijklmnopqrstuvwxyz">Small letters
-            (abcdefghijklmnopqrstuvwxyz)<br>
-            <input type="checkbox" name="numbers" value="123456789">Numbers (123456789)<br>
-            <input type="checkbox" name="others" value="@/\()-*+#&">@/\()-*+#&<br>
 
+    <form action="" id="password-generator">
+        <h2>Password generator</h2>
+        <p>Please specify your preference:</p>
+        <div class="input-box">
+            <label for="password-length">Length: </label>
+            <input id="password-length" type="number" name="length" value="10" min="0" max="50">
+        </div>
+        <div class="input-box">
+            <input type="checkbox" id="lowercase" name="symbols[]" value="lowercase">
+            <label for="lowercase">Small letters</label>
+        </div>
 
-        </form>
+        <div class="input-box">
+            <input type="checkbox" id="uppercase" name="symbols[]" value="uppercase" checked>
+            <label for="uppercase">Capital letters</label>
+        </div>
 
-    </div>
-    <form name="password_box">
-        <hr>
-        <input type="button" onClick="check_checks();generate_pswd();" value="Submit">
-        <h2>Your generated password:</h2>
-        <input class="generated_pswd" readonly type="text" name="blank" value="">
+        <div class="input-box">
+            <input type="checkbox" id="numbers" name="symbols[]" value="numbers" checked>
+            <label for="numbers">Numbers</label>
+        </div>
+        <div class="input-box">
+            <input type="checkbox" id="others" name="symbols[]" value="others" checked>
+            <label for="numbers">Special Characters (@/\()-*+#&)</label>
+        </div>
+
+        <button type="submit">Generate</button>
+
+        <div id="generated-password">
+            <p>Generated password: <input type="text" readonly></p>
+        </div>
     </form>
 
-    <p class="odstavec1">Summary of chosen characters:</p>
-    <p id="show"></p>
 
-
-    <div class="hash-generator">
-        <hr>
-        <h1>Hash Generator</h1>
-        <div class="hash__input">
-            <label for="hash-input">Input</label>
-            <input type="text" name="hash-input" id="hash-input">
+    <form action="" id="hash-generator">
+        <h2>Hash generator</h2>
+        <div class="input-box">
+            <label for="lowercase">Input</label>
+            <input type="text" id="hash-input">
         </div>
-
-        <div class="hash__options">
-            <button class="hash__option" id="hash-md5">MD5</button>
-            <button class="hash__option" id="hash-sha256">SHA 256</button>
-            <button class="hash__option" id="hash-sha512">SHA 512</button>
+        <div class="input-box">
+            <button type="button" id="hash-md5" name="md5">MD5</button>
+            <button type="button" id="hash-sha1" name="sh1">SHA1</button>
+            <button type="button" id="hash-sha256" name="sha256">SHA256</button>
+            <button type="button" id="hash-sha512" name="sha512">SHA512</button>
         </div>
-        <div class="hash__result">
-            <label for="hash-result">Result</label>
-            <input type="text" name="hash-result" id="hash-result">
+        <div class="input-box">
+            <label for="lowercase">Hash</label>
+            <input type="text" readonly id="hash-result">
         </div>
+    </form>
 
-
-        <hr>
-
-    </div>
-
-
-
-    <script src="hash_functions/sha512.js"></script>
-    <script src="hash_functions/sha256.js"></script>
-    <script src="hash_functions/md5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jshashes/1.0.7/hashes.min.js"></script>
     <script src="index.js"></script>
 
 </body>

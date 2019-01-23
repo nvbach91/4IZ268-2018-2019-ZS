@@ -1,0 +1,27 @@
+body{
+    font-family: Helvetica;
+}
+
+form{
+    width: 600px;
+    margin: auto;
+    border-bottom: 1px solid black;
+    padding: 20px 0;
+}
+
+h2{
+    font-size: 40px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+[readonly]{
+    width: 100%;
+    padding: 5px 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+.input-box{
+    padding: 5px 0;
+}
