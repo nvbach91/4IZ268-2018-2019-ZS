@@ -23,11 +23,6 @@ sendBtn.on("click", changeBtn);
 logoutBtn.on("click", logout);
 modalGrouplCloseBtn.on("click", closeGroupModal);
 
-/*nacita loader ihned po nacteni stranky*/
-$(document).ready(function() {
-    loader.modal("show");
-});
-
 /*FB API*/
 window.fbAsyncInit = function () {
     FB.init({
