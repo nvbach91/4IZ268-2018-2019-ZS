@@ -11,6 +11,9 @@ var dd = today.getDate();
 var mm = today.getMonth() + 1;
 var yyyy = today.getFullYear();
 
+var favoriteGames = [];
+
+
 
 var today = dd + '.' + mm + '.' + yyyy;
 
@@ -42,7 +45,7 @@ function getData(searchTerm, callback) {
 }
 
 function renderGame(result) {
-  return `
+  var game = $(`
   <div class="box"> 
 	<div> <img class="gameimg" src= "${result.image.medium_url}"> <div>
 		<div class="gamename"> <p class="gameTitle"> ${result.name} </p> </div>
@@ -50,16 +53,23 @@ function renderGame(result) {
 		<div class="siteLink"> <a href="${
     result.site_detail_url
     }"class="gamelink" target="_blank">Více informací</a> </div>
-		  </div>
-		  
-	`;
+     <button class="favoritegame">Přidat do oblíbených</button>	  
+  `);
+  // game.find(".favoritegame");
+  // var favoriteGame = game.find(".favoritegame");
+  // favoriteGame.click(function () {
+  //favoriteGames.push().JSON.stringify(favoriteGames).load(result.name);
+  //});
+  return game;
 }
+
+
 $(document).ready(function () {
   $.ajax({
     url: "https://api.twitch.tv/kraken/games/top",
     type: "GET",
     data: {
-      limit: 20
+      limit: 21
     },
     headers: {
       "Client-ID": twitchClientId
@@ -70,8 +80,8 @@ $(document).ready(function () {
       for (var i = 0; i < myGameJsonp.top.length; i++) {
         $("<a href='https://www.twitch.tv/directory/game/"
           + encodeURIComponent(myGameJsonp.top[i].game.name)
-          + "' class='list-group-item' target='_blank'>" + [i + 1] + '.'
-          + myGameJsonp.top[i].game.name + '<img class="gameimage" src="' + myGameJsonp.top[i].game.box.small + 'alt="Gameimg">' + "</a>").hide().appendTo('#topGamesList').fadeIn(3000);
+          + "' class='list-group-item1' target='_blank'>" + '<span class="gamename">' + [i + 1] + '. '
+          + myGameJsonp.top[i].game.name + '</span>' + '<img class="gameimage" src="' + myGameJsonp.top[i].game.box.small + 'alt="Gameimg">' + "</a>").hide().appendTo('#topGamesList').fadeIn(3000);
       }
     }
   })

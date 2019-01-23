@@ -200,12 +200,21 @@ footer p {
 	column-span: all;
 }
 
-.list-group-item {
-	text-align: center;
-	height: 100px;
-	color: black;
-	font-size: 20px;
-	border-radius: 5px;
+.list-group-item1 {
+	position: relative;
+	padding: 10px 15px;
+	margin-bottom: -1px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	display: flex;
+}
+
+.list-group-item1:hover {
+	background-color: #ddd;
+}
+
+.gamename {
+	flex-grow: 1;
 }
 
 .gamelink {
