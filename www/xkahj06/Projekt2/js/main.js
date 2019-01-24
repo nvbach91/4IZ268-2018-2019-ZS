@@ -1,12 +1,17 @@
 const client_id = 'qLneyKfn9V2XEQ';   // client_id získáte po registraci OAuth účtu
 const client_secret = '3gpnbeg_aKLi4ZxdZg20FtH5EDY'; // client_secret získáte po registraci OAuth účtu, doufám, že  
 const baseWeb = 'https://www.reddit.com/r/';
-const searchReddit = '  https://www.reddit.com/r/noveltranslations/search?q=' //zatím to prohledává jenom posty, ale v budoucnu to bude i umete samo zadat hledaní
+const searchReddit = 'https://www.reddit.com/r/noveltranslations/search?q=' //zatím to prohledává jenom posty, ale v budoucnu to bude i umete samo zadat hledaní
+const searchAPIReddit = 'https://api.reddit.com/r/'
+
+
+
+
 /*
 Zatím nepotřebuju, ale možná v budoucnnu, tak abych se tím nezdržoval 
 */
-const postsPerRequests = 100; //bohuzel maximum které reddit povoluje, defaulne na 25
-const maxPosttoFetch = 500; //tohle v budoucnu udelam nejak editovatelne v nejakem uzivatelsekm nastaveni
+const postsPerRequests = 10; //bohuzel maximum které reddit povoluje, defaulne na 25
+const maxPosttoFetch = 20; //tohle v budoucnu udelam nejak editovatelne v nejakem uzivatelsekm nastaveni
 const maxRequests = maxPosttoFetch / postsPerRequests; //zaokrouhleno nahoru..:).
 
 //tady budu ukladat vsechny data z fetchPostu
@@ -27,14 +32,24 @@ const handleSubmit = e => {   //e!!!
 //zavola z fetchreqeust reditApi vysledek parseResult
 const fetchPosts = async (subreddit, novelName, afterParam) => {
     //ceka to, nez se to udela nez se to pohne na dalsi radku kodu, abych nemusel delat .then().then()...
-    const url = `${baseWeb}${subreddit}.json?limit=${postsPerRequests}${afterParam ? '&after=' + afterParam : ''}`;
+
+    //stára verze prohledavajici cele forum
+    //const url = `${baseWeb}${subreddit}.json?limit=${postsPerRequests}${afterParam ? '&after=' + afterParam : ''}`;
+    const url = `${searchAPIReddit}${subreddit}/search?q=${novelName[0]}&restrict_sr=1&sort=new&limit=${postsPerRequests}${afterParam ? '&after=' + afterParam : ''}`
+    //const url = `${searchAPIReddit}${subreddit}/search?q=${novelName[0]}limit=${postsPerRequests}${afterParam ? '&after=' + afterParam : ''}`
+    //https://www.reddit.com/r/noveltranslations/search?q=Phoenix&restrict_sr=1&sort=new
+    //    https://api.reddit.com/r/noveltranslations/search?q=phoenix&after=t3_aiuqs7
+    //.json?limit=${postsPerRequests}${afterParam ? '&after=' + afterParam : ''}`;
+
+
     //pokud nebude afterParam zadan, vrati ten poslední segment toho stringu jako prazdný.
-    //console.log(url);
+    console.log(url);
     const response = await fetch(url);
 
     const responseJSON = await response.json();
+    //console.log(responseJSON);
     responses.push(responseJSON);
-
+    //console.log(responses);
     if (responseJSON.data.after && responses.length < maxRequests) {
         fetchPosts(subreddit, novelName, responseJSON.data.after);
         return; //Pro jistotu, aby to pak neskakalo nekolikrat na radky pod tim.
@@ -48,9 +63,11 @@ const fetchPosts = async (subreddit, novelName, afterParam) => {
 //zpracuje data podle toho jak chceme z parseResults
 const parseResults = (responses, novelName) => {
     const allPosts = [];//zasobnik kam budu ukladat.
+    console.log(responses);
     responses.forEach(response => {
         allPosts.push(...response.data.children); // tím "..." rozbiju to pole, a budu je tam ukladat jako jednotlive argumenty, tím nám vznikne jednoduche pole a ne pole polí.
     });
+    //console.log("KOUKEJ" + allPosts );
     //ted konecne zpracuju jednotliva data, tady to bude chtít jestě přepracovat
 
     posts = {}; //compoudni pole
@@ -69,7 +86,18 @@ const parseResults = (responses, novelName) => {
             index6 = index6 + 1;
             g = title.search('Chapter');
             var chapterCount = title.substring((g + 8), title.length);
-            //console.log(chapterCount);
+
+            console.log(title);
+            console.log(chapterCount);
+
+            if (isNaN(chapterCount)) {
+                chapterCount = -1;
+                console.log("posralo se to");
+            } else {
+
+            };
+
+            console.log(chapterCount);
             if (theHighestCHCount < chapterCount) {
                 theHighestCHCount = chapterCount;
                 theHighestCHDetails[0] = title;
@@ -152,13 +180,9 @@ function deleteteLine(line) {
     var str = container.innerHTML
     var konec = `<!--KONEC${line}-->`;
     var start = `<!--START${line}-->`;
-    var prefixWithChapter = str.split(konec, 1);
-    var prefixWithouerChapter = str.split(start, 1);
-    //console.log(prefixWithouerChapter);
-    //container.innerHTML = prefixWithouerChapter;
-    var afterChapter = str.split(prefixWithChapter);
-    var newURL = prefixWithouerChapter + afterChapter;
-    //var wholeWithoutChapter = str.replace(theChapter, " ");
+    var prefixWithChapter = str.split(konec, 2);
+    var prefixWithouerChapter = str.split(start, 2);
+    var newURL = prefixWithouerChapter[0].concat(prefixWithChapter[1]);
     container.innerHTML = newURL;
     var nName = 'N' + line;
     var gName = 'G' + line;
@@ -167,8 +191,8 @@ function deleteteLine(line) {
 
     localStorage.removeItem(nName);
     localStorage.removeItem(gName);
-    localStorage.setItem(iName, null);
-    localStorage.setItem(sName, null);
+    localStorage.removeItem(iName);
+    localStorage.removeItem(sName);
 
 };
 
