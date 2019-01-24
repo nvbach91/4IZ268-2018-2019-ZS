@@ -21,7 +21,7 @@ var products;
 function modelButtons(){
     $.ajax(settings).done(function (response) {
         products = response;
-        $(".modelButtons").append(generateModelButtons());
+        $(".modelBoxes").append(generateModelView());
     });
 }
 
@@ -39,7 +39,7 @@ function modelButtons(){
     }*/
 
 
-function generateModelButtons() {
+function generateModelView() {
     var itemButton = '<div class="modelSelectButtons">';
     for (var i=0; i < products.length; i++){
         itemButton += '<button name="model">'+products[i].model+'</button>';
@@ -55,7 +55,6 @@ function generateOrderItem(modelOrederItem) {
 }
 
 function  generateSizeOptions(modelOrederItem){
-    var modelSizeOptions = [];
     var sizeOptions = '';
     for (var i=0; i < products.length; i++){
         if (modelOrederItem === products[i].model){
