@@ -76,7 +76,7 @@ const parseResults = (responses, novelName) => {
     var theHighestCHCount = 0
     var theHighestCHDetails = [];
     allPosts.forEach(({ data: { title, url } }) => {
-        if (title.search(novelName[0]) > 0) {
+        if ((title.search(novelName[0]) > 0)&&(title.search('Chapter')) > 0) {
 
             
 
@@ -99,20 +99,35 @@ const parseResults = (responses, novelName) => {
                // console.log('opraveno');
             }; 
 
+            if (chapterCount.search("&") > 0) {
+                chapterCount=chapterCount.substring(chapterCount.search("&")+5,chapterCount.length);
+               // console.log(chapterCount);
+               // console.log('opraveno');
+            };
+
+
             if (chapterCount.search("Part") > 0) {
                 chapterCount=chapterCount.substring(0 , chapterCount.search("Part")-1);
                // console.log(chapterCount);
                // console.log('opraveno');
             }; 
-
+            
+            if (isNaN(chapterCount)) {
+                chapterCount=chapterCount.trim();
+                while((chapterCount.length>1)&&isNaN(chapterCount)){
+                   //console.log(chapterCount);
+                    chapterCount=chapterCount.substring(0 , chapterCount.length-1);
+                };
+            }
 
             if (isNaN(chapterCount)) {
+                console.log(chapterCount);
                 chapterCount = -1;
-               // console.log("pokazilo se to");
+                //console.log("pokazilo se to");
+                
             } else {
-
             };
-
+            chapterCount=Number(chapterCount);
             //console.log(chapterCount);
             if (theHighestCHCount < chapterCount) {
                 theHighestCHCount = chapterCount;
