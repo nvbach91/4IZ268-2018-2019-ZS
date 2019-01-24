@@ -190,7 +190,7 @@ const displayTitles = (rawTitles, theHighestCHCount, theHighestCHDetails, novelN
     // console.log(counter.innerHTML);
 
     //zjisteni zda to uz splnuje podminky pro upozorneni 10x nasobek novych kapitol zluta,2,5x nasobek fialova,1x nasobek modra
-    var zvyseni = ((theHighestCHCount - novelName[1])+ (theHighestCHDetails[2]*100)) / novelName[2];
+    var zvyseni = ((theHighestCHCount - novelName[1])+ ((theHighestCHDetails[2]-1)*100)) / novelName[2];
         if (zvyseni > 5) {
             extraColour = " violet";
         } else {
