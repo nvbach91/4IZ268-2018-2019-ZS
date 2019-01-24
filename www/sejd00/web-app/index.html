@@ -1,36 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Instagram dle hashtagů</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
 
 <body class="bg">
-    <div class="main">
-        <h1>INSTAGRAM by HASHTAGS</h1>
-        <form id="form" action="">
-            <input type="button" id="auth" class="btn btn-primary btn-lg" value="Přihlášení do aplikace" /> <br>
-            <input type="button" id="logout" class="btn btn-primary btn-lg" value="Odhlášení" /> <br>
-            Zadej hashtag: <input id="text" type="text" name="tag" placeholder="Zadej hashtag...">
+    <header class="main">
+        <form id="form">
+            <h1>INSTAGRAM by HASHTAGS</h1>
+            <input type="button" id="auth" class="btn btn-primary btn-lg" value="Přihlášení do aplikace" />
+            <input type="button" id="logout" class="btn btn-primary btn-lg" value="Odhlášení" />
+            Zadej hashtag: <input id="hashtagSelector" type="text" name="tag" placeholder="Zadej hashtag...">
             <button class="eightbit-btn" id="button">Submit</button>
         </form>
         <div class="wrapper">
             <div id="photo" class="result"></div>
             <div id="likes" class="likes"></div>
         </div>
-    </div>
+    </header>
 
-    <div class="container">
+    <section class="container">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
-            <ol id="seznam-indicators" class="carousel-indicators">
+            <ol id="list-indicators" class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             </ol>
             <div id="posts" class="carousel-inner">
@@ -45,7 +44,7 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-    </div>
+    </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/hashtagApp.js"></script>
