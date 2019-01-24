@@ -75,8 +75,33 @@ const parseResults = (responses, novelName) => {
     var index6 = 0
     var theHighestCHCount = 0
     var theHighestCHDetails = [];
+    var volume = 0;
+    var maxvolume = 0;
     allPosts.forEach(({ data: { title, url } }) => {
-        if ((title.search(novelName[0]) > 0)&&(title.search('Chapter')) > 0) {
+
+        if ((title.search(novelName[0]) > 0)&&(title.search("Volume") > 0)) {
+            volume = title.substring((title.search("Volume") + 7), title.length);
+            volume = volume.split(" ");
+            volume = volume[0];
+            console.log(volume);
+        };
+
+        if ((title.search(novelName[0]) > 0)&&(title.search("Arc") > 0)) {
+            volume = title.substring((title.search("Arc") + 5), title.length);
+            volume = volume.split(" ");
+            volume = volume[0];
+            console.log(volume);
+        };
+        if ((title.search(novelName[0]) > 0)&&(title.search("Book") > 0)) {
+            volume = title.substring((title.search("Book") + 6), title.length);
+            volume = volume.split(" ");
+            volume = volume[0];
+            console.log(volume);
+        };
+        maxvolume=Number(maxvolume);
+        volume=Number(volume);
+
+        if ((title.search(novelName[0]) > 0)&&(title.search('Chapter') > 0)) {
 
             
 
@@ -111,6 +136,7 @@ const parseResults = (responses, novelName) => {
                // console.log(chapterCount);
                // console.log('opraveno');
             }; 
+
             
             if (isNaN(chapterCount)) {
                 chapterCount=chapterCount.trim();
@@ -128,13 +154,18 @@ const parseResults = (responses, novelName) => {
             } else {
             };
             chapterCount=Number(chapterCount);
-            //console.log(chapterCount);
-            if (theHighestCHCount < chapterCount) {
+           // console.log('vol '+ volume +' ch '+chapterCount);
+
+            if (((theHighestCHCount < chapterCount) && (volume == maxvolume))||(volume>maxvolume)) {
+                maxvolume = volume;
                 theHighestCHCount = chapterCount;
                 theHighestCHDetails[0] = title;
                 theHighestCHDetails[1] = url;
-            }
-        }
+                theHighestCHDetails[2] = volume;
+                theHighestCHDetails[3] = theHighestCHCount;
+               // console.log('probehlo to');
+            };
+        };
 
     });
 
@@ -159,25 +190,22 @@ const displayTitles = (rawTitles, theHighestCHCount, theHighestCHDetails, novelN
     // console.log(counter.innerHTML);
 
     //zjisteni zda to uz splnuje podminky pro upozorneni 10x nasobek novych kapitol zluta,2,5x nasobek fialova,1x nasobek modra
-    var zvyseni = (theHighestCHCount - novelName[1]) / novelName[2];
-    if (zvyseni > 10) {
-        extraColour = " yellow";
-    } else {
-
-        var zvyseni = (theHighestCHCount - novelName[1]) / novelName[2];
+    var zvyseni = ((theHighestCHCount - novelName[1])+ (theHighestCHDetails[2]*100)) / novelName[2];
         if (zvyseni > 5) {
             extraColour = " violet";
         } else {
             extraColour = " blue";
         };
 
-    };
+    
 
     if (zvyseni < 1) {
         extraColour = " ";
     };
 
-
+if(theHighestCHDetails[2]>0){
+    theHighestCHCount= 'vol '+theHighestCHDetails[2]+' ch '+theHighestCHCount;
+};
 
 
 
