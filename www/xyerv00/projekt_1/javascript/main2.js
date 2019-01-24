@@ -4,27 +4,45 @@ var itemID = 2;
 //var item = $(".items").html();
 var itemSelect = '';
 var mailTo = 'vyvojar.pat@gmail.com';
+var settings = {
+    "async": false,
+    "crossDomain": true,
+    "url": "https://products-ace9.restdb.io/rest/products",
+    "method": "GET",
+    "headers": {
+        "content-type": "application/json",
+        "x-apikey": "5c49c1218932456b814555fd",
+        "cache-control": "no-cache"
+    }
+};
 
-var products = [
-    {
-        name: "Mika",
-        sizes:[36, 38, 40, 42]
-    },
+var products;
+
+function modelButtons(){
+    $.ajax(settings).done(function (response) {
+        products = response;
+        $(".modelButtons").append(generateModelButtons());
+    });
+}
+
+/*var products = [{
+    name: "Mika",
+    sizes:[36, 38, 40, 42]
+},
     {
         name: "Viktoria",
         sizes: [36, 38, 40, 42]
     },
     {
         name: "Fiji",
-        sizes: [36, 38, 40, 42]
-    }
-    ]
-;
+        sizes: [36, 38, 40, 42]];
+    }*/
+
 
 function generateModelButtons() {
     var itemButton = '<div class="modelSelectButtons">';
     for (var i=0; i < products.length; i++){
-        itemButton += '<button name="model">'+products[i].name+'</button>';
+        itemButton += '<button name="model">'+products[i].model+'</button>';
     }
     itemButton +='</div>';
     return  itemButton;
@@ -40,7 +58,7 @@ function  generateSizeOptions(modelOrederItem){
     var modelSizeOptions = [];
     var sizeOptions = '';
     for (var i=0; i < products.length; i++){
-        if (modelOrederItem === products[i].name){
+        if (modelOrederItem === products[i].model){
             for (var u =0; u < products[i].sizes.length; u++) {
                 sizeOptions += '<option>'+products[i].sizes[u]+'</option>';
             }
@@ -110,22 +128,21 @@ App.init = function(){
 $(document).ready(function () {
     App.init();
 
-    $(".modelButtons").append(generateModelButtons());
-
-    $("#buttonAdd").click(function(){
+    /*$("#buttonAdd").click(function(){
         $(".items").append(item);
         $(".item").last().attr("id", itemID);
         itemID++;
-    });
+    });*/
+
+    modelButtons();
 
     $("button[name='model']").click(function () {
         var modelOrederItem = $(this).text();
         $(".items").append(generateOrderItem(modelOrederItem));
     });
 
-    $("#buttonDelete").click(function () {
+    /*$("#buttonDelete").click(function () {
         $(".item").last().remove();
-    });
-
+    });*/
 });
 
