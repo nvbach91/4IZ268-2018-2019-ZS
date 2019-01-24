@@ -1,0 +1,103 @@
+* {
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+/* GENERAL STYLES */
+
+body {
+	background-color: #f2f2f2;
+}
+
+header {
+	padding: 20px;
+	background-color: white;
+	text-align: center;
+	text-shadow: 3px 2px #cccccc;
+}
+
+hr {
+	width: 58%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px dashed #cccccc;
+}
+
+p {
+	text-align: center;
+	font-size: 20px;
+}
+
+
+/* IMAGES */
+
+.instaimg img {
+	margin-bottom: 30px;
+	box-shadow: 3px 3px 6px grey;
+	max-width: 100%;
+}
+
+.instaimg img:hover {
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+	-webkit-opacity: 0.8;
+}
+
+/* loader*/
+
+
+
+
+/* PAGINATION */
+
+.center {
+	text-align: center;
+}
+
+.pagination {
+	display: inline-block;
+}
+
+.pagination a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	border: 1px solid #ddd;
+	margin: 0 4px;
+}
+
+.pagination a.active {
+	background-color: grey;
+	color: white;
+	border: 1px solid grey;
+}
+
+.pagination a:hover:not(.active) {
+	background-color: #ddd;
+}
+
+
+/* CONTAINERS */
+
+.container_follows {
+	text-align: center;
+	padding-top: 5px;
+}
+
+.container_followers {
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+
+/* FOOTER */
+
+footer {
+	margin-top: 25px;
+	width: 100%;
+	text-align: center;
+	padding: 20px;
+	color: black;
+	background-color: white;
+}

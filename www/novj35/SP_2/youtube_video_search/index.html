@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="keywords" content="youtube, search, api, youtubesearch">
+  <meta name="description" content="Youtube search na předmět 4iz268">
+  <title>YouTube video search</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="logo"><img src="img/image_youtube_video_search_png.png" alt=""></a>
+  </header>
+
+  <div id="input" role="search">
+    <input type="text" placeholder="Zadej název videa" id="searchBar">
+    <input type="button" value="Hledej" id="searchButton">
+  </div>
+  <div id="output" hidden>
+  </div>
+  <div id="hideButtons">
+    <input type="button" value="Previous" class="tokenClass">
+    <input type="button" value="Next" class="tokenClass">
+  </div>
+  <div id="hideFooter">
+    <footer>Youtube video search na předmět 4iz268 &copy; 2019 </footer>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
