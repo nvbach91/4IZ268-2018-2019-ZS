@@ -10,8 +10,8 @@ const searchAPIReddit = 'https://api.reddit.com/r/'
 /*
 Zatím nepotřebuju, ale možná v budoucnnu, tak abych se tím nezdržoval 
 */
-const postsPerRequests = 10; //bohuzel maximum které reddit povoluje, defaulne na 25
-const maxPosttoFetch = 20; //tohle v budoucnu udelam nejak editovatelne v nejakem uzivatelsekm nastaveni
+const postsPerRequests = 100; //bohuzel maximum které reddit povoluje, defaulne na 25
+const maxPosttoFetch = 400; //tohle v budoucnu udelam nejak editovatelne v nejakem uzivatelsekm nastaveni
 const maxRequests = maxPosttoFetch / postsPerRequests; //zaokrouhleno nahoru..:).
 
 //tady budu ukladat vsechny data z fetchPostu
