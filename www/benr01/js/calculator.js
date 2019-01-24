@@ -368,22 +368,23 @@ function saveCalculation() {
     if(localStorage.getItem("calculations") === null){
         calculations = [calculation];
     } else {
-        calculations = JSON.parse(localStorage.getItem("calculations"));
-        calculations.push(calculation);
+        try {
+            calculations = JSON.parse(localStorage.getItem("calculations"));
+            calculations.push(calculation);
+        } catch {
+            localStorage.removeItem("calculations");
+            fillNoCalculationMenu();
+            calculations = [calculation];
+        }
     }
     
     var calculations_serialized = JSON.stringify(calculations);
     localStorage.setItem("calculations", calculations_serialized);
 }
 
-function fillDropDownMenu(){
-    if(localStorage.length === 0){
-        var option = document.createElement("option");
-        option.selected = true;
-        option.disabled = true;
-        option.text = "Není uložena žádná kalkulace";
-        option.id = "no_calculation_option";
-        element_calculator_select.add(option);
+function fillDropDownMenu() {
+    if(localStorage.getItem("calculations") === null){
+        fillNoCalculationMenu();
         return;
     }
     if(localStorage.length > 0 && document.getElementById("no_calculation_option") !== null){
@@ -391,14 +392,29 @@ function fillDropDownMenu(){
         to_remove.remove(to_remove.selectedIndex);
     }
 
-    var stored_calculations = JSON.parse(localStorage.getItem("calculations"));
-    element_calculator_select.length = 0;
-    for (var i = 0; i < stored_calculations.length; i++) { 
-        var option = document.createElement("option");
-        option.text = stored_calculations[i].timestamp;
-        option.value = i;
-        element_calculator_select.add(option);
+    try {
+        var stored_calculations = JSON.parse(localStorage.getItem("calculations"));
+    } catch {
+        localStorage.removeItem("calculations");
+        fillNoCalculationMenu();
+        return;
     }
+    
+    element_calculator_select.length = 0;
+    var options = "";
+    for (var i = 0; i < stored_calculations.length; i++) { 
+        options += '<option value="' + i + '">' + stored_calculations[i].timestamp + '</option>';
+    }
+    element_calculator_select.innerHTML = options;
+}
+
+function fillNoCalculationMenu() {
+    var option = document.createElement("option");
+    option.selected = true;
+    option.disabled = true;
+    option.text = "Není uložena žádná kalkulace";
+    option.id = "no_calculation_option";
+    element_calculator_select.add(option);
 }
 
 function sendEmail() {
