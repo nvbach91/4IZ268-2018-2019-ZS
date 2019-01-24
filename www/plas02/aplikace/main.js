@@ -63,7 +63,7 @@ function appendPre(message) {
 
 var myQuestions;
 
-$.getJSON('https://api.myjson.com/bins/6nif0').done(function (response) {
+$.getJSON('https://api.myjson.com/bins/1ag618').done(function (response) {
     console.log(response);
     myQuestions = response;
 });
@@ -101,18 +101,8 @@ function printquiz() {
 
                 // přidání naší otázky s odpovědmi do pole output
                 output.push(
-                    '<div class="slide"> ' +
                     '<div class="question">' + questions[i].question + '</div>'
-                    + '<div class="answers">' + answers.join('') + '</div>' +
-                    '<div class="question">' + questions[i++].question + '</div>'
-                    + '<div class="answers">' + answers.join('') + '</div>' +
-                    '<div class="question">' + questions[i++].question + '</div>'
-                    + '<div class="answers">' + answers.join('') + '</div>' +
-                    '<div class="question">' + questions[i++].question + '</div>'
-                    + '<div class="answers">' + answers.join('') + '</div>' +
-                    '<div class="question">' + questions[i++].question + '</div>'
-                    + '<div class="answers">' + answers.join('') + '</div>' +
-                    '</div> '
+                    + '<div class="answers">' + answers.join('')
                 );
 
             }
@@ -170,67 +160,86 @@ function printquiz() {
             resultsContainer.innerHTML = 'Správně: ' + points + ". Tvoje úroveň angličtiny je " + vysledek + ".";
         }
         //pro zorbrazní otázek s odpovědmi
-        showQuestions(questions, quizContainer);
+        // showQuestions(questions, quizContainer);
 
 
-        function showSlide(n) {
-            slides[currentSlide].classList.remove("active-slide");
-            slides[n].classList.add("active-slide");
-            currentSlide = n;
+        var startSlide;
 
-            if (currentSlide === 0) {
-                previousButton.style.display = "none";
-            } else {
-                previousButton.style.display = "inline-block";
+        function generateSlides() {
+            var numberOfQuestionsPerSlide = 5;
+            var numberOfSlides = Math.ceil(myQuestions.length / numberOfQuestionsPerSlide);
+            var output = '';
+            for (var i = 0; i < numberOfSlides; i++) {
+                startSlide = i * numberOfQuestionsPerSlide;
+                var nextSlide = startSlide++;
+                var endSlide = startSlide + numberOfQuestionsPerSlide;
+                output += '<div class="slide">';
+                var questionsToGenerate = myQuestions.slice(startSlide, endSlide);
+                output += showQuestions(questionsToGenerate, quizContainer);
+                output += '</div>';
             }
+            return output;
+        };
 
-            if (currentSlide === slides.length - 1) {
-                nextButton.style.display = "none";
-                sendButton.style.display = "inline-block";
-            } else {
-                nextButton.style.display = "inline-block";
-                sendButton.style.display = "none";
-            }
-        }
+        var slidesHtml = generateSlides();
+        generateSlides();
 
-        function showNextSlide() {
-            showSlide(currentSlide + 1);
-        }
 
-        function showPreviousSlide() {
-            showSlide(currentSlide - 1);
-        }
-
-        const previousButton = document.getElementById("previous");
+        var previousButton = document.getElementById("previous");
         previousButton.style.display = "block"
-        const nextButton = document.getElementById("next");
+        var nextButton = document.getElementById("next");
         nextButton.style.display = "block"
-        const slides = document.querySelectorAll(".slide");
-        let currentSlide = 0;
-
-        showSlide(0);
 
 
-        previousButton.addEventListener("click", showPreviousSlide);
-        nextButton.addEventListener("click", showNextSlide);
 
-        //fce při kliknutí na tlačítko
-        sendButton.onclick = function () {
-
-            showResults(questions, quizContainer, resultsContainer);
-            var name = document.getElementById("name").value;
-            var age = document.getElementById("age").value;
-            var body = name + '\n' + age;
-
-            var infoEmail = 'To: sarka.placha@email.cz\r\nSubject: Nový uživatelz\r\n\r\n' + body;
-
-            const sendRequest = gapi.client.gmail.users.messages.send({
-                'userId': 'me',
-                'resource': {
-                    'raw': btoa(unescape(encodeURIComponent(infoEmail))).replace(/\+/g, '-').replace(/\//g, '_')
-                }
-            });
-
+        if (startSlide) {
+            previousButton.style.display = "none";
+        } else {
+            previousButton.style.display = "inline-block";
         }
+
+        if (startSlide === slides.length - 1) {
+            nextButton.style.display = "none";
+            sendButton.style.display = "inline-block";
+        } else {
+            nextButton.style.display = "inline-block";
+            sendButton.style.display = "none";
+        }
+    }
+
+    function showNextSlide() {
+        generateSlides(nextSlide);
+        nextSlide++;
+    }
+
+    function showPreviousSlide() {
+        generateSlides(nextSlide--);
+        nextSlide--;
+    }
+
+    const slides = document.querySelectorAll(".slide");
+
+    previousButton.addEventListener("click", showPreviousSlide);
+    nextButton.addEventListener("click", showNextSlide); x
+
+
+
+    //fce při kliknutí na tlačítko
+    sendButton.onclick = function () {
+
+        showResults(questions, quizContainer, resultsContainer);
+        var name = document.getElementById("name").value;
+        var age = document.getElementById("age").value;
+        var body = name + '\n' + age;
+
+        var infoEmail = 'To: sarka.placha@email.cz\r\nSubject: Nový uživatel\r\n\r\n' + body;
+
+        const sendRequest = gapi.client.gmail.users.messages.send({
+            'userId': 'me',
+            'resource': {
+                'raw': btoa(unescape(encodeURIComponent(infoEmail))).replace(/\+/g, '-').replace(/\//g, '_')
+            }
+        });
+
     }
 }
