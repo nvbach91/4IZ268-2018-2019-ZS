@@ -83,20 +83,20 @@ const parseResults = (responses, novelName) => {
             volume = title.substring((title.search("Volume") + 7), title.length);
             volume = volume.split(" ");
             volume = volume[0];
-            console.log(volume);
+            //console.log(volume);
         };
 
         if ((title.search(novelName[0]) > 0)&&(title.search("Arc") > 0)) {
             volume = title.substring((title.search("Arc") + 5), title.length);
             volume = volume.split(" ");
             volume = volume[0];
-            console.log(volume);
+    //console.log(volume);
         };
         if ((title.search(novelName[0]) > 0)&&(title.search("Book") > 0)) {
             volume = title.substring((title.search("Book") + 6), title.length);
             volume = volume.split(" ");
             volume = volume[0];
-            console.log(volume);
+            //console.log(volume);
         };
         maxvolume=Number(maxvolume);
         volume=Number(volume);
@@ -291,10 +291,16 @@ function LoadData() {
             var name1 = localStorage.getItem(gName);
             var name2 = localStorage.getItem(iName);
             var name3 = localStorage.getItem(sName);
+            
+            localStorage.removeItem(nName);
+            localStorage.removeItem(gName);
+            localStorage.removeItem(iName);
+            localStorage.removeItem(sName);
+
             var NovelName = [name0, name1, name2, name3];
             fetchPosts(name3, NovelName);
             //console.log(line);
-        };
+            };
 
 
 
