@@ -1,8 +1,22 @@
 ﻿# Change Log PUSH
 
+## 2019-01-24
+<h3>Version 4</h3>
+<h3>This version is ready for approval</h3>
+
+### Repaired & fixed
+- All comments from the pull request
+
+### Added
+
+### Changed
+- Only repair
+
+### Notes
+
 ## 2019-01-23
-<h3>Version 3</h2>
-<h5>This version is ready for approval</h3>
+<h3>Version 3</h3>
+<h3>This version is ready for approval</h3>
 
 ### Repaired & fixed
 - Most of the comments from the pull request except the [comment](https://github.com/nvbach91/4IZ268-2018-2019-ZS/pull/323#discussion_r249540292) & [comment 2](https://github.com/nvbach91/4IZ268-2018-2019-ZS/pull/323#discussion_r249540998)
@@ -20,8 +34,8 @@
 
 
 ## 2019-01-21
-<h3>Version 2</h2>
-<h5>This version is ready for approval</h3>
+<h3>Version 2</h3>
+<h3>This version is ready for approval</h3>
 
 ### Repaired & fixed
 - All comments from pull request have been repaired

@@ -72,6 +72,8 @@ function authorizeOpen() {
       errorScreen("Request PIN failed, please try again later");
     }
     if (reply) {
+      setCookie("oa_token", reply.oauth_token, 1);
+      setCookie("oa_token_secret", reply.oauth_token_secret, 1);
       if (reply.errors && reply.errors["415"]) {
         console.log(reply.errors["415"]);
         console.log(reply);
@@ -118,10 +120,9 @@ function authorizePin() {
 };
 
 function tweet(text) {
-  if (text.length <= 280) {
+  if ((text.length <= 280) && (text.length > 0)) {
     var params = {
       status: text
-
     };
     cb.__call("statuses_update", params, function (
       reply,
@@ -133,11 +134,11 @@ function tweet(text) {
         $(".post-text").val("");
         loadUser();
       } else if (err) {
-        alertPopUp("Whoopsi! Wrong number! Try again...");
+        alertPopUp("Whoopsie! Wrong number! Try again...");
       };
     });
   } else {
-    alertPopUp("It's ehm... too long...", 4000);
+    alertPopUp("It's ehm... wrong size...", 4000);
   }
 };
 
@@ -188,22 +189,21 @@ function loadUser() {
       $(".tw-user-profile").html(profileHTML);
       $(".tw-registered").html(registeredHTML);
       $(".tw-last-activity").html(activityHTML);
-
       cb.__call("statuses_userTimeline",
         {
           user_id: reply.id,
           count: 10
         }, function (reply, rate, err) {
           var tweetList = $('.tw-last-tweets');
-          var latestHTML;
+          var latestHTML = "";
           tweetList.empty();
           if (reply) {
             for (i = 0; i < reply.length; i++) {
               var date = new Date(reply[i].created_at);
-              latestHTML = '<li><div class="tw-latest-date">' + date.toLocaleString() + '</div>';
+              latestHTML += '<li><div class="tw-latest-date">' + date.toLocaleString() + '</div>';
               latestHTML += '<div class="tw-latest-text">' + reply[i].text + '</div></li>';
-              tweetList.append(latestHTML);
             }
+            tweetList.append(latestHTML);
           } else {
             var errorHTML = '<h2>There are no tweets to be loaded!</h2>';
             tweetList.append(errorHTML);
@@ -213,4 +213,27 @@ function loadUser() {
       errorScreen('An error has accured during loading of the user. Please try again.');
     }
   });
+}
+
+function setCookie(par, value, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = par + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(par) {
+  var name = par + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
 }

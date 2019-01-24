@@ -1,10 +1,17 @@
-var isUserLoggedIn;
-var pages;
-var selectedPageId;
-var selectedIndex;
+var isUserLoggedIn = false;
+var pages = "";
+var selectedPageId = "";
+var selectedIndex = "";
 var canPost = false;
 var lastPostsList = $('.fb-last-posts-list');
 var loaderContainer = $(".loader-container");
+var postPage = $(".fb-post-page");
+var postText = $(".fb-post-text");
+var postingContainer = $(".fb-posting-container");
+var facebookContainer = $(".fb-container");
+var introContainer = $(".intro-container");
+var lastPosts = $('.fb-last-posts');
+var profileOtherList = $('.fb-profile-other ul');
 
 window.fbAsyncInit = function () {
     FB.init({
@@ -42,16 +49,14 @@ $(".fb-login-btn").click(function (e) {
     }, { scope: 'user_birthday,user_status,user_posts,email,public_profile,user_hometown,user_link,publish_pages,manage_pages' })
 });
 
-$(".fb-post-page").change(function (e) {
+postPage.change(function (e) {
     reloadSelectedPage();
 })
 
 $(".fb-post-btn").click(function (e) {
     e.preventDefault;
-    var postText = $(".fb-post-text");
     if (canPost) {
         if (postText.val().length > 0) {
-            window.scrollTo(0, 0);
             sendPost(postText.val());
         } else {
             window.scrollTo(top);
@@ -72,7 +77,7 @@ function checkLoginState() {
     });
 }
 
-function getLogin() {
+function isLoggedIn() {
     return isUserLoggedIn;
 }
 
@@ -83,13 +88,9 @@ function loadFacebook() {
     var userEmail = "";
     var userBirthday = "";
     var userHometown = "";
-    var postingContainer = $(".fb-posting-container");
     loaderContainer.toggleClass("hide");
-    setTimeout(function () {
-        loaderContainer.toggleClass("hide");
-    }, 2000);
-    $(".fb-container").toggleClass("hide");
-    $(".intro-container").toggleClass("hide");
+    facebookContainer.toggleClass("hide");
+    introContainer.toggleClass("hide");
     FB.api('/me/picture?redirect=false', 'GET', function (response) {
         profilePic = response.data.url;
     })
@@ -105,10 +106,10 @@ function loadFacebook() {
             $('.fb-post-page').append(pagesSelectorHTML);
             reloadSelectedPage();
             postingContainer.removeClass("hide");
-            $('.fb-last-posts').removeClass("hide");
+            lastPosts.removeClass("hide");
         } else {
             postingContainer.addClass("hide");
-            $('.fb-last-posts').addClass("hide");
+            lastPosts.addClass("hide");
             alertPopUp("You have no pages to post to...", 5000);
         }
     })
@@ -137,6 +138,7 @@ function loadFacebook() {
             if (userBirthday) {
                 getAge(userBirthday);
             }
+            loaderContainer.toggleClass("hide");
         }
     );
 
@@ -146,17 +148,16 @@ function logOutFacebook() {
     FB.logout(function (response) {
         if (response && !response.error) {
             alertPopUp("Logged out!", 3000);
-            $(".fb-container").toggleClass("hide");
-            $(".intro-container").toggleClass("hide");
+            facebookContainer.toggleClass("hide");
+            introContainer.toggleClass("hide");
             $(".fb-login").toggleClass("shown");
-            $(".fb-post-text").val("");
-            $(".fb-posting-container").removeClass("hide");
-            $(".fb-post-page").empty();
+            postText.val("");
+            postingContainer.removeClass("hide");
+            postPage.empty();
             pages = null;
             selectedPageId = null;
             selectedIndex = null;
             canPost = false;
-
         } else {
             window.scrollTo(top);
             alertPopUp("Logout error, please try again", 3000);
@@ -174,7 +175,7 @@ function getWeather(hometown) {
                         <div class="fb-li-weather"></div>
                         <div class="fb-li-weather-situation"></div>
                         </li>`
-    $('.fb-profile-other ul').append(weatherList);
+    profileOtherList.append(weatherList);
     $.getJSON(`http://api.openweathermap.org/data/2.5/weather?q=${hometown}&APPID=e4d6ef049ebfae31218c87a663209bd7&units=metric`, function (response) {
         var printWeather = "Temp: <strong>" + response.main.temp + "°C</strong> Humidity: <strong>" + response.main.humidity + "%</strong> Pressure: <strong>" + response.main.pressure + "hPa</strong>";
         var printWeatherSituation = "It's <strong>" + response.weather[0].description + "</strong>!";
@@ -195,7 +196,7 @@ function getAge(age) {
                     <div>before your birthday!</div>
                     </div>
                     </li>`;
-    $('.fb-profile-other ul').append(ageList);
+    profileOtherList.append(ageList);
     $('.fb-age').toggleClass("hide");
     var bornDate = new Date(age);
     var today = new Date();
@@ -223,7 +224,7 @@ function daysInMonth(month, year) {
 function sendPost(text) {
     FB.api('/' + selectedPageId + '/feed', 'post', { message: text, access_token: pages[selectedIndex].access_token }, function (response) {
         if (response && !response.error) {
-            $('.fb-post-text').val("");
+            postText.val("");
             alertPopUp("Your post just got into the internet sea", 4000);
             reloadSelectedPage();
         }
@@ -231,72 +232,73 @@ function sendPost(text) {
 }
 
 function reloadSelectedPage() {
-    selectedIndex = $(".fb-post-page").prop('selectedIndex');
+    selectedIndex = postPage.prop('selectedIndex');
     var fbPostingContainer = $('.fb-page-properties');
     selectedPageId = pages[selectedIndex].id;
     fbPostingContainer.empty();
     lastPostsList.empty();
-    FB.api('/' + selectedPageId + '/picture', { redirect: '0' }, function (response) {
+    FB.api('/' + selectedPageId + '/picture', { redirect: '0', width: 100, height: 100 }, function (response) {
         $('.fb-page-icon').css("background-image", `url(${response.data.url})`);
     })
     FB.api('/' + selectedPageId, { fields: 'about,can_post,link,location,website' }, function (response) {
         canPost = response.can_post;
-        var pageName = `<div class="fb-page-name"><span class="fb-page-headline">Page name:</span></br>` + pages[selectedIndex].name + `</div>`;
-        var pageCategory = `<div class="fb-page-category"><span class="fb-page-headline">Page category:</span></br>` + pages[selectedIndex].category + `</div>`;
-        var pageLink = `<div class="fb-page-link"><span class="fb-page-headline">Page link:</span></br><a href="${response.link}" target="_blank">` + response.link + '</a></div>';
-        setTimeout(function () {
-            fbPostingContainer.append(pageName);
-            fbPostingContainer.append(pageCategory);
-            fbPostingContainer.append(pageLink);
-        }, 1000);
+        var pageName = `<div class="fb-page-name"><span class="fb-page-headline">Page name:</span><br>` + pages[selectedIndex].name + `</div>`;
+        var pageCategory = `<div class="fb-page-category"><span class="fb-page-headline">Page category:</span><br>` + pages[selectedIndex].category + `</div>`;
+        var pageLink = `<div class="fb-page-link"><span class="fb-page-headline">Page link:</span><br><a href="${response.link}" target="_blank">` + response.link + '</a></div>';
+        fbPostingContainer.append(pageName);
+        fbPostingContainer.append(pageCategory);
+        fbPostingContainer.append(pageLink);
         if (response.about) {
-            var pageAbout = '<div class="fb-page-about"><span class="fb-page-headline">Page about:</span></br>' + response.about + '</div>';
-            setTimeout(function () {
-                fbPostingContainer.append(pageAbout);
-            }, 1000)
+            var pageAbout = '<div class="fb-page-about"><span class="fb-page-headline">Page about:</span><br>' + response.about + '</div>';
+            fbPostingContainer.append(pageAbout);
         } else {
-            var pageAbout = '<div class="fb-page-about"><span class="fb-page-headline">Page about:</span></br>About info is not entered!</div>';
-            setTimeout(function () {
-                fbPostingContainer.append(pageAbout);
-            }, 1000)
+            var pageAbout = '<div class="fb-page-about"><span class="fb-page-headline">Page about:</span><br>About info is not entered!</div>';
+            fbPostingContainer.append(pageAbout);
         }
         if (response.location) {
-            var pageLocation = '<div class="fb-page-location"><span class="fb-page-headline">Page location:</span></br>' + response.location.street + ", " + response.location.city + ", " + response.location.country + ", " + response.location.zip + '</div>';
-            setTimeout(function () {
-                fbPostingContainer.append(pageLocation);
-            }, 1000)
+            var pageLocation = '<div class="fb-page-location"><span class="fb-page-headline">Page location:</span><br>' + response.location.street + ", " + response.location.city + ", " + response.location.country + ", " + response.location.zip + '</div>';
+            fbPostingContainer.append(pageLocation);
         } else {
-            var pageLocation = '<div class="fb-page-location"><span class="fb-page-headline">Page location:</span></br>Location is not entered!</div>';
-            setTimeout(function () {
-                fbPostingContainer.append(pageLocation);
-            }, 1000)
+            var pageLocation = '<div class="fb-page-location"><span class="fb-page-headline">Page location:</span><br>Location is not entered!</div>';
+            fbPostingContainer.append(pageLocation);
         }
         if (response.website) {
-            var pageWebsite = `<div class="fb-page-website"><span class="fb-page-headline">Page website:</span></br><a href="http://${response.website}" target="_blank">` + response.website + '</a></div>';
-            setTimeout(function () {
-                fbPostingContainer.append(pageWebsite);
-            }, 1000)
+            var pageWebsite = `<div class="fb-page-website"><span class="fb-page-headline">Page website:</span><br><a href="http://${response.website}" target="_blank">` + response.website + '</a></div>';
+            fbPostingContainer.append(pageWebsite);
         } else {
-            var pageWebsite = `<div class="fb-page-website"><span class="fb-page-headline">Page website:</span></br>Website not entered!</div>`;
-            setTimeout(function () {
-                fbPostingContainer.append(pageWebsite);
-            }, 1000)
+            var pageWebsite = `<div class="fb-page-website"><span class="fb-page-headline">Page website:</span><br>Website not entered!</div>`;
+            fbPostingContainer.append(pageWebsite);
         }
     })
     getLastPosts();
 }
 
 function getLastPosts() {
-    FB.api('/' + selectedPageId + '/feed', { redirect: '0' }, function (response) {
+    FB.api('/' + selectedPageId + '/feed', { redirect: '0', fields: 'message,story,created_time,full_picture' }, function (response) {
+        var postHTML = "";
         for (i = 0; i < response.data.length; i++) {
-            getPost(response.data[i].id);
+            if ((response.data[i].message) || (response.data[i].story)) {
+                var createdTime = new Date(response.data[i].created_time);
+                postHTML += `<li data-postID=${response.data[i].id}>`;
+                postHTML += `<div class="fb-post-date">${createdTime.toLocaleString()}</div>`;
+                if (response.data[i].message) {
+                    postHTML += `<div class="fb-post-message">${response.data[i].message}</div>`;
+                }
+                if (response.data[i].story) {
+                    postHTML += `<div class="fb-post-message">${response.data[i].story}</div>`;
+                }
+                if (response.data[i].full_picture) {
+                    postHTML += `<div class="fb-post-picture-container">`;
+                    postHTML += `<div class="fb-post-picture" style="background-image: url(${response.data[i].full_picture})"></div>`;
+                    postHTML += `</div>`;
+                }
+                postHTML += `<div class="fb-post-link" data-postID=${response.data[i].id}>View post</div>`; //Can be probalby simplified by selecting .parent('li').data('postID') in the click event
+                postHTML += `<div class="fb-post-delete" data-postID=${response.data[i].id}>Delete post</div>`; //Can be probalby simplified by selecting .parent('li').data('postID') in the click event
+                postHTML += `</li>`;
+                //View link and Delete post are not working!!!
+            }
         }
-    })
-}
-
-function getPost(id) {
-    FB.api("/" + id, { fields: 'message,story,created_time,full_picture' }, function (response) {
-        $(".fb-last-posts-list").append(createPost(response));
+        lastPostsList.append(postHTML);
     })
 }
 //Delete post is not working!!!
@@ -323,36 +325,6 @@ function viewLink(postID) {
 }
 //This should work, but I need help to find out why it doesn't
 $('.fb-post-link').on('click', function (e) {
-    var postID = $(e.target).data('postID');
+    var postID = $(e.target).data('data-postID');
     window.open("https://www.facebook.com/" + postID);
 })
-//Not fully working!!!
-var createPost = function (response) {
-    if ((response.message) || (response.story)) {
-        var createdTime = new Date(response.created_time);
-        var postHTML = `<li data-postID=${response.id}>`;
-
-        postHTML += `<div class="fb-post-date">${createdTime.toLocaleString()}</div>`;
-
-        if (response.message) {
-            postHTML += `<div class="fb-post-message">${response.message}</div>`;
-        }
-
-        if (response.story) {
-            postHTML += `<div class="fb-post-message">${response.story}</div>`;
-        }
-
-        if (response.full_picture) {
-            postHTML += `<div class="fb-post-picture-container">`;
-            postHTML += `<div class="fb-post-picture" style="background-image: url(${response.full_picture})"></div>`;
-            postHTML += `</div>`;
-        }
-
-        postHTML += `<div class="fb-post-link" data-postID=${response.id}>View post</div>`; //Can be probalby simplified by selecting .parent('li').data('postID') in the click event
-        postHTML += `<div class="fb-post-delete" data-postID=${response.id}>Delete post</div>`; //Can be probalby simplified by selecting .parent('li').data('postID') in the click event
-
-        postHTML += `</li>`;
-        //View link and Delete post are not working!!!
-        return postHTML;
-    }
-}

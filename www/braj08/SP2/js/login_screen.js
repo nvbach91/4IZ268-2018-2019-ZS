@@ -12,7 +12,7 @@ $(".tw-close").on("click", function () {
 
 $(".facebook").on("click", function () {
   checkLoginState();
-  if (getLogin()) {
+  if (isLoggedIn()) {
     loadFacebook();
   } else {
     fbLogin.toggleClass("shown");
