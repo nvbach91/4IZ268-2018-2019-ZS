@@ -61,112 +61,12 @@ function appendPre(message) {
     pre.appendChild(textContent);
 }
 
-
-
 var myQuestions;
 
-/**$.get('https://api.myjson.com/bins/6nif0', function (data, textStatus, jqXHR) {
-    myQuestions = JSON.stringify(data);
-    $("#data").val(myQuestions);
-    console.log(myQuestions);
-});*/
-
-
-var myQuestions = [
-    {
-        question: "... English people drink Coffee?",
-        answers: {
-            a: 'Are',
-            b: 'Do',
-            c: 'Have'
-        },
-        correctAnswer: 'b'
-    },
-    {
-        question: "Your friend ... good English",
-        answers: {
-            a: 'speaks',
-            b: 'speak',
-            c: 'speaking'
-        },
-        correctAnswer: 'a'
-    },
-    {
-        question: "Where did you ... lunch last Tuesday?",
-        answers: {
-            a: 'has',
-            b: 'have',
-            c: 'had'
-        },
-        correctAnswer: 'b'
-    },
-    {
-        question: "The film wasn´t good and we didn´t enjoy ...",
-        answers: {
-            a: 'her',
-            b: 'him',
-            c: 'it'
-        },
-        correctAnswer: 'c'
-    },
-    {
-        question: "... they go to the cinema yesterday?",
-        answers: {
-            a: 'Did',
-            b: 'Do',
-            c: 'Does'
-        },
-        correctAnswer: 'a'
-    },
-    {
-        question: "We´ve never been ... to America.",
-        answers: {
-            a: 'to',
-            b: 'at',
-            c: 'by'
-        },
-        correctAnswer: 'a'
-    },
-    {
-        question: "There aren´t ... hospitals near our house",
-        answers: {
-            a: 'a',
-            b: 'some',
-            c: 'any'
-        },
-        correctAnswer: 'c'
-    },
-    {
-        question: "I´ve met her ... the bus.",
-        answers: {
-            a: 'at',
-            b: 'on',
-            c: 'in'
-        },
-        correctAnswer: 'b'
-    },
-    {
-        question: "Would you mind ... me some coinf for the phone please?",
-        answers: {
-            a: 'to give',
-            b: 'give',
-            c: 'giving'
-        },
-        correctAnswer: 'c'
-    },
-    {
-        question: "... I were you, I´d go to a good doctor.",
-        answers: {
-            a: 'When',
-            b: 'How',
-            c: 'If'
-        },
-        correctAnswer: 'c'
-    }
-];
-
-
-
+$.getJSON('https://api.myjson.com/bins/6nif0').done(function (response) {
+    console.log(response);
+    myQuestions = response;
+});
 
 function printquiz() {
 
@@ -181,11 +81,12 @@ function printquiz() {
         function showQuestions(questions, quizContainer) {
             // místo pro otázky
             var output = [];
-            var answers;
+            var answers = [];
 
 
             for (var i = 0; i < questions.length; i++) {
-                answers = [];
+
+
                 for (letter in questions[i].answers) {
 
                     // přidání možnosti výběru před odpovědi
@@ -233,13 +134,22 @@ function printquiz() {
                 // nalezení konkretní otázky a odpovědi
                 userAnswer = (answerContainers[i].querySelector('input[name=question' + i + ']:checked') || {}).value;
 
+
+
                 // co se stane v případě správné odpovědi - načtou se body a změní barva
                 if (userAnswer === questions[i].correctAnswer) {
                     points++;
                     answerContainers[i].style.color = "green";
+                    var fillQuestion = questions[i].question.replace("...", userAnswer);
+                    questions[i].question = fillQuestion;
+                    output.push(
+                        '<div class="slide"> ' +
+                        '<div class="question">' + fillQuestion + '</div>');
                 } else {
                     //v případě špatné odpovědi na červeno
                     answerContainers[i].style.color = "red";
+                    var fillQuestion = questions[i].question.replace("...", userAnswer);
+                    questions[i].question = fillQuestion;
                 }
 
             }
