@@ -11,7 +11,7 @@ const searchAPIReddit = 'https://api.reddit.com/r/'
 Zatím nepotřebuju, ale možná v budoucnnu, tak abych se tím nezdržoval 
 */
 const postsPerRequests = 100; //bohuzel maximum které reddit povoluje, defaulne na 25
-const maxPosttoFetch = 400; //tohle v budoucnu udelam nejak editovatelne v nejakem uzivatelsekm nastaveni
+const maxPosttoFetch = 500; //tohle v budoucnu udelam nejak editovatelne v nejakem uzivatelsekm nastaveni
 const maxRequests = maxPosttoFetch / postsPerRequests; //zaokrouhleno nahoru..:).
 
 //tady budu ukladat vsechny data z fetchPostu
@@ -43,7 +43,7 @@ const fetchPosts = async (subreddit, novelName, afterParam) => {
 
 
     //pokud nebude afterParam zadan, vrati ten poslední segment toho stringu jako prazdný.
-    console.log(url);
+    //console.log(url);
     const response = await fetch(url);
 
     const responseJSON = await response.json();
@@ -63,7 +63,7 @@ const fetchPosts = async (subreddit, novelName, afterParam) => {
 //zpracuje data podle toho jak chceme z parseResults
 const parseResults = (responses, novelName) => {
     const allPosts = [];//zasobnik kam budu ukladat.
-    console.log(responses);
+    //console.log(responses);
     responses.forEach(response => {
         allPosts.push(...response.data.children); // tím "..." rozbiju to pole, a budu je tam ukladat jako jednotlive argumenty, tím nám vznikne jednoduche pole a ne pole polí.
     });
@@ -77,6 +77,9 @@ const parseResults = (responses, novelName) => {
     var theHighestCHDetails = [];
     allPosts.forEach(({ data: { title, url } }) => {
         if (title.search(novelName[0]) > 0) {
+
+            
+
             rawTitles[[index6][0]] = title;
             rawTitles[[index6][1]] = url;
 
@@ -87,17 +90,30 @@ const parseResults = (responses, novelName) => {
             g = title.search('Chapter');
             var chapterCount = title.substring((g + 8), title.length);
 
-            console.log(title);
-            console.log(chapterCount);
+           //console.log(title);
+           //console.log(chapterCount);
+
+            if (chapterCount.search("-") > 0) {
+                chapterCount=chapterCount.substring(chapterCount.search("-")+2,chapterCount.length);
+               // console.log(chapterCount);
+               // console.log('opraveno');
+            }; 
+
+            if (chapterCount.search("Part") > 0) {
+                chapterCount=chapterCount.substring(0 , chapterCount.search("Part")-1);
+               // console.log(chapterCount);
+               // console.log('opraveno');
+            }; 
+
 
             if (isNaN(chapterCount)) {
                 chapterCount = -1;
-                console.log("posralo se to");
+               // console.log("pokazilo se to");
             } else {
 
             };
 
-            console.log(chapterCount);
+            //console.log(chapterCount);
             if (theHighestCHCount < chapterCount) {
                 theHighestCHCount = chapterCount;
                 theHighestCHDetails[0] = title;
@@ -234,7 +250,7 @@ function LoadData() {
             var name3 = localStorage.getItem(sName);
             var NovelName = [name0, name1, name2, name3];
             fetchPosts(name3, NovelName);
-            console.log(line);
+            //console.log(line);
         };
 
 
