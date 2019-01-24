@@ -1,6 +1,13 @@
-
+body {
+    background-color:blanchedalmond;
+}
 .map {
-    position: absolute;;
+    
+    margin-left: 15%;
+    margin-right:15%;
+    position: absolute;
+    
+   
 }
 svg{
     position: absolute;
@@ -8,6 +15,9 @@ svg{
     left:0;
     height:100%;
     width:100%;
+   
+    
+
 }
 .diary,.Shiganshina,.Trost,.Forest,.Chlorba,.Karanase,.Nedlay,.Ragako,.Utgard,.Dauper,.Stohess,.Hermina,.Orvud,.Yalkell,.Capital,.Maria,.Rose,.Sina,.Paradis{
     fill: aliceblue;
@@ -18,19 +28,47 @@ svg{
 	opacity: .5;
     cursor: pointer;
     fill:beige;
+   
 }
-.description {
+#nadpis {
    background-color: rgba(240, 248, 255, 0.596);
 	display: none;
     position: absolute;
-    left:5%;
+    left:75%;
     bottom:5%;
-    top:5%;
+    top:125%;
 	padding: 20px;
 	box-sizing: border-box;
-	width: 25%;
-    height: 90%;
+	width: 10%;
+    height: 5%;
 	box-shadow: 0 0 32px 10px #ccc;
     font-family: sans-serif;
-    font-size: 40px;
+    font-size: 20px;
+    border: #fff 3px solid;
+	border-radius: 10px;
 }
+#obsah {
+    background-color: rgba(240, 248, 255, 0.596);
+     display: none;
+     position: absolute;
+     left:75%;
+     bottom:5%;
+     top:125%;
+     padding: 20px;
+     box-sizing: border-box;
+     width: 20%;
+     height: 15%;
+     box-shadow: 0 0 32px 10px #ccc;
+     font-family: sans-serif;
+     font-size: 20px;
+     border: #fff 3px solid;
+     border-radius: 10px;
+ }
+
+
+* {
+    box-sizing: border-box;
+    zoom:84%;
+   
+}
+
