@@ -49,3 +49,6 @@ button:hover {
 .loading {
   display: none;
 }
+.mainBody {
+  text-align: center;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="cs">
+  <head>
+    <title>Generátor GPX - Mapy.cz</title>
+    <meta name="author" content="Josef Beneš" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+    <meta name="description" content="Generátor GPX" />
+    <meta name="keywords" content="gpx, vizualizace, mapy" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://api.mapy.cz/loader.js"></script>
+    <script>Loader.load();</script>
+  </head>
+    <body>
+        <header>
+          <h2>Generátor GPX - Mapy.cz</h2>
+          <a href="index.html" class="whiteLink"><p>Zpět na výběr API</p></a>
+        </header>
+        <div class="mainBody">
+            <h2>Kliknutím na místo na mapě se uloží gpx waypoint, po vybrání všech bodu lze stáhnout GPX soubor.</h2>
+            <textarea class="searchArea" id="output"><?xml version="1.0"?><gpx version="1.1" creator="GeneratorGPX"></textarea><br>
+            <button id="generate">Stáhnout GPX</button><br>
+        </div>
+        <div id="m" style="height:380px"></div>
+        <script src="js/owngpx.js"></script>
+        </body>
+</html>
