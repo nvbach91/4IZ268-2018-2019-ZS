@@ -8,8 +8,8 @@
     <title>Prague On Grid</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,800|Palanquin:300,400&amp;subset=latin-ext"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,800&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Palanquin:300,400&amp;subset=latin-ext" rel="stylesheet">
     <link rel="icon" href="img/favicon.png">
     <link rel="canonical" href="http://example.com/pragueongrid/" />
     <meta name="author" content="Alina Baltabaeva, bala00" />
@@ -17,7 +17,7 @@
     <meta name="keywords" content="prague,praha,kavárna,cafe,káva,coffee" />
 </head>
 
-<body data-spy="scroll" data-target="#navbarResponsive" data-target=".navbar" data-offset="100">
+<body data-spy="scroll" data-target=".navbar" data-offset="100">
     <!-- Navigation -->
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-custom fixed-top">
@@ -31,7 +31,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#section-1">HOME</a></li>
                     <li class="nav-item"><a class="nav-link" href="#section-2">VYZKOUŠEJ!</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#section-3">MÁPA</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#section-3">MÁPA</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="#section-4">KONTAKTY</a></li>
                 </ul>
             </div>
@@ -53,45 +53,41 @@
         <!-- Application -->
         <div id="section-2" class="container-fluid text-center d-flex flex-column align-content-center justify-content-center">
             <div class="p-2">
-                <form>
+                <div>Co si dáte?</div>
+                <form id="searchForm">
                     <div class="form-group">
-                        <label for="foodChoice">Co si dáte?</label>
-                        <select class="form-control" id="foodChoice" name="foodChoice">
-                            <option id="coffee">Káva</option>
-                            <option id="breakfast">Snídaně</option>
-                            <option id="lunch">Denní menu</option>
+                        <select class="form-control" id="categoryChoice">
+                            <option id="6">Káva</option>
+                            <option id="7">Denní menu</option>
+                            <option id="8">Snídaně</option>
                         </select>
+
                     </div>
+                    <button type="submit" id="searchButton" class="btn">Hledat</button>
                 </form>
+                <img src="img/loader.svg" class="loader" />
             </div>
             <div class="row text-left">
                 <div class="col">
                     <form>
-                        <!-- {
-                            "cuisine": {
-                                "cuisine_id": 308,
-                                "cuisine_name": "Vegetarian"
-                            }
-                            },
-                        cuisines?city_id=84 -->
                         <div class="form-check">
-                            <label class="form-check-label" for="check1"><input type="checkbox" class="form-check-input"
+                            <label class="form-check-label" for="vegetarians"><input type="checkbox" class="form-check-input"
                                     id="vegetarians" name="check1" value="vegetarians">Vhodné pro vegetariány</label>
                         </div>
                         <div class="form-check">
-                            <label class="form-check-label" for="check2"><input type="checkbox" class="form-check-input"
+                            <label class="form-check-label" for="glutenfree"><input type="checkbox" class="form-check-input"
                                     id="glutenfree" name="check2" value="glutenfree">Bezlepkové</label>
                         </div>
                         <div class="form-check">
-                            <label class="form-check-label" for="check3"><input type="checkbox" class="form-check-input"
+                            <label class="form-check-label" for="card"><input type="checkbox" class="form-check-input"
                                     id="card" name="check3" value="card">Platba kartou</label>
                         </div>
                         <div class="form-check">
-                            <label class="form-check-label" for="check4"><input type="checkbox" class="form-check-input"
+                            <label class="form-check-label" for="kids"><input type="checkbox" class="form-check-input"
                                     id="kids" name="check4" value="kids">Vhodné pro děti</label>
                         </div>
                         <div class="form-check">
-                            <label class="form-check-label" for="check5"><input type="checkbox" class="form-check-input"
+                            <label class="form-check-label" for="open"><input type="checkbox" class="form-check-input"
                                     id="open" name="check5" value="open">Otevřeno teď</label>
                         </div>
                     </form>
@@ -100,37 +96,29 @@
                     <p>Hodnocení:</p>
                     <form id="ratings">
                         <div class="form-check">
-                            <label class="form-check-label" for="check6"><input type="checkbox" class="form-check-input"
+                            <label class="form-check-label" for="rating3+"><input type="checkbox" class="form-check-input"
                                     id="rating3+" name="check6" value="3">3
                                 a více</label>
                         </div>
                         <div class="form-check">
-                            <label class="form-check-label" for="check7"><input type="checkbox" class="form-check-input"
+                            <label class="form-check-label" for="rating4+"><input type="checkbox" class="form-check-input"
                                     id="rating4+" name="check7" value="4">4 a více</label>
                         </div>
                         <div class="form-check">
-                            <label class="form-check-label" for="check8"><input type="checkbox" class="form-check-input"
+                            <label class="form-check-label" for="rating5"><input type="checkbox" class="form-check-input"
                                     id="rating5" name="check8" value="5">5</label>
                         </div>
                     </form>
                 </div>
             </div>
-            <button type="submit" class="btn" id="searchButtonFirst"><a href="#output">Hledej</a></button>
-            <p>NEBO</p>
-            <div id="search">
-                <div class="input-group">
-                    <input id="searchInput" type="text" class="form-control" placeholder="Zadej název">
-                    <div class="input-group-append">
-                        <button class="btn" id="searchButtonSecond" type="submit"><a href="#output">Hledej</a></button>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
-    <div id="output"></div>
+    <div class="container-fluid">
+        <div id="output" class="row"></div>
+    </div>
 
-    <div id="section-3" class="container-fluid text-center d-flex flex-column align-content-center justify-content-center">
+    <!-- <div id="section-3" class="container-fluid text-center d-flex flex-column align-content-center justify-content-center">
         <div class="p-2">
             <h1>Mápa kaváren</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, excepturi consequatur!
@@ -147,7 +135,8 @@
                 perferendis expedita voluptates iusto?</p>
             <a href="#section-4"><i class="fas fa-angle-down"></i></a>
         </div>
-    </div>
+    </div> -->
+
     <!-- End Application -->
 
     <div id="section-4" class="container-fluid text-center d-flex flex-column align-content-center justify-content-center">
@@ -161,7 +150,6 @@
             <a href="https://www.instagram.com/" target="_blank" title="Join us on Instagram"><i class="fab fa-instagram"></i></a><br>
             <a href="#section-1"><i class="fas fa-angle-up"></i></a>
         </div>
-    </div>
     </div>
     <!-- End Content -->
 

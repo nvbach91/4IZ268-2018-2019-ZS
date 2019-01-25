@@ -28,9 +28,12 @@ p {
 #section-4 h1 {
     color: #fff;
 }
-#section-3 h1, #section-4 h1 {
+
+#section-3 h1,
+#section-4 h1 {
     padding-bottom: 25px;
 }
+
 .content h1 {
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: 800;
@@ -136,17 +139,49 @@ nav img {
     color: #fff;
 }
 
-/* #section-2 {
-    background: 
-    /* Photo by Devin Avery on Unsplash *
-    url(../img/background-3.jpg), 
-    /* Photo by Tyler Nix on Unsplash *
-    url(../img/background-4.jpg);
-    background-size: 250px, 500px;
-    background-repeat: no-repeat;
-    background-position: 200px 180px, 800px 20px; 
-} */
+#section-2 p,
+form,
+.input-group {
+    margin: 15px;
+}
 
-#section-2 p, form, .input-group {
-   margin: 15px;
+.loader {
+    margin: 0 auto;
+    padding-top: 30px;
+    display: none;
+    width: 50px;
+}
+
+.outputGrid h6 {
+    font-size: 0.8rem;
+}
+
+.outputGrid p,
+h6 {
+    font-size: 0.7rem;
+    padding: 2px;
+    margin: 2px;
+}
+
+.showItem {
+    display: block;
+}
+
+.outputGrid {
+    text-align: center;
+    margin: 20px;
+    padding-bottom: 80px;
+    /* scroll-behavior: smooth; */
+}
+
+#output .col {
+    border-top: 8px solid #C1403D;
+    padding-top: 20px;
+    align-content: center;
+    align-items: center;
+}
+
+.outputGrid img {
+    height: 200px;
+    padding: 10px;
 }
