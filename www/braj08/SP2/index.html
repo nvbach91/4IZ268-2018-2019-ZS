@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Push </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="error-overlay">
+        <h1>Whooops!</h1>
+        <h2>An error occured :(</h2>
+        <p>Here is more info: </p>
+        <p class="error-text">No info provided</p>
+        <div class="error-ok-btn">OK</div>
+    </div>
+    <div class="loader-container hide">
+        <div class="loader">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+            <div class="bar bar4"></div>
+            <div class="bar bar5"></div>
+            <div class="bar bar6"></div>
+            <div class="bar bar7"></div>
+            <div class="bar bar8"></div>
+        </div>
+    </div>
+    <div class="pop-up">
+    </div>
+
+    <div class="intro-container">
+        <div class="intro">
+            <h1>This is PUSH!</h1>
+            <h2>Your gateway to social media...</h2>
+            <p><strong>How to use:</strong> Select one of the platforms from the list bellow, login according to the
+                instructions and enjoy the POWEAAA of the dark side...</p>
+        </div>
+        <div class="platform-container">
+            <div class="platform">
+                <div class="twitter"><i class="fab fa-twitter"></i> Twitter</div>
+                <div class="facebook"><i class="fab fa-facebook-f"></i> Facebook</div>
+                <div class="instagram"><i class="fab fa-instagram"></i> Instagram</div>
+            </div>
+        </div>
+
+        <div class="tw-login">
+            <div class="tw-close"><i class="fas fa-times"></i></div>
+            <div class="tw-login-inner">
+                <h1>Log into Twitter</h1>
+                <p>Please request PIN (opens in new window - make sure that you have enabled pop up windows in your
+                    browser!) and sign into Twitter with your credentials
+                    than copy and paste the generated numbers into the <em>"Enter PIN"</em> area bellow and click <em>Confirm
+                        PIN</em>.</p>
+                <form class="tw-login-form">
+                    <input type="button" class="tw-auth" value="Request PIN">
+                    <input type="number" class="tw-pin" placeholder="Enter PIN" autocomplete="off">
+                    <input type="submit" class="tw-pin-submit" value="Confirm PIN" disabled>
+                </form>
+            </div>
+        </div>
+
+        <div class="fb-login">
+            <div class="fb-close"><i class="fas fa-times"></i></div>
+            <div class="fb-login-inner">
+                <h1>Log into Facebook</h1>
+                <p>Use a button bellow to authorize PUSH to post Facebook statuses on your behalf.
+                    <em>You may need to <strong>authorize pop up</strong> windows in your browser!</em>.</p>
+                <input type="button" class="fb-login-btn" value="Log into Facebook">
+            </div>
+        </div>
+    </div>
+
+    <div class="tw-container hide">
+        <div class="tw-logout-container">
+            <div class="tw-user-profile"></div>
+            <span class="tw-logout"><i class="fas fa-sign-out-alt"></i> Log Out!</span>
+        </div>
+        <div class="tw-info-text">
+            <h1>Twitter PUSH!</h1>
+            <p>You can use the form bellow to send your tweet to Twitter. Just write it, PUSH it and pray to the
+                internet gods, it goes smoothly, but... I got a good feelin' about this.</p>
+        </div>
+        <div class="tw-container-inner">
+            <div class="tw-credentials">
+                <h2 class="tw-user-name">Sup, your name is IDK! (whoops!)</h2>
+                <p class="tw-about">About you...</p>
+                <h3 class="tw-registered">You registerd at: IDK! (whoops!)</h3>
+                <h3 class="tw-last-activity">Your last activity happened: IDK! (whoops!)</h3>
+            </div>
+            <form id="tw-post-form" class="tw-post-form">
+                <div class="tw-tweet">
+                    <textarea id="post-text" class="post-text" placeholder="Tweet here..." wrap="soft" draggable="false"></textarea>
+                    <p class="tw-char-limit">0 / 280</p>
+                </div>
+                <input type="submit" class="tw-tweet-submit" id="tw-tweet-submit" value="PUNCH IT CHEWIE!">
+            </form>
+            <div class="tw-container-last-tweets">
+                <h2>These are your last 10 tweets</h2>
+                <ul class="tw-last-tweets">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="fb-container hide">
+        <div class="fb-logout-container">
+            <div class="fb-user-profile"></div>
+            <span class="fb-logout"><i class="fas fa-sign-out-alt"></i> Log Out!</span>
+        </div>
+        <div class="fb-info-text">
+            <h1>Facebook PUSH!</h1>
+            <p>You can use the form bellow to post what is on your mind to one of your Facebook pages. Just select the
+                page, write it, PUSH it and pray to
+                the internet gods, it goes smoothly, but... I got a good feelin' about this.</p>
+
+        </div>
+        <div class="fb-profile-container">
+            <ul>
+                <li>
+                    <div>Your name:</div>
+                    <div class="fb-li-name"></div>
+                </li>
+                <li>
+                    <div>Your profile:</div>
+                    <div class="fb-li-profile"></div>
+                </li>
+                <li>
+                    <div>Your email:</div>
+                    <div class="fb-li-email"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="fb-profile-other">
+            <ul>
+            </ul>
+        </div>
+        <div class="fb-posting-container">
+            <div class="fb-page-info">
+                <h1>Select page to post to: </h1>
+                <p>If you don't have premission to post on selected page, error will occure!</p>
+                <select class="fb-post-page"></select>
+                <div class="fb-page-icon"></div>
+                <div class="fb-page-properties"></div>
+            </div>
+            <div class="fb-post">
+                <h1>Post here:</h1>
+                <textarea id="fb-post-text" class="fb-post-text" placeholder="Your post text goes here..." wrap="soft"
+                    draggable="false"></textarea>
+                <div class="fb-post-btn">PUSH it to the top!</div>
+            </div>
+        </div>
+        <div class="fb-last-posts">
+            <h1>Last posts:</h1>
+            <p>Here are your last posts on this page.</p>
+            <ul class="fb-last-posts-list">
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo" title="PUSH"></div>
+        <p>Semestrální práce #2 z předmětu 4iz268, VŠE, ZS 2018/2019.</p>
+        <p>Vypracoval: <a href="mailto:braj08@vse.cz"><strong>Jan Brandejs</strong></a></p>
+    </footer>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codebird@2.6.0/codebird.js" integrity="sha256-2Et5MWRwf6+/v6K4wnXzEY8pbbZq7Y3l/Uc2WapTpw8="
+        crossorigin="anonymous"></script>
+    <script src="js/general_logic.js"></script>
+    <script src="js/twitter_logic.js"></script>
+    <script src="js/facebook_logic.js"></script>
+    <script src="js/login_screen.js"></script>
+</body>
+
+</html>
