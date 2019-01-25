@@ -1,4 +1,5 @@
 * { 
+  background-color: #e6ffe6;
 	padding: 0; 
 	margin: 0;
 }
@@ -29,8 +30,12 @@ button {
   border-radius: 4px;
   cursor: pointer;
   outline: none;
-  margin-bottom: 10px;
+  margin-left: 10px;
   transition: opacity .4s ease-out, transform .4s ease-out, visibility .4s ease-out;
   position: relative;
   top: -10px;
+}
+
+#help {
+  text-align: center;
 }
