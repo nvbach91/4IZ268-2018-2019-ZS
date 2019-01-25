@@ -2,7 +2,10 @@ var openForm = $('#open-form');
 var formHeader = $('#form-header');
 var formBody = $('#form-body');
 var form = $('#form');
+var myLibrary = $('#my-library');
 var reset = $('#reset');
+var curtain = $('<div>').attr('id', 'whole-page');
+var documentBody = $(document.body);
 var resultsField;
 
 var openedForm = false;
@@ -61,7 +64,8 @@ form.submit(function (e) {
             }
         }
         formBody.append(resultsField);
-        $('.whole-page').remove();
+        curtain.empty();
+        curtain.remove();
     });
 });
 /*--------------------- check existing books ----------------------------*/
@@ -164,7 +168,7 @@ var addToLibrary = function (book, author, url, rating) {
     if (tableHead.hasClass('closed')) {
         tableHead.removeClass('closed');
     }
-    $('#my-library').append(newRow);
+    myLibrary.append(newRow);
 
     deleteCell.click(function () {
         var booksAfterDelete = JSON.parse(localStorage.getItem('books'));
@@ -221,16 +225,17 @@ var addToLibrary = function (book, author, url, rating) {
 var showPreview = function (text) {
     var closeButton = $('<button>').addClass('close-button').text('X');
     var previewWindow = $('<div>').addClass('prev-window').append(closeButton).append($('<div>').addClass('preview-area').text(text));
-    $(document.body).append($('<div>').addClass('whole-page').append(previewWindow));
+    documentBody.append(curtain.append(previewWindow));
 
     closeButton.click(function () {
-        $('.whole-page').remove();
+        curtain.empty();
+        curtain.remove();
     });
 };
 /* -------------- create loader --------------------------*/
 var createLoader = function () {
     var loader = $('<div>').addClass('loader').append($('<figure>').addClass('page'));
-    $(document.body).append($('<div>').addClass('whole-page').append(loader));
+    documentBody.append(curtain.append(loader));
 };
 
 /* ----------------- init page ----------------------- */

@@ -238,7 +238,7 @@ footer{
 }
 
 /*-------------- loader ---------------*/
-.whole-page {
+#whole-page {
     background-color: #801616cc;
     position: fixed;
     top: 0;
