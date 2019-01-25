@@ -73,6 +73,7 @@ h3{
 .gtable{
   border: 0px;
   overflow:hidden;
+  border-width:0;
 }
 .gform{
   border: 0px;
