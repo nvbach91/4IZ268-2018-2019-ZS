@@ -4,7 +4,7 @@
 function getUrl(method, params) {
     if (!method) throw new Error('Method was not found');
     params = params || {};  //Check if it is an object, otherwise make it an object
-    params ['access_token'] = '9e89fd39a792c4ab2611c5970213c921e493d1db62d20491b8cd452d21a52ed53200a705b43444914f825'; //Your access token
+    params ['access_token'] = '32cca13d50f41e60ef44a247f0f7159bc55b2289dc9f72bac7a949ac0def10fe683068cf17066ca504d21'; //Your access token
     return 'https://api.vk.com/method/' + method + '?' + $.param(params)+ '&v=5.52';
 }
 
@@ -37,7 +37,7 @@ $(document).on('click', '.open-detail', function (event) {
 
 // Request to get info about friends
 function loadFriends() { 
-    sendRequest('friends.search', {count: 100, fields: 'photo_200_orig, online'}, function (data) { //Fill in method and parametrs
+    sendRequest('friends.search', {count: 1000, fields: 'photo_200_orig, online'}, function (data) { //Fill in method and parametrs
         drawFriends(data.response.items);
         console.log(data);
     });
@@ -48,7 +48,7 @@ function loadFriends() {
 function drawFriends(friends) {
     var html = '';
 
-    for (var i = 1; i < friends.length; i++) { //display all friends
+    for (var i = 0; i < friends.length; i++) { //display all friends
         var f = friends[i]; // current friend
         var online = f.online ? 'Online' : 'Offline'; // Is current friend online?
        
