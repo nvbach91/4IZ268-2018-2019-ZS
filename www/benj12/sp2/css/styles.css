@@ -52,3 +52,10 @@ button:hover {
 .mainBody {
   text-align: center;
 }
+
+.loading1 {
+  display: none;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+}

@@ -1,4 +1,5 @@
 var m = new SMap(JAK.gel("m"), SMap.Coords.fromWGS84(14.400307, 50.071853));
+var textArea = document.getElementById("output");
 m.addControl(new SMap.Control.Sync()); /* Aby mapa reagovala na změnu velikosti průhledu */
 m.addDefaultLayer(SMap.DEF_BASE).enable();
 
@@ -13,9 +14,8 @@ m.addControl(new SMap.Control.Sync);
 /* Získání souřadni po kliknutí */
 function click(e, elm) {
   var coords = SMap.Coords.fromEvent(e.data.event, m);
-  var gpx = coords.toUTM33(2).reverse().join(" ");
-  var gpxSplit= gpx.split(" ",2);
-  var textArea = document.getElementById("output");
+  var gpx = coords.toJTSK(2).reverse().join(" ");
+  var gpxSplit= gpx.split(" ");
   textArea.append(`<wpt lat="${gpxSplit[0]}" lon="${gpxSplit[1]}"></wpt>`);
 }
 m.getSignals().addListener(window, "map-click", click); 
@@ -33,9 +33,8 @@ function download(filename, text) {
 
 /* Vygenerování souboru po kliknutí na čudl */
 document.getElementById("generate").addEventListener("click", function(){
-  var textArea = document.getElementById("output");
   textArea.append(`</gpx>`);
-  var text = document.getElementById("output").value;
+  var text = textArea.value;
   var filename ="zvolene_body.gpx";
   download(filename, text);
 }, false);

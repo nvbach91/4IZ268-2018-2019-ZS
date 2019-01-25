@@ -4,6 +4,7 @@ var btn2 = document.getElementById("btn2");
 var btn3 = document.getElementById("btn3");
 var sendButton = document.getElementById("sendButton");
 var gpxText = document.getElementById("gpx");
+var loadingText = document.getElementById('loading-image');
 
 /* Mapy.cz API - přidání vrstev s mapou */
 Loader.load();
@@ -29,6 +30,11 @@ layerSwitch.addDefaultLayer(SMap.DEF_TURIST);
 layerSwitch.addDefaultLayer(SMap.DEF_OPHOTO0406);
 layerSwitch.addDefaultLayer(SMap.DEF_OPHOTO0203);
 layerSwitch.addDefaultLayer(SMap.DEF_HISTORIC);
+
+/* Stringy k obrázkům*/
+var part1 = '<img src=';
+var part2 = `>`;
+var koncovka = " ";
 
 /* Tlačítko + načtení gpx podkladů od uživatele */
 sendButton.addEventListener("click", function load() {
@@ -72,9 +78,27 @@ sendButton1.addEventListener("click", function () {
   document.getElementById('mapycz').scrollIntoView({block: 'start', behavior: 'smooth'}); 
 });
 
-/* Volání na myJSON pro GPX podklady po stisku příslušného tlačítka s trasou */
-/* 1. tlačítko */
+/* Funkce přidání textu */
+function pridaniTextu(){
+  document.getElementById('sendButton1').style.display = 'inline';
+  document.getElementById('sendButton').style.display = 'none';
+  var gpx1 = new XMLHttpRequest();
+  gpx1.open("GET", souradnice);
+  gpx1.onload = function() {
+    var gpx1data = JSON.parse(gpx1.responseText);
+    addText1(gpx1data);
+  };
+  gpx1.send();
+}
+
+/* Volání na myJSON pro GPX podklady po stisku příslušného tlačítka s trasou 
+ 1. trasa: https://api.myjson.com/bins/m82z0
+ 2. trasa: https://api.myjson.com/bins/16iyp8
+ 3. trasa: https://api.myjson.com/bins/v7q7g
+
+ 1. tlačítko */
 btn1.addEventListener("click", function() {
+  loadingText.style.display = 'inline';
   document.getElementById('sendButton1').style.display = 'inline';
   document.getElementById('sendButton').style.display = 'none';
   var gpx1 = new XMLHttpRequest();
@@ -82,6 +106,7 @@ btn1.addEventListener("click", function() {
   gpx1.onload = function() {
     var gpx1data = JSON.parse(gpx1.responseText);
     addText1(gpx1data);
+    loadingText.style.display = 'none';
   };
   gpx1.send();
 });
@@ -93,6 +118,7 @@ function addText1(text) {
 
 /* 2. tlačítko */
 btn2.addEventListener("click", function() {
+  loadingText.style.display = 'inline';
   document.getElementById('sendButton1').style.display = 'none';
   document.getElementById('sendButton').style.display = 'inline';
   var gpx2 = new XMLHttpRequest();
@@ -100,6 +126,7 @@ btn2.addEventListener("click", function() {
   gpx2.onload = function() {
     var gpx2data = JSON.parse(gpx2.responseText);
     addText2(gpx2data);
+    loadingText.style.display = 'none';
   };
   gpx2.send();
 });
@@ -111,6 +138,7 @@ function addText2(text) {
 
 /* 3. tlačítko */
 btn3.addEventListener("click", function() {
+  loadingText.style.display = 'inline';
   document.getElementById('sendButton1').style.display = 'none';
   document.getElementById('sendButton').style.display = 'inline';
   var gpx3 = new XMLHttpRequest();
@@ -118,6 +146,7 @@ btn3.addEventListener("click", function() {
   gpx3.onload = function() {
     var gpx3data = JSON.parse(gpx3.responseText);
     addText3(gpx3data);
+    loadingText.style.display = 'none';
   };
   gpx3.send();
 });
@@ -138,55 +167,55 @@ var data = {
   "Vyšehrad": {
     coord: "50.064455768942985N,14.419538337179006'E", 
     url: SMap.CONFIG.img + "/marker/drop-red.png", 
-    descrip: " <img src='img/vysehrad.jpg'/>", 
+    descrip: "img/vysehrad.jpg", 
     letter: " "
   },
   "Tančící dům": {
     coord: "50.07541647853822N,14.414169788360596'E", 
     url: SMap.CONFIG.img + "/marker/drop-red.png", 
-    descrip: " <img src='img/tadum.jpg'/>", 
+    descrip: "img/tadum.jpg",  
     letter: " "
   },
   "Národní divadlo": {
     coord: "50.081055024738795N,14.413279150560811'E", 
     url: SMap.CONFIG.img + "/marker/drop-red.png", 
-    descrip: " <img src='img/nardiv.jpg'/>", 
+    descrip: "img/nardiv.jpg", 
     letter: " "
   },
   "Národní muzeum": {
     coord: "50.0797041654444N,14.42998753256029'E", 
     url: SMap.CONFIG.img + "/marker/drop-red.png", 
-    descrip: " <img src='img/muzeum.jpg'/>", 
+    descrip: "img/muzeum.jpg",
     letter: " "
   },
   "Pražský hrad": {
     coord: "50.09110442275498N,14.4019546379551'E", 
     url: SMap.CONFIG.img + "/marker/drop-red.png", 
-    descrip: " <img src='img/hrad.jpg'/>", 
+    descrip: "img/hrad.jpg", 
     letter: " "
   },
   "Staroměstská radnice": {
     coord: "50.08698786069408N,14.42055656825164'E", 
     url: SMap.CONFIG.img + "/marker/drop-red.png", 
-    descrip: " <img src='img/orloj.jpg'/>", 
+    descrip: "img/orloj.jpg", 
     letter: " "
   },
   "Karlův most": {
     coord: "50.086491307128746N,14.411721807741628'E", 
     url: SMap.CONFIG.img + "/marker/drop-red.png", 
-    descrip: " <img src='img/most.jpg'/>", 
+    descrip: "img/most.jpg", 
     letter: " "
   },
   "Malostranské náměstí": {
     coord: "50.08788340898792N,14.403498486328772'E", 
     url: SMap.CONFIG.img + "/marker/drop-red.png", 
-    descrip: " <img src='img/malonam.jpg'/>", 
+    descrip: "img/malonam.jpg", 
     letter: " "
   },
   "Socha Franze Kafky": {
     coord: "50.08165437091309N,14.420778751373291'E", 
     url: SMap.CONFIG.img + "/marker/drop-red.png", 
-    descrip: " <img src='img/franz.jpg'/>", 
+    descrip: "img/franz.jpg", 
     letter: " "
   },
 }
@@ -210,7 +239,7 @@ for (var name in data) {
   coordinates.push(c);
   var card = new SMap.Card();
   card.getHeader().innerHTML = "<strong>"+name+"</strong>";
-  card.getBody().innerHTML = data[name].descrip;
+  card.getBody().innerHTML = part1 + data[name].descrip + part2;
   marker.decorate(SMap.Marker.Feature.Card, card);
   marks.push(marker);
 }
