@@ -193,10 +193,10 @@ display: table-row;
     color: black;
     font-weight: bold;
 }
-.delete{
+.delete, .preview{
     cursor: pointer;
 }
-.delete:hover{
+.delete:hover, .preview:hover{
     background-color: white;
 }
 .table-row:nth-last-child(1) > .table-cell:nth-last-child(2) {
@@ -208,8 +208,37 @@ footer{
     margin: 10px auto;
     text-align: center;
 }
+/* ------------- preview --------------*/
+.prev-window {
+    width: 360px;
+    margin: 100px auto;
+    position: relative;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.preview-area {
+    margin: 30px 10px 10px 10px;
+    text-align: justify;
+}
+.close-button {
+    background: #801616;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    position: absolute;
+    right: 10px;
+}
+.close-button:hover {
+    cursor: pointer;
+    background: #550000;
+}
+.close-button:focus{
+    outline: none;
+}
+
 /*-------------- loader ---------------*/
-.whole-page {
+#whole-page {
     background-color: #801616cc;
     position: fixed;
     top: 0;

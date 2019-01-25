@@ -2,7 +2,10 @@ var openForm = $('#open-form');
 var formHeader = $('#form-header');
 var formBody = $('#form-body');
 var form = $('#form');
+var myLibrary = $('#my-library');
 var reset = $('#reset');
+var curtain = $('<div>').attr('id', 'whole-page');
+var documentBody = $(document.body);
 var resultsField;
 
 var openedForm = false;
@@ -61,7 +64,8 @@ form.submit(function (e) {
             }
         }
         formBody.append(resultsField);
-        $('.whole-page').remove();
+        curtain.empty();
+        curtain.remove();
     });
 });
 /*--------------------- check existing books ----------------------------*/
@@ -156,14 +160,15 @@ var addToLibrary = function (book, author, url, rating) {
     var star5 = $('<span>').addClass('star').text('*').attr('title', 'star-5');
 
     var ratingCell = $('<div>').addClass('table-cell').addClass('rating').append(star1, star2, star3, star4, star5);
+    var previewCell = $('<div>').addClass('table-cell').addClass('preview').text('Ukázka');
     var deleteCell = $('<div>').addClass('table-cell').addClass('delete').text('Odebrat');
     var idCell = $('<div>').addClass('table-cell').addClass('id').text(book.id);
-    var newRow = $('<div>').addClass('table-row').append(imageCell).append(nameCell).append(authorCell).append(categoryCell).append(yearCell).append(ratingCell).append(deleteCell).append(idCell);
+    var newRow = $('<div>').addClass('table-row').append(imageCell, nameCell, authorCell, categoryCell, yearCell, ratingCell, previewCell, deleteCell, idCell);
     var tableHead = $('#table-head');
     if (tableHead.hasClass('closed')) {
         tableHead.removeClass('closed');
     }
-    $('#my-library').append(newRow);
+    myLibrary.append(newRow);
 
     deleteCell.click(function () {
         var booksAfterDelete = JSON.parse(localStorage.getItem('books'));
@@ -180,6 +185,14 @@ var addToLibrary = function (book, author, url, rating) {
                 $(this).next().removeClass('add-existing');
             }
         });
+    });
+
+    var preview = "Ukázka není k dispozici.";
+    if (book.searchInfo) {
+        preview = book.searchInfo.textSnippet;
+    }
+    previewCell.click(function () {
+        showPreview(preview);
     });
 
     newRow.find('.star').click(function () {
@@ -208,14 +221,25 @@ var addToLibrary = function (book, author, url, rating) {
         case 5: star5.trigger('click');
     }
 };
+/* -------------- window with preview ------------------- */
+var showPreview = function (text) {
+    var closeButton = $('<button>').addClass('close-button').text('X');
+    var previewWindow = $('<div>').addClass('prev-window').append(closeButton).append($('<div>').addClass('preview-area').text(text));
+    documentBody.append(curtain.append(previewWindow));
+
+    closeButton.click(function () {
+        curtain.empty();
+        curtain.remove();
+    });
+};
 /* -------------- create loader --------------------------*/
 var createLoader = function () {
     var loader = $('<div>').addClass('loader').append($('<figure>').addClass('page'));
-    $(document.body).append($('<div>').addClass('whole-page').append(loader));
+    documentBody.append(curtain.append(loader));
 };
 
 /* ----------------- init page ----------------------- */
-if (!localStorage.books) {
+if (localStorage.books) {
     var storedBooks = JSON.parse(localStorage.getItem('books'));
     var keys = Object.keys(storedBooks);
     for (var i = 0; i < keys.length; i++) {
@@ -232,7 +256,7 @@ if (!localStorage.books) {
                 author = authors[0];
             } else {
                 author = authors[0];
-                for (var j = 0; j < authors.length; j++) {
+                for (var j = 1; j < authors.length; j++) {
                     author += ', ' + authors[j];
                 }
             }
