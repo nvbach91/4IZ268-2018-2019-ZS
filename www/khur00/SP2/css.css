@@ -3,9 +3,9 @@ body {
 }
 .map {
     
-    margin-left: 15%;
-    margin-right:15%;
+    margin-left: 16%;
     position: absolute;
+
     
    
 }
@@ -23,14 +23,14 @@ svg{
     fill: aliceblue;
     opacity: .2;
 }
-.Paradis:hover,.diary:hover,.Shiganshina:hover,.Trost:hover,.Forest:hover,.Chlorba:hover,.Karanase:hover,.Nedlay:hover,.Ragako:hover,.Utgard:hover,.Dauper:hover,.Stohess:hover,.Hermina:hover,.Orvud:hover,.Yalkell:hover,.Capital:hover,.Maria:hover,.Rose:hover,.Sina:hover{
+/*.Paradis:hover,.diary:hover,.Shiganshina:hover,.Trost:hover,.Forest:hover,.Chlorba:hover,.Karanase:hover,.Nedlay:hover,.Ragako:hover,.Utgard:hover,.Dauper:hover,.Stohess:hover,.Hermina:hover,.Orvud:hover,.Yalkell:hover,.Capital:hover,.Maria:hover,.Rose:hover,.Sina:hover{
     transition: opacity .2s ease;
 	opacity: .5;
     cursor: pointer;
     fill:beige;
    
-}
-#nadpis {
+}*/
+/*#nadpis {
    background-color: rgba(240, 248, 255, 0.596);
 	display: none;
     position: absolute;
@@ -46,29 +46,154 @@ svg{
     font-size: 20px;
     border: #fff 3px solid;
 	border-radius: 10px;
-}
+}*/
 #obsah {
-    background-color: rgba(240, 248, 255, 0.596);
-     display: none;
+    background-color: rgb(240, 248, 255);
+     display: inline-block;
      position: absolute;
-     left:75%;
-     bottom:5%;
-     top:125%;
-     padding: 20px;
+     margin-left:16%;
+     bottom:80%;
+     top:1%;
      box-sizing: border-box;
-     width: 20%;
+     width:66%;
      height: 15%;
-     box-shadow: 0 0 32px 10px #ccc;
-     font-family: sans-serif;
-     font-size: 20px;
-     border: #fff 3px solid;
+     font-size: 24px;
+     border: #4CAF50 3px solid;
      border-radius: 10px;
  }
-
-
 * {
     box-sizing: border-box;
     zoom:84%;
    
 }
+.button {
+ 
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 24px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 15%;
+    height: 15%;
+    border-radius: 10px;
+
+  }
+  .button0{
+    margin-top: 10%;
+  }
+  .button0 ,.button1,.button2,.button3,.button4,.button5,.button6,.button7,.button8,.button9,.button10,.button11,.button12,.button13,.button14,.button15,.button16,.button17,.button18,.button19{
+
+    background-color: white; 
+    color: black; 
+    border: 3px solid #4CAF50;
+  }
+  
+ /* .button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  .button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  .button3 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  .button4 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  .button5 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  } .button6 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  .button7 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  .button8 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  .button9 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  .button10 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  .button11 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  .button12 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  .button13 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  .button14 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  .button15 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  .button16 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  } .button17 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  } .button18{
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  } .button19 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  .vypis div {
+      background-color: blue;
+      font-size: 25px;
+      font-style: italic;
+  }
+  .vypis div a {
+    font-size: 25px;
+  }
+  result{
+background-color: #ccc;
+  }*/
+
 

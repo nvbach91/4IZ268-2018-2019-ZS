@@ -7,13 +7,13 @@
     <title>MAP</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel=" stylesheet" type="text/css" media="screen" href="css.css" />
-
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="icon" type="image/gif" href="favicon.jpg">
 
 </head>
 
 <body>
+    <div class="obsah"></div>
     <div class="map">
         <svg viewBox="0 0 1703 1906">
             <path class="diary" d="m 1372.1672,1452.3324 c -8.1672,19.9999 -7.1672,44.3333 -6.3339,63.8336 0.8333,19.5002 1.5,34.1663 4.1667,47.3336 2.6668,13.1673 7.3331,24.8332 15.3335,35.5004 8.0004,10.6672 19.3333,20.3334 30.4999,29.0001 11.1667,8.6666 22.1668,16.3334 37.8336,22.5 15.6667,6.1667 36.0004,10.8334 55.0003,11.4999 18.9998,0.6666 36.6672,-2.6669 54.1666,-10.8334 17.4994,-8.1666 34.8339,-21.1675 44,-38.6668 9.1661,-17.4994 10.1661,-39.5008 10.8328,-63.3335 0.6666,-23.8327 1,-49.5006 1.3333,-70.0003 0.3333,-20.4997 0.6667,-35.8337 -2.9998,-48.6663 -3.6665,-12.8325 -11.3337,-23.1665 -22.9998,-30.9996 -11.6662,-7.8331 -27.3331,-13.1666 -48.6408,-17.9958 -21.3076,-4.8293 -48.3588,-9.1708 -70.8589,-5.8378 -22.5,3.3331 -40.4995,14.3328 -58.1668,27.6665 -17.6673,13.3338 -34.9995,28.9994 -43.1667,48.9994 z"></path>
@@ -37,47 +37,498 @@
             <path class="Paradis" d="m 669.39557,1840.9455 c -0.94285,-0.943 11.31367,-10.3711 21.21284,-15.7918 9.89917,-5.4208 17.44232,-6.8352 22.86306,-9.6637 5.42074,-2.8285 8.72109,-7.0718 15.79086,-9.6639 7.06977,-2.5921 17.91492,-3.5352 23.9829,-6.3803 6.06799,-2.845 7.60198,-8.4697 8.5446,-16.011 0.94263,-7.5412 1.41413,-17.4429 5.4212,-22.8636 4.00707,-5.4207 11.55035,-6.3636 21.68461,-7.542 10.13425,-1.1784 22.86404,-2.5928 33.77598,-6.2564 10.91194,-3.6636 20.67221,-10.0078 29.62837,-13.7786 8.95616,-3.7709 17.44249,-5.1853 27.81255,-6.5994 10.37006,-1.4141 22.62821,-2.8285 35.82678,-2.5928 13.19858,0.2358 27.34199,2.1216 37.00531,4.7142 9.66333,2.5927 14.84912,5.8927 18.38508,7.0709 3.53596,1.1781 5.42166,0.2353 8.48434,-0.2358 3.06268,-0.4711 7.30802,-0.4711 13.90672,-1.4138 6.59873,-0.9427 15.55753,-2.8288 25.22063,-4.7143 9.6631,-1.8855 20.0353,-3.7713 31.1127,-6.1282 11.0774,-2.3569 22.8638,-5.1856 36.7694,-9.8995 13.9057,-4.7138 29.935,-11.3141 38.4196,-8.2507 8.4847,3.0634 9.4275,15.7923 14.3782,21.6852 4.9506,5.8929 13.9067,4.9502 23.5699,3.0646 9.6632,-1.8855 20.0353,-4.7143 30.877,-7.0711 10.8416,-2.3569 22.1566,-4.2427 19.0154,-1.8566 -3.1412,2.3861 -20.429,8.9274 -30.0932,15.2912 -9.6643,6.3638 -11.5498,12.4916 -4.4768,15.3205 7.0729,2.829 23.0975,2.3577 31.5822,3.0645 8.4846,0.7069 9.4275,2.5927 8.7208,4.4782 -0.7067,1.8856 -3.0632,3.7708 -9.6793,6.0733 -6.616,2.3025 -18.3683,5.2406 -28.504,9.2476 -10.1356,4.007 -19.0914,9.192 -27.6959,15.4522 -8.6045,6.2603 -17.3228,14.0099 -24.3942,18.2529 -7.0714,4.2431 -12.7276,5.1858 -17.6784,3.064 -4.9508,-2.1218 -9.1925,-7.3062 -16.9699,-8.4848 -7.7774,-1.1786 -19.0914,1.6499 -24.9847,2.3567 -5.8933,0.7069 -6.3646,-0.7072 -9.4268,-0.4718 -3.0623,0.2354 -8.7215,2.1218 -14.8505,3.0649 -6.1291,0.943 -12.7274,0.943 -21.2134,1.4144 -8.486,0.4714 -18.8554,1.4141 -27.10534,1.8856 -8.24992,0.4714 -14.37754,0.4714 -22.39231,-0.2358 -8.01477,-0.7071 -17.91264,-2.1211 -28.284,-3.5354 -10.37135,-1.4142 -21.21273,-2.8284 -28.04823,-3.7712 -6.83549,-0.9428 -9.6637,-1.4142 -14.85002,-0.2355 -5.18633,1.1786 -12.72667,4.0062 -19.79828,6.1277 -7.07161,2.1216 -13.67022,3.5355 -18.62034,4.2428 -4.95012,0.7072 -9.19218,0.7072 -14.84998,3.536 -5.65781,2.8287 -13.19824,8.4841 -24.04158,13.1987 -10.84333,4.7146 -24.98337,8.4853 -32.9976,12.2562 -8.01424,3.7709 -9.89973,7.5419 -12.25717,12.0211 -2.35745,4.4791 -5.18498,9.6629 -14.14325,11.7847 -8.95828,2.1218 -24.03975,1.1793 -35.11787,3.0646 -11.07813,1.8854 -18.14872,6.5992 -25.92772,13.9066 -7.779,7.3074 -16.26287,17.2052 -17.67705,14.1402 -1.41417,-3.065 4.24211,-19.0911 13.43436,-31.8185 9.19226,-12.7273 21.92113,-22.1561 27.34239,-26.6342 5.42126,-4.4781 3.53549,-4.0067 -0.21029,-4.7899 -3.74577,-0.7832 -8.51136,-2.5161 -13.69697,-3.9304 -5.18561,-1.4143 -10.37051,-2.357 -20.03519,0.943 -9.66469,3.3 -23.80464,10.8414 -24.74749,9.8985 z"></path>
 
         </svg>
-        <div class="description"></div>
         <img src="map.jpg" alt="map">
     </div>
-    <script>
-        var nadpis;
-        var obsah;
 
-        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/51", function (json) {
-            myjson = json;
-            nadpis = myjson.title.rendered;
-            obsah = myjson.content.rendered;
+    <script>
+        /*
+ 
+          $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/51", function (json) {
+              myjson = json;
+              nadpis = myjson.title.rendered;
+              obsah = myjson.content.rendered;
+          })
+              .done(function () {
+  
+                  $("#nadpis").append(nadpis);
+                  $("#obsah").append(obsah);
+              });
+  
+          $('.diary').hover(
+              function () {
+                  $("#nadpis").attr(nadpis);
+                  $("#nadpis").fadeIn();
+              },
+              function () {
+                  $("#nadpis").fadeOut(20);
+              }
+          )
+          $(document).ready(function () {
+              $(".diary").click(function () {
+                  $("#obsah").attr(nadpis);
+                  $("#obsah").fadeIn();
+              },
+              )
+          }
+          )
+        var prispevky;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts", function (json) {
+            prispevky = json;
         })
             .done(function () {
+                for (var i = 0, l = prispevky.length; i < l; i++) {
+                    $(".vypis").append("<div >" + prispevky[i].title.rendered +
+                        "<a>" + prispevky[i].content.rendered + "<a>" + "</div>");
 
-                $("#nadpis").append(nadpis);
-                $("#obsah").append(obsah);
+                }
             });
-
-        $('.diary').hover(
-            function () {
-                $("#nadpis").append(nadpis);
-                $("#nadpis").fadeIn();
-            },
-            function () {
-                $("#nadpis").fadeOut(20);
+        $(document).ready(function () {
+            $(".button1").click(function () {
+                number1 = $(".button1").val
+                number2 = $(".vypis div").val
+                if (number1 = number2) {
+                    alert(number1);
+                }
+                else {
+                    alert("No")
+                }
             }
-        )
-        /*$(document).ready(function () {
-            $(".diary").click(function () {
-                $("#obsah").append(nadpis);
-                $("#obsah").fadeIn();
-            },
             )
         }
         )*/
 
-    </script>
 
-    <div id="nadpis"></div>
+        /*var content1;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/51", function (json) {
+            myjson = json;
+            content1 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button1").click(function () {
+                $("#obsah").empty();
+                $(".Nedlay").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content1));
+                $("#obsah").fadeIn();
+
+            }
+            )
+        }
+        );
+        var content2;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/48", function (json) {
+            myjson = json;
+
+            content2 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button2").click(function () {
+                $(".diary").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content2));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+        var content3;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/46", function (json) {
+            myjson = json;
+
+            content3 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button3").click(function () {
+                $(".Paradis").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content3));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+        var content4;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/44", function (json) {
+            myjson = json;
+
+            content4 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button4").click(function () {
+                $(".Maria").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content4));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+        var content5;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/42", function (json) {
+            myjson = json;
+
+            content5 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button5").click(function () {
+                $(".Shiganshina").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content5));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+        var content6;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/40", function (json) {
+            myjson = json;
+
+            content6 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button6").click(function () {
+                $(".Forest").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content6));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+        var content7;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/38", function (json) {
+            myjson = json;
+            content7 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button7").click(function () {
+                $(".Chlorba").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content7));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+        var content8;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/36", function (json) {
+            myjson = json;
+
+            content8 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button8").click(function () {
+                $(".Trost").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content8));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+        var content9;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/34", function (json) {
+            myjson = json;
+
+            content9 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button9").click(function () {
+                $(".Karanese").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content9));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+        var content10;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/32", function (json) {
+            myjson = json;
+
+            content10 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button10").click(function () {
+                $(".Rose").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content10));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+        var content11;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/30", function (json) {
+            myjson = json;
+
+            content11 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button11").click(function () {
+                $(".Dauper").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content11));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+        var content12;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/28", function (json) {
+            myjson = json;
+
+            content12 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button12").click(function () {
+                $(".Utgard").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content12));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+
+        var content13;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/26", function (json) {
+            myjson = json;
+
+            content13 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button13").click(function () {
+                $(".Ragako").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content13));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+
+        var content14;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/24", function (json) {
+            myjson = json;
+
+            content14 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button14").click(function () {
+                $(".Sina").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content14));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+
+        var content15;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/22", function (json) {
+            myjson = json;
+
+            content15 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+
+            $(".button15").click(function () {
+                $(".Hermina").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content15));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+
+        var content16;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/20", function (json) {
+            myjson = json;
+
+            content16 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button16").click(function () {
+                $(".Yalkell").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content16));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+
+        var content17;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/18", function (json) {
+            myjson = json;
+
+            content17 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button17").click(function () {
+                $(".Orvud").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content17));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+
+        var content18;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/16", function (json) {
+            myjson = json;
+
+            content18 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+            $(".button18").click(function () {
+                $(".Stohess").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content18));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+
+        var content19;
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/12", function (json) {
+            myjson = json;
+
+            content19 = myjson.content.rendered;
+        })
+
+        $(document).ready(function () {
+
+            $(".button19").click(function () {
+                $(".Capital").css({
+                    "transition": "opacity .2s ease",
+                    "opacity": ".5", 'fill': 'beige'
+                });
+                $("#obsah").append($(content19));
+                $("#obsah").fadeIn();
+            }
+            )
+        }
+        );
+        $(document).ready(function () {
+            $(".button0").click(function () {
+                location.reload(true);
+            }
+            )
+        }
+        );*/
+
+        var districts = {};
+        var prispevek;
+        var id;
+        var name
+
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts", function (posts) {
+            console.log(posts);
+            posts.forEach(function (post) {
+                districts[post.title.rendered] = post.id;
+            })
+            console.log(districts);
+            for (let key of Object.keys(districts)) {
+                var postId = districts[key];//id post
+                var postName = key;
+                var button = document.createElement("button");
+                button.innerHTML = postName;
+                button.setAttribute("data-id", postId);
+                console.log(button);
+                var body = document.getElementsByTagName("body")[0];
+                console.log(body)
+                body.appendChild(button);
+                //document.body.appendChild(button);
+            }
+        })
+
+
+
+
+
+
+        /*done(function () {
+                for (var i = 0, l = prispevky.length; i < l; i++) {
+                    $.each(districts,function (key,value){
+                        if (value = id){
+
+                        }
+                    }
+
+                        }
+                    }
+
+                    }
+                }
+            });*/
+
+
+    </script>
     <div id="obsah"></div>
 
+
+
+
+</body>
 
 
 </html>
