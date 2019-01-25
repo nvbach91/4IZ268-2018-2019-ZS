@@ -228,7 +228,7 @@ if(theHighestCHDetails[2]>1){
                     <div class="profile__detailValue">${novelName[1]}</div>
                     <div class="profile__detailValue${extraColour}"><a href=${theHighestCHDetails[1]}>${theHighestCHCount}</a></div>
                     <div class="profile__detailValue">${novelName[2]}</div>
-                    <div class="profile__detailValue"><button id="myBtn${actualLine}" value="${actualLine}" class ="button button--submit">Delete novel</button>
+                    <div class="profile__detailValue"><button id="myBtn${actualLine}" data-line="${actualLine}" class ="button button--submit">Delete novel</button>
             </div>
         </div>
     
@@ -264,7 +264,8 @@ function assingFunction(actualLine){
         }else{
             //console.log("full");
             document.getElementById(id).onclick = (i)=>{
-                deleteLine(i.target.value);
+            
+                deleteLine(i.target.getAttribute("data-line"));
             };
             };
            /// console.log(i);
@@ -313,6 +314,7 @@ function saveLine(line, novelName) {
     // localStorage.setItem("numberOfNovels", h);
     // g = (localStorage.getItem(line));
     //console.log(h);
+
     localStorage.setItem(nName, novelName[0]);
     localStorage.setItem(gName, novelName[1]);
     localStorage.setItem(iName, novelName[2]);
@@ -360,6 +362,10 @@ function LoadData() {
     };
 };
 
-$(document).ready(LoadData());
+$(document).ready(function(){
+    LoadData()
+});
+    
+
   
   
