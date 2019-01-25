@@ -263,7 +263,11 @@ function reloadSelectedPage() {
             fbPostingContainer.append(pageLocation);
         }
         if (response.website) {
-            var pageWebsite = `<div class="fb-page-website"><span class="fb-page-headline">Page website:</span><br><a href="http://${response.website}" target="_blank">` + response.website + '</a></div>';
+            var pageURL = response.website;
+            if (pageURL.substr(0, 4) !== 'http') {
+                pageURL = "http://" + pageURL;
+            }
+            var pageWebsite = `<div class="fb-page-website"><span class="fb-page-headline">Page website:</span><br><a href="${pageURL}" target="_blank">` + pageURL + '</a></div>';
             fbPostingContainer.append(pageWebsite);
         } else {
             var pageWebsite = `<div class="fb-page-website"><span class="fb-page-headline">Page website:</span><br>Website not entered!</div>`;
@@ -279,7 +283,7 @@ function getLastPosts() {
         for (i = 0; i < response.data.length; i++) {
             if ((response.data[i].message) || (response.data[i].story)) {
                 var createdTime = new Date(response.data[i].created_time);
-                postHTML += `<li data-postID=${response.data[i].id}>`;
+                postHTML += `<li>`;
                 postHTML += `<div class="fb-post-date">${createdTime.toLocaleString()}</div>`;
                 if (response.data[i].message) {
                     postHTML += `<div class="fb-post-message">${response.data[i].message}</div>`;
@@ -299,6 +303,15 @@ function getLastPosts() {
             }
         }
         lastPostsList.append(postHTML);
+        lastPostsList.find('.fb-post-link').click(function () {
+            var postID = $(this).attr('data-postID');
+            window.open("https://www.facebook.com/" + postID);
+        });
+        lastPostsList.find('.fb-post-delete').click(function () {
+            var postID = $(this).attr('data-postID');
+            loaderContainer.toggleClass("hide");
+            deletePost(postID);
+        });
     })
 }
 //Delete post is not working!!!
@@ -310,11 +323,7 @@ function deletePost(id) {
             reloadSelectedPage();
         } else {
             loaderContainer.toggleClass("hide");
-            try {
-                alertPopUp(error.message, 6000);
-            } catch {
-                console.log(response);
-            }
+            errorScreen(response.error.message);
             reloadSelectedPage();
         }
     })
@@ -325,6 +334,6 @@ function viewLink(postID) {
 }
 //This should work, but I need help to find out why it doesn't
 $('.fb-post-link').on('click', function (e) {
-    var postID = $(e.target).data('data-postID');
+    var postID = $(e.target).data('postID');
     window.open("https://www.facebook.com/" + postID);
 })

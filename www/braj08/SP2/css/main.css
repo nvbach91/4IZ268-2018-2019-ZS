@@ -656,14 +656,14 @@ input[type=number]::-webkit-outer-spin-button {
 
 .error-overlay {
     display: none;
-    height: 5000%;
+    height: 100vh;
     width: 100%;
     padding: 0;
     text-align: center;
     background: #c0392b;
     color: #f1c40f;
     z-index: 999999;
-    position: absolute;
+    position: fixed;
 }
 
 .error-show {
@@ -691,7 +691,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .loader-container {
-    position: absolute;
+    position: fixed;
     z-index: 99998;
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -751,7 +751,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
 .pop-up {
-    position: absolute;
+    position: fixed;
     top: -200px;
     left: 15%;
     padding: 15px;
