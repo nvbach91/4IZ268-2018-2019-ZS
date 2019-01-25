@@ -256,7 +256,7 @@ if (localStorage.books) {
                 author = authors[0];
             } else {
                 author = authors[0];
-                for (var j = 0; j < authors.length; j++) {
+                for (var j = 1; j < authors.length; j++) {
                     author += ', ' + authors[j];
                 }
             }
