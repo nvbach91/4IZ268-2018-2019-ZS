@@ -117,13 +117,13 @@ a {
     margin-left :5%;
 }
 .yellow{
-    background-color: yellow;
+    background-color: rgba(243, 243, 151, 0.774);
 }
 .violet{
-    background-color: violet;
+    background-color: rgb(219, 166, 219);
 }
 .blue{
-    background-color: rgb(150, 229, 243);
+    background-color: rgba(150, 229, 243, 0.808);
 }
 .profile_repos{
     border-radius: 4px;

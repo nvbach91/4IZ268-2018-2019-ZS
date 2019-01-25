@@ -21,11 +21,18 @@ var novelName = []
 const handleSubmit = e => {   //e!!!
     e.preventDefault();
     subreddit = document.getElementById('js-search').value;
+    if((document.getElementById('js-search').value == null)||(document.getElementById('js-search').value=="")){
+        subreddit = "noveltranslations";
+        //console.log("bylo to prazdne");
+    };
     novelName[0] = document.getElementById('novel-search').value;
     novelName[1] = document.getElementById('chapters-read').value;
     novelName[2] = document.getElementById('Increment').value;
     novelName[3] = subreddit;
-    fetchPosts(subreddit, novelName);
+    if((document.getElementById('js-search').value == null)||(document.getElementById('js-search').value=="")){
+            alert("Please, enter name or part of the name of the novel.")
+    }else{
+    fetchPosts(subreddit, novelName);};
 };
 //var handleSubmit = fuction(params) { }
 
@@ -36,9 +43,8 @@ const fetchPosts = async (subreddit, novelName, afterParam) => {
     //stára verze prohledavajici cele forum
     //const url = `${baseWeb}${subreddit}.json?limit=${postsPerRequests}${afterParam ? '&after=' + afterParam : ''}`;
     const url = `${searchAPIReddit}${subreddit}/search?q=${novelName[0]}&restrict_sr=1&sort=new&limit=${postsPerRequests}${afterParam ? '&after=' + afterParam : ''}`
-    //const url = `${searchAPIReddit}${subreddit}/search?q=${novelName[0]}limit=${postsPerRequests}${afterParam ? '&after=' + afterParam : ''}`
-    //https://www.reddit.com/r/noveltranslations/search?q=Phoenix&restrict_sr=1&sort=new
-    //    https://api.reddit.com/r/noveltranslations/search?q=phoenix&after=t3_aiuqs7
+
+
     //.json?limit=${postsPerRequests}${afterParam ? '&after=' + afterParam : ''}`;
 
 
@@ -96,7 +102,7 @@ const parseResults = (responses, novelName) => {
             volume = title.substring((title.search("Book") + 6), title.length);
             volume = volume.split(" ");
             volume = volume[0];
-            console.log(volume);
+            //console.log(volume);
         };
         maxvolume=Number(maxvolume);
         volume=Number(volume);
@@ -251,7 +257,7 @@ function assingFunction(actualLine){
     var i=1;
     for (i = 1; i <= actualLine; i++) { 
         var id=(`myBtn${i}`);
-        console.log(id);
+        //console.log(id);
 
         if((document.getElementById(id)==null)){
             //console.log("empty");
@@ -261,7 +267,7 @@ function assingFunction(actualLine){
                 deleteLine(i.target.value);
             };
             };
-            console.log(i);
+           /// console.log(i);
     };     
 };
 
