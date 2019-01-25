@@ -75,8 +75,8 @@ const parseResults = (responses, novelName) => {
     var index6 = 0
     var theHighestCHCount = 0
     var theHighestCHDetails = [];
-    var volume = 0;
-    var maxvolume = 0;
+    var volume = 1;
+    var maxvolume = 1;
     allPosts.forEach(({ data: { title, url } }) => {
 
         if ((title.search(novelName[0]) > 0)&&(title.search("Volume") > 0)) {
@@ -96,7 +96,7 @@ const parseResults = (responses, novelName) => {
             volume = title.substring((title.search("Book") + 6), title.length);
             volume = volume.split(" ");
             volume = volume[0];
-            //console.log(volume);
+            console.log(volume);
         };
         maxvolume=Number(maxvolume);
         volume=Number(volume);
@@ -147,7 +147,7 @@ const parseResults = (responses, novelName) => {
             }
 
             if (isNaN(chapterCount)) {
-                console.log(chapterCount);
+                //console.log(chapterCount);
                 chapterCount = -1;
                 //console.log("pokazilo se to");
                 
@@ -187,45 +187,58 @@ const displayTitles = (rawTitles, theHighestCHCount, theHighestCHDetails, novelN
     var counter = document.getElementById('js-counter');
 
     counter.innerHTML = Number(counter.innerHTML) + 1;
-    // console.log(counter.innerHTML);
+    actualLine = counter.innerHTML
+    // console.log(actualLine);
 
     //zjisteni zda to uz splnuje podminky pro upozorneni 10x nasobek novych kapitol zluta,2,5x nasobek fialova,1x nasobek modra
+    theHighestCHDetails[2]
     var zvyseni = ((theHighestCHCount - novelName[1])+ ((theHighestCHDetails[2]-1)*100)) / novelName[2];
-        if (zvyseni > 5) {
+    if (zvyseni > 10) {   
+        extraColour = " yellow";}else{
+    if (zvyseni > 5) {
             extraColour = " violet";
         } else {
             extraColour = " blue";
         };
-
+    };
     
 
     if (zvyseni < 1) {
         extraColour = " ";
     };
 
-if(theHighestCHDetails[2]>0){
+if(theHighestCHDetails[2]>1){
     theHighestCHCount= 'vol '+theHighestCHDetails[2]+' ch '+theHighestCHCount;
 };
 
 
 
-    newHTML = `<!--START${counter.innerHTML}-->
+    newHTML = `<!--START${actualLine}-->
+    
       <div class="informations">
+
             <div class="profile__detail">
-                <div class="profile__detailName">${novelName[0]}</div>
-                <div class="profile__detailValue">${novelName[1]}</div>
-                <div class="profile__detailValue${extraColour}"><a href=${theHighestCHDetails[1]}>${theHighestCHCount}</a></div>
-                <div class="profile__detailValue">${novelName[2]}</div>
-                <div class="profile__detailValue"><button class = "button button--submitSearch" onclick="deleteteLine(${counter.innerHTML})">Delete Novel</button></div>
-                 
+                    <div class="profile__detailName">${novelName[0]}</div>
+                    <div class="profile__detailValue">${novelName[1]}</div>
+                    <div class="profile__detailValue${extraColour}"><a href=${theHighestCHDetails[1]}>${theHighestCHCount}</a></div>
+                    <div class="profile__detailValue">${novelName[2]}</div>
+                    <div class="profile__detailValue"><button id="myBtn${actualLine}" value="${actualLine}" class ="button button--submit">Delete novel</button>
             </div>
         </div>
-    <!--KONEC${counter.innerHTML}-->`//pro moznost jednoduse smazat radek
+    
+    <!--KONEC${actualLine}-->`//pro moznost jednoduse smazat radek
+ container.innerHTML += `${newHTML}`;
 
-    container.innerHTML += `${newHTML}`;
-    saveLine(counter.innerHTML, novelName);
 
-    // <div class="profile__detailValue"><button class="button button--submitSearch" onclick="saveLine(${counter.innerHTML})">Save Novel</button></div>
+    assingFunction(actualLine);
+ // document.getElementById("myBtn").addEventListener("click", myFunction(5));
+    
+   //console.log(`myBtn${actualLine}`);
+   // console.log("tady by se melo neco rict hahaha");
+   // console.log(buttonForListening.value);
+    saveLine(actualLine, novelName);
+
+    // <div class="profile__detailValue"><button class="button button--submitSearch" onclick="saveLine(${actualLine})">Save Novel</button></div>
 
 
 
@@ -234,7 +247,29 @@ if(theHighestCHDetails[2]>0){
 const subredditSelectForm = document.getElementById('subreddit-select-form')//vyrvori ahref element.  Např: noveltranslations // Phoenix   (jmeno novely stačí pouze část, když jste si jistí, že ne nespojí s nějakou další..)
 subredditSelectForm.addEventListener('submit', handleSubmit);
 
-function deleteteLine(line) {
+function assingFunction(actualLine){
+    var i=1;
+    for (i = 1; i <= actualLine; i++) { 
+        var id=(`myBtn${i}`);
+        console.log(id);
+
+        if((document.getElementById(id)==null)){
+            //console.log("empty");
+        }else{
+            //console.log("full");
+            document.getElementById(id).onclick = (i)=>{
+                deleteLine(i.target.value);
+            };
+            };
+            console.log(i);
+    };     
+};
+
+
+
+
+function deleteLine(line) {
+    //alert("WE JUST DELETED "+line + " LINE" )
     const container = document.getElementById('js-output');
     var str = container.innerHTML
     var konec = `<!--KONEC${line}-->`;
@@ -252,6 +287,11 @@ function deleteteLine(line) {
     localStorage.removeItem(gName);
     localStorage.removeItem(iName);
     localStorage.removeItem(sName);
+    
+    var counter = document.getElementById('js-counter');
+    counter.innerHTML = Number(counter.innerHTML) + 1;
+    actualLine = counter.innerHTML
+    assingFunction(actualLine);
 
 };
 
@@ -276,9 +316,6 @@ function saveLine(line, novelName) {
 };
 
 function LoadData() {
-
-
-
     var line = 1
     while (line < 21) {
 
@@ -316,3 +353,7 @@ function LoadData() {
         line = line + 1;
     };
 };
+
+$(document).ready(LoadData());
+  
+  
