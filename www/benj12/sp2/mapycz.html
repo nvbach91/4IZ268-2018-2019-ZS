@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="cs">
+  <head>
+    <title>Zobrazení GPX - Mapy.cz</title>
+    <meta name="author" content="Josef Beneš" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+    <meta name="description" content="Zobrazení GPX" />
+    <meta name="keywords" content="gpx, vizualizace, mapy" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://api.mapy.cz/loader.js"></script>
+    <script>Loader.load();</script>
+  </head>
+
+  <body>
+    <header>
+      <h2>Zobrazení GPX - Mapy.cz</h2>
+      <a href="index.html" class="whiteLink"><p>Zpět na výběr API</p></a>
+    </header>
+    <div id="search">
+      <h2>
+        Vložte vaše GPX údaje do textového pole nebo zvolte připravenou trasu:
+      </h2>
+      <br />
+      <img src="img/loading.gif" alt="loading" id="loading-image" class="loading1"><br>
+      <button id="btn1" data="m82z0" class="buttonLink">Památky Praha</button>
+      <button id="btn2" data="16iyp8" class="buttonLink">Památky Drážďany</button>
+      <button id="btn3" data="v7q7g" class="buttonLink">Památky Vídeň</button><br />
+      <textarea class="searchArea" id="gpx" required></textarea><br />
+      <div>
+        <button id="sendButton">Zobrazit na mapě</button>
+        <button id="sendButton1" class="loading">Zobrazit na mapě</button>
+      </div>
+    </div>
+    <div id="mapycz"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/mapa.js"></script>
+  </body>
+</html>

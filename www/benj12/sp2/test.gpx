@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<gpx
+  version="1.0"
+  creator="VB Net GPS:  vermeiren-willy@pandora.be"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.topografix.com/GPX/1/0"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+
+<bounds minlat="51.060848" minlon="4.395003" maxlat="51.078474" maxlon="4.419036"/>
+
+<wpt lat="51.060848" lon="4.406676">
+   <name>START</name>
+</wpt>
+
+<rte>
+  <name>Heindonk Hazewinkelpad   7 km RT</name>
+    <rtept lat="51.060848" lon="4.406676">
+      <name>1</name>
+      <cmt>1</cmt>
+    </rtept>
+    <rtept lat="51.06338" lon="4.4032">
+      <name>2</name>
+      <cmt>2</cmt>
+    </rtept>
+    <rtept lat="51.063595" lon="4.403672">
+      <name>3</name>
+      <cmt>3</cmt>
+    </rtept>
+    <rtept lat="51.064415" lon="4.403749">
+      <name>4</name>
+      <cmt>4</cmt>
+    </rtept>
+    <rtept lat="51.065601" lon="4.40221">
+      <name>5</name>
+      <cmt>5</cmt>
+    </rtept>
+    <rtept lat="51.066213" lon="4.399767">
+      <name>6</name>
+      <cmt>6</cmt>
+    </rtept>
+    <rtept lat="51.065526" lon="4.397149">
+      <name>7</name>
+      <cmt>7</cmt>
+    </rtept>
+    <rtept lat="51.066728" lon="4.396162">
+      <name>8</name>
+      <cmt>8</cmt>
+    </rtept>
+    <rtept lat="51.067414" lon="4.39642">
+      <name>9</name>
+      <cmt>9</cmt>
+    </rtept>
+    <rtept lat="51.067929" lon="4.395776">
+      <name>10</name>
+      <cmt>10</cmt>
+    </rtept>
+    <rtept lat="51.069002" lon="4.397106">
+      <name>11</name>
+      <cmt>11</cmt>
+    </rtept>
+    <rtept lat="51.069775" lon="4.395003">
+      <name>12</name>
+      <cmt>12</cmt>
+    </rtept>
+    <rtept lat="51.071534" lon="4.400969">
+      <name>13</name>
+      <cmt>13</cmt>
+    </rtept>
+    <rtept lat="51.072607" lon="4.400969">
+      <name>14</name>
+      <cmt>14</cmt>
+    </rtept>
+    <rtept lat="51.078036" lon="4.40988">
+      <name>15</name>
+      <cmt>15</cmt>
+    </rtept>
+    <rtept lat="51.078474" lon="4.411734">
+      <name>16</name>
+      <cmt>16</cmt>
+    </rtept>
+    <rtept lat="51.076978" lon="4.415811">
+      <name>17</name>
+      <cmt>17</cmt>
+    </rtept>
+    <rtept lat="51.075686" lon="4.416772">
+      <name>18</name>
+      <cmt>18</cmt>
+    </rtept>
+    <rtept lat="51.074367" lon="4.416547">
+      <name>19</name>
+      <cmt>19</cmt>
+    </rtept>
+    <rtept lat="51.073465" lon="4.418306">
+      <name>20</name>
+      <cmt>20</cmt>
+    </rtept>
+    <rtept lat="51.072049" lon="4.419036">
+      <name>21</name>
+      <cmt>21</cmt>
+    </rtept>
+    <rtept lat="51.069775" lon="4.413671">
+      <name>22</name>
+      <cmt>22</cmt>
+    </rtept>
+    <rtept lat="51.070459" lon="4.412946">
+      <name>23</name>
+      <cmt>23</cmt>
+    </rtept>
+    <rtept lat="51.069431" lon="4.410496">
+      <name>24</name>
+      <cmt>24</cmt>
+    </rtept>
+    <rtept lat="51.069944" lon="4.409848">
+      <name>25</name>
+      <cmt>25</cmt>
+    </rtept>
+    <rtept lat="51.06823" lon="4.406805">
+      <name>26</name>
+      <cmt>26</cmt>
+    </rtept>
+    <rtept lat="51.067328" lon="4.407449">
+      <name>27</name>
+      <cmt>27</cmt>
+    </rtept>
+    <rtept lat="51.066728" lon="4.406805">
+      <name>28</name>
+      <cmt>28</cmt>
+    </rtept>
+    <rtept lat="51.067414" lon="4.401441">
+      <name>29</name>
+      <cmt>29</cmt>
+    </rtept>
+    <rtept lat="51.066955" lon="4.402303">
+      <name>30</name>
+      <cmt>30</cmt>
+    </rtept>
+    <rtept lat="51.065424" lon="4.403746">
+      <name>31</name>
+      <cmt>31</cmt>
+    </rtept>
+    <rtept lat="51.064925" lon="4.403286">
+      <name>32</name>
+      <cmt>32</cmt>
+    </rtept>
+    <rtept lat="51.0644" lon="4.403831">
+      <name>33</name>
+      <cmt>33</cmt>
+    </rtept>
+    <rtept lat="51.063555" lon="4.403715">
+      <name>34</name>
+      <cmt>34</cmt>
+    </rtept>
+    <rtept lat="51.06338" lon="4.403316">
+      <name>35</name>
+      <cmt>35</cmt>
+    </rtept>
+    <rtept lat="51.063025" lon="4.403952">
+      <name>36</name>
+      <cmt>36</cmt>
+    </rtept>
+    <rtept lat="51.061107" lon="4.404996">
+      <name>37</name>
+      <cmt>37</cmt>
+    </rtept>
+    <rtept lat="51.060869" lon="4.40676">
+      <name>38</name>
+      <cmt>38</cmt>
+    </rtept>
+</rte>
+</gpx>
