@@ -29,8 +29,8 @@ const handleSubmit = e => {   //e!!!
     novelName[1] = document.getElementById('chapters-read').value;
     novelName[2] = document.getElementById('Increment').value;
     novelName[3] = subreddit;
-    if((document.getElementById('js-search').value == null)||(document.getElementById('js-search').value=="")){
-            alert("Please, enter name or part of the name of the novel.")
+    if((document.getElementById('novel-search').value == null)||(document.getElementById('novel-search').value=="")){
+        alert("Enter name or part of the name of the novel.")
     }else{
     fetchPosts(subreddit, novelName);};
 };
@@ -99,10 +99,10 @@ const parseResults = (responses, novelName) => {
     //console.log(volume);
         };
         if ((title.search(novelName[0]) > 0)&&(title.search("Book") > 0)) {
-            volume = title.substring((title.search("Book") + 6), title.length);
+            volume = title.substring((title.search("Book") + 5), title.length);
             volume = volume.split(" ");
             volume = volume[0];
-            //console.log(volume);
+           // console.log(volume);
         };
         maxvolume=Number(maxvolume);
         volume=Number(volume);
