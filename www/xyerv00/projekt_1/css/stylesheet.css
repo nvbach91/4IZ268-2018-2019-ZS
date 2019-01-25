@@ -280,6 +280,28 @@ footer.cover, img.cover, header.cover {
     font-style: italic;
 }
 
+.modelBox {
+    width: 30%;
+    height: 180px;
+    border: 1px solid black;
+    float: left;
+    margin: auto;
+    text-align: center;
+}
+
+.modelPictureBox {
+    height: 80%;
+}
+
+.modelButtonsBox {
+    height: 20%;
+}
+
+.itemPicture {
+    margin: 0;
+    height: 100% !important;
+    width: auto !important;
+}
 @media screen and (min-width: 720px) {
     .navigation {
         height: 200px;

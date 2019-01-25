@@ -1,8 +1,4 @@
 var App = App || {};
-
-var itemID = 2;
-//var item = $(".items").html();
-var itemSelect = '';
 var mailTo = 'vyvojar.pat@gmail.com';
 var settings = {
     "async": false,
@@ -18,66 +14,55 @@ var settings = {
 
 var products;
 
-function modelButtons(){
+function modelButtons() {
     $.ajax(settings).done(function (response) {
         products = response;
         $(".modelBoxes").append(generateModelView());
     });
 }
 
-/*var products = [{
-    name: "Mika",
-    sizes:[36, 38, 40, 42]
-},
-    {
-        name: "Viktoria",
-        sizes: [36, 38, 40, 42]
-    },
-    {
-        name: "Fiji",
-        sizes: [36, 38, 40, 42]];
-    }*/
-
-
 function generateModelView() {
-    var itemButton = '<div class="modelSelectButtons">';
-    for (var i=0; i < products.length; i++){
-        itemButton += '<button name="model">'+products[i].model+'</button>';
+    var itemButton = '<div>';
+    for (var i = 0; i < products.length; i++) {
+        itemButton += '<div class="modelBox"><div class="modelPictureBox"><img src="' + products[i].pictureURL + '" class="itemPicture"></div><div><select name="size" id="size_' + products[i].model + '">' + generateSizeOptions(products[i].model) + '</select><button name="model" id="' + products[i].model + '">Přidat</button></div></div>';
     }
-    itemButton +='</div>';
-    return  itemButton;
+    itemButton += '<div class="clear"></div></div>';
+    return itemButton;
 }
 
 function generateOrderItem(modelOrederItem) {
+    var id = "size_" + modelOrederItem;
+    var selectedSize = $("#" + id).val();
     var orderItem = '';
-    orderItem += '<div class="item"><label>' + modelOrederItem + '</label><select name="size">'+generateSizeOptions(modelOrederItem)+'</select><input type="number" name="count"></div>';
+    var uniqueItemID = modelOrederItem + '_' + selectedSize;
+
+    orderItem += '<div class="item" id="orderItem_' + uniqueItemID + '"><label about="model">' + modelOrederItem + '</label><label about="selectedSize">' + selectedSize + '</label><input type="number" name="count" value="1" id="count_' + uniqueItemID + '"><button type="button" name="buttonDelete" id="buttonDelete_' + uniqueItemID + '">Odebrat</button></div>';
+
     return orderItem;
 }
 
-function  generateSizeOptions(modelOrederItem){
+function generateSizeOptions(modelOrederItem) {
     var sizeOptions = '';
-    for (var i=0; i < products.length; i++){
-        if (modelOrederItem === products[i].model){
-            for (var u =0; u < products[i].sizes.length; u++) {
-                sizeOptions += '<option>'+products[i].sizes[u]+'</option>';
+    for (var i = 0; i < products.length; i++) {
+        if (modelOrederItem === products[i].model) {
+            for (var u = 0; u < products[i].sizes.length; u++) {
+                sizeOptions += '<option>' + products[i].sizes[u] + '</option>';
             }
-    }
+        }
     }
     return sizeOptions;
 }
 
-
-
-function orderContent(){
+function orderContent() {
     var items = [];
 
     $(".item").each(function () {
         var item = $(this);
 
         items.push({
-            model: item.children("label").text(),
-            size: item.children("select[name='size']").val(),
-            count:item.children("input[name='count']").val()
+            model: item.children("label[about='model']").text(),
+            size: item.children("label[about='selectedSize']").text(),
+            count: item.children("input[name='count']").val()
         });
 
     });
@@ -85,28 +70,28 @@ function orderContent(){
     return items;
 }
 
-App.init = function(){
+App.init = function () {
     $("#sendButton").click(function () {
         var items = orderContent();
         var message = '<table><thead><tr><th>Model</th><th>Velikost</th><th>Pocet</th></tr></thead><tbody>';
-        for(var i = 0; i < items.length; i++) {
+        for (var i = 0; i < items.length; i++) {
             message += '<tr><td>' + items[i].model + '</td><td>' + items[i].size + '</td><td>' + items[i].count + '</td></tr>';
         }
         message += '</tbody></table>';
 
         message += '<table><tbody>';
-        message += '<tr><td>Zpráva od uživatele: </td><td>'+$("#emailBody").val()+'</td></tr>';
-        message += '<tr><td>Odpovězte na e-mail</td><td>'+$("#client-email").val()+'</td> </tr>';
+        message += '<tr><td>Zpráva od uživatele: </td><td>' + $("#emailBody").val() + '</td></tr>';
+        message += '<tr><td>Odpovězte na e-mail</td><td>' + $("#client-email").val() + '</td> </tr>';
         message += '</tbody></table>';
 
         $.ajax({
             type: 'POST',
-            url: 'https://formspree.io/'+mailTo,
+            url: 'https://formspree.io/' + mailTo,
             //contentType zjisten empiricky z F12 console, pri testu formulare na https://formspree.io :)
             contentType: "application/x-www-form-urlencoded",
             data: message,
             cache: false,
-            success: function(responseData) {
+            success: function (responseData) {
                 console.info("Mail sent successfully");
 
                 //Na vystupu jsou data obsahujici captcha overeni, ze nejsi robot - je to nutne, jinak se mail neodesle
@@ -115,9 +100,9 @@ App.init = function(){
                 newDoc.write(responseData);
                 newDoc.close();
 
-                items=[];
+                items = [];
             },
-            error: function(errorData) {
+            error: function (errorData) {
                 console.error("Error calling mail api");
             }
         });
@@ -127,17 +112,23 @@ App.init = function(){
 $(document).ready(function () {
     App.init();
 
-    /*$("#buttonAdd").click(function(){
-        $(".items").append(item);
-        $(".item").last().attr("id", itemID);
-        itemID++;
-    });*/
-
     modelButtons();
 
     $("button[name='model']").click(function () {
-        var modelOrederItem = $(this).text();
-        $(".items").append(generateOrderItem(modelOrederItem));
+        var modelOrederItem = this.id;
+        var size_id = $("#size_" + modelOrederItem).val();
+
+        var orderItemName = "#orderItem_" + modelOrederItem;
+
+        if ($(orderItemName + '_' + size_id).val() === undefined) {
+            $(".items").append(generateOrderItem(modelOrederItem));
+            $("#buttonDelete_" + modelOrederItem + "_" + size_id).click(function () {
+                $("#orderItem_" + modelOrederItem + '_' + size_id).remove();
+            });
+        } else {
+            var increment = $("#count_" + modelOrederItem + '_' + size_id).val();
+            $("#count_" + modelOrederItem + '_' + size_id).val(++increment);
+        }
     });
 
     /*$("#buttonDelete").click(function () {
