@@ -19,7 +19,7 @@ $(function () {
       dataType: 'json',
       type: 'GET',
       data: {
-        key: "AIzaSyDFWvjr0kfp5dWp89C6_894J24akHha8sE",
+        key: "AIzaSyCUwk5fprQrD3YyKPnP2nrjBOiDDxugk28",
         q: searchQuery,
         part: 'snippet',
         maxResults: 6,
