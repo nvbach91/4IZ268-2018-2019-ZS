@@ -91,8 +91,44 @@ h3{
   display: none;
 }
 
+#info{
+  padding-top: 20px
+}
+
+#info p{
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
 #info-modal .modal-body p{
   margin: 0;
   padding: 0;
 }
 
+.klient{
+  display:inline-block;
+  cursor: pointer;
+}
+.inline :hover{
+  color: red;
+}
+.sp{
+ display:inline-block; 
+}
+
+.klient1{
+  width: 115px;
+}
+.klient2{
+  width: 90px;
+}
+.klient3{
+  width: 80px;
+}
+.klient4{
+  width: 60px;
+}
+.klient5{
+  width: 70px;
+}
