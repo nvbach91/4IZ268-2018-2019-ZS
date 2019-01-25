@@ -25,6 +25,17 @@ var element_result_price = document.getElementById("result_price");
 var phone_regex = /\+[0-9]{3}\ [0-9]{3} [0-9]{3} [0-9]{3}/;
 var email_regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
+var local_storage_calculations;
+try {
+    if ((local_storage_calculations = JSON.parse(localStorage.getItem("calculations"))) === null) {
+        local_storage_calculations = [];
+        fillNoCalculationMenu();
+    }
+} catch {
+    local_storage_calculations = [];
+    localStorage.removeItem("calculations");
+    fillNoCalculationMenu();
+}
 
 element_event_size_1.onclick = function() {
     get_price_if_possible()
@@ -81,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById("save_calculation").onclick = function() {
     saveCalculation();
     fillDropDownMenu();
-    element_calculator_select.selectedIndex = JSON.parse(localStorage.getItem("calculations")).length - 1;
+    element_calculator_select.selectedIndex = local_storage_calculations.length - 1;
 };
 
 document.getElementById("calculator_select").onblur = function() {
@@ -90,7 +101,7 @@ document.getElementById("calculator_select").onblur = function() {
     }
 };
 
-document.getElementById("calculator_select").onchange = function() {
+document.getElementById("calculator_select").onchange = function() { //listener
     fillFromLocalStorage(element_calculator_select.value);
 };
 
@@ -161,8 +172,7 @@ function fillValues(event) {
 }
 
 function fillFromLocalStorage(index) {
-    var stored_object = JSON.parse(localStorage.getItem("calculations"));
-    fillValues(stored_object[index]);
+    fillValues(local_storage_calculations[index]);
 }
 
 fillIfPossible();
@@ -364,46 +374,26 @@ function saveCalculation() {
         hidden_id: element_event_hidden_id.className
     };
 
-    var calculations;
-    if(localStorage.getItem("calculations") === null){
-        calculations = [calculation];
-    } else {
-        try {
-            calculations = JSON.parse(localStorage.getItem("calculations"));
-            calculations.push(calculation);
-        } catch {
-            localStorage.removeItem("calculations");
-            fillNoCalculationMenu();
-            calculations = [calculation];
-        }
-    }
+    local_storage_calculations.push(calculation);
     
-    var calculations_serialized = JSON.stringify(calculations);
+    var calculations_serialized = JSON.stringify(local_storage_calculations);
     localStorage.setItem("calculations", calculations_serialized);
 }
 
 function fillDropDownMenu() {
-    if(localStorage.getItem("calculations") === null){
-        fillNoCalculationMenu();
+    if(local_storage_calculations.length === 0){
         return;
-    }
-    if(localStorage.length > 0 && document.getElementById("no_calculation_option") !== null){
-        var to_remove = document.getElementById("no_calculation_option");
-        to_remove.remove(to_remove.selectedIndex);
     }
 
-    try {
-        var stored_calculations = JSON.parse(localStorage.getItem("calculations"));
-    } catch {
-        localStorage.removeItem("calculations");
-        fillNoCalculationMenu();
-        return;
+    if(document.getElementById("no_calculation_option") !== null){
+        var to_remove = document.getElementById("no_calculation_option");
+        to_remove.remove(to_remove.selectedIndex);
     }
     
     element_calculator_select.length = 0;
     var options = "";
-    for (var i = 0; i < stored_calculations.length; i++) { 
-        options += '<option value="' + i + '">' + stored_calculations[i].timestamp + '</option>';
+    for (var i = 0; i < local_storage_calculations.length; i++) { 
+        options += '<option value="' + i + '">' + local_storage_calculations[i].timestamp + '</option>';
     }
     element_calculator_select.innerHTML = options;
 }
@@ -509,7 +499,7 @@ function get_price() {
     var clip = get_event_clip();
     var id = element_event_hidden_id.className;
 
-
+    var xmlhttp;
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
