@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="120" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <link rel="stylesheet" href="main.css">
-    <title>Test úrovně angličtiny</title>
+    <link rel="stylesheet" href="replace.css">
+    <title>replace</title>
 </head>
 
 <body>
@@ -32,23 +32,14 @@
         <div id="quiz"></div>
     </div>
 
-    <div class="line">
-        <div class=left>
-            <button id="previous" style="display: none;">Previous Question</button>
-        </div>
-        <div class=right>
-            <button id="next" style="display: none;">Next Question</button>
-        </div>
-    </div>
+    <button id="previous" style="display: none;">Previous Question</button>
+    <button id="next" style="display: none;">Next Question</button>
     <button id="send" style="display: none;">Submit</button>
     <div id="results"></div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="main.js"></script>
-    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
-        onreadystatechange="if (this.readyState === 'complete') this.onload()">
-        </script>
+    <script src="replace.js"></script>
 
 
 
