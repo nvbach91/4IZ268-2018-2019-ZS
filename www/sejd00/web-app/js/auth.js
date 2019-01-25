@@ -1,7 +1,7 @@
 var tokenNew;
 var client_id = `62bd4a1225cc4f0097def241e69b2ad6`;
-var redirect_uri = `http://localhost:5500/4IZ268-2018-2019-ZS/www/sejd00/web-app/index.html`;
-//var redirect_uri = `https://fcp.vse.cz/4IZ268/2018-2019-ZS/www/sejd00/web-app/`;
+//var redirect_uri = `http://localhost:5500/4IZ268-2018-2019-ZS/www/sejd00/web-app/index.html`;
+var redirect_uri = `https://fcp.vse.cz/4IZ268/2018-2019-ZS/www/sejd00/web-app/`;
 var hash = window.location.hash;
 var buttonVisibility = document.getElementById("logout");
 var token = localStorage.getItem("token");

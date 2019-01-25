@@ -61,16 +61,14 @@ var showData = () => {
             if (isFirst) {
                 active = "active";
             }
+
             post.tags.forEach(function (tg) {
-                var firstActive = "";
-                if (active === "" && !isFirst) {
-                    firstActive = "active";
-                }
+
                 if (tg === tagSearch) {
                     // label.innerHTML += '<img class="image" src="' + post.images.standard_resolution.url + '" alt="First slide">';
                     // likes.innerHTML += '<p>Počet likes: ' + post.likes.count + '</p><br><p>' + post.caption.text + '</p>';
                     indicators.innerHTML += `<li data-target="#myCarousel" data-slide-to="${indicatorNumber}"></li>`;
-                    posts.innerHTML += `<div class="item ${active || firstActive}"> <img src="${post.images.standard_resolution.url}" alt="Obrazek ${indicatorNumber + 1}">
+                    posts.innerHTML += `<div class="item ${active}"> <img src="${post.images.standard_resolution.url}" alt="Obrazek ${indicatorNumber + 1}">
                                             <div class="desc"> 
                                                 <h3>Fotka číslo: ${indicatorNumber + 1}</h3> 
                                                 <p>Počet likes: ${post.likes.count}</p>
@@ -87,7 +85,6 @@ var showData = () => {
 
 searchButton.addEventListener("click", (e) => {
     tagSearch = selectTag.options[selectTag.selectedIndex].text;
-    console.log(tagSearch);
     //tagSearch = tag.value;
     if (token === "undefined" || token === null || tagSearch === "") {
         window.alert("Musíš zadat hashtag a být přihlášený.");
