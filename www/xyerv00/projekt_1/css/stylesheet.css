@@ -241,7 +241,7 @@ footer.cover, img.cover, header.cover {
 }
 
 .form #emailBody {
-    width: 75%;
+    width: 80%;
     height: 200px;
 }
 
@@ -262,10 +262,16 @@ footer.cover, img.cover, header.cover {
     margin: 2% 10%;
 
 }
-.item > select, button, label, option{
+
+.item {
+    margin: 2% 0%;
+    background-color: ghostwhite;
+}
+
+.item select, button, label, option{
     display: inline;
     font-family: "Palatino Linotype";
-    margin: unset;
+    margin: 1% 1%;
 }
 
 #select-models-label {
@@ -281,12 +287,12 @@ footer.cover, img.cover, header.cover {
 }
 
 .modelBox {
-    width: 30%;
-    height: 180px;
-    border: 1px solid black;
+    width: 50%;
+    height: 360px;
     float: left;
     margin: auto;
     text-align: center;
+    font-family: "Palatino Linotype";
 }
 
 .modelPictureBox {
@@ -295,6 +301,18 @@ footer.cover, img.cover, header.cover {
 
 .modelButtonsBox {
     height: 20%;
+    padding: 5%;
+}
+.modelButtonsBox select {
+    font-size: 120%;
+    margin: 0px 10px;
+}
+
+.modelButtonsBox button {
+    padding: 2px;
+    width: 30%;
+    font-size: 110%;
+    margin: 3px;
 }
 
 .itemPicture {

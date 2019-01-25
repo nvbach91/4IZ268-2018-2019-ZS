@@ -24,7 +24,7 @@ function modelButtons() {
 function generateModelView() {
     var itemButton = '<div>';
     for (var i = 0; i < products.length; i++) {
-        itemButton += '<div class="modelBox"><div class="modelPictureBox"><img src="' + products[i].pictureURL + '" class="itemPicture"></div><div><select name="size" id="size_' + products[i].model + '">' + generateSizeOptions(products[i].model) + '</select><button name="model" id="' + products[i].model + '">Přidat</button></div></div>';
+        itemButton += '<div class="modelBox"><div class="modelPictureBox"><img src="' + products[i].pictureURL + '" class="itemPicture"></div><div class="modelButtonsBox"><select name="size" id="size_' + products[i].model + '">' + generateSizeOptions(products[i].model) + '</select><button name="model" id="' + products[i].model + '" type="button">Přidat</button></div></div>';
     }
     itemButton += '<div class="clear"></div></div>';
     return itemButton;
@@ -36,7 +36,7 @@ function generateOrderItem(modelOrederItem) {
     var orderItem = '';
     var uniqueItemID = modelOrederItem + '_' + selectedSize;
 
-    orderItem += '<div class="item" id="orderItem_' + uniqueItemID + '"><label about="model">' + modelOrederItem + '</label><label about="selectedSize">' + selectedSize + '</label><input type="number" name="count" value="1" id="count_' + uniqueItemID + '"><button type="button" name="buttonDelete" id="buttonDelete_' + uniqueItemID + '">Odebrat</button></div>';
+    orderItem += '<div class="item" id="orderItem_' + uniqueItemID + '"><label>Model: </label><label about="model">' + modelOrederItem + '</label><label>Velikost: </label><label about="selectedSize">' + selectedSize + '</label><label>Počet: </label><input type="number" name="count" value="1" id="count_' + uniqueItemID + '"><button type="button" name="buttonDelete" id="buttonDelete_' + uniqueItemID + '">Odebrat</button></div>';
 
     return orderItem;
 }
@@ -72,40 +72,46 @@ function orderContent() {
 
 App.init = function () {
     $("#sendButton").click(function () {
+
         var items = orderContent();
-        var message = '<table><thead><tr><th>Model</th><th>Velikost</th><th>Pocet</th></tr></thead><tbody>';
-        for (var i = 0; i < items.length; i++) {
-            message += '<tr><td>' + items[i].model + '</td><td>' + items[i].size + '</td><td>' + items[i].count + '</td></tr>';
+        if (items.length != 0) {
+
+    var message = '<table><thead><tr><th>Model</th><th>Velikost</th><th>Pocet</th></tr></thead><tbody>';
+    for (var i = 0; i < items.length; i++) {
+        message += '<tr><td>' + items[i].model + '</td><td>' + items[i].size + '</td><td>' + items[i].count + '</td></tr>';
+    }
+    message += '</tbody></table>';
+
+    message += '<table><tbody>';
+    message += '<tr><td>Zpráva od uživatele: </td><td>' + $("#emailBody").val() + '</td></tr>';
+    message += '<tr><td>Odpovězte na e-mail</td><td>' + $("#client-email").val() + '</td> </tr>';
+    message += '</tbody></table>';
+
+    $.ajax({
+        type: 'POST',
+        url: 'https://formspree.io/' + mailTo,
+        //contentType zjisten empiricky z F12 console, pri testu formulare na https://formspree.io :)
+        contentType: "application/x-www-form-urlencoded",
+        data: message,
+        cache: false,
+        success: function (responseData) {
+            console.info("Mail sent successfully");
+
+            //Na vystupu jsou data obsahujici captcha overeni, ze nejsi robot - je to nutne, jinak se mail neodesle
+            //V podstate se prepise cela html stranka
+            var newDoc = document.open("text/html", "replace");
+            newDoc.write(responseData);
+            newDoc.close();
+
+            items = [];
+        },
+        error: function (errorData) {
+            console.error("Error calling mail api");
         }
-        message += '</tbody></table>';
-
-        message += '<table><tbody>';
-        message += '<tr><td>Zpráva od uživatele: </td><td>' + $("#emailBody").val() + '</td></tr>';
-        message += '<tr><td>Odpovězte na e-mail</td><td>' + $("#client-email").val() + '</td> </tr>';
-        message += '</tbody></table>';
-
-        $.ajax({
-            type: 'POST',
-            url: 'https://formspree.io/' + mailTo,
-            //contentType zjisten empiricky z F12 console, pri testu formulare na https://formspree.io :)
-            contentType: "application/x-www-form-urlencoded",
-            data: message,
-            cache: false,
-            success: function (responseData) {
-                console.info("Mail sent successfully");
-
-                //Na vystupu jsou data obsahujici captcha overeni, ze nejsi robot - je to nutne, jinak se mail neodesle
-                //V podstate se prepise cela html stranka
-                var newDoc = document.open("text/html", "replace");
-                newDoc.write(responseData);
-                newDoc.close();
-
-                items = [];
-            },
-            error: function (errorData) {
-                console.error("Error calling mail api");
-            }
-        });
+    });
+} else {
+            alert("Vaše objednávka je prázdná");
+        }
     });
 };
 

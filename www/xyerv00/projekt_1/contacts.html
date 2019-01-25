@@ -41,7 +41,7 @@
     <P>Hradec Králové</P>
     <div class="form">
         <h2 id="send-order">Odeslat objednávku/dotaz</h2>
-        <form name="contactForm" onsubmit="return false">
+        <form name="contactForm">
             <label for="client-email" class="form-item">Uveďte vaši e-mailovou adresu:</label>
             <input type="email" name="clienEmail" id="client-email" placeholder="e-mail" class="form-item">
             <label for="client-name" class="form-item">Vaše jméno:</label>
@@ -49,12 +49,13 @@
             <label id="select-models-label">Vyberte modely</label>
             <div class="order">
                 <div class="modelBoxes"></div>
+                <label class="form-item">Vaše objednávka:</label>
                 <div class="items">
                 </div>
             </div>
             <label for="emailBody" class="form-item">Zpráva:</label>
             <textarea name="emailbody" id="emailBody" class="form-item"></textarea>
-            <input type="submit" id="sendButton" value="Odeslat" class="form-item">
+            <button type="button" id="sendButton" value="Odeslat" class="form-item">Odeslat</button>
         </form>
     </div>
 </main>
