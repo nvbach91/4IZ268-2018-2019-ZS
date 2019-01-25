@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>VKONTAKTE API</title>
+    <link rel="stylesheet" href="vk.css">
+
+</head>
+
+<body>
+    <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/VK.com-logo.svg/768px-VK.com-logo.svg.png">
+    <h1>See info about your friends in VK</h1>
+    <hr>
+    <div id="main-buttons">
+        <button id="load">Show Friends</button>
+        <button id="hide">Hide Friends</button>
+    </div>
+
+    <div class="wrapper">
+        <ul id="list"></ul>
+        <div class="detail">
+            <img src="">
+            <h3></h3>
+            <ul>
+
+            </ul>
+            <textarea placeholder="Type your message here"></textarea>
+            <button id="send-message">Send Message</button>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+    <script src="https://vk.com/js/api/openapi.js?154" type="text/javascript"></script>
+    <script src="vk_js.js" ></script>
+    
+</body>
+</html>
