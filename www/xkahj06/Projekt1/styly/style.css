@@ -88,7 +88,10 @@ body, body a {
 }
 .left{float:left; }
 .right{float: right; }
-
+.center{
+    text-align: center;
+    margin: 0% 15% 0% 15%;
+}
 .foter{
     text-align: center;
     background-color: #333;
@@ -109,8 +112,13 @@ body, body a {
   text-align: center;
   text-decoration: none;
   margin: 15px 10px;
-  
 }
+
+.expandedFoto{
+    max-width: 100%;
+    max-height: 100%;
+}
+
 
 .fa:hover {
      background: rgb(26, 40, 68);
