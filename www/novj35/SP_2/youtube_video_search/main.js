@@ -29,7 +29,6 @@ $(function () {
 
       }
 
-
     }).done(function (data) {
       pageToken.nextPage = data.nextPageToken;
       pageToken.prevPage = data.prevPageToken;
@@ -39,7 +38,6 @@ $(function () {
         var date = new Date(value.snippet.publishedAt);
         var m = (date).getMonth() + 1;
         var n = date.getDate() + "." + m + "." + date.getFullYear();
-        
         html += `<h2>Název videa</h2><div class="title">${value.snippet.title}</div>`;
         html += `<h2>Popis</h2><div class="description">${value.snippet.description}</div>`;
         html += `<h2>Rok vložení videa</h2><div class="videoDate">${n.toString()}</div>`;
@@ -48,8 +46,6 @@ $(function () {
         <img class="thumbnail" src="${value.snippet.thumbnails.high.url}" alt="${value.snippet.title}">
         </a>`;
       })
-
-
 
       $('#output').html(html).prop('hidden', false);
     })
@@ -60,10 +56,7 @@ $(function () {
     $('#hideButtons').toggle(600);
     $('#hideFooter').hide();
 
-
   });
-
-
 
 
 });
