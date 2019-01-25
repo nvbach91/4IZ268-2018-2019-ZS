@@ -479,24 +479,33 @@
         var districts = {};
         var prispevek;
         var id;
-        var name
+        var name;
 
         $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts", function (posts) {
             console.log(posts);
             posts.forEach(function (post) {
-                districts[post.title.rendered] = post.id;
+                console.log(post);
+                districts[post.id] = { title: post.title.rendered, desc: post.content.rendered };
             })
             console.log(districts);
             for (let key of Object.keys(districts)) {
-                var postId = districts[key];//id post
-                var postName = key;
+                var postCont = districts[key].desc;
+                var postId = key;//id post/post desc
+                var postName = districts[key].title;
+
                 var button = document.createElement("button");
                 button.innerHTML = postName;
                 button.setAttribute("data-id", postId);
-                console.log(button);
-                var body = document.getElementsByTagName("body")[0];
-                console.log(body)
-                body.appendChild(button);
+                //button.setAttribute("data-desc", postCont);
+
+                button.addEventListener('click', function () {
+                    var postId = this.getAttribute("data-id");
+                    var content = districts[postId].desc
+                    console.log(content);
+
+                })
+                document.body.appendChild(button);
+
                 //document.body.appendChild(button);
             }
         })
