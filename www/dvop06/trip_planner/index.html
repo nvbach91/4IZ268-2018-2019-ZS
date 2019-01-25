@@ -5,6 +5,9 @@
 	<title>Trip Planner</title>
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 	<meta charset="utf-8">
+	<meta name="description" content="Application for planning trips">
+	<meta name="keywords" content="trip, plannning, travel, guide">
+	<meta name="author" content="Pavel Dvoriak">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
@@ -22,16 +25,16 @@
 			<button class="Btn half blue" id="driveLoad" onclick="loadDrive()" disabled>Load Drive</button>
 			<button class="Btn half green" id="driveSave" onclick="saveDrive()" disabled>Save Drive</button>
 		</div>
+		<div id="userInfo"></div>
 	</div>
 	<div id="map"></div>
 
 	<script type="text/javascript" src="js/main.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqrIm5k4rHJuYEwMlMGkusAAeLGBNNhZ8&libraries=places&callback=initMap"
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqrIm5k4rHJuYEwMlMGkusAAeLGBNNhZ8&libraries=places&callback=main"
 	 async defer></script>
 	<script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};onGoogleApiLoad()"
 	 onreadystatechange="if (this.readyState === 'complete') this.onload()">
 	</script>
-
 
 </body>
 

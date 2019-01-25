@@ -89,6 +89,15 @@ html, body {
   background-color: #f0ad4e;
 }
 
+#btnCleanMap:hover {
+  background-color: #804f0b;
+  cursor: pointer;
+}
+
+#signIn:disabled, #signOut:disabled {
+  color: gray;
+}
+
 .clearfix {
   clear: both;
 }
@@ -105,3 +114,35 @@ html, body {
 .blue {background-color: #008CBA;} /* Blue */
 .remove {background-color: #f44336;} /* Red */ 
 .gray {background-color: #e7e7e7; color: black;} /* Gray */ 
+
+.gray:hover:enabled {
+  background-color: #929090;
+  cursor: pointer;
+}
+
+.green:hover:enabled {
+  background-color: rgb(31, 109, 34);
+  cursor: pointer;
+}
+
+.blue:hover:enabled {
+  background-color: rgb(5, 80, 105);
+  cursor: pointer;
+}
+
+.remove:hover {
+  cursor: pointer;
+}
+
+
+/* .photos {
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.photo {
+  width: 50%;
+} */

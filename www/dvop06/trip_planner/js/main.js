@@ -107,11 +107,27 @@ function renderInfoWindowContent(place) {
 
 	// Content
 	var content = document.createElement("div");
-	content.innerHTML = "" +
-		"<h3>" + place.name + "</h3>";
+
+	try {
+		content.innerHTML = "" +
+			"<h3>" + place.name + "</h3>"
+			+ "<div class=" + "photos" + ">" + "\n" + "<div class=" + "photo" + ">" + "<img src=" + place.photos[0].getUrl() + "></img>"
+			// + "\n" + "<div class=" + "photo" + ">" + "<img src=" + place.photos[1].getUrl() + "></img>"
+			// + "\n" + "<div class=" + "photo" + ">" + "<img src=" + place.photos[2].getUrl() + "></img>"
+			// + "\n" + "<div class=" + "photo" + ">" + "<img src=" + place.photos[3].getUrl() + "></img>"
+			+ "</div>"
+			;
+	} catch (error) {
+		//place has no photos available
+		content.innerHTML = "" +
+			"<h3>" + place.name + "</h3>";
+	}
+
 
 	// Button
 	var btn = document.createElement("button");
+	btn.classList.add("Btn");
+	btn.classList.add("green");
 	btn.textContent = "Add to trip.";
 	btn.onclick = function () { addPlaceToTrip(place); };
 
@@ -162,7 +178,7 @@ function refreshTripPlacesList() {
 
 		// Create remove button
 		var btn = document.createElement("button");
-		btn.setAttribute('class', "Btn blue right clearfix");
+		btn.setAttribute('class', "Btn remove right clearfix");
 		btn.setAttribute('type', "button");
 		btn.textContent = "remove";
 		// Remove button click listener
@@ -529,7 +545,7 @@ var GoogleDriveStore = function () {
 }
 
 GoogleDriveStore.CLIENT_ID = '311660390252-sk64cfms5qnf8qecr3njfcr9vj13mma4.apps.googleusercontent.com';
-GoogleDriveStore.SCOPES = 'https://www.googleapis.com/auth/drive.appdata';
+GoogleDriveStore.SCOPES = 'https://www.googleapis.com/auth/drive.appdata https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email';
 GoogleDriveStore.instance = null;
 
 
@@ -580,7 +596,6 @@ GoogleDriveStore.prototype.signIn = function () {
 	gapi.auth2.getAuthInstance().signIn();
 }
 
-
 GoogleDriveStore.prototype.signOut = function () {
 	gapi.auth2.getAuthInstance().signOut();
 }
@@ -597,6 +612,18 @@ GoogleDriveStore.prototype.onSigninStatusUpdate = function (callback) {
 }
 
 
+GoogleDriveStore.prototype.create = function (filename) {
+	return gapi.client.request({
+		path: "/drive/v3/files",
+		method: "POST",
+		body: {
+			name: filename,
+			fields: 'id',
+			parents: ['appDataFolder'],
+		}
+	});
+}
+
 GoogleDriveStore.prototype.getFilesList = function () { }
 
 
@@ -612,6 +639,13 @@ GoogleDriveStore.prototype.create = function (filename) {
 	});
 }
 
+function onSignIn(googleUser) {
+	var profile = googleUser.getBasicProfile();
+	console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+	console.log('Name: ' + profile.getName());
+	console.log('Image URL: ' + profile.getImageUrl());
+	console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
 
 GoogleDriveStore.prototype.update = function (fileId, data) {
 	return gapi.client.request({
@@ -711,6 +745,7 @@ GoogleDriveStore.prototype.load = function (filename) {
 		}.bind(this)
 	);
 }
+
 
 
 GoogleDriveStore.prototype.delete = function (filename) { }
