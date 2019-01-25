@@ -7,13 +7,17 @@
     <meta name="keywords" content="produkce, live, stream, livefeed, LED, kamera, postprodukce">
     <meta name="author" content="Radovan Beneš">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
-    <title>Kalkulačka | Profishot s.r.o.</title>
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" type="text/css" href="styles.css">
+    
+
+    <title>Kalkulačka | Profishot s.r.o.</title>
 
     <link rel="icon" type="image/png" href="img/favicon.png">
 
@@ -49,8 +53,73 @@
             <div class="full_width">
                 <h1>Kalkulačka</h1>
                 <div class="kalkulacka">
-                    <img src="img/Under-construction.png" alt="logo for print">
-                    <div class="text">Kalkulačka je předmětem další části semestrálky</div>
+                    <label for="event_name" class="full_width">Název akce
+                        <input type="text" id="event_name" placeholder="Název akce" />
+                    </label>
+                    <div class="input_error" id="event_name_error">&nbsp;</div>
+
+                    <label for="event_address" class="full_width">Místo konání
+                        <input type="text" id="event_address" placeholder="Adresa" />
+                    </label>
+                    <div class="input_error" id="event_address_error">&nbsp;</div>
+
+                    <label for="organizer_contact" class="full_width">Telefon na organizátora
+                        <input type="text" id="organizer_contact" placeholder="+420 737 123 456" />
+                    </label>
+                    <div class="input_error" id="organizer_contact_error">&nbsp;</div>
+
+                    <label for="organizer_email" class="full_width">Email na organizátora
+                        <input type="text" id="organizer_email" placeholder="rasta@profishot.cz" />
+                    </label>
+                    <div class="input_error" id="organizer_email_error">&nbsp;</div>
+
+                    <label for="event_start" class="full_width">Začátek akce
+                        <input type="text" id="event_start" />
+                    </label>
+                    <div class="input_error" id="event_start_error">&nbsp;</div>
+
+                    <label for="event_end" class="full_width">Konec akce
+                        <input type="text" id="event_end">
+                    </label>
+                    <div class="input_error" id="event_end_error">&nbsp;</div>
+
+                    Očekávaný počet návštěvíků
+                    <div class="radio-group">
+                        <input type="radio" id="event_size_1" name="event_size_radio" checked="checked"><label for="event_size_1">méně než 20</label>
+                        <input type="radio" id="event_size_2" name="event_size_radio"><label for="event_size_2">21 - 500</label>
+                        <input type="radio" id="event_size_3" name="event_size_radio"><label for="event_size_3">více než 500</label>
+                    </div>
+
+                    Objednané služby
+                    <label class="checkbox_container">Stream
+                        <input type="checkbox" id="event_stream">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="checkbox_container">Projekce
+                        <input type="checkbox" id="event_projection">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="checkbox_container">Záznam
+                        <input type="checkbox" id="event_recording">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="checkbox_container">Klip
+                        <input type="checkbox" id="event_clip">
+                        <span class="checkmark"></span>
+                    </label>
+                    
+
+                    <div id="result_price">Celkem: 0 Kč</div>
+                    <button type="button" class="calculator_button" id="save_calculation">Uložit kalkulaci</button>
+                    
+                    <select id="calculator_select">
+                    </select>
+
+                    <button type="button" class="calculator_button" id="send_email">Poslat na email</button>
+                    <div id="hidden_id"></div>
                 </div>
 
             </div>
@@ -63,5 +132,13 @@
             </footer>
         </div>
     </main>
+
+<script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+<script src="js/calculator.js"></script>
+<script src="js/datetimepicker-init.js"></script>
+
 </body>
 </html>
