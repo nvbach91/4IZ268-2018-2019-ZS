@@ -11,11 +11,26 @@ body {
 
 h1 {
     margin-top: 15px;
-    margin-bottom: 15px;
 }
 
 input[type=text] {
     width: 60%;
+    height: 40px;
+    margin-bottom: 5px;
+    border: 0;
+    background-color: cadetblue;
+    text-align: center;
+    color: white;
+    padding: 0;
+}
+
+button {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 40px;
+    border: 0;
+    padding: 0;
 }
 
 .wrapper {
@@ -33,9 +48,9 @@ input[type=text] {
 }
 
 .favs {
-    background-color: green;
     height: 874px;
     overflow: scroll;
+    background-color: cornflowerblue;
 }
 
 .favVid {
@@ -47,8 +62,8 @@ input[type=text] {
 }
 
 .mainVid {
-    background-color: blue;
     height: 576px;
+    background-color: crimson;
 }
 
 iframe {
@@ -57,7 +72,6 @@ iframe {
 }
 
 .searchResults {
-    background-color: yellow;
     width: 100%;
     overflow: auto;
     white-space: nowrap;
@@ -75,4 +89,17 @@ iframe {
 img {
     height: 100%;
     width: 100%;
+}
+
+#addFav {
+    background-image: url("../pics/addFav.png");
+    height: 50px;
+    width: 50px;
+    margin-left: 70px;
+    display: inline-block;
+    background-size: 100%;
+}
+
+.video:hover, #addFav:hover, #btnSearch:hover {
+    cursor: pointer;
 }

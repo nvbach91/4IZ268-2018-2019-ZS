@@ -46,7 +46,7 @@ var classname = document.getElementsByClassName("video");
 
 var changeMainVid = function () {
     var attribute = this.getAttribute("data-id");
-    document.getElementById("mainVid").innerHTML = '<iframe src="https://www.youtube.com/embed/' + attribute + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    document.getElementById("mainVid").innerHTML = '<iframe data-id="' + attribute + '"src="https://www.youtube.com/embed/' + attribute + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
 }
 
 function cycle() {
@@ -54,6 +54,24 @@ function cycle() {
         classname[i].addEventListener("click", changeMainVid, false);
     }
 }
+
+
+
+//add video to favorites
+document.getElementById("addFav").addEventListener("click", function () {
+addToFavs();
+});
+
+function addToFavs() {
+    var temp = document.getElementById("favs").innerHTML;
+
+    var mainVidId = document.getElementById("mainVid").firstChild.getAttribute("data-id");
+
+    document.getElementById("favs").innerHTML = temp + '<div class="favVid"> <img src="https://i.ytimg.com/vi/' + mainVidId + '/hqdefault.jpg"></img></div>';
+}
+
+
+
 
 /*document.getElementById("video").addEventListener("click", loadDoc)
 
