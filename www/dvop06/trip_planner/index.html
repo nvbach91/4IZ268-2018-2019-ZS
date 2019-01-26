@@ -17,6 +17,7 @@
 		<div id="controls">
 			<h1>Trip Planner</h1>
 			<div id="CleanMap"><button id="btnCleanMap" onclick="removePlacesMarkers()">Clean Map</button></div>
+			<div id="RemoveTripPlaces"><button id="btnRemove" onclick="removeAll()">Remove All</button></div>
 			<div id="tripPlacesList" class="clearfix"></div>
 			<button class="Btn half gray" id="signIn" onclick="googleSignIn()" disabled>Google Sign in</button>
 			<button class="Btn half gray" id="signOut" onclick="googleSignOut()" disabled>Google Sign out</button>
@@ -25,7 +26,7 @@
 			<button class="Btn half blue" id="driveLoad" onclick="loadDrive()" disabled>Load Drive</button>
 			<button class="Btn half green" id="driveSave" onclick="saveDrive()" disabled>Save Drive</button>
 		</div>
-		<div id="userInfo"></div>
+		<!-- <div id="userInfo"></div> -->
 	</div>
 	<div id="map"></div>
 

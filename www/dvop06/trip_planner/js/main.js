@@ -42,7 +42,6 @@ function initMap() {
 		removePlacesMarkers()
 
 		// Add marker to selected coordinates
-		// Todo: Check if e contains placeId and eventually fetch place info
 		createPlacesMarker(map, {
 			name: "Lat: " + lat + "; Lng: " + lng,
 			geometry: { location: latLng }
@@ -105,20 +104,43 @@ function createPlacesMarker(map, place) {
 function renderInfoWindowContent(place) {
 	var el = document.createElement("div");
 
+
+	var service = new google.maps.places.PlacesService(map);
+
+
+
+	function placePhotoUrl() {
+		var request = {
+			placeId: place.place_id,
+			fields: ['name', 'photos']
+		};
+		service.getDetails(request, function (place) {
+			var photoUrl = place.photos[0].getUrl();
+			console.log(photoUrl);
+
+			console.log(document.querySelector(".photo"));
+			document.querySelector(".photo").style.backgroundImage = 'url(' + photoUrl + ')';
+		});
+	}
+
 	// Content
 	var content = document.createElement("div");
+	var html = "" +
+		"<h3>" + place.name + "</h3>"
+		+ " <div class=" + "photos" + ">" + "\n" + "<div class=" + "photo>" + "</div>"
+		// + "\n" + "<div class=" + "photo" + ">" + "<img src=" + place.photos[1].getUrl() + "></img>"
+		// + "\n" + "<div class=" + "photo" + ">" + "<img src=" + place.photos[2].getUrl() + "></img>"
+		// + "\n" + "<div class=" + "photo" + ">" + "<img src=" + place.photos[3].getUrl() + "></img>"
+		+ "</div>"
+		;
 
 	try {
-		content.innerHTML = "" +
-			"<h3>" + place.name + "</h3>"
-			+ "<div class=" + "photos" + ">" + "\n" + "<div class=" + "photo" + ">" + "<img src=" + place.photos[0].getUrl() + "></img>"
-			// + "\n" + "<div class=" + "photo" + ">" + "<img src=" + place.photos[1].getUrl() + "></img>"
-			// + "\n" + "<div class=" + "photo" + ">" + "<img src=" + place.photos[2].getUrl() + "></img>"
-			// + "\n" + "<div class=" + "photo" + ">" + "<img src=" + place.photos[3].getUrl() + "></img>"
-			+ "</div>"
-			;
+		//Add photo to infoWindow
+		content.innerHTML = html;
+
+		// document.querySelector(".photo").style.backgroundImage = "url(placeDetails.photos[0].getUrl())";
 	} catch (error) {
-		//place has no photos available
+		//Place has no photos available
 		content.innerHTML = "" +
 			"<h3>" + place.name + "</h3>";
 	}
@@ -134,6 +156,8 @@ function renderInfoWindowContent(place) {
 	// Build and return
 	el.appendChild(content);
 	el.appendChild(btn);
+	placePhotoUrl();
+
 	return el;
 }
 
@@ -144,7 +168,7 @@ function generateID() {
 
 function addPlaceToTrip(place) {
 	// Generate ID
-	var id = generateID();
+	var id = place.place_id;
 	// copy place to work with
 	var placeCopy = Object.assign({}, place);
 	// Set place ID attribute
@@ -199,6 +223,17 @@ function refreshTripPlacesList() {
 	}
 	wrapper.appendChild(ol);
 };
+
+function removeAll() {
+	// Remove everything
+	var wrapper = document.getElementById("tripPlacesList");
+	wrapper.innerHTML = "";
+
+	//update localStorage
+	removeTripMarkers();
+	tripPlaces = {};
+	save();
+}
 
 
 function createTripMarker(map, place) {
@@ -315,9 +350,13 @@ function saveDrive() {
 
 function loadDrive() {
 	var loadButton = document.getElementById("driveLoad");
+	//Let user know app is working
+	loadButton.innerText = "Loading...";
 	// Load JSON
 	var store = GoogleDriveStore.getInstance();
 	store.load("places.data").then(function (data) {
+		//Change btn text to initial
+		loadButton.innerText = "Load Drive";
 		// Remove current markers
 		removeTripMarkers();
 		// Store data
