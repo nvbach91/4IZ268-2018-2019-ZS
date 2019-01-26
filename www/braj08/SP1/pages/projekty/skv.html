@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,47 +9,62 @@
     <meta name="keywords" content="Video,Grafika,Jan Brandejs">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>SKV &#124; Jan Brandejs</title>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
     <link href="../../css/main.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="../../img/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="../../img/favicon.png" />
 </head>
+
 <body>
 
     <header>
-        <span class="logo">Jan Brandejs</span>
-        <nav>
-            <ul>
-                <li><a href="../../index.html" target="_self">Úvod</a></li>
-                <li class="sel-page"><a href="../projekty.html" target="_self">Projekty</a></li>
-                <li><a href="../o-mne.html" target="_self">O mně</a></li>
-                <li><a href="../reference.html" target="_self">Reference</a></li>
-                <li><a href="../kontakt.html" target="_self">Kontakt</a></li>
-            </ul>
-        </nav>
+        <h2 class="web-name">Jan Brandejs</h2>
+        <input type="checkbox" id="menu-chck">
+        <label for="menu-chck" class="show-menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
 
+        <ul class="menu">
+            <a href="../../index.html">Domů</a>
+            <a href="../o-mne.html">O mně</a>
+            <a href="../projekty.html">Projekty</a>
+            <a href="../reference.html">Reference</a>
+            <a href="../kontakt.html">Kontakt</a>
+            <label for="menu-chck" class="hide-menu-btn">
+                <i class="fa fa-times-circle"></i>
+            </label>
+        </ul>
     </header>
-        <div class="project-wrap-skv">
-            <h3 class="project-name">TJ Sokol Královské Vinohrady</h3>
-            <h4>Sportovní video</h4>
+    <div class="page-container">
+        <h3 class="project-name">TJ Sokol Královské Vinohrady</h3>
+        <h4 class="project-cat">Sportovní video</h4>
+        <div class="project-inner">
+            <p class="project-text">Florbalový klub z Riegrových sadů v Praze je mojí "alma mater". V jeho řadách jsem
+                začínal jako kameraman pro přenosy.
+                Po několika letech spolupráce jsem sice přenosy přestal pro SKV vyrábět, ovšem stále spolupracujeme na
+                několika menších video projektech pro sociální sítě.
+                Největším z nich je video z oslav 20 let od založení klubu, nyní hrajícího florbalovou 1. ligu mužů a
+                ženskou extraligu.</p>
 
-            <p class="project-text">Florbalový klub z Riegrových sadů v Praze je mojí "alma mater". V jeho řadách jsem začínal jako kameraman pro přenosy. 
-                Po několika letech spolupráce jsem sice přenosy přestal pro SKV vyrábět, ovšem stále spolupracujeme na několika menších video projektech pro sociální sítě. 
-                Největším z nich je video z oslav 20 let od založení klubu, nyní hrajícího florbalovou 1. ligu mužů a ženskou extraligu.</p>
-
-            <button class="btn"><a href="https://www.youtube.com/watch?v=V8KHq4_LTVA" target="_blank">Video 20 let SKV</a></button>
-            <button class="btn"><a href="https://www.skvflorbal.cz" target="_blank">Stránky SKV</a></button>
+            <a href="https://www.youtube.com/watch?v=V8KHq4_LTVA" target="_blank"><button class="btn-color btn-project">Video
+                    20 let SKV</button></a>
+            <a href="https://www.skvflorbal.cz" target="_blank"><button class="btn-color btn-project">Stránky SKV</button></a>
+            <div class="project-image skv-img"></div>
         </div>
+    </div>
 
 
     <footer>
-
-        <p>Web vytvořil Jan Brandejs v rámci předmětu 4IZ268 během ZS 2018/2019 na Vysoké škole ekonomické v Praze</p>
-        <p class="footer-list"><a href="../mapa-stranek.html">Mapa stránek</a></p>
-        <p class="footer-list"><a href="mailto:braj08@vse.cz?subject=Ciao!">Kontaktujte tvůrce</a></p>
-
+        <div class="footer-inner">
+            <h4>SP1 předmětu 4IZ268 během ZS 2018/2019 na Vysoké škole ekonomické v Praze. Vypracoval: Jan Brandejs</h4>
+            <p class="footer-list"><a href="../mapa-stranek.html">Mapa stránek</a></p>
+            <p class="footer-list"><a href="mailto:braj08@vse.cz?subject=Ciao!">Kontaktujte tvůrce</a></p>
+        </div>
     </footer>
-    
+
 </body>
+
 </html>
