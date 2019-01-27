@@ -1,5 +1,6 @@
 body {
     background-color:blanchedalmond;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .map {
     
@@ -66,9 +67,9 @@ svg{
     zoom:84%;
    
 }
-.button {
+button {
  
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -83,7 +84,7 @@ svg{
     border-radius: 10px;
 
   }
-  .button0{
+ [data-id="12"]{
     margin-top: 10%;
   }
   .button0 ,.button1,.button2,.button3,.button4,.button5,.button6,.button7,.button8,.button9,.button10,.button11,.button12,.button13,.button14,.button15,.button16,.button17,.button18,.button19{
@@ -92,108 +93,5 @@ svg{
     color: black; 
     border: 3px solid #4CAF50;
   }
-  
- /* .button1 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  }
-  .button2 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  }
-  .button3 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  }
-  .button4 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  }
-  .button5 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  } .button6 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  }
-  .button7 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  }
-  .button8 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  }
-  .button9 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  }
-  .button10 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  }
-  .button11 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  }
-  .button12 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  }
-  .button13 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  }
-  .button14 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  }
-  .button15 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  }
-  .button16 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  } .button17 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  } .button18{
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  } .button19 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-  }
-  .vypis div {
-      background-color: blue;
-      font-size: 25px;
-      font-style: italic;
-  }
-  .vypis div a {
-    font-size: 25px;
-  }
-  result{
-background-color: #ccc;
-  }*/
 
 

@@ -481,13 +481,13 @@
         var id;
         var name;
 
-        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts", function (posts) {
+        $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts?_embed&per_page=100", function (posts) {
             console.log(posts);
             posts.forEach(function (post) {
-                console.log(post);
+                // console.log(post);
                 districts[post.id] = { title: post.title.rendered, desc: post.content.rendered };
             })
-            console.log(districts);
+            // console.log(districts);
             for (let key of Object.keys(districts)) {
                 var postCont = districts[key].desc;
                 var postId = key;//id post/post desc
@@ -501,7 +501,8 @@
                 button.addEventListener('click', function () {
                     var postId = this.getAttribute("data-id");
                     var content = districts[postId].desc
-                    console.log(content);
+                    // console.log(content);
+                    document.getElementById("obsah").innerHTML = content;
 
                 })
                 document.body.appendChild(button);
