@@ -100,6 +100,6 @@ img {
     background-size: 100%;
 }
 
-.video:hover, #addFav:hover, #btnSearch:hover {
+.video:hover, #addFav:hover, #btnSearch:hover, .favVid:hover {
     cursor: pointer;
 }

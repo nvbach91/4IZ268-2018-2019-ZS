@@ -59,15 +59,26 @@ function cycle() {
 
 //add video to favorites
 document.getElementById("addFav").addEventListener("click", function () {
-addToFavs();
+    addToFavs();
 });
 
 function addToFavs() {
-    var temp = document.getElementById("favs").innerHTML;
-
     var mainVidId = document.getElementById("mainVid").firstChild.getAttribute("data-id");
 
-    document.getElementById("favs").innerHTML = temp + '<div class="favVid"> <img src="https://i.ytimg.com/vi/' + mainVidId + '/hqdefault.jpg"></img></div>';
+    //no same videos in favorites condition
+    favVids = document.getElementsByClassName("favVid");
+    for (i = 0; i < favVids.length; i++) {
+        tempId = favVids[i].getAttribute("data-id");
+        if (mainVidId == tempId) {
+            return alert("You already added this video to favorites!");
+        }
+    }
+
+    document.getElementById("favs").insertAdjacentHTML("beforeend", '<div class="favVid" data-id="' + mainVidId + '"> <img src="https://i.ytimg.com/vi/' + mainVidId + '/hqdefault.jpg"></img></div>');
+
+    document.getElementById("favs").lastChild.addEventListener("click", function () {
+        document.getElementById("mainVid").innerHTML = '<iframe data-id="' + mainVidId + '"src="https://www.youtube.com/embed/' + mainVidId + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    })
 }
 
 
