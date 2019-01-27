@@ -1,11 +1,14 @@
 //searching by pressing enter
-var input = document.getElementById("keyword");
-input.addEventListener("keyup", function (event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-        document.getElementById("btnSearch").click();
-    }
-})
+function enterSearch() {
+    var input = document.getElementById("keyword");
+    input.addEventListener("keyup", function (event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("btnSearch").click();
+        }
+    })
+}
+enterSearch();
 
 //search video and search results
 document.getElementById("btnSearch").addEventListener("click", searchVid);
@@ -38,6 +41,7 @@ function makeRequest() {
                 '</div>';
         })
         cycle();
+        newSearch();
     })
 }
 
@@ -81,18 +85,31 @@ function addToFavs() {
     })
 }
 
-
-
-
-/*document.getElementById("video").addEventListener("click", loadDoc)
-
-function loadDoc() {
+//search bar change to new search
+function newSearch() {
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-       document.getElementById("searchResults").innerHTML = this.responseText;
-      }
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("search").innerHTML = this.responseText;
+            document.getElementById("newSearch").addEventListener("click", function () {
+                searchBar();
+            })
+        }
     };
-    xhttp.open("GET", "data.txt", true);
+    xhttp.open("GET", "newSearch.txt", true);
     xhttp.send();
-  }*/
+}
+
+//new search change to search bar
+function searchBar() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("search").innerHTML = this.responseText;
+            document.getElementById("btnSearch").addEventListener("click", searchVid);
+            enterSearch();
+        }
+    };
+    xhttp.open("GET", "searchBar.txt", true);
+    xhttp.send();
+}

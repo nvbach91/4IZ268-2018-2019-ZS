@@ -14,7 +14,8 @@ h1 {
 }
 
 input[type=text] {
-    width: 60%;
+    float: left;
+    width: 80%;
     height: 40px;
     margin-bottom: 5px;
     border: 0;
@@ -25,9 +26,10 @@ input[type=text] {
 }
 
 button {
+    float: left;
     background-color: black;
     color: white;
-    width: 100px;
+    width: 20%;
     height: 40px;
     border: 0;
     padding: 0;
@@ -85,7 +87,6 @@ iframe {
     border-right: 2px solid white;
 }
 
-
 img {
     height: 100%;
     width: 100%;
@@ -95,9 +96,26 @@ img {
     background-image: url("../pics/addFav.png");
     height: 50px;
     width: 50px;
-    margin-left: 70px;
     display: inline-block;
     background-size: 100%;
+}
+
+.floatSearch {
+    float: left;
+    width: 90%;
+}
+
+.floatAddFav {
+    float: right;
+    width: 10%;
+}
+
+#newSearch {
+    float: left;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 15px;
 }
 
 .video:hover, #addFav:hover, #btnSearch:hover, .favVid:hover {
