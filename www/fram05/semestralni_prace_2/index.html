@@ -1,69 +1,78 @@
 <!DOCTYPE html>
 <html lang="cs">
-
 <head>
     <meta charset="UTF-8">
     <title>Password generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <form action="" id="password-generator">
-        <h2>Password generator</h2>
-        <p>Please specify your preference:</p>
-        <div class="input-box">
-            <label for="password-length">Length: </label>
-            <input id="password-length" type="number" name="length" value="10" min="0" max="50">
-        </div>
-        <div class="input-box">
-            <input type="checkbox" id="lowercase" name="symbols[]" value="lowercase">
-            <label for="lowercase">Small letters</label>
-        </div>
+<form action="" id="password-generator">
+    <h2>Password generator</h2>
+    <p>Please specify your preference:</p>
+    <div class="input-box">
+        <label for="password-length">Length (must be within the interval of 5 to 50): </label>
+            <input id="password-length" type="number" name="length" value="10" min="5" max="50">
+    </div>
+    <div class="input-box">
+        <input type="checkbox" id="lowercase" name="symbols[]" value="lowercase" checked>
+        <label for="lowercase">Small letters</label>
+    </div>
 
-        <div class="input-box">
-            <input type="checkbox" id="uppercase" name="symbols[]" value="uppercase" checked>
-            <label for="uppercase">Capital letters</label>
-        </div>
+    <div class="input-box">
+        <input type="checkbox" id="uppercase" name="symbols[]" value="uppercase" checked>
+        <label for="uppercase">Capital letters</label>
+    </div>
 
-        <div class="input-box">
-            <input type="checkbox" id="numbers" name="symbols[]" value="numbers" checked>
-            <label for="numbers">Numbers</label>
-        </div>
-        <div class="input-box">
-            <input type="checkbox" id="others" name="symbols[]" value="others" checked>
-            <label for="numbers">Special Characters (@/\()-*+#&)</label>
-        </div>
+    <div class="input-box">
+        <input type="checkbox" id="numbers" name="symbols[]" value="numbers" checked>
+        <label for="numbers">Numbers</label>
+    </div>
+    <div class="input-box">
+        <input type="checkbox" id="others" name="symbols[]" value="others" checked>
+        <label for="numbers">@/\()-*+#&</label>
+    </div>
 
-        <button type="submit">Generate</button>
+    <button type="submit">Generate</button>
 
-        <div id="generated-password">
-            <p>Generated password: <input type="text" readonly></p>
-        </div>
-    </form>
+    <div id="generated-password1">
+        <p>Generated password nr 1: <input type="text" readonly></p>
+    </div>
+    <div id="generated-password2">
+        <p>Generated password nr 2: <input type="text" readonly></p>
+    </div>
+    <div id="generated-password3">
+        <p>Generated password nr 3: <input type="text" readonly></p>
+    </div>
+    <div id="generated-password4">
+        <p>Generated password nr 4: <input type="text" readonly></p>
+    </div>
+    <div id="generated-password5">
+        <p>Generated password nr 5: <input type="text" readonly></p>
+    </div>
+</form>
 
 
-    <form action="" id="hash-generator">
-        <h2>Hash generator</h2>
-        <div class="input-box">
-            <label for="lowercase">Input</label>
-            <input type="text" id="hash-input">
-        </div>
-        <div class="input-box">
-            <button type="button" id="hash-md5" name="md5">MD5</button>
-            <button type="button" id="hash-sha1" name="sh1">SHA1</button>
-            <button type="button" id="hash-sha256" name="sha256">SHA256</button>
-            <button type="button" id="hash-sha512" name="sha512">SHA512</button>
-        </div>
-        <div class="input-box">
-            <label for="lowercase">Hash</label>
-            <input type="text" readonly id="hash-result">
-        </div>
-    </form>
+<form action="" id="hash-generator">
+    <h2>Hash generator</h2>
+    <div class="input-box">
+        <label for="lowercase">Input</label>
+        <input type="text" id="hash-input">
+    </div>
+    <div class="input-box">
+        <button type="button" id="hash-md5" name="md5">MD5</button>
+        <button type="button" id="hash-sha1" name="sh1">SHA1</button>
+        <button type="button" id="hash-sha256" name="sha256">SHA256</button>
+        <button type="button" id="hash-sha512" name="sha512">SHA512</button>
+    </div>
+    <div class="input-box">
+        <label for="lowercase">Hash</label>
+        <input type="text" readonly id="hash-result">
+    </div>
+</form>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jshashes/1.0.7/hashes.min.js"></script>
-    <script src="index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jshashes/1.0.7/hashes.min.js"></script>
+<script src="index.js"></script>
 
 </body>
-
 </html>

@@ -1,7 +1,7 @@
 const charSets = {
-    "lowercase": "abcdefghijklmnopqrstuvwxyz",
-    "uppercase": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    "numbers": "1234567890",
+    "lowercase" : "abcdefghijklmnopqrstuvwxyz",
+    "uppercase" : "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "numbers" : "1234567890",
     "others": "@/\\()-*+#&"
 };
 const form = document.getElementById("password-generator");
@@ -12,6 +12,7 @@ form.addEventListener("submit", function (ev) {
     ev.preventDefault();
 
     const passwordLength = document.getElementById("password-length").value;
+   
 
     // get all option inputs
     const options = document.querySelectorAll(".input-box input");
@@ -19,25 +20,34 @@ form.addEventListener("submit", function (ev) {
 
     // if they are selected, add charset by input name to final set
     options.forEach(option => {
-        if (option.checked) {
+        if(option.checked){
             passwordCharsSet += charSets[option.getAttribute("value")]
         }
     });
 
     // generate final password
-    const password = generatePassword(passwordCharsSet, passwordLength);
-
+    const password1 = generatePassword(passwordCharsSet, passwordLength);
+    const password2 = generatePassword(passwordCharsSet, passwordLength);
+    const password3 = generatePassword(passwordCharsSet, passwordLength);
+    const password4 = generatePassword(passwordCharsSet, passwordLength);
+    const password5 = generatePassword(passwordCharsSet, passwordLength);
     // render password to DOM
-    document.querySelector("#generated-password input").value = password;
+    document.querySelector("#generated-password1 input").value = password1;
+    document.querySelector("#generated-password2 input").value = password2;
+    document.querySelector("#generated-password3 input").value = password3;
+    document.querySelector("#generated-password4 input").value = password4;
+    document.querySelector("#generated-password5 input").value = password5;
 });
 
-function generatePassword(chars, length) {
+function generatePassword(chars, length)
+{
     var password = "";
-    for (var i = 0; i < length; i++) {
+    for(var i = 0; i < length; i++){
         password += chars[getRandomInt(chars.length)];
     }
     return password;
 }
+
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
