@@ -2,7 +2,7 @@ body {
     background-color:blanchedalmond;
     
 }
-.map {
+#map {
     
     margin-left: 16%;
     position: absolute;
@@ -15,10 +15,11 @@ svg{
     width:100%;
    
 }
-.diary,.Shiganshina,.Trost,.Forest,.Chlorba,.Karanase,.Nedlay,.Ragako,.Utgard,.Dauper,.Stohess,.Hermina,.Orvud,.Yalkell,.Capital,.Maria,.Rose,.Sina,.Paradis{
+path{
     fill: aliceblue;
     opacity: .2;
 }
+
 
 /*.Paradis:hover,.diary:hover,.Shiganshina:hover,.Trost:hover,.Forest:hover,.Chlorba:hover,.Karanase:hover,.Nedlay:hover,.Ragako:hover,.Utgard:hover,.Dauper:hover,.Stohess:hover,.Hermina:hover,.Orvud:hover,.Yalkell:hover,.Capital:hover,.Maria:hover,.Rose:hover,.Sina:hover{
     transition: opacity .2s ease;

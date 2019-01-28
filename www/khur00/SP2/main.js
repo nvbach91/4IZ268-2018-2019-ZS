@@ -29,7 +29,14 @@ $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts?_embed&per_page=100", 
         var button = document.createElement("button");
         button.innerHTML = postName;
         button.setAttribute("data-id", postId);
-        //button.setAttribute("data-desc", postCont);
+        button.setAttribute("data-desc", postCont);
+        var htmlSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        htmlSvg.setAttribute("viewBox", "0 0 1703 1906");
+        var htmlPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        htmlPath.setAttribute("class", postId);
+        htmlPath.setAttribute("d", coordPath);
+        htmlSvg.appendChild(htmlPath);
+
 
 
         button.addEventListener('click', function () {
@@ -37,11 +44,19 @@ $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts?_embed&per_page=100", 
             var content = districts[postId].desc;
             var pCoord = districts[postId].path;
 
-            console.log(content);
+            //console.log(content);
             document.getElementById("obsah").innerHTML = content;
+
+            /*$("path").css({
+                "transition": "opacity .2s ease",
+                "opacity": ".5", 'fill': 'beige'
+            });*/
 
         })
         document.body.appendChild(button);
+        document.body.appendChild(htmlSvg);
+        document.getElementById("map").appendChild(htmlSvg);
+
         /* for (var i = 0; i < svgcodes.length; i++) {
              if (postName === svgcodes[i].title) {
                  pokus.push({ title: postName, svgPath: svgcodes[i].svgPath, description: postCont });
