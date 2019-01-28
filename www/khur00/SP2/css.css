@@ -1,14 +1,11 @@
 body {
     background-color:blanchedalmond;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 .map {
     
     margin-left: 16%;
     position: absolute;
-
-    
-   
 }
 svg{
     position: absolute;
@@ -17,13 +14,12 @@ svg{
     height:100%;
     width:100%;
    
-    
-
 }
 .diary,.Shiganshina,.Trost,.Forest,.Chlorba,.Karanase,.Nedlay,.Ragako,.Utgard,.Dauper,.Stohess,.Hermina,.Orvud,.Yalkell,.Capital,.Maria,.Rose,.Sina,.Paradis{
     fill: aliceblue;
     opacity: .2;
 }
+
 /*.Paradis:hover,.diary:hover,.Shiganshina:hover,.Trost:hover,.Forest:hover,.Chlorba:hover,.Karanase:hover,.Nedlay:hover,.Ragako:hover,.Utgard:hover,.Dauper:hover,.Stohess:hover,.Hermina:hover,.Orvud:hover,.Yalkell:hover,.Capital:hover,.Maria:hover,.Rose:hover,.Sina:hover{
     transition: opacity .2s ease;
 	opacity: .5;
@@ -65,23 +61,25 @@ svg{
 * {
     box-sizing: border-box;
     zoom:84%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    
 }
 button {
  
-    background-color: #4CAF50;
+  background-color: rgb(240, 248, 255);
     border: none;
-    color: white;
+    color: black; 
     padding: 15px 32px;
     text-align: center;
-    text-decoration: none;
+    text-decoration: solid;
     display: block;
     font-size: 24px;
     margin: 4px 2px;
     cursor: pointer;
     width: 15%;
-    height: 15%;
+    height: 20%;
     border-radius: 10px;
+    border: 3px solid #4CAF50;
 
   }
  [data-id="12"]{
