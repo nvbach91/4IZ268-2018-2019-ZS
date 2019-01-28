@@ -3,7 +3,7 @@ function enterSearch() {
     var input = document.getElementById("keyword");
     input.addEventListener("keyup", function (event) {
         event.preventDefault();
-        if (event.keyCode === 13) {
+        if (event.keyCode == 13) {
             document.getElementById("btnSearch").click();
         }
     })
@@ -40,8 +40,8 @@ function makeRequest() {
                 '<img src="' + item.snippet.thumbnails.high.url + '"></img>' +
                 '</div>';
         })
-        cycle();
-        newSearch();
+        searchedVidsEvListen();
+        searched();
     })
 }
 
@@ -53,7 +53,7 @@ var changeMainVid = function () {
     document.getElementById("mainVid").innerHTML = '<iframe data-id="' + attribute + '"src="https://www.youtube.com/embed/' + attribute + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
 }
 
-function cycle() {
+function searchedVidsEvListen() {
     for (var i = 0; i < classname.length; i++) {
         classname[i].addEventListener("click", changeMainVid, false);
     }
@@ -70,7 +70,7 @@ function addToFavs() {
     var mainVidId = document.getElementById("mainVid").firstChild.getAttribute("data-id");
 
     //no same videos in favorites condition
-    favVids = document.getElementsByClassName("favVid");
+    var favVids = document.getElementsByClassName("favVid");
     for (i = 0; i < favVids.length; i++) {
         tempId = favVids[i].getAttribute("data-id");
         if (mainVidId == tempId) {
@@ -78,29 +78,30 @@ function addToFavs() {
         }
     }
 
-    document.getElementById("favs").insertAdjacentHTML("beforeend", '<div class="favVid" data-id="' + mainVidId + '"> <img src="https://i.ytimg.com/vi/' + mainVidId + '/hqdefault.jpg"></img></div>');
+    var favs = document.getElementById("favs");
+    favs.insertAdjacentHTML("beforeend", '<div class="favVid" data-id="' + mainVidId + '"> <img src="https://i.ytimg.com/vi/' + mainVidId + '/hqdefault.jpg"></img></div>');
 
-    document.getElementById("favs").lastChild.addEventListener("click", function () {
-        document.getElementById("mainVid").innerHTML = '<iframe data-id="' + mainVidId + '"src="https://www.youtube.com/embed/' + mainVidId + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    favs.lastChild.addEventListener("click", function () {
+        document.getElementById("mainVid").innerHTML = '<iframe data-id="' + mainVidId + '"src="https://www.youtube.com/embed/' + mainVidId + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
     })
 }
 
-//search bar change to new search
-function newSearch() {
+//search bar change to search
+function searched() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("search").innerHTML = this.responseText;
-            document.getElementById("newSearch").addEventListener("click", function () {
+            document.getElementById("searched").addEventListener("click", function () {
                 searchBar();
             })
         }
     };
-    xhttp.open("GET", "newSearch.txt", true);
+    xhttp.open("GET", "searched.txt", true);
     xhttp.send();
 }
 
-//new search change to search bar
+//searched change to search bar
 function searchBar() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
