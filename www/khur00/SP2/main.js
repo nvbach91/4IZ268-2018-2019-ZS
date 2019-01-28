@@ -1,419 +1,58 @@
+var districts = {};
+var prispevek;
+var id;
+var name;
+var svgcodes = [{
+    title: "Royal Capital",
+    svgPath: "m 780.33449,567.49946 c -18.66667,8.83308 -38.00002,22.16642 -51.16703,33.33319 -13.16701,11.16677 -20.1666,20.16624 -24.16706,32.50056 -4.00046,12.33432 -5.00033,27.99906 -2.33359,44.16655 2.66674,16.16749 8.99965,32.83303 19.54902,45.92431 10.54938,13.09129 25.78442,22.90942 49.61781,29.24269 23.83338,6.33327 56.50059,9.33332 83.33375,9.33324 26.83315,-8e-5 47.83373,-3.00016 68.66655,-8.83343 20.83283,-5.83328 41.5006,-14.50041 56.50014,-25.16702 14.99954,-10.66661 24.33342,-23.33402 32.99972,-36.33345 8.6662,-12.99943 16.6669,-26.33395 19.4999,-38.49991 2.833,-12.16597 0.4995,-23.16695 -4.8334,-31.49964 -5.3329,-8.3327 -13.6668,-13.99975 -24.0589,-21.42028 -10.39219,-7.42053 -23.27456,-16.91281 -36.10781,-24.24614 -12.83326,-7.33333 -25.83309,-12.66659 -40.4999,-16.50001 -14.66682,-3.83342 -30.99952,-6.16667 -46.6665,-7.50006 -15.66698,-1.33339 -30.66621,-1.6667 -47.1667,0.33328 -16.50049,1.99999 -34.49932,6.33304 -53.166,15.16612 z"
+}, {
+    title: "Orvud",
+    svgPath: "m 780.33449,567.49946 c -18.66667,8.83308 -38.00002,22.16642 -51.16703,33.33319 -13.16701,11.16677 -20.1666,20.16624 -24.16706,32.50056 -4.00046,12.33432 -5.00033,27.99906 -2.33359,44.16655 2.66674,16.16749 8.99965,32.83303 19.54902,45.92431 10.54938,13.09129 25.78442,22.90942 49.61781,29.24269 23.83338,6.33327 56.50059,9.33332 83.33375,9.33324 26.83315,-8e-5 47.83373,-3.00016 68.66655,-8.83343 20.83283,-5.83328 41.5006,-14.50041 56.50014,-25.16702 14.99954,-10.66661 24.33342,-23.33402 32.99972,-36.33345 8.6662,-12.99943 16.6669,-26.33395 19.4999,-38.49991 2.833,-12.16597 0.4995,-23.16695 -4.8334,-31.49964 -5.3329,-8.3327 -13.6668,-13.99975 -24.0589,-21.42028 -10.39219,-7.42053 -23.27456,-16.91281 -36.10781,-24.24614 -12.83326,-7.33333 -25.83309,-12.66659 -40.4999,-16.50001 -14.66682,-3.83342 -30.99952,-6.16667 -46.6665,-7.50006 -15.66698,-1.33339 -30.66621,-1.6667 -47.1667,0.33328 -16.50049,1.99999 -34.49932,6.33304 -53.166,15.16612 z"
+}];
+var pokus = [];
 
-/*var addToTest = document.getElementsByClassName('test1');
-var requestWeb = new XMLHttpRequest();
-requestWeb.open('GET', 'http://rinamogy.beget.tech/wp-json/wp/v2/posts/51');
-requestWeb.onload = function () {
-    if (requestWeb.status >= 200 && requestWeb.status < 400) {
-        var data = JSON.parse(this.response);
-        createHTML(data);
+
+
+$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts?_embed&per_page=100", function (posts) {
+    //console.log(posts);
+    posts.forEach(function (post) {
+        // console.log(post);
+        districts[post.id] = { title: post.title.rendered, desc: post.content.rendered };
+    })
+
+    console.log(districts);
+    for (let key of Object.keys(districts)) {
+        var postCont = districts[key].desc;
+        var postId = key;//id post/post desc
+        var postName = districts[key].title;
+
+
+
+        var button = document.createElement("button");
+        button.innerHTML = postName;
+        button.setAttribute("data-id", postId);
+        //button.setAttribute("data-desc", postCont);
+        //pridani pokusneho array s SVGpath
+        for (var i = 0; i < svgcodes.length; i++) {
+            if (postName === svgcodes[i].title) {
+                pokus.push({ title: postName, svgPath: svgcodes[i].svgPath, description: postCont });
+
+            }
+            console.log(pokus);
+        }
+        button.addEventListener('click', function () {
+            var postId = this.getAttribute("data-id");
+            var content = districts[postId].desc
+            //var svg = pokus.svgPath;
+            //$(svg).css({ "transition": "opacity .2s ease",
+            //"opacity": ".5", 'fill': 'beige'});
+            // console.log(content)
+            document.getElementById("obsah").innerHTML = content;
+
+        })
+        document.body.appendChild(button);
+
+
+
     }
-    else {
-        console.log("We connected to a server ,but returned an error");
-    }
-
-}
-requestWeb.send();
-
-
-function createHTML(postData) {
-    var ourHTMLstring = '';
-    for (i = 0; i < postData.length; i++) {
-        ourHTMLstring += '<h1>' + postData[i].title.rendered + '/<h1>';
-
-    }
-    addToTest.innerHtml = ourHTMLstring;
-}
-
-$.getJSON('http://rinamogy.beget.tech/wp-json/wp/v2/posts/51', function (data) {
-
-    var text = `${data.title.rendered}<br>
-                ${data.contex.rendered}<br>`
-
-
-    $(".mypanel").html(text);
-});
-*/
-
-var content1;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/51", function (json) {
-    myjson = json;
-
-    content1 = myjson.content.rendered;
 })
-
-$(document).ready(function () {
-    $(".button1").click(function () {
-        $(".Nedlay").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content1));
-        $("#obsah").fadeIn();
-
-    }
-    )
-}
-);
-var content2;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/48", function (json) {
-    myjson = json;
-
-    content2 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button2").click(function () {
-        $(".diary").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content2));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-var content3;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/46", function (json) {
-    myjson = json;
-
-    content3 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button3").click(function () {
-        $(".Paradis").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content3));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-var content4;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/44", function (json) {
-    myjson = json;
-
-    content4 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button4").click(function () {
-        $(".Maria").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content4));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-var content5;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/42", function (json) {
-    myjson = json;
-
-    content5 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button5").click(function () {
-        $(".Shiganshina").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content5));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-var content6;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/40", function (json) {
-    myjson = json;
-
-    content6 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button6").click(function () {
-        $(".Forest").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content6));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-var content7;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/38", function (json) {
-    myjson = json;
-
-    content7 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button7").click(function () {
-        $(".Chlorba").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content7));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-var content8;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/36", function (json) {
-    myjson = json;
-
-    content8 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button8").click(function () {
-        $(".Trost").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content8));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-var content9;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/34", function (json) {
-    myjson = json;
-
-    content9 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button9").click(function () {
-        $(".Karanese").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content9));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-var content10;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/32", function (json) {
-    myjson = json;
-
-    content10 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button10").click(function () {
-        $(".Rose").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content10));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-var content11;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/30", function (json) {
-    myjson = json;
-
-    content11 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button11").click(function () {
-        $(".Dauper").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content11));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-var content12;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/28", function (json) {
-    myjson = json;
-
-    content12 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button12").click(function () {
-        $(".Utgard").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content12));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-
-var content13;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/26", function (json) {
-    myjson = json;
-
-    content13 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button13").click(function () {
-        $(".Ragako").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content13));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-
-var content14;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/24", function (json) {
-    myjson = json;
-
-    content14 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button14").click(function () {
-        $(".Sina").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content14));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-
-var content15;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/22", function (json) {
-    myjson = json;
-
-    content15 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".Hermina").css({
-        "transition": "opacity .2s ease",
-        "opacity": ".5", 'fill': 'beige'
-    });
-    $(".button15").click(function () {
-        $("#obsah").append($(content15));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-
-var content16;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/20", function (json) {
-    myjson = json;
-
-    content16 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button16").click(function () {
-        $(".Yalkell").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content16));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-
-var content17;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/18", function (json) {
-    myjson = json;
-
-    content17 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button17").click(function () {
-        $(".Orvud").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content17));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-
-var content18;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/16", function (json) {
-    myjson = json;
-
-    content18 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-    $(".button18").click(function () {
-        $(".Stohess").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content18));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-
-var content19;
-$.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts/12", function (json) {
-    myjson = json;
-
-    content19 = myjson.content.rendered;
-})
-
-$(document).ready(function () {
-
-    $(".button19").click(function () {
-        $(".Capital").css({
-            "transition": "opacity .2s ease",
-            "opacity": ".5", 'fill': 'beige'
-        });
-        $("#obsah").append($(content19));
-        $("#obsah").fadeIn();
-    }
-    )
-}
-);
-$(document).ready(function () {
-    $(".button0").click(function () {
-        location.reload(true);
-    }
-    )
-}
-);
-
-
-
-
-
-
