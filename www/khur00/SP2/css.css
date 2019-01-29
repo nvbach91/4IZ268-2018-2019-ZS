@@ -68,7 +68,7 @@ path{
    
 }
 button {
-  background-color: rgb(240, 248, 255);
+    background-color: rgb(240, 248, 255);
     border: none;
     color: black; 
     padding: 15px 32px;
@@ -84,10 +84,13 @@ button {
     border: 3px solid #4CAF50;
 
   }
- [data-id="12"]{
-    margin-top: 13%;
-  }
-.corner{
-    
+
+#corner{
+    font-family: 'The Girl Next Door', cursive;
+    font-size: 50px;
+    text-align: right;
+    margin-right: 90%;
+    text-decoration: solid;
+ 
 }
 
