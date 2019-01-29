@@ -1,0 +1,305 @@
+*{
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    font-family: 'Muli', sans-serif;
+}
+body {
+    background-color: #62faba;
+}
+ main {
+    background-color:#43cf82;
+    max-width:1600px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+header {
+    text-align: center;
+    height: 40px;
+    background-color:#2a6041;
+    color:white;
+    margin:0 auto;
+}
+.intro {
+    padding:10px;
+    text-align: center;
+}
+
+#login-btn,#logout {
+    width:24%;
+    border: none;
+    background-color:#264b37;
+    color:white;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    display:block;
+    margin: 0 auto;
+    cursor:pointer;
+}
+
+footer {
+    margin-top:30px;
+    text-align:center;
+    background-color:#2a6041;
+    color:white;
+    height:30px;
+}
+/*--------Add a searched value--------*/
+#insert-row input {
+    border: none;
+    background-color:#264b37;
+    width:95%;
+    color:white;
+    padding: 10px;
+    margin-left:10px;
+    text-decoration: none;
+    font-size: 14px; 
+}
+/*--------Submit the form--------*/
+#submit-row input {
+    margin-top:20px;
+    margin-left:18px;
+    width:48%;
+    border: none;
+    background-color:#214731;
+    color:white;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor:pointer;
+}
+.message-results {
+    text-align:center;
+}
+ /*--------------------------User layout settings---------------------------*/
+#userLayout {
+    display:flex;
+    flex-direction: row;
+    margin-top:30px;
+    margin-bottom:20px;
+}
+#resultsTable {
+    width:48%;
+    border: 1px solid black;
+    background-color: #33a878;
+    margin-left:20px;
+ }
+ #myPlaylist {
+    width:48%;
+    border: 1px solid black;
+    background-color: #33a878;
+    margin-left:20px;;
+ }
+ #userLayout h2 {
+    background-color: #165e46;
+ }
+ /*--------------------------Result list---------------------------*/
+/*--------result head--------*/
+ h2 {
+     text-align:center;
+     background-color: #284b37;
+     color:white; 
+ }
+ .closed {
+     display:none;
+ }
+
+ .results-head {
+    display: flex;
+    flex-direction: row;
+}
+.header-result {
+    font-weight: bold;
+    width:26%;
+    text-align:center;
+    float:left;
+    padding:10px;
+}
+
+/*--------result body--------*/
+.result-body {
+    display: flex;
+    flex-direction: row; 
+}
+.result-row {
+    width: 100%;
+    margin-top: 5px;
+    overflow: auto;
+    padding-left: 10px;
+}
+
+.result-name,.result-artist,.result-album,.result-audio {
+    width:20%;
+    float:left;
+    text-align:center;
+}
+
+.result-audio {
+    width:48px;
+}
+.add-button {
+    float:right;
+    width:10%;
+    border:none;
+    background-color:#264634;
+    color:white;
+    padding: 5px;
+    font-size: 14px;
+    cursor:pointer;
+    margin-right:10px;
+}
+.add-button:hover,.delete-button:hover{
+    border: white 2px solid;
+}
+
+.prev-button,.next-button {
+    width:40%;
+    padding: 5px;
+    border:none;
+    background-color:#264634;
+    color:white;
+    font-size: 14px;
+    cursor:pointer;
+    text-align: center;
+    float:left;
+    margin: 20px 10px 20px 20px;
+}
+ /*--------------------------My Playlist---------------------------*/
+ /*--------playlist head--------*/
+ #id {
+     display:none;
+ }
+.playlist-head {
+    display: flex;
+    flex-direction: row;
+}
+.header-playlist {
+    font-weight: bold;
+    width:26%;
+    text-align:center;
+    float:left;
+    padding:10px;
+}
+
+/*--------playlist body--------*/
+
+.playlist-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.playlist-row {
+    overflow: auto;
+    width: 100%;
+    margin-top: 5px;
+    padding-left: 10px;
+}
+
+.playlist-name,.playlist-artist,.playlist-album,.playlist-audio {
+    width:20%;
+    float:left;
+    text-align:center;
+}
+.playlist-audio {
+    width:48px;
+}
+.delete-button {
+    float:right;
+    width:10%;
+    border:none;
+    background-color:#264634;
+    color:white;
+    padding: 5px;
+    font-size: 14px;
+    cursor:pointer;
+    margin-right:10px;
+}
+
+/*--------------------------Responsivity---------------------------*/
+@media only screen and (max-width: 1020px) {
+    #submit-row input {
+        margin-left:10px;
+        width:45%;
+    }
+}
+@media only screen and (max-width: 915px) {   
+    .result-name,.result-artist,.result-album,.playlist-name,.playlist-artist,.playlist-album {
+        float: none;
+        width:100%;
+        text-align:left;
+    }
+    .results-head,.playlist-head {
+        display: flex;
+        flex-direction: column;
+    }
+    .header-result,.header-playlist {
+        text-align:left;
+        float:none;
+        padding:5px;
+    }
+    .add-button,.delete-button {
+        width:40%;
+        padding: 20px;
+    }
+    #resultsTable,#myPlaylist {
+        width: 49%;
+        margin: 0 auto;
+    }
+}
+@media only screen and (max-width: 650px) {
+    #resultsTable,#myPlaylist {
+        width: 100%;
+        margin-bottom:10px;
+    }
+    #userLayout {
+        flex-direction: column;
+        margin-top:10px;
+        margin-bottom:5px;
+    }
+    .result-name,.result-artist,.result-album,.playlist-name,.playlist-artist,.playlist-album {
+        float: left;
+        width:26%;
+        text-align:center;
+    }
+    .results-head,.playlist-head {
+        display: flex;
+        flex-direction: row;
+    }
+    .header-result,.header-playlist {
+        text-align:center;
+        float:left;
+        padding:5px;
+    }
+    .add-button,.delete-button {
+        width:20%;
+        padding: 10px;
+    }
+}
+@media only screen and (max-width: 580px) {
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size:20px;
+    }
+    .playlist-row,.result-row {
+        font-size:12px;
+    }
+}
+  /*--------------------------Loader---------------------------*/
+.loader {
+    border: 5px solid #f3f3f3; 
+    border-top: 5px solid #2a6041; 
+    border-radius: 50%;
+    width:30px;
+    display: block;
+    margin:0 auto;
+    height: 30px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }

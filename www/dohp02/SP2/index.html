@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Twitter Stats</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Twitter Stats - Enter a name of any Twitter account and see various statistics about it!">
+    <meta name="author" content="Pavel Dohnal">
+    <meta name="keywords" content="twitter, stats, statistics, data, datamining">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link href="css/homepage.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+        </header>
+        <main>
+            <div class="grid-container">
+                <div class="Sidebar">
+                    <h1>Twitter Stats<img src="img/logoTwitter.png" id="TwitterLogo" alt="TwitterLogo" height="60"
+                            width="60"></h1>
+                    <div class="sideText">
+                        <h2>My favourite Users</h2>
+                        <ul class="list">
+                        </ul>
+                    </div>
+                </div>
+                <div class="Mainbar">
+                    <div class="Searchbar">
+                        <input id="search-input" name="search" placeholder="Enter the name of Twitter account here"
+                            size="40" autofocus required />
+                        <button type=submit id="buttonSearch">Search</button>
+                        <p>Enter a name of any Twitter account and see various statistics about it!</p>
+                    </div>
+                    <div class="Profilebar">
+                        <div class="favourite_Text" id="user"></div>
+                        <div class="statsText" id="basic_stats"></div>
+                        <div class="statsText" id="profile_image"></div>
+                        <div class="statsText" id="name"></div>
+                        <div class="statsText" id="description"></div>
+                        <div class="statsText" id="verified"></div>
+                        <div class="statsText" id="location"></div>
+                        <div class="statsText" id="created"></div>
+                        <div class="statsText" id="followers"></div>
+                        <div class="statsText" id="friends"></div>
+                        <div class="statsText" id="favourites"></div>
+                        <div class="statsText" id="tweets"></div>
+                    </div>
+                    <div class="Tweetbar">
+                        <div id="latest_stats"></div>
+                        <div id="latest_container"></div>
+                        <div id="random_stats"></div>
+                        <div id="first_container"></div>
+                        <div id="latestdirected_stats"></div>
+                        <div id="latestdirected_container"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>2019 &copy; Pavel Dohnal</footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codebird@2.6.0/codebird.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

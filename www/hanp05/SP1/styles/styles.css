@@ -1,0 +1,260 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+p {
+    margin: 15px;
+}
+
+.half_paragraph_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+    border-bottom: rgb(230, 230, 230) 2px solid;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.half_paragraph_grid_noborder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+}
+
+.third_paragraph_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 40px;
+    border-bottom: rgb(230, 230, 230) 2px solid;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+a:hover {
+    color: rgb(255, 106, 106);
+}
+
+.container {
+    position: relative;
+    width: 80%;
+    max-width: 1300px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+section {
+    width: 100%;
+    background-color: #fff;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+/* ****** Header ****** */
+
+.container_header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+header, footer {
+    display: grid;
+    align-items: center;
+    width: 100%;
+    background-color: #333;
+    min-height: 80px;
+}
+
+.main_logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.book_name {
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+.author_name {
+    color: rgb(153, 153, 153);
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+    min-width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.active_menu_item {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* ###### Konec Header ###### */
+
+/* ****** Footer ****** */
+
+.footer_image {
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    padding: 70px 0;
+    background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../img/money.jpg);
+    background-size: cover;
+}
+
+footer {
+    align-content: center;
+    min-height: 200px;
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: end;
+}
+
+footer .main_logo {
+    grid-column: 4;
+}
+
+footer p {
+    grid-column: 4;
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+footer .main_logo a {
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    font-size: 12px;
+}
+
+footer .book_name, footer .author_name {
+    display: block;
+}
+
+/* ###### Konec Footer ###### */
+
+.button {
+    background-color: #ff1208;
+    border-radius: 7px;
+    border: 1px solid #c20024;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 15px 76px;
+    text-decoration: none;
+    text-align: center;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background-color: #ff3029;
+}
+
+.page_default_img {
+    float: left;
+    padding: 30px;
+    max-width: 45%;
+    min-width: 360px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .container_header {
+        grid-template-columns: 1fr;
+    }
+    .main_logo {
+        justify-content: center;
+        margin: 20px 0px;
+    }
+    .menu a {
+        min-width: auto;
+        height: 50px;
+    }
+    .half_paragraph_grid, .half_paragraph_grid_noborder, .third_paragraph_grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .menu {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        margin: 20px 0px;
+    }
+    .page_default_img {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media only print {
+    header, footer, .button, .page_default_img {
+        display: none;
+    }
+    p {
+        font-size: 12px
+    }
+    .half_paragraph_grid_noborder {
+        display: block;
+        margin-bottom: 250px;
+    }
+}

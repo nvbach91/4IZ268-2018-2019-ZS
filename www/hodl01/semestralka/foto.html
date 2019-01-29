@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Oficiální stránky sportovce" />
+    <meta name="author" content="Lukáš Hodboď" />
+    <meta name="keywords" content="Hodboď, czech athlete, atlet, runner, 800m" />
+    <link rel=stylesheet href="print.css" media="print">
+    <link rel="stylesheet" href="style.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    <link rel="shortcut icon" href="IMG/favicon.ico" type="image/x-icon">
+    <title>Galerie | Lukáš Hodboď</title>
+
+</head>
+
+<body>
+
+    <header id="header" class="pageHeader">
+        <div class="bigsocialicons">
+            <a href="https://www.facebook.com/lukas.hodbod" target="_blank"><img src="IMG/facebook.png" alt="facebook"></a>&nbsp;<a
+                href="https://www.youtube.com/user/hodbod59/" target="_blank"><img src="IMG/youtube.png" alt="youtube"></a>&nbsp;<a
+                href="https://www.instagram.com/lukashodbod/" target="_blank"><img src="IMG/insta_ikona.png" alt="insta ikona"
+                    width="94" height="86"></a>
+        </div>
+        <h1 class="name"><a class="name" href="index.html"><span class="firstName">Lukáš</span><br>Hodboď</a></h1>
+    </header>
+    <nav id="nav">
+        <ul class="nav">
+            <li><a href="index.html">O mně</a></li>
+            <li><a href="results.html">Výsledky</a></li>
+            <li><a class="active" href="foto.html">Galerie</a></li>
+            <li><a href="media.html">Média</a></li>
+            <li><a href="makacenko.html">Tréninková skupina</a></li>
+            <li><a href="contact.html">Kontakty</a></li>
+        </ul>
+    </nav>
+    <div class="blackBox">
+        <h2 class="profileName">Instagram @lukashodbod</h2>
+        <p>Přejít do galerie uživatele: </p><button id="profilBT">@makacenkoteam</button><button
+            id="BT">Zobraz moje fotografie</button>
+        <div><IMG id="profilePicture" alt="profile picture" src="IMG/no-img300.jpg"></IMG>
+            <p id="bio"></p>
+            <p id="follows">Followers: </p>
+        </div>
+
+        <div id="instafeed">
+            <div class="photoBox">
+                <img id="p0" src="IMG/no-img300.jpg" alt="Photo from Instagram">
+                <div class="midle">
+                    <div class="textOnHover" id="l0">
+                        <img class="icon" src="IMG/heart-solid.svg" alt="heart icon">
+
+                    </div>
+                </div>
+            </div>
+            <div class="photoBox">
+                <img id="p1" src="IMG/no-img300.jpg" alt="Photo from Instagram">
+                <div class="midle">
+                    <div class="textOnHover" id="l1">
+                        <img class="icon" src="IMG/heart-solid.svg" alt="heart icon">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <aside class="modalAside">
+                <div class="row">
+                    <div id="caption"></div>
+                </div>
+            </aside>
+            <main class="modalMain"><img class="modal-img" id="imgModal" src="IMG/no-img300.jpg" alt="Photo from Instagram"></main>
+
+
+
+        </div>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

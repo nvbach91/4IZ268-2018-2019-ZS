@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Long live Sparta!</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <form class="form" id="js-form">
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="2">
+              <h1>Long live Sparta!</h1>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TEXT:</td>
+            <td>
+              <textarea id="js-text" class="table__textarea textarea"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>KEY:</td>
+            <td>
+              <input id="js-key" type="number" class="table__input input" value="0" min="0" max="26" />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input id="js-submit" type="submit" class="table__button button" value="Decipher!" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    <div class="result">
+      <h2 id="js-result"></h2>
+    </div>
+  </div>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

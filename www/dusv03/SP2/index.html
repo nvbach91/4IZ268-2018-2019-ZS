@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VSEMusicBox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+</head>
+
+<body>
+    <header>
+        <h1>VSEMusicBox</h1>
+
+    </header>
+    <div id="info">
+        Aplikace pro vyhledávní hudby přes spotify a vytváření seznamu oblíbených písniček.
+        <br>
+        Pro funkčnost aplikace je nutné se přihlásit.
+    </div>
+    <div id="login">
+        <form id="login_form">
+            <button type="button" id="login_button">Přihlásit se</button>
+        </form>
+    </div>
+    <div id="search"></div>
+    <div class="results">
+        <div id='result_info'></div>
+        <div id='result_enum'></div>
+    </div>
+    <div class="favorite">
+        <div id="favorite_info"> Seznam oblíbených písniček (playlist)</div>
+        <div id="favorite_enum"></div>
+    </div>
+    <footer>
+        <div>
+            &copy Vladimír Dušek 2018
+            <br>
+            Vytvořeno v rámci předmětu 4IZ268 jako semestrální práce.
+
+
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+h1 {
+  text-align: center;
+  padding: 50px 10px;
+  color: white;
+  background-color: rgb(192, 50, 50);
+}
+
+.instructions {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.colors > input {
+  width: 50%;
+  padding: 5px;
+  border: none;
+  font-size: 18px;
+  margin: 0;
+  float: left;
+  color: white;
+}
+
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1280px;
+  padding: 20px;
+  margin: auto;
+}
+
+header {
+  width: 100%;
+  background-color: rgb(223, 114,  75);
+  height: 300px;
+  font-size: 40px;
+  color: white;
+  padding-top: 130px;
+  text-align: center;
+}
+
+nav {
+  width: 100%;
+  background-color: rgb( 47, 108, 136);
+  height: 60px;
+  font-size: 40px;
+  color: white;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.wrapper > div {
+  width: 1280px;
+}
+
+main {
+  width: 70%;
+  background-color: rgb(192,  70,  94);
+  height: 1000px;
+  font-size: 40px;
+  color: white;
+  padding-top: 480px;
+  text-align: center;
+  float: left;
+}
+
+aside {
+  width: 30%;
+  background-color: rgb( 53, 184, 155);
+  height: 1000px;
+  font-size: 40px;
+  color: white;
+  padding-top: 480px;
+  text-align: center;
+  float: right;
+}
+
+footer {
+  width: 100%;
+  background-color:  rgb( 39,  39,  39);
+  height: 150px;
+  font-size: 40px;
+  color: white;
+  padding-top: 55px;
+  text-align: center;
+}
+
+
+@media screen and (min-width: 720px) {
+  .colors > input {
+    padding: 20px;
+    width: calc(100% / 3);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .colors > input {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  aside {
+    width: 100%;
+  }
+  
+  main {
+    width: 100%;
+  }
+}

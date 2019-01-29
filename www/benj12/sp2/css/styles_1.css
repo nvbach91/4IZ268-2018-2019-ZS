@@ -1,0 +1,29 @@
+body {
+  text-align: center;
+	font-family: 'Lato', sans-serif;
+	background: #353535;
+	color: #FFF;
+}
+img {
+  padding: 10px;
+  width: 128px;
+  height: 128px;
+}
+.nadpis {
+  color: #888888;
+  text-align: center;
+}
+.loga {
+  text-align: center;
+  padding: 10px;
+}
+.text1 {
+  color:white;
+}
+.text2 {
+  color:#888;
+}
+.zapati {
+  text-align: center;
+  color:#888;
+}

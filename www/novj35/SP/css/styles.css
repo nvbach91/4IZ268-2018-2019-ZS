@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+}
+/* GENERAL STYLES */
+body {
+    background: white;
+    font: normal 13px Verdana, Arial, lucida, sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 960px;
+    list-style-type: none;
+}
+/* HEADER */
+nav ol li:hover, .active {
+    background-color: #d9f2d9;
+}
+nav ol {
+    margin: 0;
+    list-style-type: none;
+}
+nav ol li {
+    float: left;
+    margin: 5px;
+}
+.menu {
+    float: right;
+}
+.menu a {
+    display: block;
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.logo img {
+    padding: 2px;
+    margin-right: 10px;
+    width: 60%;
+}
+/* MAIN */
+.box {
+    margin-top: 75px;
+}
+.fotogalerie-reklama{
+    padding-left: 0px;
+}
+.fotogalerie-reklama img {
+    border: 1px solid #ccc;
+    padding: 2px;
+    margin-right: 10px;
+}
+.gallery1 img {
+    border: 1px solid grey;
+    padding: 6px;
+    box-shadow: 3px 3px 6px #999999;
+    width: 40%;
+}
+.gallery2 img {
+    border: 1px solid grey;
+    padding: 6px;
+    margin: 50px;
+    box-shadow: 3px 3px 6px #999999;
+    width: 60%;
+}
+.oteviracidoba {
+    width: 350px;
+    margin-top: 1px;
+    line-height: 130%;
+    text-align: left;
+}
+.trener {
+    padding-top: 80px;
+}
+/** Sloupce v kontaktech **/
+.columns1 {
+    column-count: 2;
+}
+/** Sloupce v treneri **/
+.columns2 {
+    width: 60%;
+    column-count: 2;
+}
+
+/** Sloupce v cenik **/
+.columns3 {
+    columns: 3;
+
+}
+
+/* FOOTER */
+footer {
+    margin-top: 25px;
+    width: 100%;
+    text-align: center;
+    padding: 20px 10px;
+    color: black;
+    background-color: #d9f2d9;
+}
+/* SCREEN */
+@media only screen and (max-width: 540px) {
+    body {
+        width: 100%;
+        float: none;
+   }
+}
+/* PRINT */
+@media print {
+    footer, .logo, .menu, .header {
+        display: none;
+   }
+    *, h1, h2, h3, h4, h5 {
+        color: #333 !important;
+   }
+    h1 {
+        border-color: #000 !important;
+   }
+}

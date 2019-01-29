@@ -1,0 +1,19 @@
+.noprint {
+  display: none !important;
+}
+
+.CVmain {
+  font-size: 17px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.904);
+}
+
+.table_dark {
+  font-size: 20px;
+  width: 500px;
+  text-align: center;
+  border-collapse: collapse;
+  background: #252F48;
+  margin: auto;
+  position: relative;
+}

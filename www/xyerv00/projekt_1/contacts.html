@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V&V kabáty - kontakty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link type="text/css" rel="stylesheet" href="css/stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Italianno" rel="stylesheet">
+</head>
+<body>
+<nav>
+    <div class="navigation">
+        <a class="label" href="index.html">V&V kabáty</a>
+        <ul>
+            <li class="nav_li">
+                <a href="about.html">O značce</a>
+            </li>
+            <li class="nav_li">
+                <a href="products-short.html">Kabáty krátké</a>
+            </li>
+            <li class="nav_li">
+                <a href="products-long.html">Kabáty dlouhé</a>
+            </li>
+            <li class="nav_li active">
+                <a href="contacts.html">Kontakt</a>
+                <div class="clear"></div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<main>
+    <div class="heading-one"><h1>Kontakty</h1></div>
+    <p class="phone"><strong>+420 739 095 822</strong></p>
+    <p><a href="mailto:vlada.kopecka@email.cz" class="email">vlada.kopecka@email.cz</a></p>
+    <br/>
+    <p>Mgr. Vlada Kopecká</p>
+    <p>Light for home s.r.o.</p>
+    <p>IČO 01760360</p>
+    <P>Hradec Králové</P>
+    <div class="form">
+        <h2 id="send-order">Odeslat objednávku/dotaz</h2>
+        <form name="contactForm">
+            <label for="client-email" class="form-item">Uveďte vaši e-mailovou adresu:</label>
+            <input type="email" name="clienEmail" id="client-email" placeholder="e-mail" class="form-item">
+            <label for="client-name" class="form-item">Vaše jméno:</label>
+            <input type="text" name="clientName" id="client-name" placeholder="Jméno" class="form-item">
+            <label id="select-models-label">Vyberte modely</label>
+            <div class="order">
+                <div class="modelBoxes"></div>
+                <label class="form-item">Vaše objednávka:</label>
+                <div class="items">
+                </div>
+            </div>
+            <label for="emailBody" class="form-item">Zpráva:</label>
+            <textarea name="emailbody" id="emailBody" class="form-item"></textarea>
+            <button type="button" id="sendButton" value="Odeslat" class="form-item">Odeslat</button>
+        </form>
+    </div>
+</main>
+<footer>
+    <p>Light for home s.r.o., IČO 01760360, Střelecká 578, Hradec Králové</p>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--Do not change order of loading js-->
+<script src="javascript/main2.js"></script>
+</body>
+</html>

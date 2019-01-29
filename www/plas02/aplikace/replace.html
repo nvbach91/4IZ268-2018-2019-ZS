@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web for language school">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Plas02">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="120" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="replace.css">
+    <title>replace</title>
+</head>
+
+<body>
+
+    <button id="authorize_button" style="display: none;">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button>
+
+    <pre id="content" style="white-space: pre-wrap;"></pre>
+
+    <div class="info">
+        <h1>Test úrovně angličtiny</h1>
+        <label for="textarea">Jméno a příjmení</label>
+        <input type="text" id="name">
+        <label for="age">Věk</label>
+        <input type="number" id="age">
+    </div>
+
+    <div class="quiz-container">
+        <div id="quiz"></div>
+    </div>
+
+    <button id="previous" style="display: none;">Previous Question</button>
+    <button id="next" style="display: none;">Next Question</button>
+    <button id="send" style="display: none;">Submit</button>
+    <div id="results"></div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="replace.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+#game-field {
+}
+.card {
+}
+.card:hover {
+}
+.card.revealed {
+}

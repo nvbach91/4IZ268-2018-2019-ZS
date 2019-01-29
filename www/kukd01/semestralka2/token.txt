@@ -1,0 +1,35 @@
+1150314422.1677ed0.45eef11423924175aecfd80ce053aab8 pixelunion
+1150314422.93c52c9.a0e2f3b2a4fe4091a63d1455ed3b2958 elfsight
+
+
+
+
+1150314422.1677ed0.45eef11423924175aecfd80ce053aab8 //funkční 
+
+ultimate token počkej si 
+1150314422.93c52c9.a0e2f3b2a4fe4091a63d1455ed3b2958
+
+1150314422.93c52c9.a0e2f3b2a4fe4091a63d1455ed3b2958
+text contains #hockey
+
+https://api.instagram.com/v1/users/self/media/recent/?access_token=1150314422.93c52c9.a0e2f3b2a4fe4091a63d1455ed3b2958
+V JSON tags najdeme hastag podle kterého budeme hledat
+tags: "hashtag"
+https://api.instagram.com/v1/tags/hockey/media/recent?client_id=https://api.instagram.com/v1/tags/search?q=semestr&access_token=1150314422.93c52c9.a0e2f3b2a4fe4091a63d1455ed3b2958&count=30
+https://api.instagram.com/v1/tags/hockey/media/recent?access_token=1150314422.93c52c9.a0e2f3b2a4fe4091a63d1455ed3b2958
+
+Celkový počet příspěvků pod tímto hastagem 
+https://api.instagram.com/v1/tags/search?q=semestr&access_token=1150314422.93c52c9.a0e2f3b2a4fe4091a63d1455ed3b2958
+
+Inspirace 
+https://github.com/kevinongko/vue-instagram
+https://rudrastyh.com/instagram/more-than-33.html více než 33 příspěvků
+
+
+-------------------------------------------------------
+Autentizace
+https://api.instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=token
+client_id 	93c52c960d444e75b7c60e3c46ba182d
+redirect_uri http://127.0.0.1:5500/search.html
+
+https://api.instagram.com/oauth/authorize/?client_id=93c52c960d444e75b7c60e3c46ba182d&redirect_uri=http://127.0.0.1:5500/search.html&response_type=token

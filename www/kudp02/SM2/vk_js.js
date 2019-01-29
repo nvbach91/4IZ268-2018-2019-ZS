@@ -4,7 +4,7 @@
 function getUrl(method, params) {
     if (!method) throw new Error('Method was not found');
     params = params || {};  //Check if it is an object, otherwise make it an object
-    params ['access_token'] = '32cca13d50f41e60ef44a247f0f7159bc55b2289dc9f72bac7a949ac0def10fe683068cf17066ca504d21'; //Your access token
+    params ['access_token'] = '079fb7c7002f4c6e61bb739d40ac006b51bdfa2cc9eba3231f167fb8e5bed5c9d237be30a698b54acdb7e'; //Your access token
     return 'https://api.vk.com/method/' + method + '?' + $.param(params)+ '&v=5.52';
 }
 

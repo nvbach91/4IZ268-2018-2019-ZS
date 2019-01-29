@@ -2,16 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="You can even send messages to your friends">
+    <meta name="keywords" content="Vk, API">
+    <meta name="author" content="Petr Kudryavtsev">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VKONTAKTE API</title>
     <link rel="stylesheet" href="vk.css">
 
 </head>
 
 <body>
-    <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/VK.com-logo.svg/768px-VK.com-logo.svg.png">
+    <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/VK.com-logo.svg/768px-VK.com-logo.svg.png" alt="logo">
     <h1>See info about your friends in VK</h1>
     <hr>
+    <a href="https://oauth.vk.com/authorize?client_id=6831992&display=page&redirect_uri=localhost&scope=friends,offline&response_type=token&v=5.92">Authorize</a>
     <div id="main-buttons">
         <button id="load">Show Friends</button>
         <button id="hide">Hide Friends</button>
@@ -20,7 +26,7 @@
     <div class="wrapper">
         <ul id="list"></ul>
         <div class="detail">
-            <img src="">
+            <img src="#" alt="Big profile image">
             <h3></h3>
             <ul>
 
@@ -31,7 +37,7 @@
     </div>
     
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
-    <script src="https://vk.com/js/api/openapi.js?154" type="text/javascript"></script>
+
     <script src="vk_js.js" ></script>
     
 </body>

@@ -1,0 +1,21 @@
+[
+  {
+    "title": "Fantastic Beasts",
+    "author": "J. K. Rowling"
+  },
+  {
+    "title": "Game of Thrones",
+    "author": "George R.R. Martin"
+  },
+  {
+    "name": "Veritas Inc.",
+    "capital": 1542000,
+    "employees": ["Bill", "Steve", "Elon"],
+    "address": {
+      "street": "Wall Street 42",
+      "city": "New York",
+      "state": "NY",
+      "country": "United States of America"
+    }
+  }
+]

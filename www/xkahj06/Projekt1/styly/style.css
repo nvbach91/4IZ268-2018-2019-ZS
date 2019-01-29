@@ -1,0 +1,252 @@
+   
+body, body a {
+    font-family: Open Sans, Arial, Helvetica;
+    color: rgb(24, 26, 34);
+}
+.menu {
+    list-style: none;
+    overflow: hidden;
+    margin-top: 0em;
+    background-color:rgba(116, 20, 20, 0.800);
+    
+}
+    .menu li {
+        display: inline, left;
+    }
+
+    .menu a {
+        text-decoration: none;
+        border-bottom: 2;
+        padding: .2em;
+        float: right;
+        width: 180px;
+        line-height: 40px;
+        text-align: center;
+        color: whitesmoke;
+        font-size: 17px;
+            }
+    .menu a:hover {
+        background-color:rgb(69, 120, 148);
+    }
+.poster{
+    margin: 0%;
+    font-size: 50px;
+    color: whitesmoke;
+    max-height: 130px;
+    max-height: 5%;
+    line-height: 2.0em;
+    text-align: center;
+    background-image: url("../fotky/top-min.jpg");
+    background-size: cover;
+    background-position: center;
+} 
+    .poster h5{
+        background-color: rgba(255, 255, 255, 0.7);
+        text-align: center;
+    }
+.articles {
+    font-size: 20px;
+    padding-left: 15%;
+    margin: auto;
+    width: 80%;
+    /*border: 3px solid green;     *pouzival jsem na kontrolu prvku*/
+    padding: 10px;
+   
+}
+    .articles:after, article:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+.article{
+    list-style-type: none;
+    float:left; 
+    width: 40%;
+    min-width: 400px;
+    padding-left:5%;
+    text-align: center;
+    position: relative;
+}
+    .articles h2 { 
+        background-color:rgba(116, 20, 20, 0.800);
+        color: whitesmoke;
+    }
+.hmain{ 
+    font-size: 30px;
+    text-align: center;
+}
+.tmain{
+    font-size: 20px;
+    text-align: center;
+    max-width: 60%;
+    margin: 1% 0% 0% 20%;
+}
+.personalFoto{
+    style="float:"right";
+    height:400px;
+    max-height: 230PX;
+}
+.left{float:left; }
+.right{float: right; }
+.center{
+    text-align: center;
+    margin: 0% 15% 0% 15%;
+}
+.foter{
+    text-align: center;
+    background-color: #333;
+    width: 80%;
+    margin-left: 9%;
+    bottom: 0;
+    position: absolute;
+    background:rgba(116, 20, 20, 0.800);
+    padding: 1%;
+}
+.Putdown{
+    position: relative;
+}
+.fa {
+  padding: 15px;
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 15px 10px;
+}
+
+.expandedFoto{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.fa:hover {
+     background: rgb(26, 40, 68);
+     color: white;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+  border-radius: 40%;
+}
+.mini {
+    padding: 4px;
+    font-size: 13px;
+    width: 60px;
+    margin: 20px 17px 5px 5px;
+    border-radius: 25%;
+}
+@media screen and (max-width: 768px) {
+    .body, body a {
+   font-size: 11px;
+    }
+    .poster{
+        max-height: 80px;
+        margin: 0;
+        font-size: 20px;
+        padding: 0;
+    }
+        .poster h5 { 
+            background-color:rgba(116, 20, 20, 0.800);
+            font-size: 20px;
+            color: rgb(165, 58, 58);
+        }
+        .menu {font-size: 14px;}
+        .menu a {
+        padding: .1em;
+        float: left;
+        width: 60px;
+        line-height:20px;
+        text-align: center;
+        color: whitesmoke;
+        font-size: 11px;
+        }
+    .articles, .article{
+        font-size: 11px;
+        max-width: 100%;
+
+        margin-right: 0;
+        padding: 0;
+        margin-left: 0;
+    }
+    .hmain{ 
+        font-size: 20px;
+    }
+    .tmain{
+        font-size: 14px;
+        max-width: 100%;
+        margin: 1% 0% 0% 1%;
+    }   
+        .foter{
+    text-align: center;
+    background-color: #333;
+    width: 100%;
+    margin-left: 0%;
+    bottom: 0;
+    position: relative;
+    margin-bottom: 3px;
+    padding: 0%;
+    font-size: 8px;
+    background:rgba(116, 20, 20, 0.800);
+    }  
+}
+
+@media screen and (max-width: 320px){
+    .body, body a {
+   font-size: 11px;
+    }
+    .poster{
+        width:180%;
+        max-height: 80px;
+    }
+        .poster h2 { 
+            background-color:rgba(116, 20, 20, 0.800);
+            font-size: 10px;
+            color: whitesmoke;
+        }
+    .articles, .article{
+        font-size: 12px;
+        max-width: 100%;
+        margin: 0;
+        padding:0px;
+    }
+    .menu{
+        width:200%;
+    }
+    .menu a {
+        padding: 2px;
+        padding-right:50px;
+        float: left;
+        width: 120%;
+        line-height:20px;
+        text-align: left;
+        color: whitesmoke;
+        font-size: 17px;
+        }
+    .hmain{ 
+        font-size: 15px;
+        width: 170%;
+    }
+    .tmain{
+        width: 170%;
+        font-size: 13px;
+        max-width: 200%;
+        margin: 1% 0% 0% 1%;
+    }
+    .articles:after, .article:after, .poster:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .foter{
+    text-align: center;
+    background-color: #333;
+    font-size: 13px;
+    position: relative;
+    background:rgba(44, 255, 90, 0.8);
+    margin-bottom: 2px;
+    min-width: 200%;
+    width: 170%;
+    }  
+}

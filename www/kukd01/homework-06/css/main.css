@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    font-family: verdana;
+ 
+   margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.6em;
+}
+
+.box-01 {
+    background-color:darkgrey;
+    width:30em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-bottom: solid;
+    border-bottom-color: black;
+   
+    
+}
+
+.output {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+    font-weight: bold;
+}
+    
+    
+   
+
+.decipher-button {
+    background-color: rgb(112, 119, 119);
+    color: white;
+    height: 3em;
+    margin-bottom: 1em;
+   
+}

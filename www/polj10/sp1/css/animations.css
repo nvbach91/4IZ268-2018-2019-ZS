@@ -1,0 +1,144 @@
+.top-menu-bar-animation {
+    animation: topmenubar 0.5s ease forwards;
+  }
+
+.bottom-menu-bar-animation {
+  animation: bottommenubar 0.5s ease forwards;
+}
+
+#mid-menu-bar1 {
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+#mid-menu-bar2 {
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.mid-menu-bar1-animation {        
+  animation: midmenubar1 0.5s ease forwards;
+}
+
+.mid-menu-bar2-animation {       
+  animation: midmenubar2 0.5s ease forwards;
+}
+
+.bw-top-menu-bar-animation {
+  animation: topmenubarbackwards 0.5s ease;
+}
+.bw-bottom-menu-bar-animation {
+  animation: bottommenubarbackwards 0.5s ease;
+}
+.bw-mid-menu-bar1-animation {       
+  animation: midmenubar1backwards 0.5s ease;
+}
+.bw-mid-menu-bar2-animation {       
+  animation: midmenubar2backwards 0.5s ease;
+}
+
+@keyframes topmenubar {
+    0% {          
+        transform: translateY(0px);
+    }
+    50% { 
+        transform: translateY(64px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(64px);
+    }
+} 
+
+  @keyframes topmenubarbackwards {
+    0% {       
+        opacity: 0;
+        transform: translateY(64px);            
+    }
+    50% {
+        opacity: 1; 
+        transform: translateY(64px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+} 
+
+  @keyframes bottommenubar {
+    0% {          
+        transform: translateY(0px);
+    }
+    50% { 
+        transform: translateY(-64px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-64px);
+    }
+  } 
+
+  @keyframes bottommenubarbackwards {
+    0% {     
+        opacity: 0;
+        transform: translateY(-64px);               
+    }
+    50% { 
+        opacity: 1;
+        transform: translateY(-64px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+  } 
+
+  @keyframes midmenubar1 {
+    0% {    
+        transform: rotateZ(0deg);  
+    }
+    50% { 
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(45deg);
+    }
+  } 
+
+  @keyframes midmenubar1backwards {
+    0% {    
+        transform: rotateZ(45deg);           
+    }
+    50% { 
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(0deg);  
+    }
+  } 
+
+  @keyframes midmenubar2 {
+    0% {    
+        transform: rotateZ(0deg);  
+    }
+    50% { 
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(-45deg);
+    }
+  } 
+
+  @keyframes midmenubar2backwards {
+    0% {    
+        transform: rotateZ(-45deg);       
+    }
+    50% { 
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(0deg);    
+    }
+  }

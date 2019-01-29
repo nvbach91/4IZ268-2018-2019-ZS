@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gmail sender</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <header></header>
+    <main class="container">
+      <h1>Gmail sender</h1>
+      <button class="btn btn-primary" id="authorize_button">Sign in</button> 
+      <button class="btn btn-danger" id="signout_button">Sign Out</button>
+      <form id="message-form">
+        <div class="form-row" id="user-info">
+          <div class="form-group col-md-6"><label>Your name</label><input class="form-control" placeholder="USERNAME" disabled /></div>
+          <div class="form-group col-md-6"><label>Your email address</label><input class="form-control" placeholder="EMAIL" disabled /></div>
+        </div>
+        <div class="form-group"><label>Recipient</label> <input class="form-control" placeholder="RECIPIENT" type="email" value="" required/></div>
+        <div class="form-group"><label>Subject</label> <input class="form-control" placeholder="SUBJECT" value="" required/></div>
+        <div class="form-group"><label>Message</label> <textarea class="form-control" rows="10" placeholder="MESSAGE" required></textarea></div>
+        <button class="btn btn-primary">Send EMAIL</button>
+      </form>
+    </main>
+    <footer class="card-footer">2019 Copyright @nvbach91</footer>
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Heads up!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body"><p></p></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

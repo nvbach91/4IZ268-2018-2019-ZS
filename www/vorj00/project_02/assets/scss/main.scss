@@ -1,0 +1,195 @@
+@import 'generic.normalize.scss';
+
+$black: #212121;
+$white: #FAFAFA;
+$background: #ECEFF1;
+
+body {
+  background-color: $background;
+  color: $black;
+  font-family: 'Montserrat', sans-serif;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+.input {
+  border: none;
+  border-radius: 20px;
+  padding: 0.25rem 0.5rem;
+}
+
+.button {
+  background-color: #1db954;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  color: $white;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.nav {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 4rem;
+  background-color: $background;
+  padding: 1rem 2rem;
+}
+
+.main {
+  padding: 0 2rem 2rem 2rem;
+}
+
+.img {
+  border-radius: 50%;
+  height: 180px;
+  width: 180px;
+}
+
+.tracks {
+  background-color: $white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  display: flex;
+  border-radius: 8px;
+  flex-direction: column;
+
+  &>*:first-child{
+    border-radius: 8px 8px 0 0;
+  }
+
+  &>*:last-child{
+    border-radius: 0 0 8px 8px;
+  }
+}
+
+.tracks h2 {
+  position: sticky;
+  top: 4rem;
+  z-index: 1;
+  margin: 0;
+  padding: 1.25rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+
+  &:nth-child(odd) {
+    background-color: #FFF
+  }
+
+  &:hover {
+    background-color: #CFD8DC
+  }
+}
+
+.track__play {
+  cursor: pointer;
+  margin: 0 2rem;
+  font-size: 2rem;
+}
+
+.track__img {
+  height: 100px;
+  width: 100px;
+  border-radius: 0;
+}
+
+.track__info {
+  margin-left: 1rem;
+  align-self: stretch;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.track__name {
+  font-size: 1.5rem
+}
+
+.track__authors {
+  display: flex;
+  bottom: 0.75rem;
+  color: grey;
+  font-size: 0.9rem
+}
+
+.track__danceability{
+  text-align: center;
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+.track__danceabilityName{
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: grey;
+}
+
+.track__danceabilityNumber {
+  height: 100%;
+  color: $black;
+}
+
+.status {
+  margin: 1rem 0;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 1.5rem;
+  line-height: 1.125;
+  background: $white;
+  border-radius: 2px;
+  border-left: 5px solid #1d7fb9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18)
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 3rem;
+}
+
+.result {
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+
+  :hover {
+    text-decoration: underline;
+  }
+}
+
+.result__name {
+  margin-top: 1rem;
+}
+
+.result__imgContainer {
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.18);
+  border-radius: 50%;
+  height: 180px;
+  width: 180px;
+  margin: 0 auto;
+
+  &>img {
+    z-index: -2;
+    position: relative;
+  }
+
+}

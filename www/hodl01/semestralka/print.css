@@ -1,0 +1,43 @@
+*{
+    font-size: 12px;
+    color: black;
+}
+nav, .bigsocialicons, .cover{
+    display: none;
+}
+.positionimg {
+    height: 12px;
+}
+.justify{
+    text-align: justify;
+}
+.citace{
+    font-style: italic;
+}
+.pageContent{
+    position: relative;
+    width: 100%;
+    top: 0;
+}
+
+.blackBox{
+    padding: 20px;
+    margin-bottom: 25px;
+    margin-right: 8px;
+    }
+main {
+    width: 100%;
+  }
+  aside ~ main {
+    width: 60%;
+  }
+
+aside {
+    width: 40%;
+    float: right;
+    padding: 25px 0;
+    margin-bottom: 25px;
+  }
+  .asideImg{
+    width: 100%;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reddit post searcher</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+    <link rel="icon" href="favicon2.png" sizes="7b0x70" type="image/vnd.microsoft.icon">
+</head>
+
+<body>
+    
+    <div class="profile">
+        <h1>Reddit post searcher</h1>
+        <div>This aplication let you add you novel into the watch list.</div>
+        <div>Add subreddit(default noveltranslation), novel name(or part of it), how much chapters did you read already, and from how from much new chapters it change color, so you will know it now have enough new chapters from you :). </div>
+        
+        <div class="informations">
+            <div class="profile__detail">
+                <div class="profile__detailName">NovelName</div>
+                <div class="profile__detailValue">ChapterRead</div>
+                <div class="profile__detailValue">NewestChapter</div>
+                <div class="profile__detailValue">Increment</div>
+                <div class="profile__detailValue"></div>
+            </div>
+        </div>
+
+
+        <div id="js-output">
+            <div id="js-counter" class="invisible">0</div>
+
+        </div>
+        <div class="text_left">
+            <h5> Add new novel</h5>
+            <div class="container">
+                <form id="subreddit-select-form" class="form">
+                    <div class="">
+                        <input id="js-search" class="input input--search" type="search" placeholder="Enter subreddit here.">
+                    </div>
+                    <div class="">
+                        <input id="novel-search" class="input input--search" type="search" placeholder="Enter novel here.">
+                    </div>
+                    <div class="">
+                        <input id="chapters-read" class="input input--search input--small " type="search" placeholder="Read Chapters?">
+                    </div>
+                    <div class="">
+                        <input id="Increment" class="input input--search input--small" type="search" placeholder="Increment">
+                    </div>
+                    <div>
+                        <input class="button button--submitSearch" type="submit" value="Find">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js" defer></script>
+
+</body>
+
+</html>

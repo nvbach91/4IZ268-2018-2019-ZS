@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Movie database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+  <div class="nav-main">
+    <a class="nav-inx" href="index.html">Movie database</a>
+  </div>
+  <hr>
+  <div class="nav-cont">
+  <div  id="btn-index-mov">Movies</div>
+  <div  id="btn-index-act">Actors</div>
+</div>
+  </hr>
+
+  <div id="movies-page" class="page">
+    <div class="search-main">
+      <div class="search-cont">
+        <h3 class="search-head">Search For Any Movie</h3>
+        <form id="search-form-mov">
+          <input type="text" class="search-inp-mov" id="search-input-mov" placeholder="Search Movie....">
+        </form>
+      </div>
+    </div>
+    <div class="container-side-mov"></div>
+    <div class="movies-cont">
+      <div class="movies">
+        <div id="movie-field" class="movie-fld"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="actors-page" class="page">
+    <div class="search-main">
+      <div class="search-cont">
+        <h3 class="search-head">Search For Actors</h3>
+        <form id="search-form-act">
+          <input type="text" class="search-inp-act" id="search-input-act" placeholder="Search Act....">
+        </form>
+      </div>
+    </div>
+    <div class="container-side-act"></div>
+    <div class="act-cont">
+      <div class="actors">
+        <div id="actor-field" class="actor-fld"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

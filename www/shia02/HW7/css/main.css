@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+#game-field {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.clear {
+    clear: both;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.card {
+    text-align: center;
+    width: 18%;
+    padding: 40px 0;
+    height: 100px;
+    background-color: rgb(247, 230, 207);
+    margin: 5px;
+    float: left;
+}
+
+.card:hover {
+    background-color: rgb(252, 228, 196);
+}
+.card.revealed {
+    background-color: aquamarine;
+}

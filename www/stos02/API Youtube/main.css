@@ -1,0 +1,70 @@
+body {
+  margin: auto;
+}
+a {
+  text-decoration: none;
+  font: bold 20px Tahoma;
+  color: black;
+}
+
+.box {
+  position: relative;
+  height: 150px;
+  background-color: rgba(252, 0, 0, 0.829);
+}
+
+h1 {
+  position: absolute;
+  color: white;
+  font: bold 30px Tahoma;
+  width: 30%;
+  padding: 40px 90px;
+}
+
+.form {
+  float: right;
+  position: relative;
+  padding-top: 50px;
+  width: 60%;
+}
+
+.search-field {
+  height: 50px;
+  width: 300px;
+  text-align: center;
+  font: normal 20px Tahoma;
+  border-color: rgba(0, 0, 0, 0.5);
+}
+.button {
+  border-radius: 15px;
+  padding: 10px 24px;
+  background-color: white;
+  font: bold 15px Tahoma;
+}
+.button:hover {
+  border-color: red;
+  color: red;
+}
+.results li {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 70px;
+}
+.picture {
+  margin: auto;
+}
+.picture img {
+  width: 100%;
+}
+.information {
+  padding: 10px 70px;
+  width: 70%;
+}
+
+.information p {
+  font: normal 20px Align;
+}
+
+.title {
+  font: normal 18px Tahoma;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jan Brandejs">
+    <meta name="description" content="Semestrální práce předmětu 4IZ268 - statický web.">
+    <meta name="keywords" content="Video,Grafika,Jan Brandejs">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kontakt &#124; Jan Brandejs</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link href="../css/main.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="../img/favicon.png" />
+</head>
+
+<body>
+
+    <header>
+        <h2 class="web-name">Jan Brandejs</h2>
+        <input type="checkbox" id="menu-chck">
+        <label for="menu-chck" class="show-menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <ul class="menu">
+            <a href="../index.html">Domů</a>
+            <a href="o-mne.html">O mně</a>
+            <a href="projekty.html">Projekty</a>
+            <a href="reference.html">Reference</a>
+            <a href="kontakt.html">Kontakt</a>
+            <label for="menu-chck" class="hide-menu-btn">
+                <i class="fa fa-times-circle"></i>
+            </label>
+        </ul>
+    </header>
+    <div class="page-container">
+        <h3 class="page-name">Kontakt</h3>
+        <form>
+            <div class="form-wrap">
+                <label for="name">Vaše jméno:</label>
+                <input class="field" placeholder="Jméno" type="text" name="jmeno" required="required" id="name">
+                <label for="email">Váš email:</label>
+                <input class="field" placeholder="mail@you.com" type="email" name="email" required="required" id="email">
+                <label for="text">Vaše zpráva:</label>
+                <textarea class="field" rows="10" cols="100" placeholder="Vaše zpráva..." id="text"></textarea>
+            </div>
+            <input onclick="alert('Odeslano!');" class="btn-color" type="submit" value="Odeslat">
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <h4>SP1 předmětu 4IZ268 během ZS 2018/2019 na Vysoké škole ekonomické v Praze. Vypracoval: Jan Brandejs</h4>
+            <p class="footer-list"><a href="../pages/mapa-stranek.html">Mapa stránek</a></p>
+            <p class="footer-list"><a href="mailto:braj08@vse.cz?subject=Ciao!">Kontaktujte tvůrce</a></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

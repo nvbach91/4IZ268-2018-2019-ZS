@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-family: Helvetica, Sans-Serif;
+    list-style: none;
+}
+
+body.waiting * {
+    cursor: progress;
+}
+
+body {
+    font-family: Helvetica, Sans-Serif;
+    text-align: center;
+    background-color: rgb(52, 152, 219);
+}
+
+main p {
+    text-align: left;
+    width: 50%;
+    margin: 0 auto;
+    line-height: 35px;
+}
+
+.statsText {
+    text-align: left;
+    width: 50%;
+    margin: 0 auto;
+    line-height: 35px;
+}
+
+.favourite_Text {
+    text-align: left;
+    width: 50%;
+    margin: 0 auto;
+    line-height: 35px;
+}
+
+#user {
+    text-align: left;
+    width: 50%;
+    margin: 0 auto;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+#user:hover:after, .list li.fav:after {
+    content: ' \2605';
+    color: rgb(255, 203, 0);
+}
+
+#user.fav:hover:after {
+    content: ' \2606';
+}
+
+.sideText {
+    text-align: center;
+    line-height: 35px;
+}
+
+button, .btn, a.btn {
+    background-color: rgb(52, 152, 219);
+    cursor: pointer;
+    padding: 15px;
+    border: none;
+    color: white;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#search-input {
+    width: 27%;
+    margin: 0 auto;
+}
+
+#latest_container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#first_container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#latestdirected_container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#profile_image {
+    margin: 0 auto;
+}
+
+footer {
+    background-color: rgb(52, 152, 219);
+    padding: 20px 0;
+    font-weight: bold;
+}
+
+#app {
+    background-color: rgb(253, 253, 253);
+    margin-top: 1%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+#TwitterLogo {
+    position: relative;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+h1 {
+    margin-left: 50px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "Sidebar Mainbar Mainbar Mainbar Mainbar" "Sidebar Mainbar Mainbar Mainbar Mainbar" "Sidebar Mainbar Mainbar Mainbar Mainbar" "Sidebar Mainbar Mainbar Mainbar Mainbar" "Sidebar Mainbar Mainbar Mainbar Mainbar" "Sidebar Mainbar Mainbar Mainbar Mainbar";
+}
+
+.Sidebar {
+    grid-area: Sidebar;
+    background-color: rgb(214, 243, 253);
+}
+
+.Mainbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "Searchbar Searchbar Searchbar Searchbar" "Profilebar Profilebar Tweetbar Tweetbar" "Profilebar Profilebar Tweetbar Tweetbar" "Profilebar Profilebar Tweetbar Tweetbar" "Profilebar Profilebar Tweetbar Tweetbar" "Profilebar Profilebar Tweetbar Tweetbar";
+    grid-area: Mainbar;
+}
+
+.Searchbar {
+    grid-area: Searchbar;
+    margin-top: 2%;
+    max-height: 40px;
+}
+
+.Searchbar p {
+    text-align: center;
+}
+
+.Profilebar {
+    grid-area: Profilebar;
+    font-size: 16px;
+}
+
+.Tweetbar {
+    grid-area: Tweetbar;
+    align-content: space-around;
+    justify-content: space-between;
+}
+
+.list li {
+    cursor: pointer;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 15%;
+}
+
+/* 
+.list li:hover:after, .list li.fav:after {
+    content: ' \2605';
+    color: rgb(255, 203, 0);
+}
+
+.list li.fav:hover:after {
+    content: ' \2606';
+}
+*/

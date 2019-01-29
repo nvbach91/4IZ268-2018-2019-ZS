@@ -1,0 +1,139 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    text-align: center;
+    background-color: #edeef1;
+}
+
+#gamefield {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border: 5px solid #007EE3;
+    border-radius: 25px;
+}
+
+button {
+    min-height: 80px;
+    color: black;
+    width: 15%;
+    background-color: rgb(221, 221, 221);
+    border: 5px solid #007EE3;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    left: 140px;
+    top: 25%;
+    margin-top: -50px;
+    margin-left: -100px;
+    position: fixed;
+}
+
+button:hover {
+    border: 5px solid rgb(60, 107, 207);
+    cursor: pointer;
+    background-color: rgba(0, 140, 255, 0.589);
+}
+
+console.log {
+    height: 100px;
+    width: 400px;
+}
+
+.nav {
+    background-color: rgb(92, 92, 92);
+    color: #feffff;
+    text-align: left;
+    font-size: 25px;
+    margin: 0 auto;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.nav a {
+    display: inline-table;
+    color: #feffff;
+    padding: 25px;
+    text-decoration: unset;
+}
+
+.nav a:hover {
+    background-color: white;
+    color: rgb(92, 92, 92);
+}
+
+.activepage {
+    font-style: italic;
+    color: white;
+    background-color: grey;
+}
+
+.panel_01 {
+    background: #dadada;
+    height: 25%;
+    left: 140px;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    position: fixed;
+    width: 15%;
+    font-size: 20px;
+    border: 5px solid #007EE3;
+    border-radius: 25px;
+}
+
+.panel_01 p {
+    font-size: 25px;
+    width: 200px;
+    margin: 20px auto;
+}
+
+#score {
+    font-size: 75px;
+    color: red;
+}
+
+#gameover {
+    font-size: 75px;
+    color: black;
+}
+
+#gameovertext {
+    font-size: 40px;
+    color: black;
+}
+
+#panel_02 {
+    float: left;
+}
+
+.headerimg {
+    max-width: 10%;
+    border-radius: 10px;
+    float: left;
+}
+
+footer {
+    background-color: rgb(216, 216, 216);
+    bottom: 0%;
+    height: 50px;
+    display: table;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    margin-left: -40%;
+}
+
+footer p {
+    color: #007EE3;
+    font-size: 25px;
+}

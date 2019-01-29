@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: lightblue;
+}
+#page {
+    width: 940px;
+    padding: 25px;
+    background-color: white;
+    margin: auto;
+}
+
+#top {
+    text-align: right;
+    font-family: Georgia;
+    font-size: 40px;
+    font-weight: bold;
+    border-bottom: 3px solid white;
+   }
+
+.runtext {
+    color: rgba(105, 105, 105, 1);
+    position: absolute;
+    height: 195px;
+    width: 250px;
+    top: 100px;
+    left: 100px;
+    animation-name: runtext;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes runtext {
+    0%   {left: 0; color: rgba(105, 105, 105, 0);}
+    100% {left: 100px;color: rgba(105, 105, 105, 1);}
+}
+
+.under-runtext {
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    top: 258px;
+    border-bottom: 3px solid white;
+}
+
+h2 {
+    width: 100%;
+    position: static;
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+    text-transform: uppercase;
+    font-family: Georgia;
+    background-color: lightgray;
+    color: dimgray;
+    font-weight: bold;
+}
+
+h3 {
+    padding-left: 17%;
+}
+
+hr{
+    display: none;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bunka-1 {
+    width: 35%;
+    text-align: right;
+    border-right: 2px solid black;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.bunka-2 {
+    text-align: left;
+    padding-left: 5px;
+}
+
+.top-box {
+    background: url('https://amp.businessinsider.com/images/56a0efcee6183e9d408babaa-750-563.jpg') no-repeat;
+    background-size: cover;
+    height: 600px;
+    position: relative;
+    opacity: 1.0;
+    animation-name: headpicture;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes headpicture {
+    0%   {opacity: 0.2;}
+    100% {opacity: 1.0;}
+}
+
+.nadpis4 {
+    text-align: right;
+}
+
+.napln-prace-boxes {
+    width: 940px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.napln-prace-levy {
+    width: 30%;
+    display: inline-block;
+}
+
+.napln-prace-pravy {
+    width: 70%;
+    display: inline-block;
+    padding-right: 150px;
+}
+
+.seznamy {
+    padding: 0 10% 0 18%;
+}
+
+.zajmy {
+    padding: 0 20% 0 20%;
+    text-align: justify;
+}
+
+.personal {
+}

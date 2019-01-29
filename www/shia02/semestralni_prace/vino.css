@@ -1,0 +1,361 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial;
+    background-color: rgb(253, 234, 234);
+}
+ul {
+    list-style: none;
+}
+header {
+    background-color: #641C34;
+    display: flex;
+}
+nav li {
+    text-transform: uppercase;
+    float: left;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    display: block;
+}
+nav li:hover {
+    background-color: rgb(233, 127, 127);
+}
+nav li:active, .highlight {
+    background-color: rgb(214, 116, 116);
+}
+.search {
+    background-image: url('https://cdn3.iconfinder.com/data/icons/eightyshades/512/11_Search-512.png');
+    background-position: center;
+    background-size: cover;
+    margin-top: 15px;
+    min-width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-left: auto;
+}
+.search:hover {
+    background-color: rgb(233, 127, 127);
+}
+.search:active {
+    background-color: rgb(214, 116, 116);
+}
+.header {
+    text-transform: uppercase;
+}
+.intro {
+    color: white;
+    min-height: 700px;
+    line-height: 2.6em;
+    padding: 60px;
+    text-align: left;
+    background-image: url('zdroje/vino.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Garamond, Times, serif;
+    font-style: italic;
+}
+.introlat {
+    font-size: 60px;
+    margin-left: 55px;
+    margin-bottom: 80px;
+}
+.introcs {
+    font-size: 50px;
+    margin-left: 10px;
+    margin-bottom: 80px;
+}
+.plinius {
+    font-size: 40px;
+}
+div h1, div h2 {
+    margin-top: 0px;
+    margin-bottom: 1px;
+    text-align: center;
+    padding: 25px;
+    background-color: #641C34;
+    color: white;
+    clear: both;
+}
+
+.wines, .regions, .criterions, .classifications {
+    padding: 20px 0;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.wine, .criterion, .classification, .region {
+    float: left;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.wine, .criterion {
+    width: 33.333%;
+}
+
+.classification {
+    width: 20%;
+}
+
+.region, .four {
+    width: 25%;
+}
+
+.wine h3, .region h3, .criterion h3, .classification h3 {
+    padding: 10px;
+    background-color: rgb(233, 127, 127);
+}
+
+.wine p, .region p, .criterion p, .classification p {
+    min-height: 150px;
+}
+
+p, ol li {
+    line-height: 30px;
+}
+
+.picture200 {
+    width:200px;
+}
+
+.picture250 {
+    width:250px;
+}
+
+.picture270 {
+    width:270px;
+}
+
+.picture300 {
+    width:300px;
+}
+
+footer {
+    clear: both;
+    background-color: #641C34;
+    color: white;
+    text-align: center;
+}
+.copyright, .contact {
+    padding: 10px 0;
+}
+
+.mail, .link {
+    color: rgb(214, 116, 116);
+}
+
+
+/* HISTORIE */
+
+.central, .line {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+div h4 {
+    font-style: italic;
+    color: #641C34;
+    margin-top: 20px;
+}
+
+.img {
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.img-right {
+    float: right;
+    margin: 5px;
+}
+
+.clear {
+    clear: left;
+}
+
+/* REGIONY */ /* KLASIFIKACE */
+
+
+.cent {
+    padding: 5px 600px;
+}
+
+.line {
+    border-top: 3px solid rgb(233, 127, 127);
+    margin-top: 10px;
+    padding-bottom: 15px;
+}
+
+.etiketa {
+    padding: 250px;
+    background-image: url('zdroje/etiketa.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+ /* DELENI */
+
+.criterions-box {
+    padding: 20px 0;
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+}
+.criterion-box {
+    padding: 0 10px;
+    width: 33.333%;
+}
+.criterion-box h3 {
+    padding: 10px;
+    background-color: rgb(233, 127, 127);
+}
+.white {
+    padding-top: 80px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .region, .four {
+        width: 50%;
+    }
+
+    .classification {
+        width: 25%;
+    }
+    .criterions-box {
+        display: block;
+    }
+    .criterion-box {
+        float: left;
+    }
+    .wine p, .region p, .criterion p, .criterion-box p .classification p {
+        min-height: 220px;
+    }
+
+    .none {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .wine, .classification, .criterion, .criterion-box{
+        width: 50%;
+    }
+    .wine p, .region p, .criterion p {
+        min-height: 200px;
+    }
+
+    .criterion-box p {
+        min-height: 330px;
+    }
+
+    .classification p {
+        min-height: 270px;
+    }
+
+    .three p {
+        min-height: 100px;
+    }
+    .white {
+    padding-top: 0;
+    }
+    .glass {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .criterion-box p {
+        min-height: 415px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .wine, .region, .criterion, .criterion-box, .classification {
+        float: none;
+        width: 100%;
+    }
+    .criterion-box p {
+        min-height: 200px;
+    }
+    .wine p, .region p, .criterion p, .classification p {
+        min-height: initial;
+    }
+    .intro {
+        display: none;
+    }
+    .smallScreen {
+        clear: both;
+    }
+}
+
+@media print {
+    body {
+        background-color: none !important;
+        font-size: 12px;
+    }
+
+    .intro, header, .etiketa {
+        display: none;
+    }
+    div h1, div h2, footer {
+        color: rgba(0, 0, 0, 0.863);
+        padding: 5px;
+    }
+
+    .criterions-box {
+        display: block;
+    }
+
+    .wine, .criterion, .classification, .criterion-box, .region {
+        float: none;
+        width: 100%;
+    }
+
+    .white {
+        padding-top: 0;
+    }
+    
+
+
+    .wine p, .region p, .criterion p, .classification p {
+        min-height: auto;
+    }
+
+    .newpage { 
+        page-break-before: always; 
+    }
+
+    .wines {
+        padding: 0px;
+    }
+
+    p, ol li {
+        line-height: 25px;
+    }
+
+    .none {
+        display: none;
+    }
+
+    .glass, .nonprint {
+        display: none;
+    }
+
+    .clear {
+        display: none;
+    }
+    
+    .line {
+        clear: both;
+    }
+
+}
+

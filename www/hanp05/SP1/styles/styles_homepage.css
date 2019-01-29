@@ -1,0 +1,114 @@
+/* ****** Section 1 ****** */
+
+.section1 {
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    padding: 60px 0;
+}
+
+.grid_1 {
+    display: grid;
+    grid-template-areas: "obr1 nadpis1" "obr1 perex1" "obr1 button1";
+}
+
+.book_img_preview {
+    box-shadow: 15px 15px 50px grey;
+    max-width: 80%;
+    max-height: 600px;
+    align-self: center;
+}
+
+.book_img_link {
+    grid-area: obr1;
+}
+
+.book_img_preview:hover {
+    transition: 0.70s;
+    transform: rotate(-3deg) scale(1.1);
+}
+
+.grid_1 p {
+    grid-area: perex1;
+    align-self: center;
+    color: #333;
+}
+
+.book_and_author {
+    grid-area: nadpis1;
+    align-self: end;
+}
+
+.section1 .book_name, .section1 .author_name {
+    color: #333;
+}
+
+.section1 .button {
+    grid-area: button1;
+    width: 100%;
+    max-width: 300px;
+    align-self: start;
+}
+
+/* ###### Konec Section1 ###### */
+
+/* ****** Main ****** */
+
+.references {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    justify-items: center;
+    grid-gap: 10px;
+}
+
+.ref {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.ref_img {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* ###### Konec Main ######*/
+
+@media only screen and (max-width: 1000px) {
+    .grid_1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "obr1 nadpis1" "obr1 perex1" "obr1 button1";
+    }
+    .grid_1 p {
+        padding: 20px 0;
+    }
+    .references {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .grid_1 {
+        grid-template-columns: 1fr;
+        grid-template-areas: "obr1" "nadpis1" "perex1" "button1";
+        justify-items: center;
+    }
+    .book_img_preview {
+        max-width: 90%;
+    }
+    .book_and_author {
+        margin-left: 0px;
+        margin-top: 60px;
+    }
+    .references {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only print {
+    .book_img_preview {
+        box-shadow: none;
+        border: #333 solid 1px;
+    }
+}

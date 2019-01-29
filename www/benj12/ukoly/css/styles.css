@@ -1,0 +1,102 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.name-text{
+	color: red;
+}
+.rgb-text{
+	color:rgb(0,100,0);
+}
+.hex-bold-text{
+	color:#00BFFF;
+	font-weight: bold;
+}
+.text-18{
+	font-size: 18px;
+}
+.text-24{
+	font-size: 24px;
+	font-style: italic;
+}
+.white-brown-text{
+	color:white;
+	background-color: brown;
+}
+.center-line{
+	text-align: center;
+	line-height: 32px;
+}
+.justified{
+	text-align: justify;
+	text-transform: uppercase;
+}
+.box-1{
+	width: 400px;
+	height: 300px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: purple;
+	padding: 30px;
+}
+.box-2{
+	width: 500px;
+	height: 200px;
+	background-color: red;
+	margin: 100px;
+}
+.hidden{
+	display: none;
+}
+.box-3{
+	box-sizing: border-box;
+	height: 150px;
+	background-color: #00BFFF;
+	padding: 50px;
+	border-style: solid;
+	border-width: 10px;
+	border-color: yellow;
+}
+.hidden-gap{
+	visibility: hidden;
+}
+.box-4{
+	width: 200px;
+	height: 500px;
+	background-color: green;
+	opacity: 0.5;
+}
+.box-5{
+	width: 400px;
+	height: 300px;
+	position: relative;
+	background-color: lightblue;
+}
+.box-6{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	background-color: pink;
+	top: 50px;
+	right: 10px;
+}
+.button-1{
+	width: 300px;
+	height: 100px;
+}
+.button-1:active{
+	color: blue;
+}
+.button-2{
+	width: 200px;
+	height: 50px;
+}
+.button-2:hover{
+	background-color: brown;
+}
+.box-7{
+	margin-top: 200px;
+	width: 200px;
+	height: 500px;
+	background-color: blue;
+	cursor: pointer;
+}

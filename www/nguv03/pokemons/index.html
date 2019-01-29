@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Pokemons App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="icon" type="img/png" href="img/pokeball.png" />
+</head>
+
+<body>
+    <header>
+        <h1>My Favorite Pokemons</h1>
+    </header>
+    <hr>
+    <main>
+        <p>Add a pokemon by typing a name and clicking the button</p>
+        <p>Then you can click on a pokemon call it out</p>
+        <form id="pokemon-form">
+            <div class="form-row">
+                <!--label>Pokemon name: </label-->
+                <input id="pokemon-name" placeholder="Pokemon name">
+                <button id="add-button">Add to list</button>
+            </div>
+        </form>
+        <hr />
+        <h3 id="selected-pokemon">&nbsp;</h3>
+        <hr />
+        <ul id="pokemon-list">
+            <!--li class="pokemon">
+                <div class="pokemon-name">Pikachu</div>
+                <button class="pokemon-delete">Bye</button>
+            </li>
+            <li class="pokemon selected">
+                <div class="pokemon-name">Bulbasaur</div>
+                <button class="pokemon-delete">DELETE</button>
+            </li>
+            <li class="pokemon">
+                <div class="pokemon-name">Charmander</div>
+                <button class="pokemon-delete">DELETE</button>
+            </li-->
+        </ul>
+        <div class="pokeball"></div>
+    </main>
+    <footer>2018 &copy; Severus Snape</footer>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

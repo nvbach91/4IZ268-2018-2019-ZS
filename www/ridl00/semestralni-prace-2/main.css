@@ -1,0 +1,103 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+}
+
+header {
+    overflow: auto;
+    padding: 20px;
+}
+
+h1 {
+    float: left;
+    padding-left: 10px;
+    margin: 0;
+    line-height: 20px;
+    font-size: 11pt;
+    color: #3AAFA9;
+}
+
+button {
+    cursor: pointer;
+}
+
+.logo {
+    height: 20px;
+    float: left;
+}
+
+.logo path{
+    fill: #3AAFA9;
+}
+
+button.menu-button {
+    float: right;
+    padding: 4px 8px;
+    background: #fff;
+    border: 1px solid #3AAFA9;
+    border-radius: 5px;
+    color: #3AAFA9;
+}
+
+main {
+    padding: 20px;
+}
+
+
+.add-task {
+    width: 300px;
+    float: left;
+}
+
+.add-task input, .add-task button, .add-task textarea, .add-task select {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #3AAFA9;
+    font-size: 10pt;
+    padding: 5px 8px;
+    resize: none;
+}
+
+.add-task button {
+    background-color: #b3e6e3;
+    font-weight: 700;
+    border: none;
+    font-size: 8pt;
+    cursor: pointer;
+}
+
+.add-task label {
+    font-size: 6pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 5px;
+    padding: 5px 0;
+    display: block;
+}
+
+.tasks-wrapper .table {
+    width: 100%;
+    display: table;
+    table-layout: auto;
+}
+
+.table .t-row .t-head, .table .t-row .t-cell {
+    text-align: center;
+}
+
+.table .t-row {
+    display: table-row;
+}
+
+.table .t-row .t-head {
+    display: table-cell;
+    font-weight: 700;
+    background-color: #b3e6e3;
+    padding: 5px 10px;
+    border: 2px solid #fff;
+}
+
+.table .t-row .t-cell {
+    display: table-cell;
+    padding: 2px 4px;
+}

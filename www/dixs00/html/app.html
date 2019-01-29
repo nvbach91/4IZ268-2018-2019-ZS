@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+   <link rel="manifest" href="../favicon/site.webmanifest">
+   <meta name="msapplication-TileColor" content="#da532c">
+   <meta name="theme-color" content="#ffffff">
+
+   <meta name="description" content="Have your English skills analyzed and sent to your email after each private 1-1 lesson with Sebastian - the teacher you have always liked!">
+   <meta name="keywords" content="English,Conversation,Teacher,Tutor,
+   Lessons,Skype,Online,Speaking,Customized,Skills,Učitel,Soukromý,Angličtina,Konverzace,Lektor,Hodiny,Lekce,Jazykové">
+
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>App | Sebastian Dix - Personal Page</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" type="text/css" media="screen" href="../css/default.css" />
+   <link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
+   <link rel="stylesheet" type="text/css" media="screen" href="../css/app.css" />
+
+</head>
+
+<body>
+   <header>
+      <!--title of the page -->
+
+      <h1>Talk to Sebastian</h1>
+
+      <div class="containmiddle">
+         <nav>
+            <a href="../index.html">About</a>
+            <a href="../html/services.html">Services</a>
+            <a href="../html/references.html">References</a>
+            <a class="menu_active" href="../html/app.html">App</a>
+            <a href="../html/contact.html">Contact</a>
+         </nav>
+      </div>
+   </header>
+
+   <main>
+      <label class="disabled" for="topics">Select a topic to practice</label>
+      <div class="flexColumn" id="appContainerOne">
+         <div class="appExplanation">
+            <h2>Practice vocabulary using spaced repetition!</h2>
+            Choose a topic from the dropdown menu and press "practice".
+
+            <button id="helpButton" onclick="toggleHelp()">Help
+            </button>
+            <ol id="explanationList">
+               <li>Once you choose a topic and click the "Practice" button, words shall be stored in your
+                  browser's local storage</li>
+               <li>You can then practice the words: Look at the word and try to remember the translation.</li>
+               <li>Was it easy or hard? Or have you perhaps forgotten? Doesn't matter! Click the "Show answer" button</li>
+               <li>Choose the appropriate button to rate how well you remembered the word.</li>
+               <li>The <span class="green">"Good"</span> button increases this word's "level of practice" by one.</li>
+               <li>The <span class="red">"Forgot"</span> button DEcreases this word's "level of practice" by one.</li>
+               <li>The <span class="orange">"Hard"</span> button leaves the level of practice of this word as it was
+                  before.</li>
+               <li>The <span class="blue">"Easy"</span> button increases this word's "level of practice" by two.</li>
+               <li>The app remembers how much you have practiced each word.</li>
+               <li>Each time you practice a word, the next word will be the one which has the lowest
+                  practice level</li>
+            </ol>
+
+         </div>
+
+         <div id="loader" class="loader">
+            <div>Loading...</div>
+         </div>
+         <div class="flexContainerWrap disabled" id="appContainer">
+            <div class="flexContainerWrap">
+               <span class="chooseTopics">Choose a topic to practice: </span>
+               <select name="topics" class="disabled" id="topicDropdown">
+               </select>
+               <button class="disabled" id="practiceButton">Practice</button>
+            </div>
+            <div id="loader2" class="loader">
+               <div>Loading...</div>
+            </div>
+         </div>
+         <div class="disabled" id="flashcard">
+            <div class="disabled" id="question"></div>
+            <button class="disabled" id="show-answer">Show answer</button>
+            <div class="disabled" id="answer"></div>
+            <div class="flexContainerWrap">
+
+               <button class="appButton" id="forgot">Forgot</button>
+               <button class="appButton" id="hard">Hard</button>
+
+               <button class="appButton" id="good">Good</button>
+               <button class="appButton" id="easy">Easy</button>
+
+            </div>
+         </div>
+         <div id="statistics"></div>
+         <ul id="map"></ul>
+
+      </div>
+      </div>
+
+   </main>
+   <footer>
+      <div class="footerContainer">
+         <div class="footerLeft">
+            Sebastian Dix<br>
+            Krymská 121/22<br>
+            Prague 10<br>
+            10100<br>
+            The Czech Republic
+
+         </div>
+         <div class="footerRight">
+            Copyright © Sebastian Dix -2018
+
+         </div>
+      </div>
+   </footer>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="../js/color.js"></script>
+   <script src="../js/main.js"></script>
+   <script src="../js/utilities.js"></script>
+   <script src="../js/app.js"></script>
+
+</body>
+
+</html>

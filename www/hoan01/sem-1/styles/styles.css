@@ -1,0 +1,337 @@
+/* ---Styling all html docs--- */
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin-top: 0;
+}
+
+html {
+	background-image: linear-gradient(#b3d1ff 75%,green,green);
+	font-family: "Roboto", sans-serif;
+	text-align: center;
+
+}
+
+body {
+	background: url('../images/background.png');
+	background-size: cover;
+	border: 5px solid #0059b3;
+	margin: 22px;
+	box-shadow: 10px 10px 20px #888888;
+}
+
+h1 {
+	font-size: 50px;
+}
+
+h1,h2{
+	color: white;
+	text-shadow: 15px 10px 20px black;
+}
+
+h3{
+	font-size: 40px;
+}
+
+div button:hover {
+	cursor: pointer;
+}
+/* ---End styling all html docs--->
+
+/* ---Styling Home Page--- */
+.main button {
+	width: 300px;
+	height: 300px;
+	font-size: 30px;
+	font-family: 'Roboto';
+	font-weight: bolder;
+	padding: 30px;
+	margin-bottom: 5px;
+	border-radius: 22px;
+	border-radius: 50%;
+	box-shadow: 10px 10px 20px black;
+	background-color: white;
+	color: white;
+	text-shadow: 1px 2px 5px black;
+}
+
+
+.main {
+	padding: 20px;
+	column-count: 4;
+	column-rule: 0.3em double silver;
+}
+
+.btn-1 {
+	background: url('../images/circle1.png');
+	background-size: cover;
+}
+
+.btn-2 {
+	background: url('../images/circle2.png');
+	background-size: cover;
+}
+
+.btn-3 {
+	background: url('../images/circle3.png');
+	background-size: cover;
+}
+
+.btn-4 {
+	background: url('../images/circle4.png');
+	background-size: cover;
+}
+
+footer {
+	padding: 22px;
+	background-color: green;
+	color:white;
+}
+
+/* ---End styling Home Page--- */
+
+/* ---Styling Alphabet--- */
+.content-0 div{
+	display: block;
+	font-size: 22px;
+	text-align: center;
+	border: 1px solid black;
+	width:50%;
+}
+
+.content-0 div:nth-child(even){
+	float:left;
+}
+
+.content-0 div:nth-child(odd){
+	float:right;
+}
+
+.content-0 div:nth-child(odd)::first-letter{
+	text-decoration: underline;
+	color: red;
+}
+
+.doubleLetter {
+	text-decoration: underline;
+	color: red;
+}
+
+.txt-2 {
+	width: 1em;
+	height: 1em;
+	font-size: 22px;
+	text-align: center;
+}
+
+/* ---End styling Alphabet--- */
+
+/* ---Styling Colors--- */
+
+.content-1 div {
+	border: 2px dotted black;
+	padding: 80px;
+	font-size: 22px;
+}
+
+.colGreen {
+	background-color: rgb(0,255,0);
+	float: left;
+	width: 66.6666%;
+	height: 200px;
+}
+
+.colBlue {
+	background-color: rgb(0,0,255);
+	float: right;
+	width: 33.3333%;
+	height: 200px;
+}
+
+.colRed {
+	background-color: rgb(255,0,0);
+	float: left;
+	width: 33.3333%;
+	height: 200px;
+}
+
+.colYellow {
+	background-color: yellow;
+	float: right;
+	width: 66.6666%;
+	height: 200px;
+}
+
+.colWhite {
+	background-color: rgb(255,255,255);
+	float: left;
+	width: 50%;
+	height: 200px;
+}
+
+.colBlack {
+	background-color: rgb(0,0,0);
+	float: right;
+	width: 50%;
+	height: 200px;
+	color: #fff;
+}
+
+.txt {
+	height: 2em;
+	padding-top: 10px;
+	font-size: 22px;
+	text-align: center;
+}
+
+/* ---End styling Colors--- */
+
+
+/* ---Styling Counting--- */
+
+.content-2::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.content-2 div {
+	float: left;
+	width: 33.33%;
+	font-size: 22px;
+	padding-bottom: 5px;
+}
+
+.num {
+	width: 2em;
+	height: 2em;
+	padding-top: 10px;
+	font-size: 22px;
+	text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0; 
+}
+
+/* ---End styling Counting--- */
+
+/* ---Styling English--- */
+
+.content-3 div:not(.colName) {
+	float: left;
+	width: 50%;
+	font-size: 28px;
+	border: 1px solid black;
+}
+
+.txt-1 {
+	font-size: 25px;
+	text-align: center;
+}
+
+.colName {
+	border: 5px solid #0059b3;
+	float: left;
+	width: 50%;
+	font-size: 33px;
+	background-color: white;
+	text-decoration: underline;
+}
+
+/* ---End styling English--- */
+
+/* ---Responsive web---*/
+@media screen and (max-width:1280px){
+
+	.main {
+		padding: 20px;
+		column-count: 2;
+		column-rule: 0.3em double silver;
+	}
+
+	.content-1 div {
+		height: 200px;
+		width: 100%;
+	}
+
+	.txt {
+		height: 2em;
+		font-size: 20px;
+		text-align: center;
+	}
+
+	.txt-1 {
+		width: 80%;
+		font-size: 20px;
+		text-align: center;
+	}
+
+	.content-2 div {
+		width: 50%;
+		font-size: 22px;
+		padding-bottom: 10px;
+	}
+
+}
+
+@media screen and (max-width:640px){
+
+	.main {
+		padding: 20px;
+		column-count: 1;
+		column-rule: 0.3em double silver;
+	}
+
+}
+
+@media print {
+
+	body {
+		border: none;
+		box-shadow: none;
+	}
+
+	h1,h2 {
+		color: black;
+		text-shadow: none;
+	}
+
+	.main button {
+		box-shadow: none;
+		text-shadow: none;
+		color: black;
+	}
+
+
+	.main {
+		column-count: 2;
+		column-rule: none;
+	}
+
+	.content-1 div {
+		height: 100px;
+		width: 50%;
+		padding: 0px;
+	}
+
+	.txt {
+		padding-left: 20px;
+	}
+
+	.colBlack {
+		color: #000;
+	}
+
+	.colName {
+		border: none;
+	}
+
+	a,.txt-1 {
+		visibility: hidden;
+	}
+
+}

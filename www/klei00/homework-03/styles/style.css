@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;    
+}
+body {
+    font-family: Arial;
+}
+.task-2 {
+    color: indianred;
+}
+.task-3 {
+    color: rgb(12,205,10)
+}
+.task-4 {
+    color: #0084ff;
+    font-weight: bold;
+}
+.task-5 {
+    font-size: 18px;
+}
+.task-6 {
+    font-size: 24px;
+    font-style: italic;
+}
+.task-7 {
+    color: white;
+    background-color: rgb(104, 60, 2);
+}
+.task-8 {
+    text-align: center;
+    line-height: 32px;
+}
+.task-9 {
+    text-align: justify;
+    text-transform: uppercase;
+}
+.task-10 {
+    width: 400px;
+    height: 300px;
+    border: solid 1px purple;
+    padding: 30px;
+}
+.task-11 {
+    width: 500px;
+    height: 200px;
+    background-color: red;
+    margin: 100px;
+}
+.task-12 {
+    display: none;
+}
+.task-13 {
+    width: 100%;
+    height: 150px;
+    background-color: blue;
+    padding: 50px;
+    border: solid 10px yellow;
+}
+.task-14 {
+    visibility: hidden;
+}
+.task-15 {
+    width: 200px;
+    height: 500px;
+    background-color: green;
+    opacity: 0.5;
+}
+.task-16 {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background-color: lightblue;
+}
+.task-16 div {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: rgb(214, 75, 133);
+}
+.task-17 {
+    width: 300px;
+    height: 100px;
+}
+.task-17:active {
+    color: blue;
+}
+.task-18 {
+    width: 200px;
+    height: 50px;
+}
+.task-18:hover {
+    background-color: brown;
+}
+.task-19 {
+    width: 200px;
+    height: 500px;
+    background-color: #0084ff;
+    margin-top: 200px;
+    cursor: pointer;
+}

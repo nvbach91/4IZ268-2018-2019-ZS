@@ -1,0 +1,230 @@
+* {
+    box-sizing: border-box;  
+  }
+
+.header1{
+    font-size: 64px;
+    font-weight:bold;
+    color: white;
+    background-image:url("../images/Wolfs.jpg");
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:top;
+    max-width: 1024px;
+    text-align: center;
+    margin:auto;
+}
+
+.header_text{
+    padding-top:50px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 200%;
+    font-weight: bold;
+}
+
+body{
+    background-color:rgb(39, 39, 39);
+    color:white;
+    min-width: 360px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+footer{
+    margin-top: 50px;
+    background-color:rgb(39, 39, 39);
+    border-top:2px solid white;
+    height: 100px;
+    color:white;
+}
+
+.video{
+    width: 100%;
+    max-width: 640px;
+    height: 480px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.list_nav{
+list-style: none;
+max-width: 1024px;
+margin-right:auto;
+margin-left:auto;
+}
+
+.paige_nav{
+    padding: 2px 12px;
+    float: left;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-left:5px;
+    margin-top: 5px;
+}
+
+.paige_nav a{
+    text-decoration: none;
+}
+
+.paige_nav:hover{
+    background-color:white;
+}
+
+.paige_nav:hover a{
+    color:black;
+}
+
+#curr_page{
+    background-color:white;
+}
+
+#curr_page a{
+    color:black;
+}
+
+.welcome{
+ padding:10px;
+ 
+}
+
+.band_img{
+    width:100%;
+    max-width: 800px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.band_logo_about{
+ margin-top: 30px;
+ margin-bottom:30px;
+}
+
+.band_logo_img{
+    padding: 10px;
+    width:80%
+}
+.concert{
+    border-top: 2px solid white;
+    width: 100%;
+}
+
+.c_place{
+    padding-top:5px;
+}
+
+.tickets{
+    padding-bottom: 5px;
+    color:red;
+}
+
+.tickets a{
+    color:green;
+}
+
+a{
+    color: white;
+    font-weight: bold;
+}
+
+h2{
+    padding-left: 10px;
+}
+
+.m_content, footer{
+    max-width:1024px;
+    margin:auto;
+}
+
+
+.Album_img{
+    width: 200px;
+}
+
+.Album{
+    float:left;
+    padding:5px;
+    max-width: 300px;
+    width: 25%;
+}
+
+.Alb_name{
+    padding-top:5px;
+    font-size:20px;
+}
+
+.Alb_year{
+    padding-top:5px;
+    font-size:20px;
+}
+.clear{
+    clear: both;
+}
+
+.Alb_songs{
+    height: 400px;
+}
+
+.photo{
+    width:25%;
+    float:left;
+    max-width: 170px;
+}
+
+.info{
+    width:72%;
+    float:left;
+    padding:10px;
+}
+.person{
+    float: left;
+    width:50%;
+    height:300px;
+}
+
+.c_photo{
+    height: 250px;
+    float: left;
+    margin:10px;
+    object-position: center;
+}
+
+.tour_img{
+    float: left;
+    width:50%;
+    padding: 5px;
+}
+
+.tour{
+    float: left;
+    width:50%;
+}
+
+
+@media screen and (max-width: 1366px) {
+    .Album { width: 25%; } 
+    .person{width: 50%; height:300px;}
+}
+
+    @media screen and (max-width: 1024px) {
+    .Album  { width: calc(100% / 3) }
+    .person{width: 100%; height:300px;}
+    .tour{width:100%;}
+    .tour_img{width: 100%;padding:20px}
+}
+
+    @media screen and (max-width: 800px) {
+    .Album  { width: 50%; }
+    .person{width: 100%;}
+    .tour{width:100%;}
+    .header_text{font-size: 150%;}
+}
+
+    @media screen and (max-width: 480px) {
+    .Album { width: 100%;} 
+    .person{width: 100%;height:300px;}
+    .tour{width:100%;}
+    .header_text{font-size: 100%;}
+}

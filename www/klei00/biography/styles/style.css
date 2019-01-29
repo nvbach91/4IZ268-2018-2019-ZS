@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial;
+}
+body {
+    background-color: black;
+}
+/*---------- Navigation -----------*/
+.navigation {
+    padding: 0;
+    border-bottom: solid 1px white;
+    font-size: 16px;
+    width: 100%;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+nav li {
+    display: inline-block;
+}
+nav a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+nav a:hover {
+    background-color: #253ab3;
+}
+#current_page {
+    padding: 10px 20px;
+    color: white;
+    background-color: #253ab3;
+}
+/* ---------- Main Heading ------------*/
+div.main_heading {
+    padding: 30px;
+    margin: 0;
+    background-image: url("../images/id.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 1px black, 0px 0px 10px black, 1px 1px 1px black;
+}
+main {
+    background-color: white;
+    margin: 0 auto;
+    max-width: 800px;
+}
+h2, h3, p {
+    margin: 20px 30px;
+}
+h2 {
+    color: #253ab3;
+    font-weight: 800;
+}
+/* ---------- Members ------------ */
+.members {
+    padding: 10px 0 30px 0;
+    border-top: solid 12px black;
+}
+.member {
+    display: inline-block;
+    width: 49.5%;
+    vertical-align: top;
+}
+/*---------- Discography ---------*/
+.discography {
+    padding: 10px 0 30px 0;
+    border-top: solid 12px black;
+}
+.disco_group {
+    display: inline-block;
+    width: 32%;
+    vertical-align: top;
+}
+/*------------ Footer -------------*/
+footer {
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+    font-size: 14px;
+    text-align: right;
+}
+

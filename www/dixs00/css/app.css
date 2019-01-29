@@ -1,0 +1,314 @@
+.dummyClassColorPalette {
+    color: #E95241;
+    color: #066ACC;
+    color: #B4B8E5;
+    color: #C0DED2;
+    color: #0437B6;
+    color: #C30011;
+    color: #002868;
+
+    color: hsl(130, 30, 40);
+    color: hsl(130, 30, 46);
+    color: hsl(130, 30, 52);
+
+    color: hsl(130, 30, 58);
+    color: hsl(130, 30, 64);
+    color: hsl(130, 30, 70);
+
+    color: hsl(130, 30, 76);
+    color: hsl(130, 30, 82);
+    color: hsl(130, 30, 88);
+
+    color: hsl(130, 30, 100);
+}
+
+#map {
+    display: flex;
+    flex-flow: row wrap;
+    list-style-type: none;
+    justify-content: flex-start;
+    align-content: stretch;
+}
+
+.mapItem {
+    margin: 5px;
+    border: 1px solid GREY;
+    text-align: center;
+    font-size: small;
+    padding: 5px;
+    height: 20px;
+    width: 70px;
+    flex-grow: 1;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: pre;
+    overflow: hidden;
+    max-width: 82.281px;
+    cursor: help;
+}
+
+.mapItem:hover {
+    color: red;
+}
+
+
+#appContainer {
+    flex-flow: row wrap;
+    padding: 15px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flexColumn {
+    display: flex;
+    flex-flow: column wrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#question {
+    margin: 5px;
+    font-size: 2em;
+}
+
+#answer {
+    margin: 6px;
+    font-size: 2em;
+}
+
+label {
+    display: block;
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+    font-size: 2em;
+}
+
+.appExplanation {
+    text-align: center;
+    margin: auto;
+}
+
+.helpHamburger {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    color: red;
+    transition: 1s;
+}
+
+#explanationList {
+    padding: 0px 40px;
+    text-align: justify;
+    list-style: none;
+    max-width: 475.59px;
+    text-overflow: clip;
+    overflow: hidden;
+    height: 0px;
+    transition: 1s;
+}
+
+#helpButton {
+    background-color: #C30011;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    flex-grow: 1;
+    box-shadow: 1px 1px 1px grey;
+}
+
+#explanationList li {
+    counter-increment: li
+}
+
+#explanationList li::before {
+    content: "("counter(li);
+    color: #002868;
+    font-weight: bolder;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.5em;
+    margin-right: 0.5em;
+    text-align: right;
+    direction: rtl;
+}
+
+.chooseTopics {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid rgb(169, 169, 169);
+    font-size: 20px;
+    flex-grow: 2;
+}
+
+select {
+    padding: 10px;
+    font-size: 20px;
+    flex-grow: 2;
+}
+
+#practiceButton {
+    background-color: #C30011;
+    border: none;
+    color: white;
+    padding: 0px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    max-width: 100%;
+    min-height: 2.5em;
+    flex-grow: 1;
+}
+
+#flashcard {
+    /*border: 1px solid black;*/
+    min-height: 100px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#flashcard button {
+    min-width: 70px;
+    margin: 2px;
+}
+
+.disabled {
+    display: none;
+}
+
+#forgot {
+    background-color: red;
+}
+
+#hard {
+    background-color: orange;
+}
+
+#good {
+    background-color: green;
+}
+
+#easy {
+    background-color: cornflowerblue;
+}
+
+.loader {
+    display: inline-block;
+    transform: translateZ(1px);
+}
+
+#loader2 {
+    display: none;
+}
+
+.green {
+    color: green;
+    font-weight: bold;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+.blue {
+    color: cornflowerblue;
+    font-weight: bold;
+}
+
+.apdpButton {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    flex-grow: 1;
+    box-shadow: 1px 1px 1px grey;
+
+}
+
+.appButton {
+    border-radius: 6px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+}
+
+.appButton:hover {
+    position: relative;
+    bottom: 1px;
+
+}
+
+#show-answer {
+    border-radius: 6px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    background-color: #002868;
+}
+
+#show-answer:focus {
+    outline: black;
+}
+
+.appButton:active {
+    position: relative;
+    top: 1px;
+}
+
+.orange {
+    color: orange;
+    font-weight: bold;
+}
+
+.loader>div {
+    display: inline-block;
+    background: transparent;
+    animation: loader 2.4s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    text-align: center;
+    color: #C30011;
+    font-size: x-large;
+    text-decoration: none;
+    /*border-image: url(flagbig.svg) 60 stretch;*/
+    padding: 10px;
+    height: 30px;
+    width: 130px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+@keyframes loader {
+
+    0%,
+    100% {
+        animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateY(180deg);
+        animation-timing-function: cubic-bezier(0, 0.2, 0.8, 1);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}

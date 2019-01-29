@@ -47,7 +47,7 @@ Tento návod Ti pomůže s použitím Gitu během předmětu 4IZ268. Hodně št�
 
 
 ### Zjednodušené gitování ve VS Code
-Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](https://code.visualstudio.com/download), udělal jsi dobře! **IDE** ti totiž bude ukazovat změny v kódu a také se postará o Git příkazy na dva kliky. Tj. nemusíš dělat ty příkazy nahoře. Nastavení VS Code viz [https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep].(https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep).
+Pokud sis zvolil nějaké slušné **vývojové prostředí**, např. [VS Code](https://code.visualstudio.com/download), udělal jsi dobře! **IDE** ti totiž bude ukazovat změny v kódu a také se postará o Git příkazy na dva kliky. Tj. nemusíš dělat ty příkazy nahoře. Nastavení VS Code viz [https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep](https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep).
 1. **Změny** uvidíš přímo v IDE když klikneš na levou záložku **Source Control** nebo **Ctrl + Shift + G**.
 2. Jestli chceš udělat **commit**, tak tady můžeš napsat **commit message** do horního políčka a klikneš na ✔.
     - POZOR: do zprávičky piš vždy něco smysluplného

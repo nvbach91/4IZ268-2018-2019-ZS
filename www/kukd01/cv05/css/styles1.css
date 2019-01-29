@@ -1,0 +1,33 @@
+.logo{
+
+    
+}
+
+p {
+
+    font-size: 100px
+    font-family: monospace;
+    
+}
+body{
+    background-color: darkslategray
+}
+
+h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+    ;font-size: 100px
+
+}
+
+
+h2{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+    ;font-size: 50px
+
+}
+
+h3{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+    ;padding: 1cm
+
+}

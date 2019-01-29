@@ -1,0 +1,401 @@
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lightblue;
+  }
+
+  .page>* {
+    display: flex;
+    justify-content: center;
+  }
+
+  a.divLink {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  header {
+    align-items: center;
+    font-size: 42px;
+    background-image: url("../img/backgroundHeaderSpace2.jpg");
+    background-size: 100%;
+    color: lightblue;
+    font-family: 'PT Sans Narrow', sans-serif;
+    height: 175px;
+    border: 3px solid black;
+    text-shadow: 1px 1px 1px lightblue;
+    max-width: 85%;
+    margin: 0 auto;
+  }
+
+  .row-menu {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+  }
+
+  .row-menu a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .menu1 {
+    position: relative;
+    background-image: linear-gradient(-360deg, red, yellow);
+    width: 20%;
+    height: 50px;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    text-shadow: 2px 2px 5px red;
+  }
+
+  .menu1Alt {
+    position: relative;
+    background-color: hsl(0, 100%, 30%);
+    color: white;
+    width: 20%;
+    height: 50px;
+    border-bottom: 3px solid white;
+    border-left: 3px solid black;
+    text-shadow: 2px 2px 5px red;
+    text-decoration: underline;
+  }
+
+  .menu1:hover {
+    background-color: hsl(0, 100%, 30%);
+  }
+
+  .menu1:hover a {
+    color: black;
+    text-decoration: underline;
+    background-color: hsl(0, 100%, 30%);
+  }
+
+  .menu2 {
+    position: relative;
+    background-image: linear-gradient(-360deg, blue, lightgreen);
+    width: 20%;
+    height: 50px;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    text-shadow: 2px 2px 5px blue;
+  }
+
+  .menu2Alt {
+    position: relative;
+    background-color: hsl(240, 100%, 30%);
+    color: white;
+    width: 20%;
+    height: 50px;
+    border-bottom: 3px solid white;
+    border-left: 3px solid black;
+    text-shadow: 2px 2px 5px blue;
+    text-decoration: underline;
+  }
+
+  .menu2:hover {
+    color: black;
+    text-decoration: underline;
+    background-color: hsl(240, 100%, 30%);
+  }
+
+  .menu2:hover a {
+    color: black;
+    text-decoration: underline;
+    background-color: hsl(240, 100%, 30%);
+  }
+
+  .menu3 {
+    position: relative;
+    background-image: linear-gradient(-360deg, green, orange);
+    width: 20%;
+    height: 50px;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    text-shadow: 2px 2px 5px green;
+  }
+
+  .menu3Alt {
+    position: relative;
+    background-color: hsl(120, 100%, 30%);
+    color: white;
+    width: 20%;
+    height: 50px;
+    border-bottom: 3px solid white;
+    border-left: 3px solid black;
+    text-shadow: 2px 2px 5px green;
+    text-decoration: underline;
+  }
+
+  .menu3:hover {
+    color: black;
+    text-decoration: underline;
+    background-color: hsl(120, 100%, 30%);
+  }
+
+  .menu3:hover a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  .menu4 {
+    position: relative;
+    background-image: linear-gradient(-360deg, purple, gray);
+    width: 20%;
+    height: 50px;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    text-shadow: 2px 2px 5px purple;
+  }
+
+  .menu4Alt {
+    position: relative;
+    background-color: hsl(300, 100%, 30%);
+    color: white;
+    width: 20%;
+    height: 50px;
+    border-bottom: 3px solid white;
+    border-left: 3px solid black;
+    text-shadow: 2px 2px 5px purple;
+    text-decoration: underline;
+  }
+
+  .menu4:hover {
+    color: black;
+    text-decoration: underline;
+    background-color: hsl(300, 100%, 30%);
+  }
+
+  .menu4:hover a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  .menu5 {
+    position: relative;
+    background-image: linear-gradient(-360deg, yellow, aqua);
+    width: 20%;
+    height: 50px;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    text-shadow: 2px 2px 5px yellowgreen;
+  }
+
+  .menu5Alt {
+    position: relative;
+    background-color: hsl(60, 100%, 30%);
+    color: white;
+    width: 20%;
+    height: 50px;
+    border-bottom: 3px solid white;
+    border-left: 3px solid black;
+    text-shadow: 2px 2px 5px yellowgreen;
+    text-decoration: underline;
+  }
+
+  .menu5:hover {
+    color: black;
+    text-decoration: underline;
+    background-color: hsl(60, 100%, 30%);
+  }
+
+  .menu5:hover a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  .main-content {
+    background-image: url("../img/backgroundHeaderWood.jpg");
+    border-left: 3px solid black;
+    width: 80%;
+    min-height: 800px;
+  }
+
+  .side-bar {
+    background-image: linear-gradient(-360deg, white, gray);
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    width: 20%;
+  }
+
+  footer {
+    background-color: black;
+    color: white;
+    align-items: center;
+    height: 75px;
+    font-weight: bold;
+    border: 2px solid red;
+    max-width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .row-menu, .row-1 {
+    display: flex;
+    max-width: 85%;
+    margin: 0 auto;
+  }
+
+  .row-menu>div, .row-1>div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .row-menu>div {
+    align-items: center;
+  }
+
+  .article-content {
+    text-align: justify;
+    background-color: gray;
+    width: 80%;
+    border: 2px;
+    border-style: solid;
+    box-sizing: border-box;
+    border-color: black;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .article-contentAlt {
+    text-align: justify;
+    background-color: lightgreen;
+    width: 80%;
+    border: 2px;
+    border-style: solid;
+    box-sizing: border-box;
+    border-color: black;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .article-contentFoto {
+    text-align: justify;
+    width: 80%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 18px;
+    align-items: center;
+    margin: 0 center;
+  }
+
+  .h1-nadpisy {
+    font-size: 30px;
+    text-align: center;
+    background-color: yellow;
+    width: 100%;
+    border: 1px;
+    border-style: solid;
+    box-sizing: border-box;
+    border-color: black;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .h1-nadpisyAlt {
+    font-size: 30px;
+    text-align: center;
+    background-image: linear-gradient(-360deg, red, lightblue);
+    width: 100%;
+    border: 1px;
+    border-style: solid;
+    box-sizing: border-box;
+    border-color: black;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .h2-nadpisy {
+    font-size: 24px;
+    text-align: center;
+    background-color: purple;
+    width: 100%;
+    border: 1px;
+    border-style: solid;
+    box-sizing: border-box;
+    border-color: black;
+  }
+
+  header p {
+    font-size: 24px;
+    margin-top: 70px;
+    margin-left: 30px;
+    font-style: italic;
+  }
+
+  #smileIMG {
+    margin-left: 70%;
+    margin-bottom: 30px;
+    max-width: 175px;
+    height: auto;
+  }
+
+  .gallery {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+
+  .work {
+    width: 80%;
+    height: auto;
+    margin-left: 100px;
+    float: left;
+  }
+
+  @media print {
+    h1 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 18px;
+      background: none;
+    }
+    h2 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 14px;
+      background: none;
+      page-break-after: avoid;
+    }
+    h3 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 12px;
+      background: none;
+      page-break-after: avoid;
+    }
+    p {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 10px;
+    }
+    body, article {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    @page {
+      margin: 2cm;
+    }
+    img {
+      max-width: 100%;
+      page-break-inside: avoid;
+    }
+    article {
+      page-break-before: always;
+    }
+  }

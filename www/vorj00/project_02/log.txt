@@ -1,0 +1,131 @@
+commit 7096df781eb2a6365f1942204121a9df48e59df2
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Wed Dec 12 12:41:00 2018 +0100
+
+    add .dist directory (output)
+
+commit f4cd9d3790c1a7931ae6d760d6e13675f80f548c
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Wed Dec 12 12:37:32 2018 +0100
+
+    edit favicon
+
+commit a82a9864470115318e8da6818a7319b231217c28
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Wed Dec 12 12:36:03 2018 +0100
+
+    add title and desc
+
+commit 44d0d6c844fd163fb122265ce89eef77bff63aa4
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Wed Dec 12 12:33:19 2018 +0100
+
+    edit tracks css
+
+commit 6df3cb2fda75010851c5551255a6db31b3e3ba5e
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Wed Dec 12 12:33:08 2018 +0100
+
+    add artist default img if not defined
+
+commit b980a14135887df45b5d89f72c33ad5cf6fa4c07
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Wed Dec 12 11:24:50 2018 +0100
+
+    add status
+
+commit c502987dbbd9af32a7abea05246e84d41529f6ae
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Wed Dec 12 11:24:34 2018 +0100
+
+    edit status
+
+commit f5f40e40b438803dee04e589619574aedd1680b0
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Wed Dec 12 11:02:35 2018 +0100
+
+    linting
+
+commit c665e7fd109035c24b61d491e9ac2105b7f75205
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Wed Dec 12 10:46:49 2018 +0100
+
+    if empty search, delete results
+
+commit 92056697b2908ff0b1b9c8e91ea51b3789575a13
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Wed Dec 12 10:46:29 2018 +0100
+
+    add spotify hover scale effect
+
+commit 74991a55ac81e4e9a83f39e0553823f928ac73be
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Wed Dec 12 10:46:17 2018 +0100
+
+    enable linting
+
+commit 4b884230caf5476f91c3f69ecc3ba84fe513141c
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Wed Dec 12 10:31:16 2018 +0100
+
+    refactor HTML
+
+commit d6aeea67e3f31e78da07bcdd5e160e1e6bd83416
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Wed Dec 12 10:31:00 2018 +0100
+
+    add scss
+
+commit 8dba61a5c63006671cfbba8f3d407fac787623bb
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Tue Dec 11 19:23:17 2018 +0100
+
+    add auditofeatures to songs
+
+commit abc8d7345e62da4273504f86dc9dc7905a48434c
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Tue Dec 11 17:38:15 2018 +0100
+
+    save before research test
+
+commit 8ca60f2fb9dddcfc7ee83a36a4e373129b3dc65b
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Tue Dec 11 16:22:10 2018 +0100
+
+    add top10 tracks json of artist
+
+commit 86893b034f0dcfe383b052f3c6f443bc6de09176
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Tue Dec 11 15:40:22 2018 +0100
+
+    init SCSS
+
+commit 4cae2067fd14cba4dc89e9328eb48cfa9aa4fb68
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Tue Dec 11 15:09:25 2018 +0100
+
+    init ajax
+
+commit 71152f7fcf234cf07d0cfd48786ee6c978221c52
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Tue Dec 11 13:34:53 2018 +0100
+
+    get rid of bulma
+
+commit 584c9c0e213f7662b64f8a29dc028970b8a4ab38
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Tue Dec 11 11:32:11 2018 +0100
+
+    save Spotify tokens
+
+commit 296de4d4ad46a5e0487324442ff13cffb2ce7573
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Tue Dec 11 11:31:59 2018 +0100
+
+    disable prettier for dev purposes
+
+commit 1de64e252b2d6d6a126203dc176984a064c83c97
+Author: Jakub Voráček <jakub.voracek@gmail.com>
+Date:   Mon Dec 10 20:33:46 2018 +0100
+
+    reinit nuxt (Windows path problem)

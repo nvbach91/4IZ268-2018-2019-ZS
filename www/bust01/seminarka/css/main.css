@@ -1,0 +1,1013 @@
+* {
+    box-sizing:border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body {
+    overflow-x:hidden;
+}
+header > .nadpis {
+    margin : 0 500px;
+}
+
+.pozadi {
+    color: white;
+    min-height: 600px;
+    width:100%;
+    background-image: url('../img/pozadi.png');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+}
+.option{
+    height:60px;
+    width:100%;
+    display:flex;
+    justify-content: flex-end;
+}
+.logo {
+    background-image: url('../img/czech_team.png');
+    margin-left:190px;
+    margin-bottom: 30px;
+    width: 300px;   
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    float:left;
+}
+
+nav ul li {
+    float: left;
+    padding: 15px 25px;
+    list-style: none;
+    color:white;
+    background-color: #d61149;
+    border-right: 1px solid white;  
+}
+
+nav ul li:hover{
+    background-color:#bad142;
+}
+
+nav ul {
+    margin-left: 400px;
+    padding: 0 0;
+    transform: skewX(-20deg);
+}
+
+a:link {
+    text-decoration: none; 
+}
+
+nav ul li a {
+    transform: skewX(20deg);
+    display: inline-block;
+    padding-right: 25px;
+    font-size: 18px;
+}
+
+a {
+    color: white;
+}
+
+.clear {
+    clear:both;
+     float:none;
+     width:0;
+     height:0;
+     padding:0;
+}
+
+.ukazky, .odkazy, .sportovci, .sporty_zoh, .sporty_loh  {
+    width:80%;
+    margin: 0 auto;
+}
+
+.ukazka {
+    float: left;
+    height:290px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.ukazka:nth-child(1) {
+    background-color:#d61149;
+    width: 40%;
+    border: 1px solid darkred;
+}
+
+.ukazka:nth-child(2) {
+    background-color:#bad142;
+    width: 25%;
+    border: 1px solid darkgreen;
+}
+
+.ukazka:nth-child(3) {
+    background-color: #1bb9f0;
+    width: 25%;
+    border: 1px solid darkblue;
+}
+
+
+.hlavni_stranka .ukazka:nth-child(2):hover {
+    background: url('https://i.kisscc0.com/20180813/yue/kisscc0-olympic-games-track-field-running-olympic-sports-athletics-pictogram-5b71470d85cc07.344547691534150413548.png');
+    text-indent: 100%;
+    background-color:rgba(186, 209, 66,0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: background-color 1s linear;
+}
+
+.hlavni_stranka .ukazka:nth-child(3):hover {
+    background-image: url('https://image.flaticon.com/icons/svg/37/37992.svg');
+    text-indent: 100%;
+    background-color:rgba(27, 185, 240,0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: background-color 1s linear;
+}
+
+.odkaz {
+    float:left;
+    height: 300px;
+}
+
+.odkazy li, .ukazky li , .sportovci li, .sporty_zoh li, .sporty_loh li {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.odkaz:nth-child(1) {
+    background-color:rgb(226, 223, 223);
+    width: 40%;
+}
+
+.odkaz:nth-child(2) {
+    background-color:rgb(162, 161, 161);
+    width: 25%;
+}
+
+.odkaz:nth-child(3) {
+    background-color:grey;
+    width: 25%;
+}
+
+table {
+    height: 150px;
+    width: 250px;
+    position:relative;
+    left: 30px;
+}
+
+li h3 {
+    padding-left: 20px;
+}
+
+.box {
+    position: relative;
+    height:300px;
+}
+
+.box table {
+    position:absolute;
+    left: 5px;
+}
+.box span {
+    position: absolute;
+    left: 290px;
+    top:1px;
+}
+
+.box .button {
+    position:absolute;
+    top: 200px;
+}
+
+
+footer {
+    background-color: #cccccc;
+    color: #999999;
+    font-size: 11.5px;
+    margin-top: 40px;
+    padding: 3px 0;
+    text-align: center;
+}
+
+.zebricky_sportovcu .pozadi, .seznam_sportovcu .pozadi{
+    min-height: 200px;
+}
+
+.zebricky {
+    width:80%;
+    margin: 0 auto;
+    padding-top: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+.zebricky_sportovcu nav ul li:nth-child(4) {
+    background-color:#bad142;
+}
+
+.zebricek {
+    float: left;
+    height:600px;
+    font-size: 15px;
+}
+
+.zebricky li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+.zebricek td {
+    border-top: 1px solid black;
+}
+
+.zebricek th {
+    color: white;
+    background-color: #252525;
+    border-bottom: 1px solid #252525;
+}
+
+.zebricek tr { 
+    border-top:1px solid black;
+    line-height: 20px;
+}
+
+.zebricek table {
+    border-spacing: 5px;
+    width: 500px;
+    height: 500px;
+    margin: 0px auto;
+    border-collapse:collapse;
+    border: 3px solid black;
+    background-color:rgb(226, 223, 223);    
+}
+
+.zebricek td:nth-child(3), .zebricek th:nth-child(3) {
+    width: 25%;
+    text-align:center;
+}
+
+.zebricek td:nth-child(1), .zebricek th:nth-child(1) {
+    width: 15%;
+    text-align:center;
+}
+.zebricek th:nth-child(4), .zebricek td:nth-child(4)  {
+    width: 11%;
+    text-align: center;
+}
+
+.zebricek th:nth-child(5), .zebricek th:nth-child(6),.zebricek td:nth-child(5), .zebricek td:nth-child(6) {
+    width: 14%;
+    text-align: center;
+}
+
+.sportovci li, .sporty_zoh li, .sporty_loh li {
+    margin-bottom: 10px;
+}
+
+.sportovec, .sport_zoh, .sport_loh {
+    float:left;
+    height: 330px;
+    background-color:rgb(226, 223, 223);
+    width: 48%;
+}
+
+.sportovec p {
+    float:left;
+}
+
+.box p {
+    position:absolute;
+    top: 195px;
+    left: 5px;
+}
+
+.nadpis2 > div {
+    display:flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    transform: skewX(20deg);
+    font-size: 20px;   
+}
+
+.nadpis2 {
+    transform: skewX(-20deg);
+    background-color: #d61149;
+    display: inline-block;
+    height: 50px;
+    width: 350px;
+    margin-left: 185px;
+}
+
+.zebricek .nadpis2 {
+    margin-left: 80px;
+    width: 400px;
+}
+
+.seznam_sportovcu nav ul li:nth-child(1) {
+    background-color:#bad142;
+}
+
+.zoh nav ul li:nth-child(2) {
+    background-color:#bad142;
+}
+
+.loh nav ul li:nth-child(3) {
+    background-color:#bad142;
+}
+
+.o_nas nav ul li:nth-child(5) {
+    background-color:#bad142;
+}
+   
+.sport_loh .box ul, .sport_zoh .box ul  {
+    position: relative;
+    float:left;
+    left: 40px;
+    padding-left: 20px;
+}
+            
+.sport_loh .box li, .sport_zoh .box li {
+    list-style: circle;
+}
+
+.sport_loh {
+    height: 250px;
+    width: 33%;
+}
+
+.sport_loh:nth-child(1), .sport_loh:nth-child(2) {
+    height:450px;   
+    width: 48%;    
+}
+
+.sport_loh:nth-child(3), .sport_loh:nth-child(6) {
+    width:29%;
+}
+
+.sport_loh:nth-child(7) {
+    width:37%;
+}
+
+.sport_loh:nth-child(8) {
+    width:29%;
+}
+
+.sport_loh .box ul, .sport_zoh .box ul {
+    left:0px;
+}
+
+.sport_zoh {
+    height: 300px;
+    width: 48%;
+}
+
+.sport_zoh:nth-child(2), .sport_zoh:nth-child(3){
+    width:23.5%;
+}
+
+.sport_zoh:nth-child(5) {
+    width:18%;
+}
+
+.sport_zoh:nth-child(4) {
+    width: 45%;
+}
+
+.sport_zoh:nth-child(6) {
+    width: 32%;
+}
+
+.sport_zoh:nth-child(7) {
+    width: 38%;
+}
+
+.sport_zoh:nth-child(8) {
+    width: 35%;
+}
+            
+.sport_zoh:nth-child(9) {
+    width: 22%;
+}
+
+.sport_loh:nth-child(3), .sport_loh:nth-child(4), .sport_loh:nth-child(5),
+.sport_zoh:nth-child(4), .sport_zoh:nth-child(5), .sport_zoh:nth-child(6) {
+    background-color:rgb(162, 161, 161);  
+}
+
+.sport_loh:nth-child(6), .sport_loh:nth-child(7), .sport_loh:nth-child(8),
+.sport_zoh:nth-child(7), .sport_zoh:nth-child(8), .sport_zoh:nth-child(9) {
+    background-color:grey;
+}
+
+.sport_zoh:nth-child(4) div ul li {
+    padding-left: 15px;
+}
+
+.social-networks {
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.social-networks div {
+    display:flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.social-networks div > div {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 60px;
+    width: 125px;
+    font-size: 20px;
+    margin-bottom:8px;
+    color:black;
+    cursor: pointer;
+}
+
+.o_nas .ukazka:nth-child(2) h3 {
+    color: black;
+}
+ 
+.facebook { background-image: url('../img/facebook.png'); }
+.twitter { background-image: url('../img/twitter.png'); }
+.instagram { background-image: url('../img/instagram.png'); }
+
+.o_nas .ukazka:nth-child(3) ul {
+    margin-top: 30px;
+}
+
+.o_nas .ukazka:nth-child(3) li {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.uvodni {
+    display: flex;
+    flex-direction: row;  
+}
+
+.foto {
+    background-image: url("../img/já.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    width: 200px;
+    margin: auto auto;
+}
+
+.popis {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width:50%;
+}
+
+.button {
+    width: 120px;
+    height: 35px;
+    border-radius: 4px;
+    background-color: #097BC0;
+    display: block;
+    border:1px solid #094BC0;
+    margin: 15px 25px;
+}
+
+.button > a {
+    display: inline-table;
+    cursor: pointer;
+    text-decoration: none;
+    height: 100%;
+    width:100%;
+}
+
+.button > a > h1 {
+    margin: 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+    color: #f7f8f8;
+    font-size: 16px;
+    font-family: cabinregular;
+    text-align: center;
+}
+
+@media screen and (max-width: 1440px) {
+    .odkaz:nth-child(1) {
+        width: 55%;
+    }
+    .odkaz:nth-child(2) {
+        width: 40%;
+    }
+    .odkaz:nth-child(3) {
+        margin-top:5px;
+        width: 50%;
+    }
+    .ukazka {
+        min-height: 200px;
+    }
+    .ukazka p {
+        font-size: 13px;
+    }
+    .logo {
+        margin-left: 200px;
+    }
+    .zebricky {
+        width: 100%;
+    }
+    .sporty_loh, .sporty_zoh {
+        width:100%;
+    }
+}
+                    
+    @media screen and (max-width: 1280px) {
+    .ukazka:nth-child(1) {
+        margin-left:40px;
+        width: 90%;
+    }                   
+    .ukazka:nth-child(2) {
+        margin-top: 10px;
+        width: 48%;
+    }
+    .ukazka:nth-child(3) {
+        margin-top: 10px;
+        width: 48%;
+    }
+    .ukazka h3{
+        font-size: 15px;
+    }
+    .ukazka {
+        min-height: 200px;
+    }
+    .ukazka p {
+        font-size: 13px;
+    }
+    nav ul {
+        width:80%;
+        margin-top: 0;
+        margin-left:150px;
+        float:left;
+    }
+    .logo {
+        margin-left: 150px;
+    }
+    .seznam_sportovcu nav ul {
+        margin-left: 50px;
+    }
+    .nadpis2 {
+        margin-left: 50px;
+    }
+    .zebricky {
+        padding-left: 0;
+    }
+}
+                    
+@media screen and (max-width: 1280px) {
+    .sport_loh {
+        height: 400px;
+    }
+    .sportovci {
+        width: 100%;
+    }
+    .sportovec {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+                        
+@media screen and (max-width: 1180px) {
+    .sport_zoh  {
+        height: 500px;
+    }    
+} 
+                        
+@media screen and (max-width: 1024px) {
+    .ukazky {
+        width: 100%;
+    }
+    .ukazka:nth-child(1) {
+        width:96%;
+        margin-left: 10px;
+    }
+    .ukazka:nth-child(2) {
+        margin-top:5px;
+        width: 48%;
+    }
+    .ukazka:nth-child(3) {
+        margin-top:5px;
+        width: 48%;
+    }
+    nav ul {
+        width:100%;
+        margin-top: 0;
+        margin-left:50px;
+    }
+    .logo {
+        margin-left: 50px;
+    }
+    .odkazy {
+        width: 100%;
+    }
+    nav ul li {
+        padding: 5px;
+    }                 
+    .odkaz:nth-child(1) {
+        width: 90%;
+    }
+    .odkaz:nth-child(2) {
+        margin-top: 10px;
+        width: 90%;
+    }
+    .odkaz:nth-child(3) {
+        margin-top: 10px;
+        width: 90%;
+    }
+    .sport_loh:nth-child(1), .sport_loh:nth-child(2) {
+        height:800px;      
+    }
+    .sport_loh {
+        font-size:14px;
+    }
+    .sport_zoh {
+        font-size:14px;
+    }
+}
+     
+@media screen and (max-width: 780px) {
+    .sport_zoh:nth-child(2), .sport_zoh:nth-child(3) {
+        width: 44%;
+    }               
+    .sport_zoh:nth-child(3) {
+        width: 35%;
+    }                 
+    .sport_zoh:nth-child(4)
+    {
+        width: 57%;
+    }                  
+    .sport_zoh:nth-child(9) 
+    {
+        width: 93.5%;
+        height: 250px;
+    }                 
+    .sport_zoh:nth-child(5), .sport_zoh:nth-child(6) {
+        height: 300px;
+        width: 46%;
+    }                
+    .sport_zoh:nth-child(7), .sport_zoh:nth-child(8) {
+        height: 425px;
+        width: 46%;
+    }
+    .sport_zoh:nth-child(1), .sport_zoh:nth-child(2) {
+        height: 400px;
+    }
+    .sportovec {
+        font-size:14px;
+    }                        
+}
+
+@media screen and (max-width: 640px) {
+    nav ul li {
+        float: none; 
+        width: 50%;
+        margin-left:30px;
+        border-bottom: 1px solid white;
+        padding-left:20px;
+    }
+    .zebricky_sportovcu .nadpis {
+        color:black;
+    }
+    .nadpis {
+        float:left;
+        margin-bottom: 25px;
+        margin-left: 140px;
+    }
+    .logo {
+        margin-bottom: 0px;
+    }
+    .box span a {
+        visibility: hidden;
+    }
+    .sportovci {
+        width: 100%;
+    }
+    .sportovec {
+        width: 90%;
+        margin: 0 auto;
+        height: 380px;
+    }
+    .seznam_sportovcu .nadpis {
+        color:black;
+    }
+    .ukazka:nth-child(1) {
+        margin-left:5px;
+        width: 90%;
+    }                       
+    .ukazka:nth-child(2) {
+        margin-top: 10px;
+        width: 90%;
+    }
+    .ukazka:nth-child(3) {
+        margin-top: 10px;
+        width: 90%;
+    }
+    .sport_zoh:nth-child(2), .sport_zoh:nth-child(3),
+    .sport_zoh:nth-child(5), .sport_zoh:nth-child(6),
+    .sport_zoh:nth-child(7),.sport_zoh:nth-child(8), .sport_zoh:nth-child(9){
+        width: 98%;
+        height: 280px;
+    }                  
+    .sport_zoh:nth-child(1), .sport_zoh:nth-child(4){
+        width: 98%;
+        height: 300px;
+    }
+    .sport_loh:nth-child(3), .sport_loh:nth-child(4),
+    .sport_loh:nth-child(5), .sport_loh:nth-child(6),
+    .sport_loh:nth-child(7),.sport_loh:nth-child(8), .sport_loh:nth-child(9){
+        width: 98%;
+        height: 250px;
+    }
+    .sport_loh:nth-child(1), .sport_loh:nth-child(2){
+        width: 98%;
+        height: 420px;
+    }
+    .zebricek th{
+        font-size: 14px;
+    }
+    .zebricek td{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .sport_zoh:nth-child(1), .sport_zoh:nth-child(4) {
+        height: 480px;
+    }
+}
+                               
+@media screen and (max-width: 480px) {
+    .sport_loh:nth-child(5), .sport_loh:nth-child(6)  {
+        height:450px;
+    }
+    .sport_loh:nth-child(2){
+        height: 620px;
+    }
+    .sportovec {
+        height: 400px;
+        width: 98%;
+    }
+}
+
+@media print {
+    .nadpis {
+        color:black;
+        width: 80%;
+        margin: 0 300px;
+    }
+    .pozadi {
+        color:black;
+        background:none;
+        height:650px;
+    }
+    .seznam_sportovcu .pozadi, .zebricky_sportovcu .pozadi {
+        height:100px;
+    }
+    .logo {
+        display:none;
+        margin-left: 0px;
+    }
+    .ukazky, .sportovci {
+        width:100%;
+    }
+    .o_nas .ukazka {
+        height: 320px;
+    }
+    .ukazka:nth-child(1) {
+        width: 97%;
+        border:none;
+        background-color: none;
+        height: 200px;
+    }
+    .ukazka:nth-child(2) {
+        width: 97%;
+        border:none;
+        height: 225px;
+        background-color: none;
+        margin-bottom: 15px;
+    } 
+    .ukazka:nth-child(3) {
+        width: 97%;
+        margin-top:5px;
+        margin-bottom: 15px;
+        border:none;
+        height: 225px;
+        background-color: none;
+    }
+
+    .hlavni_stranka .ukazka:nth-child(2), .hlavni_stranka .ukazka:nth-child(3) {
+        height: 150px;
+    }
+    .sportovci:nth-child(2) {
+        margin-top:50px;
+    }
+    .sportovec {
+        width:48%;
+    }
+    .hlavni_stranka .odkaz:nth-child(1){
+        width:56%;
+    }
+    .hlavni_stranka .odkaz:nth-child(2){
+        width:40%;
+    }
+    .hlavni_stranka .odkaz:nth-child(3){
+        width: 40%;
+        margin-left: 200px;
+    }
+    .hlavni_stranka .odkaz {
+        height: 250px;
+    }
+    .sporty_zoh, .sporty_loh {
+        width:100%;
+    }
+    .sport_zoh{
+        height:600px;
+    }
+    .sport_zoh:nth-child(5){
+        width:25%;
+    }
+    .sport_zoh:nth-child(6){
+        width:25%;
+    }
+    .sport_loh {
+        height:370px;
+    }
+    .sport_loh:nth-child(1) {
+        width:100%;
+        height:450px;
+    }
+    .sport_loh:nth-child(2){
+        width:100%;
+        height:400px;
+    }
+    .sport_loh:nth-child(1) ul,.sport_loh:nth-child(2) ul {
+        margin-left:120px;
+    }
+    .sport_zoh:nth-child(1), .sport_zoh:nth-child(2), .sport_zoh:nth-child(3) {
+        height:400px;
+        margin-bottom: 70px;
+        width:27%;
+    }
+    .sport_zoh:nth-child(4), .sport_zoh:nth-child(5), .sport_zoh:nth-child(6),
+    .sport_zoh:nth-child(7), .sport_zoh:nth-child(8), .sport_zoh:nth-child(9) {
+        height:550px;
+        width:27%;
+        margin-top:0px;
+    }
+    .sporty_zoh {
+        margin-top:110px;
+    }
+    .sport_zoh:nth-child(1), .sport_zoh:nth-child(4), .sport_zoh:nth-child(7){
+        width:40%;
+    }
+    .sportovec {
+        height: 450px;
+    }
+    .sportovec a { 
+        display:none;
+    }
+    nav ul {
+        display:none;
+    }
+    .odkaz span a {
+        display:none;
+    }
+    .odkaz:nth-child(2),.odkaz:nth-child(3) {
+        width:50%;
+    }
+    .button {
+        display:none;
+    }
+    .odkazy {
+        width:100%;
+    }
+
+    .zebricek {
+        font-size:14px;
+        height: 450px;
+    }
+    .zebricek table {
+        height: 350px;
+        width:500px;
+    }
+    .o_nas .ukazka:nth-child(1) {
+        margin-top: 50px;
+    }
+    .o_nas .ukazka:nth-child(1) .popis {
+        width: 100%;
+    }
+    .o_nas .ukazka:nth-child(2) {
+        display:none;
+    }
+}
+#btn{
+    width:100px;
+    height:50px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+#modal-input {
+    width:100%;
+    height:50px;
+    font-size:20px;
+}
+
+.modal-confirm {
+    margin:10px 0px;
+    height:50px;
+}

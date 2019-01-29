@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+.index-page {
+  margin:0;
+}
+.movie-page {
+  background-color: lightgray;
+}
+#actors-page {
+  display: none;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg)
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+.loader {
+  border: 5px solid cadetblue;
+  border-top: 5px solid #ccc;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+.movies-cont, .act-cont {
+  background-color:black;
+}
+.movies, .actors {
+  width:75%;
+  margin:0px auto;
+  background-color: black;
+}
+#movie-field, #actor-field {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.movie-item, .actor-item, .movie-item-trend {
+  width: 25%;
+  border: 8px solid  black;
+  margin-top: 15px;
+  height: 500px;
+  background-color: grey;
+}
+.actor-item {
+  height: 400px;
+}
+
+.movie-item:hover, .actor-item:hover, .movie-item-trend:hover {
+  transform: scale(1.1);
+}
+.movie-poster, .actor-poster {
+  width: 80%;
+  height: 300px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.rate, .popularity {
+  margin-top:10px;
+}
+.movie-container {
+  width:60%;
+  margin: 5px auto;
+}
+.info {
+  width:100%;
+  height:560px;
+}
+.info-title {
+  height:50px;
+  width:100%;
+  background-color:black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.info-main {
+  display:flex;
+  width: 100%;
+  flex-direction: row;
+  margin-top:10px;
+}
+.info-poster {
+  width:50%;
+  border: 10px solid grey;
+  height:500px;
+}
+
+.info-figures {
+  width:50%;
+  display:flex;
+  align-items: center;
+  flex-direction:column;
+  justify-content: center;
+  margin-left:10px;
+}
+.info-figures div{
+  width:100%;
+  background-color:grey;
+  border: 5px solid grey;
+  margin:5px 0;
+  height:45px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.info-odkaz {
+  background-color: blue;
+  cursor: pointer;
+  display:block;
+  width:40%;
+  height:40px;
+}
+.info-odkaz a {
+  color:white;
+  font-size: 20px;   
+}
+
+.info-overview-header {
+  height: 40px;
+  background-color: black;
+  color: white;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+.info-overview-main {
+  margin: 20px 0px;
+}
+.main {
+  height:40px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgray;
+}
+.nav-cont, .nav-main {
+  background-color: darkgray;
+  padding: 5px 0;
+}
+
+a, :link{
+  color: black;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+img{
+  width: 100%;
+  height:100%;
+}
+
+.no-records {
+  font-size: 30px;
+  font-weight: bold;
+  color:white;
+  margin:30px auto;
+}
+.search-main {
+  width: 100%;
+  margin: 0;
+  padding: 25px 0;
+  background-color: black;
+}
+.search-cont {
+  width: 75%;
+  margin: 0 auto;
+  background-color: darkgray;
+}
+.search-head {
+  margin: 0;
+  font-size:22px;
+  padding-top: 15px;
+}
+.search-inp-mov, .search-inp-act {
+  width: 80%;
+  height:30px;
+  margin: 0 auto;
+}
+
+#search-form-act, #search-form-mov {
+  margin: 0;
+  padding-bottom: 40px;
+  padding-top: 20px;
+}
+
+.container-side-mov, .container-side-act {
+  height:40px;
+  background-color:darkgray;
+}
+.movie-item h2 {
+  background-color: blue;
+  width: 80%;
+  margin: 15px auto;
+}
+
+.movie-select, .actor-select, .link-back, .link-imdb, #btn-index-mov, #btn-index-act {
+  display:inline-block;
+  color:#444;
+  border:1px solid #CCC;
+  background:#DDD;
+  box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+  cursor:pointer;
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#btn-index-mov, #btn-index-act {
+  width:150px;
+  height: 40px;
+  font-size: 20px;
+  margin: 5px auto;
+}
+.movie-select:active {
+  color:red;
+  box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+}
+.message {
+  margin: 0;
+  height:40px;
+  font-size: 20px;
+  padding-top:10px;
+}
+hr {
+  margin: 0;
+}

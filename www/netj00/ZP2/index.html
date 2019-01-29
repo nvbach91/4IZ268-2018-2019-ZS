@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="data/css/memeMaker.css">
+    <title>Meme Maker</title>
+</head>
+<body>
+<nav id="templates">
+    <p>Templates:</p>
+</nav>
+<div class="content">
+    <canvas id="canvas" width="600" height="800"></canvas>
+    <div class="textInputs">
+        <div class="row">
+            <label> text 1
+                <input class="refresh" type="text" id="textinput1" name="text1" value="" placeholder="Zadejte text">
+            </label>
+            <div class="colorpicker">
+                <label for="textColor1">
+                    <input class="refresh" type="color" id="textColor1" name="textColor1" value="#000000">
+                </label>
+                <label for="textColor2">
+                    <input class="refresh" type="color" id="textColor2" name="textColor2" value="#FFFFFF">
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <label> text 2
+                <input type="text" class="refresh" id="textinput2" name="text2" value="" placeholder="Zadejte text">
+            </label>
+            <div class="colorpicker">
+                <label for="textColor3">
+                    <input class="refresh" type="color" id="textColor3" name="textColor1" value="#000000">
+                </label>
+                <label for="textColor4">
+                    <input class="refresh" type="color" id="textColor4" name="textColor2" value="#FFFFFF">
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <label> text 3
+                <input type="text" id="textinput3" class="refresh" name="text3" value="" placeholder="Zadejte text">
+            </label>
+            <div class="colorpicker">
+                <label for="textColor5">
+                    <input class="refresh" type="color" id="textColor5" name="textColor1" value="#000000">
+                </label>
+                <label for="textColor6">
+                    <input class="refresh" type="color" id="textColor6" name="textColor2" value="#FFFFFF">
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <button id="downloadButton" type="button" name="Save">Download</button>
+            <button id="saveForLaterButton" type="button" name="saveForLater">Save</button>
+        </div>
+    </div>
+</div>
+<div id="history"><p>History:</p></div>
+<script src="data/JS/memeMaker.js"></script>
+</body>
+</html>

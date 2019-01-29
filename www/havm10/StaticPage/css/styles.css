@@ -1,0 +1,336 @@
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color:white;
+    }
+    
+    .logo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+
+    header { 
+        display: flex; 
+        background-color: white;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    nav li {
+        display: block;
+        float: left;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        font-size: 22px;
+        border-radius: 5px;
+        margin-left: 10px;
+        margin-bottom: 22px; 
+    }
+
+    nav a {
+        text-decoration: none;
+    }
+    
+    .left a{
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 5px;
+        color: black;
+        font-style: normal;
+        padding: 10px;
+    }
+    
+    .left a:hover{
+        color: black;
+        background-color: rgba(255, 0, 0, 0.664);
+        border-radius: 5px;
+    }
+    
+    nav a:hover {
+        background-color: rgba(255, 0, 0, 0.664);
+        color: white;
+        border-radius: 5px;
+    }
+
+    #active:hover{
+        color: white;
+        background-color: rgba(255, 0, 0, 0.664);
+        border-radius: 5px;
+    }
+
+    #active {
+        background-color: #2451b3;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+    
+    nav a {
+        color:#2451b3;
+        padding: 10px;
+    }
+
+    h1 {
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+        text-align: center;
+        font-size: 40px;
+        margin-top: 0px;
+        margin-left: 80px;
+        margin-right: 80px;
+        padding: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .left ul {
+        padding-left: 0px;
+    }
+    
+    .name {
+        background-image: url('../img/background.jpg');
+        background-size: cover;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background-position: center;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 15px;
+        max-width: 100%;
+    }
+    
+    .left {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 10px;
+        min-width: 45%;
+        padding-left: 30px;
+    }
+    
+    .left li{
+        display: block; 
+    }
+    
+    h2 {
+        text-align: center;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+    }
+
+    .subtitle {
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+        margin-left: 80px;
+        margin-right: 80px;
+        padding: 10px;
+    }
+    
+    p {
+        text-align: justify;
+        color: rgba(0, 0, 0);
+        font-size: 18px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    main {
+        margin-top: 20px;
+        padding: 10px;
+        padding-right: 30px;
+        min-width: 55%;
+    }
+    
+    footer {
+        display: flex;  
+        flex-wrap: wrap;
+        background-color: #5371b5;
+        padding-bottom: 10px;
+    }
+    
+    .social {
+        min-width: 230px;
+        border-style: ridge;
+        border-width: 2px;
+        border-radius: 5px;
+        border-color: #5371b5;
+        background-color: white;
+        margin: auto;
+    }
+    
+    .social a{
+        text-decoration: none;
+    }
+    
+    .logoSocial {
+        margin: 5px;
+        width: 64px;
+        height: 64px;
+    }
+    
+    h3 {
+        text-align: center;
+        color: black;
+        font-size: 20px;
+        line-height: 45px;
+    }
+    
+    .copyright {
+        min-width: 100%;
+    }
+    
+    .copyright h3{
+        color: white;
+        text-align: center;
+    }
+
+    .column {
+        max-width: calc(100%/3);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .columns {
+        display: flex; 
+        flex-wrap: wrap;
+    }
+
+@page {
+    margin-bottom: 1cm;
+    margin-top: 1cm;
+}
+
+@media screen and (max-width: 650px) {
+    nav li {
+        font-size: 20px;
+        margin-right: 0px;
+        max-width: 100%;
+        min-width: 51%;
+        width: 250px;
+    }
+
+    nav {
+        float: none;
+    }
+
+    .content {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+
+    .columns {
+        display: block; 
+    }
+
+    .column {
+        max-width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .left {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        min-width: 100%;
+        padding-left: 0px; 
+    }
+
+    main {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        min-width: 100%;
+        padding-right: 0px;
+    }
+
+    h2 {
+        min-height: 0px;
+    }
+}
+
+@media print {
+    * {
+        background-color: white;
+        color: black;
+    }
+
+    .name {
+        padding: 0;
+    }
+
+    header {
+        display: none;
+    }
+
+    footer{
+        display: none;
+    }
+
+    .column {
+        max-width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .content {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        padding: 0px;
+    }
+
+    .subtitle {
+        margin: 0px;
+        font-size: 18px;
+        color: black;
+        padding: 0px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 22px;
+        color: black;
+        padding: 0px;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    h3 {
+        font-size: 14px;
+        margin: 0px;
+    }
+
+    .name {
+        padding: 0px;
+        margin-top: 15px;
+    }
+
+    .left {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    a {
+        font-size: 14px;
+        text-decoration: none;
+        padding: 0px;
+    }
+}

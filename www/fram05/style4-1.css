@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .clear {
+    clear: both;
+  }
+  h1 {
+    text-align: center;
+    padding: 50px 10px;
+    color: white;
+    background-color: rgb(78, 146, 179);
+  }
+  .colors > input {
+    padding: 20px;
+    border: none;
+    font-size: 18px;
+    margin: 0;
+    float: left;
+    width: 25%;
+    color: white;
+  }
+  .instructions {
+    max-width: 1280px;
+    padding: 20px;
+    
+    margin-bottom: 50px;
+  }
+  .wrapper{
+    max-width: 1280px;
+    margin: auto;
+  }
+  .container-01{
+    background-color: grey;
+  }
+  .container-02{
+    background-color: grey;
+  }
+  .container-03{
+    background-color: grey;
+  }
+  .container-04{
+    background-color: grey;
+  }
+  .float-box{
+    height: 300px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 150px;
+  }
+  .container-01 .float-box{
+    width: 100%;
+  }
+  .container-02 .float-box{
+    width: 50%;
+    float: left;
+  }
+  .container-03 .float-box{
+    width: 33.3%;
+    float: left;
+  }
+  .container-04 .float-box{
+    width: 25%;
+    float: left;
+  }
+  .float-box:nth-child(1){
+    background-color: rgb(255,25,78);
+  }
+  .float-box:nth-child(2){
+    background-color: rgb(168,89,60);
+  }
+  .float-box:nth-child(3){
+    background-color: rgb(33,165,121);
+  }
+  .float-box:nth-child(4){
+    background-color: rgb(47,83,160);
+  }
+  .float-box:nth-child(5){
+    background-color: rgb(197,56,56);
+  }
+  .float-box:nth-child(6){
+    background-color: rgb(112,158,94);
+  }
+  .float-box:nth-child(7){
+    background-color: rgb(182,109,197);
+  }
+  .float-box:nth-child(8){
+    background-color: rgb(167,35,79);
+  }
+  .float-box:nth-child(9){
+    background-color: rgb(38,189,189);
+  }

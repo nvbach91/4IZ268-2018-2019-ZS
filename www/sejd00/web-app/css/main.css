@@ -1,0 +1,162 @@
+  body, html {
+    font-family: 'Press Start 2P', cursive;
+    height: 100%;
+    margin: 0;
+  }
+
+  .carousel-control{
+    width: 0;
+    padding-top: 50px;
+  }
+
+  .carousel-indicators{
+    position: relative;
+    padding-bottom: 35px;
+  }
+
+  #logout{
+    visibility: visible;
+  }
+
+  .carousel-caption{
+    padding-top: 50px;
+
+  }
+
+  p.post-intro{
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .carousel{
+    height: 50px;
+
+  }
+
+  .btn{
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  input{
+    padding-bottom: 20px;
+  }
+  
+  .bg {
+    background-image: url("../img/bg.jpg");
+    height: 100%; 
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .wrapper{
+      padding-top: 20px;
+  }
+
+  .top{
+    float: left;
+    padding-left: 5%;
+    margin-right: 40px;
+    width: 200px;
+  }
+
+  .text{
+    line-height: 2;
+    padding-left: 5%;
+    padding-top: 50px;
+    width: 50%;
+    font-size: 15px;
+  }
+
+  .main{
+      padding-top: 50px;
+  }
+
+  .likes{
+    text-align: center;
+  }
+
+  .desc{
+    padding-left: 30px;
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  form{
+    text-align: center;
+  }
+
+  img{
+    float: left;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 20px;
+    width:50%;
+  }
+
+.result{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+input{
+  font-family: 'Press Start 2P', cursive;
+  height: 50px;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-top: 20px;
+}
+
+.eightbit-btn {
+  background: #92CD41;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none; 
+  color: white;
+  box-shadow: inset 4px 4px 0px 0px #4AA52E;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  }
+
+.flex-container {
+  height: 460px;
+  border: solid 1px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; 
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+  padding: 5px;
+  height: 150px;
+  margin-top: 10px;
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}

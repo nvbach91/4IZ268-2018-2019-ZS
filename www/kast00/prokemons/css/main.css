@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+hr {
+    border-style: solid;
+    border-color: #eee;
+}
+button {
+    border: 1px solid transparent;
+    height: 42px;
+    padding: 0 20px;
+    cursor: pointer;
+    background-color: cadetblue;
+    color: white;
+}
+button:hover {
+    background-color: rgb(46, 93, 95);
+}
+header, main, footer {
+    margin: 0 auto;
+    text-align: center;
+}
+.form-row {
+    padding: 20px 0;
+    background-color: #eee;
+}
+input {
+    height: 42px;
+    padding: 0 10px;
+    border: 1px solid transparent;
+}
+#pokemon-list {
+    list-style-type: none;
+    padding: 0;
+    min-height: 400px;
+}
+.pokemon {
+    text-align: left;
+    margin-bottom: 5px;
+    margin: 0 auto;
+    max-width: 480px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 2px 0;
+}
+.pokemon.selected {
+    background-color: #a4e6d1;
+}
+.pokemon-name {
+    background-color: #f1f1f1;
+    flex-grow: 1;
+    padding: 10px;
+}
+.pokemon-name:hover {
+    background-color: #ccc;
+}
+button, .pokemon-name {
+    transition: background-color .2s ease;
+}
+.pokeball {
+    width: 100%;
+    height: 100px;
+    
+    background-image: url(../img/pokeball.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+@media screen and (min-width: 640px) {
+    .pokeball {
+        width: 100px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+}

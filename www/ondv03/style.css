@@ -1,0 +1,89 @@
+body{
+    font-family: 'Open Sans'
+}
+.text-01{
+    color: red
+}
+.text-02{
+    color: rgb(0, 128, 0)
+}
+.text-03{
+    color: #009990;
+    font-weight: bold;    
+}
+.text-04{
+    font-size: 18px
+}
+.text-05{
+    font-size: 24px;
+    font-style: italic
+}
+.text-06{
+    color: white;
+    background-color: rgb(128, 87, 0)
+}
+.p-01{
+    text-align: center;
+    line-height: 32px
+}
+.p-02{
+    text-align: justify;
+    text-transform: uppercase;
+}
+.box-01{
+    width: 400px;
+    height: 300px;
+    border: 1px solid purple;
+    padding: 30px;
+}
+.box-02{
+    width: 500px;
+    height: 200px;
+    background-color: rgb(128, 0, 17);
+    margin: 100px;    
+}
+.text-07{
+    visibility: hidden;
+}
+.box-03{
+    width: auto;
+    height: 150px;
+    background-color: rgb(0, 81, 128);
+    padding: 50px;
+    border: 10px rgb(191, 224, 4) solid;
+}
+.text-08{
+    visibility: hidden;
+}
+.box-04{
+    width: 200px;
+    height: 500px;
+    background-color: rgb(58, 133, 58);
+    opacity: 0.5;
+}
+.box-05{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    background-color: lightblue;
+}
+.box-06{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 340px;
+    background-color: pink;
+}
+.button-01{
+    width: 300px;
+    height: 100px;
+}
+.button-01:active{
+    color: blue;
+}
+.button-02{
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+}

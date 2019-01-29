@@ -1,0 +1,44 @@
+body{
+    word-wrap: break-word;
+}
+.media {
+    margin-top: 1em;
+}
+
+
+.modal {
+    z-index:1;
+    display:none;
+    padding-top:10px;
+    position:fixed;
+    left:0;
+    top:0;
+    
+    height:100%;
+    overflow:auto;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.8)
+    }
+  
+
+
+.modal img{
+    max-height: 80vh;
+    margin: auto;
+    display: block;
+        position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    
+}
+
+.close {
+    text-decoration:none;float:right;font-size:24px;font-weight:bold;color:white
+    }
+
+.img01 {
+    max-width:100%;
+}
+    
+ 

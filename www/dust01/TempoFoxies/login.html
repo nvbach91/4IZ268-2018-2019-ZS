@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Webove stranky pro softballovy klub Tempo Praha"/>
+    <meta name="author" content="Tereza Duskova"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="sport, softball, teams, Czech softball"/>
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="img/tempotrans.png">
+   
+    <title>Tempo Foxies - přihlášení</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html">Úvod</a></li>
+        <li><a href="teams.html">Týmy</a></li>
+        <li><a href="historie.html">Historie</a></li>
+        <li><a href="soutez.html">Soutěže</a></li>
+        <li><a href="kontakty.html">Kontakty</a></li>
+        <li class="signup-nav"><a class="" href="registrace.html">Registrace</a></li>
+        <li><a class="active" href="login.html">Pro hráče</a></li>
+        <li>
+            <button id="signout-btn-nav" onclick="signOut()">Odhlásit</button>
+        </li>
+        <li id="logged-user"></li>
+    </ul>
+</nav>
+<div class="container">
+
+    <div id="login-div">
+        <div id="signin_div" class="main-div">
+            <h3>Přihlášení</h3>
+            <input type="email" placeholder="Email" id="sign_in_email_field">
+            <input type="password" placeholder="Password" id="sign_in_password_field">
+            <button onclick="signIn()" class="btn btnLog">Přihlásit</button>
+        </div>
+
+        <div id="signup_div" class="main-div">
+            <h3>Registrace</h3>
+            <input type="text" placeholder="Name" id="sign_up_name_field">
+            <input type="url" placeholder="Image Url" id="sign_up_photo_field">
+            <input type="email" placeholder="Email" id="sign_up_email_field">
+            <input type="password" placeholder="Password" id="sign_up_password_field">
+            <input type="number" placeholder="PhoneNumber" id="sign_up_tel_field">
+            <button onclick="signUp()" class="btn btnLog">Registrovat se</button>
+        </div>
+    </div>
+
+    <div id="user_div" class="loggedin-div">
+        <div id="user_div_inner">
+            <div>
+                <h3 id="welcome-h3"></h3>
+                <p>Úspěšně jste se přihlasili do webové aplikace <strong>TempoFoxies</strong></p>
+            </div>
+            <div>
+                <img src="" id="profile-photo">
+            </div>
+        </div>
+        <p id="info-pLog"></p>
+        <button onclick="signOut()" class="btn" id="btnLog">Odhlásit</button>
+    </div>
+
+</div>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

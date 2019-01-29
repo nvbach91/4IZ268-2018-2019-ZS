@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="David Kukla">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Výroba a prodej sádrokartonového příslušenství.">
+    <meta name="keywords" content="sádrokarton,tmel,šrouby,prodej,Tamadex,úchyt">
+    <title>Tamadex s.r.o. | Úvodní stránka</title>
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
+</head>
+
+<body>
+    <header>
+        <span class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Tamadex logo" width="300">
+            </a>
+        </span>
+
+        <nav>
+            <div class="menu-toggle" onclick="toggle()">
+                <span>Menu</span>
+            </div>
+            <ul class="menu" id="hamburger">
+                <li><a class="active" href="index.html">Úvod</a></li>
+                <li><a href="products.html">Produkty</a></li>
+                <li><a href="nastrojarna.html">Nástrojárna</a>
+                </li>
+                <li class="dropdown"><a href="#" class="dropbtn">Informace</a>
+                    <div class="dropdown-content">
+                        <a href="ofirme.html">O firmě</a>
+                        <a href="info.html">Kontakty</a>
+
+                    </div>
+                </li>
+                <li class="clear"></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="main-index">
+        <h1>Úvodní stránka</h1>
+        <div class="box-text box_produkty">
+            <h2><a href="products.html">Produkty </a></h2>
+            <p>
+                Kovové spojovací prvky, revizní dvířka (standardních i atypických rozměrů) a sanitární konstrukce pro
+                sádrokartonové systémy. Všechny tyto výrobky jsou vyráběny na lisovacích nástrojích z produkce naší
+                nástrojařské dílny a další sortiment různých komodit pro sádrokartonové systémy.</p>
+        </div>
+
+        <div class="box_prezentace">
+
+            <div class="slideshow">
+                <img class="mySlides" src="img/1.jpg" alt="ilustrační obrázek" width="300" height="300">
+                <img class="mySlides" src="img/2.jpg" alt="ilustrační obrázek" width="300" height="300">
+                <img class="mySlides" src="img/3.jpg" alt="ilustrační obrázek" width="300" height="300">
+            </div>
+
+        </div>
+
+        <div class="box-text box_nastrojarna">
+            <h2><a href="nastrojarna.html">Nástrojárna </a></h2>
+            <p>Nástrojárna
+                Výroba lisovacích, střižných a kombinovaných nástrojů na klasických i moderních CNC strojích. Výroba
+                jednoduchých dílů až po složité přípravky a formy. Lisování na excentrických lisech od 10 do 250 tun v
+                síle
+                materiálu až do 8 mm. Lisařská výroba sériová i jednorázová ze svitků a pásů.</p>
+
+
+        </div>
+
+    </main>
+
+
+
+
+    <footer>
+        <p>Copyright &copy; 2018 David Kukla</p>
+        <p>Sledujte nás na sociálních sítích</p>
+        <div class="social">
+            <div>
+                <a href="https://www.facebook.com/tamadex.1992/">
+                    <img src="img/facebook.png" alt="Facebook icon" width="40">
+                </a>
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="js/menu.js"></script>
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 3500); // Change image every 2 seconds
+        }
+    </script>
+
+</body>
+
+</html>
