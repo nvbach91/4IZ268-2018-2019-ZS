@@ -32,14 +32,15 @@ function makeRequest() {
 
         var searchVids = response.result.items;
 
-        searchVids.forEach(function (item, index) {
-            var temp = document.getElementById("searchResults").innerHTML;
-            document.getElementById("searchResults").innerHTML =
-                temp + '<div class="video" id="video" data-id="' + item.id.videoId + '">' +
-                /*item.snippet.title + '<p></p>' +*/
-                '<img src="' + item.snippet.thumbnails.high.url + '"></img>' +
+
+        var content = "";
+        searchVids.forEach(function (item, index) {            
+            content += '<div class="video" id="video" data-id="' + item.id.videoId + '">' +
+                '<img src="' + item.snippet.thumbnails.high.url + '"></img>' + '<div class="overlay"><div class="overlayText">' + item.snippet.title + '</div></div>' +
                 '</div>';
         })
+        document.getElementById("searchResults").innerHTML = content;
+
         searchedVidsEvListen();
         searched();
     })
@@ -71,7 +72,7 @@ function addToFavs() {
 
     //no same videos in favorites condition
     var favVids = document.getElementsByClassName("favVid");
-    for (i = 0; i < favVids.length; i++) {
+    for (var i = 0; i < favVids.length; i++) {
         tempId = favVids[i].getAttribute("data-id");
         if (mainVidId == tempId) {
             return alert("You already added this video to favorites!");
