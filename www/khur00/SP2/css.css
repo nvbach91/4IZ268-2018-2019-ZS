@@ -21,7 +21,7 @@ path{
 }
 
 
-/*.Paradis:hover,.diary:hover,.Shiganshina:hover,.Trost:hover,.Forest:hover,.Chlorba:hover,.Karanase:hover,.Nedlay:hover,.Ragako:hover,.Utgard:hover,.Dauper:hover,.Stohess:hover,.Hermina:hover,.Orvud:hover,.Yalkell:hover,.Capital:hover,.Maria:hover,.Rose:hover,.Sina:hover{
+/*path:hover{
     transition: opacity .2s ease;
 	opacity: .5;
     cursor: pointer;
@@ -54,19 +54,20 @@ path{
      top:1%;
      box-sizing: border-box;
      width:66%;
-     height: 15%;
+     height: 20%;
      font-size: 24px;
      border: #4CAF50 3px solid;
      border-radius: 10px;
+     text-decoration: solid;
  }
 * {
     box-sizing: border-box;
     zoom:84%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 33px;
    
 }
 button {
- 
   background-color: rgb(240, 248, 255);
     border: none;
     color: black; 
@@ -74,23 +75,19 @@ button {
     text-align: center;
     text-decoration: solid;
     display: block;
-    font-size: 24px;
+    font-size: 33px;
     margin: 4px 2px;
     cursor: pointer;
     width: 15%;
-    height: 20%;
+    height: 24%;
     border-radius: 10px;
     border: 3px solid #4CAF50;
 
   }
  [data-id="12"]{
-    margin-top: 10%;
+    margin-top: 13%;
   }
-  .button0 ,.button1,.button2,.button3,.button4,.button5,.button6,.button7,.button8,.button9,.button10,.button11,.button12,.button13,.button14,.button15,.button16,.button17,.button18,.button19{
-
-    background-color: white; 
-    color: black; 
-    border: 3px solid #4CAF50;
-  }
-
+.corner{
+    
+}
 
