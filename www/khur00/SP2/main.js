@@ -43,28 +43,21 @@ $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts?_embed&per_page=100", 
             var postId = this.getAttribute("data-id");
             var content = districts[postId].desc;
             var pCoord = districts[postId].path;
-
+            htmlPath.setAttribute("d", pCoord);
             //console.log(content);
             document.getElementById("obsah").innerHTML = content;
-
-            /*$("path").css({
+            $(htmlPath).css({
                 "transition": "opacity .2s ease",
-                "opacity": ".5", 'fill': 'beige'
-            });*/
+                "opacity": ".2", 'fill': 'ige'
+            });
 
         })
+
         document.body.appendChild(button);
         document.body.appendChild(htmlSvg);
         document.getElementById("map").appendChild(htmlSvg);
 
-        /* for (var i = 0; i < svgcodes.length; i++) {
-             if (postName === svgcodes[i].title) {
-                 pokus.push({ title: postName, svgPath: svgcodes[i].svgPath, description: postCont });
- 
-             }
-             console.log(pokus);
-         }
- */
+
 
 
     }
