@@ -28,7 +28,6 @@ $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts?_embed&per_page=100", 
         htmlPath.setAttribute("d", coordPath);
         htmlSvg.appendChild(htmlPath);
 
-
         button.addEventListener('click', function () {
             var id = this.getAttribute("data-id");
             var content = districts[id].desc;
@@ -38,19 +37,20 @@ $.getJSON("http://rinamogy.beget.tech/wp-json/wp/v2/posts?_embed&per_page=100", 
             document.getElementById("obsah").innerHTML = content;
             $(htmlPath).css({
                 "transition": "opacity .2s ease",
-                "opacity": ".2", 'fill': 'ige'
+                "opacity": ".2", 'fill': 'red'
             });
 
         })
-
-
         document.body.appendChild(button);
         document.body.appendChild(htmlSvg);
         document.getElementById("map").appendChild(htmlSvg);
 
+        $(document).ready(function () {
+            $("#obsah").dblclick(function () {
+                $("#obsah").empty();
+            })
 
-
-
+        });
 
     }
 })

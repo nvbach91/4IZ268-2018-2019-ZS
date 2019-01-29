@@ -59,6 +59,7 @@ path{
      border: #4CAF50 3px solid;
      border-radius: 10px;
      text-decoration: solid;
+     cursor: pointer;
  }
 * {
     box-sizing: border-box;
