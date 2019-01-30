@@ -1,0 +1,97 @@
+body {
+    background-color:blanchedalmond;
+    
+}
+#map {
+    
+    margin-left: 16%;
+    position: absolute;
+}
+svg{
+    position: absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+   
+}
+path{
+    fill: aliceblue;
+    opacity: .2;
+}
+
+
+/*path:hover{
+    transition: opacity .2s ease;
+	opacity: .5;
+    cursor: pointer;
+    fill:beige;
+   
+}*/
+/*#nadpis {
+   background-color: rgba(240, 248, 255, 0.596);
+	display: none;
+    position: absolute;
+    left:75%;
+    bottom:5%;
+    top:125%;
+	padding: 20px;
+	box-sizing: border-box;
+	width: 10%;
+    height: 5%;
+	box-shadow: 0 0 32px 10px #ccc;
+    font-family: sans-serif;
+    font-size: 20px;
+    border: #fff 3px solid;
+	border-radius: 10px;
+}*/
+#obsah {
+    background-color: rgb(240, 248, 255);
+     display: inline-block;
+     position: absolute;
+     margin-left:16%;
+     bottom:80%;
+     top:1%;
+     box-sizing: border-box;
+     width:66%;
+     height: 20%;
+     font-size: 24px;
+     border: #4CAF50 3px solid;
+     border-radius: 10px;
+     text-decoration: solid;
+     cursor: pointer;
+ }
+* {
+    box-sizing: border-box;
+    zoom:84%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 33px;
+   
+}
+button {
+    background-color: rgb(240, 248, 255);
+    border: none;
+    color: black; 
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: solid;
+    display: block;
+    font-size: 33px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 15%;
+    height: 24%;
+    border-radius: 10px;
+    border: 3px solid #4CAF50;
+
+  }
+
+#corner{
+    font-family: 'The Girl Next Door', cursive;
+    font-size: 50px;
+    text-align: right;
+    margin-right: 90%;
+    text-decoration: solid;
+ 
+}
+
