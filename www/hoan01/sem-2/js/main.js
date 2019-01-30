@@ -3,6 +3,9 @@ var ctx = canvas.getContext("2d");
 var help = document.getElementById("help");
 var btn = document.getElementById("btn");
 var highscore = document.getElementById("highscore");
+var allScores = document.getElementById("allScores");
+var showHS = document.getElementById("showHS");
+var btnShowPos = document.getElementsByClassName("btnShowPos");
 
 //for the ball
 var x = canvas.width / 2;
@@ -57,6 +60,7 @@ for (var c = 0; c < brickColumnCount; c++) {
 btn.addEventListener("click", function() {
     var xhttp = new XMLHttpRequest();
     var url = "https://api.myjson.com/bins/8k20c";
+    //https://api.myjson.com/bins/1c8qvo
     xhttp.open("GET", url);
     xhttp.onload = function() {
         if (xhttp.status >= 200 && xhttp.status < 400) {
@@ -79,22 +83,99 @@ btn.addEventListener("click", function() {
 function renderHTML(data) {
     var htmlString = "";
 
-    htmlString += "<p>Welcome to brick cracker! " + data[0].name + " is a remake game of breakout.</p>";
-    htmlString += "<p>For controlling the pad, use " + data[0].controls[0] + " and " + data[0].controls[1] + ".</p>";
-    htmlString += "<p>For changing the position of the pad, use " + data[0].position[0] + " for moving the pad to top and " + data[0].position[1] + " for moving the pad to bottom.</p>";
-    htmlString += "<p>Enjoy the game. Ho Anh Tu, UoE 2019</p>"
+    htmlString += "<p>Welcome to brick cracker! " + data[0].name + " is a remake game of breakout.</p> \
+    <p>For controlling the pad, use " + data[0].controls[0] + " and " + data[0].controls[1] + ".</p> \
+    <p>For changing the position of the pad, use " + data[0].position[0] + " for moving the pad to top and " + data[0].position[1] + " for moving the pad to bottom.</p> \
+    <p>Enjoy the game. Ho Anh Tu, UoE 2019</p>"
 
     help.insertAdjacentHTML("beforeend", htmlString);
 }
 
 //highscore text
 function highScore() {
-    localStorage.setItem("score", score);
+    var player = 0;
+    while (localStorage.getItem("score" + player) != null) {
+        player++;
+    }
+    localStorage.setItem("score" + player, score);
+    player++;
 }
-if (localStorage.getItem("score") == null) {
-    localStorage.setItem("score", 0);
+
+//create each scores in all scores table
+var numeros = 1;
+for (player = 0; player < localStorage.length; player++) {
+    allScores.innerHTML += "<br />" + numeros + ". <button class=btnShowPos value=" + localStorage.getItem("score" + player) + " onclick=getVal(this.value)>" + localStorage.getItem("score" + player) + "</button>";
+    numeros++;
 }
-highscore.insertAdjacentHTML("beforeend", "Your highscore: " + localStorage.getItem("score"));
+
+//compare score(shows text) to other high scores when button is clicked
+function getVal(value) {
+    var xhttpr = new XMLHttpRequest();
+    var url = "https://api.myjson.com/bins/s0b6w";
+    xhttpr.open("GET", url);
+    xhttpr.onload = function() {
+        if (xhttpr.status >= 200 && xhttpr.status < 400) {
+            var compareData = JSON.parse(xhttpr.responseText);
+            compareScores(compareData);
+        } else {
+            console.log("We connected to the server, but it returned an error.");
+        }
+    };
+
+    xhttpr.onerror = function() {
+        console.log("Connection error");
+    }
+
+    xhttpr.send();
+
+    function compareScores(hscore) {
+        var justSomeNumero = 0;
+        for (q = 0; q < hscore.length; q++) {
+            if (value >= hscore[q].score && justSomeNumero == 0) {
+                alert("Your score is "+value + " which is higher than "+hscore[q].name +"\'s score: "+ hscore[q].score + " so your current position is " + (hscore.indexOf(hscore[q])+1) + ". place.");
+                justSomeNumero++;
+            }
+
+        }
+
+        //compScore.insertAdjacentHTML("beforeend", htmlString3);
+    }
+}
+
+
+//show other high scores (from JSON)
+var xhr = new XMLHttpRequest();
+var url = "https://api.myjson.com/bins/s0b6w";
+//https://api.myjson.com/bins/1gbzt0
+xhr.open("GET", url);
+xhr.onload = function() {
+    if (xhr.status >= 200 && xhr.status < 400) {
+        var newData = JSON.parse(xhr.responseText);
+        showScores(newData);
+    } else {
+        console.log("We connected to the server, but it returned an error.");
+    }
+};
+
+xhr.onerror = function() {
+    console.log("Connection error");
+}
+
+xhr.send();
+
+function showScores(item) {
+    var htmlString2 = "";
+
+    htmlString2 += "<p>Here are other scorers: </p>";
+    for (i = 0; i < item.length; i++) {
+        htmlString2 += (item.indexOf(item[i])+1) + ". " + item[i].name + ": " + item[i].score + "<br />";
+    }
+    showHS.insertAdjacentHTML("beforeend", htmlString2);
+}
+
+
+
+//highscore.insertAdjacentHTML("beforeend", "Your highscore: " + localStorage.getItem("score"));
 
 //function draw bricks
 function drawBricks() {
@@ -210,9 +291,7 @@ function gameOver() {
     lives--;
     if (!lives) {
         alert("GAME OVER, YOUR SCORE IS " + score + " AND YOU SMASHED " + (score / 100) + " BRICKS.");
-        if (score > localStorage.getItem("score")) {
-            highScore();
-        }
+        highScore();
         document.location.reload();
     } else {
         x = canvas.width / 2;
