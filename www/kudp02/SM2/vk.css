@@ -1,0 +1,146 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    margin: auto;
+    width: 50%;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+hr {
+    background-color:blue;
+    height: 2px;
+    margin: auto;
+    width: 20%;
+    margin-bottom: 10px;
+}
+
+#list ul {
+    list-style: none;
+}
+
+#list li {
+    text-decoration: none;
+    list-style: none;
+    margin: 10px;
+    margin-bottom: 15px;
+}
+
+#list a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+
+#main-buttons {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+
+button {
+    cursor: pointer;
+}
+
+#load, #hide {
+    margin: 20px;
+    padding: 15px;
+    font-size: 30px;
+    border:blue solid 3px;
+    font: Arial, Sans-serif;
+    background: none;
+    text-transform: uppercase;
+    color:blue;
+    display:inline-block;
+    transition: 0.3s;
+}
+
+#load:hover, #hide:hover {
+    background: blue;
+    color: white;
+
+} 
+
+#list h4, p {
+    margin:20px;
+}
+
+img {
+    margin:0 auto;
+    width: auto;
+    height: 200px; 
+}
+
+#logo {
+    display: block;
+    margin: 0 auto;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.detail {
+    background-color: lightgray;
+    height: 400px;
+    padding: 50px 30px;
+    margin-top: 50px;
+    position: sticky !important;
+    display: none;
+    margin-left: 20%;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.detail ul {
+    margin-left: -20px;
+    list-style: none ;
+    text-decoration: none;
+}
+
+.detail img{
+    width: auto;
+
+}
+
+textarea {
+
+    width: 200px;
+    height:60px;
+    margin-bottom: 10px; 
+}
+
+#send-message {
+    margin-left: 37px;
+    display: block;
+    font-size: 18px;
+    background: none;
+    border: darkslategrey 2px solid;
+}
+
+.open-detail {
+    margin-left: 20px;
+    display: block;
+    font-size: 15px;
+    background: none;
+    border: darkslategrey 2px solid;
+    color: darkslategrey;
+}
+
+#autorizace {
+    font-size: 20px;
+    margin-top:30px;
+    padding: 7px;
+    display: block;
+    background: none;
+    margin: 0 auto;
+    width: 10%;
+    text-align: center;
+}
