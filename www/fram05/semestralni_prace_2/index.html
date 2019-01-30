@@ -67,11 +67,15 @@
     </div>
     <div class="input-box">
         <label for="lowercase">Hash</label>
-        <input type="text" readonly id="hash-result">
+        <input type="text" id="hash-result" readonly >
+        <button onclick="copy()" type="button">Copy hash to clipboard</button>
     </div>
 </form>
 
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jshashes/1.0.7/hashes.min.js"></script>
+<script src="https://apis.google.com/js/client.js"></script>
 <script src="index.js"></script>
 
 </body>

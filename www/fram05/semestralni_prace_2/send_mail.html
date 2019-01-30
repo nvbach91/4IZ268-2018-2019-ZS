@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <title>Gmail API demo</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <style>
+        iframe {
+            width: 100%;
+            border: 0;
+            min-height: 80%;
+            height: 600px;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <button class="send-mail">Send mail</button>
+
+    <button id="authorize-button" class="btn btn-primary hidden">Authorize</button>
+    <button id="logout">Logout</button>
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript">
+    var clientId = '980441235767-inqc3re5c2f030nodoqpp9pbe0ork7s1.apps.googleusercontent.com';
+    var apiKey = 'AIzaSyCvPbh_f_-J3Fto0awQ3o1d7-j6b-2zspc';
+    var scopes =
+        'https://www.googleapis.com/auth/gmail.send';
+    function handleClientLoad() {
+        gapi.client.setApiKey(apiKey);
+        window.setTimeout(checkAuth, 1);
+    }
+    function checkAuth() {
+        gapi.auth.authorize({
+            client_id: clientId,
+            scope: scopes,
+            immediate: true
+        }, handleAuthResult);
+    }
+    function handleAuthClick() {
+        gapi.auth.authorize({
+            client_id: clientId,
+            scope: scopes,
+            immediate: false
+        }, handleAuthResult);
+        return false;
+    }
+    function handleAuthResult(authResult) {
+        if(authResult && !authResult.error) {
+            loadGmailApi();
+            $('#authorize-button').remove();
+            $('.table-inbox').removeClass("hidden");
+            $('#compose-button').removeClass("hidden");
+        } else {
+            $('#authorize-button').removeClass("hidden");
+            $('#authorize-button').on('click', function(){
+                handleAuthClick();
+            });
+        }
+    }
+    function loadGmailApi() {
+        gapi.client.load('gmail', 'v1', "");
+    }
+    function sendMessage(headers_obj, message, callback)
+    {
+        var email = '';
+        for(var header in headers_obj)
+            email += header += ": "+headers_obj[header]+"\r\n";
+        email += "\r\n" + message;
+        var sendRequest = gapi.client.gmail.users.messages.send({
+            'userId': 'me',
+            'resource': {
+                'raw': window.btoa(email).replace(/\+/g, '-').replace(/\//g, '_')
+            }
+        });
+        return sendRequest.execute(callback);
+    }
+
+
+    document.querySelector(".send-mail").addEventListener("click", function () {
+        sendMessage(
+            {
+                'To': 'tom@creepy.cz',
+                'Subject': 'HAHA'
+            },
+            "Mrdka kurva pica chcu jit spat",
+            ""
+        )
+    });
+
+    document.querySelector("#logout").addEventListener("click", ev => {
+        gapi.auth.signOut();
+        console.log(gapi);
+    })
+
+
+
+</script>
+<script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+</body>
+</html>

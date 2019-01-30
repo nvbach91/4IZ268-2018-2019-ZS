@@ -3,7 +3,7 @@ body{
 }
 
 form{
-    width: 600px;
+    width: 900px;
     margin: auto;
     border-bottom: 1px solid black;
     padding: 20px 0;
@@ -24,4 +24,35 @@ h2{
 
 .input-box{
     padding: 5px 0;
+}
+
+.mail-modal{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mail-modal__container{
+    width: 700px;
+    padding: 40px;
+    background: white;
+}
+
+.mail-modal__heading{
+    font-size: 30px;
+}
+
+.button{
+    padding: 10px 20px;
+    border: 1px solid black;
+    margin: 0 20px;
+    font-size: 20px;
+    cursor: pointer;
 }
