@@ -1,10 +1,14 @@
 //VK API DOCUMENTATION   https://vk.com/dev/users.get
+//http://localhost:5500/4IZ268-2018-2019-ZS/www/kudp02/SM2/vk.html#access_token=9f1aa2dfe26075b18d00443d2e4db90d308d45ac5ed548c0f8aaed507f1b62527b39ce075a3e412040f32&expires_in=0&user_id=41093058
+
 
 //Giving access
 function getUrl(method, params) {
     if (!method) throw new Error('Method was not found');
+    var access_tokens = window.location.href.match(/\#(?:access_token)\=([\S\s]*?)\&/)[1];
+    console.log(access_tokens);
     params = params || {};  //Check if it is an object, otherwise make it an object
-    params ['access_token'] = '079fb7c7002f4c6e61bb739d40ac006b51bdfa2cc9eba3231f167fb8e5bed5c9d237be30a698b54acdb7e'; //Your access token
+    params ['access_token'] = access_tokens; //Your access token
     return 'https://api.vk.com/method/' + method + '?' + $.param(params)+ '&v=5.52';
 }
 

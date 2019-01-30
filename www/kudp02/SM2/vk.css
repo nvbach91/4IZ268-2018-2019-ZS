@@ -15,6 +15,7 @@ hr {
     height: 2px;
     margin: auto;
     width: 20%;
+    margin-bottom: 10px;
 }
 
 #list ul {
@@ -131,4 +132,15 @@ textarea {
     background: none;
     border: darkslategrey 2px solid;
     color: darkslategrey;
+}
+
+#autorizace {
+    font-size: 20px;
+    margin-top:30px;
+    padding: 7px;
+    display: block;
+    background: none;
+    margin: 0 auto;
+    width: 10%;
+    text-align: center;
 }
