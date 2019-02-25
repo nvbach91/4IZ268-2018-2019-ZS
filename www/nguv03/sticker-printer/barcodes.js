@@ -79,7 +79,7 @@ App.renderApp = function () {
             '</div>' +
         '</div>' +
         '<div id="preview">' +
-            '<div id="paper">' +
+            '<div id="paper"></div>' +
         '</div>' +
     '</div>';
     $("#app").html(appDOM);
