@@ -34,4 +34,5 @@ Nguyen Viet Bach, email: [nguv03@vse.cz](mailto:nguv03@vse.cz)
 - [Nastavení vývojového prostředí v počítačových učebnách VŠE](https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-uep)
 - [Použití verzovacího systému Git pro předmět 4IZ268](https://github.com/nvbach91/4IZ268-2018-2019-ZS/blob/master/guide-git)
 
-
+### Go to Wiki pages for more information
+- https://github.com/nvbach91/4IZ268-2018-2019-ZS/wiki
