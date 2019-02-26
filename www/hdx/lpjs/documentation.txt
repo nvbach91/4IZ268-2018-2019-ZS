@@ -1,0 +1,14 @@
+barcodes.js
+	- main HTML initialization
+	- MAIN input ids: 				cells-count, label-name, barcode-input
+	- ADDITIONAL SETT input ids:	skip-cells, row-cells-count, cell-height
+
+barcodes.css
+	- #cell: responsible for cell size
+
+IDEAS
+	- 1) multiple cell ids based on alza layouts
+		- instead of cell-height and row-cells-count, selection between the layout sizes
+	- 2) edit #cell with jQuery 
+		- partly integrated by having cell-height and row-cells-count inputs in the settings
+		- https://stackoverflow.com/questions/33784443/how-modify-a-property-of-external-css-file-using-jquery-javascript

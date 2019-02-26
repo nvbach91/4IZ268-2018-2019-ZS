@@ -49,7 +49,7 @@ App.renderApp = function () {
                             '<label class="sb-label">Skip cells</label>' +
                             '<input id="skip-cells" type="number" min="0" class="form-control" autocomplete="off">' +
                         '</div>' +
-                        /*'<div class="form-group">' +
+                        '<div class="form-group">' +
                             '<label class="sb-label">Row cells count</label>' +
                             '<input id="row-cells-count" type="number" min="1" class="form-control" autocomplete="off">' +
                         '</div>' +
@@ -59,7 +59,7 @@ App.renderApp = function () {
                         '</div>' +
                         '<div class="form-group">' +
                             '<button id="set-settings" class="btn btn-primary">Set</button>' +
-                        '</div>' +*/
+                        '</div>' +
                     '</div>' +
                 '</form>' +
             '</div>' +
