@@ -235,8 +235,9 @@ App.init = function () {
     App.maximumCellsCount = 260;
     App.rowCellsCount = 5;
     App.skipCells = 0;
-    App.cellHeight = $(".cell").css("height");;
-    App.cellWidthPercentage = $(".cell").css("width");
+    //Needs to mirror css
+    App.cellHeight = 2.25;
+    App.cellWidthPercentage = 100 / App.rowCellsCount;
 
     App.jPreview = $("#preview");
     App.jPaper = $("#paper");
@@ -245,7 +246,7 @@ App.init = function () {
     App.jExpandMoreSettings = $("#expand-more-settings");
     App.jSkipCells = $("#skip-cells").val(App.skipCells);
     App.jRowCellsCount = $("#row-cells-count").val(App.rowCellsCount); //App.jRowCellsCount.parent().hide();
-    App.jCellHeight = $("#cell-height"); //App.jCellHeight.parent().hide();
+    App.jCellHeight = $("#cell-height").val(App.cellHeight); //App.jCellHeight.parent().hide();
     App.jSetSettings = $("#set-settings");   
     App.jControlFormOthers = $("#control-form-others");
 
