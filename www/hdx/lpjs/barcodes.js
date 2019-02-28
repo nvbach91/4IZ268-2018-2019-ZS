@@ -153,6 +153,18 @@ App.bindControls = function () {
     App.jMoreSettingsForm.submit(function (e) {
         e.preventDefault();
     });
+    App.jSetSettings.click(function (e) {
+        var rowCellsCount = App.jRowCellsCount.val();
+        var height = App.jCellHeight.val();
+        if(!rowCellsCount || !height)
+            return;
+
+        var widthPercentage = 100 / rowCellsCount;
+        App.rowCellsCount = rowCellsCount;
+        App.cellHeight = height;
+        App.cellWidthPercentage = widthPercentage;
+        App.updateStats();
+    });
     App.jControlFormOthers.submit(function (e) {
         e.preventDefault();
     }).hide();
@@ -212,6 +224,9 @@ App.bindControls = function () {
 };
 
 App.updateStats = function () {
+    console.log("log> updating")
+    $(".cell").css("width", App.cellWidthPercentage + "%");
+    $(".cell").css("height", App.cellHeight + "cm");
     App.jActiveCellsCount.find("span").text(App.jPaper.children().size());
 };
 
@@ -220,6 +235,8 @@ App.init = function () {
     App.maximumCellsCount = 260;
     App.rowCellsCount = 5;
     App.skipCells = 0;
+    App.cellHeight = $(".cell").css("height");;
+    App.cellWidthPercentage = $(".cell").css("width");
 
     App.jPreview = $("#preview");
     App.jPaper = $("#paper");
@@ -227,8 +244,9 @@ App.init = function () {
     App.jMoreSettingsForm = $("#more-settings");
     App.jExpandMoreSettings = $("#expand-more-settings");
     App.jSkipCells = $("#skip-cells").val(App.skipCells);
-    //App.jRowCellsCount = $("#row-cells-count").val(App.rowCellsCount); App.jRowCellsCount.parent().hide();
-    //App.jCellHeight = $("#cell-height"); App.jCellHeight.parent().hide();
+    App.jRowCellsCount = $("#row-cells-count").val(App.rowCellsCount); //App.jRowCellsCount.parent().hide();
+    App.jCellHeight = $("#cell-height"); //App.jCellHeight.parent().hide();
+    App.jSetSettings = $("#set-settings");   
     App.jControlFormOthers = $("#control-form-others");
 
     App.jCellsCountInput = $("#cells-count").val(1);
@@ -252,14 +270,17 @@ App.addCells = function (name, barcode, count) {
         var cell = $('<div class="cell"></div>');
         var remover = $('<div class="remover"></div>').click(function () {
             $(this).parent().addClass('removing');
+            $(".removing").css("width", 0);
         });
         cell.append(remover);
         cell.on('transitionend', function () {
-            this.remove();
-            if (!App.jPaper.children().size()) {
-                App.jControlFormOthers.hide();
+            if(this.classList.contains('removing')) {
+                this.remove();
+                if (!App.jPaper.children().size()) {
+                    App.jControlFormOthers.hide();
+                }
+                App.updateStats();
             }
-            App.updateStats();
         });
         cells.append(cell);
         App.updateStats();
@@ -278,17 +299,20 @@ App.addCells = function (name, barcode, count) {
         });
         var remover = $('<div class="remover"></div>').click(function () {
             $(this).parent().addClass('removing');
+            $(".removing").css("width", 0);
         });
         var labelName = $('<div class="label-name">' + name + '</div>');
         cell.append(remover);
         cell.append(labelName);
         cell.append(canvas);
         cell.on('transitionend', function () {
-            this.remove();
-            if (!App.jPaper.children().size()) {
-                App.jControlFormOthers.hide();
+            if(this.classList.contains('removing')) {
+                this.remove();
+                if (!App.jPaper.children().size()) {
+                    App.jControlFormOthers.hide();
+                }
+                App.updateStats();
             }
-            App.updateStats();
         });
         cells.append(cell);
     }
