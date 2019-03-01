@@ -4,7 +4,7 @@
 
 ## Description
 A repository for laboratories of subject 4IZ268, Fall Semester 2018/2019.
-
+- Repository for the follow-up subject https://github.com/nvbach91/4IZ278-2018-2019-LS
 
 
 ### Subject
