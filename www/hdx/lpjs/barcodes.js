@@ -50,6 +50,18 @@ App.renderApp = function () {
                             '<input id="skip-cells" type="number" min="0" class="form-control" autocomplete="off">' +
                         '</div>' +
                         '<div class="form-group">' +
+                            '<label class="sb-label">Layout type</label>' +
+                            '<select id="layout-selector" class="form-control" onchange="App.onLayoutChange();">' +
+                                '<option>38x21</option>' +
+                                '<option>52X21</option>' +
+                                '<option>70X36</option>' +
+                                '<option>105x74</option>' +
+                                '<option>105x148</option>' +
+                                '<option>210x148</option>' +
+                                '<option>210x297</option>' +
+                            '</select>' +
+                        '</div>' +
+                        /*'<div class="form-group">' +
                             '<label class="sb-label">Row cells count</label>' +
                             '<input id="row-cells-count" type="number" min="1" class="form-control" autocomplete="off">' +
                         '</div>' +
@@ -59,7 +71,8 @@ App.renderApp = function () {
                         '</div>' +
                         '<div class="form-group">' +
                             '<button id="set-settings" class="btn btn-primary">Set</button>' +
-                        '</div>' +
+                        '</div>' +*/
+
                     '</div>' +
                 '</form>' +
             '</div>' +
@@ -153,18 +166,6 @@ App.bindControls = function () {
     App.jMoreSettingsForm.submit(function (e) {
         e.preventDefault();
     });
-    App.jSetSettings.click(function (e) {
-        var rowCellsCount = App.jRowCellsCount.val();
-        var height = App.jCellHeight.val();
-        if(!rowCellsCount || !height)
-            return;
-
-        var widthPercentage = 100 / rowCellsCount;
-        App.rowCellsCount = rowCellsCount;
-        App.cellHeight = height;
-        App.cellWidthPercentage = widthPercentage;
-        App.updateStats();
-    });
     App.jControlFormOthers.submit(function (e) {
         e.preventDefault();
     }).hide();
@@ -224,20 +225,67 @@ App.bindControls = function () {
 };
 
 App.updateStats = function () {
-    console.log("log> updating")
-    $(".cell").css("width", App.cellWidthPercentage + "%");
-    $(".cell").css("height", App.cellHeight + "cm");
     App.jActiveCellsCount.find("span").text(App.jPaper.children().size());
 };
 
+App.processData = function (allText) {
+    var allTextLines = allText.split(/\r\n|\n/);
+    var headers = allTextLines[0].split(',');
+    var lines = [];
+
+    for (var i=1; i<allTextLines.length; i++) {
+        var data = allTextLines[i].split(',');
+        if (data.length == headers.length) {
+
+            var tarr = [];
+            for (var j=0; j<headers.length; j++) {
+                tarr.push(headers[j]+":"+data[j]);
+            }
+            lines.push(tarr);
+        }
+    }
+    return lines;
+}
+
+App.onLayoutChange = function() {
+    App.updateCSV("e" + $("#layout-selector").val());
+}
+
+App.loadCSV = function(name) {
+    $.ajax({
+        type: "GET",
+        url: "data.txt",
+        dataType: "text",
+        //async: false,
+        success: function(data) { 
+            App.dataCSV = App.processData(data);
+            App.updateCSV(name);
+        }
+    });
+}
+
+App.updateCSV = function(name) {
+    for(var i=0; i<App.dataCSV.length; i++) {
+        if(App.dataCSV[i][0].split(':')[1] == name) {
+            var old = App.layoutName;
+            App.layoutName = App.dataCSV[i][0].split(':')[1];
+            App.maximumCellsCount = App.dataCSV[i][1].split(':')[1];
+            App.canvasWidth = App.dataCSV[i][2].split(':')[1];
+            App.canvasHeight = App.dataCSV[i][3].split(':')[1];
+            App.fontSize = App.dataCSV[i][4].split(':')[1];
+            App.jPaper.children().remove();
+            $("#paper").addClass(App.layoutName).removeClass(old);
+            return;
+        }
+    }
+}
+
 App.init = function () {
     App.renderApp();
-    App.maximumCellsCount = 260;
-    App.rowCellsCount = 5;
+    
+    App.loadCSV("e38x21");
+
     App.skipCells = 0;
-    //Needs to mirror css
-    App.cellHeight = 2.25;
-    App.cellWidthPercentage = 100 / App.rowCellsCount;
 
     App.jPreview = $("#preview");
     App.jPaper = $("#paper");
@@ -245,9 +293,8 @@ App.init = function () {
     App.jMoreSettingsForm = $("#more-settings");
     App.jExpandMoreSettings = $("#expand-more-settings");
     App.jSkipCells = $("#skip-cells").val(App.skipCells);
-    App.jRowCellsCount = $("#row-cells-count").val(App.rowCellsCount); //App.jRowCellsCount.parent().hide();
-    App.jCellHeight = $("#cell-height").val(App.cellHeight); //App.jCellHeight.parent().hide();
-    App.jSetSettings = $("#set-settings");   
+    //App.jRowCellsCount = $("#row-cells-count").val(App.rowCellsCount); App.jRowCellsCount.parent().hide();
+    //App.jCellHeight = $("#cell-height"); App.jCellHeight.parent().hide();
     App.jControlFormOthers = $("#control-form-others");
 
     App.jCellsCountInput = $("#cells-count").val(1);
@@ -271,7 +318,6 @@ App.addCells = function (name, barcode, count) {
         var cell = $('<div class="cell"></div>');
         var remover = $('<div class="remover"></div>').click(function () {
             $(this).parent().addClass('removing');
-            $(".removing").css("width", 0);
         });
         cell.append(remover);
         cell.on('transitionend', function () {
@@ -289,20 +335,20 @@ App.addCells = function (name, barcode, count) {
     for (var i = 0; i < count; i++) {
         var cell = $('<div class="cell"></div>');
         var canvas = $('<svg class="ean-canvas"></svg>');
+        console.log(App.canvasWidth + "\n" + App.canvasHeight + "\n" + App.fontSize);
         canvas.JsBarcode(barcode, {
-            height: 20,
-            width: 1,
+            height: parseInt(App.canvasHeight, 10),
+            width: parseInt(App.canvasWidth, 10),
             displayValue: true,
-            fontSize: 10,
+            fontSize: parseInt(App.fontSize, 10),
             font: "Arial",
             background: "rgba(0,0,0,0)",
             margin: 0
         });
         var remover = $('<div class="remover"></div>').click(function () {
             $(this).parent().addClass('removing');
-            $(".removing").css("width", 0);
         });
-        var labelName = $('<div class="label-name">' + name + '</div>');
+        var labelName = $('<div class="label-name" style="font: ' + App.fontSize + 'px Arial">' + name + '</div>');
         cell.append(remover);
         cell.append(labelName);
         cell.append(canvas);

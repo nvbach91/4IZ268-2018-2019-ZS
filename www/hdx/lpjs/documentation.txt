@@ -2,11 +2,12 @@ barcodes.js
 	- main HTML initialization
 	- MAIN input ids: 				cells-count, label-name, barcode-input
 	- ADDITIONAL SETT input ids:	skip-cells, row-cells-count, cell-height, set-settings
+	- canvas
 
 barcodes.css
 	- #cell: responsible for cell size
 
-jsbarcode.js
+jsbarcode.js (DO NOT EDIT)
 	- draws canvas on the cell
 		- barcode and text
 
@@ -14,11 +15,12 @@ IDEAS
 	CELL SIZE
 		- 1) multiple cell ids based on alza layouts (EASIER USER EXPERIENCE)
 			- instead of cell-height and row-cells-count, selection between the layout sizes
-		- 2) edit #cell with jQuery 
+		- 2) edit #cell with jQuery [WORKING]
 			- partly integrated by having cell-height and row-cells-count inputs in the settings
 			- https://stackoverflow.com/questions/33784443/how-modify-a-property-of-external-css-file-using-jquery-javascript
-
+ 
 	PAPER SIZE
+		- A4 = 210x297 cm
 		- program needs the ability to edit the size of the printing layout
 		- 1) add on top either the ability to edit margins
 		- 2) or the ability to edit gaps between cells
@@ -26,3 +28,28 @@ IDEAS
 
 	BARCODE & TEXT size
 		- 1) edit barcodes.js to work in percentage size of cell? 
+
+	PADDING AS A TYPE OF CELL
+		- only need a general ability to safeguard 260 cells		
+
+
+LAYOUT DOCUMENTATIOn
+	- SmartLine EL/MF-52L52.5X21.2 (52)
+		- 4x13
+		- 21,4mm h margin
+		- padding 1.5
+	- SmartLine EL/MF-24L70X36 (24)
+		- 3x8
+		- 9mm h margin
+	- SmartLine EL/MF-8L105x74 (8)
+		- 2x4
+		- 1mm h margin
+	- SmartLine EL/MF-4L105x148.5 (4)
+		- 2x2
+	- SmartLine EL/MF-2L210x148 (2)
+		- 1x2
+		- 1mm h margin
+	- SmartLine EL/MF-1L210x297
+		- 1x1
+
+
