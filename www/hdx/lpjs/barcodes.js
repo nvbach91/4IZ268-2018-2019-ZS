@@ -61,18 +61,6 @@ App.renderApp = function () {
                                 '<option>210x297</option>' +
                             '</select>' +
                         '</div>' +
-                        /*'<div class="form-group">' +
-                            '<label class="sb-label">Row cells count</label>' +
-                            '<input id="row-cells-count" type="number" min="1" class="form-control" autocomplete="off">' +
-                        '</div>' +
-                        '<div class="form-group">' +
-                            '<div class="sb-label">Cell height (cm)</div>' +
-                            '<input id="cell-height" class="form-control" autocomplete="off" required>' +
-                        '</div>' +
-                        '<div class="form-group">' +
-                            '<button id="set-settings" class="btn btn-primary">Set</button>' +
-                        '</div>' +*/
-
                     '</div>' +
                 '</form>' +
             '</div>' +
@@ -232,11 +220,9 @@ App.processData = function (allText) {
     var allTextLines = allText.split(/\r\n|\n/);
     var headers = allTextLines[0].split(',');
     var lines = [];
-
     for (var i=1; i<allTextLines.length; i++) {
         var data = allTextLines[i].split(',');
         if (data.length == headers.length) {
-
             var tarr = [];
             for (var j=0; j<headers.length; j++) {
                 tarr.push(headers[j]+":"+data[j]);
@@ -256,7 +242,6 @@ App.loadCSV = function(name) {
         type: "GET",
         url: "data.txt",
         dataType: "text",
-        //async: false,
         success: function(data) { 
             App.dataCSV = App.processData(data);
             App.updateCSV(name);
