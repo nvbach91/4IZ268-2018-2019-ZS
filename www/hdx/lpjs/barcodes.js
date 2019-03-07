@@ -51,7 +51,7 @@ App.renderApp = function () {
                         '</div>' +
                         '<div class="form-group">' +
                             '<label class="sb-label">Layout type</label>' +
-                            '<select id="layout-selector" class="form-control" onchange="App.onLayoutChange();">' +
+                            '<select id="layout-selector" class="form-control">' +
                                 '<option>38x21</option>' +
                                 '<option>52X21</option>' +
                                 '<option>70X36</option>' +
@@ -210,6 +210,9 @@ App.bindControls = function () {
         App.jBarcodeInput.val(scannedValue);
         App.jCellAdder.click();
     });
+    App.jLayoutEdit.on("on change", function() {
+        App.updateCSV("e" + $("#layout-selector").val());
+    });
 };
 
 App.updateStats = function () {
@@ -231,10 +234,6 @@ App.processData = function (allText) {
         }
     }
     return lines;
-}
-
-App.onLayoutChange = function() {
-    App.updateCSV("e" + $("#layout-selector").val());
 }
 
 App.loadCSV = function(name) {
@@ -278,6 +277,7 @@ App.init = function () {
     App.jMoreSettingsForm = $("#more-settings");
     App.jExpandMoreSettings = $("#expand-more-settings");
     App.jSkipCells = $("#skip-cells").val(App.skipCells);
+    App.jLayoutEdit = $("#layout-selector");
     //App.jRowCellsCount = $("#row-cells-count").val(App.rowCellsCount); App.jRowCellsCount.parent().hide();
     //App.jCellHeight = $("#cell-height"); App.jCellHeight.parent().hide();
     App.jControlFormOthers = $("#control-form-others");
@@ -320,7 +320,6 @@ App.addCells = function (name, barcode, count) {
     for (var i = 0; i < count; i++) {
         var cell = $('<div class="cell"></div>');
         var canvas = $('<svg class="ean-canvas"></svg>');
-        console.log(App.canvasWidth + "\n" + App.canvasHeight + "\n" + App.fontSize);
         canvas.JsBarcode(barcode, {
             height: parseInt(App.canvasHeight, 10),
             width: parseInt(App.canvasWidth, 10),
