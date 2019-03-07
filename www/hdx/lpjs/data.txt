@@ -1,4 +1,4 @@
-name,maxCells,canvasWidth,canvasHeight,fontSize
+layoutName,maxCells,canvasWidth,canvasHeight,fontSize
 e38x21,65,1,20,10
 e52X21,52,1,20,10
 e70X36,24,1.5,25,15

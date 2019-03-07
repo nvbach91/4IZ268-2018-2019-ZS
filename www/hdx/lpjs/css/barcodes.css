@@ -120,8 +120,6 @@ form button.confirm {
     align-content: flex-start;
 }
 .cell {
-    /*height: 2.25cm;*/
-    /*width: 20%;*/
     border-right: 1px solid #e8e8e8;
     border-bottom: 1px solid #e8e8e8;
     background-color: #fff;
@@ -255,8 +253,6 @@ form button.confirm {
         display: flex;
     }
     .cell {
-        /*height: 2.191494cm; for 5*14 grid*/
-        /*height: 2.3612cm; for 5*13 grid*/
         border-right: 1px solid transparent;
         border-bottom: 1px solid transparent;
     }

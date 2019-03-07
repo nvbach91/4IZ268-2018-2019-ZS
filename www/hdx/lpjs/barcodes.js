@@ -278,8 +278,6 @@ App.init = function () {
     App.jExpandMoreSettings = $("#expand-more-settings");
     App.jSkipCells = $("#skip-cells").val(App.skipCells);
     App.jLayoutEdit = $("#layout-selector");
-    //App.jRowCellsCount = $("#row-cells-count").val(App.rowCellsCount); App.jRowCellsCount.parent().hide();
-    //App.jCellHeight = $("#cell-height"); App.jCellHeight.parent().hide();
     App.jControlFormOthers = $("#control-form-others");
 
     App.jCellsCountInput = $("#cells-count").val(1);
