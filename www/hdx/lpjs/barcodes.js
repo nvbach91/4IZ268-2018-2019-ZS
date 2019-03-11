@@ -109,7 +109,7 @@ App.warn = function (msg) {
 };
 
 App.renameLabel = function() {
-    var labelName = document.getElementsByClassName("renaming")[0].childNodes[2];
+    var labelName = document.getElementsByClassName("renaming")[0].childNodes[0];
     var renaming = $(
     '<div class="alert">' +
         '<div class="form-group">' +
@@ -315,12 +315,7 @@ App.addCells = function (name, barcode, count) {
         var remover = $('<div class="remover"></div>').click(function () {
             $(this).parent().addClass('removing');
         });
-        var renameLabel = $('<div class="rename-label"></div>').click(function () {
-            $(this).addClass('renaming');
-            App.renameLabel();
-        });
         cell.append(remover);
-        cell.append(renameLabel);
         cell.on('transitionend', function () {
             this.remove();
             if (!App.jPaper.children().size()) {
@@ -351,10 +346,10 @@ App.addCells = function (name, barcode, count) {
             $(this).parent().addClass('renaming');
             App.renameLabel();
         });
-        cell.append(remover);
-        cell.append(renameLabel);
         cell.append(labelName);
         cell.append(canvas);
+        cell.append(remover);
+        cell.append(renameLabel);
         cell.on('transitionend', function () {
             this.remove();
             if (!App.jPaper.children().size()) {
