@@ -1,8 +1,0 @@
-layoutName,maxCells,canvasWidth,canvasHeight,fontSize
-e38x21,65,1,20,10
-e52X21,52,1,20,10
-e70X36,24,1.5,25,15
-e105x74,8,2,60,20
-e105x148,4,2,120,30
-e210x148,2,3,120,30
-e210x297,1,3,200,50

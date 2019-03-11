@@ -211,7 +211,10 @@ App.bindControls = function () {
         App.jCellAdder.click();
     });
     App.jLayoutSelector.change(function() {
-        App.updateLayout("e" + App.jLayoutSelector.val());
+        var newSelectedLayout = "e" + App.jLayoutSelector.val();
+
+        localStorage.setItem("preferredLayout", newSelectedLayout); // Save last layout as preferredLayout
+        App.updateLayout(newSelectedLayout);
     });
 };
 
@@ -237,6 +240,10 @@ App.updateLayout = function(name) {
 
 App.init = function () {
     App.renderApp();
+
+    if (localStorage.getItem("preferredLayout") === null) {
+        localStorage.setItem("preferredLayout", "e38x21");
+    }
     
     App.skipCells = 0;
 
@@ -246,7 +253,7 @@ App.init = function () {
     App.jMoreSettingsForm = $("#more-settings");
     App.jExpandMoreSettings = $("#expand-more-settings");
     App.jSkipCells = $("#skip-cells").val(App.skipCells);
-    App.jLayoutSelector = $("#layout-selector");
+    App.jLayoutSelector = $("#layout-selector").val(localStorage.getItem("preferredLayout").substring(1));
     App.jControlFormOthers = $("#control-form-others");
 
     App.jCellsCountInput = $("#cells-count").val(1);
@@ -258,7 +265,7 @@ App.init = function () {
 
     App.jActiveCellsCount = $("#active-cells-count");
 
-    /* layoutName, maxCells, canvasWidth, canvasHeight, fontSize */
+    // layoutName, maxCells, canvasWidth, canvasHeight, fontSize
     App.layoutData = [
         ["e38x21", 65, 1, 20, 10],
         ["e52x21", 52, 1, 20, 10],
@@ -269,7 +276,7 @@ App.init = function () {
         ["e210x297", 1, 3, 200, 50]
     ];
     
-    App.updateLayout("e38x21");
+    App.updateLayout(localStorage.getItem("preferredLayout"));
 
     App.bindControls();
 };
