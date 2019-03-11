@@ -53,8 +53,8 @@ App.renderApp = function () {
                             '<label class="sb-label">Layout type</label>' +
                             '<select id="layout-selector" class="form-control">' +
                                 '<option>38x21</option>' +
-                                '<option>52X21</option>' +
-                                '<option>70X36</option>' +
+                                '<option>52x21</option>' +
+                                '<option>70x36</option>' +
                                 '<option>105x74</option>' +
                                 '<option>105x148</option>' +
                                 '<option>210x148</option>' +
@@ -210,8 +210,8 @@ App.bindControls = function () {
         App.jBarcodeInput.val(scannedValue);
         App.jCellAdder.click();
     });
-    App.jLayoutEdit.on("on change", function() {
-        App.updateCSV("e" + $("#layout-selector").val());
+    App.jLayoutSelector.change(function() {
+        App.updateLayout("e" + App.jLayoutSelector.val());
     });
 };
 
@@ -219,46 +219,17 @@ App.updateStats = function () {
     App.jActiveCellsCount.find("span").text(App.jPaper.children().size());
 };
 
-App.processData = function (allText) {
-    var allTextLines = allText.split(/\r\n|\n/);
-    var headers = allTextLines[0].split(',');
-    var lines = [];
-    for (var i=1; i<allTextLines.length; i++) {
-        var data = allTextLines[i].split(',');
-        if (data.length == headers.length) {
-            var tarr = [];
-            for (var j=0; j<headers.length; j++) {
-                tarr.push(headers[j]+":"+data[j]);
-            }
-            lines.push(tarr);
-        }
-    }
-    return lines;
-}
-
-App.loadCSV = function(name) {
-    $.ajax({
-        type: "GET",
-        url: "data.txt",
-        dataType: "text",
-        success: function(data) { 
-            App.dataCSV = App.processData(data);
-            App.updateCSV(name);
-        }
-    });
-}
-
-App.updateCSV = function(name) {
-    for(var i=0; i<App.dataCSV.length; i++) {
-        if(App.dataCSV[i][0].split(':')[1] == name) {
+App.updateLayout = function(name) {
+    for(var i=0; i<App.layoutData.length; i++) {
+        if(App.layoutData[i][0] == name) {
             var old = App.layoutName;
-            App.layoutName = App.dataCSV[i][0].split(':')[1];
-            App.maximumCellsCount = App.dataCSV[i][1].split(':')[1];
-            App.canvasWidth = App.dataCSV[i][2].split(':')[1];
-            App.canvasHeight = App.dataCSV[i][3].split(':')[1];
-            App.fontSize = App.dataCSV[i][4].split(':')[1];
+            App.layoutName = App.layoutData[i][0];
+            App.maximumCellsCount = App.layoutData[i][1];
+            App.canvasWidth = App.layoutData[i][2];
+            App.canvasHeight = App.layoutData[i][3];
+            App.fontSize = App.layoutData[i][4];
             App.jPaper.children().remove();
-            $("#paper").addClass(App.layoutName).removeClass(old);
+            App.jPaper.addClass(App.layoutName).removeClass(old);
             return;
         }
     }
@@ -267,8 +238,6 @@ App.updateCSV = function(name) {
 App.init = function () {
     App.renderApp();
     
-    App.loadCSV("e38x21");
-
     App.skipCells = 0;
 
     App.jPreview = $("#preview");
@@ -277,7 +246,7 @@ App.init = function () {
     App.jMoreSettingsForm = $("#more-settings");
     App.jExpandMoreSettings = $("#expand-more-settings");
     App.jSkipCells = $("#skip-cells").val(App.skipCells);
-    App.jLayoutEdit = $("#layout-selector");
+    App.jLayoutSelector = $("#layout-selector");
     App.jControlFormOthers = $("#control-form-others");
 
     App.jCellsCountInput = $("#cells-count").val(1);
@@ -288,6 +257,19 @@ App.init = function () {
     App.jPrintButton = $("#print");
 
     App.jActiveCellsCount = $("#active-cells-count");
+
+    /* layoutName, maxCells, canvasWidth, canvasHeight, fontSize */
+    App.layoutData = [
+        ["e38x21", 65, 1, 20, 10],
+        ["e52x21", 52, 1, 20, 10],
+        ["e70x36", 24, 1.5, 25, 15],
+        ["e105x74", 8, 2, 60, 20],
+        ["e105x148", 4, 2, 120, 30],
+        ["e210x148", 2, 3, 120, 30],
+        ["e210x297", 1, 3, 200, 50]
+    ];
+    
+    App.updateLayout("e38x21");
 
     App.bindControls();
 };
@@ -304,13 +286,11 @@ App.addCells = function (name, barcode, count) {
         });
         cell.append(remover);
         cell.on('transitionend', function () {
-            if(this.classList.contains('removing')) {
-                this.remove();
-                if (!App.jPaper.children().size()) {
-                    App.jControlFormOthers.hide();
-                }
-                App.updateStats();
+            this.remove();
+            if (!App.jPaper.children().size()) {
+                App.jControlFormOthers.hide();
             }
+            App.updateStats();
         });
         cells.append(cell);
         App.updateStats();
@@ -319,10 +299,10 @@ App.addCells = function (name, barcode, count) {
         var cell = $('<div class="cell"></div>');
         var canvas = $('<svg class="ean-canvas"></svg>');
         canvas.JsBarcode(barcode, {
-            height: parseInt(App.canvasHeight, 10),
-            width: parseInt(App.canvasWidth, 10),
+            height: App.canvasHeight,
+            width: App.canvasWidth,
             displayValue: true,
-            fontSize: parseInt(App.fontSize, 10),
+            fontSize: App.fontSize,
             font: "Arial",
             background: "rgba(0,0,0,0)",
             margin: 0
@@ -335,13 +315,11 @@ App.addCells = function (name, barcode, count) {
         cell.append(labelName);
         cell.append(canvas);
         cell.on('transitionend', function () {
-            if(this.classList.contains('removing')) {
-                this.remove();
-                if (!App.jPaper.children().size()) {
-                    App.jControlFormOthers.hide();
-                }
-                App.updateStats();
+            this.remove();
+            if (!App.jPaper.children().size()) {
+                App.jControlFormOthers.hide();
             }
+            App.updateStats();
         });
         cells.append(cell);
     }

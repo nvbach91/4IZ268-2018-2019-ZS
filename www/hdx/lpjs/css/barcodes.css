@@ -146,19 +146,19 @@ form button.confirm {
     height: 7.35cm;
     width: 50%;
 }
-.e70X36 .cell {
+.e70x36 .cell {
     height: 3.6cm;
     width: 33.33%;
     width: calc(100% / 3);
 }
-#paper.e70X36 {
+#paper.e70x36 {
     padding-top: 0.4cm;
 }
-.e52X21 .cell {
+.e52x21 .cell {
     height: 2.12cm;    
     width: 25%;
 }
-#paper.e52X21 {
+#paper.e52x21 {
     padding-top: 1cm;
 }
 .e38x21 .cell {
@@ -272,19 +272,19 @@ form button.confirm {
         height: 7.4cm;
         width: 50%;
     }
-    .e70X36 .cell {
+    .e70x36 .cell {
         height: 3.6cm;
         width: 33.33%;
         width: calc(100% / 3);
     }
-    #paper.e70X36 {
+    #paper.e70x36 {
         padding-top: 0.8cm;
     }
-    .e52X21 .cell {
+    .e52x21 .cell {
         height: 2.12cm;
         width: 25%;
     }
-    #paper.e52X21 {
+    #paper.e52x21 {
         padding-top: 1.5cm;
     }
     .e38x21 .cell {
