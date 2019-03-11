@@ -139,15 +139,15 @@ form button.confirm {
     width: 100%;
 }
 .e105x148 .cell {
-    height: 14.65cm;
+    height: 14.62cm;
     width: 50%;
 }
 .e105x74 .cell {
-    height: 7.35cm;
+    height: 7.31cm;
     width: 50%;
 }
 .e70x36 .cell {
-    height: 3.6cm;
+    height: 3.61cm;
     width: 33.33%;
     width: calc(100% / 3);
 }
@@ -194,7 +194,28 @@ form button.confirm {
 .remover:before {
     content: "\00d7";   
 }
+.rename-label {
+    width: 30px;
+    height: 30px;
+    top: 32px;
+    right: 0;
+    position: absolute;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Glyphicons Halflings';
+}
+.rename-label:before {
+    content: "\270f";
+}
 .cell:hover > .remover, .remover:hover {
+    display: flex;
+}
+.cell:hover > .rename-label, .rename-label:hover {
     display: flex;
 }
 #curtain {
@@ -207,7 +228,7 @@ form button.confirm {
     justify-content: center;
     align-items: center;
 }
-.warning {  
+.alert {  
     font-size: 20px;  
     min-width: 300px;
     width: 100%;
@@ -218,13 +239,13 @@ form button.confirm {
     min-height: 200px;
     background-color: #fff;
 }
-.warning > .msg {
+.alert > .msg {
     font-size: 24px;
     font-weight: 300;
     padding: 5px;
     text-align: center;
 }
-.warning > button {
+.alert > button {
     width: 200px;
 }
 @media print {

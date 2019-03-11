@@ -85,28 +85,51 @@ App.renderApp = function () {
     $("#app").html(appDOM);
 };
 
-App.showInCurtain = function (item) {
+App.showInCurtain = function (item, removeOnClick) {
     var curtain = $('<div id="curtain"></div>');
-    curtain.click(function () {
-        curtain.remove();
-    });
+    if(removeOnClick)
+        curtain.click(function () {
+            curtain.remove();
+        });
     curtain.append(item);
     $(document.body).append(curtain);
 };
 
 App.warn = function (msg) {
     var warning = $(
-    '<div class="warning">' +
+    '<div class="alert">' +
         '<div class="msg">' + msg + '</div>' +
         '<button class="btn btn-primary">OK</button>' +
     '</div>'
     );
-    App.showInCurtain(warning);
+    App.showInCurtain(warning, true);
     warning.find('button').click(function () {
         App.jBarcodeInput.focus();
     }).focus();
 };
+
+App.renameLabel = function() {
+    var labelName = document.getElementsByClassName("renaming")[0].childNodes[2];
+    var renaming = $(
+    '<div class="alert">' +
+        '<div class="form-group">' +
+            '<div class="control-label">Label name</div>' +
+            '<input id="rename-input" class="form-control" autocomplete="off">' +
+        '</div>' +
+        '<button id="save-rename" class="btn btn-primary">SAVE</button>' +
+    '</div>'
+    );
+    App.showInCurtain(renaming, false);
+    var renameInput = $("#rename-input");
     
+    renameInput.val(labelName.innerHTML.toString());
+    renaming.find('button').click(function () {
+        labelName.innerHTML = renameInput.val();
+        console.log(labelName.parentNode.classList.remove("renaming"));
+        $("#curtain").remove();
+    }).focus();
+}
+
 App.bindControls = function () {
     App.jControlFormAdd.submit(function (e) {
         e.preventDefault();
@@ -241,6 +264,7 @@ App.updateLayout = function(name) {
 App.init = function () {
     App.renderApp();
 
+    // On first entry, set preferredLayout to default e38x21
     if (localStorage.getItem("preferredLayout") === null) {
         localStorage.setItem("preferredLayout", "e38x21");
     }
@@ -291,7 +315,12 @@ App.addCells = function (name, barcode, count) {
         var remover = $('<div class="remover"></div>').click(function () {
             $(this).parent().addClass('removing');
         });
+        var renameLabel = $('<div class="rename-label"></div>').click(function () {
+            $(this).addClass('renaming');
+            App.renameLabel();
+        });
         cell.append(remover);
+        cell.append(renameLabel);
         cell.on('transitionend', function () {
             this.remove();
             if (!App.jPaper.children().size()) {
@@ -314,11 +343,16 @@ App.addCells = function (name, barcode, count) {
             background: "rgba(0,0,0,0)",
             margin: 0
         });
+        var labelName = $('<div class="label-name" style="font: ' + App.fontSize + 'px Arial">' + name + '</div>');
         var remover = $('<div class="remover"></div>').click(function () {
             $(this).parent().addClass('removing');
         });
-        var labelName = $('<div class="label-name" style="font: ' + App.fontSize + 'px Arial">' + name + '</div>');
+        var renameLabel = $('<div class="rename-label"></div>').click(function () {
+            $(this).parent().addClass('renaming');
+            App.renameLabel();
+        });
         cell.append(remover);
+        cell.append(renameLabel);
         cell.append(labelName);
         cell.append(canvas);
         cell.on('transitionend', function () {
