@@ -96,21 +96,21 @@ App.showInCurtain = function (item, removeOnClick) {
 };
 
 App.warn = function (msg) {
-    var warning = $(
+    var alertWarning = $(
     '<div class="alert">' +
         '<div class="msg">' + msg + '</div>' +
         '<button class="btn btn-primary">OK</button>' +
     '</div>'
     );
-    App.showInCurtain(warning, true);
-    warning.find('button').click(function () {
+    App.showInCurtain(alertWarning, true);
+    alertWarning.find('button').click(function () {
         App.jBarcodeInput.focus();
     }).focus();
 };
 
 App.renameLabel = function() {
     var labelName = document.getElementsByClassName("renaming")[0].childNodes[0];
-    var renaming = $(
+    var alertRenaming = $(
     '<div class="alert">' +
         '<div class="form-group">' +
             '<div class="control-label">Label name</div>' +
@@ -119,15 +119,16 @@ App.renameLabel = function() {
         '<button id="save-rename" class="btn btn-primary">SAVE</button>' +
     '</div>'
     );
-    App.showInCurtain(renaming, false);
+    App.showInCurtain(alertRenaming, false);
     var renameInput = $("#rename-input");
     
     renameInput.val(labelName.innerHTML.toString());
-    renaming.find('button').click(function () {
+    renameInput.focus();
+    alertRenaming.find('button').click(function () {
         labelName.innerHTML = renameInput.val();
-        console.log(labelName.parentNode.classList.remove("renaming"));
+        labelName.parentNode.classList.remove("renaming");
         $("#curtain").remove();
-    }).focus();
+    })
 }
 
 App.bindControls = function () {
