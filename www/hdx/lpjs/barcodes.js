@@ -121,6 +121,7 @@ App.renameLabel = function(labelName) {
     App.showInCurtain(alertRenaming, false);
     var renameInput = $("#rename-input");
     
+    console.log("in:" + labelName.innerText); //in:undefined
     renameInput.val(labelName.innerText);
     renameInput.focus();
     alertRenaming.find('button').click(function () {
@@ -342,12 +343,13 @@ App.addCells = function (name, barcode, count) {
             $(this).parent().addClass('removing');
         });
         var renameLabelButton = $('<div class="rename-label"></div>').click(function () {
+            console.log("out:" + labelName.innerText); //out:undefined
             App.renameLabel(labelName);
         });
         cell.append(labelName);
         cell.append(canvas);
         cell.append(remover);
-        cell.append(renameLabel);
+        cell.append(renameLabelButton);
         cell.on('transitionend', function () {
             this.remove();
             if (!App.jPaper.children().size()) {
