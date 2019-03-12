@@ -108,8 +108,7 @@ App.warn = function (msg) {
     }).focus();
 };
 
-App.renameLabel = function() {
-    var labelName = document.getElementsByClassName("renaming")[0].childNodes[0];
+App.renameLabel = function(labelName) {
     var alertRenaming = $(
     '<div class="alert">' +
         '<div class="form-group">' +
@@ -122,14 +121,13 @@ App.renameLabel = function() {
     App.showInCurtain(alertRenaming, false);
     var renameInput = $("#rename-input");
     
-    renameInput.val(labelName.innerHTML.toString());
+    renameInput.val(labelName.innerText);
     renameInput.focus();
     alertRenaming.find('button').click(function () {
-        labelName.innerHTML = renameInput.val();
-        labelName.parentNode.classList.remove("renaming");
+        labelName.text(renameInput.val());
         $("#curtain").remove();
-    })
-}
+    });
+};
 
 App.bindControls = function () {
     App.jControlFormAdd.submit(function (e) {
@@ -343,9 +341,8 @@ App.addCells = function (name, barcode, count) {
         var remover = $('<div class="remover"></div>').click(function () {
             $(this).parent().addClass('removing');
         });
-        var renameLabel = $('<div class="rename-label"></div>').click(function () {
-            $(this).parent().addClass('renaming');
-            App.renameLabel();
+        var renameLabelButton = $('<div class="rename-label"></div>').click(function () {
+            App.renameLabel(labelName);
         });
         cell.append(labelName);
         cell.append(canvas);
