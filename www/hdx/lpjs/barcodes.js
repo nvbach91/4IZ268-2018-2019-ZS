@@ -116,7 +116,7 @@ App.renameLabel = function() {
             '<div class="control-label">Label name</div>' +
             '<input id="rename-input" class="form-control" autocomplete="off">' +
         '</div>' +
-        '<button id="save-rename" class="btn btn-primary">SAVE</button>' +
+        '<button class="btn btn-primary">SAVE</button>' +
     '</div>'
     );
     App.showInCurtain(alertRenaming, false);
