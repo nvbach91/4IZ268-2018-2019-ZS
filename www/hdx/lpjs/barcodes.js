@@ -120,9 +120,8 @@ App.renameLabel = function(labelName) {
     );
     App.showInCurtain(alertRenaming, false);
     var renameInput = $("#rename-input");
-    
-    console.log("in:" + labelName.innerText); //in:undefined
-    renameInput.val(labelName.innerText);
+ 
+    renameInput.val(labelName.text());
     renameInput.focus();
     alertRenaming.find('button').click(function () {
         labelName.text(renameInput.val());
@@ -343,8 +342,7 @@ App.addCells = function (name, barcode, count) {
             $(this).parent().addClass('removing');
         });
         var renameLabelButton = $('<div class="rename-label"></div>').click(function () {
-            console.log("out:" + labelName.innerText); //out:undefined
-            App.renameLabel(labelName);
+            App.renameLabel($(this).parent().find('.label-name'));
         });
         cell.append(labelName);
         cell.append(canvas);
