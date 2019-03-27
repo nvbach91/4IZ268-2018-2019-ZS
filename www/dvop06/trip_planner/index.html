@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Trip Planner</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<meta name="description" content="Application for planning trips">
+	<meta name="keywords" content="trip, plannning, travel, guide">
+	<meta name="author" content="Pavel Dvoriak">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+	<div id="panel">
+		<div id="controls">
+			<h1>Trip Planner</h1>
+			<div id="CleanMap"><button id="btnCleanMap" onclick="removePlacesMarkers()">Clean Map</button></div>
+			<div id="RemoveTripPlaces"><button id="btnRemove" onclick="removeAll()">Remove All</button></div>
+			<div id="tripPlacesList" class="clearfix"></div>
+			<button class="Btn half gray" id="signIn" onclick="googleSignIn()" disabled>Google Sign in</button>
+			<button class="Btn half gray" id="signOut" onclick="googleSignOut()" disabled>Google Sign out</button>
+			<button class="Btn half gray" id="btnLoad" onclick="load()">Load</button>
+			<button class="Btn half gray" id="btnSave" onclick="save()">Save</button>
+			<button class="Btn half blue" id="driveLoad" onclick="loadDrive()" disabled>Load Drive</button>
+			<button class="Btn half green" id="driveSave" onclick="saveDrive()" disabled>Save Drive</button>
+		</div>
+		<!-- <div id="userInfo"></div> -->
+	</div>
+	<div id="map"></div>
+
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqrIm5k4rHJuYEwMlMGkusAAeLGBNNhZ8&libraries=places&callback=main"
+	 async defer></script>
+	<script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};onGoogleApiLoad()"
+	 onreadystatechange="if (this.readyState === 'complete') this.onload()">
+	</script>
+
+</body>
+
+</html>
