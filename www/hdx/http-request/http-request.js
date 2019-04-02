@@ -1,9 +1,8 @@
 const axios = require('axios');
-const CLOUDINARY_API_KEY = "789245378565239";
-const CLOUDINARY_API_SECRET = "u-KyDzF6frNKbxbmJp66QPtOlX8";
-const CLOUDINARY_API_CLOUD_NAME = "zicco";
+var ENV = require('dotenv');
+ENV.config();
 
-const base = "https://" + CLOUDINARY_API_KEY + ":" + CLOUDINARY_API_SECRET + "@api.cloudinary.com/v1_1/" + CLOUDINARY_API_CLOUD_NAME;
+const base = "https://" + process.env.CLOUD_KEY + ":" + process.env.CLOUD_SECRET + "@api.cloudinary.com/v1_1/" + process.env.CLOUD_NAME;
 const endpoints = {
 	getImages:"/resources/image",
 	getVideos:"/resources/video"
@@ -24,6 +23,14 @@ function getImages(options) {
             }
         })
     .catch(err=>console.log(err));
+}
+
+function removeImages() {
+
+}
+
+function uploadImages() {
+
 }
 
 getImages();
