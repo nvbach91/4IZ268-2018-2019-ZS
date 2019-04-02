@@ -1,0 +1,17 @@
+{
+  "name": "cloudinarydialog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary": "^1.14.0"
+  },
+  "devDependencies": {
+    "dotenv": "^7.0.0"
+  }
+}
