@@ -9,13 +9,14 @@ function getAllImg(){
 
     axios.post(url)
     .then(res=>
-    {
-        console.log("POST " + url);
-        console.log("total_count:" + res.data.total_count);
-        res.data.resources.forEach(function(image) {
-            console.log(image.public_id);
-        });
-    })
+        {
+            console.log("POST " + url);
+            console.log("total_count:" + res.data.total_count);
+            res.data.resources.forEach(function(image) 
+            {
+                console.log(image.public_id);
+            });
+        })
     .catch(err=>console.log(err));
 }
 
@@ -28,16 +29,18 @@ function getImgByOps(options, cursor) {
 
     axios.get(url)
     .then(res=> 
-    {
-        console.log("GET " + url);
-        var nextCursor = res.data.next_cursor;
-        res.data.resources.forEach(function(image) {
-            console.log(image.public_id);
-        });
-        if(nextCursor) {
-            getImages(options, "&next_cursor=" + nextCursor);
-        }
-    })
+        {
+            console.log("GET " + url);
+            var nextCursor = res.data.next_cursor;
+            res.data.resources.forEach(function(image) 
+            {
+                console.log(image.public_id);
+            });
+            if(nextCursor) 
+            {
+                getImages(options, "&next_cursor=" + nextCursor);
+            }
+        })
     .catch(err=>console.log(err));
 }
 
@@ -49,10 +52,10 @@ function removeImg(publicIds) {
 
     axios.delete(url)
     .then(function(res) 
-    {
-        console.log("DELETE " + url);
-        console.log(res.data.deleted);
-    })
+        {
+            console.log("DELETE " + url);
+            console.log(res.data.deleted);
+        })
     .catch(err=>console.log(err));;
 }
 
