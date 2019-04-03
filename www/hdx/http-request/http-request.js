@@ -6,9 +6,10 @@ const base = "https://" + process.env.CLOUD_KEY + ":" + process.env.CLOUD_SECRET
 
 function getAllImg(){
     var url = base + "/resources/search?expression=resource_type:image";
-    
+
     axios.post(url)
-    .then(res=>{
+    .then(res=>
+    {
         console.log("POST " + url);
         console.log("total_count:" + res.data.total_count);
         res.data.resources.forEach(function(image) {
@@ -27,16 +28,16 @@ function getImgByOps(options, cursor) {
 
     axios.get(url)
     .then(res=> 
-        {
-            console.log("GET " + url);
-            var nextCursor = res.data.next_cursor;
-            res.data.resources.forEach(function(image) {
-                console.log(image.public_id);
-            });
-            if(nextCursor) {
-                getImages(options, "&next_cursor=" + nextCursor);
-            }
-        })
+    {
+        console.log("GET " + url);
+        var nextCursor = res.data.next_cursor;
+        res.data.resources.forEach(function(image) {
+            console.log(image.public_id);
+        });
+        if(nextCursor) {
+            getImages(options, "&next_cursor=" + nextCursor);
+        }
+    })
     .catch(err=>console.log(err));
 }
 
@@ -47,7 +48,8 @@ function removeImg(publicIds) {
     })
 
     axios.delete(url)
-    .then(function(res) {
+    .then(function(res) 
+    {
         console.log("DELETE " + url);
         console.log(res.data.deleted);
     })
