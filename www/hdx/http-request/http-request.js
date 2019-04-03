@@ -38,7 +38,7 @@ function getImgByOps(options, cursor) {
             });
             if(nextCursor) 
             {
-                getImages(options, "&next_cursor=" + nextCursor);
+                getImgByOpts(options, "&next_cursor=" + nextCursor);
             }
         })
     .catch(err=>console.log(err));
