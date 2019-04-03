@@ -20,7 +20,7 @@ function getAllImg(){
     .catch(err=>console.log(err));
 }
 
-function getImgByOps(options, cursor) {
+function getImgByOpts(options, cursor) {
     if(!options)
         options = "";
     if(!cursor)
@@ -60,5 +60,5 @@ function removeImg(publicIds) {
 }
 
 getAllImg();
-getImgByOps("prefix=art");
+getImgByOpts("prefix=art");
 removeImg(["hykiw77znszgb9kgcjm5", "vox_machina"]);
