@@ -1,5 +1,5 @@
-var ENV = require('dotenv');
-var cloudinary = require('cloudinary');
+const ENV = require('dotenv');
+const cloudinary = require('cloudinary');
 
 ENV.config();
 cloudinary.config({ 
@@ -18,6 +18,9 @@ function getImagePublicIds(options) {
 		result.resources.forEach(element => {
 			console.log(element.public_id);
 		});
+		if(result.next_cursor) {
+			getImagePublicIds({next_cursor: result.next_cursor});
+		}
 	});
 }
 
@@ -34,4 +37,4 @@ function uploadImage(imagePath, options) {
 
 getImagePublicIds();
 //uploadImage("E://_Gallery//Vox Machina//7Ja70yN.png", null);
-//deleteImage("vox_machina")
+//deleteImage("vox_machina");
