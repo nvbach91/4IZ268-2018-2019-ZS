@@ -1,7 +1,10 @@
 const ENV = require('dotenv');
 const cloudinary = require('cloudinary');
 const fs = require('fs'); 
+
 const dateLimit = Date.parse('2019-04-04T00:00:01Z');
+const ignoreIdsFile = "public_ids";
+
 var publicIdExceptions;
 
 ENV.config();
@@ -54,4 +57,4 @@ function recursiveCleaning(options) {
 	});
 }
 
-removeClutter("import.txt");
+removeClutter(ignoreIdsFile);
