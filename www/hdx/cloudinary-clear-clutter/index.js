@@ -1,6 +1,7 @@
 const ENV = require('dotenv');
 const cloudinary = require('cloudinary');
 const fs = require('fs'); 
+const dateLimit = Date.parse('2019-04-04T00:00:01Z');
 var publicIdExceptions;
 
 ENV.config();
@@ -41,8 +42,8 @@ function recursiveCleaning(options) {
 		}
 		result.resources.forEach(element => {
 			if(!publicIdExceptions.includes(element.public_id)) {
-				if(Date.parse(element.created_at) < Date.parse('2019-04-04T00:00:01Z')) {
-					console.log("remove: " + element.public_id);
+				if(Date.parse(element.created_at) < dateLimit) {
+					console.log("remove: " + "\t" + element.created_at + "\t" + element.public_id);
 					deleteImage(element.public_id);
 				}
 			}
