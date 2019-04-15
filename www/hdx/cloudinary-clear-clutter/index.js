@@ -28,6 +28,7 @@ function removeClutter(exceptionsFile)
 }
 
 function recursiveCleaning(options) {
+	console.log("recursiveCleaning()");
 	if(!options)
 		options = {};
 	options.max_results=500;
@@ -40,8 +41,10 @@ function recursiveCleaning(options) {
 		}
 		result.resources.forEach(element => {
 			if(!publicIdExceptions.includes(element.public_id)) {
-				console.log("remove: " + element.public_id);
-				deleteImage(element.public_id);
+				if(Date.parse(element.created_at) < Date.parse('2019-04-04T00:00:01Z')) {
+					console.log("remove: " + element.public_id);
+					deleteImage(element.public_id);
+				}
 			}
 		});
 		if(result.next_cursor) {
@@ -50,4 +53,4 @@ function recursiveCleaning(options) {
 	});
 }
 
-removeClutter("zicco.txt");
+removeClutter("import.txt");
