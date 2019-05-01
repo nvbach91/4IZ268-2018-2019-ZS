@@ -1,0 +1,16 @@
+         Demo Potraviny
+   Adresova 1, 11000 Praha 1
+ICO:                    12345678
+Provozovna: 
+Adresova 1, 10100 Praha 1
+Doklad c.            19010000012
+--------------------------------
+AKCE: Rohlik
+    1 x                  20.00 C
+AKCE: Houska
+    1 x                  30.00 C
+--------------------------------
+Pocet polozek:                 2
+Mezisoucet:             50.00 Kc
+--------------------------------
+...
