@@ -64,6 +64,75 @@ var parseHtmlReceiptToText = function () {
     console.log(text);
 };
 
+var parseHtmlReceiptEuroToText = function () {
+    var maxWidths = { '190': 120, '80': 50, '76': 44, '72': 40, '58': 32, '48': 28, '42': 22 };
+    var receiptContainer = App.curtain.find('.receipt-container'); 
+    var maxWidth = maxWidths[receiptContainer.attr('class').replace(/[^0-9]/g, '')];
+    var horizontalLine = '-'.repeat(maxWidth);
+    var receipt = receiptContainer.children('.receipt');
+    var text = '';
+    receipt.children('.receipt-header').children().each(function () {
+        $(this).children(':not(.preview)').each(function () {
+            if ($(this).text()) {
+                text += '\t' + $(this).text() + '\t\n';
+            }
+        });
+    });
+    receipt.children('.receipt-body').children().each(function () {
+        var item = $(this);
+        if (item.is(':visible')) {
+            
+            text += item.find('.ri-n').text() + '\n';
+            item.children('.ri-v').each(function () {
+                text += 
+                ' ' + 
+                $(this).children('.ri-c').text() + '\t' + 
+                $(this).children('.ri-q').text() + ' x\t' + 
+                $(this).children('.ri-p').text() + '\t' + 
+                $(this).children('.ri-tt').text() + ' ' +
+                $(this).children('.ri-tm').text() + '\n';
+            }) ;
+        }
+    });
+    text += horizontalLine + '\n';
+    receipt.find('#receipt-summary .rs-col:nth-child(1)').children().each(function () {
+        var t = $(this);
+        var line = t.children().eq(0).text() + '\t' + t.children().eq(1).text();
+        if (t.attr('id') === 'rs-total') {
+            text += App.ESCPOS.bigFont(line) + '\n';
+        } else {
+            text += line + '\n';
+        }
+    });
+    text += '\t' + receipt.find('#taxes-label').text() + '\t\n';
+    receipt.find('#receipt-summary .rs-col:nth-child(2)').children().each(function () {
+        var divs = $(this).children();
+        if (divs.size()) {
+            text += divs.eq(0).text() + '\t' + divs.eq(1).text() + '\t' + divs.eq(2).text() + '\t' + divs.eq(2).text().trim();
+            if (maxWidth > 32) {
+                text += + '\t' + divs.eq(4).text() + '\n';
+            } else {
+                text += '\n';
+            }
+        }
+    });
+    var orsLines = receipt.find('.receipt-ors');
+    if (orsLines.size()) {
+        text += horizontalLine + '\n';
+        orsLines.each(function () {
+            text += $(this).text() + '\n';
+        });
+    }
+    text += horizontalLine + '\n';
+    text += receipt.find('.receipt-clerk').text() + '\n';
+    text += receipt.find('#receipt-time').text() + '\n';
+    text += receipt.children('.receipt-footer').text().trim() + '\n';
+    receipt.find('.receipt-end').remove();
+    text += '\t' + receipt.children('.receipt-brand').text().trim().replace('©', '(c)') + '\t\n';
+    text = formatText(text, maxWidth);
+    console.log(text);
+};
+
 var parseHtmlOrderToText = function () {
     var maxWidths = { '190': 120, '80': 50, '76': 44, '72': 40, '58': 32, '48': 28, '42': 22 };
     var receiptContainer = App.curtain.find('.receipt-container'); 
